@@ -6,3 +6,5 @@ langgraph
 requests
 sqlalchemy
 pytest
+plotly
+jinja2

@@ -1,3 +1,35 @@
+# ==============================================================================
+# BI FLOW PROJECT - AIDE-MÉMOIRE DES COMMANDES
+# ==============================================================================
+
+# 1. PIPELINE COMPLET (Recommandé : Profiler -> ETL -> KPI -> BI Analyst -> Dashboard)
+python run_pipeline.py data/telco.csv --preset telco
+
+# Variantes du pipeline complet :
+python run_pipeline.py data/telco.csv --preset telco --no-dashboard
+python run_pipeline.py data/telco.csv --preset telco --no-analyst
+python run_pipeline.py data/telco.csv --preset telco --no-kpi
+
+
+# 2. COMMANDES PAR AGENT (Exécution modulaire)
+
+# A. Profiler Agent
 python -c "from agents.profiler.agent import run; from agents.profiler.models import ProfileRequest, SourceConfig; r=run(ProfileRequest(business_goal='Analyser le churn', sources=[SourceConfig(name='telco', type='csv', uri='data/telco.csv')])); print(r.model_dump_json(indent=2))"
-python -m agents.kpi --etl-report output/etl/etl_report.json 
---no-llm
+
+# B. KPI Agent
+python -m agents.kpi --etl-report output/telco/etl_report.json --no-llm
+
+# C. BI Analyst Agent
+python -m agents.bi_analyst --kpi-report output/telco/kpi/kpi_report.json --etl-report output/telco/etl_report.json --output-dir output/telco/analyst --no-llm
+
+# D. Dashboard Generator Agent
+python -m agents.dashboard --analyst-report output/telco/analyst/analyst_report.json --kpi-report output/telco/kpi/kpi_report.json --etl-report output/telco/etl_report.json --data output/telco/telco_clean.csv --no-llm
+
+
+# 3. TESTS UNITAIRES (PYTEST)
+
+# Tester uniquement le Dashboard Agent
+pytest tests/dashboard -v
+
+# Tester l'ensemble du projet (115+ tests)
+pytest -v
