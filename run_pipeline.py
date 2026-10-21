@@ -25,6 +25,8 @@ from agents.kpi import KPIOptions, KPIRequest
 from agents.kpi import run as compute_kpis
 from agents.profiler.agent import run as profile
 from agents.profiler.models import ProfileOptions, ProfileRequest, SourceConfig
+from agents.xai import XAIOptions, XAIRequest
+from agents.xai import run as run_xai
 
 
 def main() -> int:
@@ -42,6 +44,7 @@ def main() -> int:
     parser.add_argument("--no-kpi", action="store_true", help="S'arrêter après l'ETL (pas de KPI)")
     parser.add_argument("--no-analyst", action="store_true", help="S'arrêter après les KPIs (pas de BI Analyst)")
     parser.add_argument("--no-dashboard", action="store_true", help="Ne pas générer le Dashboard")
+    parser.add_argument("--no-xai", action="store_true", help="Ne pas exécuter l'audit XAI")
     parser.add_argument("--llm", action="store_true", help="Activer le LLM pour les synthèses narratives")
     args = parser.parse_args()
 
@@ -201,12 +204,44 @@ def main() -> int:
         for err in dashboard_report.errors:
             print(f"   ! {err}")
 
+    xai_status = "skipped"
+    if (
+        not args.no_xai
+        and report.status != "error"
+        and (out_dir / f"{name}_clean.csv").exists()
+    ):
+        print("\n8) BI AUDITOR / XAI ...")
+        xai_report = run_xai(
+            XAIRequest(
+                clean_data_path=str(out_dir / f"{name}_clean.csv"),
+                business_goal=args.goal,
+                options=XAIOptions(
+                    output_dir=str(out_dir / "xai"),
+                    use_llm=args.llm,
+                ),
+            )
+        )
+        xai_status = xai_report.status
+        print(f"   statut : {xai_report.status}")
+        if xai_report.model_metrics:
+            m = xai_report.model_metrics
+            print(f"   RandomForest : Accuracy {m.accuracy:.1%} | Recall {m.recall:.1%} | F1 {m.f1:.1%} | AUC-ROC {m.auc_roc:.3f}")
+        if xai_report.baseline_comparison:
+            b = xai_report.baseline_comparison
+            print(f"   Baseline     : Dummy F1 {b.baseline_f1:.1%} -> Gain F1 +{b.delta_f1:.1%} ({b.verdict})")
+        if xai_report.shap_summary:
+            top_3 = [f.feature for f in xai_report.shap_summary.top_features[:3]]
+            print(f"   Top SHAP     : {', '.join(top_3)}")
+        for err in xai_report.errors:
+            print(f"   ! {err}")
+
     print(f"\nTous les artefacts sont disponibles dans : {out_dir}")
     success = (
         report.status != "error"
         and kpi_status != "error"
         and analyst_status != "error"
         and dashboard_status != "error"
+        and xai_status != "error"
     )
     return 0 if success else 1
 
