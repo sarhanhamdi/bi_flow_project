@@ -1,0 +1,13 @@
+insight_id,kpi_id,dimension,segment,rate,global_rate,excess_rate,excess_churners,revenue_monthly_lost_excess,p_adj,effect_size,effect_label,test_used,confidence,rank,source
+insight_contract_month_to_month,churn_rate,contract,Month-to-month,42.71,26.54,16.17,626.6,45753.04,0.0,0.4051029106879898,fort,proportion_z,élevée,1,kpi_report
+insight_online_security_no,churn_rate,online_security,No,41.77,26.54,15.23,532.7,41118.3,0.0,0.3426367998511226,fort,proportion_z,élevée,2,analyst_computed
+insight_tech_support_no,churn_rate,tech_support,No,41.64,26.54,15.1,524.4,40151.29,0.0,0.33728072773519696,fort,proportion_z,élevée,3,analyst_computed
+insight_internet_service_fiber_optic,churn_rate,internet_service,Fiber optic,41.89,26.54,15.35,475.2,41880.88,0.0,0.30801974494482287,fort,proportion_z,élevée,4,kpi_report
+insight_tenure_bin_0_12_mois,churn_rate,tenure_bin,0-12 mois,48.28,26.54,21.74,449.8,29726.6,0.0,0.3176659691620495,fort,proportion_z,élevée,5,analyst_computed
+insight_payment_method_electronic_check,churn_rate,payment_method,Electronic check,45.29,26.54,18.75,443.4,34898.97,0.0,0.3019187490112848,fort,proportion_z,élevée,6,kpi_report
+insight_online_backup_no,churn_rate,online_backup,No,39.93,26.54,13.39,413.5,30809.65,0.0,0.26800518096236,moyen,proportion_z,élevée,7,analyst_computed
+insight_device_protection_no,churn_rate,device_protection,No,39.13,26.54,12.59,389.7,28557.59,0.0,0.2524813605956848,moyen,proportion_z,élevée,8,analyst_computed
+insight_dependents_no,churn_rate,dependents,No,32.55,26.54,6.01,325.5,24528.91,0.0,0.2485422264232831,moyen,proportion_z,moyenne,9,analyst_computed
+insight_paperless_billing_yes,churn_rate,paperless_billing,Yes,33.57,26.54,7.03,293.2,22936.19,0.0,0.19182533166646792,moyen,proportion_z,moyenne,10,analyst_computed
+insight_mw_avg_tenure,avg_tenure,churn_label,churné vs retenu,10.0,38.0,-28.0,0.0,0.0,2.419635517951866e-208,0.4797343510572577,fort,mann-whitney,élevée,11,analyst_computed
+insight_mw_arpu,arpu,churn_label,churné vs retenu,79.65,64.42500000000001,15.224999999999994,0.0,0.0,3.311627651988584e-54,0.24157137914125104,moyen,mann-whitney,élevée,12,analyst_computed

@@ -1,0 +1,855 @@
+{
+  "business_goal": "Analyse BI telecom",
+  "status": "success",
+  "kpi_status": "success",
+  "insights": [
+    {
+      "id": "insight_contract_month_to_month",
+      "kpi_id": "churn_rate",
+      "title": "contract = Month-to-month : churn 42.71 % (+16.2 pts)",
+      "finding": "Le segment « Month-to-month » (dimension : contract) est associé à un taux de churn de 42.71 %, contre 26.54 % sur l'ensemble du portefeuille (+16.17 points d'écart).",
+      "evidence": "n=3,875 clients dans le segment (1,655 churnés). Écart : +16.17 pts. Départs en excès : 627. Revenu mensuel perdu en excès : 45,753 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.405 (fort, Cramér's V). Source : kpi_report.",
+      "segment_stats": [
+        {
+          "dimension": "contract",
+          "segment": "Month-to-month",
+          "n": 3875,
+          "n_churned": 1655,
+          "rate_or_mean": 42.71,
+          "global_rate": 26.54,
+          "excess_rate": 16.17,
+          "excess_churners": 626.6,
+          "revenue_monthly_lost_excess": 45753.04,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.4051029106879898,
+          "effect_size_label": "fort",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "kpi_report",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "contract",
+            "segment": "Month-to-month",
+            "source": "kpi_report",
+            "source_file": "output\\telco\\kpi\\kpi_report.json"
+          }
+        }
+      ],
+      "impact_churners": 626.6,
+      "revenue_monthly_lost_excess": 45753.04,
+      "confidence": "élevée",
+      "rank": 1,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "contract",
+        "segment": "Month-to-month",
+        "source": "kpi_report",
+        "source_file": "output\\telco\\kpi\\kpi_report.json"
+      }
+    },
+    {
+      "id": "insight_online_security_no",
+      "kpi_id": "churn_rate",
+      "title": "online_security = No : churn 41.77 % (+15.2 pts)",
+      "finding": "Le segment « No » (dimension : online_security) est associé à un taux de churn de 41.77 %, contre 26.54 % sur l'ensemble du portefeuille (+15.23 points d'écart).",
+      "evidence": "n=3,498 clients dans le segment (1,461 churnés). Écart : +15.23 pts. Départs en excès : 533. Revenu mensuel perdu en excès : 41,118 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.343 (fort, Cramér's V). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "online_security",
+          "segment": "No",
+          "n": 3498,
+          "n_churned": 1461,
+          "rate_or_mean": 41.77,
+          "global_rate": 26.54,
+          "excess_rate": 15.23,
+          "excess_churners": 532.7,
+          "revenue_monthly_lost_excess": 41118.3,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.3426367998511226,
+          "effect_size_label": "fort",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "online_security",
+            "segment": "No",
+            "source": "analyst_computed",
+            "source_file": "output\\telco\\telco_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": 532.7,
+      "revenue_monthly_lost_excess": 41118.3,
+      "confidence": "élevée",
+      "rank": 2,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "online_security",
+        "segment": "No",
+        "source": "analyst_computed",
+        "source_file": "output\\telco\\telco_clean.csv"
+      }
+    },
+    {
+      "id": "insight_tech_support_no",
+      "kpi_id": "churn_rate",
+      "title": "tech_support = No : churn 41.64 % (+15.1 pts)",
+      "finding": "Le segment « No » (dimension : tech_support) est associé à un taux de churn de 41.64 %, contre 26.54 % sur l'ensemble du portefeuille (+15.10 points d'écart).",
+      "evidence": "n=3,473 clients dans le segment (1,446 churnés). Écart : +15.10 pts. Départs en excès : 524. Revenu mensuel perdu en excès : 40,151 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.337 (fort, Cramér's V). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "tech_support",
+          "segment": "No",
+          "n": 3473,
+          "n_churned": 1446,
+          "rate_or_mean": 41.64,
+          "global_rate": 26.54,
+          "excess_rate": 15.1,
+          "excess_churners": 524.4,
+          "revenue_monthly_lost_excess": 40151.29,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.33728072773519696,
+          "effect_size_label": "fort",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "tech_support",
+            "segment": "No",
+            "source": "analyst_computed",
+            "source_file": "output\\telco\\telco_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": 524.4,
+      "revenue_monthly_lost_excess": 40151.29,
+      "confidence": "élevée",
+      "rank": 3,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "tech_support",
+        "segment": "No",
+        "source": "analyst_computed",
+        "source_file": "output\\telco\\telco_clean.csv"
+      }
+    },
+    {
+      "id": "insight_internet_service_fiber_optic",
+      "kpi_id": "churn_rate",
+      "title": "internet_service = Fiber optic : churn 41.89 % (+15.3 pts)",
+      "finding": "Le segment « Fiber optic » (dimension : internet_service) est associé à un taux de churn de 41.89 %, contre 26.54 % sur l'ensemble du portefeuille (+15.35 points d'écart).",
+      "evidence": "n=3,096 clients dans le segment (1,297 churnés). Écart : +15.35 pts. Départs en excès : 475. Revenu mensuel perdu en excès : 41,881 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.308 (fort, Cramér's V). Source : kpi_report.",
+      "segment_stats": [
+        {
+          "dimension": "internet_service",
+          "segment": "Fiber optic",
+          "n": 3096,
+          "n_churned": 1297,
+          "rate_or_mean": 41.89,
+          "global_rate": 26.54,
+          "excess_rate": 15.35,
+          "excess_churners": 475.2,
+          "revenue_monthly_lost_excess": 41880.88,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.30801974494482287,
+          "effect_size_label": "fort",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "kpi_report",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "internet_service",
+            "segment": "Fiber optic",
+            "source": "kpi_report",
+            "source_file": "output\\telco\\kpi\\kpi_report.json"
+          }
+        }
+      ],
+      "impact_churners": 475.2,
+      "revenue_monthly_lost_excess": 41880.88,
+      "confidence": "élevée",
+      "rank": 4,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "internet_service",
+        "segment": "Fiber optic",
+        "source": "kpi_report",
+        "source_file": "output\\telco\\kpi\\kpi_report.json"
+      }
+    },
+    {
+      "id": "insight_tenure_bin_0_12_mois",
+      "kpi_id": "churn_rate",
+      "title": "tenure_bin = 0-12 mois : churn 48.28 % (+21.7 pts)",
+      "finding": "Le segment « 0-12 mois » (dimension : tenure_bin) est associé à un taux de churn de 48.28 %, contre 26.54 % sur l'ensemble du portefeuille (+21.74 points d'écart).",
+      "evidence": "n=2,069 clients dans le segment (999 churnés). Écart : +21.74 pts. Départs en excès : 450. Revenu mensuel perdu en excès : 29,727 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.318 (fort, Cramér's V). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "tenure_bin",
+          "segment": "0-12 mois",
+          "n": 2069,
+          "n_churned": 999,
+          "rate_or_mean": 48.28,
+          "global_rate": 26.54,
+          "excess_rate": 21.74,
+          "excess_churners": 449.8,
+          "revenue_monthly_lost_excess": 29726.6,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.3176659691620495,
+          "effect_size_label": "fort",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "tenure_bin",
+            "segment": "0-12 mois",
+            "source": "analyst_computed",
+            "source_file": "output\\telco\\telco_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": 449.8,
+      "revenue_monthly_lost_excess": 29726.6,
+      "confidence": "élevée",
+      "rank": 5,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "tenure_bin",
+        "segment": "0-12 mois",
+        "source": "analyst_computed",
+        "source_file": "output\\telco\\telco_clean.csv"
+      }
+    },
+    {
+      "id": "insight_payment_method_electronic_check",
+      "kpi_id": "churn_rate",
+      "title": "payment_method = Electronic check : churn 45.29 % (+18.8 pts)",
+      "finding": "Le segment « Electronic check » (dimension : payment_method) est associé à un taux de churn de 45.29 %, contre 26.54 % sur l'ensemble du portefeuille (+18.75 points d'écart).",
+      "evidence": "n=2,365 clients dans le segment (1,071 churnés). Écart : +18.75 pts. Départs en excès : 443. Revenu mensuel perdu en excès : 34,899 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.302 (fort, Cramér's V). Source : kpi_report.",
+      "segment_stats": [
+        {
+          "dimension": "payment_method",
+          "segment": "Electronic check",
+          "n": 2365,
+          "n_churned": 1071,
+          "rate_or_mean": 45.29,
+          "global_rate": 26.54,
+          "excess_rate": 18.75,
+          "excess_churners": 443.4,
+          "revenue_monthly_lost_excess": 34898.97,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.3019187490112848,
+          "effect_size_label": "fort",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "kpi_report",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "payment_method",
+            "segment": "Electronic check",
+            "source": "kpi_report",
+            "source_file": "output\\telco\\kpi\\kpi_report.json"
+          }
+        }
+      ],
+      "impact_churners": 443.4,
+      "revenue_monthly_lost_excess": 34898.97,
+      "confidence": "élevée",
+      "rank": 6,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "payment_method",
+        "segment": "Electronic check",
+        "source": "kpi_report",
+        "source_file": "output\\telco\\kpi\\kpi_report.json"
+      }
+    },
+    {
+      "id": "insight_online_backup_no",
+      "kpi_id": "churn_rate",
+      "title": "online_backup = No : churn 39.93 % (+13.4 pts)",
+      "finding": "Le segment « No » (dimension : online_backup) est associé à un taux de churn de 39.93 %, contre 26.54 % sur l'ensemble du portefeuille (+13.39 points d'écart).",
+      "evidence": "n=3,088 clients dans le segment (1,233 churnés). Écart : +13.39 pts. Départs en excès : 414. Revenu mensuel perdu en excès : 30,810 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.268 (moyen, Cramér's V). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "online_backup",
+          "segment": "No",
+          "n": 3088,
+          "n_churned": 1233,
+          "rate_or_mean": 39.93,
+          "global_rate": 26.54,
+          "excess_rate": 13.39,
+          "excess_churners": 413.5,
+          "revenue_monthly_lost_excess": 30809.65,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.26800518096236,
+          "effect_size_label": "moyen",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "online_backup",
+            "segment": "No",
+            "source": "analyst_computed",
+            "source_file": "output\\telco\\telco_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": 413.5,
+      "revenue_monthly_lost_excess": 30809.65,
+      "confidence": "élevée",
+      "rank": 7,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "online_backup",
+        "segment": "No",
+        "source": "analyst_computed",
+        "source_file": "output\\telco\\telco_clean.csv"
+      }
+    },
+    {
+      "id": "insight_device_protection_no",
+      "kpi_id": "churn_rate",
+      "title": "device_protection = No : churn 39.13 % (+12.6 pts)",
+      "finding": "Le segment « No » (dimension : device_protection) est associé à un taux de churn de 39.13 %, contre 26.54 % sur l'ensemble du portefeuille (+12.59 points d'écart).",
+      "evidence": "n=3,095 clients dans le segment (1,211 churnés). Écart : +12.59 pts. Départs en excès : 390. Revenu mensuel perdu en excès : 28,558 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.252 (moyen, Cramér's V). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "device_protection",
+          "segment": "No",
+          "n": 3095,
+          "n_churned": 1211,
+          "rate_or_mean": 39.13,
+          "global_rate": 26.54,
+          "excess_rate": 12.59,
+          "excess_churners": 389.7,
+          "revenue_monthly_lost_excess": 28557.59,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.2524813605956848,
+          "effect_size_label": "moyen",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "device_protection",
+            "segment": "No",
+            "source": "analyst_computed",
+            "source_file": "output\\telco\\telco_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": 389.7,
+      "revenue_monthly_lost_excess": 28557.59,
+      "confidence": "élevée",
+      "rank": 8,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "device_protection",
+        "segment": "No",
+        "source": "analyst_computed",
+        "source_file": "output\\telco\\telco_clean.csv"
+      }
+    },
+    {
+      "id": "insight_dependents_no",
+      "kpi_id": "churn_rate",
+      "title": "dependents = No : churn 32.55 % (+6.0 pts)",
+      "finding": "Le segment « No » (dimension : dependents) est associé à un taux de churn de 32.55 %, contre 26.54 % sur l'ensemble du portefeuille (+6.01 points d'écart).",
+      "evidence": "n=5,416 clients dans le segment (1,763 churnés). Écart : +6.01 pts. Départs en excès : 326. Revenu mensuel perdu en excès : 24,529 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.249 (moyen, Cramér's V). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "dependents",
+          "segment": "No",
+          "n": 5416,
+          "n_churned": 1763,
+          "rate_or_mean": 32.55,
+          "global_rate": 26.54,
+          "excess_rate": 6.01,
+          "excess_churners": 325.5,
+          "revenue_monthly_lost_excess": 24528.91,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.2485422264232831,
+          "effect_size_label": "moyen",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "dependents",
+            "segment": "No",
+            "source": "analyst_computed",
+            "source_file": "output\\telco\\telco_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": 325.5,
+      "revenue_monthly_lost_excess": 24528.91,
+      "confidence": "moyenne",
+      "rank": 9,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "dependents",
+        "segment": "No",
+        "source": "analyst_computed",
+        "source_file": "output\\telco\\telco_clean.csv"
+      }
+    },
+    {
+      "id": "insight_paperless_billing_yes",
+      "kpi_id": "churn_rate",
+      "title": "paperless_billing = Yes : churn 33.57 % (+7.0 pts)",
+      "finding": "Le segment « Yes » (dimension : paperless_billing) est associé à un taux de churn de 33.57 %, contre 26.54 % sur l'ensemble du portefeuille (+7.03 points d'écart).",
+      "evidence": "n=4,171 clients dans le segment (1,400 churnés). Écart : +7.03 pts. Départs en excès : 293. Revenu mensuel perdu en excès : 22,936 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.192 (moyen, Cramér's V). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "paperless_billing",
+          "segment": "Yes",
+          "n": 4171,
+          "n_churned": 1400,
+          "rate_or_mean": 33.57,
+          "global_rate": 26.54,
+          "excess_rate": 7.03,
+          "excess_churners": 293.2,
+          "revenue_monthly_lost_excess": 22936.19,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.19182533166646792,
+          "effect_size_label": "moyen",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "paperless_billing",
+            "segment": "Yes",
+            "source": "analyst_computed",
+            "source_file": "output\\telco\\telco_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": 293.2,
+      "revenue_monthly_lost_excess": 22936.19,
+      "confidence": "moyenne",
+      "rank": 10,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "paperless_billing",
+        "segment": "Yes",
+        "source": "analyst_computed",
+        "source_file": "output\\telco\\telco_clean.csv"
+      }
+    },
+    {
+      "id": "insight_mw_avg_tenure",
+      "kpi_id": "avg_tenure",
+      "title": "Churn associé à une ancienneté (mois) inférieure (|Δ|=0.48, p < 0,001)",
+      "finding": "Les clients churnés (n=1,869) présentent une médiane de ancienneté (mois) de 10.00, contre 38.00 pour les clients retenus (n=5,174).",
+      "evidence": "Mann-Whitney U=2515538, p < 0,001. Cliff's delta=-0.480 (fort). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "churn_label",
+          "segment": "churné vs retenu",
+          "n": 1869,
+          "n_churned": 1869,
+          "rate_or_mean": 10.0,
+          "global_rate": 38.0,
+          "excess_rate": -28.0,
+          "excess_churners": 0.0,
+          "revenue_monthly_lost_excess": 0.0,
+          "p_value_raw": 2.419635517951866e-208,
+          "p_value_adjusted": 2.419635517951866e-208,
+          "effect_size": 0.4797343510572577,
+          "effect_size_label": "fort",
+          "test_used": "mann-whitney",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "avg_tenure",
+            "metric_col": "tenure_months",
+            "source": "analyst_computed",
+            "source_file": "output\\telco\\telco_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": 0.0,
+      "revenue_monthly_lost_excess": 0.0,
+      "confidence": "élevée",
+      "rank": 11,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_tenure",
+        "metric_col": "tenure_months",
+        "source_file": "output\\telco\\telco_clean.csv"
+      }
+    },
+    {
+      "id": "insight_mw_arpu",
+      "kpi_id": "arpu",
+      "title": "Churn associé à une charges mensuelles supérieure (|Δ|=0.24, p < 0,001)",
+      "finding": "Les clients churnés (n=1,869) présentent une médiane de charges mensuelles de 79.65, contre 64.43 pour les clients retenus (n=5,174).",
+      "evidence": "Mann-Whitney U=6003126, p < 0,001. Cliff's delta=0.242 (moyen). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "churn_label",
+          "segment": "churné vs retenu",
+          "n": 1869,
+          "n_churned": 1869,
+          "rate_or_mean": 79.65,
+          "global_rate": 64.42500000000001,
+          "excess_rate": 15.224999999999994,
+          "excess_churners": 0.0,
+          "revenue_monthly_lost_excess": 0.0,
+          "p_value_raw": 3.311627651988584e-54,
+          "p_value_adjusted": 3.311627651988584e-54,
+          "effect_size": 0.24157137914125104,
+          "effect_size_label": "moyen",
+          "test_used": "mann-whitney",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "arpu",
+            "metric_col": "monthly_charges",
+            "source": "analyst_computed",
+            "source_file": "output\\telco\\telco_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": 0.0,
+      "revenue_monthly_lost_excess": 0.0,
+      "confidence": "élevée",
+      "rank": 12,
+      "warnings": [],
+      "references": {
+        "kpi_id": "arpu",
+        "metric_col": "monthly_charges",
+        "source_file": "output\\telco\\telco_clean.csv"
+      }
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "rec_monthly_to_annual",
+      "action": "Tester une offre d'engagement annuel avec remise tarifaire (ex. 10 % de réduction sur 12 mois prépayés)",
+      "target": "Clients en contrat mensuel depuis moins de 12 mois d'ancienneté",
+      "rationale": "Insight #1 : Le segment « Month-to-month » (dimension : contract) est associé à un taux de churn de 42.71 %, contre 26.54 % sur l'ensemble du portefeuille (+16.17 points d'écart). (p ajustée ≤ 0.000, excédent 627 clients). Association statistique, pas de causalité établie.",
+      "insight_ids": [
+        "insight_contract_month_to_month"
+      ],
+      "impact_churners": 626.6,
+      "revenue_monthly_lost_excess": 45753.04,
+      "priority": "haute",
+      "confidence": "élevée",
+      "test_type": "A/B test",
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "contract",
+        "segment": "Month-to-month",
+        "source": "kpi_report",
+        "source_file": "output\\telco\\kpi\\kpi_report.json",
+        "rule_id": "monthly_to_annual",
+        "rule_description": "Le contrat mensuel est fortement associé au churn. Un engagement annuel réduit le risque sans nécessiter d'action réseau."
+      }
+    },
+    {
+      "id": "rec_high_churn_any_segment",
+      "action": "Analyser les verbatims et données de satisfaction pour ce segment afin d'identifier les leviers d'action spécifiques",
+      "target": "Segment présentant un excès de churn significatif",
+      "rationale": "Insight #1 : Le segment « Month-to-month » (dimension : contract) est associé à un taux de churn de 42.71 %, contre 26.54 % sur l'ensemble du portefeuille (+16.17 points d'écart). (p ajustée ≤ 0.000, excédent 627 clients). Association statistique, pas de causalité établie.",
+      "insight_ids": [
+        "insight_contract_month_to_month"
+      ],
+      "impact_churners": 626.6,
+      "revenue_monthly_lost_excess": 45753.04,
+      "priority": "moyenne",
+      "confidence": "élevée",
+      "test_type": "enquête qualitative",
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "contract",
+        "segment": "Month-to-month",
+        "source": "kpi_report",
+        "source_file": "output\\telco\\kpi\\kpi_report.json",
+        "rule_id": "high_churn_any_segment",
+        "rule_description": "Règle générique pour tout segment présentant un écart de churn important sans règle spécifique disponible."
+      }
+    },
+    {
+      "id": "rec_no_online_security",
+      "action": "Communiquer sur les bénéfices de la sécurité en ligne et proposer un essai offert de 1 mois",
+      "target": "Clients sans option de sécurité en ligne",
+      "rationale": "Insight #2 : Le segment « No » (dimension : online_security) est associé à un taux de churn de 41.77 %, contre 26.54 % sur l'ensemble du portefeuille (+15.23 points d'écart). (p ajustée ≤ 0.000, excédent 533 clients). Association statistique, pas de causalité établie.",
+      "insight_ids": [
+        "insight_online_security_no"
+      ],
+      "impact_churners": 532.7,
+      "revenue_monthly_lost_excess": 41118.3,
+      "priority": "basse",
+      "confidence": "élevée",
+      "test_type": "A/B test",
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "online_security",
+        "segment": "No",
+        "source": "analyst_computed",
+        "source_file": "output\\telco\\telco_clean.csv",
+        "rule_id": "no_online_security",
+        "rule_description": "L'absence de sécurité en ligne est associée à un churn plus élevé."
+      }
+    },
+    {
+      "id": "rec_no_techsupport",
+      "action": "Proposer un essai gratuit de 3 mois d'assistance technique",
+      "target": "Clients sans support technique actif",
+      "rationale": "Insight #3 : Le segment « No » (dimension : tech_support) est associé à un taux de churn de 41.64 %, contre 26.54 % sur l'ensemble du portefeuille (+15.10 points d'écart). (p ajustée ≤ 0.000, excédent 524 clients). Association statistique, pas de causalité établie.",
+      "insight_ids": [
+        "insight_tech_support_no"
+      ],
+      "impact_churners": 524.4,
+      "revenue_monthly_lost_excess": 40151.29,
+      "priority": "basse",
+      "confidence": "élevée",
+      "test_type": "A/B test",
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "tech_support",
+        "segment": "No",
+        "source": "analyst_computed",
+        "source_file": "output\\telco\\telco_clean.csv",
+        "rule_id": "no_techsupport",
+        "rule_description": "L'absence de support technique est associée à un churn significativement plus élevé."
+      }
+    },
+    {
+      "id": "rec_fiber_quality",
+      "action": "Lancer une enquête qualité sur le service fibre et mettre en place un SLA de remboursement automatique en cas de coupure",
+      "target": "Clients abonnés à la fibre optique",
+      "rationale": "Insight #4 : Le segment « Fiber optic » (dimension : internet_service) est associé à un taux de churn de 41.89 %, contre 26.54 % sur l'ensemble du portefeuille (+15.35 points d'écart). (p ajustée ≤ 0.000, excédent 475 clients). Association statistique, pas de causalité établie.",
+      "insight_ids": [
+        "insight_internet_service_fiber_optic"
+      ],
+      "impact_churners": 475.2,
+      "revenue_monthly_lost_excess": 41880.88,
+      "priority": "moyenne",
+      "confidence": "élevée",
+      "test_type": "enquête + test pilote",
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "internet_service",
+        "segment": "Fiber optic",
+        "source": "kpi_report",
+        "source_file": "output\\telco\\kpi\\kpi_report.json",
+        "rule_id": "fiber_quality",
+        "rule_description": "Le churn fibre est nettement supérieur au churn DSL (≈ +23 pts), malgré un positionnement premium. Cause probable : déception qualité."
+      }
+    },
+    {
+      "id": "rec_early_onboarding",
+      "action": "Déployer un parcours d'accueil 0-12 mois : appel de bienvenue J+7, coaching usage J+30, offre de fidélisation J+90",
+      "target": "Clients en première année d'ancienneté (tenure < 12 mois)",
+      "rationale": "Insight #5 : Le segment « 0-12 mois » (dimension : tenure_bin) est associé à un taux de churn de 48.28 %, contre 26.54 % sur l'ensemble du portefeuille (+21.74 points d'écart). (p ajustée ≤ 0.000, excédent 450 clients). Association statistique, pas de causalité établie.",
+      "insight_ids": [
+        "insight_tenure_bin_0_12_mois"
+      ],
+      "impact_churners": 449.8,
+      "revenue_monthly_lost_excess": 29726.6,
+      "priority": "moyenne",
+      "confidence": "élevée",
+      "test_type": "test pilote",
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "tenure_bin",
+        "segment": "0-12 mois",
+        "source": "analyst_computed",
+        "source_file": "output\\telco\\telco_clean.csv",
+        "rule_id": "early_onboarding",
+        "rule_description": "Les nouveaux clients présentent un risque de churn disproportionné pendant leur première année."
+      }
+    },
+    {
+      "id": "rec_echeck_to_autopay",
+      "action": "Proposer une incitation au prélèvement automatique (ex. remise sur la prochaine facture ou mois de service offert)",
+      "target": "Clients payant actuellement par chèque électronique",
+      "rationale": "Insight #6 : Le segment « Electronic check » (dimension : payment_method) est associé à un taux de churn de 45.29 %, contre 26.54 % sur l'ensemble du portefeuille (+18.75 points d'écart). (p ajustée ≤ 0.000, excédent 443 clients). Association statistique, pas de causalité établie.",
+      "insight_ids": [
+        "insight_payment_method_electronic_check"
+      ],
+      "impact_churners": 443.4,
+      "revenue_monthly_lost_excess": 34898.97,
+      "priority": "haute",
+      "confidence": "élevée",
+      "test_type": "A/B test",
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "payment_method",
+        "segment": "Electronic check",
+        "source": "kpi_report",
+        "source_file": "output\\telco\\kpi\\kpi_report.json",
+        "rule_id": "echeck_to_autopay",
+        "rule_description": "Le chèque électronique est associé au plus fort taux de churn parmi tous les modes de paiement testés."
+      }
+    },
+    {
+      "id": "rec_paperless_billing",
+      "action": "Améliorer l'expérience de la facturation dématérialisée : alertes claires, accès facile aux historiques",
+      "target": "Clients en facturation dématérialisée",
+      "rationale": "Insight #10 : Le segment « Yes » (dimension : paperless_billing) est associé à un taux de churn de 33.57 %, contre 26.54 % sur l'ensemble du portefeuille (+7.03 points d'écart). (p ajustée ≤ 0.000, excédent 293 clients). Association statistique, pas de causalité établie.",
+      "insight_ids": [
+        "insight_paperless_billing_yes"
+      ],
+      "impact_churners": 293.2,
+      "revenue_monthly_lost_excess": 22936.19,
+      "priority": "basse",
+      "confidence": "moyenne",
+      "test_type": "test pilote",
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "paperless_billing",
+        "segment": "Yes",
+        "source": "analyst_computed",
+        "source_file": "output\\telco\\telco_clean.csv",
+        "rule_id": "paperless_billing",
+        "rule_description": "Les clients en facturation papier ont tendance à churner davantage."
+      }
+    },
+    {
+      "id": "rec_investigate_segment",
+      "action": "Investiguer ce segment : recueillir les verbatims clients, croiser avec les données de satisfaction et identifier les leviers d'action",
+      "target": "Segment présentant un churn anormalement élevé",
+      "rationale": "Insight #12 : Les clients churnés (n=1,869) présentent une médiane de charges mensuelles de 79.65, contre 64.43 pour les clients retenus (n=5,174). (p ajustée ≤ 0.000, excédent 0 clients). Association statistique, pas de causalité établie.",
+      "insight_ids": [
+        "insight_mw_arpu"
+      ],
+      "impact_churners": 0.0,
+      "revenue_monthly_lost_excess": 0.0,
+      "priority": "basse",
+      "confidence": "élevée",
+      "test_type": "enquête qualitative",
+      "references": {
+        "kpi_id": "arpu",
+        "metric_col": "monthly_charges",
+        "source_file": "output\\telco\\telco_clean.csv",
+        "rule_id": "investigate_segment",
+        "rule_description": "Règle de repli générique appliquée lorsqu'aucune règle spécifique ne correspond."
+      }
+    }
+  ],
+  "caveats": [
+    "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité."
+  ],
+  "null_result": false,
+  "n_tests": 47,
+  "excluded_kpis": [
+    {
+      "kpi_id": "avg_churn_score",
+      "reason": "fuite de cible (corrélé directement à churn_label)"
+    }
+  ],
+  "llm_narrative": "Analyse BI — 12 insight(s), 9 recommandation(s). Tests : 47 z-tests (correction BH).\n[#1] contract = Month-to-month : churn 42.71 % (+16.2 pts) — Le segment « Month-to-month » (dimension : contract) est associé à un taux de churn de 42.71 %, contre 26.54 % sur l'ensemble du portefeuille (+16.17 points d'écart). Impact : 627 départs en excès, 45,753 (revenu/mois en excès). Confiance : élevée.\n[#2] online_security = No : churn 41.77 % (+15.2 pts) — Le segment « No » (dimension : online_security) est associé à un taux de churn de 41.77 %, contre 26.54 % sur l'ensemble du portefeuille (+15.23 points d'écart). Impact : 533 départs en excès, 41,118 (revenu/mois en excès). Confiance : élevée.\n[#3] tech_support = No : churn 41.64 % (+15.1 pts) — Le segment « No » (dimension : tech_support) est associé à un taux de churn de 41.64 %, contre 26.54 % sur l'ensemble du portefeuille (+15.10 points d'écart). Impact : 524 départs en excès, 40,151 (revenu/mois en excès). Confiance : élevée.\n[#4] internet_service = Fiber optic : churn 41.89 % (+15.3 pts) — Le segment « Fiber optic » (dimension : internet_service) est associé à un taux de churn de 41.89 %, contre 26.54 % sur l'ensemble du portefeuille (+15.35 points d'écart). Impact : 475 départs en excès, 41,881 (revenu/mois en excès). Confiance : élevée.\n[#5] tenure_bin = 0-12 mois : churn 48.28 % (+21.7 pts) — Le segment « 0-12 mois » (dimension : tenure_bin) est associé à un taux de churn de 48.28 %, contre 26.54 % sur l'ensemble du portefeuille (+21.74 points d'écart). Impact : 450 départs en excès, 29,727 (revenu/mois en excès). Confiance : élevée.\n\nRecommandations (hypothèses à tester) :\n  [haute] Tester une offre d'engagement annuel avec remise tarifaire (ex. 10 % de réduction sur 12 mois prépayés) — Cible : Clients en contrat mensuel depuis moins de 12 mois d'ancienneté. Test suggéré : A/B test.\n  [moyenne] Analyser les verbatims et données de satisfaction pour ce segment afin d'identifier les leviers d'action spécifiques — Cible : Segment présentant un excès de churn significatif. Test suggéré : enquête qualitative.\n  [basse] Communiquer sur les bénéfices de la sécurité en ligne et proposer un essai offert de 1 mois — Cible : Clients sans option de sécurité en ligne. Test suggéré : A/B test.\n  [basse] Proposer un essai gratuit de 3 mois d'assistance technique — Cible : Clients sans support technique actif. Test suggéré : A/B test.\n  [moyenne] Lancer une enquête qualité sur le service fibre et mettre en place un SLA de remboursement automatique en cas de coupure — Cible : Clients abonnés à la fibre optique. Test suggéré : enquête + test pilote.\n  [moyenne] Déployer un parcours d'accueil 0-12 mois : appel de bienvenue J+7, coaching usage J+30, offre de fidélisation J+90 — Cible : Clients en première année d'ancienneté (tenure < 12 mois). Test suggéré : test pilote.\n  [haute] Proposer une incitation au prélèvement automatique (ex. remise sur la prochaine facture ou mois de service offert) — Cible : Clients payant actuellement par chèque électronique. Test suggéré : A/B test.\n  [basse] Améliorer l'expérience de la facturation dématérialisée : alertes claires, accès facile aux historiques — Cible : Clients en facturation dématérialisée. Test suggéré : test pilote.\n  [basse] Investiguer ce segment : recueillir les verbatims clients, croiser avec les données de satisfaction et identifier les leviers d'action — Cible : Segment présentant un churn anormalement élevé. Test suggéré : enquête qualitative.\n\nRéserves :\n  • Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+  "output_files": {},
+  "trace": [
+    {
+      "timestamp": "2026-10-18T21:19:31.288251",
+      "tool": "load",
+      "parameters": {
+        "kpis_computed": 9,
+        "table_loaded": true,
+        "excluded_cols": [
+          "churn_label",
+          "churn_reason",
+          "churn_score",
+          "churn_value",
+          "city",
+          "count",
+          "country",
+          "customer_id",
+          "lat_long",
+          "latitude",
+          "longitude",
+          "state",
+          "zip_code"
+        ]
+      },
+      "duration_ms": 27.04379998613149
+    },
+    {
+      "timestamp": "2026-10-18T21:19:31.515667",
+      "tool": "segment",
+      "parameters": {
+        "n_segments_kpi": 10,
+        "n_segments_analyst": 37,
+        "n_mw": 2
+      },
+      "duration_ms": 225.8853000239469
+    },
+    {
+      "timestamp": "2026-10-18T21:19:31.573501",
+      "tool": "test",
+      "parameters": {
+        "n_tests": 47,
+        "min_p_raw": 0.0,
+        "max_p_adj": 0.4698339411426553
+      },
+      "duration_ms": 54.10920002032071
+    },
+    {
+      "timestamp": "2026-10-18T21:19:31.576499",
+      "tool": "impact",
+      "parameters": {
+        "n_segs": 47
+      },
+      "duration_ms": 0.46029998338781297
+    },
+    {
+      "timestamp": "2026-10-18T21:19:31.578499",
+      "tool": "rank",
+      "parameters": {
+        "n_insights": 12,
+        "n_proportion": 10,
+        "n_mw": 2
+      },
+      "duration_ms": 1.2372999917715788
+    },
+    {
+      "timestamp": "2026-10-18T21:19:31.582268",
+      "tool": "recommend",
+      "parameters": {
+        "n_rec": 9
+      },
+      "duration_ms": 1.2504000042099506
+    },
+    {
+      "timestamp": "2026-10-18T21:19:31.583792",
+      "tool": "narrate",
+      "parameters": {
+        "llm": false
+      },
+      "duration_ms": 0.1336999994236976
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-18T21:19:31.287258"
+}
