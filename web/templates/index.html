@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SynapseBI — Autonomous Intelligence & Decision Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="flex h-screen overflow-hidden bg-slate-50 text-slate-800">
+
+  <!-- SIDEBAR (Calquée sur Untitled / BIFLOW reusable UI kit) -->
+  <aside class="w-64 bg-slate-950 text-slate-300 flex flex-col justify-between border-r border-slate-800 shrink-0">
+    <div>
+      <!-- Logo SynapseBI -->
+      <div class="h-16 flex items-center px-6 border-b border-slate-800">
+        <div class="w-7 h-7 bg-blue-600 rounded-md flex items-center justify-center font-bold text-white text-sm mr-3 shadow-md tracking-tighter">
+          SB
+        </div>
+        <span class="font-bold text-lg text-white tracking-wider">Synapse<span class="text-blue-500">BI</span></span>
+      </div>
+
+      <!-- Workspace Selector -->
+      <div class="px-4 py-3 border-b border-slate-800/60">
+        <div class="bg-slate-900 border border-slate-800 rounded-lg p-2.5">
+          <p class="text-[11px] text-slate-400 font-medium">Enterprise Workspace</p>
+          <div class="mt-1">
+            <select id="dataset-selector" onchange="changeActiveDataset(this.value)" class="w-full bg-slate-950 border border-slate-700 text-xs text-white rounded px-2 py-1 focus:outline-none focus:border-blue-500">
+              <option value="telco">telco.csv (Demo)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="p-4 space-y-6 text-xs">
+        <div>
+          <p class="px-2 text-[10px] font-semibold uppercase tracking-wider text-slate-500 mb-2">Workspace</p>
+          <div class="space-y-1">
+            <button id="nav-view-welcome" onclick="showView('view-welcome')" class="nav-item w-full flex items-center px-3 py-2 rounded-lg text-left bg-blue-600 text-white font-medium transition">
+              <span>🏠 Welcome</span>
+            </button>
+            <button id="nav-view-upload" onclick="showView('view-upload')" class="nav-item w-full flex items-center px-3 py-2 rounded-lg text-left text-slate-400 hover:bg-slate-900 hover:text-slate-200 transition">
+              <span>📁 Dataset Upload</span>
+            </button>
+            <button id="nav-view-execution" onclick="showView('view-execution')" class="nav-item w-full flex items-center px-3 py-2 rounded-lg text-left text-slate-400 hover:bg-slate-900 hover:text-slate-200 transition">
+              <span>⚡ Pipeline Execution</span>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <p class="px-2 text-[10px] font-semibold uppercase tracking-wider text-slate-500 mb-2">Intelligence</p>
+          <div class="space-y-1">
+            <button id="nav-view-dashboard" onclick="showView('view-dashboard')" class="nav-item w-full flex items-center px-3 py-2 rounded-lg text-left text-slate-400 hover:bg-slate-900 hover:text-slate-200 transition">
+              <span>📊 Executive Dashboard</span>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <p class="px-2 text-[10px] font-semibold uppercase tracking-wider text-slate-500 mb-2">Trust & Control</p>
+          <div class="space-y-1">
+            <button id="nav-view-governance" onclick="showView('view-governance')" class="nav-item w-full flex items-center px-3 py-2 rounded-lg text-left text-slate-400 hover:bg-slate-900 hover:text-slate-200 transition">
+              <span>🛡️ Data Governance</span>
+            </button>
+            <button id="nav-view-xai" onclick="showView('view-xai')" class="nav-item w-full flex items-center px-3 py-2 rounded-lg text-left text-slate-400 hover:bg-slate-900 hover:text-slate-200 transition">
+              <span>🔍 Audit and XAI</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- User Profile Footer -->
+    <div class="p-4 border-t border-slate-800">
+      <div class="bg-slate-900 border border-slate-800 rounded-lg p-3 text-xs mb-3">
+        <span class="text-emerald-400 font-semibold flex items-center">✓ Explainable by design</span>
+        <p class="text-[10px] text-slate-400 mt-0.5">Every metric has verified lineage.</p>
+      </div>
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center font-bold text-xs text-white">
+          AM
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-white">Alex Morgan</p>
+          <p class="text-[10px] text-slate-500">BI Administrator</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEWPORT -->
+  <main class="flex-1 flex flex-col overflow-y-auto">
+
+    <!-- Top Header -->
+    <header class="h-14 bg-white border-b border-slate-200 flex items-center justify-between px-8 shrink-0">
+      <div class="text-xs text-slate-500">
+        SynapseBI — Autonomous Multi-Agent Decision Engine
+      </div>
+      <div class="flex items-center space-x-3 text-xs">
+        <span class="px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 font-medium border border-blue-200">
+          • Active Run: 100% Certified
+        </span>
+        <span class="text-slate-400">Oct 2026 · Multi-Format</span>
+      </div>
+    </header>
+
+    <!-- CONTENT CONTAINER -->
+    <div class="p-8 max-w-7xl mx-auto w-full space-y-6">
+
+      <!-- 1. VIEW: WELCOME (Figma: Welcome.png) -->
+      <section id="view-welcome" class="view-section space-y-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h1 class="text-2xl font-bold text-slate-900">Intelligence you can stand behind.</h1>
+            <p class="text-sm text-slate-500 mt-1">Welcome to SynapseBI. Turn enterprise datasets into explainable, decision-ready intelligence.</p>
+          </div>
+          <button onclick="showView('view-execution')" class="bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs px-4 py-2.5 rounded-lg shadow-sm transition">
+            ▶ Lancer une nouvelle analyse
+          </button>
+        </div>
+
+        <!-- Hero Dark Banner -->
+        <div class="bg-slate-900 rounded-xl p-8 text-white grid grid-cols-1 lg:grid-cols-3 gap-8 shadow-sm">
+          <div class="lg:col-span-2 space-y-4">
+            <span class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">
+              SYNAPSEBI MULTI-AGENT ENGINE
+            </span>
+            <h2 class="text-3xl font-extrabold tracking-tight">From raw data to trusted decisions.</h2>
+            <p class="text-sm text-slate-400 max-w-xl">
+              Un pipeline complet supervisé par des agents spécialisés (Profiler, ETL, KPI, Analyst, Dashboard, XAI) orchestrés par LangGraph.
+            </p>
+            <div class="flex items-center space-x-3 pt-2">
+              <button onclick="showView('view-upload')" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-xs font-semibold transition">
+                Télécharger un dataset
+              </button>
+              <button onclick="showView('view-dashboard')" class="bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-lg text-xs font-semibold text-slate-200 transition">
+                Explorer le Dashboard
+              </button>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 gap-3">
+            <div class="bg-slate-800/80 p-4 rounded-lg border border-slate-700/60">
+              <p class="text-xs text-slate-400">Taux de Churn</p>
+              <p id="welcome-stat-churn" class="text-2xl font-bold text-white mt-1">26.54%</p>
+            </div>
+            <div class="bg-slate-800/80 p-4 rounded-lg border border-slate-700/60">
+              <p class="text-xs text-slate-400">Revenu Perdu / Mois</p>
+              <p id="welcome-stat-loss" class="text-2xl font-bold text-white mt-1">$139.1k</p>
+            </div>
+            <div class="bg-slate-800/80 p-4 rounded-lg border border-slate-700/60">
+              <p class="text-xs text-slate-400">Fiabilité Modèle XAI (AUC)</p>
+              <p id="welcome-stat-auc" class="text-2xl font-bold text-emerald-400 mt-1">0.841</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Capability Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm">Customer Intelligence</h3>
+            <p class="text-xs text-slate-500">Identification des segments à risque et calcul des probabilités de départ pour rétention ciblée.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm">Revenue Intelligence</h3>
+            <p class="text-xs text-slate-500">Suivi des métriques financières certifiées : ARPU, CLTV, et impact économique par type de contrat.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm">Trust at every step</h3>
+            <p class="text-xs text-slate-500">Schéma en étoile certifié (Kimball), protection RGPD/PII et explicabilité mathématique SHAP sans boîte noire.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. VIEW: PIPELINE EXECUTION (Figma: Pipeline Execution.png) -->
+      <section id="view-execution" class="view-section hidden space-y-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h1 class="text-2xl font-bold text-slate-900">Pipeline execution complete</h1>
+            <p class="text-sm text-slate-500 mt-1">Orchestration déterministe des 6 agents LangGraph avec observabilité intégrale.</p>
+          </div>
+          <button id="btn-run-pipeline" onclick="triggerPipelineRun()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs px-4 py-2.5 rounded-lg shadow-sm transition">
+            ▶ Relancer le Pipeline Complet
+          </button>
+        </div>
+
+        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold">✓</div>
+            <div>
+              <p class="text-xs font-bold text-emerald-900">Toutes les étapes validées avec succès</p>
+              <p class="text-[11px] text-emerald-700">Durée d'exécution globale : <span id="exec-total-duration">62.47s</span></p>
+            </div>
+          </div>
+          <span id="exec-status-badge" class="px-3 py-1 bg-emerald-200 text-emerald-900 rounded-full font-bold text-xs uppercase">SUCCESS</span>
+        </div>
+
+        <div class="space-y-3" id="pipeline-timeline-container">
+          <!-- Timeline injectée dynamiquement -->
+        </div>
+      </section>
+
+      <!-- 3. VIEW: EXECUTIVE DASHBOARD (Figma: Executive Dashboard.png) -->
+      <section id="view-dashboard" class="view-section hidden space-y-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h1 class="text-2xl font-bold text-slate-900">Executive dashboard</h1>
+            <p class="text-sm text-slate-500 mt-1">Vision unifiée de la santé client, des indicateurs financiers et des churners.</p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">
+            • Modèle en étoile validé (7/7 contrôles)
+          </span>
+        </div>
+
+        <!-- KPIs Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <p class="text-xs text-slate-500 font-medium">Nombre de Clients</p>
+            <p id="dash-customer-count" class="text-2xl font-bold text-slate-900 mt-1">7,043</p>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <p class="text-xs text-slate-500 font-medium">Taux de Churn</p>
+            <p id="dash-churn-rate" class="text-2xl font-bold text-blue-600 mt-1">26.54%</p>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <p class="text-xs text-slate-500 font-medium">ARPU Mensuel</p>
+            <p id="dash-arpu" class="text-2xl font-bold text-slate-900 mt-1">$64.76</p>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <p class="text-xs text-slate-500 font-medium">Revenu Cumulé</p>
+            <p id="dash-revenue" class="text-2xl font-bold text-slate-900 mt-1">$16.1m</p>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">Tendance du Churn</h4>
+            <div class="h-64">
+              <canvas id="chart-churn-trend"></canvas>
+            </div>
+          </div>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">Churn par Type de Contrat</h4>
+            <div class="h-64">
+              <canvas id="chart-churn-plan"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Insights -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-blue-50 border border-blue-200 p-5 rounded-xl space-y-2">
+            <span class="text-[10px] font-bold text-blue-800 uppercase tracking-wider">EVIDENCE-BACKED INSIGHT</span>
+            <h4 id="dash-insight-title" class="text-sm font-bold text-slate-900">Contrats Month-to-month à haut risque</h4>
+            <p id="dash-insight-body" class="text-xs text-slate-700">42.7% de résiliation observée sur les contrats mensuels sans engagement.</p>
+          </div>
+          <div class="bg-emerald-50 border border-emerald-200 p-5 rounded-xl space-y-2">
+            <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">RECOMMENDED ACTION</span>
+            <h4 class="text-sm font-bold text-slate-900">Offre d'engagement annuel prioritaire</h4>
+            <p id="dash-rec-body" class="text-xs text-slate-700">Tester une remise de 10% contre un engagement annuel pour sécuriser la rétention.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. VIEW: AUDIT AND XAI (Figma: Audit and XAI.png) -->
+      <section id="view-xai" class="view-section hidden space-y-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h1 class="text-2xl font-bold text-slate-900">Audit & Explainable Intelligence (XAI)</h1>
+            <p class="text-sm text-slate-500 mt-1">Audit scientifique du modèle prédictif et explicabilité par valeurs de Shapley (SHAP).</p>
+          </div>
+          <span class="text-xs font-bold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-200">
+            • Anti-Leakage Certifié
+          </span>
+        </div>
+
+        <!-- Metrics -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <p class="text-xs text-slate-500 font-medium">Accuracy</p>
+            <p id="xai-accuracy" class="text-2xl font-bold text-slate-900 mt-1">78.8%</p>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <p class="text-xs text-slate-500 font-medium">Recall (Détection Churn)</p>
+            <p id="xai-recall" class="text-2xl font-bold text-blue-600 mt-1">67.1%</p>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <p class="text-xs text-slate-500 font-medium">F1-Score</p>
+            <p id="xai-f1" class="text-2xl font-bold text-slate-900 mt-1">62.7%</p>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <p class="text-xs text-slate-500 font-medium">AUC-ROC</p>
+            <p id="xai-auc" class="text-2xl font-bold text-emerald-600 mt-1">0.841</p>
+          </div>
+        </div>
+
+        <!-- SHAP Global Chart -->
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+          <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">Facteurs d'Influence Globaux (SHAP Values)</h4>
+          <div class="h-72">
+            <canvas id="chart-shap-global"></canvas>
+          </div>
+        </div>
+
+        <!-- Audit Findings -->
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
+          <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Registre des Constats d'Audit Formels</h4>
+          <div class="space-y-2" id="xai-findings-container">
+            <!-- Injecté par JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. VIEW: DATA GOVERNANCE (Figma: Data Governance.png) -->
+      <section id="view-governance" class="view-section hidden space-y-6">
+        <div>
+          <h1 class="text-2xl font-bold text-slate-900">Data Governance & Remediation</h1>
+          <p class="text-sm text-slate-500 mt-1">Traçabilité des règles de nettoyage déterministes appliquées par l'agent ETL.</p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden p-4">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b border-slate-200 text-xs font-bold text-slate-500 uppercase">
+                <th class="py-2">Identifiant</th>
+                <th class="py-2">Règle de Transformation</th>
+                <th class="py-2">Colonne Cible</th>
+                <th class="py-2">Volume Impacté</th>
+                <th class="py-2">Résultat</th>
+              </tr>
+            </thead>
+            <tbody id="governance-rules-container">
+              <!-- Injecté par JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 6. VIEW: DATASET UPLOAD (Figma: Dataset Upload.png) -->
+      <section id="view-upload" class="view-section hidden space-y-6">
+        <div>
+          <h1 class="text-2xl font-bold text-slate-900">Dataset Upload</h1>
+          <p class="text-sm text-slate-500 mt-1">Importez un nouveau fichier CSV pour alimenter le pipeline multi-agents SynapseBI.</p>
+        </div>
+
+        <div class="bg-white border-2 border-dashed border-slate-300 rounded-xl p-12 text-center space-y-4">
+          <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto text-xl">
+            📁
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-slate-800">Glissez-déposez un fichier tabulaire ici</p>
+            <p class="text-xs text-slate-500">Format .csv attendu</p>
+          </div>
+          <input type="file" id="upload-csv-input" onchange="handleFileUpload(event)" class="hidden" accept=".csv" />
+          <button onclick="document.getElementById('upload-csv-input').click()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition">
+            Parcourir les fichiers
+          </button>
+          <div id="upload-status-msg" class="text-xs font-medium text-slate-600 pt-2"></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
