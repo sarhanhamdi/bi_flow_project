@@ -266,8 +266,8 @@ function setKPICard(cardIndex, k) {
     const inTitle = document.getElementById('dash-insight-title');
     const inBody = document.getElementById('dash-insight-body');
     if (analystData.insights && analystData.insights.length > 0) {
-      if (inTitle) inTitle.innerText = analystData.insights[0].title;
-      if (inBody) inBody.innerText = analystData.insights[0].observation;
+      if (inTitle) inTitle.innerText = analystData.insights[0].title || 'Insight Identifié';
+      if (inBody) inBody.innerText = analystData.insights[0].finding || analystData.insights[0].observation || analystData.insights[0].evidence || '';
     } else {
       if (inTitle) inTitle.innerText = 'Analyse effectuée';
       if (inBody) inBody.innerText = analystData.llm_narrative || 'Aucune anomalie critique détectée.';
@@ -275,8 +275,8 @@ function setKPICard(cardIndex, k) {
     const recTitle = document.getElementById('dash-rec-title');
     const recBody = document.getElementById('dash-rec-body');
     if (analystData.recommendations && analystData.recommendations.length > 0) {
-      if (recTitle) recTitle.innerText = analystData.recommendations[0].title || 'Recommandation Prioritaire';
-      if (recBody) recBody.innerText = analystData.recommendations[0].action;
+      if (recTitle) recTitle.innerText = analystData.recommendations[0].title || analystData.recommendations[0].target || 'Recommandation Prioritaire';
+      if (recBody) recBody.innerText = analystData.recommendations[0].action || analystData.recommendations[0].rationale || '';
     } else {
       if (recTitle) recTitle.innerText = 'Recommandation';
       if (recBody) recBody.innerText = 'Maintenir la surveillance des indicateurs de référence.';
