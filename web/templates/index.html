@@ -217,33 +217,33 @@
         <!-- KPIs Cards -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-            <p class="text-xs text-slate-500 font-medium">Nombre de Clients</p>
-            <p id="dash-customer-count" class="text-2xl font-bold text-slate-900 mt-1">7,043</p>
+            <p id="dash-label-1" class="text-xs text-slate-500 font-medium">Métrique 1</p>
+            <p id="dash-customer-count" class="text-2xl font-bold text-slate-900 mt-1">--</p>
           </div>
           <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-            <p class="text-xs text-slate-500 font-medium">Taux de Churn</p>
-            <p id="dash-churn-rate" class="text-2xl font-bold text-blue-600 mt-1">26.54%</p>
+            <p id="dash-label-2" class="text-xs text-slate-500 font-medium">Métrique 2</p>
+            <p id="dash-churn-rate" class="text-2xl font-bold text-blue-600 mt-1">--</p>
           </div>
           <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-            <p class="text-xs text-slate-500 font-medium">ARPU Mensuel</p>
-            <p id="dash-arpu" class="text-2xl font-bold text-slate-900 mt-1">$64.76</p>
+            <p id="dash-label-3" class="text-xs text-slate-500 font-medium">Métrique 3</p>
+            <p id="dash-arpu" class="text-2xl font-bold text-slate-900 mt-1">--</p>
           </div>
           <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-            <p class="text-xs text-slate-500 font-medium">Revenu Cumulé</p>
-            <p id="dash-revenue" class="text-2xl font-bold text-slate-900 mt-1">$16.1m</p>
+            <p id="dash-label-4" class="text-xs text-slate-500 font-medium">Métrique 4</p>
+            <p id="dash-revenue" class="text-2xl font-bold text-slate-900 mt-1">--</p>
           </div>
         </div>
 
         <!-- Charts -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">Tendance du Churn</h4>
+            <h4 id="chart-title-1" class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">Tendance / Répartition</h4>
             <div class="h-64">
               <canvas id="chart-churn-trend"></canvas>
             </div>
           </div>
           <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">Churn par Type de Contrat</h4>
+            <h4 id="chart-title-2" class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">Ventilation par Segment</h4>
             <div class="h-64">
               <canvas id="chart-churn-plan"></canvas>
             </div>
@@ -259,7 +259,7 @@
           </div>
           <div class="bg-emerald-50 border border-emerald-200 p-5 rounded-xl space-y-2">
             <span class="text-[10px] font-bold text-emerald-800 uppercase tracking-wider">RECOMMENDED ACTION</span>
-            <h4 class="text-sm font-bold text-slate-900">Offre d'engagement annuel prioritaire</h4>
+            <h4 id="dash-rec-title" class="text-sm font-bold text-slate-900">Offre d'engagement annuel prioritaire</h4>
             <p id="dash-rec-body" class="text-xs text-slate-700">Tester une remise de 10% contre un engagement annuel pour sécuriser la rétention.</p>
           </div>
         </div>

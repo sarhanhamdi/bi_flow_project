@@ -17,6 +17,13 @@ async function initDatasetSelector() {
           </option>
         `).join('')}
       `;
+      if (!activeDataset && status.output_datasets && status.output_datasets.length > 0) {
+        const defaultOne = status.available_files.find(f => status.output_datasets.includes(f.id));
+        if (defaultOne) {
+          selector.value = defaultOne.id;
+          changeActiveDataset(defaultOne.id);
+        }
+      }
     } else {
       selector.innerHTML = `<option value="">-- Aucun dataset trouvé --</option>`;
     }
@@ -142,8 +149,10 @@ function resetDashboardView() {
   document.getElementById('dash-revenue').innerText = '--';
   document.getElementById('dash-insight-title').innerText = 'En attente d\'analyse';
   document.getElementById('dash-insight-body').innerText = 'Sélectionnez un dataset et lancez le pipeline pour générer les insights.';
-  document.getElementById('dash-rec-title').innerText = 'En attente de recommandations';
-  document.getElementById('dash-rec-body').innerText = 'Les actions d\'optimisation prioritaires s\'afficheront ici après exécution.';
+  const recTitleEl = document.getElementById('dash-rec-title');
+  if (recTitleEl) recTitleEl.innerText = 'En attente de recommandations';
+  const recBodyEl = document.getElementById('dash-rec-body');
+  if (recBodyEl) recBodyEl.innerText = 'Les actions d\'optimisation prioritaires s\'afficheront ici après exécution.';
 
   if (charts['churnTrend']) { charts['churnTrend'].destroy(); charts['churnTrend'] = null; }
   if (charts['churnPlan']) { charts['churnPlan'].destroy(); charts['churnPlan'] = null; }
@@ -214,55 +223,63 @@ async function loadDashboardData() {
   const dashReport = await fetchJSON(`/api/reports/${activeDataset}/dashboard`);
 
   if (kpiData && kpiData.kpis && kpiData.kpis.length > 0) {
-    const kpis = kpiData.kpis;
-    // Carte 1
-    const kpi1 = kpis.find(k => k.id === 'customer_count' || k.id === 'ticket_count') || kpis[0];
-    if (kpi1) {
-      document.getElementById('dash-label-1').innerText = kpi1.name;
-      document.getElementById('dash-customer-count').innerText = Number(kpi1.value).toLocaleString();
-    }
-    // Carte 2
-    const kpi2 = kpis.find(k => k.id === 'churn_rate' || k.id === 'cdr_incident_rate' || k.id === 'ticket_resolution_rate' || k.id === 'dispute_rate') || kpis[1] || kpis[0];
-    if (kpi2) {
-      document.getElementById('dash-label-2').innerText = kpi2.name;
-      document.getElementById('dash-churn-rate').innerText = kpi2.unit === '%' ? `${kpi2.value}%` : `${kpi2.value}`;
-    }
-    // Carte 3
-    const kpi3 = kpis.find(k => k.id === 'arpu' || k.id === 'avg_throughput' || k.id === 'avg_mos_voice' || k.id === 'avg_csat' || k.id === 'avg_latency') || kpis[2] || kpis[0];
-    if (kpi3) {
-      document.getElementById('dash-label-3').innerText = kpi3.name;
-      document.getElementById('dash-arpu').innerText = `${kpi3.value} ${kpi3.unit || ''}`.trim();
-    }
-    // Carte 4
-    const kpi4 = kpis.find(k => k.id === 'monthly_revenue_lost' || k.id === 'total_revenue' || k.id === 'network_availability' || k.id === 'timely_response_rate') || kpis[3] || kpis[0];
-    if (kpi4) {
-      document.getElementById('dash-label-4').innerText = kpi4.name;
-      if (kpi4.unit === '%') {
-        document.getElementById('dash-revenue').innerText = `${kpi4.value}%`;
-      } else if (Number(kpi4.value) >= 1000000) {
-        document.getElementById('dash-revenue').innerText = `$${(Number(kpi4.value) / 1000000).toFixed(1)}m`;
-      } else {
-        document.getElementById('dash-revenue').innerText = `${kpi4.value} ${kpi4.unit || ''}`.trim();
+    // Ne garder que les KPIs effectivement calculés (valeur non null)
+    const validKPIs = kpiData.kpis.filter(k => k.value !== null && k.status !== 'not_computable');
+
+    if (validKPIs.length >= 4) {
+      setKPICard(1, validKPIs[0]);
+      setKPICard(2, validKPIs[1]);
+      setKPICard(3, validKPIs[2]);
+      setKPICard(4, validKPIs[3]);
+    } else if (validKPIs.length > 0) {
+      validKPIs.forEach((k, idx) => setKPICard(idx + 1, k));
+      for (let i = validKPIs.length + 1; i <= 4; i++) {
+        document.getElementById(`dash-label-${i}`).innerText = '--';
+        document.getElementById(i === 1 ? 'dash-customer-count' : (i === 2 ? 'dash-churn-rate' : (i === 3 ? 'dash-arpu' : 'dash-revenue'))).innerText = '--';
       }
+    } else {
+      resetDashboardView();
     }
   } else {
     resetDashboardView();
   }
 
+function setKPICard(cardIndex, k) {
+  const lbl = document.getElementById(`dash-label-${cardIndex}`);
+  const valId = cardIndex === 1 ? 'dash-customer-count' : (cardIndex === 2 ? 'dash-churn-rate' : (cardIndex === 3 ? 'dash-arpu' : 'dash-revenue'));
+  const valEl = document.getElementById(valId);
+  if (!lbl || !valEl) return;
+
+  lbl.innerText = k.name;
+  if (k.unit === '%') {
+    valEl.innerText = `${k.value}%`;
+  } else if (k.unit === 'devise' && Number(k.value) >= 1000000) {
+    valEl.innerText = `$${(Number(k.value) / 1000000).toFixed(1)}m`;
+  } else if (typeof k.value === 'number') {
+    valEl.innerText = `${k.value.toLocaleString()} ${k.unit || ''}`.trim();
+  } else {
+    valEl.innerText = `${k.value} ${k.unit || ''}`.trim();
+  }
+}
+
   if (analystData) {
+    const inTitle = document.getElementById('dash-insight-title');
+    const inBody = document.getElementById('dash-insight-body');
     if (analystData.insights && analystData.insights.length > 0) {
-      document.getElementById('dash-insight-title').innerText = analystData.insights[0].title;
-      document.getElementById('dash-insight-body').innerText = analystData.insights[0].observation;
+      if (inTitle) inTitle.innerText = analystData.insights[0].title;
+      if (inBody) inBody.innerText = analystData.insights[0].observation;
     } else {
-      document.getElementById('dash-insight-title').innerText = 'Analyse effectuée';
-      document.getElementById('dash-insight-body').innerText = analystData.llm_narrative || 'Aucune anomalie critique détectée.';
+      if (inTitle) inTitle.innerText = 'Analyse effectuée';
+      if (inBody) inBody.innerText = analystData.llm_narrative || 'Aucune anomalie critique détectée.';
     }
+    const recTitle = document.getElementById('dash-rec-title');
+    const recBody = document.getElementById('dash-rec-body');
     if (analystData.recommendations && analystData.recommendations.length > 0) {
-      document.getElementById('dash-rec-title').innerText = analystData.recommendations[0].title || 'Recommandation Prioritaire';
-      document.getElementById('dash-rec-body').innerText = analystData.recommendations[0].action;
+      if (recTitle) recTitle.innerText = analystData.recommendations[0].title || 'Recommandation Prioritaire';
+      if (recBody) recBody.innerText = analystData.recommendations[0].action;
     } else {
-      document.getElementById('dash-rec-title').innerText = 'Recommandation';
-      document.getElementById('dash-rec-body').innerText = 'Maintenir la surveillance des indicateurs de référence.';
+      if (recTitle) recTitle.innerText = 'Recommandation';
+      if (recBody) recBody.innerText = 'Maintenir la surveillance des indicateurs de référence.';
     }
   }
 
@@ -273,24 +290,28 @@ function initDashboardCharts(dashReport, kpiData) {
   let chart1Title = 'Tendance / Répartition';
   let chart1Labels = ['Période 1', 'Période 2', 'Période 3', 'Période 4'];
   let chart1Values = [0, 0, 0, 0];
+  let chart1Type = 'bar';
 
   let chart2Title = 'Ventilation par Segment';
   let chart2Labels = ['Segment A', 'Segment B', 'Segment C'];
   let chart2Values = [0, 0, 0];
+  let chart2Type = 'bar';
 
   if (dashReport && dashReport.visuals) {
-    const barVisuals = dashReport.visuals.filter(v => v.type === 'bar' && Array.isArray(v.data) && v.data.length > 0);
-    if (barVisuals.length > 0) {
-      const v1 = barVisuals[0];
-      chart2Title = v1.title || 'Ventilation observée';
-      chart2Labels = v1.data.map(d => d.segment);
-      chart2Values = v1.data.map(d => d.value !== undefined ? d.value : d.rows);
+    const validVisuals = dashReport.visuals.filter(v => (v.type === 'bar' || v.type === 'line') && Array.isArray(v.data) && v.data.length > 0);
+    if (validVisuals.length > 0) {
+      const v1 = validVisuals[0];
+      chart1Title = v1.title || 'Répartition principale';
+      chart1Labels = v1.data.map(d => d.segment || d.period || d.label || String(d.x || ''));
+      chart1Values = v1.data.map(d => d.value !== undefined ? d.value : (d.rows !== undefined ? d.rows : (d.y || 0)));
+      chart1Type = v1.type === 'line' ? 'line' : 'bar';
 
-      if (barVisuals.length > 1) {
-        const v2 = barVisuals[1];
-        chart1Title = v2.title || 'Répartition secondaire';
-        chart1Labels = v2.data.map(d => d.segment);
-        chart1Values = v2.data.map(d => d.value !== undefined ? d.value : d.rows);
+      if (validVisuals.length > 1) {
+        const v2 = validVisuals[1];
+        chart2Title = v2.title || 'Ventilation secondaire';
+        chart2Labels = v2.data.map(d => d.segment || d.period || d.label || String(d.x || ''));
+        chart2Values = v2.data.map(d => d.value !== undefined ? d.value : (d.rows !== undefined ? d.rows : (d.y || 0)));
+        chart2Type = v2.type === 'line' ? 'line' : 'bar';
       }
     }
   } else if (kpiData && kpiData.kpis) {
@@ -309,41 +330,56 @@ function initDashboardCharts(dashReport, kpiData) {
   const title2El = document.getElementById('chart-title-2');
   if (title2El) title2El.innerText = chart2Title;
 
-  const ctxPlan = document.getElementById('chart-churn-plan');
-  if (ctxPlan) {
-    if (charts['churnPlan']) charts['churnPlan'].destroy();
-    charts['churnPlan'] = new Chart(ctxPlan, {
-      type: 'bar',
-      data: {
-        labels: chart2Labels,
-        datasets: [{
-          label: 'Valeur observée',
-          data: chart2Values,
-          backgroundColor: '#2563eb',
-          borderRadius: 4
-        }]
-      },
-      options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false }
-    });
-  }
-
   const ctxTrend = document.getElementById('chart-churn-trend');
   if (ctxTrend) {
-    if (charts['churnTrend']) charts['churnTrend'].destroy();
+    if (charts['churnTrend']) {
+      charts['churnTrend'].destroy();
+      charts['churnTrend'] = null;
+    }
     charts['churnTrend'] = new Chart(ctxTrend, {
-      type: 'line',
+      type: chart1Type,
       data: {
         labels: chart1Labels,
         datasets: [{
           label: 'Valeur observée',
           data: chart1Values,
+          backgroundColor: '#3b82f6',
           borderColor: '#2563eb',
-          backgroundColor: 'rgba(37, 99, 235, 0.05)',
-          tension: 0.3,
-          fill: true
+          borderRadius: 4
         }]
       },
-      options: { responsive: true, maintainAspectRatio: false }
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: { beginAtZero: false }
+        }
+      }
+    });
+  }
+
+  const ctxPlan = document.getElementById('chart-churn-plan');
+  if (ctxPlan) {
+    if (charts['churnPlan']) {
+      charts['churnPlan'].destroy();
+      charts['churnPlan'] = null;
+    }
+    charts['churnPlan'] = new Chart(ctxPlan, {
+      type: chart2Type,
+      data: {
+        labels: chart2Labels,
+        datasets: [{
+          label: 'Valeur observée',
+          data: chart2Values,
+          backgroundColor: '#0ea5e9',
+          borderRadius: 4
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false
+      }
     });
   }
 }
