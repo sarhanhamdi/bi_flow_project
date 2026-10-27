@@ -235,7 +235,12 @@ def _load_node(state: AnalystState) -> AnalystState:
     # Extraire les valeurs globales du KPIReport
     kpi_by_id = {k.id: k for k in kpi_obj.kpis}
 
-    rate_kpi = kpi_by_id.get("churn_rate")
+    rate_kpi = (
+        kpi_by_id.get("churn_rate")
+        or kpi_by_id.get("cdr_incident_rate")
+        or kpi_by_id.get("ticket_resolution_rate")
+        or kpi_by_id.get("dispute_rate")
+    )
     rate_global = rate_kpi.value if (rate_kpi and rate_kpi.value is not None) else 0.0
     rows_global = rate_kpi.rows_used if rate_kpi else 0
     n_churned_global = reconstruct_counts(rate_global, rows_global)
@@ -267,9 +272,20 @@ def _load_node(state: AnalystState) -> AnalystState:
     # Colonnes utiles dans la table
     churn_col = monthly_col = tenure_col = None
     if df is not None:
-        churn_col = _find_col(df, ["churn_value", "churn_flag", "churn_label", "churn", "is_churn"])
-        monthly_col = _find_col(df, ["monthly_charges", "monthly_charge", "monthly_fee"])
-        tenure_col = _find_col(df, ["tenure_months", "tenure", "months_active"])
+        churn_col = _find_col(df, [
+            "churn_value", "churn_flag", "churn_label", "churn", "is_churn",
+            "cdr_flag", "dropped_connection", "incident_flag",
+            "consumer_disputed", "consumer_disputed?", "disputed",
+            "ticket_status", "status"
+        ])
+        monthly_col = _find_col(df, [
+            "monthly_charges", "monthly_charge", "monthly_fee", "monthly_revenue", "total_day_charge", "day_charge",
+            "throughput_mbps", "download_speed_mbps", "resolution_time_hours"
+        ])
+        tenure_col = _find_col(df, [
+            "tenure_months", "tenure", "months_active", "account_length",
+            "latency_ms", "signal_strength_dbm", "customer_age"
+        ])
 
     report.trace.append(_trace(
         "load", started,
@@ -468,10 +484,12 @@ def _test_node(state: AnalystState) -> AnalystState:
         k2 = max(n_churned_global - k1, 0)
         _, p = proportion_ztest(n1, k1, n2, k2)
         obs = np.array([[k1, n1 - k1], [k2, n2 - k2]], dtype=float)
+        v = 0.0
         if obs.min() >= 0 and obs.sum() > 0:
-            _, _, v = chi2_independence(obs)
-        else:
-            v = 0.0
+            try:
+                _, _, v = chi2_independence(obs)
+            except Exception:
+                v = 0.0
         seg["p_value_raw"] = p
         seg["effect_size"] = v
         seg["test_used"] = "proportion_z"

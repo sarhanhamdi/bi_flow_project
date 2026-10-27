@@ -32,6 +32,7 @@ from agents.tools.schema import (
     infer_column_type,
 )
 from agents.tools.semantic import suggest_semantic_role
+from agents.tools.semantic_mapper import detect_telecom_usecase
 from agents.tools.stats import profile_column
 
 
@@ -348,6 +349,12 @@ def _profile_node(state: ProfilerState) -> ProfilerState:
         report.status = "warning"
     else:
         report.status = "success"
+
+    if frames:
+        first_frame = next(iter(frames.values()))
+        usecase_info = detect_telecom_usecase(first_frame)
+        report.domain = usecase_info["domain"]
+        report.semantic_map = usecase_info
 
     report.trace = trace
     return {"report": report, "frames": frames}

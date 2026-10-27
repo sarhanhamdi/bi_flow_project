@@ -210,6 +210,8 @@ class ProfilingReport(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     business_goal: str
+    domain: Literal["customer_churn", "network_performance", "customer_support"] = "customer_churn"
+    semantic_map: dict[str, Any] = Field(default_factory=dict)
     tables: list[TableProfile] = Field(default_factory=list)
     relationships: list[RelationshipProfile] = Field(default_factory=list)
     issues: list[Issue] = Field(default_factory=list)

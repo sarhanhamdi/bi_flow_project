@@ -233,7 +233,8 @@ def _summary_node(state: KPIState) -> KPIState:
     has_value = any(k.status in {"computed", "suspect"} for k in report.kpis)
     suspect = any(k.status == "suspect" for k in report.kpis)
     if not has_value:
-        report.status = "error"
+        report.status = "warning"
+        report.caveats.append("Aucun KPI n'a pu être calculé avec les colonnes disponibles.")
     elif suspect or report.caveats or report.errors:
         report.status = "warning"
     else:

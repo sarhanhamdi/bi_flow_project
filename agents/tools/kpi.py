@@ -14,8 +14,8 @@ import pandas as pd
 if TYPE_CHECKING:  # import de typage seulement : évite un import circulaire avec agents.kpi
     from agents.kpi.catalog import KPIDefinition
 
-_POSITIVE = {"yes", "y", "true", "1", "churned", "oui"}
-_NEGATIVE = {"no", "n", "false", "0", "retained", "non"}
+_POSITIVE = {"yes", "y", "true", "1", "churned", "oui", "closed", "solved", "resolved"}
+_NEGATIVE = {"no", "n", "false", "0", "retained", "non", "open", "pending", "pending customer response"}
 
 
 def norm(name: Any) -> str:
