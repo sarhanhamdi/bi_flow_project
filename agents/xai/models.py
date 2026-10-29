@@ -49,13 +49,15 @@ class ModelMetrics(BaseModel):
 
 
 class SHAPFeature(BaseModel):
-    """Importance SHAP d'une feature."""
+    """Importance SHAP d'une feature avec alternative MDI/Gini."""
 
     model_config = ConfigDict(extra="forbid")
 
     feature: str
     mean_abs_shap: float
     rank: int
+    gini_importance: float = Field(default=0.0, description="Importance alternative Gini / MDI (Random Forest)")
+    gini_rank: int = Field(default=0, description="Rang selon l'alternative Gini")
 
 
 class SHAPExample(BaseModel):
@@ -86,9 +88,20 @@ class BaselineComparison(BaseModel):
 
     baseline_accuracy: float
     baseline_f1: float
+    baseline_recall: float = 0.0
+    baseline_precision: float = 0.0
+    rf_accuracy: float = 0.0
+    rf_f1: float = 0.0
+    rf_recall: float = 0.0
+    rf_precision: float = 0.0
     delta_accuracy: float = Field(description="RF accuracy - baseline accuracy")
     delta_f1: float = Field(description="RF F1 - baseline F1")
+    delta_recall: float = Field(default=0.0, description="RF recall - baseline recall")
     verdict: Literal["significant_gain", "marginal_gain", "no_gain"]
+    pedagogical_explanation: str = Field(
+        default="",
+        description="Explication vulgarisée de la supériorité face à la règle naïve"
+    )
 
 
 class AuditFinding(BaseModel):

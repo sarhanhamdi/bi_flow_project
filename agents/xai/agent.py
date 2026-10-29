@@ -160,6 +160,8 @@ def node_baseline_compare(state: XAIState) -> dict[str, Any]:
         state["y_test"],
         rf_accuracy=metrics["accuracy"],
         rf_f1=metrics["f1"],
+        rf_recall=metrics.get("recall", 0.0),
+        rf_precision=metrics.get("precision", 0.0),
     )
 
     findings = list(state.get("findings", []))

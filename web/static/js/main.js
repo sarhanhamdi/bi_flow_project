@@ -4,6 +4,97 @@ let activeDataset = '';
 let activeFilename = '';
 let charts = {};
 let currentAuditRole = 'business';
+let currentXAIMethod = 'shap';
+let cachedXAIData = null;
+
+function switchXAIMethod(method) {
+  currentXAIMethod = method;
+  const btnShap = document.getElementById('btn-xai-shap');
+  const btnGini = document.getElementById('btn-xai-gini');
+  const btnBoth = document.getElementById('btn-xai-both');
+  const noteEl = document.getElementById('xai-method-note');
+
+  const activeCls = 'px-2.5 py-1 rounded bg-white font-bold text-blue-600 shadow-xs transition';
+  const inactiveCls = 'px-2.5 py-1 rounded text-slate-600 font-semibold hover:text-slate-900 transition';
+
+  if (btnShap) btnShap.className = method === 'shap' ? activeCls : inactiveCls;
+  if (btnGini) btnGini.className = method === 'gini' ? activeCls : inactiveCls;
+  if (btnBoth) btnBoth.className = method === 'both' ? activeCls : inactiveCls;
+
+  if (noteEl) {
+    if (method === 'shap') {
+      noteEl.innerHTML = '<span class="font-bold">Méthode sélectionnée : SHAP (TreeExplainer)</span> — Mesure équitable des contributions marginales basée sur la théorie des jeux de Shapley.';
+    } else if (method === 'gini') {
+      noteEl.innerHTML = '<span class="font-bold">Méthode alternative : Gini Feature Importance (MDI)</span> — Mesure la réduction moyenne d\'impureté dans les arbres du Random Forest.';
+    } else {
+      noteEl.innerHTML = '<span class="font-bold">Comparatif croisé : SHAP vs Gini (MDI)</span> — Vérifie si les deux méthodes convergent sur les mêmes déterminants majeurs de décision.';
+    }
+  }
+
+  if (cachedXAIData) {
+    renderXAIExplainabilityChart(cachedXAIData);
+  }
+}
+
+function renderXAIExplainabilityChart(xaiData) {
+  if (!xaiData.shap_summary || !xaiData.shap_summary.top_features) return;
+  const top = xaiData.shap_summary.top_features;
+  const ctxShap = document.getElementById('chart-shap-global');
+  if (!ctxShap) return;
+
+  if (charts['shapGlobal']) charts['shapGlobal'].destroy();
+
+  const labels = top.map(t => t.feature);
+  let datasets = [];
+
+  if (currentXAIMethod === 'shap') {
+    datasets.push({
+      label: 'Impact Moyen (|SHAP value|)',
+      data: top.map(t => t.mean_abs_shap),
+      backgroundColor: '#2563eb',
+      borderRadius: 4
+    });
+  } else if (currentXAIMethod === 'gini') {
+    datasets.push({
+      label: 'Gini Importance (MDI %)',
+      data: top.map(t => Math.round((t.gini_importance || 0) * 1000) / 10),
+      backgroundColor: '#059669',
+      borderRadius: 4
+    });
+  } else {
+    // Both: Comparatif
+    datasets.push({
+      label: 'SHAP (|valeur|)',
+      data: top.map(t => t.mean_abs_shap),
+      backgroundColor: '#2563eb',
+      borderRadius: 4
+    });
+    datasets.push({
+      label: 'Gini (Score)',
+      data: top.map(t => t.gini_importance || 0),
+      backgroundColor: '#10b981',
+      borderRadius: 4
+    });
+  }
+
+  charts['shapGlobal'] = new Chart(ctxShap, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: datasets
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+}
 
 function switchAuditRole(role) {
   currentAuditRole = role;
@@ -188,6 +279,35 @@ function resetXAIView() {
   if (tn) tn.innerText = '--';
 
   if (charts['shapGlobal']) { charts['shapGlobal'].destroy(); charts['shapGlobal'] = null; }
+  cachedXAIData = null;
+
+  const dummyAcc = document.getElementById('dummy-acc');
+  if (dummyAcc) dummyAcc.innerText = '--';
+  const rfAcc = document.getElementById('rf-acc');
+  if (rfAcc) rfAcc.innerText = '--';
+  const deltaAcc = document.getElementById('delta-acc');
+  if (deltaAcc) deltaAcc.innerText = '--';
+
+  const dummyRec = document.getElementById('dummy-rec');
+  if (dummyRec) dummyRec.innerText = '0.0%';
+  const rfRec = document.getElementById('rf-rec');
+  if (rfRec) rfRec.innerText = '--';
+  const deltaRec = document.getElementById('delta-rec');
+  if (deltaRec) deltaRec.innerText = '--';
+
+  const dummyF1 = document.getElementById('dummy-f1');
+  if (dummyF1) dummyF1.innerText = '0.0%';
+  const rfF1 = document.getElementById('rf-f1');
+  if (rfF1) rfF1.innerText = '--';
+  const deltaF1 = document.getElementById('delta-f1');
+  if (deltaF1) deltaF1.innerText = '--';
+
+  const elVerdict = document.getElementById('tech-baseline-verdict');
+  if (elVerdict) {
+    elVerdict.className = 'text-xs px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-bold uppercase tracking-wider';
+    elVerdict.innerText = 'En Attente';
+  }
+
   const techFindings = document.getElementById('tech-findings-container');
   if (techFindings) {
     techFindings.innerHTML = `<p class="text-xs text-slate-400 italic">En attente de l'audit technique et MLOps.</p>`;
@@ -695,25 +815,64 @@ async function loadXAIData() {
     if (elCert) elCert.innerText = tAudit.production_certification.toUpperCase();
   }
 
-  // Graphique SHAP
-  if (xaiData.shap_summary && xaiData.shap_summary.top_features && xaiData.shap_summary.top_features.length > 0) {
-    const top = xaiData.shap_summary.top_features;
-    const ctxShap = document.getElementById('chart-shap-global');
-    if (ctxShap) {
-      if (charts['shapGlobal']) charts['shapGlobal'].destroy();
-      charts['shapGlobal'] = new Chart(ctxShap, {
-        type: 'bar',
-        data: {
-          labels: top.map(t => t.feature),
-          datasets: [{
-            label: 'Impact Moyen (|SHAP value|)',
-            data: top.map(t => t.mean_abs_shap),
-            backgroundColor: '#2563eb',
-            borderRadius: 4
-          }]
-        },
-        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false }
-      });
+  cachedXAIData = xaiData;
+
+  // Graphique SHAP & Alternatives d'Explicabilité
+  renderXAIExplainabilityChart(xaiData);
+
+  // Benchmark & Explication Pédagogique : Dummy vs Random Forest
+  const baseComp = xaiData.baseline_comparison;
+  if (baseComp) {
+    const elVerdict = document.getElementById('tech-baseline-verdict');
+    if (elVerdict) {
+      if (baseComp.verdict === 'significant_gain') {
+        elVerdict.className = 'text-xs px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 font-bold uppercase tracking-wider';
+        elVerdict.innerText = 'Gain Significatif';
+      } else if (baseComp.verdict === 'marginal_gain') {
+        elVerdict.className = 'text-xs px-2.5 py-1 rounded bg-amber-100 text-amber-800 font-bold uppercase tracking-wider';
+        elVerdict.innerText = 'Gain Marginal';
+      } else {
+        elVerdict.className = 'text-xs px-2.5 py-1 rounded bg-rose-100 text-rose-800 font-bold uppercase tracking-wider';
+        elVerdict.innerText = 'Aucun Gain';
+      }
+    }
+
+    const dummyAcc = (baseComp.baseline_accuracy * 100).toFixed(1) + '%';
+    const rfAcc = ((baseComp.rf_accuracy || (metrics ? metrics.accuracy : 0)) * 100).toFixed(1) + '%';
+    const deltaAcc = ((baseComp.delta_accuracy || 0) * 100).toFixed(1) + '%';
+
+    const dummyRec = ((baseComp.baseline_recall || 0) * 100).toFixed(1) + '%';
+    const rfRec = ((baseComp.rf_recall || (metrics ? metrics.recall : 0)) * 100).toFixed(1) + '%';
+    const deltaRec = ((baseComp.delta_recall || (baseComp.rf_recall || (metrics ? metrics.recall : 0))) * 100).toFixed(1) + '%';
+
+    const dummyF1 = (baseComp.baseline_f1 * 100).toFixed(1) + '%';
+    const rfF1 = ((baseComp.rf_f1 || (metrics ? metrics.f1 : 0)) * 100).toFixed(1) + '%';
+    const deltaF1 = ((baseComp.delta_f1 || 0) * 100).toFixed(1) + '%';
+
+    const elDummyAcc = document.getElementById('dummy-acc');
+    if (elDummyAcc) elDummyAcc.innerText = dummyAcc;
+    const elRfAcc = document.getElementById('rf-acc');
+    if (elRfAcc) elRfAcc.innerText = rfAcc;
+    const elDeltaAcc = document.getElementById('delta-acc');
+    if (elDeltaAcc) elDeltaAcc.innerText = `+${deltaAcc}`;
+
+    const elDummyRec = document.getElementById('dummy-rec');
+    if (elDummyRec) elDummyRec.innerText = dummyRec;
+    const elRfRec = document.getElementById('rf-rec');
+    if (elRfRec) elRfRec.innerText = rfRec;
+    const elDeltaRec = document.getElementById('delta-rec');
+    if (elDeltaRec) elDeltaRec.innerText = `+${deltaRec}`;
+
+    const elDummyF1 = document.getElementById('dummy-f1');
+    if (elDummyF1) elDummyF1.innerText = dummyF1;
+    const elRfF1 = document.getElementById('rf-f1');
+    if (elRfF1) elRfF1.innerText = rfF1;
+    const elDeltaF1 = document.getElementById('delta-f1');
+    if (elDeltaF1) elDeltaF1.innerText = `+${deltaF1}`;
+
+    const elExpl = document.getElementById('tech-pedagogical-explanation');
+    if (elExpl && baseComp.pedagogical_explanation) {
+      elExpl.innerText = baseComp.pedagogical_explanation;
     }
   }
 

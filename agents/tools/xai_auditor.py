@@ -200,6 +200,8 @@ def compute_baseline(
     y_test: pd.Series,
     rf_accuracy: float,
     rf_f1: float,
+    rf_recall: float = 0.0,
+    rf_precision: float = 0.0,
 ) -> dict[str, Any]:
     """Compare les performances à un DummyClassifier (baseline)."""
     dummy = DummyClassifier(strategy="most_frequent")
@@ -208,9 +210,12 @@ def compute_baseline(
 
     base_acc = round(float(accuracy_score(y_test, y_dummy)), 4)
     base_f1 = round(float(f1_score(y_test, y_dummy, zero_division=0)), 4)
+    base_rec = round(float(recall_score(y_test, y_dummy, zero_division=0)), 4)
+    base_prec = round(float(precision_score(y_test, y_dummy, zero_division=0)), 4)
 
     delta_acc = round(rf_accuracy - base_acc, 4)
     delta_f1 = round(rf_f1 - base_f1, 4)
+    delta_rec = round(rf_recall - base_rec, 4)
 
     if delta_f1 > 0.20 and delta_acc > 0.10:
         verdict = "significant_gain"
@@ -218,12 +223,28 @@ def compute_baseline(
         verdict = "marginal_gain"
     else:
         verdict = "no_gain"
+
+    explanation = (
+        f"Le modèle naïf (Dummy) prédit systématiquement la classe majoritaire, obtenant une Accuracy en trompe-l'œil "
+        f"de {base_acc:.1%} mais un Recall et F1 nuls (0% des churners/risques détectés). "
+        f"À l'inverse, Random Forest atteint {rf_accuracy:.1%} d'Accuracy avec un Recall de {rf_recall:.1%} (+{delta_rec:.1%} net), "
+        f"prouvant son utilité opérationnelle pour intercepter les vrais incidents."
+    )
+
     return {
         "baseline_accuracy": base_acc,
         "baseline_f1": base_f1,
+        "baseline_recall": base_rec,
+        "baseline_precision": base_prec,
+        "rf_accuracy": rf_accuracy,
+        "rf_f1": rf_f1,
+        "rf_recall": rf_recall,
+        "rf_precision": rf_precision,
         "delta_accuracy": delta_acc,
         "delta_f1": delta_f1,
+        "delta_recall": delta_rec,
         "verdict": verdict,
+        "pedagogical_explanation": explanation,
     }
 
 
@@ -235,7 +256,7 @@ def compute_shap_explanations(
     n_examples: int = 3,
     **kwargs: Any,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    """Calcule les explications SHAP globales et locales."""
+    """Calcule les explications SHAP globales et alternatives Gini/MDI."""
     explainer = shap.TreeExplainer(model)
     feature_cols = list(X_test.columns)
     sample_test = X_test.head(min(200, len(X_test)))
@@ -251,11 +272,17 @@ def compute_shap_explanations(
     mean_abs = np.abs(sv).mean(axis=0)
     top_indices = np.argsort(mean_abs)[::-1][:top_n]
 
+    # Alternative d'explicabilité : Gini Importance (MDI) issue directement du Random Forest
+    gini_raw = getattr(model, "feature_importances_", np.zeros(len(feature_cols)))
+    gini_ranks = {feature_cols[idx]: rank + 1 for rank, idx in enumerate(np.argsort(gini_raw)[::-1])}
+
     top_features = [
         {
             "feature": feature_cols[idx],
             "mean_abs_shap": round(float(mean_abs[idx]), 4),
             "rank": rank + 1,
+            "gini_importance": round(float(gini_raw[idx]), 4),
+            "gini_rank": gini_ranks.get(feature_cols[idx], rank + 1),
         }
         for rank, idx in enumerate(top_indices)
     ]

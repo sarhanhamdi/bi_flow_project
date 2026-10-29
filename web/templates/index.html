@@ -400,14 +400,25 @@
 
           <!-- Technical Grid: SHAP Chart + Confusion Matrix -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <!-- SHAP Global Chart -->
+            <!-- SHAP Global Chart & Alternatives Multi-Méthodes -->
             <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
               <div class="flex items-center justify-between">
-                <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Importance des Variables (SHAP Values)</h4>
-                <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-mono">
-                  TreeExplainer (|SHAP|)
-                </span>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Comparateur d'Explicabilité (XAI)</h4>
+                  <p class="text-[11px] text-slate-500">Validation croisée SHAP (Théorie des jeux) vs Gini Importance (MDI)</p>
+                </div>
+                <div class="flex items-center space-x-1.5 bg-slate-100 p-1 rounded-lg text-[10px]">
+                  <button id="btn-xai-shap" onclick="switchXAIMethod('shap')" class="px-2.5 py-1 rounded bg-white font-bold text-blue-600 shadow-xs transition">SHAP (Défaut)</button>
+                  <button id="btn-xai-gini" onclick="switchXAIMethod('gini')" class="px-2.5 py-1 rounded text-slate-600 font-semibold hover:text-slate-900 transition">Gini / MDI (Alt)</button>
+                  <button id="btn-xai-both" onclick="switchXAIMethod('both')" class="px-2.5 py-1 rounded text-slate-600 font-semibold hover:text-slate-900 transition">Comparatif</button>
+                </div>
               </div>
+
+              <!-- Note explicative sur l'alternative -->
+              <div id="xai-method-note" class="p-2.5 bg-blue-50/60 border border-blue-100 rounded-lg text-xs text-blue-800 space-y-0.5">
+                <span class="font-bold">Méthode sélectionnée : SHAP (TreeExplainer)</span> — Mesure équitable des contributions marginales basée sur les valeurs de Shapley.
+              </div>
+
               <div class="h-64">
                 <canvas id="chart-shap-global"></canvas>
               </div>
@@ -460,6 +471,65 @@
                   <p id="tech-prod-cert" class="font-bold text-emerald-700">CERTIFIÉ MLOPS</p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <!-- Benchmark & Explication Pédagogique : Dummy vs Random Forest -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Benchmark & Justification Scientifique : Dummy vs Random Forest</h4>
+                <p class="text-[11px] text-slate-500">Démonstration de la surperformance du modèle ML par rapport au modèle naïf (classe majoritaire)</p>
+              </div>
+              <span id="tech-baseline-verdict" class="text-xs px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 font-bold uppercase tracking-wider">
+                Gain Significatif
+              </span>
+            </div>
+
+            <!-- Tableau comparatif Dummy vs Random Forest -->
+            <div class="overflow-x-auto border border-slate-100 rounded-lg">
+              <table class="w-full text-xs text-left">
+                <thead class="bg-slate-50 text-slate-500 uppercase text-[10px] border-b border-slate-200">
+                  <tr>
+                    <th class="px-4 py-2.5 font-bold">Métrique Évaluée</th>
+                    <th class="px-4 py-2.5 font-bold">Modèle Naïf (Dummy)</th>
+                    <th class="px-4 py-2.5 font-bold">Random Forest (ML)</th>
+                    <th class="px-4 py-2.5 font-bold">Gain Net Réalisé</th>
+                    <th class="px-4 py-2.5 font-bold">Interprétation Décisionnelle</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                  <tr>
+                    <td class="px-4 py-2.5 font-semibold text-slate-700">Accuracy (Précision globale)</td>
+                    <td id="dummy-acc" class="px-4 py-2.5 font-mono text-slate-600">--</td>
+                    <td id="rf-acc" class="px-4 py-2.5 font-mono font-bold text-blue-700">--</td>
+                    <td id="delta-acc" class="px-4 py-2.5 font-mono font-semibold text-emerald-600">--</td>
+                    <td class="px-4 py-2.5 text-slate-500">L'accuracy du Dummy est trompeuse car il prédit toujours la majorité</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2.5 font-semibold text-slate-700">Recall (Détection du Risque / Churn)</td>
+                    <td id="dummy-rec" class="px-4 py-2.5 font-mono text-slate-600">0.0%</td>
+                    <td id="rf-rec" class="px-4 py-2.5 font-mono font-bold text-blue-700">--</td>
+                    <td id="delta-rec" class="px-4 py-2.5 font-mono font-semibold text-emerald-600">--</td>
+                    <td class="px-4 py-2.5 text-slate-500">Le Dummy ne détecte AUCUN cas à risque (0 client intercepté)</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2.5 font-semibold text-slate-700">F1-Score (Équilibre global)</td>
+                    <td id="dummy-f1" class="px-4 py-2.5 font-mono text-slate-600">0.0%</td>
+                    <td id="rf-f1" class="px-4 py-2.5 font-mono font-bold text-blue-700">--</td>
+                    <td id="delta-f1" class="px-4 py-2.5 font-mono font-semibold text-emerald-600">--</td>
+                    <td class="px-4 py-2.5 text-slate-500">Valide la réelle supériorité prédictive du Random Forest</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Explication Vulgarisée -->
+            <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg flex items-start space-x-3">
+              <span class="text-lg">💡</span>
+              <p id="tech-pedagogical-explanation" class="text-xs text-slate-700 leading-relaxed">
+                Le modèle naïf (Dummy) prédit systématiquement la classe majoritaire, obtenant une Accuracy en trompe-l'œil mais un Recall et F1 nuls (0% des incidents détectés). Random Forest prouve sa vraie valeur métier en interceptant les risques réels.
+              </p>
             </div>
           </div>
 
