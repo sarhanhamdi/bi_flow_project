@@ -726,7 +726,6 @@ async function loadXAIData() {
       <div class="p-3 bg-slate-50 border border-slate-200 rounded-md">
         <div class="flex items-center justify-between mb-1">
           <span class="font-mono text-xs text-blue-600 font-semibold">${f.id}</span>
-          <span class="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-800 uppercase font-bold">${f.severity}</span>
         </div>
         <p class="text-sm font-semibold text-slate-800">${f.title}</p>
         <p class="text-xs text-slate-600 mt-1">${f.detail}</p>
