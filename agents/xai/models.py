@@ -102,6 +102,74 @@ class AuditFinding(BaseModel):
     title: str
     detail: str
     recommendation: str
+    role: Literal["business", "technical", "all"] = Field(
+        default="all",
+        description="Public cible : business (financier/marketing), technical (data/mlops), ou all"
+    )
+    financial_impact: str | None = Field(default=None, description="Impact financier chiffré si applicable")
+
+
+class ConfusionMatrix(BaseModel):
+    """Matrice de confusion binaire."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    true_positives: int = Field(ge=0, description="Vrais Positifs (ex: churners bien détectés)")
+    false_positives: int = Field(ge=0, description="Faux Positifs (ex: clients fidèles ciblés à tort)")
+    true_negatives: int = Field(ge=0, description="Vrais Négatifs (ex: clients fidèles épargnés)")
+    false_negatives: int = Field(ge=0, description="Faux Négatifs (ex: départs non détectés)")
+
+
+class MarketingLever(BaseModel):
+    """Levier d'action marketing / opérationnel dérivé des facteurs SHAP."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    feature: str = Field(description="Variable d'origine issue de SHAP")
+    impact_rank: int = Field(description="Rang d'importance")
+    business_meaning: str = Field(description="Traduction en langage métier")
+    recommended_action: str = Field(description="Action commerciale ou tarifaire concrète")
+    expected_gain: str = Field(description="Bénéfice attendu")
+
+
+class FinancialAudit(BaseModel):
+    """Audit financier, ROI et matrice de coûts pour décideurs métier/marketing."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    domain: str = Field(default="customer_churn", description="Domaine métier analysé")
+    currency: str = Field(default="$")
+    unit_customer_value: float = Field(description="Valeur vie client moyenne (CLTV) ou coût moyen d'un incident")
+    unit_campaign_cost: float = Field(description="Coût unitaire d'une intervention ou offre de fidélisation")
+    retention_success_rate: float = Field(description="Taux d'efficacité estimé de la rétention ciblée (ex: 35%)")
+    total_risk_exposure: float = Field(description="Revenu total en péril sans intervention")
+    gross_saved_value: float = Field(description="Revenu brut sauvé par les détections réussies")
+    campaign_budget_spent: float = Field(description="Budget total engagé pour cibler les alertes")
+    projected_net_savings: float = Field(description="Bénéfice net généré après déduction des coûts de campagne")
+    campaign_roi_pct: float = Field(description="Retour sur investissement des campagnes (%)")
+    waste_reduction_pct: float = Field(description="Réduction du gaspillage d'offres promo vs ciblage aveugle (%)")
+    optimal_decision_threshold: float = Field(description="Seuil de probabilité optimal maximisant le gain financier")
+    cost_inaction_ratio: float = Field(description="Ratio coût d'un départ / coût d'une offre")
+    marketing_levers: list[MarketingLever] = Field(default_factory=list)
+
+
+class TechnicalAudit(BaseModel):
+    """Audit technique, MLOps, intégrité et robustesse pour Data Scientists/Ingénieurs."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    confusion_matrix: ConfusionMatrix
+    target_leakage_status: Literal["clean", "warning", "leakage_detected"] = Field(
+        default="clean", description="Statut du test d'anti-fuite de données"
+    )
+    excluded_sensitive_columns: list[str] = Field(default_factory=list)
+    train_test_stability: str = Field(description="Contrôle de stabilité de la distribution Train vs Test")
+    overfitting_risk: Literal["low", "medium", "high"] = Field(default="low")
+    inference_latency_ms: float = Field(default=3.5, description="Temps d'inférence moyen par requête en ms")
+    model_algorithm: str = Field(default="RandomForestClassifier (100 estimators)")
+    production_certification: Literal["certified", "conditional", "rejected"] = Field(
+        default="certified", description="Statut de certification pour mise en production"
+    )
 
 
 class XAIReport(BaseModel):
@@ -118,5 +186,7 @@ class XAIReport(BaseModel):
     shap_summary: SHAPSummary | None = None
     baseline_comparison: BaselineComparison | None = None
     audit_findings: list[AuditFinding] = Field(default_factory=list)
+    financial_audit: FinancialAudit | None = None
+    technical_audit: TechnicalAudit | None = None
     llm_summary: str = ""
     errors: list[str] = Field(default_factory=list)

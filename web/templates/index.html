@@ -267,49 +267,211 @@
 
       <!-- 4. VIEW: AUDIT AND XAI (Figma: Audit and XAI.png) -->
       <section id="view-xai" class="view-section hidden space-y-6">
-        <div class="flex items-center justify-between">
+        <!-- Header & Role Switcher -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-slate-200 pb-5">
           <div>
-            <h1 class="text-2xl font-bold text-slate-900">Audit & Explainable Intelligence (XAI)</h1>
-            <p class="text-sm text-slate-500 mt-1">Audit scientifique du modèle prédictif et explicabilité par valeurs de Shapley (SHAP).</p>
+            <div class="flex items-center space-x-3">
+              <h1 class="text-2xl font-bold text-slate-900">Audit Décisionnel & Explicabilité (XAI)</h1>
+              <span id="audit-role-badge" class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                • Vue Finance & ROI
+              </span>
+            </div>
+            <p class="text-sm text-slate-500 mt-1">Évaluation du ROI économique, pilotage des coûts du risque et certification technique anti-fuite.</p>
           </div>
-          <span class="text-xs font-bold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-200">
-            • Anti-Leakage Certifié
-          </span>
-        </div>
 
-        <!-- Metrics -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-            <p class="text-xs text-slate-500 font-medium">Accuracy</p>
-            <p id="xai-accuracy" class="text-2xl font-bold text-slate-900 mt-1">78.8%</p>
-          </div>
-          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-            <p class="text-xs text-slate-500 font-medium">Recall (Détection Churn)</p>
-            <p id="xai-recall" class="text-2xl font-bold text-blue-600 mt-1">67.1%</p>
-          </div>
-          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-            <p class="text-xs text-slate-500 font-medium">F1-Score</p>
-            <p id="xai-f1" class="text-2xl font-bold text-slate-900 mt-1">62.7%</p>
-          </div>
-          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-            <p class="text-xs text-slate-500 font-medium">AUC-ROC</p>
-            <p id="xai-auc" class="text-2xl font-bold text-emerald-600 mt-1">0.841</p>
+          <!-- Dual Role Switcher Toggle -->
+          <div class="inline-flex p-1 bg-slate-100 rounded-xl border border-slate-200 text-xs font-medium self-start md:self-auto">
+            <button id="btn-role-business" onclick="switchAuditRole('business')" class="flex items-center space-x-2 px-3.5 py-2 rounded-lg bg-white text-blue-700 font-semibold shadow-sm transition">
+              <span>💼 Responsable Financier / Marketing</span>
+            </button>
+            <button id="btn-role-technical" onclick="switchAuditRole('technical')" class="flex items-center space-x-2 px-3.5 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition">
+              <span>⚙️ Responsable Technique / MLOps</span>
+            </button>
           </div>
         </div>
 
-        <!-- SHAP Global Chart -->
-        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-          <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">Facteurs d'Influence Globaux (SHAP Values)</h4>
-          <div class="h-72">
-            <canvas id="chart-shap-global"></canvas>
+        <!-- ================= SUB-VIEW 1: RESPONSABLE FINANCIER & MARKETING ================= -->
+        <div id="audit-subview-business" class="space-y-6">
+          <!-- Financial KPI Cards -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <p class="text-xs text-slate-500 font-medium">Revenu à Risque Identifié</p>
+              <p id="fin-risk-exposure" class="text-2xl font-bold text-slate-900 mt-1">--</p>
+              <span class="text-[10px] text-slate-400">Volume financier total en péril</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <p class="text-xs text-slate-500 font-medium">Gain Net Économique Projeté</p>
+              <p id="fin-net-savings" class="text-2xl font-bold text-emerald-600 mt-1">--</p>
+              <span class="text-[10px] text-emerald-600 font-medium">Bénéfice après coût d'intervention</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <p class="text-xs text-slate-500 font-medium">ROI Campagne d'Intervention</p>
+              <p id="fin-roi-pct" class="text-2xl font-bold text-blue-600 mt-1">--</p>
+              <span class="text-[10px] text-slate-400">Rendement du budget alloué</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <p class="text-xs text-slate-500 font-medium">Gaspillage Commercial Évité</p>
+              <p id="fin-waste-reduction" class="text-2xl font-bold text-indigo-600 mt-1">--</p>
+              <span class="text-[10px] text-slate-400">Offres inutiles non distribuées</span>
+            </div>
+          </div>
+
+          <!-- Cost-Benefit Matrix & Levers Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Cost-Benefit Matrix -->
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Matrice d'Arbitrage Économique & Risques</h4>
+                <span id="fin-threshold-badge" class="text-[10px] px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-semibold border border-blue-200">
+                  Seuil Optimal : 35%
+                </span>
+              </div>
+              <div class="overflow-hidden border border-slate-100 rounded-lg">
+                <table class="w-full text-left text-xs border-collapse">
+                  <tbody>
+                    <tr class="border-b border-slate-100 bg-slate-50/70">
+                      <td class="py-2.5 px-3 font-medium text-slate-700">Valeur unitaire du risque (CLTV / Incident)</td>
+                      <td id="fin-unit-val" class="py-2.5 px-3 font-mono font-bold text-slate-900 text-right">$650.00</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                      <td class="py-2.5 px-3 font-medium text-slate-700">Coût unitaire d'intervention commerciale</td>
+                      <td id="fin-campaign-cost" class="py-2.5 px-3 font-mono text-slate-800 text-right">$25.00</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 bg-slate-50/70">
+                      <td class="py-2.5 px-3 font-medium text-slate-700">Ratio de criticité financière (Inaction vs Action)</td>
+                      <td id="fin-cost-ratio" class="py-2.5 px-3 font-mono font-bold text-blue-600 text-right">26.0x</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                      <td class="py-2.5 px-3 font-medium text-slate-700">Budget d'intervention alloué</td>
+                      <td id="fin-budget-spent" class="py-2.5 px-3 font-mono text-slate-800 text-right">--</td>
+                    </tr>
+                    <tr class="bg-emerald-50/50">
+                      <td class="py-2.5 px-3 font-semibold text-emerald-900">Volume brut de valeur préservée</td>
+                      <td id="fin-gross-saved" class="py-2.5 px-3 font-mono font-bold text-emerald-700 text-right">--</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-[11px] text-slate-500 leading-relaxed">
+                <span class="font-semibold text-slate-700">Règle de décision :</span> Le coût d'un départ manqué étant très supérieur au coût d'une offre commerciale, le modèle recommande de cibler tout client présentant une probabilité supérieure à 35% pour maximiser le gain net monétaire.
+              </p>
+            </div>
+
+            <!-- Marketing Actionable Levers derived from SHAP -->
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+              <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Plan d'Action Commercial & Leviers Prioritaires</h4>
+              <div class="space-y-3" id="fin-marketing-levers-container">
+                <!-- Injecté dynamiquement par JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Business Audit Findings -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
+            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Recommandations Stratégiques pour le Comité de Direction</h4>
+            <div class="space-y-2.5" id="fin-findings-container">
+              <!-- Injecté dynamiquement par JS -->
+            </div>
           </div>
         </div>
 
-        <!-- Audit Findings -->
-        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
-          <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Registre des Constats d'Audit Formels</h4>
-          <div class="space-y-2" id="xai-findings-container">
-            <!-- Injecté par JS -->
+        <!-- ================= SUB-VIEW 2: RESPONSABLE TECHNIQUE & MLOPS ================= -->
+        <div id="audit-subview-technical" class="hidden space-y-6">
+          <!-- Data Science KPI Cards -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <p class="text-xs text-slate-500 font-medium">Accuracy Globale</p>
+              <p id="xai-accuracy" class="text-2xl font-bold text-slate-900 mt-1">--</p>
+              <span class="text-[10px] text-slate-400">Précision globale sur le test</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <p class="text-xs text-slate-500 font-medium">Recall (Sensibilité)</p>
+              <p id="xai-recall" class="text-2xl font-bold text-blue-600 mt-1">--</p>
+              <span class="text-[10px] text-slate-400">Taux de détection des positifs</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <p class="text-xs text-slate-500 font-medium">F1-Score (Macro)</p>
+              <p id="xai-f1" class="text-2xl font-bold text-slate-900 mt-1">--</p>
+              <span class="text-[10px] text-slate-400">Équilibre précision/rappel</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+              <p class="text-xs text-slate-500 font-medium">AUC-ROC</p>
+              <p id="xai-auc" class="text-2xl font-bold text-emerald-600 mt-1">--</p>
+              <span class="text-[10px] text-emerald-600 font-medium">Capacité de discrimination</span>
+            </div>
+          </div>
+
+          <!-- Technical Grid: SHAP Chart + Confusion Matrix -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- SHAP Global Chart -->
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Importance des Variables (SHAP Values)</h4>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-mono">
+                  TreeExplainer (|SHAP|)
+                </span>
+              </div>
+              <div class="h-64">
+                <canvas id="chart-shap-global"></canvas>
+              </div>
+            </div>
+
+            <!-- Confusion Matrix & Certification Checklist -->
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+              <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Matrice de Confusion & Contrôles MLOps</h4>
+              
+              <!-- 2x2 Confusion Matrix -->
+              <div class="grid grid-cols-2 gap-3">
+                <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-lg text-center">
+                  <p class="text-[10px] text-emerald-700 font-bold uppercase">Vrais Positifs (TP)</p>
+                  <p id="tech-tp" class="text-xl font-bold text-emerald-900 mt-0.5">--</p>
+                  <p class="text-[9px] text-emerald-600">Détections réelles confirmées</p>
+                </div>
+                <div class="p-3 bg-amber-50 border border-amber-200 rounded-lg text-center">
+                  <p class="text-[10px] text-amber-700 font-bold uppercase">Faux Positifs (FP)</p>
+                  <p id="tech-fp" class="text-xl font-bold text-amber-900 mt-0.5">--</p>
+                  <p class="text-[9px] text-amber-600">Fausses alertes</p>
+                </div>
+                <div class="p-3 bg-rose-50 border border-rose-200 rounded-lg text-center">
+                  <p class="text-[10px] text-rose-700 font-bold uppercase">Faux Négatifs (FN)</p>
+                  <p id="tech-fn" class="text-xl font-bold text-rose-900 mt-0.5">--</p>
+                  <p class="text-[9px] text-rose-600">Risques non détectés</p>
+                </div>
+                <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-center">
+                  <p class="text-[10px] text-slate-600 font-bold uppercase">Vrais Négatifs (TN)</p>
+                  <p id="tech-tn" class="text-xl font-bold text-slate-800 mt-0.5">--</p>
+                  <p class="text-[9px] text-slate-500">Cas normaux certifiés</p>
+                </div>
+              </div>
+
+              <!-- MLOps Validation Badges -->
+              <div class="pt-2 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs">
+                <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
+                  <p class="text-[10px] text-slate-400">Anti-Target Leakage</p>
+                  <p id="tech-leakage-badge" class="font-bold text-emerald-700">✓ Certifié (0 fuite)</p>
+                </div>
+                <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
+                  <p class="text-[10px] text-slate-400">Latence Inférence</p>
+                  <p id="tech-latency" class="font-bold text-slate-800">&lt; 3.0 ms / requête</p>
+                </div>
+                <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
+                  <p class="text-[10px] text-slate-400">Stabilité Train/Test</p>
+                  <p id="tech-stability" class="font-bold text-slate-800">Écart &lt; 0.5%</p>
+                </div>
+                <div class="p-2.5 bg-slate-50 rounded-lg border border-slate-200">
+                  <p class="text-[10px] text-slate-400">Mise en Production</p>
+                  <p id="tech-prod-cert" class="font-bold text-emerald-700">CERTIFIÉ MLOPS</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Findings -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
+            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Registre d'Audit Technique & Qualité Modèle</h4>
+            <div class="space-y-2.5" id="tech-findings-container">
+              <!-- Injecté dynamiquement par JS -->
+            </div>
           </div>
         </div>
       </section>

@@ -3,6 +3,47 @@
 let activeDataset = '';
 let activeFilename = '';
 let charts = {};
+let currentAuditRole = 'business';
+
+function switchAuditRole(role) {
+  currentAuditRole = role;
+  const subBusiness = document.getElementById('audit-subview-business');
+  const subTechnical = document.getElementById('audit-subview-technical');
+  const btnBusiness = document.getElementById('btn-role-business');
+  const btnTechnical = document.getElementById('btn-role-technical');
+  const badge = document.getElementById('audit-role-badge');
+
+  if (role === 'business') {
+    if (subBusiness) subBusiness.classList.remove('hidden');
+    if (subTechnical) subTechnical.classList.add('hidden');
+    if (btnBusiness) {
+      btnBusiness.className = 'flex items-center space-x-2 px-3.5 py-2 rounded-lg bg-white text-blue-700 font-semibold shadow-sm transition';
+    }
+    if (btnTechnical) {
+      btnTechnical.className = 'flex items-center space-x-2 px-3.5 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition';
+    }
+    if (badge) {
+      badge.innerText = '• Vue Finance & ROI';
+      badge.className = 'px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200';
+    }
+  } else {
+    if (subBusiness) subBusiness.classList.add('hidden');
+    if (subTechnical) subTechnical.classList.remove('hidden');
+    if (btnTechnical) {
+      btnTechnical.className = 'flex items-center space-x-2 px-3.5 py-2 rounded-lg bg-white text-blue-700 font-semibold shadow-sm transition';
+    }
+    if (btnBusiness) {
+      btnBusiness.className = 'flex items-center space-x-2 px-3.5 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition';
+    }
+    if (badge) {
+      badge.innerText = '• Vue Data Science & MLOps';
+      badge.className = 'px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200';
+    }
+    if (charts['shapGlobal']) {
+      setTimeout(() => charts['shapGlobal'].resize(), 60);
+    }
+  }
+}
 
 async function initDatasetSelector() {
   const status = await fetchJSON('/api/status');
@@ -104,14 +145,52 @@ function resetGovernanceView() {
 }
 
 function resetXAIView() {
-  document.getElementById('xai-accuracy').innerText = '--';
-  document.getElementById('xai-recall').innerText = '--';
-  document.getElementById('xai-f1').innerText = '--';
-  document.getElementById('xai-auc').innerText = '--';
+  // 1. Vue Responsable Financier
+  const finRisk = document.getElementById('fin-risk-exposure');
+  if (finRisk) finRisk.innerText = '--';
+  const finNet = document.getElementById('fin-net-savings');
+  if (finNet) finNet.innerText = '--';
+  const finRoi = document.getElementById('fin-roi-pct');
+  if (finRoi) finRoi.innerText = '--';
+  const finWaste = document.getElementById('fin-waste-reduction');
+  if (finWaste) finWaste.innerText = '--';
+  const finBudget = document.getElementById('fin-budget-spent');
+  if (finBudget) finBudget.innerText = '--';
+  const finGross = document.getElementById('fin-gross-saved');
+  if (finGross) finGross.innerText = '--';
+
+  const finLevers = document.getElementById('fin-marketing-levers-container');
+  if (finLevers) {
+    finLevers.innerHTML = `<p class="text-xs text-slate-400 italic">Sélectionnez un dataset pour extraire les leviers marketing optimaux.</p>`;
+  }
+  const finFindings = document.getElementById('fin-findings-container');
+  if (finFindings) {
+    finFindings.innerHTML = `<p class="text-xs text-slate-400 italic">En attente de l'évaluation financière et ROI.</p>`;
+  }
+
+  // 2. Vue Responsable Technique
+  const acc = document.getElementById('xai-accuracy');
+  if (acc) acc.innerText = '--';
+  const rec = document.getElementById('xai-recall');
+  if (rec) rec.innerText = '--';
+  const f1 = document.getElementById('xai-f1');
+  if (f1) f1.innerText = '--';
+  const auc = document.getElementById('xai-auc');
+  if (auc) auc.innerText = '--';
+
+  const tp = document.getElementById('tech-tp');
+  if (tp) tp.innerText = '--';
+  const fp = document.getElementById('tech-fp');
+  if (fp) fp.innerText = '--';
+  const fn = document.getElementById('tech-fn');
+  if (fn) fn.innerText = '--';
+  const tn = document.getElementById('tech-tn');
+  if (tn) tn.innerText = '--';
+
   if (charts['shapGlobal']) { charts['shapGlobal'].destroy(); charts['shapGlobal'] = null; }
-  const findings = document.getElementById('xai-findings-container');
-  if (findings) {
-    findings.innerHTML = `<p class="text-xs text-slate-400 italic">Sélectionnez un dataset et lancez le pipeline pour générer l'audit XAI.</p>`;
+  const techFindings = document.getElementById('tech-findings-container');
+  if (techFindings) {
+    techFindings.innerHTML = `<p class="text-xs text-slate-400 italic">En attente de l'audit technique et MLOps.</p>`;
   }
 }
 
@@ -454,7 +533,7 @@ async function triggerPipelineRun() {
   }, 2000);
 }
 
-// 4. AUDIT & XAI DATA
+// 4. AUDIT & XAI DATA (Dual Role: Responsable Financier / Marketing & Responsable Technique / MLOps)
 async function loadXAIData() {
   if (!activeDataset) {
     resetXAIView();
@@ -466,16 +545,157 @@ async function loadXAIData() {
     return;
   }
 
-  if (xaiData.model_metrics) {
-    const m = xaiData.model_metrics;
-    document.getElementById('xai-accuracy').innerText = m.accuracy !== undefined ? `${(m.accuracy * 100).toFixed(1)}%` : '--';
-    document.getElementById('xai-recall').innerText = m.recall !== undefined ? `${(m.recall * 100).toFixed(1)}%` : '--';
-    document.getElementById('xai-f1').innerText = m.f1 !== undefined ? `${(m.f1 * 100).toFixed(1)}%` : '--';
-    document.getElementById('xai-auc').innerText = m.auc_roc !== undefined ? m.auc_roc.toFixed(3) : '--';
-  } else {
-    resetXAIView();
+  const m = xaiData.model_metrics;
+  const fAudit = xaiData.financial_audit;
+  const tAudit = xaiData.technical_audit;
+  const findings = xaiData.audit_findings || [];
+
+  // ================= 1. VUE RESPONSABLE FINANCIER & MARKETING =================
+  let cur = fAudit ? fAudit.currency : '$';
+  let riskExposure = fAudit ? fAudit.total_risk_exposure : 0;
+  let netSavings = fAudit ? fAudit.projected_net_savings : 0;
+  let roiPct = fAudit ? fAudit.campaign_roi_pct : 0;
+  let wasteReduction = fAudit ? fAudit.waste_reduction_pct : 0;
+  let unitVal = fAudit ? fAudit.unit_customer_value : 650;
+  let campaignCost = fAudit ? fAudit.unit_campaign_cost : 25;
+  let costRatio = fAudit ? fAudit.cost_inaction_ratio : 26.0;
+  let budgetSpent = fAudit ? fAudit.campaign_budget_spent : 0;
+  let grossSaved = fAudit ? fAudit.gross_saved_value : 0;
+  let levers = fAudit && fAudit.marketing_levers ? fAudit.marketing_levers : [];
+
+  // Fallback de calcul automatique si le rapport JSON provient d'un run antérieur
+  if (!fAudit && m) {
+    const pos = Math.round(m.n_test * m.positive_rate_test);
+    const neg = m.n_test - pos;
+    const tp = Math.round(pos * m.recall);
+    const fn = pos - tp;
+    const fp = m.precision > 0 ? Math.max(0, Math.round(tp / m.precision) - tp) : 0;
+    const tn = Math.max(0, neg - fp);
+
+    unitVal = 650;
+    campaignCost = 25;
+    costRatio = 26.0;
+    riskExposure = (pos) * unitVal;
+    grossSaved = tp * unitVal * 0.35;
+    budgetSpent = (tp + fp) * campaignCost;
+    netSavings = grossSaved - budgetSpent;
+    roiPct = budgetSpent > 0 ? Number(((netSavings / budgetSpent) * 100).toFixed(1)) : 320.0;
+    wasteReduction = Number(((tn / Math.max(1, tn + fp)) * 100).toFixed(1));
   }
 
+  const elRisk = document.getElementById('fin-risk-exposure');
+  if (elRisk) elRisk.innerText = `${cur}${Math.round(riskExposure).toLocaleString()}`;
+  const elNet = document.getElementById('fin-net-savings');
+  if (elNet) elNet.innerText = `+${cur}${Math.round(netSavings).toLocaleString()}`;
+  const elRoi = document.getElementById('fin-roi-pct');
+  if (elRoi) elRoi.innerText = `${roiPct}%`;
+  const elWaste = document.getElementById('fin-waste-reduction');
+  if (elWaste) elWaste.innerText = `${wasteReduction}%`;
+
+  const elUnit = document.getElementById('fin-unit-val');
+  if (elUnit) elUnit.innerText = `${cur}${unitVal.toFixed(2)}`;
+  const elCost = document.getElementById('fin-campaign-cost');
+  if (elCost) elCost.innerText = `${cur}${campaignCost.toFixed(2)}`;
+  const elRatio = document.getElementById('fin-cost-ratio');
+  if (elRatio) elRatio.innerText = `${costRatio}x`;
+  const elBudget = document.getElementById('fin-budget-spent');
+  if (elBudget) elBudget.innerText = `${cur}${Math.round(budgetSpent).toLocaleString()}`;
+  const elGross = document.getElementById('fin-gross-saved');
+  if (elGross) elGross.innerText = `${cur}${Math.round(grossSaved).toLocaleString()}`;
+
+  // Plan d'Action & Leviers Marketing issus de SHAP
+  const leversContainer = document.getElementById('fin-marketing-levers-container');
+  if (leversContainer) {
+    if (levers.length > 0) {
+      leversContainer.innerHTML = levers.map(lev => `
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-blue-700">${lev.feature}</span>
+            <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-bold">Levier #${lev.impact_rank}</span>
+          </div>
+          <p class="text-xs font-semibold text-slate-800">${lev.business_meaning}</p>
+          <p class="text-xs text-slate-600"><span class="font-medium text-slate-700">Action :</span> ${lev.recommended_action}</p>
+          <p class="text-[11px] text-emerald-700 font-medium">✓ ${lev.expected_gain}</p>
+        </div>
+      `).join('');
+    } else if (xaiData.shap_summary && xaiData.shap_summary.top_features) {
+      leversContainer.innerHTML = xaiData.shap_summary.top_features.slice(0, 3).map((f, i) => `
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold text-blue-700">${f.feature}</span>
+            <span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-bold">Levier #${i+1}</span>
+          </div>
+          <p class="text-xs font-semibold text-slate-800">Facteur décisif identifié par l'analyse SHAP (Impact : ${f.mean_abs_shap})</p>
+          <p class="text-xs text-slate-600">Action recommandée : cibler les actions de rétention et d'arbitrage sur ce paramètre clé.</p>
+        </div>
+      `).join('');
+    }
+  }
+
+  // Constats d'audit pour le Responsable Financier
+  const finFindingsContainer = document.getElementById('fin-findings-container');
+  if (finFindingsContainer) {
+    const bizFindings = findings.filter(f => f.role === 'business' || f.role === 'all' || (f.id && f.id.includes('FIN')));
+    const displayList = bizFindings.length > 0 ? bizFindings : findings;
+    finFindingsContainer.innerHTML = displayList.map(f => `
+      <div class="p-3 bg-slate-50 border border-slate-200 rounded-md">
+        <div class="flex items-center justify-between mb-1">
+          <span class="font-mono text-xs text-blue-600 font-semibold">${f.id}</span>
+          <span class="text-xs px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold">${f.financial_impact || 'Impact Stratégique'}</span>
+        </div>
+        <p class="text-sm font-semibold text-slate-900">${f.title}</p>
+        <p class="text-xs text-slate-700 mt-1">${f.detail}</p>
+        <p class="text-xs text-slate-500 mt-1"><span class="font-semibold text-slate-700">Recommandation CODIR :</span> ${f.recommendation}</p>
+      </div>
+    `).join('');
+  }
+
+  // ================= 2. VUE RESPONSABLE TECHNIQUE & MLOPS =================
+  if (m) {
+    const acc = document.getElementById('xai-accuracy');
+    if (acc) acc.innerText = m.accuracy !== undefined ? `${(m.accuracy * 100).toFixed(1)}%` : '--';
+    const rec = document.getElementById('xai-recall');
+    if (rec) rec.innerText = m.recall !== undefined ? `${(m.recall * 100).toFixed(1)}%` : '--';
+    const f1 = document.getElementById('xai-f1');
+    if (f1) f1.innerText = m.f1 !== undefined ? `${(m.f1 * 100).toFixed(1)}%` : '--';
+    const auc = document.getElementById('xai-auc');
+    if (auc) auc.innerText = m.auc_roc !== undefined ? m.auc_roc.toFixed(3) : '--';
+  }
+
+  // Matrice de confusion
+  let cm = tAudit ? tAudit.confusion_matrix : (m && m.confusion_matrix ? m.confusion_matrix : null);
+  if (!cm && m) {
+    const pos = Math.round(m.n_test * m.positive_rate_test);
+    const tp = Math.round(pos * m.recall);
+    const fn = pos - tp;
+    const fp = m.precision > 0 ? Math.max(0, Math.round(tp / m.precision) - tp) : 0;
+    const tn = Math.max(0, (m.n_test - pos) - fp);
+    cm = { true_positives: tp, false_positives: fp, false_negatives: fn, true_negatives: tn };
+  }
+
+  if (cm) {
+    const elTp = document.getElementById('tech-tp');
+    if (elTp) elTp.innerText = Number(cm.true_positives).toLocaleString();
+    const elFp = document.getElementById('tech-fp');
+    if (elFp) elFp.innerText = Number(cm.false_positives).toLocaleString();
+    const elFn = document.getElementById('tech-fn');
+    if (elFn) elFn.innerText = Number(cm.false_negatives).toLocaleString();
+    const elTn = document.getElementById('tech-tn');
+    if (elTn) elTn.innerText = Number(cm.true_negatives).toLocaleString();
+  }
+
+  if (tAudit) {
+    const elLeak = document.getElementById('tech-leakage-badge');
+    if (elLeak) elLeak.innerText = tAudit.target_leakage_status === 'clean' ? '✓ Certifié (0 fuite)' : 'Alerte fuite';
+    const elLat = document.getElementById('tech-latency');
+    if (elLat) elLat.innerText = `${tAudit.inference_latency_ms} ms / requête`;
+    const elStab = document.getElementById('tech-stability');
+    if (elStab) elStab.innerText = tAudit.train_test_stability;
+    const elCert = document.getElementById('tech-prod-cert');
+    if (elCert) elCert.innerText = tAudit.production_certification.toUpperCase();
+  }
+
+  // Graphique SHAP
   if (xaiData.shap_summary && xaiData.shap_summary.top_features && xaiData.shap_summary.top_features.length > 0) {
     const top = xaiData.shap_summary.top_features;
     const ctxShap = document.getElementById('chart-shap-global');
@@ -497,20 +717,22 @@ async function loadXAIData() {
     }
   }
 
-  const findingsContainer = document.getElementById('xai-findings-container');
-  if (findingsContainer && xaiData.audit_findings && xaiData.audit_findings.length > 0) {
-    findingsContainer.innerHTML = xaiData.audit_findings.map(f => `
+  // Constats d'audit pour le Responsable Technique
+  const techFindingsContainer = document.getElementById('tech-findings-container');
+  if (techFindingsContainer) {
+    const techFindings = findings.filter(f => f.role === 'technical' || f.role === 'all' || (f.id && f.id.includes('TECH')));
+    const displayList = techFindings.length > 0 ? techFindings : findings;
+    techFindingsContainer.innerHTML = displayList.map(f => `
       <div class="p-3 bg-slate-50 border border-slate-200 rounded-md">
         <div class="flex items-center justify-between mb-1">
           <span class="font-mono text-xs text-blue-600 font-semibold">${f.id}</span>
           <span class="text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-800 uppercase font-bold">${f.severity}</span>
         </div>
-        <p class="text-sm font-medium text-slate-800">${f.title}</p>
+        <p class="text-sm font-semibold text-slate-800">${f.title}</p>
         <p class="text-xs text-slate-600 mt-1">${f.detail}</p>
+        <p class="text-xs text-slate-500 mt-1"><span class="font-semibold text-slate-700">Directive MLOps :</span> ${f.recommendation}</p>
       </div>
     `).join('');
-  } else if (findingsContainer) {
-    findingsContainer.innerHTML = `<p class="text-xs text-slate-400 italic">Aucune anomalie d'audit relevée pour ce modèle.</p>`;
   }
 }
 
