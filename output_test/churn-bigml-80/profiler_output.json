@@ -1,0 +1,770 @@
+{
+  "business_goal": "Test multi-usage autonome",
+  "domain": "customer_churn",
+  "semantic_map": {
+    "domain": "customer_churn",
+    "confidence_scores": {
+      "customer_churn": 6.0,
+      "network_performance": 0.0,
+      "customer_support": 0.0
+    },
+    "primary_target": "Churn",
+    "concepts": {
+      "target_churn": "Churn",
+      "tenure": "Account length",
+      "monthly_charge": "Total day charge",
+      "total_revenue": null,
+      "contract": "International plan",
+      "mos_score": null,
+      "latency": null,
+      "throughput": null,
+      "upload_speed": null,
+      "packet_loss": null,
+      "signal_strength": null,
+      "target_network_incident": null,
+      "availability": null,
+      "ticket_id": null,
+      "ticket_status": null,
+      "dispute_flag": null,
+      "timely_response": null,
+      "csat_score": null,
+      "resolution_time": null
+    }
+  },
+  "tables": [
+    {
+      "name": "churn-bigml-80",
+      "source_name": "churn-bigml-80",
+      "row_count": 2666,
+      "column_count": 20,
+      "memory_bytes": 425029,
+      "sampled": false,
+      "sample_rows": null,
+      "columns": [
+        {
+          "name": "State",
+          "declared_type": "str",
+          "inferred_type": "string",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 51,
+          "stats": {
+            "count": 2666,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "WV",
+                  "count": 88
+                },
+                {
+                  "value": "MN",
+                  "count": 70
+                },
+                {
+                  "value": "NY",
+                  "count": 68
+                },
+                {
+                  "value": "VA",
+                  "count": 67
+                },
+                {
+                  "value": "OH",
+                  "count": 66
+                },
+                {
+                  "value": "AL",
+                  "count": 66
+                },
+                {
+                  "value": "WY",
+                  "count": 66
+                },
+                {
+                  "value": "OR",
+                  "count": 62
+                },
+                {
+                  "value": "WI",
+                  "count": 61
+                },
+                {
+                  "value": "NV",
+                  "count": 61
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "CA",
+              "count": 24
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Account length",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 205,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 1.0,
+              "max": 243.0,
+              "mean": 100.62040510127532,
+              "median": 100.0,
+              "std": 39.56397365334985,
+              "q1": 73.0,
+              "q3": 127.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Area code",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 3,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 408.0,
+              "max": 510.0,
+              "mean": 437.43885971492875,
+              "median": 415.0,
+              "std": 42.52101801942723,
+              "q1": 408.0,
+              "q3": 510.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "International plan",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2,
+          "stats": {
+            "count": 2666,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "No",
+                  "count": 2396
+                },
+                {
+                  "value": "Yes",
+                  "count": 270
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Voice mail plan",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2,
+          "stats": {
+            "count": 2666,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "No",
+                  "count": 1933
+                },
+                {
+                  "value": "Yes",
+                  "count": 733
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Number vmail messages",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 42,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 0.0,
+              "max": 50.0,
+              "mean": 8.021755438859715,
+              "median": 0.0,
+              "std": 13.612277018291943,
+              "q1": 0.0,
+              "q3": 19.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Total day minutes",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1489,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 0.0,
+              "max": 350.8,
+              "mean": 179.48162040510127,
+              "median": 179.95,
+              "std": 54.210350220869834,
+              "q1": 143.4,
+              "q3": 215.9
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 21,
+          "anomaly_examples": [
+            "337.4",
+            "350.8",
+            "335.5",
+            "30.9",
+            "34.0"
+          ]
+        },
+        {
+          "name": "Total day calls",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 115,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 0.0,
+              "max": 160.0,
+              "mean": 100.31020255063765,
+              "median": 101.0,
+              "std": 19.988162186059494,
+              "q1": 87.0,
+              "q3": 114.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Total day charge",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1489,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 0.0,
+              "max": 59.64,
+              "mean": 30.512404351087774,
+              "median": 30.59,
+              "std": 9.215732907163499,
+              "q1": 24.38,
+              "q3": 36.7
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 21,
+          "anomaly_examples": [
+            "57.36",
+            "59.64",
+            "57.04",
+            "5.25",
+            "5.78"
+          ]
+        },
+        {
+          "name": "Total eve minutes",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1442,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 0.0,
+              "max": 363.7,
+              "mean": 200.38615903975995,
+              "median": 200.9,
+              "std": 50.95151511764594,
+              "q1": 165.3,
+              "q3": 235.1
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 17,
+          "anomaly_examples": [
+            "348.5",
+            "31.2",
+            "42.2",
+            "347.3",
+            "58.9"
+          ]
+        },
+        {
+          "name": "Total eve calls",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 120,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 0.0,
+              "max": 170.0,
+              "mean": 100.02363090772693,
+              "median": 100.0,
+              "std": 20.161445115318894,
+              "q1": 87.0,
+              "q3": 114.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Total eve charge",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1301,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 0.0,
+              "max": 30.91,
+              "mean": 17.0330720180045,
+              "median": 17.08,
+              "std": 4.330864176799866,
+              "q1": 14.05,
+              "q3": 19.98
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 17,
+          "anomaly_examples": [
+            "29.62",
+            "2.65",
+            "3.59",
+            "29.52",
+            "5.01"
+          ]
+        },
+        {
+          "name": "Total night minutes",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1444,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 43.7,
+              "max": 395.0,
+              "mean": 201.16894223555886,
+              "median": 201.14999999999998,
+              "std": 50.780323368725305,
+              "q1": 166.925,
+              "q3": 236.475
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 22,
+          "anomaly_examples": [
+            "57.5",
+            "354.9",
+            "349.2",
+            "45.0",
+            "342.8"
+          ]
+        },
+        {
+          "name": "Total night calls",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 118,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 33.0,
+              "max": 166.0,
+              "mean": 100.10615153788447,
+              "median": 100.0,
+              "std": 19.418458551101708,
+              "q1": 87.0,
+              "q3": 113.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Total night charge",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 885,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 1.97,
+              "max": 17.77,
+              "mean": 9.05268942235559,
+              "median": 9.05,
+              "std": 2.285119512915754,
+              "q1": 7.512499999999999,
+              "q3": 10.64
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 22,
+          "anomaly_examples": [
+            "2.59",
+            "15.97",
+            "15.71",
+            "2.03",
+            "15.43"
+          ]
+        },
+        {
+          "name": "Total intl minutes",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 158,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 0.0,
+              "max": 20.0,
+              "mean": 10.23702175543886,
+              "median": 10.2,
+              "std": 2.7883485770512593,
+              "q1": 8.5,
+              "q3": 12.1
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 37,
+          "anomaly_examples": [
+            "20.0",
+            "0.0",
+            "17.6",
+            "18.9",
+            "0.0"
+          ]
+        },
+        {
+          "name": "Total intl calls",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 21,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 0.0,
+              "max": 20.0,
+              "mean": 4.467366841710428,
+              "median": 4.0,
+              "std": 2.4561949030129497,
+              "q1": 3.0,
+              "q3": 6.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Total intl charge",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 158,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 0.0,
+              "max": 5.4,
+              "mean": 2.7644898724681166,
+              "median": 2.75,
+              "std": 0.7528120531228483,
+              "q1": 2.3,
+              "q3": 3.27
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 40,
+          "anomaly_examples": [
+            "5.4",
+            "0.0",
+            "4.75",
+            "5.1",
+            "0.0"
+          ]
+        },
+        {
+          "name": "Customer service calls",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 10,
+          "stats": {
+            "count": 2666,
+            "numeric": {
+              "min": 0.0,
+              "max": 9.0,
+              "mean": 1.5626406601650413,
+              "median": 1.0,
+              "std": 1.3112357589949095,
+              "q1": 1.0,
+              "q3": 2.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Churn",
+          "declared_type": "bool",
+          "inferred_type": "boolean",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2,
+          "stats": {
+            "count": 2666,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "False",
+                  "count": 2278
+                },
+                {
+                  "value": "True",
+                  "count": 388
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        }
+      ],
+      "duplicates": {
+        "exact_count": 0,
+        "exact_pct": 0.0,
+        "business_key": [],
+        "business_key_duplicate_count": 0,
+        "business_key_duplicate_pct": 0.0
+      }
+    }
+  ],
+  "relationships": [],
+  "issues": [
+    {
+      "id": "churn-bigml-80.Total day minutes.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "churn-bigml-80",
+      "column": "Total day minutes",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "21 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées.",
+      "affected_rows": 21,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "churn-bigml-80.Total day charge.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "churn-bigml-80",
+      "column": "Total day charge",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "21 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées.",
+      "affected_rows": 21,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "churn-bigml-80.Total eve minutes.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "churn-bigml-80",
+      "column": "Total eve minutes",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "17 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées.",
+      "affected_rows": 17,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "churn-bigml-80.Total eve charge.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "churn-bigml-80",
+      "column": "Total eve charge",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "17 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées.",
+      "affected_rows": 17,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "churn-bigml-80.Total night minutes.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "churn-bigml-80",
+      "column": "Total night minutes",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "22 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées.",
+      "affected_rows": 22,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "churn-bigml-80.Total night charge.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "churn-bigml-80",
+      "column": "Total night charge",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "22 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées.",
+      "affected_rows": 22,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "churn-bigml-80.Total intl minutes.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "churn-bigml-80",
+      "column": "Total intl minutes",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "37 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées.",
+      "affected_rows": 37,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "churn-bigml-80.Total intl charge.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "churn-bigml-80",
+      "column": "Total intl charge",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "40 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées.",
+      "affected_rows": 40,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    }
+  ],
+  "llm_summary": "Tables profilées : churn-bigml-80 : 2666 ligne(s), 20 colonne(s)\nProblèmes prioritaires : medium — churn-bigml-80.Total day minutes : iqr_or_zscore_outlier. 21 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — churn-bigml-80.Total day charge : iqr_or_zscore_outlier. 21 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — churn-bigml-80.Total eve minutes : iqr_or_zscore_outlier. 17 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — churn-bigml-80.Total eve charge : iqr_or_zscore_outlier. 17 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — churn-bigml-80.Total night minutes : iqr_or_zscore_outlier. 22 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — churn-bigml-80.Total night charge : iqr_or_zscore_outlier. 22 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — churn-bigml-80.Total intl minutes : iqr_or_zscore_outlier. 37 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — churn-bigml-80.Total intl charge : iqr_or_zscore_outlier. 40 ligne(s) signalée(s) par IQR ou z-score sur 2666 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction.",
+  "status": "warning",
+  "trace": [
+    {
+      "timestamp": "2026-10-27T18:46:31.292551",
+      "tool": "load_source",
+      "parameters": {
+        "source_name": "churn-bigml-80",
+        "source_type": "csv",
+        "sampled": false,
+        "sample_rows": 2666
+      },
+      "duration_ms": 16.115700000227662
+    }
+  ],
+  "errors": []
+}

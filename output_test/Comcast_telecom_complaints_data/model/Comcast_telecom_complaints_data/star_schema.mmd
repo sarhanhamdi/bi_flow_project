@@ -1,0 +1,40 @@
+erDiagram
+    fact_Comcast_telecom_complaints_data {
+        int fact_row_key
+        int Comcast_telecom_complaints_data_key FK
+        int attributes_key FK
+        int location_key FK
+        int date_date_key FK
+        int date_month_year_date_key FK
+        int time_date_key FK
+        int ticket
+    }
+    dim_Comcast_telecom_complaints_data {
+        int Comcast_telecom_complaints_data_key PK
+        string customer_complaint
+    }
+    dim_attributes {
+        int attributes_key PK
+        string received_via
+        string status
+        string filing_on_behalf_of_someone
+    }
+    dim_location {
+        int location_key PK
+        string city
+        string state
+        string zip_code
+    }
+    dim_date {
+        int date_key PK
+        string date
+        string year
+        string quarter
+        string month
+        string day
+        string weekday
+    }
+    dim_Comcast_telecom_complaints_data ||--o{ fact_Comcast_telecom_complaints_data : Comcast_telecom_complaints_data_key
+    dim_attributes ||--o{ fact_Comcast_telecom_complaints_data : attributes_key
+    dim_location ||--o{ fact_Comcast_telecom_complaints_data : location_key
+    dim_date ||--o{ fact_Comcast_telecom_complaints_data : date_key

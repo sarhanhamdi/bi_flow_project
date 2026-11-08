@@ -1,0 +1,1360 @@
+{
+  "business_goal": "Test multi-usage autonome",
+  "status": "success",
+  "tables": [
+    {
+      "name": "network_qoe",
+      "rows_in": 167431,
+      "rows_out": 167431,
+      "columns_in": 33,
+      "columns_out": 33,
+      "output_path": "output_test\\network_qoe\\network_qoe_clean.csv",
+      "quality_before": {
+        "completeness": 100.0,
+        "uniqueness": 100.0,
+        "validity": 100.0,
+        "consistency": 100.0,
+        "overall": 100.0,
+        "rows": 167431,
+        "null_cells": 48082,
+        "text_numeric_columns": []
+      },
+      "quality_after": {
+        "completeness": 100.0,
+        "uniqueness": 100.0,
+        "validity": 100.0,
+        "consistency": 100.0,
+        "overall": 100.0,
+        "rows": 167431,
+        "null_cells": 48082,
+        "text_numeric_columns": []
+      },
+      "columns": [
+        {
+          "original_name": "run_id",
+          "name": "run_id",
+          "dtype": "string",
+          "semantic_role": "id",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "timestamp",
+          "name": "timestamp",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": "date",
+          "is_pii": false,
+          "pii_treatment": "false_positive_ignored"
+        },
+        {
+          "original_name": "datetime",
+          "name": "datetime",
+          "dtype": "datetime64[us]",
+          "semantic_role": "date",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "segment",
+          "name": "segment",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "switch_id",
+          "name": "switch_id",
+          "dtype": "int64",
+          "semantic_role": "id",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "port_no",
+          "name": "port_no",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "mos_voice",
+          "name": "mos_voice",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "e2e_delay_ms",
+          "name": "e2e_delay_ms",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "plr",
+          "name": "plr",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "jitter_ms",
+          "name": "jitter_ms",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "cdr_flag",
+          "name": "cdr_flag",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "call_setup_time_ms",
+          "name": "call_setup_time_ms",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": "date",
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "buffering_ratio",
+          "name": "buffering_ratio",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "rebuffering_freq",
+          "name": "rebuffering_freq",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "rebuffering_count",
+          "name": "rebuffering_count",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "total_stall_seconds",
+          "name": "total_stall_seconds",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "video_start_time_ms",
+          "name": "video_start_time_ms",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": "date",
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "streaming_mos",
+          "name": "streaming_mos",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "effective_bitrate_mbps",
+          "name": "effective_bitrate_mbps",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "throughput_mbps",
+          "name": "throughput_mbps",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "dns_latency_ms",
+          "name": "dns_latency_ms",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "availability",
+          "name": "availability",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "rx_bytes",
+          "name": "rx_bytes",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "tx_bytes",
+          "name": "tx_bytes",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "rx_packets",
+          "name": "rx_packets",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "tx_packets",
+          "name": "tx_packets",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "rx_dropped",
+          "name": "rx_dropped",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "tx_dropped",
+          "name": "tx_dropped",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "dataplane_latency_ms",
+          "name": "dataplane_latency_ms",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "ctrl_plane_rtt_ms",
+          "name": "ctrl_plane_rtt_ms",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "flow_count",
+          "name": "flow_count",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "mos_source",
+          "name": "mos_source",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "label",
+          "name": "label",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        }
+      ]
+    }
+  ],
+  "star_schemas": [
+    {
+      "table": "network_qoe",
+      "source": "auto",
+      "fact_name": "fact_network_qoe",
+      "grain": "1 ligne = 1 ligne de la table source",
+      "grain_reason": "aucun identifiant unique trouvé : clé de ligne créée",
+      "fact_rows": 167431,
+      "measures": [
+        {
+          "column": "timestamp",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "port_no",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "mos_voice",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "e2e_delay_ms",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "plr",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "jitter_ms",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "cdr_flag",
+          "kind": "flag",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "indicateur 0/1 : la moyenne donne un taux (ex. taux de churn)"
+        },
+        {
+          "column": "call_setup_time_ms",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "buffering_ratio",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "rebuffering_freq",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "video_start_time_ms",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "streaming_mos",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "effective_bitrate_mbps",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "throughput_mbps",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "dns_latency_ms",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "availability",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "rx_bytes",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "tx_bytes",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "rx_packets",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "tx_packets",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "dataplane_latency_ms",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "ctrl_plane_rtt_ms",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "flow_count",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "dim_network_qoe",
+          "key": "network_qoe_key",
+          "role": "entity",
+          "columns": [
+            "segment"
+          ],
+          "rows": 4,
+          "rationale": "profil client"
+        },
+        {
+          "name": "dim_attributes",
+          "key": "attributes_key",
+          "role": "attributes",
+          "columns": [
+            "mos_source",
+            "label"
+          ],
+          "rows": 12,
+          "rationale": "autres attributs descriptifs"
+        }
+      ],
+      "date_columns": [
+        "datetime"
+      ],
+      "excluded_columns": [
+        {
+          "column": "run_id",
+          "reason": "colonne constante : aucune valeur analytique"
+        },
+        {
+          "column": "switch_id",
+          "reason": "colonne constante : aucune valeur analytique"
+        },
+        {
+          "column": "rebuffering_count",
+          "reason": "colonne constante : aucune valeur analytique"
+        },
+        {
+          "column": "total_stall_seconds",
+          "reason": "colonne constante : aucune valeur analytique"
+        },
+        {
+          "column": "rx_dropped",
+          "reason": "colonne constante : aucune valeur analytique"
+        },
+        {
+          "column": "tx_dropped",
+          "reason": "colonne constante : aucune valeur analytique"
+        }
+      ],
+      "files": {
+        "fact_network_qoe": "output_test\\network_qoe\\model\\network_qoe\\fact_network_qoe.csv",
+        "dim_network_qoe": "output_test\\network_qoe\\model\\network_qoe\\dim_network_qoe.csv",
+        "dim_attributes": "output_test\\network_qoe\\model\\network_qoe\\dim_attributes.csv",
+        "dim_date": "output_test\\network_qoe\\model\\network_qoe\\dim_date.csv",
+        "star_schema.mmd": "output_test\\network_qoe\\model\\network_qoe\\star_schema.mmd"
+      },
+      "check_ids": [
+        "network_qoe.star_fact_row_count",
+        "network_qoe.star_no_null_foreign_key",
+        "network_qoe.star_no_orphan_foreign_key",
+        "network_qoe.star_dimension_keys_unique",
+        "network_qoe.star_column_coverage",
+        "network_qoe.star_measure_reconciliation",
+        "network_qoe.star_lossless_rejoin"
+      ],
+      "mermaid": "erDiagram\n    fact_network_qoe {\n        int fact_row_key\n        int network_qoe_key FK\n        int attributes_key FK\n        int datetime_date_key FK\n        float timestamp\n        int port_no\n        float mos_voice\n        float e2e_delay_ms\n        float plr\n        float jitter_ms\n        int cdr_flag\n        float call_setup_time_ms\n        float buffering_ratio\n        float rebuffering_freq\n        float video_start_time_ms\n        float streaming_mos\n        float effective_bitrate_mbps\n        float throughput_mbps\n        float dns_latency_ms\n        float availability\n        int rx_bytes\n        int tx_bytes\n        int rx_packets\n        int tx_packets\n        float dataplane_latency_ms\n        float ctrl_plane_rtt_ms\n        int flow_count\n    }\n    dim_network_qoe {\n        int network_qoe_key PK\n        string segment\n    }\n    dim_attributes {\n        int attributes_key PK\n        string mos_source\n        string label\n    }\n    dim_date {\n        int date_key PK\n        string date\n        string year\n        string quarter\n        string month\n        string day\n        string weekday\n    }\n    dim_network_qoe ||--o{ fact_network_qoe : network_qoe_key\n    dim_attributes ||--o{ fact_network_qoe : attributes_key\n    dim_date ||--o{ fact_network_qoe : date_key\n"
+    }
+  ],
+  "actions": [
+    {
+      "id": "network_qoe.00.coerce_to_datetime.datetime",
+      "step": 0,
+      "table": "network_qoe",
+      "column": "datetime",
+      "rule": "coerce_to_datetime",
+      "rows_affected": 167431,
+      "before": "Colonne de dates stockée en texte.",
+      "after": "Convertie en datetime (0 valeur(s) illisible(s) mises à null).",
+      "rationale": "Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.",
+      "source_issue_id": null
+    },
+    {
+      "id": "network_qoe.01.structural_missing_keep.dataplane_latency_ms",
+      "step": 1,
+      "table": "network_qoe",
+      "column": "dataplane_latency_ms",
+      "rule": "structural_missing_keep",
+      "rows_affected": 0,
+      "before": "48082 null(s) liés à mos_source == 'ctrl_plane_fallback'.",
+      "after": "Nulls conservés.",
+      "rationale": "Imputer une valeur numérique fausserait les moyennes ; la valeur est non applicable.",
+      "source_issue_id": "network_qoe.dataplane_latency_ms.missing"
+    },
+    {
+      "id": "network_qoe.02.report_outliers.e2e_delay_ms",
+      "step": 2,
+      "table": "network_qoe",
+      "column": "e2e_delay_ms",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "25439 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.e2e_delay_ms.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.03.report_outliers.plr",
+      "step": 3,
+      "table": "network_qoe",
+      "column": "plr",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "25737 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.plr.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.04.report_outliers.jitter_ms",
+      "step": 4,
+      "table": "network_qoe",
+      "column": "jitter_ms",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "11764 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.jitter_ms.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.05.report_outliers.call_setup_time_ms",
+      "step": 5,
+      "table": "network_qoe",
+      "column": "call_setup_time_ms",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "24004 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.call_setup_time_ms.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.06.report_outliers.buffering_ratio",
+      "step": 6,
+      "table": "network_qoe",
+      "column": "buffering_ratio",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "3069 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.buffering_ratio.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.07.report_outliers.rebuffering_freq",
+      "step": 7,
+      "table": "network_qoe",
+      "column": "rebuffering_freq",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "2660 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.rebuffering_freq.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.08.report_outliers.video_start_time_ms",
+      "step": 8,
+      "table": "network_qoe",
+      "column": "video_start_time_ms",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "7305 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.video_start_time_ms.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.09.report_outliers.streaming_mos",
+      "step": 9,
+      "table": "network_qoe",
+      "column": "streaming_mos",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "2680 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.streaming_mos.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.10.report_outliers.effective_bitrate_mbps",
+      "step": 10,
+      "table": "network_qoe",
+      "column": "effective_bitrate_mbps",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "3064 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.effective_bitrate_mbps.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.11.report_outliers.throughput_mbps",
+      "step": 11,
+      "table": "network_qoe",
+      "column": "throughput_mbps",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "3172 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.throughput_mbps.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.12.report_outliers.dns_latency_ms",
+      "step": 12,
+      "table": "network_qoe",
+      "column": "dns_latency_ms",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "25093 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.dns_latency_ms.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.13.report_outliers.availability",
+      "step": 13,
+      "table": "network_qoe",
+      "column": "availability",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "28766 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.availability.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.14.report_outliers.rx_bytes",
+      "step": 14,
+      "table": "network_qoe",
+      "column": "rx_bytes",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "9783 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": null
+    },
+    {
+      "id": "network_qoe.15.report_outliers.tx_bytes",
+      "step": 15,
+      "table": "network_qoe",
+      "column": "tx_bytes",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "4321 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": null
+    },
+    {
+      "id": "network_qoe.16.report_outliers.tx_packets",
+      "step": 16,
+      "table": "network_qoe",
+      "column": "tx_packets",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "5977 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": null
+    },
+    {
+      "id": "network_qoe.17.report_outliers.dataplane_latency_ms",
+      "step": 17,
+      "table": "network_qoe",
+      "column": "dataplane_latency_ms",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "22998 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.dataplane_latency_ms.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.18.report_outliers.ctrl_plane_rtt_ms",
+      "step": 18,
+      "table": "network_qoe",
+      "column": "ctrl_plane_rtt_ms",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "11367 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "network_qoe.ctrl_plane_rtt_ms.iqr_zscore_outliers"
+    },
+    {
+      "id": "network_qoe.19.report_outliers.flow_count",
+      "step": 19,
+      "table": "network_qoe",
+      "column": "flow_count",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "5295 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": null
+    },
+    {
+      "id": "network_qoe.20.pii_false_positive.timestamp",
+      "step": 20,
+      "table": "network_qoe",
+      "column": "timestamp",
+      "rule": "pii_false_positive",
+      "rows_affected": 0,
+      "before": "Signalée PII par le Profiler (phone).",
+      "after": "Aucune modification.",
+      "rationale": "Faux positif écarté : colonne numérique (pas un identifiant personnel textuel).",
+      "source_issue_id": null
+    }
+  ],
+  "validation_checks": [
+    {
+      "id": "network_qoe.row_reconciliation",
+      "table": "network_qoe",
+      "check": "row_reconciliation",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "167431 lignes en entrée − 0 supprimées tracées = 167431 attendues ; 167431 en sortie."
+    },
+    {
+      "id": "network_qoe.no_exact_duplicates",
+      "table": "network_qoe",
+      "check": "no_exact_duplicates",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 doublon(s) exact(s) restant(s)."
+    },
+    {
+      "id": "network_qoe.no_unexpected_nulls",
+      "table": "network_qoe",
+      "check": "no_unexpected_nulls",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Nulls restants hors cas structurels : aucun."
+    },
+    {
+      "id": "network_qoe.range.call_setup_time_ms",
+      "table": "network_qoe",
+      "check": "range",
+      "column": "call_setup_time_ms",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "network_qoe.range.rx_bytes",
+      "table": "network_qoe",
+      "check": "range",
+      "column": "rx_bytes",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "network_qoe.range.tx_bytes",
+      "table": "network_qoe",
+      "check": "range",
+      "column": "tx_bytes",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "network_qoe.no_constant_columns",
+      "table": "network_qoe",
+      "check": "no_constant_columns",
+      "column": null,
+      "passed": false,
+      "severity": "low",
+      "violations": 6,
+      "detail": "Colonnes constantes (peu utiles pour l'analyse) : ['run_id', 'switch_id', 'rebuffering_count', 'total_stall_seconds', 'rx_dropped', 'tx_dropped']."
+    },
+    {
+      "id": "network_qoe.star_fact_row_count",
+      "table": "network_qoe",
+      "check": "star_fact_row_count",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "167431 lignes dans la table nettoyée, 167431 dans fact_network_qoe."
+    },
+    {
+      "id": "network_qoe.star_no_null_foreign_key",
+      "table": "network_qoe",
+      "check": "star_no_null_foreign_key",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 clé(s) étrangère(s) nulle(s)."
+    },
+    {
+      "id": "network_qoe.star_no_orphan_foreign_key",
+      "table": "network_qoe",
+      "check": "star_no_orphan_foreign_key",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 ligne(s) du fait pointent vers une dimension inexistante."
+    },
+    {
+      "id": "network_qoe.star_dimension_keys_unique",
+      "table": "network_qoe",
+      "check": "star_dimension_keys_unique",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 clé(s) de dimension en double."
+    },
+    {
+      "id": "network_qoe.star_column_coverage",
+      "table": "network_qoe",
+      "check": "star_column_coverage",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Colonnes non placées : aucune ; placées deux fois : aucune."
+    },
+    {
+      "id": "network_qoe.star_measure_reconciliation",
+      "table": "network_qoe",
+      "check": "star_measure_reconciliation",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 mesure(s) dont la somme diffère entre table nettoyée et fait."
+    },
+    {
+      "id": "network_qoe.star_lossless_rejoin",
+      "table": "network_qoe",
+      "check": "star_lossless_rejoin",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "En re-joignant le fait et les dimensions, 0 cellule(s) diffèrent de la table nettoyée (0 = l'étoile ne perd et ne déforme aucune donnée)."
+    }
+  ],
+  "issue_resolutions": [
+    {
+      "issue_id": "network_qoe.e2e_delay_ms.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.02.report_outliers.e2e_delay_ms"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.plr.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.03.report_outliers.plr"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.jitter_ms.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.04.report_outliers.jitter_ms"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.call_setup_time_ms.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.05.report_outliers.call_setup_time_ms"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.buffering_ratio.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.06.report_outliers.buffering_ratio"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.rebuffering_freq.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.07.report_outliers.rebuffering_freq"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.video_start_time_ms.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.08.report_outliers.video_start_time_ms"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.streaming_mos.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.09.report_outliers.streaming_mos"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.effective_bitrate_mbps.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.10.report_outliers.effective_bitrate_mbps"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.throughput_mbps.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.11.report_outliers.throughput_mbps"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.dns_latency_ms.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.12.report_outliers.dns_latency_ms"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.availability.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.13.report_outliers.availability"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.dataplane_latency_ms.missing",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.01.structural_missing_keep.dataplane_latency_ms"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.dataplane_latency_ms.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.17.report_outliers.dataplane_latency_ms"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "network_qoe.ctrl_plane_rtt_ms.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "network_qoe.18.report_outliers.ctrl_plane_rtt_ms"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    }
+  ],
+  "remaining_issues": [
+    {
+      "id": "network_qoe.remaining.no_constant_columns",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": null,
+      "rule": "no_constant_columns",
+      "evidence": "Colonnes constantes (peu utiles pour l'analyse) : ['run_id', 'switch_id', 'rebuffering_count', 'total_stall_seconds', 'rx_dropped', 'tx_dropped'].",
+      "affected_rows": 6,
+      "suggested_action": "Valider la règle métier avec le responsable de la donnée avant de la corriger."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.e2e_delay_ms",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "e2e_delay_ms",
+      "rule": "outliers_reported",
+      "evidence": "25439 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 25439,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.plr",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "plr",
+      "rule": "outliers_reported",
+      "evidence": "25737 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 25737,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.jitter_ms",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "jitter_ms",
+      "rule": "outliers_reported",
+      "evidence": "11764 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 11764,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.call_setup_time_ms",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "call_setup_time_ms",
+      "rule": "outliers_reported",
+      "evidence": "24004 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 24004,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.buffering_ratio",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "buffering_ratio",
+      "rule": "outliers_reported",
+      "evidence": "3069 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 3069,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.rebuffering_freq",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "rebuffering_freq",
+      "rule": "outliers_reported",
+      "evidence": "2660 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 2660,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.video_start_time_ms",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "video_start_time_ms",
+      "rule": "outliers_reported",
+      "evidence": "7305 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 7305,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.streaming_mos",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "streaming_mos",
+      "rule": "outliers_reported",
+      "evidence": "2680 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 2680,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.effective_bitrate_mbps",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "effective_bitrate_mbps",
+      "rule": "outliers_reported",
+      "evidence": "3064 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 3064,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.throughput_mbps",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "throughput_mbps",
+      "rule": "outliers_reported",
+      "evidence": "3172 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 3172,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.dns_latency_ms",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "dns_latency_ms",
+      "rule": "outliers_reported",
+      "evidence": "25093 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 25093,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.availability",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "availability",
+      "rule": "outliers_reported",
+      "evidence": "28766 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 28766,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.rx_bytes",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "rx_bytes",
+      "rule": "outliers_reported",
+      "evidence": "9783 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 9783,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.tx_bytes",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "tx_bytes",
+      "rule": "outliers_reported",
+      "evidence": "4321 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 4321,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.tx_packets",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "tx_packets",
+      "rule": "outliers_reported",
+      "evidence": "5977 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 5977,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.dataplane_latency_ms",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "dataplane_latency_ms",
+      "rule": "outliers_reported",
+      "evidence": "22998 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 22998,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.ctrl_plane_rtt_ms",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "ctrl_plane_rtt_ms",
+      "rule": "outliers_reported",
+      "evidence": "11367 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 11367,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "network_qoe.remaining.outliers.flow_count",
+      "severity": "low",
+      "table": "network_qoe",
+      "column": "flow_count",
+      "rule": "outliers_reported",
+      "evidence": "5295 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 5295,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    }
+  ],
+  "llm_summary": "Table network_qoe : 167431 → 167431 ligne(s), score qualité 100.0 → 100.0/100.\nCorrections appliquées :\n- network_qoe.datetime [coerce_to_datetime] 167431 ligne(s) : Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.\nÀ surveiller :\n- low network_qoe : Colonnes constantes (peu utiles pour l'analyse) : ['run_id', 'switch_id', 'rebuffering_count', 'total_stall_seconds', 'rx_dropped', 'tx_dropped'].\n- low network_qoe.e2e_delay_ms : 25439 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.plr : 25737 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.jitter_ms : 11764 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.call_setup_time_ms : 24004 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.buffering_ratio : 3069 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.rebuffering_freq : 2660 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.video_start_time_ms : 7305 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.streaming_mos : 2680 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.effective_bitrate_mbps : 3064 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.throughput_mbps : 3172 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.dns_latency_ms : 25093 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.availability : 28766 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.rx_bytes : 9783 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.tx_bytes : 4321 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.tx_packets : 5977 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.dataplane_latency_ms : 22998 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.ctrl_plane_rtt_ms : 11367 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.flow_count : 5295 valeur(s) extrême(s) conservée(s) telles quelles.",
+  "trace": [
+    {
+      "timestamp": "2026-10-27T18:46:43.132941",
+      "tool": "load_source",
+      "parameters": {
+        "source_name": "network_qoe",
+        "rows": 167431
+      },
+      "duration_ms": 926.904999999806
+    },
+    {
+      "timestamp": "2026-10-27T18:46:48.531299",
+      "tool": "clean_table",
+      "parameters": {
+        "table": "network_qoe",
+        "actions": 21
+      },
+      "duration_ms": 5397.317099999782
+    },
+    {
+      "timestamp": "2026-10-27T18:46:48.532212",
+      "tool": "validate",
+      "parameters": {
+        "checks": 7
+      },
+      "duration_ms": 0.26190000016868
+    },
+    {
+      "timestamp": "2026-10-27T18:46:53.278480",
+      "tool": "build_star_schema",
+      "parameters": {
+        "table": "network_qoe",
+        "dimensions": 2
+      },
+      "duration_ms": 2742.4909000001207
+    },
+    {
+      "timestamp": "2026-10-27T18:46:53.278480",
+      "tool": "export",
+      "parameters": {
+        "table": "network_qoe",
+        "path": "output_test\\network_qoe\\network_qoe_clean.csv"
+      },
+      "duration_ms": 4746.111599999949
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-27T18:46:42.205793"
+}

@@ -1,0 +1,4806 @@
+{
+  "status": "success",
+  "dataset_name": "telecom_complaints_sample",
+  "business_goal": "Test multi-usage autonome",
+  "execution_start": "2026-10-27T17:46:58.347229",
+  "execution_end": "2026-10-27T17:47:08.221635",
+  "total_duration_seconds": 9.87,
+  "steps": [
+    {
+      "agent_name": "profiler",
+      "status": "success",
+      "duration_seconds": 0.54,
+      "message": "8 anomalies détectées"
+    },
+    {
+      "agent_name": "etl",
+      "status": "success",
+      "duration_seconds": 0.62,
+      "message": "9 actions appliquées, étoile validée"
+    },
+    {
+      "agent_name": "kpi",
+      "status": "success",
+      "duration_seconds": 0.13,
+      "message": "3 KPIs calculés"
+    },
+    {
+      "agent_name": "bi_analyst",
+      "status": "success",
+      "duration_seconds": 0.04,
+      "message": "0 insights, 0 recommandations"
+    },
+    {
+      "agent_name": "dashboard",
+      "status": "success",
+      "duration_seconds": 0.01,
+      "message": "13 visuels générés dans 3 sections"
+    },
+    {
+      "agent_name": "xai",
+      "status": "success",
+      "duration_seconds": 8.54,
+      "message": "AUC: 0.542, Top: company_response_to_consumer, zipcode, company"
+    }
+  ],
+  "profiler_report": {
+    "business_goal": "Test multi-usage autonome",
+    "domain": "customer_support",
+    "semantic_map": {
+      "domain": "customer_support",
+      "confidence_scores": {
+        "customer_churn": 0.0,
+        "network_performance": 0.0,
+        "customer_support": 20.0
+      },
+      "primary_target": "consumer_disputed?",
+      "concepts": {
+        "target_churn": null,
+        "tenure": null,
+        "monthly_charge": null,
+        "total_revenue": null,
+        "contract": null,
+        "mos_score": null,
+        "latency": null,
+        "throughput": null,
+        "upload_speed": null,
+        "packet_loss": null,
+        "signal_strength": null,
+        "target_network_incident": null,
+        "availability": null,
+        "ticket_id": "complaint_id",
+        "ticket_status": null,
+        "dispute_flag": "consumer_disputed?",
+        "timely_response": "timely_response",
+        "csat_score": null,
+        "resolution_time": null
+      }
+    },
+    "tables": [
+      {
+        "name": "telecom_complaints_sample",
+        "source_name": "telecom_complaints_sample",
+        "row_count": 5000,
+        "column_count": 18,
+        "memory_bytes": 1485629,
+        "sampled": false,
+        "sample_rows": null,
+        "columns": [
+          {
+            "name": "date_received",
+            "declared_type": "str",
+            "inferred_type": "datetime",
+            "semantic_role": "date",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 44,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "09/10/2013",
+                    "count": 442
+                  },
+                  {
+                    "value": "09/25/2013",
+                    "count": 409
+                  },
+                  {
+                    "value": "09/18/2013",
+                    "count": 371
+                  },
+                  {
+                    "value": "09/24/2013",
+                    "count": 343
+                  },
+                  {
+                    "value": "09/03/2013",
+                    "count": 319
+                  },
+                  {
+                    "value": "10/23/2013",
+                    "count": 296
+                  },
+                  {
+                    "value": "10/30/2013",
+                    "count": 253
+                  },
+                  {
+                    "value": "09/23/2013",
+                    "count": 233
+                  },
+                  {
+                    "value": "09/30/2013",
+                    "count": 221
+                  },
+                  {
+                    "value": "10/01/2013",
+                    "count": 219
+                  }
+                ]
+              }
+            },
+            "rare_values": [
+              {
+                "value": "10/13/2013",
+                "count": 46
+              },
+              {
+                "value": "11/25/2013",
+                "count": 2
+              },
+              {
+                "value": "11/01/2013",
+                "count": 1
+              },
+              {
+                "value": "10/17/2013",
+                "count": 1
+              },
+              {
+                "value": "11/10/2013",
+                "count": 1
+              },
+              {
+                "value": "11/20/2013",
+                "count": 1
+              },
+              {
+                "value": "12/07/2013",
+                "count": 1
+              },
+              {
+                "value": "11/29/2013",
+                "count": 1
+              },
+              {
+                "value": "11/15/2013",
+                "count": 1
+              },
+              {
+                "value": "12/18/2013",
+                "count": 1
+              },
+              {
+                "value": "01/22/2014",
+                "count": 1
+              },
+              {
+                "value": "11/14/2013",
+                "count": 1
+              },
+              {
+                "value": "01/11/2014",
+                "count": 1
+              },
+              {
+                "value": "02/07/2014",
+                "count": 1
+              },
+              {
+                "value": "01/17/2014",
+                "count": 1
+              },
+              {
+                "value": "01/26/2014",
+                "count": 1
+              },
+              {
+                "value": "03/06/2014",
+                "count": 1
+              },
+              {
+                "value": "03/13/2014",
+                "count": 1
+              }
+            ],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "product",
+            "declared_type": "str",
+            "inferred_type": "categorical",
+            "semantic_role": "dimension",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 9,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "Mortgage",
+                    "count": 1846
+                  },
+                  {
+                    "value": "Debt collection",
+                    "count": 931
+                  },
+                  {
+                    "value": "Credit reporting",
+                    "count": 683
+                  },
+                  {
+                    "value": "Bank account or service",
+                    "count": 646
+                  },
+                  {
+                    "value": "Credit card",
+                    "count": 548
+                  },
+                  {
+                    "value": "Student loan",
+                    "count": 163
+                  },
+                  {
+                    "value": "Consumer Loan",
+                    "count": 145
+                  },
+                  {
+                    "value": "Money transfers",
+                    "count": 35
+                  },
+                  {
+                    "value": "Payday loan",
+                    "count": 3
+                  }
+                ]
+              }
+            },
+            "rare_values": [
+              {
+                "value": "Money transfers",
+                "count": 35
+              },
+              {
+                "value": "Payday loan",
+                "count": 3
+              }
+            ],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "sub_product",
+            "declared_type": "str",
+            "inferred_type": "string",
+            "semantic_role": "dimension",
+            "missing_count": 1231,
+            "missing_pct": 24.62,
+            "cardinality": 28,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "Other mortgage",
+                    "count": 702
+                  },
+                  {
+                    "value": "Conventional fixed mortgage",
+                    "count": 585
+                  },
+                  {
+                    "value": "Checking account",
+                    "count": 501
+                  },
+                  {
+                    "value": "Other (i.e. phone, health club, etc.)",
+                    "count": 305
+                  },
+                  {
+                    "value": "Conventional adjustable mortgage (ARM)",
+                    "count": 216
+                  },
+                  {
+                    "value": "Credit card",
+                    "count": 214
+                  },
+                  {
+                    "value": "Non-federal student loan",
+                    "count": 205
+                  },
+                  {
+                    "value": "FHA mortgage",
+                    "count": 201
+                  },
+                  {
+                    "value": "I do not know",
+                    "count": 197
+                  },
+                  {
+                    "value": "Vehicle loan",
+                    "count": 102
+                  }
+                ]
+              }
+            },
+            "rare_values": [
+              {
+                "value": "(CD) Certificate of deposit",
+                "count": 26
+              },
+              {
+                "value": "Auto",
+                "count": 23
+              },
+              {
+                "value": "International money transfer",
+                "count": 21
+              },
+              {
+                "value": "Installment loan",
+                "count": 20
+              },
+              {
+                "value": "Personal line of credit",
+                "count": 18
+              },
+              {
+                "value": "Federal student loan",
+                "count": 15
+              },
+              {
+                "value": "Domestic (US) money transfer",
+                "count": 14
+              },
+              {
+                "value": "Payday loan",
+                "count": 11
+              },
+              {
+                "value": "Second mortgage",
+                "count": 8
+              },
+              {
+                "value": "Reverse mortgage",
+                "count": 8
+              },
+              {
+                "value": "Vehicle lease",
+                "count": 5
+              },
+              {
+                "value": "Cashing a check without an account",
+                "count": 1
+              }
+            ],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "issue",
+            "declared_type": "str",
+            "inferred_type": "string",
+            "semantic_role": "dimension",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 66,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "Loan modification,collection,foreclosure",
+                    "count": 963
+                  },
+                  {
+                    "value": "Loan servicing, payments, escrow account",
+                    "count": 592
+                  },
+                  {
+                    "value": "Incorrect information on credit report",
+                    "count": 450
+                  },
+                  {
+                    "value": "Cont'd attempts collect debt not owed",
+                    "count": 374
+                  },
+                  {
+                    "value": "Account opening, closing, or management",
+                    "count": 269
+                  },
+                  {
+                    "value": "Deposits and withdrawals",
+                    "count": 210
+                  },
+                  {
+                    "value": "Communication tactics",
+                    "count": 210
+                  },
+                  {
+                    "value": "Application, originator, mortgage broker",
+                    "count": 147
+                  },
+                  {
+                    "value": "Disclosure verification of debt",
+                    "count": 145
+                  },
+                  {
+                    "value": "Credit reporting company's investigation",
+                    "count": 121
+                  }
+                ]
+              }
+            },
+            "rare_values": [
+              {
+                "value": "APR or interest rate",
+                "count": 47
+              },
+              {
+                "value": "Credit decision / Underwriting",
+                "count": 46
+              },
+              {
+                "value": "Using a debit or ATM card",
+                "count": 39
+              },
+              {
+                "value": "Credit monitoring or identity protection",
+                "count": 34
+              },
+              {
+                "value": "Late fee",
+                "count": 33
+              },
+              {
+                "value": "Closing/Cancelling account",
+                "count": 30
+              },
+              {
+                "value": "Improper use of my credit report",
+                "count": 26
+              },
+              {
+                "value": "Taking out the loan or lease",
+                "count": 22
+              },
+              {
+                "value": "Delinquent account",
+                "count": 22
+              },
+              {
+                "value": "Rewards",
+                "count": 21
+              },
+              {
+                "value": "Customer service / Customer relations",
+                "count": 21
+              },
+              {
+                "value": "Billing statement",
+                "count": 21
+              },
+              {
+                "value": "Credit line increase/decrease",
+                "count": 18
+              },
+              {
+                "value": "Credit determination",
+                "count": 15
+              },
+              {
+                "value": "Payoff process",
+                "count": 14
+              },
+              {
+                "value": "Credit card protection / Debt protection",
+                "count": 13
+              },
+              {
+                "value": "Transaction issue",
+                "count": 13
+              },
+              {
+                "value": "Advertising and marketing",
+                "count": 13
+              },
+              {
+                "value": "Fraud or scam",
+                "count": 12
+              },
+              {
+                "value": "Other transaction issues",
+                "count": 10
+              },
+              {
+                "value": "Other fee",
+                "count": 9
+              },
+              {
+                "value": "Shopping for a loan or lease",
+                "count": 9
+              },
+              {
+                "value": "Managing the line of credit",
+                "count": 9
+              },
+              {
+                "value": "Account terms and changes",
+                "count": 7
+              },
+              {
+                "value": "Bankruptcy",
+                "count": 7
+              },
+              {
+                "value": "Forbearance / Workout plans",
+                "count": 6
+              },
+              {
+                "value": "Balance transfer",
+                "count": 6
+              },
+              {
+                "value": "Sale of account",
+                "count": 6
+              },
+              {
+                "value": "Money was not available when promised",
+                "count": 5
+              },
+              {
+                "value": "Unsolicited issuance of credit card",
+                "count": 5
+              },
+              {
+                "value": "Incorrect/missing disclosures or info",
+                "count": 4
+              },
+              {
+                "value": "Getting a loan",
+                "count": 4
+              },
+              {
+                "value": "Privacy",
+                "count": 3
+              },
+              {
+                "value": "Overlimit fee",
+                "count": 3
+              },
+              {
+                "value": "Application processing delay",
+                "count": 2
+              },
+              {
+                "value": "Wrong amount charged or received",
+                "count": 2
+              },
+              {
+                "value": "Other service issues",
+                "count": 2
+              },
+              {
+                "value": "Charged fees or interest I didn't expect",
+                "count": 2
+              },
+              {
+                "value": "Convenience checks",
+                "count": 1
+              },
+              {
+                "value": "Cash advance",
+                "count": 1
+              },
+              {
+                "value": "Cash advance fee",
+                "count": 1
+              },
+              {
+                "value": "Arbitration",
+                "count": 1
+              },
+              {
+                "value": "Charged bank acct wrong day or amt",
+                "count": 1
+              }
+            ],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "sub_issue",
+            "declared_type": "str",
+            "inferred_type": "string",
+            "semantic_role": "dimension",
+            "missing_count": 3220,
+            "missing_pct": 64.4,
+            "cardinality": 49,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "Debt is not mine",
+                    "count": 229
+                  },
+                  {
+                    "value": "Account status",
+                    "count": 199
+                  },
+                  {
+                    "value": "Frequent or repeated calls",
+                    "count": 147
+                  },
+                  {
+                    "value": "Information is not mine",
+                    "count": 122
+                  },
+                  {
+                    "value": "Repaying your loan",
+                    "count": 115
+                  },
+                  {
+                    "value": "Debt was paid",
+                    "count": 103
+                  },
+                  {
+                    "value": "Not given enough info to verify debt",
+                    "count": 100
+                  },
+                  {
+                    "value": "Problem with statement of dispute",
+                    "count": 61
+                  },
+                  {
+                    "value": "Attempted to collect wrong amount",
+                    "count": 58
+                  },
+                  {
+                    "value": "Account terms",
+                    "count": 46
+                  }
+                ]
+              }
+            },
+            "rare_values": [
+              {
+                "value": "Problem getting report or credit score",
+                "count": 16
+              },
+              {
+                "value": "Contacted employer after asked not to",
+                "count": 15
+              },
+              {
+                "value": "Used obscene/profane/abusive language",
+                "count": 14
+              },
+              {
+                "value": "Debt was discharged in bankruptcy",
+                "count": 14
+              },
+              {
+                "value": "Called after sent written cease of comm",
+                "count": 13
+              },
+              {
+                "value": "Problem with fraud alerts",
+                "count": 12
+              },
+              {
+                "value": "Called outside of 8am-9pm",
+                "count": 10
+              },
+              {
+                "value": "Investigation took too long",
+                "count": 10
+              },
+              {
+                "value": "Billing dispute",
+                "count": 10
+              },
+              {
+                "value": "Seized/Attempted to seize property",
+                "count": 9
+              },
+              {
+                "value": "Attempted to/Collected exempt funds",
+                "count": 9
+              },
+              {
+                "value": "Not disclosed as an attempt to collect",
+                "count": 7
+              },
+              {
+                "value": "Problem cancelling or closing account",
+                "count": 7
+              },
+              {
+                "value": "Inadequate help over the phone",
+                "count": 6
+              },
+              {
+                "value": "Impersonated an attorney or official",
+                "count": 6
+              },
+              {
+                "value": "Sued w/o proper notification of suit",
+                "count": 5
+              },
+              {
+                "value": "Account terms and changes",
+                "count": 5
+              },
+              {
+                "value": "Getting a loan",
+                "count": 4
+              },
+              {
+                "value": "Indicated committed crime not paying",
+                "count": 3
+              },
+              {
+                "value": "Report shared with employer w/o consent",
+                "count": 2
+              },
+              {
+                "value": "Charged fees or interest I didn't expect",
+                "count": 2
+              },
+              {
+                "value": "Received marketing offer after opted out",
+                "count": 1
+              },
+              {
+                "value": "Contacted me instead of my attorney",
+                "count": 1
+              },
+              {
+                "value": "Charged bank acct wrong day or amt",
+                "count": 1
+              },
+              {
+                "value": "Sued where didn't live/sign for debt",
+                "count": 1
+              }
+            ],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "consumer_complaint_narrative",
+            "declared_type": "float64",
+            "inferred_type": "unknown",
+            "semantic_role": "unknown",
+            "missing_count": 5000,
+            "missing_pct": 100.0,
+            "cardinality": 0,
+            "stats": {
+              "count": 5000
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "company_public_response",
+            "declared_type": "float64",
+            "inferred_type": "unknown",
+            "semantic_role": "unknown",
+            "missing_count": 5000,
+            "missing_pct": 100.0,
+            "cardinality": 0,
+            "stats": {
+              "count": 5000
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "company",
+            "declared_type": "str",
+            "inferred_type": "string",
+            "semantic_role": "dimension",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 483,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "Bank of America",
+                    "count": 520
+                  },
+                  {
+                    "value": "Wells Fargo & Company",
+                    "count": 447
+                  },
+                  {
+                    "value": "JPMorgan Chase & Co.",
+                    "count": 315
+                  },
+                  {
+                    "value": "Experian",
+                    "count": 249
+                  },
+                  {
+                    "value": "Citibank",
+                    "count": 242
+                  },
+                  {
+                    "value": "Equifax",
+                    "count": 223
+                  },
+                  {
+                    "value": "Nationstar Mortgage",
+                    "count": 184
+                  },
+                  {
+                    "value": "Ocwen",
+                    "count": 176
+                  },
+                  {
+                    "value": "TransUnion Intermediate Holdings, Inc.",
+                    "count": 164
+                  },
+                  {
+                    "value": "Capital One",
+                    "count": 129
+                  }
+                ]
+              }
+            },
+            "rare_values": [
+              {
+                "value": "Amex",
+                "count": 48
+              },
+              {
+                "value": "SunTrust Banks, Inc.",
+                "count": 47
+              },
+              {
+                "value": "Select Portfolio Servicing, Inc",
+                "count": 46
+              },
+              {
+                "value": "Expert Global Solutions, Inc.",
+                "count": 43
+              },
+              {
+                "value": "Discover",
+                "count": 35
+              },
+              {
+                "value": "Fifth Third Financial Corporation",
+                "count": 35
+              },
+              {
+                "value": "Portfolio Recovery Associates, Inc.",
+                "count": 31
+              },
+              {
+                "value": "Citizens Financial Group, Inc.",
+                "count": 29
+              },
+              {
+                "value": "Resurgent Capital Services L.P.",
+                "count": 26
+              },
+              {
+                "value": "BB&T Financial",
+                "count": 26
+              },
+              {
+                "value": "PayPal Holdings, Inc.",
+                "count": 24
+              },
+              {
+                "value": "Barclays PLC",
+                "count": 24
+              },
+              {
+                "value": "Regions Financial Corporation",
+                "count": 23
+              },
+              {
+                "value": "Santander Bank US",
+                "count": 21
+              },
+              {
+                "value": "M&T Bank Corporation",
+                "count": 20
+              },
+              {
+                "value": "Santander Consumer USA Holdings Inc",
+                "count": 19
+              },
+              {
+                "value": "Allied Interstate LLC",
+                "count": 18
+              },
+              {
+                "value": "TCF National Bank",
+                "count": 18
+              },
+              {
+                "value": "AES/PHEAA",
+                "count": 18
+              },
+              {
+                "value": "Flagstar Bank",
+                "count": 17
+              },
+              {
+                "value": "USAA Savings",
+                "count": 17
+              },
+              {
+                "value": "Seterus, Inc.",
+                "count": 16
+              },
+              {
+                "value": "Convergent Resources, Inc.",
+                "count": 15
+              },
+              {
+                "value": "KeyBank NA",
+                "count": 15
+              },
+              {
+                "value": "PHH Mortgage",
+                "count": 15
+              },
+              {
+                "value": "Specialized Loan Servicing LLC",
+                "count": 15
+              },
+              {
+                "value": "Quicken Loans",
+                "count": 14
+              },
+              {
+                "value": "Diversified Consultants, Inc.",
+                "count": 14
+              },
+              {
+                "value": "Fidelity National Information Services, Inc. (FNIS)",
+                "count": 13
+              },
+              {
+                "value": "OneMain Financial Holdings, LLC",
+                "count": 13
+              },
+              {
+                "value": "Cavalry Investments, LLC",
+                "count": 13
+              },
+              {
+                "value": "Ally Financial Inc.",
+                "count": 13
+              },
+              {
+                "value": "Navy FCU",
+                "count": 13
+              },
+              {
+                "value": "Afni, Inc.",
+                "count": 11
+              },
+              {
+                "value": "Residential Credit Solutions",
+                "count": 11
+              },
+              {
+                "value": "Bayview Loan Servicing, LLC",
+                "count": 11
+              },
+              {
+                "value": "The Western Union Company",
+                "count": 10
+              },
+              {
+                "value": "CashCall, Inc.",
+                "count": 10
+              },
+              {
+                "value": "I.C. System, Inc.",
+                "count": 10
+              },
+              {
+                "value": "CIT Bank National Association",
+                "count": 10
+              },
+              {
+                "value": "BBVA Compass",
+                "count": 9
+              },
+              {
+                "value": "EverBank",
+                "count": 9
+              },
+              {
+                "value": "Sallie Mae",
+                "count": 9
+              },
+              {
+                "value": "EOS Holdings, Inc.",
+                "count": 9
+              },
+              {
+                "value": "The Huntington National Bank",
+                "count": 9
+              },
+              {
+                "value": "Carrington Mortgage Holdings, LLC.",
+                "count": 8
+              },
+              {
+                "value": "New York Community Bank",
+                "count": 8
+              },
+              {
+                "value": "Toyota Motor Credit Corporation",
+                "count": 8
+              },
+              {
+                "value": "CNG Financial Corporation",
+                "count": 8
+              },
+              {
+                "value": "Real Time Resolutions",
+                "count": 8
+              }
+            ],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "state",
+            "declared_type": "str",
+            "inferred_type": "string",
+            "semantic_role": "dimension",
+            "missing_count": 12,
+            "missing_pct": 0.24,
+            "cardinality": 57,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "CA",
+                    "count": 796
+                  },
+                  {
+                    "value": "FL",
+                    "count": 444
+                  },
+                  {
+                    "value": "TX",
+                    "count": 378
+                  },
+                  {
+                    "value": "NY",
+                    "count": 305
+                  },
+                  {
+                    "value": "GA",
+                    "count": 213
+                  },
+                  {
+                    "value": "NJ",
+                    "count": 209
+                  },
+                  {
+                    "value": "PA",
+                    "count": 194
+                  },
+                  {
+                    "value": "OH",
+                    "count": 175
+                  },
+                  {
+                    "value": "VA",
+                    "count": 163
+                  },
+                  {
+                    "value": "MD",
+                    "count": 155
+                  }
+                ]
+              }
+            },
+            "rare_values": [
+              {
+                "value": "AL",
+                "count": 40
+              },
+              {
+                "value": "WI",
+                "count": 35
+              },
+              {
+                "value": "DC",
+                "count": 33
+              },
+              {
+                "value": "KY",
+                "count": 31
+              },
+              {
+                "value": "UT",
+                "count": 30
+              },
+              {
+                "value": "AR",
+                "count": 29
+              },
+              {
+                "value": "OK",
+                "count": 28
+              },
+              {
+                "value": "DE",
+                "count": 26
+              },
+              {
+                "value": "NM",
+                "count": 26
+              },
+              {
+                "value": "IA",
+                "count": 24
+              },
+              {
+                "value": "KS",
+                "count": 23
+              },
+              {
+                "value": "HI",
+                "count": 21
+              },
+              {
+                "value": "RI",
+                "count": 20
+              },
+              {
+                "value": "NH",
+                "count": 20
+              },
+              {
+                "value": "MS",
+                "count": 19
+              },
+              {
+                "value": "ME",
+                "count": 15
+              },
+              {
+                "value": "NE",
+                "count": 15
+              },
+              {
+                "value": "WV",
+                "count": 13
+              },
+              {
+                "value": "PR",
+                "count": 12
+              },
+              {
+                "value": "ID",
+                "count": 11
+              },
+              {
+                "value": "MT",
+                "count": 9
+              },
+              {
+                "value": "AK",
+                "count": 8
+              },
+              {
+                "value": "VT",
+                "count": 7
+              },
+              {
+                "value": "WY",
+                "count": 6
+              },
+              {
+                "value": "AE",
+                "count": 2
+              },
+              {
+                "value": "FM",
+                "count": 2
+              },
+              {
+                "value": "MH",
+                "count": 1
+              },
+              {
+                "value": "SD",
+                "count": 1
+              },
+              {
+                "value": "VI",
+                "count": 1
+              },
+              {
+                "value": "ND",
+                "count": 1
+              },
+              {
+                "value": "GU",
+                "count": 1
+              }
+            ],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "zipcode",
+            "declared_type": "str",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 12,
+            "missing_pct": 0.24,
+            "cardinality": 3513,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "76116",
+                    "count": 25
+                  },
+                  {
+                    "value": "24382",
+                    "count": 21
+                  },
+                  {
+                    "value": "48382",
+                    "count": 15
+                  },
+                  {
+                    "value": "11106",
+                    "count": 13
+                  },
+                  {
+                    "value": "93675",
+                    "count": 13
+                  },
+                  {
+                    "value": "28269",
+                    "count": 9
+                  },
+                  {
+                    "value": "90005",
+                    "count": 9
+                  },
+                  {
+                    "value": "91915",
+                    "count": 8
+                  },
+                  {
+                    "value": "33173",
+                    "count": 8
+                  },
+                  {
+                    "value": "76126",
+                    "count": 8
+                  }
+                ]
+              }
+            },
+            "rare_values": [
+              {
+                "value": "76116",
+                "count": 25
+              },
+              {
+                "value": "24382",
+                "count": 21
+              },
+              {
+                "value": "48382",
+                "count": 15
+              },
+              {
+                "value": "11106",
+                "count": 13
+              },
+              {
+                "value": "93675",
+                "count": 13
+              },
+              {
+                "value": "28269",
+                "count": 9
+              },
+              {
+                "value": "90005",
+                "count": 9
+              },
+              {
+                "value": "91915",
+                "count": 8
+              },
+              {
+                "value": "33173",
+                "count": 8
+              },
+              {
+                "value": "76126",
+                "count": 8
+              },
+              {
+                "value": "29928",
+                "count": 7
+              },
+              {
+                "value": "34711",
+                "count": 7
+              },
+              {
+                "value": "11103",
+                "count": 7
+              },
+              {
+                "value": "11223",
+                "count": 7
+              },
+              {
+                "value": "76135",
+                "count": 6
+              },
+              {
+                "value": "75070",
+                "count": 6
+              },
+              {
+                "value": "78747",
+                "count": 6
+              },
+              {
+                "value": "33025",
+                "count": 6
+              },
+              {
+                "value": "28560",
+                "count": 6
+              },
+              {
+                "value": "11230",
+                "count": 6
+              },
+              {
+                "value": "20774",
+                "count": 6
+              },
+              {
+                "value": "20735",
+                "count": 6
+              },
+              {
+                "value": "11357",
+                "count": 6
+              },
+              {
+                "value": "80013",
+                "count": 5
+              },
+              {
+                "value": "20748",
+                "count": 5
+              },
+              {
+                "value": "46312",
+                "count": 5
+              },
+              {
+                "value": "30097",
+                "count": 5
+              },
+              {
+                "value": "10024",
+                "count": 5
+              },
+              {
+                "value": "30350",
+                "count": 5
+              },
+              {
+                "value": "90028",
+                "count": 5
+              },
+              {
+                "value": "37615",
+                "count": 5
+              },
+              {
+                "value": "70124",
+                "count": 5
+              },
+              {
+                "value": "30093",
+                "count": 5
+              },
+              {
+                "value": "75115",
+                "count": 5
+              },
+              {
+                "value": "46409",
+                "count": 5
+              },
+              {
+                "value": "30331",
+                "count": 5
+              },
+              {
+                "value": "48220",
+                "count": 5
+              },
+              {
+                "value": "33029",
+                "count": 5
+              },
+              {
+                "value": "21044",
+                "count": 5
+              },
+              {
+                "value": "94115",
+                "count": 5
+              },
+              {
+                "value": "93536",
+                "count": 5
+              },
+              {
+                "value": "27615",
+                "count": 5
+              },
+              {
+                "value": "76085",
+                "count": 5
+              },
+              {
+                "value": "77074",
+                "count": 5
+              },
+              {
+                "value": "07064",
+                "count": 5
+              },
+              {
+                "value": "92619",
+                "count": 5
+              },
+              {
+                "value": "23112",
+                "count": 5
+              },
+              {
+                "value": "30106",
+                "count": 4
+              },
+              {
+                "value": "30039",
+                "count": 4
+              },
+              {
+                "value": "92656",
+                "count": 4
+              }
+            ],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "tags",
+            "declared_type": "str",
+            "inferred_type": "categorical",
+            "semantic_role": "dimension",
+            "missing_count": 4320,
+            "missing_pct": 86.4,
+            "cardinality": 3,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "Older American",
+                    "count": 389
+                  },
+                  {
+                    "value": "Servicemember",
+                    "count": 233
+                  },
+                  {
+                    "value": "Older American, Servicemember",
+                    "count": 58
+                  }
+                ]
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "consumer_consent_provided",
+            "declared_type": "float64",
+            "inferred_type": "unknown",
+            "semantic_role": "unknown",
+            "missing_count": 5000,
+            "missing_pct": 100.0,
+            "cardinality": 0,
+            "stats": {
+              "count": 5000
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "submitted_via",
+            "declared_type": "str",
+            "inferred_type": "categorical",
+            "semantic_role": "dimension",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 6,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "Web",
+                    "count": 3087
+                  },
+                  {
+                    "value": "Referral",
+                    "count": 981
+                  },
+                  {
+                    "value": "Phone",
+                    "count": 440
+                  },
+                  {
+                    "value": "Postal mail",
+                    "count": 403
+                  },
+                  {
+                    "value": "Fax",
+                    "count": 87
+                  },
+                  {
+                    "value": "Email",
+                    "count": 2
+                  }
+                ]
+              }
+            },
+            "rare_values": [
+              {
+                "value": "Email",
+                "count": 2
+              }
+            ],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "date_sent_to_company",
+            "declared_type": "str",
+            "inferred_type": "datetime",
+            "semantic_role": "date",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 109,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "09/25/2013",
+                    "count": 352
+                  },
+                  {
+                    "value": "09/24/2013",
+                    "count": 282
+                  },
+                  {
+                    "value": "09/18/2013",
+                    "count": 260
+                  },
+                  {
+                    "value": "09/11/2013",
+                    "count": 255
+                  },
+                  {
+                    "value": "09/03/2013",
+                    "count": 249
+                  },
+                  {
+                    "value": "10/15/2013",
+                    "count": 228
+                  },
+                  {
+                    "value": "09/19/2013",
+                    "count": 227
+                  },
+                  {
+                    "value": "10/01/2013",
+                    "count": 219
+                  },
+                  {
+                    "value": "09/04/2013",
+                    "count": 210
+                  },
+                  {
+                    "value": "10/16/2013",
+                    "count": 171
+                  }
+                ]
+              }
+            },
+            "rare_values": [
+              {
+                "value": "09/17/2013",
+                "count": 47
+              },
+              {
+                "value": "10/03/2013",
+                "count": 41
+              },
+              {
+                "value": "08/31/2013",
+                "count": 40
+              },
+              {
+                "value": "10/17/2013",
+                "count": 40
+              },
+              {
+                "value": "09/06/2013",
+                "count": 37
+              },
+              {
+                "value": "10/14/2013",
+                "count": 36
+              },
+              {
+                "value": "09/27/2013",
+                "count": 33
+              },
+              {
+                "value": "10/25/2013",
+                "count": 33
+              },
+              {
+                "value": "09/02/2013",
+                "count": 26
+              },
+              {
+                "value": "11/15/2013",
+                "count": 26
+              },
+              {
+                "value": "09/13/2013",
+                "count": 24
+              },
+              {
+                "value": "10/13/2013",
+                "count": 23
+              },
+              {
+                "value": "08/30/2013",
+                "count": 20
+              },
+              {
+                "value": "11/14/2013",
+                "count": 20
+              },
+              {
+                "value": "10/28/2013",
+                "count": 19
+              },
+              {
+                "value": "10/21/2013",
+                "count": 19
+              },
+              {
+                "value": "09/01/2013",
+                "count": 19
+              },
+              {
+                "value": "11/12/2013",
+                "count": 19
+              },
+              {
+                "value": "10/11/2013",
+                "count": 18
+              },
+              {
+                "value": "10/08/2013",
+                "count": 17
+              },
+              {
+                "value": "10/18/2013",
+                "count": 17
+              },
+              {
+                "value": "11/13/2013",
+                "count": 17
+              },
+              {
+                "value": "11/05/2013",
+                "count": 16
+              },
+              {
+                "value": "10/07/2013",
+                "count": 15
+              },
+              {
+                "value": "10/09/2013",
+                "count": 15
+              },
+              {
+                "value": "10/29/2013",
+                "count": 14
+              },
+              {
+                "value": "10/12/2013",
+                "count": 14
+              },
+              {
+                "value": "09/20/2013",
+                "count": 13
+              },
+              {
+                "value": "10/22/2013",
+                "count": 13
+              },
+              {
+                "value": "10/04/2013",
+                "count": 12
+              },
+              {
+                "value": "11/19/2013",
+                "count": 9
+              },
+              {
+                "value": "11/21/2013",
+                "count": 9
+              },
+              {
+                "value": "10/10/2013",
+                "count": 8
+              },
+              {
+                "value": "09/09/2013",
+                "count": 7
+              },
+              {
+                "value": "11/25/2013",
+                "count": 7
+              },
+              {
+                "value": "11/18/2013",
+                "count": 7
+              },
+              {
+                "value": "11/22/2013",
+                "count": 6
+              },
+              {
+                "value": "12/16/2013",
+                "count": 6
+              },
+              {
+                "value": "11/20/2013",
+                "count": 5
+              },
+              {
+                "value": "09/16/2013",
+                "count": 4
+              },
+              {
+                "value": "12/06/2013",
+                "count": 4
+              },
+              {
+                "value": "11/26/2013",
+                "count": 4
+              },
+              {
+                "value": "12/24/2013",
+                "count": 4
+              },
+              {
+                "value": "01/03/2014",
+                "count": 4
+              },
+              {
+                "value": "12/04/2013",
+                "count": 3
+              },
+              {
+                "value": "12/02/2013",
+                "count": 3
+              },
+              {
+                "value": "12/11/2013",
+                "count": 3
+              },
+              {
+                "value": "12/17/2013",
+                "count": 3
+              },
+              {
+                "value": "05/15/2014",
+                "count": 2
+              },
+              {
+                "value": "11/03/2013",
+                "count": 2
+              }
+            ],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "company_response_to_consumer",
+            "declared_type": "str",
+            "inferred_type": "categorical",
+            "semantic_role": "dimension",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 5,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "Closed with explanation",
+                    "count": 3753
+                  },
+                  {
+                    "value": "Closed with non-monetary relief",
+                    "count": 705
+                  },
+                  {
+                    "value": "Closed with monetary relief",
+                    "count": 426
+                  },
+                  {
+                    "value": "Closed",
+                    "count": 111
+                  },
+                  {
+                    "value": "Untimely response",
+                    "count": 5
+                  }
+                ]
+              }
+            },
+            "rare_values": [
+              {
+                "value": "Untimely response",
+                "count": 5
+              }
+            ],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "timely_response",
+            "declared_type": "str",
+            "inferred_type": "categorical",
+            "semantic_role": "date",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 2,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "Yes",
+                    "count": 4922
+                  },
+                  {
+                    "value": "No",
+                    "count": 78
+                  }
+                ]
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "consumer_disputed?",
+            "declared_type": "str",
+            "inferred_type": "categorical",
+            "semantic_role": "dimension",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 2,
+            "stats": {
+              "count": 5000,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "No",
+                    "count": 3997
+                  },
+                  {
+                    "value": "Yes",
+                    "count": 1003
+                  }
+                ]
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "complaint_id",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "id",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 5000,
+            "stats": {
+              "count": 5000,
+              "numeric": {
+                "min": 509944.0,
+                "max": 767557.0,
+                "mean": 544328.9808,
+                "median": 541309.5,
+                "std": 23601.390237514825,
+                "q1": 523273.75,
+                "q3": 558852.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          }
+        ],
+        "duplicates": {
+          "exact_count": 0,
+          "exact_pct": 0.0,
+          "business_key": [],
+          "business_key_duplicate_count": 0,
+          "business_key_duplicate_pct": 0.0
+        }
+      }
+    ],
+    "relationships": [],
+    "issues": [
+      {
+        "id": "telecom_complaints_sample.sub_product.missing",
+        "severity": "high",
+        "table": "telecom_complaints_sample",
+        "column": "sub_product",
+        "rule": "missing_values",
+        "evidence": "1231 valeur(s) manquante(s), soit 24.62% des lignes profilées.",
+        "affected_rows": 1231,
+        "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+      },
+      {
+        "id": "telecom_complaints_sample.sub_issue.missing",
+        "severity": "high",
+        "table": "telecom_complaints_sample",
+        "column": "sub_issue",
+        "rule": "missing_values",
+        "evidence": "3220 valeur(s) manquante(s), soit 64.40% des lignes profilées.",
+        "affected_rows": 3220,
+        "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+      },
+      {
+        "id": "telecom_complaints_sample.consumer_complaint_narrative.missing",
+        "severity": "high",
+        "table": "telecom_complaints_sample",
+        "column": "consumer_complaint_narrative",
+        "rule": "missing_values",
+        "evidence": "5000 valeur(s) manquante(s), soit 100.00% des lignes profilées.",
+        "affected_rows": 5000,
+        "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+      },
+      {
+        "id": "telecom_complaints_sample.company_public_response.missing",
+        "severity": "high",
+        "table": "telecom_complaints_sample",
+        "column": "company_public_response",
+        "rule": "missing_values",
+        "evidence": "5000 valeur(s) manquante(s), soit 100.00% des lignes profilées.",
+        "affected_rows": 5000,
+        "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+      },
+      {
+        "id": "telecom_complaints_sample.state.missing",
+        "severity": "low",
+        "table": "telecom_complaints_sample",
+        "column": "state",
+        "rule": "missing_values",
+        "evidence": "12 valeur(s) manquante(s), soit 0.24% des lignes profilées.",
+        "affected_rows": 12,
+        "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+      },
+      {
+        "id": "telecom_complaints_sample.zipcode.missing",
+        "severity": "low",
+        "table": "telecom_complaints_sample",
+        "column": "zipcode",
+        "rule": "missing_values",
+        "evidence": "12 valeur(s) manquante(s), soit 0.24% des lignes profilées.",
+        "affected_rows": 12,
+        "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+      },
+      {
+        "id": "telecom_complaints_sample.tags.missing",
+        "severity": "high",
+        "table": "telecom_complaints_sample",
+        "column": "tags",
+        "rule": "missing_values",
+        "evidence": "4320 valeur(s) manquante(s), soit 86.40% des lignes profilées.",
+        "affected_rows": 4320,
+        "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+      },
+      {
+        "id": "telecom_complaints_sample.consumer_consent_provided.missing",
+        "severity": "high",
+        "table": "telecom_complaints_sample",
+        "column": "consumer_consent_provided",
+        "rule": "missing_values",
+        "evidence": "5000 valeur(s) manquante(s), soit 100.00% des lignes profilées.",
+        "affected_rows": 5000,
+        "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+      }
+    ],
+    "llm_summary": "Tables profilées : telecom_complaints_sample : 5000 ligne(s), 18 colonne(s)\nProblèmes prioritaires : high — telecom_complaints_sample.sub_product : missing_values. 1231 valeur(s) manquante(s), soit 24.62% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. high — telecom_complaints_sample.sub_issue : missing_values. 3220 valeur(s) manquante(s), soit 64.40% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. high — telecom_complaints_sample.consumer_complaint_narrative : missing_values. 5000 valeur(s) manquante(s), soit 100.00% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. high — telecom_complaints_sample.company_public_response : missing_values. 5000 valeur(s) manquante(s), soit 100.00% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. low — telecom_complaints_sample.state : missing_values. 12 valeur(s) manquante(s), soit 0.24% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. low — telecom_complaints_sample.zipcode : missing_values. 12 valeur(s) manquante(s), soit 0.24% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. high — telecom_complaints_sample.tags : missing_values. 4320 valeur(s) manquante(s), soit 86.40% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. high — telecom_complaints_sample.consumer_consent_provided : missing_values. 5000 valeur(s) manquante(s), soit 100.00% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL.",
+    "status": "warning",
+    "trace": [
+      {
+        "timestamp": "2026-10-27T18:46:58.364339",
+        "tool": "load_source",
+        "parameters": {
+          "source_name": "telecom_complaints_sample",
+          "source_type": "csv",
+          "sampled": false,
+          "sample_rows": 5000
+        },
+        "duration_ms": 16.589299999850482
+      }
+    ],
+    "errors": []
+  },
+  "etl_report": {
+    "business_goal": "Test multi-usage autonome",
+    "status": "warning",
+    "tables": [
+      {
+        "name": "telecom_complaints_sample",
+        "rows_in": 5000,
+        "rows_out": 5000,
+        "columns_in": 18,
+        "columns_out": 14,
+        "output_path": "output_test\\telecom_complaints_sample\\telecom_complaints_sample_clean.csv",
+        "quality_before": {
+          "completeness": 73.561,
+          "uniqueness": 100.0,
+          "validity": 100.0,
+          "consistency": 100.0,
+          "overall": 93.39,
+          "rows": 5000,
+          "null_cells": 23795,
+          "text_numeric_columns": []
+        },
+        "quality_after": {
+          "completeness": 99.983,
+          "uniqueness": 100.0,
+          "validity": 100.0,
+          "consistency": 100.0,
+          "overall": 99.996,
+          "rows": 5000,
+          "null_cells": 12,
+          "text_numeric_columns": []
+        },
+        "columns": [
+          {
+            "original_name": "date_received",
+            "name": "date_received",
+            "dtype": "datetime64[us]",
+            "semantic_role": "date",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "product",
+            "name": "product",
+            "dtype": "string",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "sub_product",
+            "name": "sub_product",
+            "dtype": "string",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "issue",
+            "name": "issue",
+            "dtype": "string",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "sub_issue",
+            "name": "sub_issue",
+            "dtype": "string",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "company",
+            "name": "company",
+            "dtype": "string",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "state",
+            "name": "state",
+            "dtype": "string",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "zipcode",
+            "name": "zipcode",
+            "dtype": "string",
+            "semantic_role": "id",
+            "role_corrected_from": "measure",
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "submitted_via",
+            "name": "submitted_via",
+            "dtype": "string",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "date_sent_to_company",
+            "name": "date_sent_to_company",
+            "dtype": "datetime64[us]",
+            "semantic_role": "date",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "company_response_to_consumer",
+            "name": "company_response_to_consumer",
+            "dtype": "string",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "timely_response",
+            "name": "timely_response",
+            "dtype": "string",
+            "semantic_role": "dimension",
+            "role_corrected_from": "date",
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "consumer_disputed?",
+            "name": "consumer_disputed",
+            "dtype": "string",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "complaint_id",
+            "name": "complaint_id",
+            "dtype": "int64",
+            "semantic_role": "id",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          }
+        ]
+      }
+    ],
+    "star_schemas": [],
+    "actions": [
+      {
+        "id": "telecom_complaints_sample.00.coerce_to_datetime.date_received",
+        "step": 0,
+        "table": "telecom_complaints_sample",
+        "column": "date_received",
+        "rule": "coerce_to_datetime",
+        "rows_affected": 5000,
+        "before": "Colonne de dates stockée en texte.",
+        "after": "Convertie en datetime (0 valeur(s) illisible(s) mises à null).",
+        "rationale": "Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.",
+        "source_issue_id": null
+      },
+      {
+        "id": "telecom_complaints_sample.01.coerce_to_datetime.date_sent_to_company",
+        "step": 1,
+        "table": "telecom_complaints_sample",
+        "column": "date_sent_to_company",
+        "rule": "coerce_to_datetime",
+        "rows_affected": 5000,
+        "before": "Colonne de dates stockée en texte.",
+        "after": "Convertie en datetime (0 valeur(s) illisible(s) mises à null).",
+        "rationale": "Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.",
+        "source_issue_id": null
+      },
+      {
+        "id": "telecom_complaints_sample.02.impute_unknown.sub_product",
+        "step": 2,
+        "table": "telecom_complaints_sample",
+        "column": "sub_product",
+        "rule": "impute_unknown",
+        "rows_affected": 1231,
+        "before": "1231 valeur(s) manquante(s) (24.62%).",
+        "after": "Remplies par 'Unknown'.",
+        "rationale": "Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue.",
+        "source_issue_id": "telecom_complaints_sample.sub_product.missing"
+      },
+      {
+        "id": "telecom_complaints_sample.03.impute_unknown.sub_issue",
+        "step": 3,
+        "table": "telecom_complaints_sample",
+        "column": "sub_issue",
+        "rule": "impute_unknown",
+        "rows_affected": 3220,
+        "before": "3220 valeur(s) manquante(s) (64.40%).",
+        "after": "Remplies par 'Unknown'.",
+        "rationale": "Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue.",
+        "source_issue_id": "telecom_complaints_sample.sub_issue.missing"
+      },
+      {
+        "id": "telecom_complaints_sample.04.drop_sparse_column.consumer_complaint_narrative",
+        "step": 4,
+        "table": "telecom_complaints_sample",
+        "column": "consumer_complaint_narrative",
+        "rule": "drop_sparse_column",
+        "rows_affected": 5000,
+        "before": "100.0% de valeurs manquantes (seuil 80%).",
+        "after": "Colonne supprimée.",
+        "rationale": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.",
+        "source_issue_id": "telecom_complaints_sample.consumer_complaint_narrative.missing"
+      },
+      {
+        "id": "telecom_complaints_sample.05.drop_sparse_column.company_public_response",
+        "step": 5,
+        "table": "telecom_complaints_sample",
+        "column": "company_public_response",
+        "rule": "drop_sparse_column",
+        "rows_affected": 5000,
+        "before": "100.0% de valeurs manquantes (seuil 80%).",
+        "after": "Colonne supprimée.",
+        "rationale": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.",
+        "source_issue_id": "telecom_complaints_sample.company_public_response.missing"
+      },
+      {
+        "id": "telecom_complaints_sample.06.impute_unknown.state",
+        "step": 6,
+        "table": "telecom_complaints_sample",
+        "column": "state",
+        "rule": "impute_unknown",
+        "rows_affected": 12,
+        "before": "12 valeur(s) manquante(s) (0.24%).",
+        "after": "Remplies par 'Unknown'.",
+        "rationale": "Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue.",
+        "source_issue_id": "telecom_complaints_sample.state.missing"
+      },
+      {
+        "id": "telecom_complaints_sample.07.drop_sparse_column.tags",
+        "step": 7,
+        "table": "telecom_complaints_sample",
+        "column": "tags",
+        "rule": "drop_sparse_column",
+        "rows_affected": 4320,
+        "before": "86.4% de valeurs manquantes (seuil 80%).",
+        "after": "Colonne supprimée.",
+        "rationale": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.",
+        "source_issue_id": "telecom_complaints_sample.tags.missing"
+      },
+      {
+        "id": "telecom_complaints_sample.08.drop_sparse_column.consumer_consent_provided",
+        "step": 8,
+        "table": "telecom_complaints_sample",
+        "column": "consumer_consent_provided",
+        "rule": "drop_sparse_column",
+        "rows_affected": 5000,
+        "before": "100.0% de valeurs manquantes (seuil 80%).",
+        "after": "Colonne supprimée.",
+        "rationale": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.",
+        "source_issue_id": "telecom_complaints_sample.consumer_consent_provided.missing"
+      }
+    ],
+    "validation_checks": [
+      {
+        "id": "telecom_complaints_sample.row_reconciliation",
+        "table": "telecom_complaints_sample",
+        "check": "row_reconciliation",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "5000 lignes en entrée − 0 supprimées tracées = 5000 attendues ; 5000 en sortie."
+      },
+      {
+        "id": "telecom_complaints_sample.no_exact_duplicates",
+        "table": "telecom_complaints_sample",
+        "check": "no_exact_duplicates",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 doublon(s) exact(s) restant(s)."
+      },
+      {
+        "id": "telecom_complaints_sample.no_unexpected_nulls",
+        "table": "telecom_complaints_sample",
+        "check": "no_unexpected_nulls",
+        "column": null,
+        "passed": false,
+        "severity": "medium",
+        "violations": 12,
+        "detail": "Nulls restants hors cas structurels : {'zipcode': 12}."
+      },
+      {
+        "id": "telecom_complaints_sample.no_constant_columns",
+        "table": "telecom_complaints_sample",
+        "check": "no_constant_columns",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "Colonnes constantes (peu utiles pour l'analyse) : aucune."
+      }
+    ],
+    "issue_resolutions": [
+      {
+        "issue_id": "telecom_complaints_sample.sub_product.missing",
+        "status": "resolved",
+        "action_ids": [
+          "telecom_complaints_sample.02.impute_unknown.sub_product"
+        ],
+        "note": "Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue."
+      },
+      {
+        "issue_id": "telecom_complaints_sample.sub_issue.missing",
+        "status": "resolved",
+        "action_ids": [
+          "telecom_complaints_sample.03.impute_unknown.sub_issue"
+        ],
+        "note": "Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue."
+      },
+      {
+        "issue_id": "telecom_complaints_sample.consumer_complaint_narrative.missing",
+        "status": "resolved",
+        "action_ids": [
+          "telecom_complaints_sample.04.drop_sparse_column.consumer_complaint_narrative"
+        ],
+        "note": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée."
+      },
+      {
+        "issue_id": "telecom_complaints_sample.company_public_response.missing",
+        "status": "resolved",
+        "action_ids": [
+          "telecom_complaints_sample.05.drop_sparse_column.company_public_response"
+        ],
+        "note": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée."
+      },
+      {
+        "issue_id": "telecom_complaints_sample.state.missing",
+        "status": "resolved",
+        "action_ids": [
+          "telecom_complaints_sample.06.impute_unknown.state"
+        ],
+        "note": "Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue."
+      },
+      {
+        "issue_id": "telecom_complaints_sample.zipcode.missing",
+        "status": "not_addressed",
+        "action_ids": [],
+        "note": "Aucune règle de l'ETL ne couvre ce problème."
+      },
+      {
+        "issue_id": "telecom_complaints_sample.tags.missing",
+        "status": "resolved",
+        "action_ids": [
+          "telecom_complaints_sample.07.drop_sparse_column.tags"
+        ],
+        "note": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée."
+      },
+      {
+        "issue_id": "telecom_complaints_sample.consumer_consent_provided.missing",
+        "status": "resolved",
+        "action_ids": [
+          "telecom_complaints_sample.08.drop_sparse_column.consumer_consent_provided"
+        ],
+        "note": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée."
+      }
+    ],
+    "remaining_issues": [
+      {
+        "id": "telecom_complaints_sample.remaining.no_unexpected_nulls",
+        "severity": "medium",
+        "table": "telecom_complaints_sample",
+        "column": null,
+        "rule": "no_unexpected_nulls",
+        "evidence": "Nulls restants hors cas structurels : {'zipcode': 12}.",
+        "affected_rows": 12,
+        "suggested_action": "Valider la règle métier avec le responsable de la donnée avant de la corriger."
+      },
+      {
+        "id": "telecom_complaints_sample.star_schema_skipped",
+        "severity": "low",
+        "table": "telecom_complaints_sample",
+        "column": null,
+        "rule": "star_schema_skipped",
+        "evidence": "Aucune mesure numérique détectée : un fait sans mesure n'a pas d'intérêt BI.",
+        "affected_rows": 0,
+        "suggested_action": "Définir les mesures via ETLOptions.star_schemas si besoin."
+      }
+    ],
+    "llm_summary": "Table telecom_complaints_sample : 5000 → 5000 ligne(s), score qualité 93.39 → 99.996/100.\nCorrections appliquées :\n- telecom_complaints_sample.date_received [coerce_to_datetime] 5000 ligne(s) : Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.\n- telecom_complaints_sample.date_sent_to_company [coerce_to_datetime] 5000 ligne(s) : Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.\n- telecom_complaints_sample.sub_product [impute_unknown] 1231 ligne(s) : Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue.\n- telecom_complaints_sample.sub_issue [impute_unknown] 3220 ligne(s) : Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue.\n- telecom_complaints_sample.consumer_complaint_narrative [drop_sparse_column] 5000 ligne(s) : Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.\n- telecom_complaints_sample.company_public_response [drop_sparse_column] 5000 ligne(s) : Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.\n- telecom_complaints_sample.state [impute_unknown] 12 ligne(s) : Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue.\n- telecom_complaints_sample.tags [drop_sparse_column] 4320 ligne(s) : Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.\n- telecom_complaints_sample.consumer_consent_provided [drop_sparse_column] 5000 ligne(s) : Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.\nÀ surveiller :\n- medium telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}.\n- low telecom_complaints_sample : Aucune mesure numérique détectée : un fait sans mesure n'a pas d'intérêt BI.",
+    "trace": [
+      {
+        "timestamp": "2026-10-27T18:46:58.899798",
+        "tool": "load_source",
+        "parameters": {
+          "source_name": "telecom_complaints_sample",
+          "rows": 5000
+        },
+        "duration_ms": 14.682399999855988
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.469053",
+        "tool": "clean_table",
+        "parameters": {
+          "table": "telecom_complaints_sample",
+          "actions": 9
+        },
+        "duration_ms": 569.0008000001399
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.469053",
+        "tool": "validate",
+        "parameters": {
+          "checks": 4
+        },
+        "duration_ms": 0.11580000000321888
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.503175",
+        "tool": "export",
+        "parameters": {
+          "table": "telecom_complaints_sample",
+          "path": "output_test\\telecom_complaints_sample\\telecom_complaints_sample_clean.csv"
+        },
+        "duration_ms": 33.72140000010404
+      }
+    ],
+    "errors": [],
+    "generated_at": "2026-10-27T18:46:58.884904"
+  },
+  "kpi_report": {
+    "business_goal": "Test multi-usage autonome",
+    "status": "warning",
+    "etl_status": "warning",
+    "kpis": [
+      {
+        "id": "ticket_count",
+        "name": "Nombre de tickets / réclamations",
+        "category": "Operations & Support",
+        "definition": "Nombre total de tickets ou réclamations distinctes.",
+        "formula": "nombre_distinct(ticket_id)",
+        "unit": "tickets",
+        "status": "computed",
+        "value": 5000.0,
+        "table": "telecom_complaints_sample",
+        "rows_used": 5000,
+        "columns_used": {
+          "id": "complaint_id"
+        },
+        "missing_inputs": {},
+        "breakdowns": {
+          "product": [
+            {
+              "segment": "Bank account or service",
+              "value": 646.0,
+              "rows": 646
+            },
+            {
+              "segment": "Consumer Loan",
+              "value": 145.0,
+              "rows": 145
+            },
+            {
+              "segment": "Credit card",
+              "value": 548.0,
+              "rows": 548
+            },
+            {
+              "segment": "Credit reporting",
+              "value": 683.0,
+              "rows": 683
+            },
+            {
+              "segment": "Debt collection",
+              "value": 931.0,
+              "rows": 931
+            },
+            {
+              "segment": "Money transfers",
+              "value": 35.0,
+              "rows": 35
+            },
+            {
+              "segment": "Mortgage",
+              "value": 1846.0,
+              "rows": 1846
+            },
+            {
+              "segment": "Student loan",
+              "value": 163.0,
+              "rows": 163
+            }
+          ],
+          "submitted_via": [
+            {
+              "segment": "Fax",
+              "value": 87.0,
+              "rows": 87
+            },
+            {
+              "segment": "Phone",
+              "value": 440.0,
+              "rows": 440
+            },
+            {
+              "segment": "Postal mail",
+              "value": 403.0,
+              "rows": 403
+            },
+            {
+              "segment": "Referral",
+              "value": 981.0,
+              "rows": 981
+            },
+            {
+              "segment": "Web",
+              "value": 3087.0,
+              "rows": 3087
+            }
+          ],
+          "company_response_to_consumer": [
+            {
+              "segment": "Closed",
+              "value": 111.0,
+              "rows": 111
+            },
+            {
+              "segment": "Closed with explanation",
+              "value": 3753.0,
+              "rows": 3753
+            },
+            {
+              "segment": "Closed with monetary relief",
+              "value": 426.0,
+              "rows": 426
+            },
+            {
+              "segment": "Closed with non-monetary relief",
+              "value": 705.0,
+              "rows": 705
+            }
+          ]
+        },
+        "justification": "Calculable : colonnes trouvées dans « telecom_complaints_sample » (id=complaint_id). Calcul déterministe : nombre_distinct(ticket_id).",
+        "warnings": []
+      },
+      {
+        "id": "dispute_rate",
+        "name": "Taux de litiges clients",
+        "category": "Operations & Support",
+        "definition": "Part des réclamations ayant entraîné un litige client.",
+        "formula": "réclamations_contestées / total_réclamations × 100",
+        "unit": "%",
+        "status": "computed",
+        "value": 20.06,
+        "table": "telecom_complaints_sample",
+        "rows_used": 5000,
+        "columns_used": {
+          "flag": "consumer_disputed"
+        },
+        "missing_inputs": {},
+        "breakdowns": {
+          "product": [
+            {
+              "segment": "Bank account or service",
+              "value": 19.2,
+              "rows": 646
+            },
+            {
+              "segment": "Consumer Loan",
+              "value": 24.83,
+              "rows": 145
+            },
+            {
+              "segment": "Credit card",
+              "value": 16.61,
+              "rows": 548
+            },
+            {
+              "segment": "Credit reporting",
+              "value": 20.35,
+              "rows": 683
+            },
+            {
+              "segment": "Debt collection",
+              "value": 16.76,
+              "rows": 931
+            },
+            {
+              "segment": "Money transfers",
+              "value": 14.29,
+              "rows": 35
+            },
+            {
+              "segment": "Mortgage",
+              "value": 22.48,
+              "rows": 1846
+            },
+            {
+              "segment": "Student loan",
+              "value": 22.7,
+              "rows": 163
+            }
+          ],
+          "submitted_via": [
+            {
+              "segment": "Fax",
+              "value": 19.54,
+              "rows": 87
+            },
+            {
+              "segment": "Phone",
+              "value": 13.86,
+              "rows": 440
+            },
+            {
+              "segment": "Postal mail",
+              "value": 13.65,
+              "rows": 403
+            },
+            {
+              "segment": "Referral",
+              "value": 18.25,
+              "rows": 981
+            },
+            {
+              "segment": "Web",
+              "value": 22.35,
+              "rows": 3087
+            }
+          ],
+          "company_response_to_consumer": [
+            {
+              "segment": "Closed",
+              "value": 20.72,
+              "rows": 111
+            },
+            {
+              "segment": "Closed with explanation",
+              "value": 22.3,
+              "rows": 3753
+            },
+            {
+              "segment": "Closed with monetary relief",
+              "value": 11.74,
+              "rows": 426
+            },
+            {
+              "segment": "Closed with non-monetary relief",
+              "value": 13.19,
+              "rows": 705
+            }
+          ]
+        },
+        "justification": "Calculable : colonnes trouvées dans « telecom_complaints_sample » (flag=consumer_disputed). Calcul déterministe : réclamations_contestées / total_réclamations × 100.",
+        "warnings": []
+      },
+      {
+        "id": "timely_response_rate",
+        "name": "Taux de réponse dans les délais",
+        "category": "Operations & Support",
+        "definition": "Part des réclamations traitées dans le délai imparti.",
+        "formula": "réponses_dans_les_délais / total × 100",
+        "unit": "%",
+        "status": "computed",
+        "value": 98.44,
+        "table": "telecom_complaints_sample",
+        "rows_used": 5000,
+        "columns_used": {
+          "flag": "timely_response"
+        },
+        "missing_inputs": {},
+        "breakdowns": {
+          "product": [
+            {
+              "segment": "Bank account or service",
+              "value": 98.92,
+              "rows": 646
+            },
+            {
+              "segment": "Consumer Loan",
+              "value": 100.0,
+              "rows": 145
+            },
+            {
+              "segment": "Credit card",
+              "value": 100.0,
+              "rows": 548
+            },
+            {
+              "segment": "Credit reporting",
+              "value": 99.71,
+              "rows": 683
+            },
+            {
+              "segment": "Debt collection",
+              "value": 94.74,
+              "rows": 931
+            },
+            {
+              "segment": "Money transfers",
+              "value": 97.14,
+              "rows": 35
+            },
+            {
+              "segment": "Mortgage",
+              "value": 99.13,
+              "rows": 1846
+            },
+            {
+              "segment": "Student loan",
+              "value": 99.39,
+              "rows": 163
+            }
+          ],
+          "submitted_via": [
+            {
+              "segment": "Fax",
+              "value": 97.7,
+              "rows": 87
+            },
+            {
+              "segment": "Phone",
+              "value": 98.18,
+              "rows": 440
+            },
+            {
+              "segment": "Postal mail",
+              "value": 98.51,
+              "rows": 403
+            },
+            {
+              "segment": "Referral",
+              "value": 99.08,
+              "rows": 981
+            },
+            {
+              "segment": "Web",
+              "value": 98.28,
+              "rows": 3087
+            }
+          ],
+          "company_response_to_consumer": [
+            {
+              "segment": "Closed",
+              "value": 93.69,
+              "rows": 111
+            },
+            {
+              "segment": "Closed with explanation",
+              "value": 98.48,
+              "rows": 3753
+            },
+            {
+              "segment": "Closed with monetary relief",
+              "value": 99.53,
+              "rows": 426
+            },
+            {
+              "segment": "Closed with non-monetary relief",
+              "value": 99.01,
+              "rows": 705
+            }
+          ]
+        },
+        "justification": "Calculable : colonnes trouvées dans « telecom_complaints_sample » (flag=timely_response). Calcul déterministe : réponses_dans_les_délais / total × 100.",
+        "warnings": []
+      },
+      {
+        "id": "churn_rate",
+        "name": "Taux de churn",
+        "category": "Churn",
+        "definition": "Part des clients ayant quitté l'opérateur.",
+        "formula": "clients_churnés / clients_total × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "flag": [
+            "churn_value",
+            "churn_flag",
+            "churn",
+            "is_churn",
+            "churned",
+            "churn_label"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← churn_value/churn_flag/churn/is_churn/churned/churn_label).",
+        "warnings": []
+      },
+      {
+        "id": "churned_customers",
+        "name": "Clients churnés",
+        "category": "Churn",
+        "definition": "Nombre de clients ayant quitté l'opérateur.",
+        "formula": "somme(indicateur_churn)",
+        "unit": "clients",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "flag": [
+            "churn_value",
+            "churn_flag",
+            "churn",
+            "is_churn",
+            "churned",
+            "churn_label"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← churn_value/churn_flag/churn/is_churn/churned/churn_label).",
+        "warnings": []
+      },
+      {
+        "id": "avg_churn_score",
+        "name": "Score de churn moyen",
+        "category": "Churn",
+        "definition": "Score moyen de risque de départ (0 à 100) du portefeuille.",
+        "formula": "moyenne(churn_score)",
+        "unit": "points",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "churn_score"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← churn_score).",
+        "warnings": []
+      },
+      {
+        "id": "monthly_revenue_lost",
+        "name": "Revenu mensuel perdu par churn",
+        "category": "Churn",
+        "definition": "Revenu mensuel récurrent des clients qui sont partis.",
+        "formula": "somme(frais_mensuels) pour les clients churnés",
+        "unit": "devise/mois",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "monthly_charges",
+            "monthly_charge",
+            "monthly_fee",
+            "monthly_revenue",
+            "total_day_charge",
+            "day_charge"
+          ],
+          "flag": [
+            "churn_value",
+            "churn_flag",
+            "churn",
+            "is_churn",
+            "churned",
+            "churn_label"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← monthly_charges/monthly_charge/monthly_fee/monthly_revenue/total_day_charge/day_charge; flag ← churn_value/churn_flag/churn/is_churn/churned/churn_label).",
+        "warnings": []
+      },
+      {
+        "id": "customer_count",
+        "name": "Nombre de clients",
+        "category": "Customer Base",
+        "definition": "Nombre de clients distincts dans la table.",
+        "formula": "nombre_distinct(identifiant_client)",
+        "unit": "clients",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "id": [
+            "customer_id",
+            "customerid",
+            "subscriber_id",
+            "phone_number"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (id ← customer_id/customerid/subscriber_id/phone_number).",
+        "warnings": []
+      },
+      {
+        "id": "avg_tenure",
+        "name": "Ancienneté moyenne",
+        "category": "Customer Base",
+        "definition": "Durée moyenne depuis la souscription.",
+        "formula": "moyenne(ancienneté_en_mois)",
+        "unit": "mois",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "tenure_months",
+            "tenure",
+            "months_active",
+            "account_length"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← tenure_months/tenure/months_active/account_length).",
+        "warnings": []
+      },
+      {
+        "id": "arpu",
+        "name": "ARPU mensuel",
+        "category": "Billing & Revenue",
+        "definition": "Revenu mensuel moyen par client.",
+        "formula": "moyenne(frais_mensuels)",
+        "unit": "devise/client/mois",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "monthly_charges",
+            "monthly_charge",
+            "monthly_fee",
+            "monthly_revenue",
+            "total_day_charge",
+            "day_charge"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← monthly_charges/monthly_charge/monthly_fee/monthly_revenue/total_day_charge/day_charge).",
+        "warnings": []
+      },
+      {
+        "id": "total_revenue",
+        "name": "Revenu cumulé",
+        "category": "Billing & Revenue",
+        "definition": "Somme des montants facturés depuis la souscription.",
+        "formula": "somme(total_facturé)",
+        "unit": "devise",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "total_charges",
+            "total_revenue",
+            "total_billed"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← total_charges/total_revenue/total_billed).",
+        "warnings": []
+      },
+      {
+        "id": "avg_cltv",
+        "name": "CLTV moyen",
+        "category": "Billing & Revenue",
+        "definition": "Valeur vie client moyenne estimée.",
+        "formula": "moyenne(cltv)",
+        "unit": "devise",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "cltv",
+            "clv",
+            "customer_lifetime_value"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← cltv/clv/customer_lifetime_value).",
+        "warnings": []
+      },
+      {
+        "id": "unpaid_rate",
+        "name": "Taux d'impayés",
+        "category": "Billing & Revenue",
+        "definition": "Part du montant facturé restée impayée.",
+        "formula": "somme(montant_impayé) / somme(montant_facturé) × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "num": [
+            "unpaid_amount",
+            "overdue_amount"
+          ],
+          "den": [
+            "billed_amount",
+            "invoice_amount"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (num ← unpaid_amount/overdue_amount; den ← billed_amount/invoice_amount).",
+        "warnings": []
+      },
+      {
+        "id": "avg_mos_voice",
+        "name": "Score MOS Voix moyen",
+        "category": "Network Performance",
+        "definition": "Score moyen d'opinion (MOS) de la qualité vocale (1 à 5).",
+        "formula": "moyenne(mos_voice)",
+        "unit": "score",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "mos_voice",
+            "mos",
+            "streaming_mos"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← mos_voice/mos/streaming_mos).",
+        "warnings": []
+      },
+      {
+        "id": "avg_throughput",
+        "name": "Débit moyen",
+        "category": "Network Performance",
+        "definition": "Débit réseau moyen observé.",
+        "formula": "moyenne(throughput)",
+        "unit": "Mbps",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "throughput_mbps",
+            "effective_bitrate_mbps",
+            "throughput",
+            "download_speed_mbps",
+            "download_speed"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← throughput_mbps/effective_bitrate_mbps/throughput/download_speed_mbps/download_speed).",
+        "warnings": []
+      },
+      {
+        "id": "avg_upload_speed",
+        "name": "Débit montant moyen",
+        "category": "Network Performance",
+        "definition": "Débit montant (upload) moyen observé.",
+        "formula": "moyenne(upload_speed)",
+        "unit": "Mbps",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "upload_speed_mbps",
+            "upload_speed"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← upload_speed_mbps/upload_speed).",
+        "warnings": []
+      },
+      {
+        "id": "avg_latency",
+        "name": "Latence moyenne",
+        "category": "Network Performance",
+        "definition": "Latence réseau moyenne observée.",
+        "formula": "moyenne(latence)",
+        "unit": "ms",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "latency_ms",
+            "latency",
+            "dns_latency_ms",
+            "ping_to_google_ms"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← latency_ms/latency/dns_latency_ms/ping_to_google_ms).",
+        "warnings": []
+      },
+      {
+        "id": "avg_packet_loss",
+        "name": "Taux de perte de paquets",
+        "category": "Network Performance",
+        "definition": "Pourcentage moyen de paquets perdus.",
+        "formula": "moyenne(plr)",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "plr",
+            "packet_loss"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← plr/packet_loss).",
+        "warnings": []
+      },
+      {
+        "id": "network_availability",
+        "name": "Disponibilité réseau",
+        "category": "Network Performance",
+        "definition": "Taux moyen de disponibilité des équipements.",
+        "formula": "moyenne(availability)",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "availability"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← availability).",
+        "warnings": []
+      },
+      {
+        "id": "dropped_call_rate",
+        "name": "Taux d'appels coupés",
+        "category": "Network Performance",
+        "definition": "Part des appels interrompus avant la fin normale.",
+        "formula": "somme(appels_coupés) / somme(appels_total) × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "num": [
+            "dropped_calls"
+          ],
+          "den": [
+            "total_calls",
+            "calls"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (num ← dropped_calls; den ← total_calls/calls).",
+        "warnings": []
+      },
+      {
+        "id": "cdr_incident_rate",
+        "name": "Taux d'incidents réseau / CDR",
+        "category": "Network Performance",
+        "definition": "Part des sessions réseau ayant subi un incident ou coupure.",
+        "formula": "sessions_en_incident / sessions_total × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "flag": [
+            "cdr_flag",
+            "incident_flag",
+            "call_drop",
+            "dropped_connection"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← cdr_flag/incident_flag/call_drop/dropped_connection).",
+        "warnings": []
+      },
+      {
+        "id": "avg_signal_strength",
+        "name": "Force du signal moyen",
+        "category": "Network Performance",
+        "definition": "Puissance moyenne du signal radio.",
+        "formula": "moyenne(signal_strength_dbm)",
+        "unit": "dBm",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "signal_strength_dbm",
+            "signal_strength",
+            "rssi",
+            "rsrp"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← signal_strength_dbm/signal_strength/rssi/rsrp).",
+        "warnings": []
+      },
+      {
+        "id": "avg_data_usage",
+        "name": "Consommation data moyenne",
+        "category": "Usage & Consumption",
+        "definition": "Volume de données moyen consommé par session/ligne.",
+        "formula": "moyenne(volume_data)",
+        "unit": "Mo",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "data_usage_mb",
+            "data_mb",
+            "data_usage",
+            "internet_mb"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← data_usage_mb/data_mb/data_usage/internet_mb).",
+        "warnings": []
+      },
+      {
+        "id": "ticket_resolution_rate",
+        "name": "Taux de résolution des tickets",
+        "category": "Operations & Support",
+        "definition": "Part des tickets ou réclamations résolus / clos.",
+        "formula": "tickets_clos / total_tickets × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "flag": [
+            "ticket_status",
+            "status",
+            "case_status"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← ticket_status/status/case_status).",
+        "warnings": []
+      },
+      {
+        "id": "avg_csat",
+        "name": "Score de satisfaction moyen (CSAT)",
+        "category": "Operations & Support",
+        "definition": "Score moyen de satisfaction client.",
+        "formula": "moyenne(satisfaction_client)",
+        "unit": "score",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "customer_satisfaction_rating",
+            "csat",
+            "satisfaction_rating",
+            "rating"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← customer_satisfaction_rating/csat/satisfaction_rating/rating).",
+        "warnings": []
+      },
+      {
+        "id": "avg_resolution_time",
+        "name": "Temps de résolution moyen",
+        "category": "Operations & Support",
+        "definition": "Délai moyen de résolution d'un ticket.",
+        "formula": "moyenne(temps_de_résolution)",
+        "unit": "h",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "resolution_time_hours",
+            "resolution_time",
+            "resolution_hours"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← resolution_time_hours/resolution_time/resolution_hours).",
+        "warnings": []
+      }
+    ],
+    "caveats": [
+      "ETL — telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}."
+    ],
+    "output_files": {
+      "report": "output_test\\telecom_complaints_sample\\kpi\\kpi_report.json",
+      "values": "output_test\\telecom_complaints_sample\\kpi\\kpi_values.csv"
+    },
+    "llm_summary": "3 KPI calculé(s) sur 26 du catalogue.\n- Nombre de tickets / réclamations (Operations & Support) : 5000.0 tickets — Nombre total de tickets ou réclamations distinctes.\n- Taux de litiges clients (Operations & Support) : 20.06 % — Part des réclamations ayant entraîné un litige client.\n- Taux de réponse dans les délais (Operations & Support) : 98.44 % — Part des réclamations traitées dans le délai imparti.\nNon calculables avec ces données : Taux de churn, Clients churnés, Score de churn moyen, Revenu mensuel perdu par churn, Nombre de clients, Ancienneté moyenne, ARPU mensuel, Revenu cumulé, CLTV moyen, Taux d'impayés, Score MOS Voix moyen, Débit moyen, Débit montant moyen, Latence moyenne, Taux de perte de paquets, Disponibilité réseau, Taux d'appels coupés, Taux d'incidents réseau / CDR, Force du signal moyen, Consommation data moyenne, Taux de résolution des tickets, Score de satisfaction moyen (CSAT), Temps de résolution moyen.\nRéserves :\n- ETL — telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}.",
+    "trace": [
+      {
+        "timestamp": "2026-10-27T18:46:59.633771",
+        "tool": "compute_table",
+        "parameters": {
+          "table": "telecom_complaints_sample",
+          "kpis": 3
+        },
+        "duration_ms": 127.5141999999505
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.633771",
+        "tool": "validate",
+        "parameters": {
+          "kpis": 26
+        },
+        "duration_ms": 0.019099999917671084
+      }
+    ],
+    "errors": [],
+    "generated_at": "2026-10-27T18:46:59.506176"
+  },
+  "analyst_report": {
+    "business_goal": "Test multi-usage autonome",
+    "status": "warning",
+    "kpi_status": "warning",
+    "insights": [],
+    "recommendations": [],
+    "profile_comparisons": [],
+    "caveats": [
+      "ETL — telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}.",
+      "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+      "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+    ],
+    "null_result": true,
+    "n_tests": 22,
+    "n_significant_segments": 0,
+    "overlap_warning": false,
+    "excluded_kpis": [
+      {
+        "kpi_id": "avg_churn_score",
+        "reason": "fuite de cible (corrélé directement à churn_label)"
+      }
+    ],
+    "llm_narrative": "Analyse terminée. Aucun segment ne présente à la fois une significativité statistique (p ajustée <= 0,05), un écart suffisant et un effectif fiable. ",
+    "output_files": {
+      "report": "output_test\\telecom_complaints_sample\\analyst\\analyst_report.json",
+      "insights": "output_test\\telecom_complaints_sample\\analyst\\insights.csv",
+      "profile_comparisons": "output_test\\telecom_complaints_sample\\analyst\\profile_comparisons.csv",
+      "recommendations": "output_test\\telecom_complaints_sample\\analyst\\recommendations.csv"
+    },
+    "trace": [
+      {
+        "timestamp": "2026-10-27T18:46:59.642772",
+        "tool": "load",
+        "parameters": {
+          "kpis_computed": 3,
+          "table_loaded": true,
+          "excluded_cols": [
+            "count",
+            "country",
+            "state",
+            "zipcode"
+          ]
+        },
+        "duration_ms": 3.6773000001630862
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.666771",
+        "tool": "segment",
+        "parameters": {
+          "n_segments_kpi": 0,
+          "n_segments_analyst": 22,
+          "n_mw": 0
+        },
+        "duration_ms": 23.707199999989825
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.667771",
+        "tool": "test",
+        "parameters": {
+          "n_tests": 22,
+          "n_ztests": 22,
+          "n_mw": 0,
+          "min_p_raw": 1.0,
+          "max_p_adj": 1.0
+        },
+        "duration_ms": 1.0582999998405285
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.671770",
+        "tool": "impact",
+        "parameters": {
+          "n_segs": 22
+        },
+        "duration_ms": 0.05509999982677982
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.671770",
+        "tool": "rank",
+        "parameters": {
+          "n_passing": 0,
+          "n_mw": 0
+        },
+        "duration_ms": 0.01720000000204891
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.672770",
+        "tool": "recommend",
+        "parameters": {
+          "n_rec": 0
+        },
+        "duration_ms": 0.0022999997781880666
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.672770",
+        "tool": "narrate",
+        "parameters": {
+          "llm": false
+        },
+        "duration_ms": 0.005500000042957254
+      }
+    ],
+    "errors": [],
+    "generated_at": "2026-10-27T18:46:59.642772"
+  },
+  "dashboard_report": {
+    "business_goal": "Test multi-usage autonome",
+    "status": "warning",
+    "analyst_status": "warning",
+    "title": "Dashboard BI : Test multi-usage autonome",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Vue d'ensemble",
+        "order": 0,
+        "visual_ids": [
+          "kpi_ticket_count",
+          "kpi_dispute_rate",
+          "kpi_timely_response_rate"
+        ]
+      },
+      {
+        "id": "segments",
+        "title": "Segments à risque",
+        "order": 1,
+        "visual_ids": [
+          "bar_ticket_count_company_response_to_consumer",
+          "bar_dispute_rate_company_response_to_consumer",
+          "bar_timely_response_rate_company_response_to_consumer",
+          "bar_ticket_count_product",
+          "bar_ticket_count_submitted_via",
+          "bar_dispute_rate_product",
+          "bar_dispute_rate_submitted_via",
+          "bar_timely_response_rate_product",
+          "bar_timely_response_rate_submitted_via"
+        ]
+      },
+      {
+        "id": "quality",
+        "title": "Qualité et réserves",
+        "order": 6,
+        "visual_ids": [
+          "text_caveats"
+        ]
+      }
+    ],
+    "visuals": [
+      {
+        "id": "kpi_ticket_count",
+        "type": "kpi_card",
+        "title": "Nombre de tickets / réclamations",
+        "subtitle": "",
+        "section": "overview",
+        "span": 3,
+        "kpi": {
+          "kpi_id": "ticket_count",
+          "name": "Nombre de tickets / réclamations",
+          "value": 5000.0,
+          "unit": "tickets",
+          "status": "ok",
+          "target": null,
+          "delta": null,
+          "higher_is_better": null
+        },
+        "data": [],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "Nombre total de tickets ou réclamations distinctes.",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "ticket_count",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "complaint_id"
+          ],
+          "formula": "nombre_distinct(ticket_id)",
+          "aggregation": null,
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "kpi_dispute_rate",
+        "type": "kpi_card",
+        "title": "Taux de litiges clients",
+        "subtitle": "",
+        "section": "overview",
+        "span": 3,
+        "kpi": {
+          "kpi_id": "dispute_rate",
+          "name": "Taux de litiges clients",
+          "value": 20.06,
+          "unit": "%",
+          "status": "ok",
+          "target": null,
+          "delta": null,
+          "higher_is_better": null
+        },
+        "data": [],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "Part des réclamations ayant entraîné un litige client.",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "dispute_rate",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "consumer_disputed"
+          ],
+          "formula": "réclamations_contestées / total_réclamations × 100",
+          "aggregation": null,
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "kpi_timely_response_rate",
+        "type": "kpi_card",
+        "title": "Taux de réponse dans les délais",
+        "subtitle": "",
+        "section": "overview",
+        "span": 3,
+        "kpi": {
+          "kpi_id": "timely_response_rate",
+          "name": "Taux de réponse dans les délais",
+          "value": 98.44,
+          "unit": "%",
+          "status": "ok",
+          "target": null,
+          "delta": null,
+          "higher_is_better": null
+        },
+        "data": [],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "Part des réclamations traitées dans le délai imparti.",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "timely_response_rate",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "timely_response"
+          ],
+          "formula": "réponses_dans_les_délais / total × 100",
+          "aggregation": null,
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_ticket_count_company_response_to_consumer",
+        "type": "bar",
+        "title": "Nombre de tickets / réclamations par company_response_to_consumer",
+        "subtitle": "Référence globale : 5000.0 tickets",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "Closed with explanation",
+            "value": 3753.0,
+            "rows": 3753,
+            "global": 5000.0
+          },
+          {
+            "segment": "Closed with non-monetary relief",
+            "value": 705.0,
+            "rows": 705,
+            "global": 5000.0
+          },
+          {
+            "segment": "Closed with monetary relief",
+            "value": 426.0,
+            "rows": 426,
+            "global": 5000.0
+          },
+          {
+            "segment": "Closed",
+            "value": 111.0,
+            "rows": 111,
+            "global": 5000.0
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "ticket_count",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "company_response_to_consumer"
+          ],
+          "formula": "nombre_distinct(ticket_id)",
+          "aggregation": "Nombre de tickets / réclamations par company_response_to_consumer",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_dispute_rate_company_response_to_consumer",
+        "type": "bar",
+        "title": "Taux de litiges clients par company_response_to_consumer",
+        "subtitle": "Référence globale : 20.06 %",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "Closed with explanation",
+            "value": 22.3,
+            "rows": 3753,
+            "global": 20.06
+          },
+          {
+            "segment": "Closed",
+            "value": 20.72,
+            "rows": 111,
+            "global": 20.06
+          },
+          {
+            "segment": "Closed with non-monetary relief",
+            "value": 13.19,
+            "rows": 705,
+            "global": 20.06
+          },
+          {
+            "segment": "Closed with monetary relief",
+            "value": 11.74,
+            "rows": 426,
+            "global": 20.06
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "dispute_rate",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "company_response_to_consumer"
+          ],
+          "formula": "réclamations_contestées / total_réclamations × 100",
+          "aggregation": "Taux de litiges clients par company_response_to_consumer",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_timely_response_rate_company_response_to_consumer",
+        "type": "bar",
+        "title": "Taux de réponse dans les délais par company_response_to_consumer",
+        "subtitle": "Référence globale : 98.44 %",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "Closed with monetary relief",
+            "value": 99.53,
+            "rows": 426,
+            "global": 98.44
+          },
+          {
+            "segment": "Closed with non-monetary relief",
+            "value": 99.01,
+            "rows": 705,
+            "global": 98.44
+          },
+          {
+            "segment": "Closed with explanation",
+            "value": 98.48,
+            "rows": 3753,
+            "global": 98.44
+          },
+          {
+            "segment": "Closed",
+            "value": 93.69,
+            "rows": 111,
+            "global": 98.44
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "timely_response_rate",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "company_response_to_consumer"
+          ],
+          "formula": "réponses_dans_les_délais / total × 100",
+          "aggregation": "Taux de réponse dans les délais par company_response_to_consumer",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_ticket_count_product",
+        "type": "bar",
+        "title": "Nombre de tickets / réclamations par product",
+        "subtitle": "Référence globale : 5000.0 tickets",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "Mortgage",
+            "value": 1846.0,
+            "rows": 1846,
+            "global": 5000.0
+          },
+          {
+            "segment": "Debt collection",
+            "value": 931.0,
+            "rows": 931,
+            "global": 5000.0
+          },
+          {
+            "segment": "Credit reporting",
+            "value": 683.0,
+            "rows": 683,
+            "global": 5000.0
+          },
+          {
+            "segment": "Bank account or service",
+            "value": 646.0,
+            "rows": 646,
+            "global": 5000.0
+          },
+          {
+            "segment": "Credit card",
+            "value": 548.0,
+            "rows": 548,
+            "global": 5000.0
+          },
+          {
+            "segment": "Student loan",
+            "value": 163.0,
+            "rows": 163,
+            "global": 5000.0
+          },
+          {
+            "segment": "Consumer Loan",
+            "value": 145.0,
+            "rows": 145,
+            "global": 5000.0
+          },
+          {
+            "segment": "Money transfers",
+            "value": 35.0,
+            "rows": 35,
+            "global": 5000.0
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "ticket_count",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "product"
+          ],
+          "formula": "nombre_distinct(ticket_id)",
+          "aggregation": "Nombre de tickets / réclamations par product",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_ticket_count_submitted_via",
+        "type": "bar",
+        "title": "Nombre de tickets / réclamations par submitted_via",
+        "subtitle": "Référence globale : 5000.0 tickets",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "Web",
+            "value": 3087.0,
+            "rows": 3087,
+            "global": 5000.0
+          },
+          {
+            "segment": "Referral",
+            "value": 981.0,
+            "rows": 981,
+            "global": 5000.0
+          },
+          {
+            "segment": "Phone",
+            "value": 440.0,
+            "rows": 440,
+            "global": 5000.0
+          },
+          {
+            "segment": "Postal mail",
+            "value": 403.0,
+            "rows": 403,
+            "global": 5000.0
+          },
+          {
+            "segment": "Fax",
+            "value": 87.0,
+            "rows": 87,
+            "global": 5000.0
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "ticket_count",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "submitted_via"
+          ],
+          "formula": "nombre_distinct(ticket_id)",
+          "aggregation": "Nombre de tickets / réclamations par submitted_via",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_dispute_rate_product",
+        "type": "bar",
+        "title": "Taux de litiges clients par product",
+        "subtitle": "Référence globale : 20.06 %",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "Consumer Loan",
+            "value": 24.83,
+            "rows": 145,
+            "global": 20.06
+          },
+          {
+            "segment": "Student loan",
+            "value": 22.7,
+            "rows": 163,
+            "global": 20.06
+          },
+          {
+            "segment": "Mortgage",
+            "value": 22.48,
+            "rows": 1846,
+            "global": 20.06
+          },
+          {
+            "segment": "Credit reporting",
+            "value": 20.35,
+            "rows": 683,
+            "global": 20.06
+          },
+          {
+            "segment": "Bank account or service",
+            "value": 19.2,
+            "rows": 646,
+            "global": 20.06
+          },
+          {
+            "segment": "Debt collection",
+            "value": 16.76,
+            "rows": 931,
+            "global": 20.06
+          },
+          {
+            "segment": "Credit card",
+            "value": 16.61,
+            "rows": 548,
+            "global": 20.06
+          },
+          {
+            "segment": "Money transfers",
+            "value": 14.29,
+            "rows": 35,
+            "global": 20.06
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "dispute_rate",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "product"
+          ],
+          "formula": "réclamations_contestées / total_réclamations × 100",
+          "aggregation": "Taux de litiges clients par product",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_dispute_rate_submitted_via",
+        "type": "bar",
+        "title": "Taux de litiges clients par submitted_via",
+        "subtitle": "Référence globale : 20.06 %",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "Web",
+            "value": 22.35,
+            "rows": 3087,
+            "global": 20.06
+          },
+          {
+            "segment": "Fax",
+            "value": 19.54,
+            "rows": 87,
+            "global": 20.06
+          },
+          {
+            "segment": "Referral",
+            "value": 18.25,
+            "rows": 981,
+            "global": 20.06
+          },
+          {
+            "segment": "Phone",
+            "value": 13.86,
+            "rows": 440,
+            "global": 20.06
+          },
+          {
+            "segment": "Postal mail",
+            "value": 13.65,
+            "rows": 403,
+            "global": 20.06
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "dispute_rate",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "submitted_via"
+          ],
+          "formula": "réclamations_contestées / total_réclamations × 100",
+          "aggregation": "Taux de litiges clients par submitted_via",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_timely_response_rate_product",
+        "type": "bar",
+        "title": "Taux de réponse dans les délais par product",
+        "subtitle": "Référence globale : 98.44 %",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "Consumer Loan",
+            "value": 100.0,
+            "rows": 145,
+            "global": 98.44
+          },
+          {
+            "segment": "Credit card",
+            "value": 100.0,
+            "rows": 548,
+            "global": 98.44
+          },
+          {
+            "segment": "Credit reporting",
+            "value": 99.71,
+            "rows": 683,
+            "global": 98.44
+          },
+          {
+            "segment": "Student loan",
+            "value": 99.39,
+            "rows": 163,
+            "global": 98.44
+          },
+          {
+            "segment": "Mortgage",
+            "value": 99.13,
+            "rows": 1846,
+            "global": 98.44
+          },
+          {
+            "segment": "Bank account or service",
+            "value": 98.92,
+            "rows": 646,
+            "global": 98.44
+          },
+          {
+            "segment": "Money transfers",
+            "value": 97.14,
+            "rows": 35,
+            "global": 98.44
+          },
+          {
+            "segment": "Debt collection",
+            "value": 94.74,
+            "rows": 931,
+            "global": 98.44
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "timely_response_rate",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "product"
+          ],
+          "formula": "réponses_dans_les_délais / total × 100",
+          "aggregation": "Taux de réponse dans les délais par product",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_timely_response_rate_submitted_via",
+        "type": "bar",
+        "title": "Taux de réponse dans les délais par submitted_via",
+        "subtitle": "Référence globale : 98.44 %",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "Referral",
+            "value": 99.08,
+            "rows": 981,
+            "global": 98.44
+          },
+          {
+            "segment": "Postal mail",
+            "value": 98.51,
+            "rows": 403,
+            "global": 98.44
+          },
+          {
+            "segment": "Web",
+            "value": 98.28,
+            "rows": 3087,
+            "global": 98.44
+          },
+          {
+            "segment": "Phone",
+            "value": 98.18,
+            "rows": 440,
+            "global": 98.44
+          },
+          {
+            "segment": "Fax",
+            "value": 97.7,
+            "rows": 87,
+            "global": 98.44
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "timely_response_rate",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "submitted_via"
+          ],
+          "formula": "réponses_dans_les_délais / total × 100",
+          "aggregation": "Taux de réponse dans les délais par submitted_via",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "text_caveats",
+        "type": "text",
+        "title": "Réserves et limites",
+        "subtitle": "",
+        "section": "quality",
+        "span": 12,
+        "kpi": null,
+        "data": [
+          {
+            "text": "ETL — telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}."
+          },
+          {
+            "text": "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité."
+          },
+          {
+            "text": "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+          }
+        ],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": null,
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [],
+          "formula": null,
+          "aggregation": null,
+          "origin": "analyst_report"
+        }
+      }
+    ],
+    "filters": [],
+    "report": {
+      "title": "Dashboard BI : Test multi-usage autonome",
+      "executive_summary": "Aucun segment ne passe les filtres statistiques de l'analyse.",
+      "blocks": [
+        {
+          "heading": "Indicateurs clés",
+          "text": "",
+          "visual_ids": [
+            "kpi_ticket_count",
+            "kpi_dispute_rate",
+            "kpi_timely_response_rate"
+          ]
+        }
+      ],
+      "recommendations_table": [],
+      "caveats": [
+        "ETL — telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}.",
+        "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+        "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+      ]
+    },
+    "excluded_visuals": [
+      {
+        "candidate": "churn_rate",
+        "reason": "non calculable (flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+      },
+      {
+        "candidate": "churned_customers",
+        "reason": "non calculable (flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+      },
+      {
+        "candidate": "avg_churn_score",
+        "reason": "fuite de cible : dérivé du churn, exclu des cartes de pilotage"
+      },
+      {
+        "candidate": "monthly_revenue_lost",
+        "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue', 'total_day_charge', 'day_charge'], flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+      },
+      {
+        "candidate": "customer_count",
+        "reason": "non calculable (id: ['customer_id', 'customerid', 'subscriber_id', 'phone_number'])"
+      },
+      {
+        "candidate": "avg_tenure",
+        "reason": "non calculable (value: ['tenure_months', 'tenure', 'months_active', 'account_length'])"
+      },
+      {
+        "candidate": "arpu",
+        "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue', 'total_day_charge', 'day_charge'])"
+      },
+      {
+        "candidate": "total_revenue",
+        "reason": "non calculable (value: ['total_charges', 'total_revenue', 'total_billed'])"
+      },
+      {
+        "candidate": "avg_cltv",
+        "reason": "non calculable (value: ['cltv', 'clv', 'customer_lifetime_value'])"
+      },
+      {
+        "candidate": "unpaid_rate",
+        "reason": "non calculable (num: ['unpaid_amount', 'overdue_amount'], den: ['billed_amount', 'invoice_amount'])"
+      },
+      {
+        "candidate": "avg_mos_voice",
+        "reason": "non calculable (value: ['mos_voice', 'mos', 'streaming_mos'])"
+      },
+      {
+        "candidate": "avg_throughput",
+        "reason": "non calculable (value: ['throughput_mbps', 'effective_bitrate_mbps', 'throughput', 'download_speed_mbps', 'download_speed'])"
+      },
+      {
+        "candidate": "avg_upload_speed",
+        "reason": "non calculable (value: ['upload_speed_mbps', 'upload_speed'])"
+      },
+      {
+        "candidate": "avg_latency",
+        "reason": "non calculable (value: ['latency_ms', 'latency', 'dns_latency_ms', 'ping_to_google_ms'])"
+      },
+      {
+        "candidate": "avg_packet_loss",
+        "reason": "non calculable (value: ['plr', 'packet_loss'])"
+      },
+      {
+        "candidate": "network_availability",
+        "reason": "non calculable (value: ['availability'])"
+      },
+      {
+        "candidate": "dropped_call_rate",
+        "reason": "non calculable (num: ['dropped_calls'], den: ['total_calls', 'calls'])"
+      },
+      {
+        "candidate": "cdr_incident_rate",
+        "reason": "non calculable (flag: ['cdr_flag', 'incident_flag', 'call_drop', 'dropped_connection'])"
+      },
+      {
+        "candidate": "avg_signal_strength",
+        "reason": "non calculable (value: ['signal_strength_dbm', 'signal_strength', 'rssi', 'rsrp'])"
+      },
+      {
+        "candidate": "avg_data_usage",
+        "reason": "non calculable (value: ['data_usage_mb', 'data_mb', 'data_usage', 'internet_mb'])"
+      },
+      {
+        "candidate": "ticket_resolution_rate",
+        "reason": "non calculable (flag: ['ticket_status', 'status', 'case_status'])"
+      },
+      {
+        "candidate": "avg_csat",
+        "reason": "non calculable (value: ['customer_satisfaction_rating', 'csat', 'satisfaction_rating', 'rating'])"
+      },
+      {
+        "candidate": "avg_resolution_time",
+        "reason": "non calculable (value: ['resolution_time_hours', 'resolution_time', 'resolution_hours'])"
+      },
+      {
+        "candidate": "temporal",
+        "reason": "colonne de churn introuvable"
+      },
+      {
+        "candidate": "geo_map",
+        "reason": "colonne géographique (state/city) ou churn introuvable"
+      }
+    ],
+    "caveats": [
+      "ETL — telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}.",
+      "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+      "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+    ],
+    "null_result": true,
+    "llm_narrative": "Aucun segment ne passe les filtres statistiques de l'analyse.",
+    "output_files": {
+      "report": "output_test\\telecom_complaints_sample\\dashboard\\dashboard_report.json"
+    },
+    "trace": [
+      {
+        "timestamp": "2026-10-27T18:46:59.679905",
+        "tool": "load",
+        "parameters": {
+          "has_frame": true,
+          "has_kpi": true,
+          "n_insights": 0
+        },
+        "duration_ms": 0.6877000000713451
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.681904",
+        "tool": "build",
+        "parameters": {
+          "n_candidates": 13
+        },
+        "duration_ms": 1.1724000000867818
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.681904",
+        "tool": "assemble",
+        "parameters": {
+          "n_visuals": 13,
+          "n_excluded": 25
+        },
+        "duration_ms": 0.1173999999082298
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.681904",
+        "tool": "report",
+        "parameters": {
+          "n_blocks": 1
+        },
+        "duration_ms": 0.02300000005561742
+      },
+      {
+        "timestamp": "2026-10-27T18:46:59.682904",
+        "tool": "narrate",
+        "parameters": {
+          "llm": false
+        },
+        "duration_ms": 0.0033000001167238224
+      }
+    ],
+    "errors": [],
+    "generated_at": "2026-10-27T18:46:59.679905"
+  },
+  "xai_report": {
+    "status": "success",
+    "business_goal": "Test multi-usage autonome",
+    "n_features_used": 11,
+    "features_used": [
+      "date_received",
+      "product",
+      "sub_product",
+      "issue",
+      "sub_issue",
+      "company",
+      "zipcode",
+      "submitted_via",
+      "date_sent_to_company",
+      "company_response_to_consumer",
+      "timely_response"
+    ],
+    "features_excluded": [
+      "state",
+      "consumer_disputed",
+      "complaint_id"
+    ],
+    "model_metrics": {
+      "accuracy": 0.713,
+      "precision": 0.2014,
+      "recall": 0.1443,
+      "f1": 0.1681,
+      "auc_roc": 0.5424,
+      "n_train": 4000,
+      "n_test": 1000,
+      "positive_rate_train": 0.2005,
+      "positive_rate_test": 0.201
+    },
+    "shap_summary": {
+      "top_features": [
+        {
+          "feature": "company_response_to_consumer",
+          "mean_abs_shap": 0.0533,
+          "rank": 1
+        },
+        {
+          "feature": "zipcode",
+          "mean_abs_shap": 0.0433,
+          "rank": 2
+        },
+        {
+          "feature": "company",
+          "mean_abs_shap": 0.0364,
+          "rank": 3
+        },
+        {
+          "feature": "date_sent_to_company",
+          "mean_abs_shap": 0.0314,
+          "rank": 4
+        },
+        {
+          "feature": "submitted_via",
+          "mean_abs_shap": 0.031,
+          "rank": 5
+        },
+        {
+          "feature": "date_received",
+          "mean_abs_shap": 0.03,
+          "rank": 6
+        },
+        {
+          "feature": "issue",
+          "mean_abs_shap": 0.0268,
+          "rank": 7
+        },
+        {
+          "feature": "sub_product",
+          "mean_abs_shap": 0.0246,
+          "rank": 8
+        },
+        {
+          "feature": "sub_issue",
+          "mean_abs_shap": 0.0171,
+          "rank": 9
+        },
+        {
+          "feature": "product",
+          "mean_abs_shap": 0.0148,
+          "rank": 10
+        }
+      ],
+      "examples": [
+        {
+          "client_index": 0,
+          "true_label": 0,
+          "predicted_label": 0,
+          "predicted_proba": 0.45,
+          "top_features": [
+            {
+              "feature": "company_response_to_consumer",
+              "shap_value": 0.0537,
+              "feature_value": 1.0
+            },
+            {
+              "feature": "submitted_via",
+              "shap_value": 0.0482,
+              "feature_value": 5.0
+            },
+            {
+              "feature": "date_sent_to_company",
+              "shap_value": -0.0416,
+              "feature_value": 39.0
+            }
+          ]
+        },
+        {
+          "client_index": 1,
+          "true_label": 0,
+          "predicted_label": 0,
+          "predicted_proba": 0.02,
+          "top_features": [
+            {
+              "feature": "company_response_to_consumer",
+              "shap_value": -0.217,
+              "feature_value": 3.0
+            },
+            {
+              "feature": "company",
+              "shap_value": -0.0894,
+              "feature_value": 444.0
+            },
+            {
+              "feature": "sub_issue",
+              "shap_value": -0.0659,
+              "feature_value": 22.0
+            }
+          ]
+        },
+        {
+          "client_index": 2,
+          "true_label": 0,
+          "predicted_label": 0,
+          "predicted_proba": 0.39,
+          "top_features": [
+            {
+              "feature": "date_received",
+              "shap_value": -0.0761,
+              "feature_value": 4.0
+            },
+            {
+              "feature": "date_sent_to_company",
+              "shap_value": -0.0554,
+              "feature_value": 5.0
+            },
+            {
+              "feature": "zipcode",
+              "shap_value": -0.0383,
+              "feature_value": 383.0
+            }
+          ]
+        }
+      ]
+    },
+    "baseline_comparison": {
+      "baseline_accuracy": 0.799,
+      "baseline_f1": 0.0,
+      "delta_accuracy": -0.086,
+      "delta_f1": 0.1681,
+      "verdict": "marginal_gain"
+    },
+    "audit_findings": [
+      {
+        "id": "AUDIT-DATA-001",
+        "severity": "info",
+        "category": "data_preparation",
+        "title": "Exclusion de fuite de cible",
+        "detail": "3 colonnes exclues pour éviter fuite d'information ou biais (ex: churn_score, churn_reason, identifiants).",
+        "recommendation": "Conserver l'exclusion stricte de churn_score en production."
+      },
+      {
+        "id": "AUDIT-MODEL-001",
+        "severity": "medium",
+        "category": "performance",
+        "title": "Recall modéré sur le Churn",
+        "detail": "Le Recall est de 14.4%. Certains clients résilients ne sont pas détectés.",
+        "recommendation": "Ajuster le seuil de décision probabilité ou tester un modèle de boosting (XGBoost/LightGBM)."
+      },
+      {
+        "id": "AUDIT-BASELINE-001",
+        "severity": "info",
+        "category": "baseline",
+        "title": "Validation par rapport au modèle naïf",
+        "detail": "Gain de F1-Score de +16.8% par rapport à la classe majoritaire.",
+        "recommendation": "Le modèle ML apporte une valeur réelle par rapport à une règle naïve."
+      },
+      {
+        "id": "AUDIT-XAI-001",
+        "severity": "info",
+        "category": "explainability",
+        "title": "Déterminants majeurs identifiés",
+        "detail": "Les 3 facteurs les plus influents au niveau global sont : company_response_to_consumer, zipcode, company.",
+        "recommendation": "Cibler en priorité les offres commerciales sur ces leviers (ex: durée d'engagement, tarification)."
+      }
+    ],
+    "llm_summary": "L'audit du modèle RandomForest indique une Accuracy de 71.3%, un Recall de 14.4% et un F1-Score de 16.8% (AUC-ROC: 0.542). Par rapport à la baseline naïve (DummyClassifier), le gain en F1-Score est de +16.8%, validant l'apport prédictif du modèle (marginal_gain). Les principaux facteurs expliquant le risque de churn selon SHAP sont : company_response_to_consumer, zipcode, company. 4 constats d'audit ont été relevés.",
+    "errors": []
+  },
+  "errors": []
+}

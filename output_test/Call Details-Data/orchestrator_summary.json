@@ -1,0 +1,3350 @@
+{
+  "status": "success",
+  "dataset_name": "Call Details-Data",
+  "business_goal": "Analyse décisionnelle télécom",
+  "execution_start": "2026-10-26T19:03:41.834349",
+  "execution_end": "2026-10-26T19:51:41.757696",
+  "total_duration_seconds": 2879.92,
+  "steps": [
+    {
+      "agent_name": "profiler",
+      "status": "success",
+      "duration_seconds": 6.13,
+      "message": "9 anomalies détectées"
+    },
+    {
+      "agent_name": "etl",
+      "status": "success",
+      "duration_seconds": 2.35,
+      "message": "17 actions appliquées, étoile validée"
+    },
+    {
+      "agent_name": "kpi",
+      "status": "success",
+      "duration_seconds": 0.01,
+      "message": "2 KPIs calculés"
+    },
+    {
+      "agent_name": "bi_analyst",
+      "status": "success",
+      "duration_seconds": 0.03,
+      "message": "0 insights, 0 recommandations"
+    },
+    {
+      "agent_name": "dashboard",
+      "status": "success",
+      "duration_seconds": 0.01,
+      "message": "3 visuels générés dans 2 sections"
+    },
+    {
+      "agent_name": "xai",
+      "status": "success",
+      "duration_seconds": 2871.4,
+      "message": "AUC: 0.957, Top: day_mins, day_charge, vmail_message"
+    }
+  ],
+  "profiler_report": {
+    "business_goal": "Analyse décisionnelle télécom",
+    "tables": [
+      {
+        "name": "Call Details-Data",
+        "source_name": "Call Details-Data",
+        "row_count": 101174,
+        "column_count": 17,
+        "memory_bytes": 13860970,
+        "sampled": false,
+        "sample_rows": null,
+        "columns": [
+          {
+            "name": "Phone Number",
+            "declared_type": "str",
+            "inferred_type": "string",
+            "semantic_role": "dimension",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 7467,
+            "stats": {
+              "count": 101174,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "985-9789",
+                    "count": 124
+                  },
+                  {
+                    "value": "755-9997",
+                    "count": 108
+                  },
+                  {
+                    "value": "798-5978",
+                    "count": 108
+                  },
+                  {
+                    "value": "798-7989",
+                    "count": 108
+                  },
+                  {
+                    "value": "759-9995",
+                    "count": 95
+                  },
+                  {
+                    "value": "779-9985",
+                    "count": 92
+                  },
+                  {
+                    "value": "799-9997",
+                    "count": 92
+                  },
+                  {
+                    "value": "778-9975",
+                    "count": 87
+                  },
+                  {
+                    "value": "776-5988",
+                    "count": 87
+                  },
+                  {
+                    "value": "757-5557",
+                    "count": 87
+                  }
+                ]
+              }
+            },
+            "rare_values": [
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 124
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 108
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 108
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 108
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 95
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 92
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 92
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 87
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 87
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 87
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 84
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 84
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 84
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 79
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 79
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 79
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 79
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 79
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 79
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 79
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 79
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 79
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 79
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 74
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 74
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 74
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 74
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 74
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 71
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 71
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 71
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 71
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 71
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 71
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              },
+              {
+                "value": "<PHONE_MASKED>",
+                "count": 66
+              }
+            ],
+            "is_pii": true,
+            "pii_categories": [
+              "phone"
+            ],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "Account Length",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 322,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 1.0,
+                "max": 21111.0,
+                "mean": 323.59714946527765,
+                "median": 202.0,
+                "std": 1418.07365085617,
+                "q1": 69.0,
+                "q3": 240.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "VMail Message",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 72,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 0.0,
+                "max": 1111.0,
+                "mean": 18.142645343665368,
+                "median": 0.0,
+                "std": 75.82693173193111,
+                "q1": 0.0,
+                "q3": 22.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "Day Mins",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 2548,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 0.0,
+                "max": 111111.11,
+                "mean": 587.080798228794,
+                "median": 262.2,
+                "std": 2193.094318778433,
+                "q1": 222.3,
+                "q3": 326.275
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 15219,
+            "anomaly_examples": [
+              "62.4",
+              "61.6",
+              "58.9",
+              "58.2",
+              "65.4"
+            ]
+          },
+          {
+            "name": "Day Calls",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 221,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 0.0,
+                "max": 21111.0,
+                "mean": 267.2076126277502,
+                "median": 202.0,
+                "std": 947.9633697380842,
+                "q1": 88.0,
+                "q3": 224.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "Day Charge",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 2873,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 0.0,
+                "max": 1111.99,
+                "mean": 64.958811058177,
+                "median": 32.6,
+                "std": 133.5158082883754,
+                "q1": 23.92,
+                "q3": 82.2
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 3844,
+            "anomaly_examples": [
+              "211.02",
+              "211.112",
+              "211.96",
+              "1111.119",
+              "1111.211"
+            ]
+          },
+          {
+            "name": "Eve Mins",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 2523,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 0.0,
+                "max": 111111.2,
+                "mean": 655.5125263407596,
+                "median": 268.2,
+                "std": 2473.4454364651515,
+                "q1": 223.3,
+                "q3": 329.2
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 12435,
+            "anomaly_examples": [
+              "61.9",
+              "31.2",
+              "64.3",
+              "42.2",
+              "58.9"
+            ]
+          },
+          {
+            "name": "Eve Calls",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 224,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 0.0,
+                "max": 21111.0,
+                "mean": 267.1669302389942,
+                "median": 202.0,
+                "std": 932.914436881653,
+                "q1": 88.0,
+                "q3": 224.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "Eve Charge",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 2221,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 0.0,
+                "max": 211.99,
+                "mean": 34.358124569553446,
+                "median": 24.44,
+                "std": 36.248576532669475,
+                "q1": 22.22,
+                "q3": 32.02
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 12329,
+            "anomaly_examples": [
+              "5.26",
+              "6.2",
+              "2.65",
+              "6.4",
+              "6.55"
+            ]
+          },
+          {
+            "name": "Night Mins",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 2464,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 20.3,
+                "max": 111111.11,
+                "mean": 646.7866434064088,
+                "median": 268.2,
+                "std": 2368.028490845848,
+                "q1": 223.2,
+                "q3": 329.2
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 12411,
+            "anomaly_examples": [
+              "57.5",
+              "45.0",
+              "63.3",
+              "54.5",
+              "50.1"
+            ]
+          },
+          {
+            "name": "Night Calls",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 218,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 20.0,
+                "max": 21111.0,
+                "mean": 261.6731867871192,
+                "median": 202.0,
+                "std": 884.9630212945351,
+                "q1": 88.0,
+                "q3": 224.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "Night Charge",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 1470,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 1.04,
+                "max": 211.92,
+                "mean": 13.900141680668945,
+                "median": 9.22,
+                "std": 16.1786852676724,
+                "q1": 6.22,
+                "q3": 20.44
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 3754,
+            "anomaly_examples": [
+              "44.04",
+              "44.45",
+              "44.69",
+              "44.48",
+              "44.47"
+            ]
+          },
+          {
+            "name": "Intl Mins",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 267,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 0.0,
+                "max": 211.9,
+                "mean": 20.291268903077864,
+                "median": 20.2,
+                "std": 25.033213708925636,
+                "q1": 8.8,
+                "q3": 22.8
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 8279,
+            "anomaly_examples": [
+              "45.7",
+              "44.4",
+              "44.4",
+              "44.7",
+              "44.4"
+            ]
+          },
+          {
+            "name": "Intl Calls",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 39,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 0.0,
+                "max": 211.0,
+                "mean": 5.737798248561884,
+                "median": 4.0,
+                "std": 8.196367280575155,
+                "q1": 2.0,
+                "q3": 8.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "Intl Charge",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 339,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 0.0,
+                "max": 11.92,
+                "mean": 4.347635016901576,
+                "median": 2.92,
+                "std": 2.761911021630933,
+                "q1": 2.28,
+                "q3": 4.94
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 4892,
+            "anomaly_examples": [
+              "11.2",
+              "11.29",
+              "11.02",
+              "11.211",
+              "11.02"
+            ]
+          },
+          {
+            "name": "CustServ Calls",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 11,
+            "stats": {
+              "count": 101174,
+              "numeric": {
+                "min": 0.0,
+                "max": 11.0,
+                "mean": 2.5596398284144146,
+                "median": 2.0,
+                "std": 2.4019043008540053,
+                "q1": 2.0,
+                "q3": 3.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "Churn",
+            "declared_type": "bool",
+            "inferred_type": "boolean",
+            "semantic_role": "dimension",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 2,
+            "stats": {
+              "count": 101174,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "False",
+                    "count": 90642
+                  },
+                  {
+                    "value": "True",
+                    "count": 10532
+                  }
+                ]
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          }
+        ],
+        "duplicates": {
+          "exact_count": 40729,
+          "exact_pct": 40.25638998161583,
+          "business_key": [],
+          "business_key_duplicate_count": 0,
+          "business_key_duplicate_pct": 0.0
+        }
+      }
+    ],
+    "relationships": [],
+    "issues": [
+      {
+        "id": "Call Details-Data.Day Mins.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "Call Details-Data",
+        "column": "Day Mins",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "15219 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+        "affected_rows": 15219,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "Call Details-Data.Day Charge.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "Call Details-Data",
+        "column": "Day Charge",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "3844 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+        "affected_rows": 3844,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "Call Details-Data.Eve Mins.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "Call Details-Data",
+        "column": "Eve Mins",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "12435 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+        "affected_rows": 12435,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "Call Details-Data.Eve Charge.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "Call Details-Data",
+        "column": "Eve Charge",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "12329 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+        "affected_rows": 12329,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "Call Details-Data.Night Mins.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "Call Details-Data",
+        "column": "Night Mins",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "12411 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+        "affected_rows": 12411,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "Call Details-Data.Night Charge.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "Call Details-Data",
+        "column": "Night Charge",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "3754 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+        "affected_rows": 3754,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "Call Details-Data.Intl Mins.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "Call Details-Data",
+        "column": "Intl Mins",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "8279 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+        "affected_rows": 8279,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "Call Details-Data.Intl Charge.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "Call Details-Data",
+        "column": "Intl Charge",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "4892 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+        "affected_rows": 4892,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "Call Details-Data.exact_duplicates",
+        "severity": "medium",
+        "table": "Call Details-Data",
+        "column": null,
+        "rule": "exact_duplicate_rows",
+        "evidence": "40729 ligne(s) dupliquée(s) exactement sur 101174 lignes profilées.",
+        "affected_rows": 40729,
+        "suggested_action": "Confirmer la règle de déduplication métier avant toute suppression par l'ETL."
+      }
+    ],
+    "llm_summary": "Tables profilées : Call Details-Data : 101174 ligne(s), 17 colonne(s)\nProblèmes prioritaires : medium — Call Details-Data.Day Mins : iqr_or_zscore_outlier. 15219 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Day Charge : iqr_or_zscore_outlier. 3844 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Eve Mins : iqr_or_zscore_outlier. 12435 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Eve Charge : iqr_or_zscore_outlier. 12329 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Night Mins : iqr_or_zscore_outlier. 12411 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Night Charge : iqr_or_zscore_outlier. 3754 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Intl Mins : iqr_or_zscore_outlier. 8279 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Intl Charge : iqr_or_zscore_outlier. 4892 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data : exact_duplicate_rows. 40729 ligne(s) dupliquée(s) exactement sur 101174 lignes profilées. Action : Confirmer la règle de déduplication métier avant toute suppression par l'ETL.",
+    "status": "warning",
+    "trace": [
+      {
+        "timestamp": "2026-10-26T20:03:41.970499",
+        "tool": "load_source",
+        "parameters": {
+          "source_name": "Call Details-Data",
+          "source_type": "csv",
+          "sampled": false,
+          "sample_rows": 101174
+        },
+        "duration_ms": 135.16359999994165
+      }
+    ],
+    "semantic_map": {
+      "domain": "customer_churn",
+      "primary_target": "Churn",
+      "concepts": {
+        "target_churn": "Churn",
+        "monthly_charge": "Day Charge"
+      },
+      "candidate_targets": [
+        {
+          "column": "Churn",
+          "type": "binary_flag",
+          "positive_rate": 0.1041,
+          "is_churn_lexical": true,
+          "is_network_incident": false
+        }
+      ],
+      "all_columns": [
+        "Phone Number",
+        "Account Length",
+        "VMail Message",
+        "Day Mins",
+        "Day Calls",
+        "Day Charge",
+        "Eve Mins",
+        "Eve Calls",
+        "Eve Charge",
+        "Night Mins",
+        "Night Calls",
+        "Night Charge",
+        "Intl Mins",
+        "Intl Calls",
+        "Intl Charge",
+        "CustServ Calls",
+        "Churn"
+      ]
+    },
+    "errors": []
+  },
+  "etl_report": {
+    "business_goal": "Analyse décisionnelle télécom",
+    "status": "warning",
+    "tables": [
+      {
+        "name": "Call Details-Data",
+        "rows_in": 101174,
+        "rows_out": 60445,
+        "columns_in": 17,
+        "columns_out": 17,
+        "output_path": "output_test\\Call Details-Data\\Call Details-Data_clean.csv",
+        "quality_before": {
+          "completeness": 100.0,
+          "uniqueness": 59.744,
+          "validity": 100.0,
+          "consistency": 100.0,
+          "overall": 89.936,
+          "rows": 101174,
+          "null_cells": 0,
+          "text_numeric_columns": []
+        },
+        "quality_after": {
+          "completeness": 100.0,
+          "uniqueness": 100.0,
+          "validity": 100.0,
+          "consistency": 100.0,
+          "overall": 100.0,
+          "rows": 60445,
+          "null_cells": 0,
+          "text_numeric_columns": []
+        },
+        "columns": [
+          {
+            "original_name": "Phone Number",
+            "name": "phone_number",
+            "dtype": "str",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": true,
+            "pii_treatment": "hashed"
+          },
+          {
+            "original_name": "Account Length",
+            "name": "account_length",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "VMail Message",
+            "name": "vmail_message",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "Day Mins",
+            "name": "day_mins",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "Day Calls",
+            "name": "day_calls",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "Day Charge",
+            "name": "day_charge",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "Eve Mins",
+            "name": "eve_mins",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "Eve Calls",
+            "name": "eve_calls",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "Eve Charge",
+            "name": "eve_charge",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "Night Mins",
+            "name": "night_mins",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "Night Calls",
+            "name": "night_calls",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "Night Charge",
+            "name": "night_charge",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "Intl Mins",
+            "name": "intl_mins",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "Intl Calls",
+            "name": "intl_calls",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "Intl Charge",
+            "name": "intl_charge",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "CustServ Calls",
+            "name": "cust_serv_calls",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "Churn",
+            "name": "churn",
+            "dtype": "bool",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          }
+        ]
+      }
+    ],
+    "star_schemas": [
+      {
+        "table": "Call Details-Data",
+        "source": "auto",
+        "fact_name": "fact_Call Details-Data",
+        "grain": "1 ligne = 1 ligne de la table source",
+        "grain_reason": "aucun identifiant unique trouvé : clé de ligne créée",
+        "fact_rows": 60445,
+        "measures": [
+          {
+            "column": "account_length",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "vmail_message",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "day_mins",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "day_calls",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "sum",
+              "avg"
+            ],
+            "note": "montant / volume additif"
+          },
+          {
+            "column": "day_charge",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "sum",
+              "avg"
+            ],
+            "note": "montant / volume additif"
+          },
+          {
+            "column": "eve_mins",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "eve_calls",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "sum",
+              "avg"
+            ],
+            "note": "montant / volume additif"
+          },
+          {
+            "column": "eve_charge",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "sum",
+              "avg"
+            ],
+            "note": "montant / volume additif"
+          },
+          {
+            "column": "night_mins",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "night_calls",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "sum",
+              "avg"
+            ],
+            "note": "montant / volume additif"
+          },
+          {
+            "column": "night_charge",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "sum",
+              "avg"
+            ],
+            "note": "montant / volume additif"
+          },
+          {
+            "column": "intl_mins",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "intl_calls",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "sum",
+              "avg"
+            ],
+            "note": "montant / volume additif"
+          },
+          {
+            "column": "intl_charge",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "sum",
+              "avg"
+            ],
+            "note": "montant / volume additif"
+          },
+          {
+            "column": "cust_serv_calls",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "sum",
+              "avg"
+            ],
+            "note": "montant / volume additif"
+          }
+        ],
+        "dimensions": [
+          {
+            "name": "dim_Call Details-Data",
+            "key": "Call Details-Data_key",
+            "role": "entity",
+            "columns": [
+              "phone_number"
+            ],
+            "rows": 7467,
+            "rationale": "donnée personnelle : attribut de l'entité"
+          },
+          {
+            "name": "dim_churn",
+            "key": "churn_key",
+            "role": "churn",
+            "columns": [
+              "churn"
+            ],
+            "rows": 2,
+            "rationale": "résultat / motif de départ"
+          }
+        ],
+        "date_columns": [],
+        "excluded_columns": [],
+        "files": {
+          "fact_Call Details-Data": "output_test\\Call Details-Data\\model\\Call Details-Data\\fact_Call Details-Data.csv",
+          "dim_Call Details-Data": "output_test\\Call Details-Data\\model\\Call Details-Data\\dim_Call Details-Data.csv",
+          "dim_churn": "output_test\\Call Details-Data\\model\\Call Details-Data\\dim_churn.csv",
+          "star_schema.mmd": "output_test\\Call Details-Data\\model\\Call Details-Data\\star_schema.mmd"
+        },
+        "check_ids": [
+          "Call Details-Data.star_fact_row_count",
+          "Call Details-Data.star_no_null_foreign_key",
+          "Call Details-Data.star_no_orphan_foreign_key",
+          "Call Details-Data.star_dimension_keys_unique",
+          "Call Details-Data.star_column_coverage",
+          "Call Details-Data.star_measure_reconciliation",
+          "Call Details-Data.star_lossless_rejoin"
+        ],
+        "mermaid": "erDiagram\n    fact_Call Details-Data {\n        int fact_row_key\n        int Call Details-Data_key FK\n        int churn_key FK\n        int account_length\n        int vmail_message\n        float day_mins\n        int day_calls\n        float day_charge\n        float eve_mins\n        int eve_calls\n        float eve_charge\n        float night_mins\n        int night_calls\n        float night_charge\n        float intl_mins\n        int intl_calls\n        float intl_charge\n        int cust_serv_calls\n    }\n    dim_Call Details-Data {\n        int Call Details-Data_key PK\n        string phone_number\n    }\n    dim_churn {\n        int churn_key PK\n        string churn\n    }\n    dim_Call Details-Data ||--o{ fact_Call Details-Data : Call Details-Data_key\n    dim_churn ||--o{ fact_Call Details-Data : churn_key\n"
+      }
+    ],
+    "actions": [
+      {
+        "id": "Call Details-Data.00.drop_exact_duplicates",
+        "step": 0,
+        "table": "Call Details-Data",
+        "column": null,
+        "rule": "drop_exact_duplicates",
+        "rows_affected": 40729,
+        "before": "40729 ligne(s) identique(s) à une autre.",
+        "after": "40729 ligne(s) supprimée(s), première occurrence conservée.",
+        "rationale": "Des lignes strictement identiques gonflent les comptages et les sommes.",
+        "source_issue_id": "Call Details-Data.exact_duplicates"
+      },
+      {
+        "id": "Call Details-Data.01.report_outliers.Account Length",
+        "step": 1,
+        "table": "Call Details-Data",
+        "column": "Account Length",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "2876 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": null
+      },
+      {
+        "id": "Call Details-Data.02.report_outliers.VMail Message",
+        "step": 2,
+        "table": "Call Details-Data",
+        "column": "VMail Message",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "4714 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": null
+      },
+      {
+        "id": "Call Details-Data.03.report_outliers.Day Mins",
+        "step": 3,
+        "table": "Call Details-Data",
+        "column": "Day Mins",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "4456 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "Call Details-Data.Day Mins.iqr_zscore_outliers"
+      },
+      {
+        "id": "Call Details-Data.04.report_outliers.Day Calls",
+        "step": 4,
+        "table": "Call Details-Data",
+        "column": "Day Calls",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "6416 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": null
+      },
+      {
+        "id": "Call Details-Data.05.report_outliers.Day Charge",
+        "step": 5,
+        "table": "Call Details-Data",
+        "column": "Day Charge",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "2344 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "Call Details-Data.Day Charge.iqr_zscore_outliers"
+      },
+      {
+        "id": "Call Details-Data.06.report_outliers.Eve Mins",
+        "step": 6,
+        "table": "Call Details-Data",
+        "column": "Eve Mins",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "4979 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "Call Details-Data.Eve Mins.iqr_zscore_outliers"
+      },
+      {
+        "id": "Call Details-Data.07.report_outliers.Eve Calls",
+        "step": 7,
+        "table": "Call Details-Data",
+        "column": "Eve Calls",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "6455 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": null
+      },
+      {
+        "id": "Call Details-Data.08.report_outliers.Eve Charge",
+        "step": 8,
+        "table": "Call Details-Data",
+        "column": "Eve Charge",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "6857 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "Call Details-Data.Eve Charge.iqr_zscore_outliers"
+      },
+      {
+        "id": "Call Details-Data.09.report_outliers.Night Mins",
+        "step": 9,
+        "table": "Call Details-Data",
+        "column": "Night Mins",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "4885 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "Call Details-Data.Night Mins.iqr_zscore_outliers"
+      },
+      {
+        "id": "Call Details-Data.10.report_outliers.Night Calls",
+        "step": 10,
+        "table": "Call Details-Data",
+        "column": "Night Calls",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "6302 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": null
+      },
+      {
+        "id": "Call Details-Data.11.report_outliers.Night Charge",
+        "step": 11,
+        "table": "Call Details-Data",
+        "column": "Night Charge",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "2577 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "Call Details-Data.Night Charge.iqr_zscore_outliers"
+      },
+      {
+        "id": "Call Details-Data.12.report_outliers.Intl Mins",
+        "step": 12,
+        "table": "Call Details-Data",
+        "column": "Intl Mins",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "5682 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "Call Details-Data.Intl Mins.iqr_zscore_outliers"
+      },
+      {
+        "id": "Call Details-Data.13.report_outliers.Intl Calls",
+        "step": 13,
+        "table": "Call Details-Data",
+        "column": "Intl Calls",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "2206 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": null
+      },
+      {
+        "id": "Call Details-Data.14.report_outliers.Intl Charge",
+        "step": 14,
+        "table": "Call Details-Data",
+        "column": "Intl Charge",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "3036 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "Call Details-Data.Intl Charge.iqr_zscore_outliers"
+      },
+      {
+        "id": "Call Details-Data.15.report_outliers.CustServ Calls",
+        "step": 15,
+        "table": "Call Details-Data",
+        "column": "CustServ Calls",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "5656 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": null
+      },
+      {
+        "id": "Call Details-Data.16.pii_hash.Phone Number",
+        "step": 16,
+        "table": "Call Details-Data",
+        "column": "Phone Number",
+        "rule": "pii_hash",
+        "rows_affected": 60445,
+        "before": "Colonne PII (phone).",
+        "after": "Pseudonymisée (SHA-256 salé, 16 car.).",
+        "rationale": "Les données personnelles ne doivent pas atteindre le dashboard ; le hash conserve l'unicité et les jointures.",
+        "source_issue_id": null
+      }
+    ],
+    "validation_checks": [
+      {
+        "id": "Call Details-Data.row_reconciliation",
+        "table": "Call Details-Data",
+        "check": "row_reconciliation",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "101174 lignes en entrée − 40729 supprimées tracées = 60445 attendues ; 60445 en sortie."
+      },
+      {
+        "id": "Call Details-Data.no_exact_duplicates",
+        "table": "Call Details-Data",
+        "check": "no_exact_duplicates",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 doublon(s) exact(s) restant(s)."
+      },
+      {
+        "id": "Call Details-Data.no_unexpected_nulls",
+        "table": "Call Details-Data",
+        "check": "no_unexpected_nulls",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "Nulls restants hors cas structurels : aucun."
+      },
+      {
+        "id": "Call Details-Data.range.Day Calls",
+        "table": "Call Details-Data",
+        "check": "range",
+        "column": "Day Calls",
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+      },
+      {
+        "id": "Call Details-Data.range.Day Charge",
+        "table": "Call Details-Data",
+        "check": "range",
+        "column": "Day Charge",
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+      },
+      {
+        "id": "Call Details-Data.range.Eve Calls",
+        "table": "Call Details-Data",
+        "check": "range",
+        "column": "Eve Calls",
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+      },
+      {
+        "id": "Call Details-Data.range.Eve Charge",
+        "table": "Call Details-Data",
+        "check": "range",
+        "column": "Eve Charge",
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+      },
+      {
+        "id": "Call Details-Data.range.Night Calls",
+        "table": "Call Details-Data",
+        "check": "range",
+        "column": "Night Calls",
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+      },
+      {
+        "id": "Call Details-Data.range.Night Charge",
+        "table": "Call Details-Data",
+        "check": "range",
+        "column": "Night Charge",
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+      },
+      {
+        "id": "Call Details-Data.range.Intl Calls",
+        "table": "Call Details-Data",
+        "check": "range",
+        "column": "Intl Calls",
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+      },
+      {
+        "id": "Call Details-Data.range.Intl Charge",
+        "table": "Call Details-Data",
+        "check": "range",
+        "column": "Intl Charge",
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+      },
+      {
+        "id": "Call Details-Data.range.CustServ Calls",
+        "table": "Call Details-Data",
+        "check": "range",
+        "column": "CustServ Calls",
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+      },
+      {
+        "id": "Call Details-Data.no_constant_columns",
+        "table": "Call Details-Data",
+        "check": "no_constant_columns",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "Colonnes constantes (peu utiles pour l'analyse) : aucune."
+      },
+      {
+        "id": "Call Details-Data.star_fact_row_count",
+        "table": "Call Details-Data",
+        "check": "star_fact_row_count",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "60445 lignes dans la table nettoyée, 60445 dans fact_Call Details-Data."
+      },
+      {
+        "id": "Call Details-Data.star_no_null_foreign_key",
+        "table": "Call Details-Data",
+        "check": "star_no_null_foreign_key",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 clé(s) étrangère(s) nulle(s)."
+      },
+      {
+        "id": "Call Details-Data.star_no_orphan_foreign_key",
+        "table": "Call Details-Data",
+        "check": "star_no_orphan_foreign_key",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 ligne(s) du fait pointent vers une dimension inexistante."
+      },
+      {
+        "id": "Call Details-Data.star_dimension_keys_unique",
+        "table": "Call Details-Data",
+        "check": "star_dimension_keys_unique",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 clé(s) de dimension en double."
+      },
+      {
+        "id": "Call Details-Data.star_column_coverage",
+        "table": "Call Details-Data",
+        "check": "star_column_coverage",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "Colonnes non placées : aucune ; placées deux fois : aucune."
+      },
+      {
+        "id": "Call Details-Data.star_measure_reconciliation",
+        "table": "Call Details-Data",
+        "check": "star_measure_reconciliation",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 mesure(s) dont la somme diffère entre table nettoyée et fait."
+      },
+      {
+        "id": "Call Details-Data.star_lossless_rejoin",
+        "table": "Call Details-Data",
+        "check": "star_lossless_rejoin",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "En re-joignant le fait et les dimensions, 0 cellule(s) diffèrent de la table nettoyée (0 = l'étoile ne perd et ne déforme aucune donnée)."
+      }
+    ],
+    "issue_resolutions": [
+      {
+        "issue_id": "Call Details-Data.Day Mins.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "Call Details-Data.03.report_outliers.Day Mins"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "Call Details-Data.Day Charge.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "Call Details-Data.05.report_outliers.Day Charge"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "Call Details-Data.Eve Mins.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "Call Details-Data.06.report_outliers.Eve Mins"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "Call Details-Data.Eve Charge.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "Call Details-Data.08.report_outliers.Eve Charge"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "Call Details-Data.Night Mins.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "Call Details-Data.09.report_outliers.Night Mins"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "Call Details-Data.Night Charge.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "Call Details-Data.11.report_outliers.Night Charge"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "Call Details-Data.Intl Mins.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "Call Details-Data.12.report_outliers.Intl Mins"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "Call Details-Data.Intl Charge.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "Call Details-Data.14.report_outliers.Intl Charge"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "Call Details-Data.exact_duplicates",
+        "status": "resolved",
+        "action_ids": [
+          "Call Details-Data.00.drop_exact_duplicates"
+        ],
+        "note": "Des lignes strictement identiques gonflent les comptages et les sommes."
+      }
+    ],
+    "remaining_issues": [
+      {
+        "id": "Call Details-Data.remaining.outliers.Account Length",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "Account Length",
+        "rule": "outliers_reported",
+        "evidence": "2876 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 2876,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.VMail Message",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "VMail Message",
+        "rule": "outliers_reported",
+        "evidence": "4714 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 4714,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.Day Mins",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "Day Mins",
+        "rule": "outliers_reported",
+        "evidence": "4456 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 4456,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.Day Calls",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "Day Calls",
+        "rule": "outliers_reported",
+        "evidence": "6416 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 6416,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.Day Charge",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "Day Charge",
+        "rule": "outliers_reported",
+        "evidence": "2344 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 2344,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.Eve Mins",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "Eve Mins",
+        "rule": "outliers_reported",
+        "evidence": "4979 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 4979,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.Eve Calls",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "Eve Calls",
+        "rule": "outliers_reported",
+        "evidence": "6455 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 6455,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.Eve Charge",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "Eve Charge",
+        "rule": "outliers_reported",
+        "evidence": "6857 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 6857,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.Night Mins",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "Night Mins",
+        "rule": "outliers_reported",
+        "evidence": "4885 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 4885,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.Night Calls",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "Night Calls",
+        "rule": "outliers_reported",
+        "evidence": "6302 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 6302,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.Night Charge",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "Night Charge",
+        "rule": "outliers_reported",
+        "evidence": "2577 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 2577,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.Intl Mins",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "Intl Mins",
+        "rule": "outliers_reported",
+        "evidence": "5682 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 5682,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.Intl Calls",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "Intl Calls",
+        "rule": "outliers_reported",
+        "evidence": "2206 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 2206,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.Intl Charge",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "Intl Charge",
+        "rule": "outliers_reported",
+        "evidence": "3036 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 3036,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.outliers.CustServ Calls",
+        "severity": "low",
+        "table": "Call Details-Data",
+        "column": "CustServ Calls",
+        "rule": "outliers_reported",
+        "evidence": "5656 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 5656,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "Call Details-Data.remaining.pii_default_salt",
+        "severity": "medium",
+        "table": "Call Details-Data",
+        "column": null,
+        "rule": "pii_default_salt",
+        "evidence": "Variable d'environnement BIFLOW_PII_SALT absente : sel par défaut utilisé pour le hachage.",
+        "affected_rows": 0,
+        "suggested_action": "Définir BIFLOW_PII_SALT avant toute mise en production."
+      }
+    ],
+    "llm_summary": "Table Call Details-Data : 101174 → 60445 ligne(s), score qualité 89.936 → 100.0/100.\nCorrections appliquées :\n- Call Details-Data [drop_exact_duplicates] 40729 ligne(s) : Des lignes strictement identiques gonflent les comptages et les sommes.\n- Call Details-Data.Phone Number [pii_hash] 60445 ligne(s) : Les données personnelles ne doivent pas atteindre le dashboard ; le hash conserve l'unicité et les jointures.\nÀ surveiller :\n- low Call Details-Data.Account Length : 2876 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.VMail Message : 4714 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.Day Mins : 4456 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.Day Calls : 6416 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.Day Charge : 2344 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.Eve Mins : 4979 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.Eve Calls : 6455 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.Eve Charge : 6857 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.Night Mins : 4885 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.Night Calls : 6302 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.Night Charge : 2577 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.Intl Mins : 5682 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.Intl Calls : 2206 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.Intl Charge : 3036 valeur(s) extrême(s) conservée(s) telles quelles.\n- low Call Details-Data.CustServ Calls : 5656 valeur(s) extrême(s) conservée(s) telles quelles.\n- medium Call Details-Data : Variable d'environnement BIFLOW_PII_SALT absente : sel par défaut utilisé pour le hachage.",
+    "trace": [
+      {
+        "timestamp": "2026-10-26T20:03:48.104628",
+        "tool": "load_source",
+        "parameters": {
+          "source_name": "Call Details-Data",
+          "rows": 101174
+        },
+        "duration_ms": 138.8602000006358
+      },
+      {
+        "timestamp": "2026-10-26T20:03:49.335387",
+        "tool": "clean_table",
+        "parameters": {
+          "table": "Call Details-Data",
+          "actions": 17
+        },
+        "duration_ms": 1230.1446999999825
+      },
+      {
+        "timestamp": "2026-10-26T20:03:49.336388",
+        "tool": "validate",
+        "parameters": {
+          "checks": 13
+        },
+        "duration_ms": 0.25890000051731477
+      },
+      {
+        "timestamp": "2026-10-26T20:03:50.309698",
+        "tool": "build_star_schema",
+        "parameters": {
+          "table": "Call Details-Data",
+          "dimensions": 2
+        },
+        "duration_ms": 556.1354999999821
+      },
+      {
+        "timestamp": "2026-10-26T20:03:50.309698",
+        "tool": "export",
+        "parameters": {
+          "table": "Call Details-Data",
+          "path": "output_test\\Call Details-Data\\Call Details-Data_clean.csv"
+        },
+        "duration_ms": 973.2007000002341
+      }
+    ],
+    "errors": [],
+    "generated_at": "2026-10-26T20:03:47.966060"
+  },
+  "kpi_report": {
+    "business_goal": "Analyse décisionnelle télécom",
+    "status": "warning",
+    "etl_status": "warning",
+    "kpis": [
+      {
+        "id": "churn_rate",
+        "name": "Taux de churn",
+        "category": "Churn",
+        "definition": "Part des clients ayant quitté l'opérateur.",
+        "formula": "clients_churnés / clients_total × 100",
+        "unit": "%",
+        "status": "computed",
+        "value": 11.05,
+        "table": "Call Details-Data",
+        "rows_used": 60445,
+        "columns_used": {
+          "flag": "churn"
+        },
+        "missing_inputs": {},
+        "breakdowns": {},
+        "justification": "Calculable : colonnes trouvées dans « Call Details-Data » (flag=churn). Calcul déterministe : clients_churnés / clients_total × 100.",
+        "warnings": []
+      },
+      {
+        "id": "churned_customers",
+        "name": "Clients churnés",
+        "category": "Churn",
+        "definition": "Nombre de clients ayant quitté l'opérateur.",
+        "formula": "somme(indicateur_churn)",
+        "unit": "clients",
+        "status": "computed",
+        "value": 6677.0,
+        "table": "Call Details-Data",
+        "rows_used": 60445,
+        "columns_used": {
+          "flag": "churn"
+        },
+        "missing_inputs": {},
+        "breakdowns": {},
+        "justification": "Calculable : colonnes trouvées dans « Call Details-Data » (flag=churn). Calcul déterministe : somme(indicateur_churn).",
+        "warnings": []
+      },
+      {
+        "id": "avg_churn_score",
+        "name": "Score de churn moyen",
+        "category": "Churn",
+        "definition": "Score moyen de risque de départ (0 à 100) du portefeuille.",
+        "formula": "moyenne(churn_score)",
+        "unit": "points",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "churn_score"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← churn_score).",
+        "warnings": []
+      },
+      {
+        "id": "monthly_revenue_lost",
+        "name": "Revenu mensuel perdu par churn",
+        "category": "Churn",
+        "definition": "Revenu mensuel récurrent des clients qui sont partis.",
+        "formula": "somme(frais_mensuels) pour les clients churnés",
+        "unit": "devise/mois",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "monthly_charges",
+            "monthly_charge",
+            "monthly_fee",
+            "monthly_revenue"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← monthly_charges/monthly_charge/monthly_fee/monthly_revenue).",
+        "warnings": []
+      },
+      {
+        "id": "customer_count",
+        "name": "Nombre de clients",
+        "category": "Customer Base",
+        "definition": "Nombre de clients distincts dans la table.",
+        "formula": "nombre_distinct(identifiant_client)",
+        "unit": "clients",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "id": [
+            "customer_id",
+            "customerid",
+            "subscriber_id"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (id ← customer_id/customerid/subscriber_id).",
+        "warnings": []
+      },
+      {
+        "id": "avg_tenure",
+        "name": "Ancienneté moyenne",
+        "category": "Customer Base",
+        "definition": "Durée moyenne depuis la souscription.",
+        "formula": "moyenne(ancienneté_en_mois)",
+        "unit": "mois",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "tenure_months",
+            "tenure",
+            "months_active"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← tenure_months/tenure/months_active).",
+        "warnings": []
+      },
+      {
+        "id": "arpu",
+        "name": "ARPU mensuel",
+        "category": "Billing & Revenue",
+        "definition": "Revenu mensuel moyen par client.",
+        "formula": "moyenne(frais_mensuels)",
+        "unit": "devise/client/mois",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "monthly_charges",
+            "monthly_charge",
+            "monthly_fee",
+            "monthly_revenue"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← monthly_charges/monthly_charge/monthly_fee/monthly_revenue).",
+        "warnings": []
+      },
+      {
+        "id": "total_revenue",
+        "name": "Revenu cumulé",
+        "category": "Billing & Revenue",
+        "definition": "Somme des montants facturés depuis la souscription.",
+        "formula": "somme(total_facturé)",
+        "unit": "devise",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "total_charges",
+            "total_revenue",
+            "total_billed"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← total_charges/total_revenue/total_billed).",
+        "warnings": []
+      },
+      {
+        "id": "avg_cltv",
+        "name": "CLTV moyen",
+        "category": "Billing & Revenue",
+        "definition": "Valeur vie client moyenne estimée.",
+        "formula": "moyenne(cltv)",
+        "unit": "devise",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "cltv",
+            "clv",
+            "customer_lifetime_value"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← cltv/clv/customer_lifetime_value).",
+        "warnings": []
+      },
+      {
+        "id": "unpaid_rate",
+        "name": "Taux d'impayés",
+        "category": "Billing & Revenue",
+        "definition": "Part du montant facturé restée impayée.",
+        "formula": "somme(montant_impayé) / somme(montant_facturé) × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "num": [
+            "unpaid_amount",
+            "overdue_amount"
+          ],
+          "den": [
+            "billed_amount",
+            "invoice_amount"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (num ← unpaid_amount/overdue_amount; den ← billed_amount/invoice_amount).",
+        "warnings": []
+      },
+      {
+        "id": "avg_data_usage",
+        "name": "Consommation data moyenne",
+        "category": "Usage & Consumption",
+        "definition": "Volume de données moyen consommé par ligne.",
+        "formula": "moyenne(volume_data)",
+        "unit": "Mo",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "data_usage_mb",
+            "data_mb",
+            "data_usage",
+            "internet_mb"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← data_usage_mb/data_mb/data_usage/internet_mb).",
+        "warnings": []
+      },
+      {
+        "id": "avg_call_minutes",
+        "name": "Minutes d'appel moyennes",
+        "category": "Usage & Consumption",
+        "definition": "Durée d'appel moyenne par ligne.",
+        "formula": "moyenne(minutes_appel)",
+        "unit": "min",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "call_minutes",
+            "minutes",
+            "call_duration",
+            "voice_minutes"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← call_minutes/minutes/call_duration/voice_minutes).",
+        "warnings": []
+      },
+      {
+        "id": "avg_mos_voice",
+        "name": "Score MOS Voix moyen",
+        "category": "Network Performance",
+        "definition": "Score moyen d'opinion (MOS) de la qualité vocale (1 à 5).",
+        "formula": "moyenne(mos_voice)",
+        "unit": "score",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "mos_voice",
+            "mos",
+            "streaming_mos"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← mos_voice/mos/streaming_mos).",
+        "warnings": []
+      },
+      {
+        "id": "avg_throughput",
+        "name": "Débit moyen",
+        "category": "Network Performance",
+        "definition": "Débit réseau moyen observé.",
+        "formula": "moyenne(throughput_mbps)",
+        "unit": "Mbps",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "throughput_mbps",
+            "effective_bitrate_mbps",
+            "throughput",
+            "download_speed_mbps",
+            "download_speed"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← throughput_mbps/effective_bitrate_mbps/throughput/download_speed_mbps/download_speed).",
+        "warnings": []
+      },
+      {
+        "id": "avg_upload_speed",
+        "name": "Débit montant moyen",
+        "category": "Network Performance",
+        "definition": "Débit montant (upload) moyen observé.",
+        "formula": "moyenne(upload_speed_mbps)",
+        "unit": "Mbps",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "upload_speed_mbps",
+            "upload_speed"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← upload_speed_mbps/upload_speed).",
+        "warnings": []
+      },
+      {
+        "id": "avg_signal_strength",
+        "name": "Force du signal moyen",
+        "category": "Network Performance",
+        "definition": "Puissance moyenne du signal radio.",
+        "formula": "moyenne(signal_strength_dbm)",
+        "unit": "dBm",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "signal_strength_dbm",
+            "signal_strength",
+            "rssi",
+            "rsrp"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← signal_strength_dbm/signal_strength/rssi/rsrp).",
+        "warnings": []
+      },
+      {
+        "id": "avg_packet_loss",
+        "name": "Taux de perte de paquets",
+        "category": "Network Performance",
+        "definition": "Pourcentage moyen de paquets perdus.",
+        "formula": "moyenne(plr)",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "plr",
+            "packet_loss"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← plr/packet_loss).",
+        "warnings": []
+      },
+      {
+        "id": "network_availability",
+        "name": "Disponibilité réseau",
+        "category": "Network Performance",
+        "definition": "Taux moyen de disponibilité des équipements.",
+        "formula": "moyenne(availability)",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "availability"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← availability).",
+        "warnings": []
+      },
+      {
+        "id": "cdr_incident_rate",
+        "name": "Taux d'incidents CDR",
+        "category": "Network Performance",
+        "definition": "Part des sessions réseau ayant subi un incident ou coupure.",
+        "formula": "sessions_en_incident / sessions_total × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "flag": [
+            "cdr_flag",
+            "incident_flag",
+            "call_drop",
+            "dropped_connection"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← cdr_flag/incident_flag/call_drop/dropped_connection).",
+        "warnings": []
+      },
+      {
+        "id": "dropped_call_rate",
+        "name": "Taux d'appels coupés",
+        "category": "Network Performance",
+        "definition": "Part des appels interrompus avant la fin normale.",
+        "formula": "somme(appels_coupés) / somme(appels_total) × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "num": [
+            "dropped_calls"
+          ],
+          "den": [
+            "total_calls",
+            "calls"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (num ← dropped_calls; den ← total_calls/calls).",
+        "warnings": []
+      },
+      {
+        "id": "avg_latency",
+        "name": "Latence moyenne",
+        "category": "Network Performance",
+        "definition": "Latence réseau moyenne.",
+        "formula": "moyenne(latence)",
+        "unit": "ms",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "latency_ms",
+            "latency"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← latency_ms/latency).",
+        "warnings": []
+      },
+      {
+        "id": "ticket_count",
+        "name": "Nombre de tickets / réclamations",
+        "category": "Operations & Support",
+        "definition": "Nombre total de tickets ou réclamations distinctes.",
+        "formula": "nombre_distinct(ticket_id / complaint_id)",
+        "unit": "tickets",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "id": [
+            "ticket_id",
+            "ticket",
+            "case_id",
+            "complaint_id",
+            "issue_id",
+            "ticket_number"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (id ← ticket_id/ticket/case_id/complaint_id/issue_id/ticket_number).",
+        "warnings": []
+      },
+      {
+        "id": "ticket_resolution_rate",
+        "name": "Taux de résolution des tickets",
+        "category": "Operations & Support",
+        "definition": "Part des tickets ou réclamations résolus / clos.",
+        "formula": "tickets_clos / total_tickets × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "flag": [
+            "ticket_status",
+            "status",
+            "case_status"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← ticket_status/status/case_status).",
+        "warnings": []
+      },
+      {
+        "id": "avg_csat",
+        "name": "Score de satisfaction moyen (CSAT)",
+        "category": "Operations & Support",
+        "definition": "Score moyen de satisfaction client.",
+        "formula": "moyenne(satisfaction_client)",
+        "unit": "score",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "customer_satisfaction_rating",
+            "csat",
+            "satisfaction_rating",
+            "rating"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← customer_satisfaction_rating/csat/satisfaction_rating/rating).",
+        "warnings": []
+      },
+      {
+        "id": "dispute_rate",
+        "name": "Taux de litiges clients",
+        "category": "Operations & Support",
+        "definition": "Part des réclamations ayant entraîné un litige client.",
+        "formula": "réclamations_contestées / total_réclamations × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "flag": [
+            "consumer_disputed?",
+            "consumer_disputed",
+            "is_disputed",
+            "disputed"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← consumer_disputed?/consumer_disputed/is_disputed/disputed).",
+        "warnings": []
+      },
+      {
+        "id": "timely_response_rate",
+        "name": "Taux de réponse dans les délais",
+        "category": "Operations & Support",
+        "definition": "Part des réclamations traitées dans le délai imparti.",
+        "formula": "réponses_dans_les_délais / total × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "flag": [
+            "timely_response",
+            "timely_response?",
+            "in_time"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← timely_response/timely_response?/in_time).",
+        "warnings": []
+      },
+      {
+        "id": "avg_resolution_time",
+        "name": "Temps de résolution moyen",
+        "category": "Operations & Support",
+        "definition": "Délai moyen de résolution d'un ticket.",
+        "formula": "moyenne(temps_de_résolution)",
+        "unit": "h",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "resolution_time_hours",
+            "resolution_time",
+            "resolution_hours"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← resolution_time_hours/resolution_time/resolution_hours).",
+        "warnings": []
+      }
+    ],
+    "caveats": [
+      "ETL — Call Details-Data : Variable d'environnement BIFLOW_PII_SALT absente : sel par défaut utilisé pour le hachage."
+    ],
+    "output_files": {
+      "report": "output_test\\Call Details-Data\\kpi\\kpi_report.json",
+      "values": "output_test\\Call Details-Data\\kpi\\kpi_values.csv"
+    },
+    "llm_summary": "2 KPI calculé(s) sur 27 du catalogue.\n- Taux de churn (Churn) : 11.05 % — Part des clients ayant quitté l'opérateur.\n- Clients churnés (Churn) : 6677.0 clients — Nombre de clients ayant quitté l'opérateur.\nNon calculables avec ces données : Score de churn moyen, Revenu mensuel perdu par churn, Nombre de clients, Ancienneté moyenne, ARPU mensuel, Revenu cumulé, CLTV moyen, Taux d'impayés, Consommation data moyenne, Minutes d'appel moyennes, Score MOS Voix moyen, Débit moyen, Débit montant moyen, Force du signal moyen, Taux de perte de paquets, Disponibilité réseau, Taux d'incidents CDR, Taux d'appels coupés, Latence moyenne, Nombre de tickets / réclamations, Taux de résolution des tickets, Score de satisfaction moyen (CSAT), Taux de litiges clients, Taux de réponse dans les délais, Temps de résolution moyen.\nRéserves :\n- ETL — Call Details-Data : Variable d'environnement BIFLOW_PII_SALT absente : sel par défaut utilisé pour le hachage.",
+    "trace": [
+      {
+        "timestamp": "2026-10-26T20:03:50.315788",
+        "tool": "compute_table",
+        "parameters": {
+          "table": "Call Details-Data",
+          "kpis": 2
+        },
+        "duration_ms": 2.619799999592942
+      },
+      {
+        "timestamp": "2026-10-26T20:03:50.315788",
+        "tool": "validate",
+        "parameters": {
+          "kpis": 27
+        },
+        "duration_ms": 0.015499999790336005
+      }
+    ],
+    "errors": [],
+    "generated_at": "2026-10-26T20:03:50.312773"
+  },
+  "analyst_report": {
+    "business_goal": "Analyse décisionnelle télécom",
+    "status": "warning",
+    "kpi_status": "warning",
+    "insights": [],
+    "recommendations": [],
+    "profile_comparisons": [],
+    "caveats": [
+      "ETL — Call Details-Data : Variable d'environnement BIFLOW_PII_SALT absente : sel par défaut utilisé pour le hachage.",
+      "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+      "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+    ],
+    "null_result": true,
+    "n_tests": 0,
+    "n_significant_segments": 0,
+    "overlap_warning": false,
+    "excluded_kpis": [
+      {
+        "kpi_id": "avg_churn_score",
+        "reason": "fuite de cible (corrélé directement à churn_label)"
+      }
+    ],
+    "llm_narrative": "Analyse terminée. Aucun segment ne présente à la fois une significativité statistique (p ajustée <= 0,05), un écart suffisant et un effectif fiable. ",
+    "output_files": {
+      "report": "output_test\\Call Details-Data\\analyst\\analyst_report.json",
+      "insights": "output_test\\Call Details-Data\\analyst\\insights.csv",
+      "profile_comparisons": "output_test\\Call Details-Data\\analyst\\profile_comparisons.csv",
+      "recommendations": "output_test\\Call Details-Data\\analyst\\recommendations.csv"
+    },
+    "trace": [
+      {
+        "timestamp": "2026-10-26T20:03:50.331184",
+        "tool": "load",
+        "parameters": {
+          "kpis_computed": 2,
+          "table_loaded": true,
+          "excluded_cols": [
+            "churn",
+            "count",
+            "country",
+            "phone_number",
+            "state"
+          ]
+        },
+        "duration_ms": 10.255700000016077
+      },
+      {
+        "timestamp": "2026-10-26T20:03:50.340695",
+        "tool": "segment",
+        "parameters": {
+          "n_segments_kpi": 0,
+          "n_segments_analyst": 0,
+          "n_mw": 0
+        },
+        "duration_ms": 9.63659999979427
+      },
+      {
+        "timestamp": "2026-10-26T20:03:50.340695",
+        "tool": "test",
+        "parameters": {
+          "n_tests": 0
+        },
+        "duration_ms": 0.0038999996831989847
+      },
+      {
+        "timestamp": "2026-10-26T20:03:50.341697",
+        "tool": "impact",
+        "parameters": {
+          "n_segs": 0
+        },
+        "duration_ms": 0.002200000380980782
+      },
+      {
+        "timestamp": "2026-10-26T20:03:50.341697",
+        "tool": "rank",
+        "parameters": {
+          "n_passing": 0,
+          "n_mw": 0
+        },
+        "duration_ms": 0.014899999769113492
+      },
+      {
+        "timestamp": "2026-10-26T20:03:50.341697",
+        "tool": "recommend",
+        "parameters": {
+          "n_rec": 0
+        },
+        "duration_ms": 0.002200000380980782
+      },
+      {
+        "timestamp": "2026-10-26T20:03:50.341697",
+        "tool": "narrate",
+        "parameters": {
+          "llm": false
+        },
+        "duration_ms": 0.006000000212225132
+      }
+    ],
+    "errors": [],
+    "generated_at": "2026-10-26T20:03:50.330183"
+  },
+  "dashboard_report": {
+    "business_goal": "Analyse décisionnelle télécom",
+    "status": "warning",
+    "analyst_status": "warning",
+    "title": "Dashboard BI : Analyse décisionnelle télécom",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Vue d'ensemble",
+        "order": 0,
+        "visual_ids": [
+          "kpi_churn_rate",
+          "kpi_churned_customers"
+        ]
+      },
+      {
+        "id": "quality",
+        "title": "Qualité et réserves",
+        "order": 6,
+        "visual_ids": [
+          "text_caveats"
+        ]
+      }
+    ],
+    "visuals": [
+      {
+        "id": "kpi_churn_rate",
+        "type": "kpi_card",
+        "title": "Taux de churn",
+        "subtitle": "",
+        "section": "overview",
+        "span": 3,
+        "kpi": {
+          "kpi_id": "churn_rate",
+          "name": "Taux de churn",
+          "value": 11.05,
+          "unit": "%",
+          "status": "ok",
+          "target": null,
+          "delta": null,
+          "higher_is_better": false
+        },
+        "data": [],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "Part des clients ayant quitté l'opérateur.",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "churn_rate",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "churn"
+          ],
+          "formula": "clients_churnés / clients_total × 100",
+          "aggregation": null,
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "kpi_churned_customers",
+        "type": "kpi_card",
+        "title": "Clients churnés",
+        "subtitle": "",
+        "section": "overview",
+        "span": 3,
+        "kpi": {
+          "kpi_id": "churned_customers",
+          "name": "Clients churnés",
+          "value": 6677.0,
+          "unit": "clients",
+          "status": "ok",
+          "target": null,
+          "delta": null,
+          "higher_is_better": false
+        },
+        "data": [],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "Nombre de clients ayant quitté l'opérateur.",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "churned_customers",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "churn"
+          ],
+          "formula": "somme(indicateur_churn)",
+          "aggregation": null,
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "text_caveats",
+        "type": "text",
+        "title": "Réserves et limites",
+        "subtitle": "",
+        "section": "quality",
+        "span": 12,
+        "kpi": null,
+        "data": [
+          {
+            "text": "ETL — Call Details-Data : Variable d'environnement BIFLOW_PII_SALT absente : sel par défaut utilisé pour le hachage."
+          },
+          {
+            "text": "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité."
+          },
+          {
+            "text": "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+          }
+        ],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": null,
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [],
+          "formula": null,
+          "aggregation": null,
+          "origin": "analyst_report"
+        }
+      }
+    ],
+    "filters": [],
+    "report": {
+      "title": "Dashboard BI : Analyse décisionnelle télécom",
+      "executive_summary": "Taux de churn global : 11.0 % sur 60445 clients. Aucun segment ne passe les filtres statistiques de l'analyse.",
+      "blocks": [
+        {
+          "heading": "Indicateurs clés",
+          "text": "",
+          "visual_ids": [
+            "kpi_churn_rate",
+            "kpi_churned_customers"
+          ]
+        }
+      ],
+      "recommendations_table": [],
+      "caveats": [
+        "ETL — Call Details-Data : Variable d'environnement BIFLOW_PII_SALT absente : sel par défaut utilisé pour le hachage.",
+        "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+        "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+      ]
+    },
+    "excluded_visuals": [
+      {
+        "candidate": "avg_churn_score",
+        "reason": "fuite de cible : dérivé du churn, exclu des cartes de pilotage"
+      },
+      {
+        "candidate": "monthly_revenue_lost",
+        "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue'])"
+      },
+      {
+        "candidate": "customer_count",
+        "reason": "non calculable (id: ['customer_id', 'customerid', 'subscriber_id'])"
+      },
+      {
+        "candidate": "avg_tenure",
+        "reason": "non calculable (value: ['tenure_months', 'tenure', 'months_active'])"
+      },
+      {
+        "candidate": "arpu",
+        "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue'])"
+      },
+      {
+        "candidate": "total_revenue",
+        "reason": "non calculable (value: ['total_charges', 'total_revenue', 'total_billed'])"
+      },
+      {
+        "candidate": "avg_cltv",
+        "reason": "non calculable (value: ['cltv', 'clv', 'customer_lifetime_value'])"
+      },
+      {
+        "candidate": "unpaid_rate",
+        "reason": "non calculable (num: ['unpaid_amount', 'overdue_amount'], den: ['billed_amount', 'invoice_amount'])"
+      },
+      {
+        "candidate": "avg_data_usage",
+        "reason": "non calculable (value: ['data_usage_mb', 'data_mb', 'data_usage', 'internet_mb'])"
+      },
+      {
+        "candidate": "avg_call_minutes",
+        "reason": "non calculable (value: ['call_minutes', 'minutes', 'call_duration', 'voice_minutes'])"
+      },
+      {
+        "candidate": "avg_mos_voice",
+        "reason": "non calculable (value: ['mos_voice', 'mos', 'streaming_mos'])"
+      },
+      {
+        "candidate": "avg_throughput",
+        "reason": "non calculable (value: ['throughput_mbps', 'effective_bitrate_mbps', 'throughput', 'download_speed_mbps', 'download_speed'])"
+      },
+      {
+        "candidate": "avg_upload_speed",
+        "reason": "non calculable (value: ['upload_speed_mbps', 'upload_speed'])"
+      },
+      {
+        "candidate": "avg_signal_strength",
+        "reason": "non calculable (value: ['signal_strength_dbm', 'signal_strength', 'rssi', 'rsrp'])"
+      },
+      {
+        "candidate": "avg_packet_loss",
+        "reason": "non calculable (value: ['plr', 'packet_loss'])"
+      },
+      {
+        "candidate": "network_availability",
+        "reason": "non calculable (value: ['availability'])"
+      },
+      {
+        "candidate": "cdr_incident_rate",
+        "reason": "non calculable (flag: ['cdr_flag', 'incident_flag', 'call_drop', 'dropped_connection'])"
+      },
+      {
+        "candidate": "dropped_call_rate",
+        "reason": "non calculable (num: ['dropped_calls'], den: ['total_calls', 'calls'])"
+      },
+      {
+        "candidate": "avg_latency",
+        "reason": "non calculable (value: ['latency_ms', 'latency'])"
+      },
+      {
+        "candidate": "ticket_count",
+        "reason": "non calculable (id: ['ticket_id', 'ticket', 'case_id', 'complaint_id', 'issue_id', 'ticket_number'])"
+      },
+      {
+        "candidate": "ticket_resolution_rate",
+        "reason": "non calculable (flag: ['ticket_status', 'status', 'case_status'])"
+      },
+      {
+        "candidate": "avg_csat",
+        "reason": "non calculable (value: ['customer_satisfaction_rating', 'csat', 'satisfaction_rating', 'rating'])"
+      },
+      {
+        "candidate": "dispute_rate",
+        "reason": "non calculable (flag: ['consumer_disputed?', 'consumer_disputed', 'is_disputed', 'disputed'])"
+      },
+      {
+        "candidate": "timely_response_rate",
+        "reason": "non calculable (flag: ['timely_response', 'timely_response?', 'in_time'])"
+      },
+      {
+        "candidate": "avg_resolution_time",
+        "reason": "non calculable (value: ['resolution_time_hours', 'resolution_time', 'resolution_hours'])"
+      },
+      {
+        "candidate": "churn par ancienneté",
+        "reason": "colonne d'ancienneté introuvable"
+      },
+      {
+        "candidate": "série calendaire",
+        "reason": "aucune colonne de date : la dimension temporelle repose sur l'ancienneté"
+      },
+      {
+        "candidate": "geo_map",
+        "reason": "colonne géographique (state/city) ou churn introuvable"
+      },
+      {
+        "candidate": "heatmap",
+        "reason": "moins de 2 dimensions catégorielles issues des insights"
+      }
+    ],
+    "caveats": [
+      "ETL — Call Details-Data : Variable d'environnement BIFLOW_PII_SALT absente : sel par défaut utilisé pour le hachage.",
+      "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+      "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+    ],
+    "null_result": true,
+    "llm_narrative": "Taux de churn global : 11.0 % sur 60445 clients. Aucun segment ne passe les filtres statistiques de l'analyse.",
+    "output_files": {
+      "report": "output_test\\Call Details-Data\\dashboard\\dashboard_report.json"
+    },
+    "trace": [
+      {
+        "timestamp": "2026-10-26T20:03:50.349695",
+        "tool": "load",
+        "parameters": {
+          "has_frame": true,
+          "has_kpi": true,
+          "n_insights": 0
+        },
+        "duration_ms": 1.1611999998422107
+      },
+      {
+        "timestamp": "2026-10-26T20:03:50.351695",
+        "tool": "build",
+        "parameters": {
+          "n_candidates": 3
+        },
+        "duration_ms": 1.8293000002813642
+      },
+      {
+        "timestamp": "2026-10-26T20:03:50.351695",
+        "tool": "assemble",
+        "parameters": {
+          "n_visuals": 3,
+          "n_excluded": 29
+        },
+        "duration_ms": 0.04760000047099311
+      },
+      {
+        "timestamp": "2026-10-26T20:03:50.351695",
+        "tool": "report",
+        "parameters": {
+          "n_blocks": 1
+        },
+        "duration_ms": 0.03990000004705507
+      },
+      {
+        "timestamp": "2026-10-26T20:03:50.352695",
+        "tool": "narrate",
+        "parameters": {
+          "llm": false
+        },
+        "duration_ms": 0.004699999408330768
+      }
+    ],
+    "errors": [],
+    "generated_at": "2026-10-26T20:03:50.348695"
+  },
+  "xai_report": {
+    "status": "success",
+    "business_goal": "Analyse décisionnelle télécom",
+    "n_features_used": 16,
+    "features_used": [
+      "phone_number",
+      "account_length",
+      "vmail_message",
+      "day_mins",
+      "day_calls",
+      "day_charge",
+      "eve_mins",
+      "eve_calls",
+      "eve_charge",
+      "night_mins",
+      "night_calls",
+      "night_charge",
+      "intl_mins",
+      "intl_calls",
+      "intl_charge",
+      "cust_serv_calls"
+    ],
+    "features_excluded": [
+      "churn"
+    ],
+    "model_metrics": {
+      "accuracy": 0.944,
+      "precision": 0.7527,
+      "recall": 0.7341,
+      "f1": 0.7433,
+      "auc_roc": 0.9569,
+      "n_train": 48356,
+      "n_test": 12089,
+      "positive_rate_train": 0.1105,
+      "positive_rate_test": 0.1104
+    },
+    "shap_summary": {
+      "top_features": [
+        {
+          "feature": "day_mins",
+          "mean_abs_shap": 0.0497,
+          "rank": 1
+        },
+        {
+          "feature": "day_charge",
+          "mean_abs_shap": 0.0451,
+          "rank": 2
+        },
+        {
+          "feature": "vmail_message",
+          "mean_abs_shap": 0.0443,
+          "rank": 3
+        },
+        {
+          "feature": "night_charge",
+          "mean_abs_shap": 0.0308,
+          "rank": 4
+        },
+        {
+          "feature": "eve_charge",
+          "mean_abs_shap": 0.0306,
+          "rank": 5
+        },
+        {
+          "feature": "eve_mins",
+          "mean_abs_shap": 0.0278,
+          "rank": 6
+        },
+        {
+          "feature": "intl_mins",
+          "mean_abs_shap": 0.0269,
+          "rank": 7
+        },
+        {
+          "feature": "intl_calls",
+          "mean_abs_shap": 0.0263,
+          "rank": 8
+        },
+        {
+          "feature": "night_mins",
+          "mean_abs_shap": 0.0255,
+          "rank": 9
+        },
+        {
+          "feature": "day_calls",
+          "mean_abs_shap": 0.0255,
+          "rank": 10
+        }
+      ],
+      "examples": [
+        {
+          "client_index": 0,
+          "true_label": 0,
+          "predicted_label": 0,
+          "predicted_proba": 0.02,
+          "top_features": [
+            {
+              "feature": "vmail_message",
+              "shap_value": -0.1242,
+              "feature_value": 23.0
+            },
+            {
+              "feature": "account_length",
+              "shap_value": -0.0499,
+              "feature_value": 32.0
+            },
+            {
+              "feature": "day_mins",
+              "shap_value": -0.0372,
+              "feature_value": 223.3
+            },
+            {
+              "feature": "night_charge",
+              "shap_value": -0.0364,
+              "feature_value": 2.39
+            },
+            {
+              "feature": "night_calls",
+              "shap_value": -0.0349,
+              "feature_value": 69.0
+            }
+          ]
+        },
+        {
+          "client_index": 1,
+          "true_label": 0,
+          "predicted_label": 0,
+          "predicted_proba": 0.06,
+          "top_features": [
+            {
+              "feature": "day_mins",
+              "shap_value": -0.1696,
+              "feature_value": 202.2
+            },
+            {
+              "feature": "day_charge",
+              "shap_value": -0.0548,
+              "feature_value": 32.8
+            },
+            {
+              "feature": "night_calls",
+              "shap_value": -0.0355,
+              "feature_value": 99.0
+            },
+            {
+              "feature": "night_charge",
+              "shap_value": -0.0294,
+              "feature_value": 8.68
+            },
+            {
+              "feature": "night_mins",
+              "shap_value": -0.0258,
+              "feature_value": 292.8
+            }
+          ]
+        },
+        {
+          "client_index": 2,
+          "true_label": 0,
+          "predicted_label": 0,
+          "predicted_proba": 0.1,
+          "top_features": [
+            {
+              "feature": "night_charge",
+              "shap_value": -0.0806,
+              "feature_value": 2.0
+            },
+            {
+              "feature": "intl_calls",
+              "shap_value": -0.0459,
+              "feature_value": 8.0
+            },
+            {
+              "feature": "day_mins",
+              "shap_value": -0.0404,
+              "feature_value": 262.0
+            },
+            {
+              "feature": "day_charge",
+              "shap_value": -0.0375,
+              "feature_value": 32.82
+            },
+            {
+              "feature": "intl_charge",
+              "shap_value": -0.0348,
+              "feature_value": 2.2
+            }
+          ]
+        }
+      ]
+    },
+    "baseline_comparison": {
+      "baseline_accuracy": 0.8896,
+      "baseline_f1": 0.0,
+      "delta_accuracy": 0.0544,
+      "delta_f1": 0.7433,
+      "verdict": "significant_gain"
+    },
+    "audit_findings": [
+      {
+        "id": "AUDIT-DATA-001",
+        "severity": "info",
+        "category": "data_preparation",
+        "title": "Exclusion de fuite de cible",
+        "detail": "1 colonnes exclues pour éviter fuite d'information ou biais (ex: churn_score, churn_reason, identifiants).",
+        "recommendation": "Conserver l'exclusion stricte de churn_score en production."
+      },
+      {
+        "id": "AUDIT-MODEL-001",
+        "severity": "low",
+        "category": "performance",
+        "title": "Bon équilibre Détection/Précision",
+        "detail": "Le modèle capture 73.4% des churners réels avec une précision de 75.3%.",
+        "recommendation": "Maintenir le monitoring périodique du F1-Score."
+      },
+      {
+        "id": "AUDIT-BASELINE-001",
+        "severity": "info",
+        "category": "baseline",
+        "title": "Validation par rapport au modèle naïf",
+        "detail": "Gain de F1-Score de +74.3% par rapport à la classe majoritaire.",
+        "recommendation": "Le modèle ML apporte une valeur réelle par rapport à une règle naïve."
+      },
+      {
+        "id": "AUDIT-XAI-001",
+        "severity": "info",
+        "category": "explainability",
+        "title": "Déterminants majeurs identifiés",
+        "detail": "Les 3 facteurs les plus influents au niveau global sont : day_mins, day_charge, vmail_message.",
+        "recommendation": "Cibler en priorité les offres commerciales sur ces leviers (ex: durée d'engagement, tarification)."
+      }
+    ],
+    "llm_summary": "L'audit du modèle RandomForest indique une Accuracy de 94.4%, un Recall de 73.4% et un F1-Score de 74.3% (AUC-ROC: 0.957). Par rapport à la baseline naïve (DummyClassifier), le gain en F1-Score est de +74.3%, validant l'apport prédictif du modèle (significant_gain). Les principaux facteurs expliquant le risque de churn selon SHAP sont : day_mins, day_charge, vmail_message. 4 constats d'audit ont été relevés.",
+    "errors": []
+  },
+  "errors": []
+}

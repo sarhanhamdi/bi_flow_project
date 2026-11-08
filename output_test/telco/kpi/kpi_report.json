@@ -1,0 +1,1144 @@
+{
+  "business_goal": "Analyse décisionnelle télécom",
+  "status": "success",
+  "etl_status": "success",
+  "kpis": [
+    {
+      "id": "churn_rate",
+      "name": "Taux de churn",
+      "category": "Churn",
+      "definition": "Part des clients ayant quitté l'opérateur.",
+      "formula": "clients_churnés / clients_total × 100",
+      "unit": "%",
+      "status": "computed",
+      "value": 26.54,
+      "table": "telco",
+      "rows_used": 7043,
+      "columns_used": {
+        "flag": "churn_value"
+      },
+      "missing_inputs": {},
+      "breakdowns": {
+        "contract": [
+          {
+            "segment": "Month-to-month",
+            "value": 42.71,
+            "rows": 3875
+          },
+          {
+            "segment": "One year",
+            "value": 11.27,
+            "rows": 1473
+          },
+          {
+            "segment": "Two year",
+            "value": 2.83,
+            "rows": 1695
+          }
+        ],
+        "internet_service": [
+          {
+            "segment": "DSL",
+            "value": 18.96,
+            "rows": 2421
+          },
+          {
+            "segment": "Fiber optic",
+            "value": 41.89,
+            "rows": 3096
+          },
+          {
+            "segment": "No",
+            "value": 7.4,
+            "rows": 1526
+          }
+        ],
+        "payment_method": [
+          {
+            "segment": "Bank transfer (automatic)",
+            "value": 16.71,
+            "rows": 1544
+          },
+          {
+            "segment": "Credit card (automatic)",
+            "value": 15.24,
+            "rows": 1522
+          },
+          {
+            "segment": "Electronic check",
+            "value": 45.29,
+            "rows": 2365
+          },
+          {
+            "segment": "Mailed check",
+            "value": 19.11,
+            "rows": 1612
+          }
+        ]
+      },
+      "justification": "Calculable : colonnes trouvées dans « telco » (flag=churn_value). Calcul déterministe : clients_churnés / clients_total × 100.",
+      "warnings": []
+    },
+    {
+      "id": "churned_customers",
+      "name": "Clients churnés",
+      "category": "Churn",
+      "definition": "Nombre de clients ayant quitté l'opérateur.",
+      "formula": "somme(indicateur_churn)",
+      "unit": "clients",
+      "status": "computed",
+      "value": 1869.0,
+      "table": "telco",
+      "rows_used": 7043,
+      "columns_used": {
+        "flag": "churn_value"
+      },
+      "missing_inputs": {},
+      "breakdowns": {
+        "contract": [
+          {
+            "segment": "Month-to-month",
+            "value": 1655.0,
+            "rows": 3875
+          },
+          {
+            "segment": "One year",
+            "value": 166.0,
+            "rows": 1473
+          },
+          {
+            "segment": "Two year",
+            "value": 48.0,
+            "rows": 1695
+          }
+        ],
+        "internet_service": [
+          {
+            "segment": "DSL",
+            "value": 459.0,
+            "rows": 2421
+          },
+          {
+            "segment": "Fiber optic",
+            "value": 1297.0,
+            "rows": 3096
+          },
+          {
+            "segment": "No",
+            "value": 113.0,
+            "rows": 1526
+          }
+        ],
+        "payment_method": [
+          {
+            "segment": "Bank transfer (automatic)",
+            "value": 258.0,
+            "rows": 1544
+          },
+          {
+            "segment": "Credit card (automatic)",
+            "value": 232.0,
+            "rows": 1522
+          },
+          {
+            "segment": "Electronic check",
+            "value": 1071.0,
+            "rows": 2365
+          },
+          {
+            "segment": "Mailed check",
+            "value": 308.0,
+            "rows": 1612
+          }
+        ]
+      },
+      "justification": "Calculable : colonnes trouvées dans « telco » (flag=churn_value). Calcul déterministe : somme(indicateur_churn).",
+      "warnings": []
+    },
+    {
+      "id": "avg_churn_score",
+      "name": "Score de churn moyen",
+      "category": "Churn",
+      "definition": "Score moyen de risque de départ (0 à 100) du portefeuille.",
+      "formula": "moyenne(churn_score)",
+      "unit": "points",
+      "status": "computed",
+      "value": 58.7,
+      "table": "telco",
+      "rows_used": 7043,
+      "columns_used": {
+        "value": "churn_score"
+      },
+      "missing_inputs": {},
+      "breakdowns": {
+        "contract": [
+          {
+            "segment": "Month-to-month",
+            "value": 63.91,
+            "rows": 3875
+          },
+          {
+            "segment": "One year",
+            "value": 53.81,
+            "rows": 1473
+          },
+          {
+            "segment": "Two year",
+            "value": 51.03,
+            "rows": 1695
+          }
+        ],
+        "internet_service": [
+          {
+            "segment": "DSL",
+            "value": 55.97,
+            "rows": 2421
+          },
+          {
+            "segment": "Fiber optic",
+            "value": 63.77,
+            "rows": 3096
+          },
+          {
+            "segment": "No",
+            "value": 52.74,
+            "rows": 1526
+          }
+        ],
+        "payment_method": [
+          {
+            "segment": "Bank transfer (automatic)",
+            "value": 55.74,
+            "rows": 1544
+          },
+          {
+            "segment": "Credit card (automatic)",
+            "value": 55.18,
+            "rows": 1522
+          },
+          {
+            "segment": "Electronic check",
+            "value": 64.59,
+            "rows": 2365
+          },
+          {
+            "segment": "Mailed check",
+            "value": 56.21,
+            "rows": 1612
+          }
+        ]
+      },
+      "justification": "Calculable : colonnes trouvées dans « telco » (value=churn_score). Calcul déterministe : moyenne(churn_score).",
+      "warnings": []
+    },
+    {
+      "id": "monthly_revenue_lost",
+      "name": "Revenu mensuel perdu par churn",
+      "category": "Churn",
+      "definition": "Revenu mensuel récurrent des clients qui sont partis.",
+      "formula": "somme(frais_mensuels) pour les clients churnés",
+      "unit": "devise/mois",
+      "status": "computed",
+      "value": 139130.85,
+      "table": "telco",
+      "rows_used": 7043,
+      "columns_used": {
+        "value": "monthly_charges",
+        "flag": "churn_value"
+      },
+      "missing_inputs": {},
+      "breakdowns": {
+        "contract": [
+          {
+            "segment": "Month-to-month",
+            "value": 120847.1,
+            "rows": 3875
+          },
+          {
+            "segment": "One year",
+            "value": 14118.45,
+            "rows": 1473
+          },
+          {
+            "segment": "Two year",
+            "value": 4165.3,
+            "rows": 1695
+          }
+        ],
+        "internet_service": [
+          {
+            "segment": "DSL",
+            "value": 22529.2,
+            "rows": 2421
+          },
+          {
+            "segment": "Fiber optic",
+            "value": 114300.05,
+            "rows": 3096
+          },
+          {
+            "segment": "No",
+            "value": 2301.6,
+            "rows": 1526
+          }
+        ],
+        "payment_method": [
+          {
+            "segment": "Bank transfer (automatic)",
+            "value": 20091.9,
+            "rows": 1544
+          },
+          {
+            "segment": "Credit card (automatic)",
+            "value": 17946.6,
+            "rows": 1522
+          },
+          {
+            "segment": "Electronic check",
+            "value": 84288.75,
+            "rows": 2365
+          },
+          {
+            "segment": "Mailed check",
+            "value": 16803.6,
+            "rows": 1612
+          }
+        ]
+      },
+      "justification": "Calculable : colonnes trouvées dans « telco » (value=monthly_charges, flag=churn_value). Calcul déterministe : somme(frais_mensuels) pour les clients churnés.",
+      "warnings": []
+    },
+    {
+      "id": "customer_count",
+      "name": "Nombre de clients",
+      "category": "Customer Base",
+      "definition": "Nombre de clients distincts dans la table.",
+      "formula": "nombre_distinct(identifiant_client)",
+      "unit": "clients",
+      "status": "computed",
+      "value": 7043.0,
+      "table": "telco",
+      "rows_used": 7043,
+      "columns_used": {
+        "id": "customer_id"
+      },
+      "missing_inputs": {},
+      "breakdowns": {
+        "contract": [
+          {
+            "segment": "Month-to-month",
+            "value": 3875.0,
+            "rows": 3875
+          },
+          {
+            "segment": "One year",
+            "value": 1473.0,
+            "rows": 1473
+          },
+          {
+            "segment": "Two year",
+            "value": 1695.0,
+            "rows": 1695
+          }
+        ],
+        "internet_service": [
+          {
+            "segment": "DSL",
+            "value": 2421.0,
+            "rows": 2421
+          },
+          {
+            "segment": "Fiber optic",
+            "value": 3096.0,
+            "rows": 3096
+          },
+          {
+            "segment": "No",
+            "value": 1526.0,
+            "rows": 1526
+          }
+        ],
+        "payment_method": [
+          {
+            "segment": "Bank transfer (automatic)",
+            "value": 1544.0,
+            "rows": 1544
+          },
+          {
+            "segment": "Credit card (automatic)",
+            "value": 1522.0,
+            "rows": 1522
+          },
+          {
+            "segment": "Electronic check",
+            "value": 2365.0,
+            "rows": 2365
+          },
+          {
+            "segment": "Mailed check",
+            "value": 1612.0,
+            "rows": 1612
+          }
+        ]
+      },
+      "justification": "Calculable : colonnes trouvées dans « telco » (id=customer_id). Calcul déterministe : nombre_distinct(identifiant_client).",
+      "warnings": []
+    },
+    {
+      "id": "avg_tenure",
+      "name": "Ancienneté moyenne",
+      "category": "Customer Base",
+      "definition": "Durée moyenne depuis la souscription.",
+      "formula": "moyenne(ancienneté_en_mois)",
+      "unit": "mois",
+      "status": "computed",
+      "value": 32.37,
+      "table": "telco",
+      "rows_used": 7043,
+      "columns_used": {
+        "value": "tenure_months"
+      },
+      "missing_inputs": {},
+      "breakdowns": {
+        "contract": [
+          {
+            "segment": "Month-to-month",
+            "value": 18.04,
+            "rows": 3875
+          },
+          {
+            "segment": "One year",
+            "value": 42.04,
+            "rows": 1473
+          },
+          {
+            "segment": "Two year",
+            "value": 56.74,
+            "rows": 1695
+          }
+        ],
+        "internet_service": [
+          {
+            "segment": "DSL",
+            "value": 32.82,
+            "rows": 2421
+          },
+          {
+            "segment": "Fiber optic",
+            "value": 32.92,
+            "rows": 3096
+          },
+          {
+            "segment": "No",
+            "value": 30.55,
+            "rows": 1526
+          }
+        ],
+        "payment_method": [
+          {
+            "segment": "Bank transfer (automatic)",
+            "value": 43.66,
+            "rows": 1544
+          },
+          {
+            "segment": "Credit card (automatic)",
+            "value": 43.27,
+            "rows": 1522
+          },
+          {
+            "segment": "Electronic check",
+            "value": 25.17,
+            "rows": 2365
+          },
+          {
+            "segment": "Mailed check",
+            "value": 21.83,
+            "rows": 1612
+          }
+        ]
+      },
+      "justification": "Calculable : colonnes trouvées dans « telco » (value=tenure_months). Calcul déterministe : moyenne(ancienneté_en_mois).",
+      "warnings": []
+    },
+    {
+      "id": "arpu",
+      "name": "ARPU mensuel",
+      "category": "Billing & Revenue",
+      "definition": "Revenu mensuel moyen par client.",
+      "formula": "moyenne(frais_mensuels)",
+      "unit": "devise/client/mois",
+      "status": "computed",
+      "value": 64.76,
+      "table": "telco",
+      "rows_used": 7043,
+      "columns_used": {
+        "value": "monthly_charges"
+      },
+      "missing_inputs": {},
+      "breakdowns": {
+        "contract": [
+          {
+            "segment": "Month-to-month",
+            "value": 66.4,
+            "rows": 3875
+          },
+          {
+            "segment": "One year",
+            "value": 65.05,
+            "rows": 1473
+          },
+          {
+            "segment": "Two year",
+            "value": 60.77,
+            "rows": 1695
+          }
+        ],
+        "internet_service": [
+          {
+            "segment": "DSL",
+            "value": 58.1,
+            "rows": 2421
+          },
+          {
+            "segment": "Fiber optic",
+            "value": 91.5,
+            "rows": 3096
+          },
+          {
+            "segment": "No",
+            "value": 21.08,
+            "rows": 1526
+          }
+        ],
+        "payment_method": [
+          {
+            "segment": "Bank transfer (automatic)",
+            "value": 67.19,
+            "rows": 1544
+          },
+          {
+            "segment": "Credit card (automatic)",
+            "value": 66.51,
+            "rows": 1522
+          },
+          {
+            "segment": "Electronic check",
+            "value": 76.26,
+            "rows": 2365
+          },
+          {
+            "segment": "Mailed check",
+            "value": 43.92,
+            "rows": 1612
+          }
+        ]
+      },
+      "justification": "Calculable : colonnes trouvées dans « telco » (value=monthly_charges). Calcul déterministe : moyenne(frais_mensuels).",
+      "warnings": []
+    },
+    {
+      "id": "total_revenue",
+      "name": "Revenu cumulé",
+      "category": "Billing & Revenue",
+      "definition": "Somme des montants facturés depuis la souscription.",
+      "formula": "somme(total_facturé)",
+      "unit": "devise",
+      "status": "computed",
+      "value": 16071540.93,
+      "table": "telco",
+      "rows_used": 7043,
+      "columns_used": {
+        "value": "total_charges"
+      },
+      "missing_inputs": {},
+      "breakdowns": {
+        "contract": [
+          {
+            "segment": "Month-to-month",
+            "value": 5305861.5,
+            "rows": 3875
+          },
+          {
+            "segment": "One year",
+            "value": 4468450.97,
+            "rows": 1473
+          },
+          {
+            "segment": "Two year",
+            "value": 6297228.45,
+            "rows": 1695
+          }
+        ],
+        "internet_service": [
+          {
+            "segment": "DSL",
+            "value": 5128398.22,
+            "rows": 2421
+          },
+          {
+            "segment": "Fiber optic",
+            "value": 9923622.95,
+            "rows": 3096
+          },
+          {
+            "segment": "No",
+            "value": 1019519.75,
+            "rows": 1526
+          }
+        ],
+        "payment_method": [
+          {
+            "segment": "Bank transfer (automatic)",
+            "value": 4751074.85,
+            "rows": 1544
+          },
+          {
+            "segment": "Credit card (automatic)",
+            "value": 4672990.82,
+            "rows": 1522
+          },
+          {
+            "segment": "Electronic check",
+            "value": 4944903.25,
+            "rows": 2365
+          },
+          {
+            "segment": "Mailed check",
+            "value": 1702572.0,
+            "rows": 1612
+          }
+        ]
+      },
+      "justification": "Calculable : colonnes trouvées dans « telco » (value=total_charges). Calcul déterministe : somme(total_facturé).",
+      "warnings": []
+    },
+    {
+      "id": "avg_cltv",
+      "name": "CLTV moyen",
+      "category": "Billing & Revenue",
+      "definition": "Valeur vie client moyenne estimée.",
+      "formula": "moyenne(cltv)",
+      "unit": "devise",
+      "status": "computed",
+      "value": 4400.3,
+      "table": "telco",
+      "rows_used": 7043,
+      "columns_used": {
+        "value": "cltv"
+      },
+      "missing_inputs": {},
+      "breakdowns": {
+        "contract": [
+          {
+            "segment": "Month-to-month",
+            "value": 4136.71,
+            "rows": 3875
+          },
+          {
+            "segment": "One year",
+            "value": 4529.96,
+            "rows": 1473
+          },
+          {
+            "segment": "Two year",
+            "value": 4890.21,
+            "rows": 1695
+          }
+        ],
+        "internet_service": [
+          {
+            "segment": "DSL",
+            "value": 4397.57,
+            "rows": 2421
+          },
+          {
+            "segment": "Fiber optic",
+            "value": 4415.2,
+            "rows": 3096
+          },
+          {
+            "segment": "No",
+            "value": 4374.38,
+            "rows": 1526
+          }
+        ],
+        "payment_method": [
+          {
+            "segment": "Bank transfer (automatic)",
+            "value": 4615.78,
+            "rows": 1544
+          },
+          {
+            "segment": "Credit card (automatic)",
+            "value": 4578.28,
+            "rows": 1522
+          },
+          {
+            "segment": "Electronic check",
+            "value": 4282.67,
+            "rows": 2365
+          },
+          {
+            "segment": "Mailed check",
+            "value": 4198.43,
+            "rows": 1612
+          }
+        ]
+      },
+      "justification": "Calculable : colonnes trouvées dans « telco » (value=cltv). Calcul déterministe : moyenne(cltv).",
+      "warnings": []
+    },
+    {
+      "id": "unpaid_rate",
+      "name": "Taux d'impayés",
+      "category": "Billing & Revenue",
+      "definition": "Part du montant facturé restée impayée.",
+      "formula": "somme(montant_impayé) / somme(montant_facturé) × 100",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "num": [
+          "unpaid_amount",
+          "overdue_amount"
+        ],
+        "den": [
+          "billed_amount",
+          "invoice_amount"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (num ← unpaid_amount/overdue_amount; den ← billed_amount/invoice_amount).",
+      "warnings": []
+    },
+    {
+      "id": "avg_data_usage",
+      "name": "Consommation data moyenne",
+      "category": "Usage & Consumption",
+      "definition": "Volume de données moyen consommé par ligne.",
+      "formula": "moyenne(volume_data)",
+      "unit": "Mo",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "data_usage_mb",
+          "data_mb",
+          "data_usage",
+          "internet_mb"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← data_usage_mb/data_mb/data_usage/internet_mb).",
+      "warnings": []
+    },
+    {
+      "id": "avg_call_minutes",
+      "name": "Minutes d'appel moyennes",
+      "category": "Usage & Consumption",
+      "definition": "Durée d'appel moyenne par ligne.",
+      "formula": "moyenne(minutes_appel)",
+      "unit": "min",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "call_minutes",
+          "minutes",
+          "call_duration",
+          "voice_minutes"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← call_minutes/minutes/call_duration/voice_minutes).",
+      "warnings": []
+    },
+    {
+      "id": "avg_mos_voice",
+      "name": "Score MOS Voix moyen",
+      "category": "Network Performance",
+      "definition": "Score moyen d'opinion (MOS) de la qualité vocale (1 à 5).",
+      "formula": "moyenne(mos_voice)",
+      "unit": "score",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "mos_voice",
+          "mos",
+          "streaming_mos"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← mos_voice/mos/streaming_mos).",
+      "warnings": []
+    },
+    {
+      "id": "avg_throughput",
+      "name": "Débit moyen",
+      "category": "Network Performance",
+      "definition": "Débit réseau moyen observé.",
+      "formula": "moyenne(throughput_mbps)",
+      "unit": "Mbps",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "throughput_mbps",
+          "effective_bitrate_mbps",
+          "throughput",
+          "download_speed_mbps",
+          "download_speed"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← throughput_mbps/effective_bitrate_mbps/throughput/download_speed_mbps/download_speed).",
+      "warnings": []
+    },
+    {
+      "id": "avg_upload_speed",
+      "name": "Débit montant moyen",
+      "category": "Network Performance",
+      "definition": "Débit montant (upload) moyen observé.",
+      "formula": "moyenne(upload_speed_mbps)",
+      "unit": "Mbps",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "upload_speed_mbps",
+          "upload_speed"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← upload_speed_mbps/upload_speed).",
+      "warnings": []
+    },
+    {
+      "id": "avg_signal_strength",
+      "name": "Force du signal moyen",
+      "category": "Network Performance",
+      "definition": "Puissance moyenne du signal radio.",
+      "formula": "moyenne(signal_strength_dbm)",
+      "unit": "dBm",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "signal_strength_dbm",
+          "signal_strength",
+          "rssi",
+          "rsrp"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← signal_strength_dbm/signal_strength/rssi/rsrp).",
+      "warnings": []
+    },
+    {
+      "id": "avg_packet_loss",
+      "name": "Taux de perte de paquets",
+      "category": "Network Performance",
+      "definition": "Pourcentage moyen de paquets perdus.",
+      "formula": "moyenne(plr)",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "plr",
+          "packet_loss"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← plr/packet_loss).",
+      "warnings": []
+    },
+    {
+      "id": "network_availability",
+      "name": "Disponibilité réseau",
+      "category": "Network Performance",
+      "definition": "Taux moyen de disponibilité des équipements.",
+      "formula": "moyenne(availability)",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "availability"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← availability).",
+      "warnings": []
+    },
+    {
+      "id": "cdr_incident_rate",
+      "name": "Taux d'incidents CDR",
+      "category": "Network Performance",
+      "definition": "Part des sessions réseau ayant subi un incident ou coupure.",
+      "formula": "sessions_en_incident / sessions_total × 100",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "flag": [
+          "cdr_flag",
+          "incident_flag",
+          "call_drop",
+          "dropped_connection"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← cdr_flag/incident_flag/call_drop/dropped_connection).",
+      "warnings": []
+    },
+    {
+      "id": "dropped_call_rate",
+      "name": "Taux d'appels coupés",
+      "category": "Network Performance",
+      "definition": "Part des appels interrompus avant la fin normale.",
+      "formula": "somme(appels_coupés) / somme(appels_total) × 100",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "num": [
+          "dropped_calls"
+        ],
+        "den": [
+          "total_calls",
+          "calls"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (num ← dropped_calls; den ← total_calls/calls).",
+      "warnings": []
+    },
+    {
+      "id": "avg_latency",
+      "name": "Latence moyenne",
+      "category": "Network Performance",
+      "definition": "Latence réseau moyenne.",
+      "formula": "moyenne(latence)",
+      "unit": "ms",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "latency_ms",
+          "latency"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← latency_ms/latency).",
+      "warnings": []
+    },
+    {
+      "id": "ticket_count",
+      "name": "Nombre de tickets / réclamations",
+      "category": "Operations & Support",
+      "definition": "Nombre total de tickets ou réclamations distinctes.",
+      "formula": "nombre_distinct(ticket_id / complaint_id)",
+      "unit": "tickets",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "id": [
+          "ticket_id",
+          "ticket",
+          "case_id",
+          "complaint_id",
+          "issue_id",
+          "ticket_number"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (id ← ticket_id/ticket/case_id/complaint_id/issue_id/ticket_number).",
+      "warnings": []
+    },
+    {
+      "id": "ticket_resolution_rate",
+      "name": "Taux de résolution des tickets",
+      "category": "Operations & Support",
+      "definition": "Part des tickets ou réclamations résolus / clos.",
+      "formula": "tickets_clos / total_tickets × 100",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "flag": [
+          "ticket_status",
+          "status",
+          "case_status"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← ticket_status/status/case_status).",
+      "warnings": []
+    },
+    {
+      "id": "avg_csat",
+      "name": "Score de satisfaction moyen (CSAT)",
+      "category": "Operations & Support",
+      "definition": "Score moyen de satisfaction client.",
+      "formula": "moyenne(satisfaction_client)",
+      "unit": "score",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "customer_satisfaction_rating",
+          "csat",
+          "satisfaction_rating",
+          "rating"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← customer_satisfaction_rating/csat/satisfaction_rating/rating).",
+      "warnings": []
+    },
+    {
+      "id": "dispute_rate",
+      "name": "Taux de litiges clients",
+      "category": "Operations & Support",
+      "definition": "Part des réclamations ayant entraîné un litige client.",
+      "formula": "réclamations_contestées / total_réclamations × 100",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "flag": [
+          "consumer_disputed?",
+          "consumer_disputed",
+          "is_disputed",
+          "disputed"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← consumer_disputed?/consumer_disputed/is_disputed/disputed).",
+      "warnings": []
+    },
+    {
+      "id": "timely_response_rate",
+      "name": "Taux de réponse dans les délais",
+      "category": "Operations & Support",
+      "definition": "Part des réclamations traitées dans le délai imparti.",
+      "formula": "réponses_dans_les_délais / total × 100",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "flag": [
+          "timely_response",
+          "timely_response?",
+          "in_time"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← timely_response/timely_response?/in_time).",
+      "warnings": []
+    },
+    {
+      "id": "avg_resolution_time",
+      "name": "Temps de résolution moyen",
+      "category": "Operations & Support",
+      "definition": "Délai moyen de résolution d'un ticket.",
+      "formula": "moyenne(temps_de_résolution)",
+      "unit": "h",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "resolution_time_hours",
+          "resolution_time",
+          "resolution_hours"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← resolution_time_hours/resolution_time/resolution_hours).",
+      "warnings": []
+    }
+  ],
+  "caveats": [],
+  "output_files": {
+    "report": "output_test\\telco\\kpi\\kpi_report.json",
+    "values": "output_test\\telco\\kpi\\kpi_values.csv"
+  },
+  "llm_summary": "9 KPI calculé(s) sur 27 du catalogue.\n- Taux de churn (Churn) : 26.54 % — Part des clients ayant quitté l'opérateur.\n- Clients churnés (Churn) : 1869.0 clients — Nombre de clients ayant quitté l'opérateur.\n- Score de churn moyen (Churn) : 58.7 points — Score moyen de risque de départ (0 à 100) du portefeuille.\n- Revenu mensuel perdu par churn (Churn) : 139130.85 devise/mois — Revenu mensuel récurrent des clients qui sont partis.\n- Nombre de clients (Customer Base) : 7043.0 clients — Nombre de clients distincts dans la table.\n- Ancienneté moyenne (Customer Base) : 32.37 mois — Durée moyenne depuis la souscription.\n- ARPU mensuel (Billing & Revenue) : 64.76 devise/client/mois — Revenu mensuel moyen par client.\n- Revenu cumulé (Billing & Revenue) : 16071540.93 devise — Somme des montants facturés depuis la souscription.\n- CLTV moyen (Billing & Revenue) : 4400.3 devise — Valeur vie client moyenne estimée.\nNon calculables avec ces données : Taux d'impayés, Consommation data moyenne, Minutes d'appel moyennes, Score MOS Voix moyen, Débit moyen, Débit montant moyen, Force du signal moyen, Taux de perte de paquets, Disponibilité réseau, Taux d'incidents CDR, Taux d'appels coupés, Latence moyenne, Nombre de tickets / réclamations, Taux de résolution des tickets, Score de satisfaction moyen (CSAT), Taux de litiges clients, Taux de réponse dans les délais, Temps de résolution moyen.",
+  "trace": [
+    {
+      "timestamp": "2026-10-26T20:02:19.825864",
+      "tool": "compute_table",
+      "parameters": {
+        "table": "telco",
+        "kpis": 9
+      },
+      "duration_ms": 172.37629999999626
+    },
+    {
+      "timestamp": "2026-10-26T20:02:19.825864",
+      "tool": "validate",
+      "parameters": {
+        "kpis": 27
+      },
+      "duration_ms": 0.03319999996165279
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-26T20:02:19.653255"
+}

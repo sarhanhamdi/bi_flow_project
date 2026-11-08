@@ -1,0 +1,126 @@
+{
+  "business_goal": "Test multi-usage autonome",
+  "status": "warning",
+  "kpi_status": "success",
+  "insights": [],
+  "recommendations": [],
+  "profile_comparisons": [
+    {
+      "metric": "throughput_mbps",
+      "kpi_id": "arpu",
+      "n_churned": 29217,
+      "n_retained": 138214,
+      "median_churned": 0.150181,
+      "median_retained": 0.0919815,
+      "mean_churned": 0.5194424295444433,
+      "mean_retained": 0.11060053697165265,
+      "cliffs_delta": 0.3245102171474814,
+      "effect_size_label": "fort",
+      "p_value_raw": 0.0,
+      "p_value_adjusted": 0.0,
+      "test_used": "mann-whitney",
+      "source": "analyst_computed",
+      "references": {
+        "kpi_id": "arpu",
+        "metric_col": "throughput_mbps",
+        "source": "analyst_computed",
+        "source_file": "output_test\\network_qoe\\network_qoe_clean.csv"
+      }
+    }
+  ],
+  "caveats": [
+    "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+    "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+  ],
+  "null_result": true,
+  "n_tests": 27,
+  "n_significant_segments": 0,
+  "overlap_warning": false,
+  "excluded_kpis": [
+    {
+      "kpi_id": "avg_churn_score",
+      "reason": "fuite de cible (corrélé directement à churn_label)"
+    }
+  ],
+  "llm_narrative": "Analyse terminée. Aucun segment ne présente à la fois une significativité statistique (p ajustée <= 0,05), un écart suffisant et un effectif fiable. ",
+  "output_files": {},
+  "trace": [
+    {
+      "timestamp": "2026-10-27T18:46:53.845064",
+      "tool": "load",
+      "parameters": {
+        "kpis_computed": 6,
+        "table_loaded": true,
+        "excluded_cols": [
+          "count",
+          "country",
+          "rebuffering_count",
+          "run_id",
+          "rx_dropped",
+          "state",
+          "switch_id",
+          "total_stall_seconds",
+          "tx_dropped"
+        ]
+      },
+      "duration_ms": 68.07849999995597
+    },
+    {
+      "timestamp": "2026-10-27T18:46:54.115781",
+      "tool": "segment",
+      "parameters": {
+        "n_segments_kpi": 0,
+        "n_segments_analyst": 26,
+        "n_mw": 1
+      },
+      "duration_ms": 270.93120000017734
+    },
+    {
+      "timestamp": "2026-10-27T18:46:54.194190",
+      "tool": "test",
+      "parameters": {
+        "n_tests": 27,
+        "n_ztests": 26,
+        "n_mw": 1,
+        "min_p_raw": 0.0,
+        "max_p_adj": 1.0
+      },
+      "duration_ms": 6.187400000271737
+    },
+    {
+      "timestamp": "2026-10-27T18:46:54.194190",
+      "tool": "impact",
+      "parameters": {
+        "n_segs": 26
+      },
+      "duration_ms": 0.06590000020878506
+    },
+    {
+      "timestamp": "2026-10-27T18:46:54.194190",
+      "tool": "rank",
+      "parameters": {
+        "n_passing": 0,
+        "n_mw": 1
+      },
+      "duration_ms": 0.039600000036443816
+    },
+    {
+      "timestamp": "2026-10-27T18:46:54.195191",
+      "tool": "recommend",
+      "parameters": {
+        "n_rec": 0
+      },
+      "duration_ms": 0.0027000000955013093
+    },
+    {
+      "timestamp": "2026-10-27T18:46:54.195191",
+      "tool": "narrate",
+      "parameters": {
+        "llm": false
+      },
+      "duration_ms": 0.0069000002440589014
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-27T18:46:53.844062"
+}

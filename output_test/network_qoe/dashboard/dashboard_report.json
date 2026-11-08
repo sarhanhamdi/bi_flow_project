@@ -1,0 +1,1351 @@
+{
+  "business_goal": "Test multi-usage autonome",
+  "status": "warning",
+  "analyst_status": "warning",
+  "title": "Dashboard BI : Test multi-usage autonome",
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Vue d'ensemble",
+      "order": 0,
+      "visual_ids": [
+        "kpi_avg_mos_voice",
+        "kpi_avg_throughput",
+        "kpi_avg_latency",
+        "kpi_avg_packet_loss",
+        "kpi_network_availability",
+        "kpi_cdr_incident_rate"
+      ]
+    },
+    {
+      "id": "segments",
+      "title": "Segments à risque",
+      "order": 1,
+      "visual_ids": [
+        "bar_avg_mos_voice_label",
+        "bar_avg_throughput_label",
+        "bar_avg_latency_label",
+        "bar_avg_packet_loss_label",
+        "bar_network_availability_label",
+        "bar_cdr_incident_rate_label",
+        "bar_avg_mos_voice_mos_source",
+        "bar_avg_mos_voice_segment",
+        "bar_avg_throughput_mos_source",
+        "bar_avg_throughput_segment",
+        "bar_avg_latency_mos_source",
+        "bar_avg_latency_segment",
+        "bar_avg_packet_loss_mos_source"
+      ]
+    },
+    {
+      "id": "profiles",
+      "title": "Profils churnés vs retenus",
+      "order": 4,
+      "visual_ids": [
+        "profile_throughput_mbps"
+      ]
+    },
+    {
+      "id": "quality",
+      "title": "Qualité et réserves",
+      "order": 6,
+      "visual_ids": [
+        "text_caveats"
+      ]
+    }
+  ],
+  "visuals": [
+    {
+      "id": "kpi_avg_mos_voice",
+      "type": "kpi_card",
+      "title": "Score MOS Voix moyen",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "avg_mos_voice",
+        "name": "Score MOS Voix moyen",
+        "value": 3.49,
+        "unit": "score",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Score moyen d'opinion (MOS) de la qualité vocale (1 à 5).",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_mos_voice",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "mos_voice"
+        ],
+        "formula": "moyenne(mos_voice)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_avg_throughput",
+      "type": "kpi_card",
+      "title": "Débit moyen",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "avg_throughput",
+        "name": "Débit moyen",
+        "value": 0.18,
+        "unit": "Mbps",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Débit réseau moyen observé.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_throughput",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "throughput_mbps"
+        ],
+        "formula": "moyenne(throughput)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_avg_latency",
+      "type": "kpi_card",
+      "title": "Latence moyenne",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "avg_latency",
+        "name": "Latence moyenne",
+        "value": 313.84,
+        "unit": "ms",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Latence réseau moyenne observée.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_latency",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "dns_latency_ms"
+        ],
+        "formula": "moyenne(latence)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_avg_packet_loss",
+      "type": "kpi_card",
+      "title": "Taux de perte de paquets",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "avg_packet_loss",
+        "name": "Taux de perte de paquets",
+        "value": 0.1,
+        "unit": "%",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Pourcentage moyen de paquets perdus.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_packet_loss",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "plr"
+        ],
+        "formula": "moyenne(plr)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_network_availability",
+      "type": "kpi_card",
+      "title": "Disponibilité réseau",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "network_availability",
+        "name": "Disponibilité réseau",
+        "value": 0.88,
+        "unit": "%",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Taux moyen de disponibilité des équipements.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "network_availability",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "availability"
+        ],
+        "formula": "moyenne(availability)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_cdr_incident_rate",
+      "type": "kpi_card",
+      "title": "Taux d'incidents réseau / CDR",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "cdr_incident_rate",
+        "name": "Taux d'incidents réseau / CDR",
+        "value": 17.45,
+        "unit": "%",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Part des sessions réseau ayant subi un incident ou coupure.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "cdr_incident_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "cdr_flag"
+        ],
+        "formula": "sessions_en_incident / sessions_total × 100",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_mos_voice_label",
+      "type": "bar",
+      "title": "Score MOS Voix moyen par label",
+      "subtitle": "Référence globale : 3.49 score",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "NORMAL",
+          "value": 3.94,
+          "rows": 56753,
+          "global": 3.49
+        },
+        {
+          "segment": "POOR_VOICE_QUALITY",
+          "value": 3.63,
+          "rows": 23553,
+          "global": 3.49
+        },
+        {
+          "segment": "HIGH_LATENCY",
+          "value": 3.61,
+          "rows": 29872,
+          "global": 3.49
+        },
+        {
+          "segment": "LOW_THROUGHPUT",
+          "value": 3.45,
+          "rows": 27956,
+          "global": 3.49
+        },
+        {
+          "segment": "CALL_DROP",
+          "value": 2.92,
+          "rows": 17528,
+          "global": 3.49
+        },
+        {
+          "segment": "CAPACITY_EXHAUSTED",
+          "value": 1.68,
+          "rows": 11769,
+          "global": 3.49
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_mos_voice",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "label"
+        ],
+        "formula": "moyenne(mos_voice)",
+        "aggregation": "Score MOS Voix moyen par label",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_throughput_label",
+      "type": "bar",
+      "title": "Débit moyen par label",
+      "subtitle": "Référence globale : 0.18 Mbps",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "CAPACITY_EXHAUSTED",
+          "value": 1.14,
+          "rows": 11769,
+          "global": 0.18
+        },
+        {
+          "segment": "HIGH_LATENCY",
+          "value": 0.14,
+          "rows": 29872,
+          "global": 0.18
+        },
+        {
+          "segment": "NORMAL",
+          "value": 0.11,
+          "rows": 56753,
+          "global": 0.18
+        },
+        {
+          "segment": "POOR_VOICE_QUALITY",
+          "value": 0.1,
+          "rows": 23553,
+          "global": 0.18
+        },
+        {
+          "segment": "LOW_THROUGHPUT",
+          "value": 0.09,
+          "rows": 27956,
+          "global": 0.18
+        },
+        {
+          "segment": "CALL_DROP",
+          "value": 0.07,
+          "rows": 17528,
+          "global": 0.18
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_throughput",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "label"
+        ],
+        "formula": "moyenne(throughput)",
+        "aggregation": "Débit moyen par label",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_latency_label",
+      "type": "bar",
+      "title": "Latence moyenne par label",
+      "subtitle": "Référence globale : 313.84 ms",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "CAPACITY_EXHAUSTED",
+          "value": 881.67,
+          "rows": 11769,
+          "global": 313.84
+        },
+        {
+          "segment": "CALL_DROP",
+          "value": 852.32,
+          "rows": 17528,
+          "global": 313.84
+        },
+        {
+          "segment": "LOW_THROUGHPUT",
+          "value": 404.91,
+          "rows": 27956,
+          "global": 313.84
+        },
+        {
+          "segment": "POOR_VOICE_QUALITY",
+          "value": 215.01,
+          "rows": 23553,
+          "global": 313.84
+        },
+        {
+          "segment": "HIGH_LATENCY",
+          "value": 145.49,
+          "rows": 29872,
+          "global": 313.84
+        },
+        {
+          "segment": "NORMAL",
+          "value": 114.54,
+          "rows": 56753,
+          "global": 313.84
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_latency",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "label"
+        ],
+        "formula": "moyenne(latence)",
+        "aggregation": "Latence moyenne par label",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_packet_loss_label",
+      "type": "bar",
+      "title": "Taux de perte de paquets par label",
+      "subtitle": "Référence globale : 0.1 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "CALL_DROP",
+          "value": 0.39,
+          "rows": 17528,
+          "global": 0.1
+        },
+        {
+          "segment": "CAPACITY_EXHAUSTED",
+          "value": 0.24,
+          "rows": 11769,
+          "global": 0.1
+        },
+        {
+          "segment": "LOW_THROUGHPUT",
+          "value": 0.12,
+          "rows": 27956,
+          "global": 0.1
+        },
+        {
+          "segment": "POOR_VOICE_QUALITY",
+          "value": 0.05,
+          "rows": 23553,
+          "global": 0.1
+        },
+        {
+          "segment": "HIGH_LATENCY",
+          "value": 0.03,
+          "rows": 29872,
+          "global": 0.1
+        },
+        {
+          "segment": "NORMAL",
+          "value": 0.02,
+          "rows": 56753,
+          "global": 0.1
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_packet_loss",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "label"
+        ],
+        "formula": "moyenne(plr)",
+        "aggregation": "Taux de perte de paquets par label",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_network_availability_label",
+      "type": "bar",
+      "title": "Disponibilité réseau par label",
+      "subtitle": "Référence globale : 0.88 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "NORMAL",
+          "value": 0.98,
+          "rows": 56753,
+          "global": 0.88
+        },
+        {
+          "segment": "HIGH_LATENCY",
+          "value": 0.97,
+          "rows": 29872,
+          "global": 0.88
+        },
+        {
+          "segment": "POOR_VOICE_QUALITY",
+          "value": 0.91,
+          "rows": 23553,
+          "global": 0.88
+        },
+        {
+          "segment": "LOW_THROUGHPUT",
+          "value": 0.83,
+          "rows": 27956,
+          "global": 0.88
+        },
+        {
+          "segment": "CAPACITY_EXHAUSTED",
+          "value": 0.61,
+          "rows": 11769,
+          "global": 0.88
+        },
+        {
+          "segment": "CALL_DROP",
+          "value": 0.59,
+          "rows": 17528,
+          "global": 0.88
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "network_availability",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "label"
+        ],
+        "formula": "moyenne(availability)",
+        "aggregation": "Disponibilité réseau par label",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_cdr_incident_rate_label",
+      "type": "bar",
+      "title": "Taux d'incidents réseau / CDR par label",
+      "subtitle": "Référence globale : 17.45 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "CAPACITY_EXHAUSTED",
+          "value": 71.02,
+          "rows": 11769,
+          "global": 17.45
+        },
+        {
+          "segment": "CALL_DROP",
+          "value": 41.94,
+          "rows": 17528,
+          "global": 17.45
+        },
+        {
+          "segment": "LOW_THROUGHPUT",
+          "value": 24.1,
+          "rows": 27956,
+          "global": 17.45
+        },
+        {
+          "segment": "POOR_VOICE_QUALITY",
+          "value": 22.04,
+          "rows": 23553,
+          "global": 17.45
+        },
+        {
+          "segment": "HIGH_LATENCY",
+          "value": 1.9,
+          "rows": 29872,
+          "global": 17.45
+        },
+        {
+          "segment": "NORMAL",
+          "value": 1.78,
+          "rows": 56753,
+          "global": 17.45
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "cdr_incident_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "label"
+        ],
+        "formula": "sessions_en_incident / sessions_total × 100",
+        "aggregation": "Taux d'incidents réseau / CDR par label",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_mos_voice_mos_source",
+      "type": "bar",
+      "title": "Score MOS Voix moyen par mos_source",
+      "subtitle": "Référence globale : 3.49 score",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "ctrl_plane_fallback",
+          "value": 3.96,
+          "rows": 48082,
+          "global": 3.49
+        },
+        {
+          "segment": "ping_measured",
+          "value": 3.3,
+          "rows": 119349,
+          "global": 3.49
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_mos_voice",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "mos_source"
+        ],
+        "formula": "moyenne(mos_voice)",
+        "aggregation": "Score MOS Voix moyen par mos_source",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_mos_voice_segment",
+      "type": "bar",
+      "title": "Score MOS Voix moyen par segment",
+      "subtitle": "Référence globale : 3.49 score",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "INTERNET",
+          "value": 4.18,
+          "rows": 41858,
+          "global": 3.49
+        },
+        {
+          "segment": "OUTDOOR_RAN",
+          "value": 3.34,
+          "rows": 41858,
+          "global": 3.49
+        },
+        {
+          "segment": "IMS_CDN",
+          "value": 3.29,
+          "rows": 41857,
+          "global": 3.49
+        },
+        {
+          "segment": "INDOOR_RAN",
+          "value": 3.14,
+          "rows": 41858,
+          "global": 3.49
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_mos_voice",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "segment"
+        ],
+        "formula": "moyenne(mos_voice)",
+        "aggregation": "Score MOS Voix moyen par segment",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_throughput_mos_source",
+      "type": "bar",
+      "title": "Débit moyen par mos_source",
+      "subtitle": "Référence globale : 0.18 Mbps",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "ctrl_plane_fallback",
+          "value": 0.28,
+          "rows": 48082,
+          "global": 0.18
+        },
+        {
+          "segment": "ping_measured",
+          "value": 0.14,
+          "rows": 119349,
+          "global": 0.18
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_throughput",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "mos_source"
+        ],
+        "formula": "moyenne(throughput)",
+        "aggregation": "Débit moyen par mos_source",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_throughput_segment",
+      "type": "bar",
+      "title": "Débit moyen par segment",
+      "subtitle": "Référence globale : 0.18 Mbps",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "INTERNET",
+          "value": 0.31,
+          "rows": 41858,
+          "global": 0.18
+        },
+        {
+          "segment": "IMS_CDN",
+          "value": 0.21,
+          "rows": 41857,
+          "global": 0.18
+        },
+        {
+          "segment": "OUTDOOR_RAN",
+          "value": 0.14,
+          "rows": 41858,
+          "global": 0.18
+        },
+        {
+          "segment": "INDOOR_RAN",
+          "value": 0.07,
+          "rows": 41858,
+          "global": 0.18
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_throughput",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "segment"
+        ],
+        "formula": "moyenne(throughput)",
+        "aggregation": "Débit moyen par segment",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_latency_mos_source",
+      "type": "bar",
+      "title": "Latence moyenne par mos_source",
+      "subtitle": "Référence globale : 313.84 ms",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "ping_measured",
+          "value": 353.26,
+          "rows": 119349,
+          "global": 313.84
+        },
+        {
+          "segment": "ctrl_plane_fallback",
+          "value": 215.98,
+          "rows": 48082,
+          "global": 313.84
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_latency",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "mos_source"
+        ],
+        "formula": "moyenne(latence)",
+        "aggregation": "Latence moyenne par mos_source",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_latency_segment",
+      "type": "bar",
+      "title": "Latence moyenne par segment",
+      "subtitle": "Référence globale : 313.84 ms",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "IMS_CDN",
+          "value": 466.05,
+          "rows": 41857,
+          "global": 313.84
+        },
+        {
+          "segment": "OUTDOOR_RAN",
+          "value": 382.66,
+          "rows": 41858,
+          "global": 313.84
+        },
+        {
+          "segment": "INDOOR_RAN",
+          "value": 321.76,
+          "rows": 41858,
+          "global": 313.84
+        },
+        {
+          "segment": "INTERNET",
+          "value": 84.88,
+          "rows": 41858,
+          "global": 313.84
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_latency",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "segment"
+        ],
+        "formula": "moyenne(latence)",
+        "aggregation": "Latence moyenne par segment",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_packet_loss_mos_source",
+      "type": "bar",
+      "title": "Taux de perte de paquets par mos_source",
+      "subtitle": "Référence globale : 0.1 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "ping_measured",
+          "value": 0.11,
+          "rows": 119349,
+          "global": 0.1
+        },
+        {
+          "segment": "ctrl_plane_fallback",
+          "value": 0.08,
+          "rows": 48082,
+          "global": 0.1
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_packet_loss",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "mos_source"
+        ],
+        "formula": "moyenne(plr)",
+        "aggregation": "Taux de perte de paquets par mos_source",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "profile_throughput_mbps",
+      "type": "bar",
+      "title": "throughput_mbps : churnés vs retenus (médiane)",
+      "subtitle": "",
+      "section": "profiles",
+      "span": 4,
+      "kpi": null,
+      "data": [
+        {
+          "group": "churnés",
+          "median": 0.15,
+          "mean": 0.52,
+          "n": 29217
+        },
+        {
+          "group": "retenus",
+          "median": 0.09,
+          "mean": 0.11,
+          "n": 138214
+        }
+      ],
+      "encoding": {
+        "x": "group",
+        "y": "median",
+        "color": "group",
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Cliff's delta 0.32 (effet fort) ; association observée, pas causalité.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "arpu",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "throughput_mbps"
+        ],
+        "formula": null,
+        "aggregation": "médiane par groupe (Mann-Whitney)",
+        "origin": "analyst_report"
+      }
+    },
+    {
+      "id": "text_caveats",
+      "type": "text",
+      "title": "Réserves et limites",
+      "subtitle": "",
+      "section": "quality",
+      "span": 12,
+      "kpi": null,
+      "data": [
+        {
+          "text": "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité."
+        },
+        {
+          "text": "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+        }
+      ],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": null,
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [],
+        "formula": null,
+        "aggregation": null,
+        "origin": "analyst_report"
+      }
+    }
+  ],
+  "filters": [],
+  "report": {
+    "title": "Dashboard BI : Test multi-usage autonome",
+    "executive_summary": "Aucun segment ne passe les filtres statistiques de l'analyse.",
+    "blocks": [
+      {
+        "heading": "Indicateurs clés",
+        "text": "",
+        "visual_ids": [
+          "kpi_avg_mos_voice",
+          "kpi_avg_throughput",
+          "kpi_avg_latency",
+          "kpi_avg_packet_loss",
+          "kpi_network_availability",
+          "kpi_cdr_incident_rate"
+        ]
+      },
+      {
+        "heading": "Profils churnés vs retenus",
+        "text": "",
+        "visual_ids": [
+          "profile_throughput_mbps"
+        ]
+      }
+    ],
+    "recommendations_table": [],
+    "caveats": [
+      "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+      "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30).",
+      "Troncature : 5 visuel(s) non affiché(s) (max_visuals=20)."
+    ]
+  },
+  "excluded_visuals": [
+    {
+      "candidate": "churn_rate",
+      "reason": "non calculable (flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+    },
+    {
+      "candidate": "churned_customers",
+      "reason": "non calculable (flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+    },
+    {
+      "candidate": "avg_churn_score",
+      "reason": "fuite de cible : dérivé du churn, exclu des cartes de pilotage"
+    },
+    {
+      "candidate": "monthly_revenue_lost",
+      "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue', 'total_day_charge', 'day_charge'], flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+    },
+    {
+      "candidate": "customer_count",
+      "reason": "non calculable (id: ['customer_id', 'customerid', 'subscriber_id', 'phone_number'])"
+    },
+    {
+      "candidate": "avg_tenure",
+      "reason": "non calculable (value: ['tenure_months', 'tenure', 'months_active', 'account_length'])"
+    },
+    {
+      "candidate": "arpu",
+      "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue', 'total_day_charge', 'day_charge'])"
+    },
+    {
+      "candidate": "total_revenue",
+      "reason": "non calculable (value: ['total_charges', 'total_revenue', 'total_billed'])"
+    },
+    {
+      "candidate": "avg_cltv",
+      "reason": "non calculable (value: ['cltv', 'clv', 'customer_lifetime_value'])"
+    },
+    {
+      "candidate": "unpaid_rate",
+      "reason": "non calculable (num: ['unpaid_amount', 'overdue_amount'], den: ['billed_amount', 'invoice_amount'])"
+    },
+    {
+      "candidate": "avg_upload_speed",
+      "reason": "non calculable (value: ['upload_speed_mbps', 'upload_speed'])"
+    },
+    {
+      "candidate": "dropped_call_rate",
+      "reason": "non calculable (num: ['dropped_calls'], den: ['total_calls', 'calls'])"
+    },
+    {
+      "candidate": "avg_signal_strength",
+      "reason": "non calculable (value: ['signal_strength_dbm', 'signal_strength', 'rssi', 'rsrp'])"
+    },
+    {
+      "candidate": "avg_data_usage",
+      "reason": "non calculable (value: ['data_usage_mb', 'data_mb', 'data_usage', 'internet_mb'])"
+    },
+    {
+      "candidate": "ticket_count",
+      "reason": "non calculable (id: ['ticket_id', 'ticket', 'case_id', 'complaint_id', 'issue_id'])"
+    },
+    {
+      "candidate": "ticket_resolution_rate",
+      "reason": "non calculable (flag: ['ticket_status', 'status', 'case_status'])"
+    },
+    {
+      "candidate": "dispute_rate",
+      "reason": "non calculable (flag: ['consumer_disputed', 'consumer_disputed?', 'is_disputed', 'disputed'])"
+    },
+    {
+      "candidate": "timely_response_rate",
+      "reason": "non calculable (flag: ['timely_response', 'timely_response?', 'in_time'])"
+    },
+    {
+      "candidate": "avg_csat",
+      "reason": "non calculable (value: ['customer_satisfaction_rating', 'csat', 'satisfaction_rating', 'rating'])"
+    },
+    {
+      "candidate": "avg_resolution_time",
+      "reason": "non calculable (value: ['resolution_time_hours', 'resolution_time', 'resolution_hours'])"
+    },
+    {
+      "candidate": "temporal",
+      "reason": "colonne de churn introuvable"
+    },
+    {
+      "candidate": "geo_map",
+      "reason": "colonne géographique (state/city) ou churn introuvable"
+    },
+    {
+      "candidate": "bar_avg_packet_loss_segment",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_network_availability_mos_source",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_network_availability_segment",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_cdr_incident_rate_mos_source",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_cdr_incident_rate_segment",
+      "reason": "limite max_visuals=20"
+    }
+  ],
+  "caveats": [
+    "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+    "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30).",
+    "Troncature : 5 visuel(s) non affiché(s) (max_visuals=20)."
+  ],
+  "null_result": true,
+  "llm_narrative": "Aucun segment ne passe les filtres statistiques de l'analyse.",
+  "output_files": {
+    "report": "output_test\\network_qoe\\dashboard\\dashboard_report.json"
+  },
+  "trace": [
+    {
+      "timestamp": "2026-10-27T18:46:54.302792",
+      "tool": "load",
+      "parameters": {
+        "has_frame": true,
+        "has_kpi": true,
+        "n_insights": 0
+      },
+      "duration_ms": 1.2425999998413317
+    },
+    {
+      "timestamp": "2026-10-27T18:46:54.304814",
+      "tool": "build",
+      "parameters": {
+        "n_candidates": 26
+      },
+      "duration_ms": 1.3203999997131177
+    },
+    {
+      "timestamp": "2026-10-27T18:46:54.304814",
+      "tool": "assemble",
+      "parameters": {
+        "n_visuals": 21,
+        "n_excluded": 27
+      },
+      "duration_ms": 0.1810000003388268
+    },
+    {
+      "timestamp": "2026-10-27T18:46:54.305815",
+      "tool": "report",
+      "parameters": {
+        "n_blocks": 2
+      },
+      "duration_ms": 0.025400000140507473
+    },
+    {
+      "timestamp": "2026-10-27T18:46:54.305815",
+      "tool": "narrate",
+      "parameters": {
+        "llm": false
+      },
+      "duration_ms": 0.003099999958067201
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-27T18:46:54.302792"
+}

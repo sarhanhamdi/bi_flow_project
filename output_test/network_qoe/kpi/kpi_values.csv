@@ -1,0 +1,79 @@
+kpi_id,kpi_name,category,unit,status,table,dimension,segment,value,rows
+avg_mos_voice,Score MOS Voix moyen,Network Performance,score,computed,network_qoe,all,all,3.49,167431
+avg_mos_voice,Score MOS Voix moyen,Network Performance,score,computed,network_qoe,segment,IMS_CDN,3.29,41857
+avg_mos_voice,Score MOS Voix moyen,Network Performance,score,computed,network_qoe,segment,INDOOR_RAN,3.14,41858
+avg_mos_voice,Score MOS Voix moyen,Network Performance,score,computed,network_qoe,segment,INTERNET,4.18,41858
+avg_mos_voice,Score MOS Voix moyen,Network Performance,score,computed,network_qoe,segment,OUTDOOR_RAN,3.34,41858
+avg_mos_voice,Score MOS Voix moyen,Network Performance,score,computed,network_qoe,mos_source,ctrl_plane_fallback,3.96,48082
+avg_mos_voice,Score MOS Voix moyen,Network Performance,score,computed,network_qoe,mos_source,ping_measured,3.3,119349
+avg_mos_voice,Score MOS Voix moyen,Network Performance,score,computed,network_qoe,label,CALL_DROP,2.92,17528
+avg_mos_voice,Score MOS Voix moyen,Network Performance,score,computed,network_qoe,label,CAPACITY_EXHAUSTED,1.68,11769
+avg_mos_voice,Score MOS Voix moyen,Network Performance,score,computed,network_qoe,label,HIGH_LATENCY,3.61,29872
+avg_mos_voice,Score MOS Voix moyen,Network Performance,score,computed,network_qoe,label,LOW_THROUGHPUT,3.45,27956
+avg_mos_voice,Score MOS Voix moyen,Network Performance,score,computed,network_qoe,label,NORMAL,3.94,56753
+avg_mos_voice,Score MOS Voix moyen,Network Performance,score,computed,network_qoe,label,POOR_VOICE_QUALITY,3.63,23553
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,network_qoe,all,all,0.18,167431
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,network_qoe,segment,IMS_CDN,0.21,41857
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,network_qoe,segment,INDOOR_RAN,0.07,41858
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,network_qoe,segment,INTERNET,0.31,41858
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,network_qoe,segment,OUTDOOR_RAN,0.14,41858
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,network_qoe,mos_source,ctrl_plane_fallback,0.28,48082
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,network_qoe,mos_source,ping_measured,0.14,119349
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,network_qoe,label,CALL_DROP,0.07,17528
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,network_qoe,label,CAPACITY_EXHAUSTED,1.14,11769
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,network_qoe,label,HIGH_LATENCY,0.14,29872
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,network_qoe,label,LOW_THROUGHPUT,0.09,27956
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,network_qoe,label,NORMAL,0.11,56753
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,network_qoe,label,POOR_VOICE_QUALITY,0.1,23553
+avg_latency,Latence moyenne,Network Performance,ms,computed,network_qoe,all,all,313.84,167431
+avg_latency,Latence moyenne,Network Performance,ms,computed,network_qoe,segment,IMS_CDN,466.05,41857
+avg_latency,Latence moyenne,Network Performance,ms,computed,network_qoe,segment,INDOOR_RAN,321.76,41858
+avg_latency,Latence moyenne,Network Performance,ms,computed,network_qoe,segment,INTERNET,84.88,41858
+avg_latency,Latence moyenne,Network Performance,ms,computed,network_qoe,segment,OUTDOOR_RAN,382.66,41858
+avg_latency,Latence moyenne,Network Performance,ms,computed,network_qoe,mos_source,ctrl_plane_fallback,215.98,48082
+avg_latency,Latence moyenne,Network Performance,ms,computed,network_qoe,mos_source,ping_measured,353.26,119349
+avg_latency,Latence moyenne,Network Performance,ms,computed,network_qoe,label,CALL_DROP,852.32,17528
+avg_latency,Latence moyenne,Network Performance,ms,computed,network_qoe,label,CAPACITY_EXHAUSTED,881.67,11769
+avg_latency,Latence moyenne,Network Performance,ms,computed,network_qoe,label,HIGH_LATENCY,145.49,29872
+avg_latency,Latence moyenne,Network Performance,ms,computed,network_qoe,label,LOW_THROUGHPUT,404.91,27956
+avg_latency,Latence moyenne,Network Performance,ms,computed,network_qoe,label,NORMAL,114.54,56753
+avg_latency,Latence moyenne,Network Performance,ms,computed,network_qoe,label,POOR_VOICE_QUALITY,215.01,23553
+avg_packet_loss,Taux de perte de paquets,Network Performance,%,computed,network_qoe,all,all,0.1,167431
+avg_packet_loss,Taux de perte de paquets,Network Performance,%,computed,network_qoe,segment,IMS_CDN,0.16,41857
+avg_packet_loss,Taux de perte de paquets,Network Performance,%,computed,network_qoe,segment,INDOOR_RAN,0.08,41858
+avg_packet_loss,Taux de perte de paquets,Network Performance,%,computed,network_qoe,segment,INTERNET,0.01,41858
+avg_packet_loss,Taux de perte de paquets,Network Performance,%,computed,network_qoe,segment,OUTDOOR_RAN,0.13,41858
+avg_packet_loss,Taux de perte de paquets,Network Performance,%,computed,network_qoe,mos_source,ctrl_plane_fallback,0.08,48082
+avg_packet_loss,Taux de perte de paquets,Network Performance,%,computed,network_qoe,mos_source,ping_measured,0.11,119349
+avg_packet_loss,Taux de perte de paquets,Network Performance,%,computed,network_qoe,label,CALL_DROP,0.39,17528
+avg_packet_loss,Taux de perte de paquets,Network Performance,%,computed,network_qoe,label,CAPACITY_EXHAUSTED,0.24,11769
+avg_packet_loss,Taux de perte de paquets,Network Performance,%,computed,network_qoe,label,HIGH_LATENCY,0.03,29872
+avg_packet_loss,Taux de perte de paquets,Network Performance,%,computed,network_qoe,label,LOW_THROUGHPUT,0.12,27956
+avg_packet_loss,Taux de perte de paquets,Network Performance,%,computed,network_qoe,label,NORMAL,0.02,56753
+avg_packet_loss,Taux de perte de paquets,Network Performance,%,computed,network_qoe,label,POOR_VOICE_QUALITY,0.05,23553
+network_availability,Disponibilité réseau,Network Performance,%,computed,network_qoe,all,all,0.88,167431
+network_availability,Disponibilité réseau,Network Performance,%,computed,network_qoe,segment,IMS_CDN,0.8,41857
+network_availability,Disponibilité réseau,Network Performance,%,computed,network_qoe,segment,INDOOR_RAN,0.88,41858
+network_availability,Disponibilité réseau,Network Performance,%,computed,network_qoe,segment,INTERNET,0.97,41858
+network_availability,Disponibilité réseau,Network Performance,%,computed,network_qoe,segment,OUTDOOR_RAN,0.85,41858
+network_availability,Disponibilité réseau,Network Performance,%,computed,network_qoe,mos_source,ctrl_plane_fallback,0.91,48082
+network_availability,Disponibilité réseau,Network Performance,%,computed,network_qoe,mos_source,ping_measured,0.86,119349
+network_availability,Disponibilité réseau,Network Performance,%,computed,network_qoe,label,CALL_DROP,0.59,17528
+network_availability,Disponibilité réseau,Network Performance,%,computed,network_qoe,label,CAPACITY_EXHAUSTED,0.61,11769
+network_availability,Disponibilité réseau,Network Performance,%,computed,network_qoe,label,HIGH_LATENCY,0.97,29872
+network_availability,Disponibilité réseau,Network Performance,%,computed,network_qoe,label,LOW_THROUGHPUT,0.83,27956
+network_availability,Disponibilité réseau,Network Performance,%,computed,network_qoe,label,NORMAL,0.98,56753
+network_availability,Disponibilité réseau,Network Performance,%,computed,network_qoe,label,POOR_VOICE_QUALITY,0.91,23553
+cdr_incident_rate,Taux d'incidents réseau / CDR,Network Performance,%,computed,network_qoe,all,all,17.45,167431
+cdr_incident_rate,Taux d'incidents réseau / CDR,Network Performance,%,computed,network_qoe,segment,IMS_CDN,23.75,41857
+cdr_incident_rate,Taux d'incidents réseau / CDR,Network Performance,%,computed,network_qoe,segment,INDOOR_RAN,22.75,41858
+cdr_incident_rate,Taux d'incidents réseau / CDR,Network Performance,%,computed,network_qoe,segment,INTERNET,6.21,41858
+cdr_incident_rate,Taux d'incidents réseau / CDR,Network Performance,%,computed,network_qoe,segment,OUTDOOR_RAN,17.1,41858
+cdr_incident_rate,Taux d'incidents réseau / CDR,Network Performance,%,computed,network_qoe,mos_source,ctrl_plane_fallback,12.41,48082
+cdr_incident_rate,Taux d'incidents réseau / CDR,Network Performance,%,computed,network_qoe,mos_source,ping_measured,19.48,119349
+cdr_incident_rate,Taux d'incidents réseau / CDR,Network Performance,%,computed,network_qoe,label,CALL_DROP,41.94,17528
+cdr_incident_rate,Taux d'incidents réseau / CDR,Network Performance,%,computed,network_qoe,label,CAPACITY_EXHAUSTED,71.02,11769
+cdr_incident_rate,Taux d'incidents réseau / CDR,Network Performance,%,computed,network_qoe,label,HIGH_LATENCY,1.9,29872
+cdr_incident_rate,Taux d'incidents réseau / CDR,Network Performance,%,computed,network_qoe,label,LOW_THROUGHPUT,24.1,27956
+cdr_incident_rate,Taux d'incidents réseau / CDR,Network Performance,%,computed,network_qoe,label,NORMAL,1.78,56753
+cdr_incident_rate,Taux d'incidents réseau / CDR,Network Performance,%,computed,network_qoe,label,POOR_VOICE_QUALITY,22.04,23553

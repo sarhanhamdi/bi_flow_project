@@ -1,0 +1,202 @@
+{
+  "status": "success",
+  "business_goal": "Test multi-usage autonome",
+  "n_features_used": 11,
+  "features_used": [
+    "date_received",
+    "product",
+    "sub_product",
+    "issue",
+    "sub_issue",
+    "company",
+    "zipcode",
+    "submitted_via",
+    "date_sent_to_company",
+    "company_response_to_consumer",
+    "timely_response"
+  ],
+  "features_excluded": [
+    "state",
+    "consumer_disputed",
+    "complaint_id"
+  ],
+  "model_metrics": {
+    "accuracy": 0.713,
+    "precision": 0.2014,
+    "recall": 0.1443,
+    "f1": 0.1681,
+    "auc_roc": 0.5424,
+    "n_train": 4000,
+    "n_test": 1000,
+    "positive_rate_train": 0.2005,
+    "positive_rate_test": 0.201
+  },
+  "shap_summary": {
+    "top_features": [
+      {
+        "feature": "company_response_to_consumer",
+        "mean_abs_shap": 0.0533,
+        "rank": 1
+      },
+      {
+        "feature": "zipcode",
+        "mean_abs_shap": 0.0433,
+        "rank": 2
+      },
+      {
+        "feature": "company",
+        "mean_abs_shap": 0.0364,
+        "rank": 3
+      },
+      {
+        "feature": "date_sent_to_company",
+        "mean_abs_shap": 0.0314,
+        "rank": 4
+      },
+      {
+        "feature": "submitted_via",
+        "mean_abs_shap": 0.031,
+        "rank": 5
+      },
+      {
+        "feature": "date_received",
+        "mean_abs_shap": 0.03,
+        "rank": 6
+      },
+      {
+        "feature": "issue",
+        "mean_abs_shap": 0.0268,
+        "rank": 7
+      },
+      {
+        "feature": "sub_product",
+        "mean_abs_shap": 0.0246,
+        "rank": 8
+      },
+      {
+        "feature": "sub_issue",
+        "mean_abs_shap": 0.0171,
+        "rank": 9
+      },
+      {
+        "feature": "product",
+        "mean_abs_shap": 0.0148,
+        "rank": 10
+      }
+    ],
+    "examples": [
+      {
+        "client_index": 0,
+        "true_label": 0,
+        "predicted_label": 0,
+        "predicted_proba": 0.45,
+        "top_features": [
+          {
+            "feature": "company_response_to_consumer",
+            "shap_value": 0.0537,
+            "feature_value": 1.0
+          },
+          {
+            "feature": "submitted_via",
+            "shap_value": 0.0482,
+            "feature_value": 5.0
+          },
+          {
+            "feature": "date_sent_to_company",
+            "shap_value": -0.0416,
+            "feature_value": 39.0
+          }
+        ]
+      },
+      {
+        "client_index": 1,
+        "true_label": 0,
+        "predicted_label": 0,
+        "predicted_proba": 0.02,
+        "top_features": [
+          {
+            "feature": "company_response_to_consumer",
+            "shap_value": -0.217,
+            "feature_value": 3.0
+          },
+          {
+            "feature": "company",
+            "shap_value": -0.0894,
+            "feature_value": 444.0
+          },
+          {
+            "feature": "sub_issue",
+            "shap_value": -0.0659,
+            "feature_value": 22.0
+          }
+        ]
+      },
+      {
+        "client_index": 2,
+        "true_label": 0,
+        "predicted_label": 0,
+        "predicted_proba": 0.39,
+        "top_features": [
+          {
+            "feature": "date_received",
+            "shap_value": -0.0761,
+            "feature_value": 4.0
+          },
+          {
+            "feature": "date_sent_to_company",
+            "shap_value": -0.0554,
+            "feature_value": 5.0
+          },
+          {
+            "feature": "zipcode",
+            "shap_value": -0.0383,
+            "feature_value": 383.0
+          }
+        ]
+      }
+    ]
+  },
+  "baseline_comparison": {
+    "baseline_accuracy": 0.799,
+    "baseline_f1": 0.0,
+    "delta_accuracy": -0.086,
+    "delta_f1": 0.1681,
+    "verdict": "marginal_gain"
+  },
+  "audit_findings": [
+    {
+      "id": "AUDIT-DATA-001",
+      "severity": "info",
+      "category": "data_preparation",
+      "title": "Exclusion de fuite de cible",
+      "detail": "3 colonnes exclues pour éviter fuite d'information ou biais (ex: churn_score, churn_reason, identifiants).",
+      "recommendation": "Conserver l'exclusion stricte de churn_score en production."
+    },
+    {
+      "id": "AUDIT-MODEL-001",
+      "severity": "medium",
+      "category": "performance",
+      "title": "Recall modéré sur le Churn",
+      "detail": "Le Recall est de 14.4%. Certains clients résilients ne sont pas détectés.",
+      "recommendation": "Ajuster le seuil de décision probabilité ou tester un modèle de boosting (XGBoost/LightGBM)."
+    },
+    {
+      "id": "AUDIT-BASELINE-001",
+      "severity": "info",
+      "category": "baseline",
+      "title": "Validation par rapport au modèle naïf",
+      "detail": "Gain de F1-Score de +16.8% par rapport à la classe majoritaire.",
+      "recommendation": "Le modèle ML apporte une valeur réelle par rapport à une règle naïve."
+    },
+    {
+      "id": "AUDIT-XAI-001",
+      "severity": "info",
+      "category": "explainability",
+      "title": "Déterminants majeurs identifiés",
+      "detail": "Les 3 facteurs les plus influents au niveau global sont : company_response_to_consumer, zipcode, company.",
+      "recommendation": "Cibler en priorité les offres commerciales sur ces leviers (ex: durée d'engagement, tarification)."
+    }
+  ],
+  "llm_summary": "L'audit du modèle RandomForest indique une Accuracy de 71.3%, un Recall de 14.4% et un F1-Score de 16.8% (AUC-ROC: 0.542). Par rapport à la baseline naïve (DummyClassifier), le gain en F1-Score est de +16.8%, validant l'apport prédictif du modèle (marginal_gain). Les principaux facteurs expliquant le risque de churn selon SHAP sont : company_response_to_consumer, zipcode, company. 4 constats d'audit ont été relevés.",
+  "errors": []
+}

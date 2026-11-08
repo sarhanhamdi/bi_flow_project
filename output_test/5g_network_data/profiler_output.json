@@ -1,0 +1,957 @@
+{
+  "business_goal": "Analyse décisionnelle télécom",
+  "tables": [
+    {
+      "name": "5g_network_data",
+      "source_name": "5g_network_data",
+      "row_count": 50000,
+      "column_count": 21,
+      "memory_bytes": 10568606,
+      "sampled": false,
+      "sample_rows": null,
+      "columns": [
+        {
+          "name": "Timestamp",
+          "declared_type": "str",
+          "inferred_type": "datetime",
+          "semantic_role": "date",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 50000,
+          "stats": {
+            "count": 50000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "2025-05-28 06:59:51.089339",
+                  "count": 1
+                },
+                {
+                  "value": "2025-05-28 06:49:51.089353",
+                  "count": 1
+                },
+                {
+                  "value": "2025-05-28 06:39:51.089356",
+                  "count": 1
+                },
+                {
+                  "value": "2025-05-28 06:29:51.089360",
+                  "count": 1
+                },
+                {
+                  "value": "2025-05-28 06:19:51.089363",
+                  "count": 1
+                },
+                {
+                  "value": "2025-05-28 06:09:51.089365",
+                  "count": 1
+                },
+                {
+                  "value": "2025-05-28 05:59:51.089368",
+                  "count": 1
+                },
+                {
+                  "value": "2025-05-28 05:49:51.089374",
+                  "count": 1
+                },
+                {
+                  "value": "2025-05-28 05:39:51.089378",
+                  "count": 1
+                },
+                {
+                  "value": "2025-05-28 05:29:51.089381",
+                  "count": 1
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 1
+            }
+          ],
+          "is_pii": true,
+          "pii_categories": [
+            "phone"
+          ],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Location",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 8,
+          "stats": {
+            "count": 50000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Berlin",
+                  "count": 6346
+                },
+                {
+                  "value": "Tokyo",
+                  "count": 6299
+                },
+                {
+                  "value": "Mumbai",
+                  "count": 6248
+                },
+                {
+                  "value": "Chennai",
+                  "count": 6236
+                },
+                {
+                  "value": "San Francisco",
+                  "count": 6221
+                },
+                {
+                  "value": "Kolkata",
+                  "count": 6219
+                },
+                {
+                  "value": "New York",
+                  "count": 6218
+                },
+                {
+                  "value": "Delhi",
+                  "count": 6213
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Signal Strength (dBm)",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 501,
+          "stats": {
+            "count": 50000,
+            "numeric": {
+              "min": -110.0,
+              "max": -60.0,
+              "mean": -84.83727399999998,
+              "median": -84.8,
+              "std": 14.477642504619798,
+              "q1": -97.4,
+              "q3": -72.2
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Download Speed (Mbps)",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 38384,
+          "stats": {
+            "count": 50000,
+            "numeric": {
+              "min": 100.04,
+              "max": 999.99,
+              "mean": 551.1810737999999,
+              "median": 552.13,
+              "std": 260.43444319403875,
+              "q1": 324.65,
+              "q3": 775.875
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Upload Speed (Mbps)",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 12738,
+          "stats": {
+            "count": 50000,
+            "numeric": {
+              "min": 20.0,
+              "max": 150.0,
+              "mean": 84.8017556,
+              "median": 84.71,
+              "std": 37.59081142077056,
+              "q1": 52.23,
+              "q3": 117.32
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Latency (ms)",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 191,
+          "stats": {
+            "count": 50000,
+            "numeric": {
+              "min": 1.0,
+              "max": 20.0,
+              "mean": 10.497243999999998,
+              "median": 10.5,
+              "std": 5.505071200324516,
+              "q1": 5.7,
+              "q3": 15.3
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Jitter (ms)",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 491,
+          "stats": {
+            "count": 50000,
+            "numeric": {
+              "min": 0.1,
+              "max": 5.0,
+              "mean": 2.560705,
+              "median": 2.57,
+              "std": 1.416085101579456,
+              "q1": 1.33,
+              "q3": 3.78
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Network Type",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 3,
+          "stats": {
+            "count": 50000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "5G NSA",
+                  "count": 16793
+                },
+                {
+                  "value": "5G SA",
+                  "count": 16658
+                },
+                {
+                  "value": "4G",
+                  "count": 16549
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Device Model",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 5,
+          "stats": {
+            "count": 50000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Nord 4",
+                  "count": 10076
+                },
+                {
+                  "value": "GT 7",
+                  "count": 10051
+                },
+                {
+                  "value": "iPhone 14",
+                  "count": 9976
+                },
+                {
+                  "value": "Pixel 7",
+                  "count": 9973
+                },
+                {
+                  "value": "Galaxy S23",
+                  "count": 9924
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Carrier",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 7,
+          "stats": {
+            "count": 50000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "AT&T",
+                  "count": 8382
+                },
+                {
+                  "value": "T-Mobile",
+                  "count": 8375
+                },
+                {
+                  "value": "Verizon",
+                  "count": 8327
+                },
+                {
+                  "value": "BSNL",
+                  "count": 6311
+                },
+                {
+                  "value": "Jio",
+                  "count": 6256
+                },
+                {
+                  "value": "Airtel",
+                  "count": 6252
+                },
+                {
+                  "value": "Vi",
+                  "count": 6097
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Band",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 5,
+          "stats": {
+            "count": 50000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "n78",
+                  "count": 16694
+                },
+                {
+                  "value": "n258",
+                  "count": 8353
+                },
+                {
+                  "value": "n260",
+                  "count": 8346
+                },
+                {
+                  "value": "n41",
+                  "count": 8340
+                },
+                {
+                  "value": "n28",
+                  "count": 8267
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Battery Level (%)",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 90,
+          "stats": {
+            "count": 50000,
+            "numeric": {
+              "min": 10.0,
+              "max": 99.0,
+              "mean": 54.57914,
+              "median": 55.0,
+              "std": 26.033889684959536,
+              "q1": 32.0,
+              "q3": 77.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Temperature (°C)",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 251,
+          "stats": {
+            "count": 50000,
+            "numeric": {
+              "min": 20.0,
+              "max": 45.0,
+              "mean": 32.450312000000004,
+              "median": 32.4,
+              "std": 7.216729448048786,
+              "q1": 26.2,
+              "q3": 38.7
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Connected Duration (min)",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 59,
+          "stats": {
+            "count": 50000,
+            "numeric": {
+              "min": 1.0,
+              "max": 59.0,
+              "mean": 29.85544,
+              "median": 30.0,
+              "std": 16.995327570529042,
+              "q1": 15.0,
+              "q3": 45.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Handover Count",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 5,
+          "stats": {
+            "count": 50000,
+            "numeric": {
+              "min": 0.0,
+              "max": 4.0,
+              "mean": 2.0042,
+              "median": 2.0,
+              "std": 1.417710322333572,
+              "q1": 1.0,
+              "q3": 3.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Data Usage (MB)",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 31385,
+          "stats": {
+            "count": 50000,
+            "numeric": {
+              "min": 10.0,
+              "max": 500.0,
+              "mean": 254.38114459999997,
+              "median": 252.975,
+              "std": 140.98903336706186,
+              "q1": 133.2375,
+              "q3": 376.425
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Video Streaming Quality",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 5,
+          "stats": {
+            "count": 50000,
+            "numeric": {
+              "min": 1.0,
+              "max": 5.0,
+              "mean": 2.99998,
+              "median": 3.0,
+              "std": 1.4159449486480582,
+              "q1": 2.0,
+              "q3": 4.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "VoNR Enabled",
+          "declared_type": "bool",
+          "inferred_type": "boolean",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2,
+          "stats": {
+            "count": 50000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "True",
+                  "count": 25055
+                },
+                {
+                  "value": "False",
+                  "count": 24945
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Network Congestion Level",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 3,
+          "stats": {
+            "count": 50000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Low",
+                  "count": 16791
+                },
+                {
+                  "value": "Medium",
+                  "count": 16732
+                },
+                {
+                  "value": "High",
+                  "count": 16477
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Ping to Google (ms)",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 901,
+          "stats": {
+            "count": 50000,
+            "numeric": {
+              "min": 10.0,
+              "max": 100.0,
+              "mean": 54.947062,
+              "median": 55.0,
+              "std": 25.983514139321045,
+              "q1": 32.4,
+              "q3": 77.4
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Dropped Connection",
+          "declared_type": "bool",
+          "inferred_type": "boolean",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2,
+          "stats": {
+            "count": 50000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "True",
+                  "count": 25031
+                },
+                {
+                  "value": "False",
+                  "count": 24969
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        }
+      ],
+      "duplicates": {
+        "exact_count": 0,
+        "exact_pct": 0.0,
+        "business_key": [],
+        "business_key_duplicate_count": 0,
+        "business_key_duplicate_pct": 0.0
+      }
+    }
+  ],
+  "relationships": [],
+  "issues": [],
+  "llm_summary": "Tables profilées : 5g_network_data : 50000 ligne(s), 21 colonne(s)\nAucun problème couvert par les règles exécutées n'a été signalé.",
+  "status": "success",
+  "trace": [
+    {
+      "timestamp": "2026-10-26T20:51:42.011807",
+      "tool": "load_source",
+      "parameters": {
+        "source_name": "5g_network_data",
+        "source_type": "csv",
+        "sampled": false,
+        "sample_rows": 50000
+      },
+      "duration_ms": 139.27530000000843
+    }
+  ],
+  "semantic_map": {
+    "domain": "network_performance",
+    "primary_target": null,
+    "concepts": {
+      "datetime": "Timestamp",
+      "latency": "Latency (ms)"
+    },
+    "candidate_targets": [],
+    "all_columns": [
+      "Timestamp",
+      "Location",
+      "Signal Strength (dBm)",
+      "Download Speed (Mbps)",
+      "Upload Speed (Mbps)",
+      "Latency (ms)",
+      "Jitter (ms)",
+      "Network Type",
+      "Device Model",
+      "Carrier",
+      "Band",
+      "Battery Level (%)",
+      "Temperature (°C)",
+      "Connected Duration (min)",
+      "Handover Count",
+      "Data Usage (MB)",
+      "Video Streaming Quality",
+      "VoNR Enabled",
+      "Network Congestion Level",
+      "Ping to Google (ms)",
+      "Dropped Connection"
+    ]
+  },
+  "errors": []
+}

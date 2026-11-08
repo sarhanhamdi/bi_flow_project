@@ -1,0 +1,30 @@
+kpi_id,kpi_name,category,unit,status,table,dimension,segment,value,rows
+churn_rate,Taux de churn,Churn,%,computed,churn-bigml-80,all,all,14.55,2666
+churn_rate,Taux de churn,Churn,%,computed,churn-bigml-80,international_plan,No,11.27,2396
+churn_rate,Taux de churn,Churn,%,computed,churn-bigml-80,international_plan,Yes,43.7,270
+churn_rate,Taux de churn,Churn,%,computed,churn-bigml-80,voice_mail_plan,No,16.71,1933
+churn_rate,Taux de churn,Churn,%,computed,churn-bigml-80,voice_mail_plan,Yes,8.87,733
+churned_customers,Clients churnés,Churn,clients,computed,churn-bigml-80,all,all,388.0,2666
+churned_customers,Clients churnés,Churn,clients,computed,churn-bigml-80,international_plan,No,270.0,2396
+churned_customers,Clients churnés,Churn,clients,computed,churn-bigml-80,international_plan,Yes,118.0,270
+churned_customers,Clients churnés,Churn,clients,computed,churn-bigml-80,voice_mail_plan,No,323.0,1933
+churned_customers,Clients churnés,Churn,clients,computed,churn-bigml-80,voice_mail_plan,Yes,65.0,733
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,churn-bigml-80,all,all,13533.96,2666
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,churn-bigml-80,international_plan,No,9625.78,2396
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,churn-bigml-80,international_plan,Yes,3908.18,270
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,churn-bigml-80,voice_mail_plan,No,11551.66,1933
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,churn-bigml-80,voice_mail_plan,Yes,1982.3,733
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,churn-bigml-80,all,all,100.62,2666
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,churn-bigml-80,international_plan,No,100.3,2396
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,churn-bigml-80,international_plan,Yes,103.51,270
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,churn-bigml-80,voice_mail_plan,No,100.56,1933
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,churn-bigml-80,voice_mail_plan,Yes,100.78,733
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,churn-bigml-80,churn,False,100.33,2278
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,churn-bigml-80,churn,True,102.32,388
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,churn-bigml-80,all,all,30.51,2666
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,churn-bigml-80,international_plan,No,30.36,2396
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,churn-bigml-80,international_plan,Yes,31.87,270
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,churn-bigml-80,voice_mail_plan,No,30.44,1933
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,churn-bigml-80,voice_mail_plan,Yes,30.71,733
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,churn-bigml-80,churn,False,29.77,2278
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,churn-bigml-80,churn,True,34.88,388

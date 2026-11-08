@@ -1,0 +1,9 @@
+insight_id,kpi_id,dimension,segment,rate,global_rate,excess_rate,excess_churners,revenue_monthly_lost_excess,p_adj,p_adj_display,effect_size,effect_label,test_used,confidence,direction,rank,source
+insight_international_plan_yes,churn_rate,international_plan,Yes,43.7,14.55,29.15,78.7,2606.72,0.0,"< 0,001",0.2774887812740148,moyen,proportion_z,élevée,risque,1,kpi_report
+insight_customer_service_calls_4,churn_rate,customer_service_calls,4,48.12,14.55,33.57,44.6,1176.35,0.0,"< 0,001",0.21811413334805352,moyen,proportion_z,élevée,risque,2,analyst_computed
+insight_customer_service_calls_5,churn_rate,customer_service_calls,5,59.18,14.55,44.63,21.9,563.64,0.0,"< 0,001",0.17317724609524682,moyen,proportion_z,moyenne,risque,3,analyst_computed
+insight_customer_service_calls_3,churn_rate,customer_service_calls,3,10.63,14.55,-3.92,-13.6,-514.52,0.04287738203539215,"= 0,043",0.043087124248866154,faible,proportion_z,faible,protecteur,4,analyst_computed
+insight_customer_service_calls_2,churn_rate,customer_service_calls,2,10.2,14.55,-4.35,-26.4,-991.42,0.0011008565019117783,"= 0,001",0.0671446346424138,faible,proportion_z,faible,protecteur,5,analyst_computed
+insight_customer_service_calls_1,churn_rate,customer_service_calls,1,10.48,14.55,-4.07,-38.5,-1527.62,2.4765140598459464e-05,"< 0,001",0.08568036650620946,faible,proportion_z,faible,protecteur,6,analyst_computed
+insight_voice_mail_plan_yes,churn_rate,voice_mail_plan,Yes,8.87,14.55,-5.68,-41.6,-1269.72,8.477196648815077e-07,"< 0,001",0.09929060228146355,faible,proportion_z,moyenne,protecteur,7,kpi_report
+insight_international_plan_no,churn_rate,international_plan,No,11.27,14.55,-3.28,-78.6,-2801.77,0.0,"< 0,001",0.2774887812740148,moyen,proportion_z,faible,protecteur,8,kpi_report

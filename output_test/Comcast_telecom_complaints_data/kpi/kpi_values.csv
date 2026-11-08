@@ -1,0 +1,15 @@
+kpi_id,kpi_name,category,unit,status,table,dimension,segment,value,rows
+ticket_count,Nombre de tickets / réclamations,Operations & Support,tickets,computed,Comcast_telecom_complaints_data,all,all,2223.0,2224
+ticket_count,Nombre de tickets / réclamations,Operations & Support,tickets,computed,Comcast_telecom_complaints_data,received_via,Customer Care Call,1119.0,1119
+ticket_count,Nombre de tickets / réclamations,Operations & Support,tickets,computed,Comcast_telecom_complaints_data,received_via,Internet,1105.0,1105
+ticket_count,Nombre de tickets / réclamations,Operations & Support,tickets,computed,Comcast_telecom_complaints_data,status,Closed,734.0,734
+ticket_count,Nombre de tickets / réclamations,Operations & Support,tickets,computed,Comcast_telecom_complaints_data,status,Open,363.0,363
+ticket_count,Nombre de tickets / réclamations,Operations & Support,tickets,computed,Comcast_telecom_complaints_data,status,Pending,154.0,154
+ticket_count,Nombre de tickets / réclamations,Operations & Support,tickets,computed,Comcast_telecom_complaints_data,status,Solved,973.0,973
+ticket_count,Nombre de tickets / réclamations,Operations & Support,tickets,computed,Comcast_telecom_complaints_data,filing_on_behalf_of_someone,No,2020.0,2021
+ticket_count,Nombre de tickets / réclamations,Operations & Support,tickets,computed,Comcast_telecom_complaints_data,filing_on_behalf_of_someone,Yes,203.0,203
+ticket_resolution_rate,Taux de résolution des tickets,Operations & Support,%,computed,Comcast_telecom_complaints_data,all,all,76.75,2224
+ticket_resolution_rate,Taux de résolution des tickets,Operations & Support,%,computed,Comcast_telecom_complaints_data,received_via,Customer Care Call,77.21,1119
+ticket_resolution_rate,Taux de résolution des tickets,Operations & Support,%,computed,Comcast_telecom_complaints_data,received_via,Internet,76.29,1105
+ticket_resolution_rate,Taux de résolution des tickets,Operations & Support,%,computed,Comcast_telecom_complaints_data,filing_on_behalf_of_someone,No,77.09,2021
+ticket_resolution_rate,Taux de résolution des tickets,Operations & Support,%,computed,Comcast_telecom_complaints_data,filing_on_behalf_of_someone,Yes,73.4,203

@@ -1,0 +1,2 @@
+rec_id,action,target,priority,test_type,impact_churners,revenue_monthly_lost_excess,confidence,insight_ids
+rec_high_churn_any_segment,Analyser les verbatims et données de satisfaction pour ce segment afin d'identifier les leviers d'action spécifiques,Segment présentant un excès de churn significatif,moyenne,enquête qualitative,145.20000000000002,4346.71,élevée,insight_international_plan_yes;insight_customer_service_calls_4;insight_customer_service_calls_5

@@ -1,0 +1,345 @@
+{
+  "business_goal": "Analyse décisionnelle télécom",
+  "status": "warning",
+  "analyst_status": "warning",
+  "title": "Dashboard BI : Analyse décisionnelle télécom",
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Vue d'ensemble",
+      "order": 0,
+      "visual_ids": [
+        "kpi_churn_rate",
+        "kpi_churned_customers"
+      ]
+    },
+    {
+      "id": "quality",
+      "title": "Qualité et réserves",
+      "order": 6,
+      "visual_ids": [
+        "text_caveats"
+      ]
+    }
+  ],
+  "visuals": [
+    {
+      "id": "kpi_churn_rate",
+      "type": "kpi_card",
+      "title": "Taux de churn",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "churn_rate",
+        "name": "Taux de churn",
+        "value": 11.05,
+        "unit": "%",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": false
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Part des clients ayant quitté l'opérateur.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "churn"
+        ],
+        "formula": "clients_churnés / clients_total × 100",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_churned_customers",
+      "type": "kpi_card",
+      "title": "Clients churnés",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "churned_customers",
+        "name": "Clients churnés",
+        "value": 6677.0,
+        "unit": "clients",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": false
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Nombre de clients ayant quitté l'opérateur.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churned_customers",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "churn"
+        ],
+        "formula": "somme(indicateur_churn)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "text_caveats",
+      "type": "text",
+      "title": "Réserves et limites",
+      "subtitle": "",
+      "section": "quality",
+      "span": 12,
+      "kpi": null,
+      "data": [
+        {
+          "text": "ETL — Call Details-Data : Variable d'environnement BIFLOW_PII_SALT absente : sel par défaut utilisé pour le hachage."
+        },
+        {
+          "text": "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité."
+        },
+        {
+          "text": "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+        }
+      ],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": null,
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [],
+        "formula": null,
+        "aggregation": null,
+        "origin": "analyst_report"
+      }
+    }
+  ],
+  "filters": [],
+  "report": {
+    "title": "Dashboard BI : Analyse décisionnelle télécom",
+    "executive_summary": "Taux de churn global : 11.0 % sur 60445 clients. Aucun segment ne passe les filtres statistiques de l'analyse.",
+    "blocks": [
+      {
+        "heading": "Indicateurs clés",
+        "text": "",
+        "visual_ids": [
+          "kpi_churn_rate",
+          "kpi_churned_customers"
+        ]
+      }
+    ],
+    "recommendations_table": [],
+    "caveats": [
+      "ETL — Call Details-Data : Variable d'environnement BIFLOW_PII_SALT absente : sel par défaut utilisé pour le hachage.",
+      "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+      "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+    ]
+  },
+  "excluded_visuals": [
+    {
+      "candidate": "avg_churn_score",
+      "reason": "fuite de cible : dérivé du churn, exclu des cartes de pilotage"
+    },
+    {
+      "candidate": "monthly_revenue_lost",
+      "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue'])"
+    },
+    {
+      "candidate": "customer_count",
+      "reason": "non calculable (id: ['customer_id', 'customerid', 'subscriber_id'])"
+    },
+    {
+      "candidate": "avg_tenure",
+      "reason": "non calculable (value: ['tenure_months', 'tenure', 'months_active'])"
+    },
+    {
+      "candidate": "arpu",
+      "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue'])"
+    },
+    {
+      "candidate": "total_revenue",
+      "reason": "non calculable (value: ['total_charges', 'total_revenue', 'total_billed'])"
+    },
+    {
+      "candidate": "avg_cltv",
+      "reason": "non calculable (value: ['cltv', 'clv', 'customer_lifetime_value'])"
+    },
+    {
+      "candidate": "unpaid_rate",
+      "reason": "non calculable (num: ['unpaid_amount', 'overdue_amount'], den: ['billed_amount', 'invoice_amount'])"
+    },
+    {
+      "candidate": "avg_data_usage",
+      "reason": "non calculable (value: ['data_usage_mb', 'data_mb', 'data_usage', 'internet_mb'])"
+    },
+    {
+      "candidate": "avg_call_minutes",
+      "reason": "non calculable (value: ['call_minutes', 'minutes', 'call_duration', 'voice_minutes'])"
+    },
+    {
+      "candidate": "avg_mos_voice",
+      "reason": "non calculable (value: ['mos_voice', 'mos', 'streaming_mos'])"
+    },
+    {
+      "candidate": "avg_throughput",
+      "reason": "non calculable (value: ['throughput_mbps', 'effective_bitrate_mbps', 'throughput', 'download_speed_mbps', 'download_speed'])"
+    },
+    {
+      "candidate": "avg_upload_speed",
+      "reason": "non calculable (value: ['upload_speed_mbps', 'upload_speed'])"
+    },
+    {
+      "candidate": "avg_signal_strength",
+      "reason": "non calculable (value: ['signal_strength_dbm', 'signal_strength', 'rssi', 'rsrp'])"
+    },
+    {
+      "candidate": "avg_packet_loss",
+      "reason": "non calculable (value: ['plr', 'packet_loss'])"
+    },
+    {
+      "candidate": "network_availability",
+      "reason": "non calculable (value: ['availability'])"
+    },
+    {
+      "candidate": "cdr_incident_rate",
+      "reason": "non calculable (flag: ['cdr_flag', 'incident_flag', 'call_drop', 'dropped_connection'])"
+    },
+    {
+      "candidate": "dropped_call_rate",
+      "reason": "non calculable (num: ['dropped_calls'], den: ['total_calls', 'calls'])"
+    },
+    {
+      "candidate": "avg_latency",
+      "reason": "non calculable (value: ['latency_ms', 'latency'])"
+    },
+    {
+      "candidate": "ticket_count",
+      "reason": "non calculable (id: ['ticket_id', 'ticket', 'case_id', 'complaint_id', 'issue_id', 'ticket_number'])"
+    },
+    {
+      "candidate": "ticket_resolution_rate",
+      "reason": "non calculable (flag: ['ticket_status', 'status', 'case_status'])"
+    },
+    {
+      "candidate": "avg_csat",
+      "reason": "non calculable (value: ['customer_satisfaction_rating', 'csat', 'satisfaction_rating', 'rating'])"
+    },
+    {
+      "candidate": "dispute_rate",
+      "reason": "non calculable (flag: ['consumer_disputed?', 'consumer_disputed', 'is_disputed', 'disputed'])"
+    },
+    {
+      "candidate": "timely_response_rate",
+      "reason": "non calculable (flag: ['timely_response', 'timely_response?', 'in_time'])"
+    },
+    {
+      "candidate": "avg_resolution_time",
+      "reason": "non calculable (value: ['resolution_time_hours', 'resolution_time', 'resolution_hours'])"
+    },
+    {
+      "candidate": "churn par ancienneté",
+      "reason": "colonne d'ancienneté introuvable"
+    },
+    {
+      "candidate": "série calendaire",
+      "reason": "aucune colonne de date : la dimension temporelle repose sur l'ancienneté"
+    },
+    {
+      "candidate": "geo_map",
+      "reason": "colonne géographique (state/city) ou churn introuvable"
+    },
+    {
+      "candidate": "heatmap",
+      "reason": "moins de 2 dimensions catégorielles issues des insights"
+    }
+  ],
+  "caveats": [
+    "ETL — Call Details-Data : Variable d'environnement BIFLOW_PII_SALT absente : sel par défaut utilisé pour le hachage.",
+    "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+    "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+  ],
+  "null_result": true,
+  "llm_narrative": "Taux de churn global : 11.0 % sur 60445 clients. Aucun segment ne passe les filtres statistiques de l'analyse.",
+  "output_files": {
+    "report": "output_test\\Call Details-Data\\dashboard\\dashboard_report.json"
+  },
+  "trace": [
+    {
+      "timestamp": "2026-10-26T20:03:50.349695",
+      "tool": "load",
+      "parameters": {
+        "has_frame": true,
+        "has_kpi": true,
+        "n_insights": 0
+      },
+      "duration_ms": 1.1611999998422107
+    },
+    {
+      "timestamp": "2026-10-26T20:03:50.351695",
+      "tool": "build",
+      "parameters": {
+        "n_candidates": 3
+      },
+      "duration_ms": 1.8293000002813642
+    },
+    {
+      "timestamp": "2026-10-26T20:03:50.351695",
+      "tool": "assemble",
+      "parameters": {
+        "n_visuals": 3,
+        "n_excluded": 29
+      },
+      "duration_ms": 0.04760000047099311
+    },
+    {
+      "timestamp": "2026-10-26T20:03:50.351695",
+      "tool": "report",
+      "parameters": {
+        "n_blocks": 1
+      },
+      "duration_ms": 0.03990000004705507
+    },
+    {
+      "timestamp": "2026-10-26T20:03:50.352695",
+      "tool": "narrate",
+      "parameters": {
+        "llm": false
+      },
+      "duration_ms": 0.004699999408330768
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-26T20:03:50.348695"
+}

@@ -1,0 +1,1435 @@
+{
+  "business_goal": "Analyse décisionnelle télécom",
+  "status": "warning",
+  "analyst_status": "warning",
+  "title": "Dashboard BI : Analyse décisionnelle télécom",
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Vue d'ensemble",
+      "order": 0,
+      "visual_ids": [
+        "kpi_avg_data_usage",
+        "kpi_avg_throughput",
+        "kpi_avg_upload_speed",
+        "kpi_avg_signal_strength",
+        "kpi_cdr_incident_rate",
+        "kpi_avg_latency"
+      ]
+    },
+    {
+      "id": "segments",
+      "title": "Segments à risque",
+      "order": 1,
+      "visual_ids": [
+        "bar_avg_data_usage_device_model",
+        "bar_avg_throughput_device_model",
+        "bar_avg_upload_speed_device_model",
+        "bar_avg_signal_strength_device_model",
+        "bar_cdr_incident_rate_device_model",
+        "bar_avg_latency_device_model",
+        "bar_avg_data_usage_location",
+        "bar_avg_data_usage_network_type",
+        "bar_avg_throughput_location",
+        "bar_avg_throughput_network_type",
+        "bar_avg_upload_speed_location",
+        "bar_avg_upload_speed_network_type",
+        "bar_avg_signal_strength_location",
+        "bar_avg_signal_strength_network_type"
+      ]
+    },
+    {
+      "id": "quality",
+      "title": "Qualité et réserves",
+      "order": 6,
+      "visual_ids": [
+        "text_caveats"
+      ]
+    }
+  ],
+  "visuals": [
+    {
+      "id": "kpi_avg_data_usage",
+      "type": "kpi_card",
+      "title": "Consommation data moyenne",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "avg_data_usage",
+        "name": "Consommation data moyenne",
+        "value": 254.38,
+        "unit": "Mo",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Volume de données moyen consommé par ligne.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_data_usage",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "data_usage_mb"
+        ],
+        "formula": "moyenne(volume_data)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_avg_throughput",
+      "type": "kpi_card",
+      "title": "Débit moyen",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "avg_throughput",
+        "name": "Débit moyen",
+        "value": 551.18,
+        "unit": "Mbps",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Débit réseau moyen observé.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_throughput",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "download_speed_mbps"
+        ],
+        "formula": "moyenne(throughput_mbps)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_avg_upload_speed",
+      "type": "kpi_card",
+      "title": "Débit montant moyen",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "avg_upload_speed",
+        "name": "Débit montant moyen",
+        "value": 84.8,
+        "unit": "Mbps",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Débit montant (upload) moyen observé.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_upload_speed",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "upload_speed_mbps"
+        ],
+        "formula": "moyenne(upload_speed_mbps)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_avg_signal_strength",
+      "type": "kpi_card",
+      "title": "Force du signal moyen",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "avg_signal_strength",
+        "name": "Force du signal moyen",
+        "value": -84.84,
+        "unit": "dBm",
+        "status": "suspect",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Puissance moyenne du signal radio.",
+      "reliable": false,
+      "warnings": [
+        "Valeur -84.84 hors de la plage plausible [0.0, None] : à vérifier."
+      ],
+      "references": {
+        "kpi_id": "avg_signal_strength",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "signal_strength_d_bm"
+        ],
+        "formula": "moyenne(signal_strength_dbm)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_cdr_incident_rate",
+      "type": "kpi_card",
+      "title": "Taux d'incidents CDR",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "cdr_incident_rate",
+        "name": "Taux d'incidents CDR",
+        "value": 50.06,
+        "unit": "%",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Part des sessions réseau ayant subi un incident ou coupure.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "cdr_incident_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "dropped_connection"
+        ],
+        "formula": "sessions_en_incident / sessions_total × 100",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_avg_latency",
+      "type": "kpi_card",
+      "title": "Latence moyenne",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "avg_latency",
+        "name": "Latence moyenne",
+        "value": 10.5,
+        "unit": "ms",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Latence réseau moyenne.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_latency",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "latency_ms"
+        ],
+        "formula": "moyenne(latence)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_data_usage_device_model",
+      "type": "bar",
+      "title": "Consommation data moyenne par device_model",
+      "subtitle": "Référence globale : 254.38 Mo",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Galaxy S23",
+          "value": 256.09,
+          "rows": 9924,
+          "global": 254.38
+        },
+        {
+          "segment": "iPhone 14",
+          "value": 255.25,
+          "rows": 9976,
+          "global": 254.38
+        },
+        {
+          "segment": "Nord 4",
+          "value": 254.16,
+          "rows": 10076,
+          "global": 254.38
+        },
+        {
+          "segment": "Pixel 7",
+          "value": 253.27,
+          "rows": 9973,
+          "global": 254.38
+        },
+        {
+          "segment": "GT 7",
+          "value": 253.16,
+          "rows": 10051,
+          "global": 254.38
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_data_usage",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "device_model"
+        ],
+        "formula": "moyenne(volume_data)",
+        "aggregation": "Consommation data moyenne par device_model",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_throughput_device_model",
+      "type": "bar",
+      "title": "Débit moyen par device_model",
+      "subtitle": "Référence globale : 551.18 Mbps",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Galaxy S23",
+          "value": 554.94,
+          "rows": 9924,
+          "global": 551.18
+        },
+        {
+          "segment": "Nord 4",
+          "value": 553.01,
+          "rows": 10076,
+          "global": 551.18
+        },
+        {
+          "segment": "iPhone 14",
+          "value": 551.09,
+          "rows": 9976,
+          "global": 551.18
+        },
+        {
+          "segment": "GT 7",
+          "value": 549.25,
+          "rows": 10051,
+          "global": 551.18
+        },
+        {
+          "segment": "Pixel 7",
+          "value": 547.64,
+          "rows": 9973,
+          "global": 551.18
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_throughput",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "device_model"
+        ],
+        "formula": "moyenne(throughput_mbps)",
+        "aggregation": "Débit moyen par device_model",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_upload_speed_device_model",
+      "type": "bar",
+      "title": "Débit montant moyen par device_model",
+      "subtitle": "Référence globale : 84.8 Mbps",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Galaxy S23",
+          "value": 85.16,
+          "rows": 9924,
+          "global": 84.8
+        },
+        {
+          "segment": "GT 7",
+          "value": 85.06,
+          "rows": 10051,
+          "global": 84.8
+        },
+        {
+          "segment": "iPhone 14",
+          "value": 84.69,
+          "rows": 9976,
+          "global": 84.8
+        },
+        {
+          "segment": "Pixel 7",
+          "value": 84.67,
+          "rows": 9973,
+          "global": 84.8
+        },
+        {
+          "segment": "Nord 4",
+          "value": 84.44,
+          "rows": 10076,
+          "global": 84.8
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_upload_speed",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "device_model"
+        ],
+        "formula": "moyenne(upload_speed_mbps)",
+        "aggregation": "Débit montant moyen par device_model",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_signal_strength_device_model",
+      "type": "bar",
+      "title": "Force du signal moyen par device_model",
+      "subtitle": "Référence globale : -84.84 dBm",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Pixel 7",
+          "value": -84.62,
+          "rows": 9973,
+          "global": -84.84
+        },
+        {
+          "segment": "Nord 4",
+          "value": -84.73,
+          "rows": 10076,
+          "global": -84.84
+        },
+        {
+          "segment": "iPhone 14",
+          "value": -84.87,
+          "rows": 9976,
+          "global": -84.84
+        },
+        {
+          "segment": "Galaxy S23",
+          "value": -84.96,
+          "rows": 9924,
+          "global": -84.84
+        },
+        {
+          "segment": "GT 7",
+          "value": -85.01,
+          "rows": 10051,
+          "global": -84.84
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_signal_strength",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "device_model"
+        ],
+        "formula": "moyenne(signal_strength_dbm)",
+        "aggregation": "Force du signal moyen par device_model",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_cdr_incident_rate_device_model",
+      "type": "bar",
+      "title": "Taux d'incidents CDR par device_model",
+      "subtitle": "Référence globale : 50.06 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "GT 7",
+          "value": 50.72,
+          "rows": 10051,
+          "global": 50.06
+        },
+        {
+          "segment": "Galaxy S23",
+          "value": 50.06,
+          "rows": 9924,
+          "global": 50.06
+        },
+        {
+          "segment": "Nord 4",
+          "value": 50.03,
+          "rows": 10076,
+          "global": 50.06
+        },
+        {
+          "segment": "iPhone 14",
+          "value": 49.86,
+          "rows": 9976,
+          "global": 50.06
+        },
+        {
+          "segment": "Pixel 7",
+          "value": 49.63,
+          "rows": 9973,
+          "global": 50.06
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "cdr_incident_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "device_model"
+        ],
+        "formula": "sessions_en_incident / sessions_total × 100",
+        "aggregation": "Taux d'incidents CDR par device_model",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_latency_device_model",
+      "type": "bar",
+      "title": "Latence moyenne par device_model",
+      "subtitle": "Référence globale : 10.5 ms",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Pixel 7",
+          "value": 10.56,
+          "rows": 9973,
+          "global": 10.5
+        },
+        {
+          "segment": "iPhone 14",
+          "value": 10.53,
+          "rows": 9976,
+          "global": 10.5
+        },
+        {
+          "segment": "Nord 4",
+          "value": 10.49,
+          "rows": 10076,
+          "global": 10.5
+        },
+        {
+          "segment": "Galaxy S23",
+          "value": 10.46,
+          "rows": 9924,
+          "global": 10.5
+        },
+        {
+          "segment": "GT 7",
+          "value": 10.45,
+          "rows": 10051,
+          "global": 10.5
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_latency",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "device_model"
+        ],
+        "formula": "moyenne(latence)",
+        "aggregation": "Latence moyenne par device_model",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_data_usage_location",
+      "type": "bar",
+      "title": "Consommation data moyenne par location",
+      "subtitle": "Référence globale : 254.38 Mo",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Mumbai",
+          "value": 256.17,
+          "rows": 6248,
+          "global": 254.38
+        },
+        {
+          "segment": "Delhi",
+          "value": 256.04,
+          "rows": 6213,
+          "global": 254.38
+        },
+        {
+          "segment": "Berlin",
+          "value": 255.24,
+          "rows": 6346,
+          "global": 254.38
+        },
+        {
+          "segment": "New York",
+          "value": 255.2,
+          "rows": 6218,
+          "global": 254.38
+        },
+        {
+          "segment": "Chennai",
+          "value": 254.54,
+          "rows": 6236,
+          "global": 254.38
+        },
+        {
+          "segment": "San Francisco",
+          "value": 253.11,
+          "rows": 6221,
+          "global": 254.38
+        },
+        {
+          "segment": "Kolkata",
+          "value": 253.03,
+          "rows": 6219,
+          "global": 254.38
+        },
+        {
+          "segment": "Tokyo",
+          "value": 251.73,
+          "rows": 6299,
+          "global": 254.38
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_data_usage",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "location"
+        ],
+        "formula": "moyenne(volume_data)",
+        "aggregation": "Consommation data moyenne par location",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_data_usage_network_type",
+      "type": "bar",
+      "title": "Consommation data moyenne par network_type",
+      "subtitle": "Référence globale : 254.38 Mo",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "4G",
+          "value": 255.59,
+          "rows": 16549,
+          "global": 254.38
+        },
+        {
+          "segment": "5G NSA",
+          "value": 254.29,
+          "rows": 16793,
+          "global": 254.38
+        },
+        {
+          "segment": "5G SA",
+          "value": 253.27,
+          "rows": 16658,
+          "global": 254.38
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_data_usage",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "network_type"
+        ],
+        "formula": "moyenne(volume_data)",
+        "aggregation": "Consommation data moyenne par network_type",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_throughput_location",
+      "type": "bar",
+      "title": "Débit moyen par location",
+      "subtitle": "Référence globale : 551.18 Mbps",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Kolkata",
+          "value": 557.03,
+          "rows": 6219,
+          "global": 551.18
+        },
+        {
+          "segment": "San Francisco",
+          "value": 553.01,
+          "rows": 6221,
+          "global": 551.18
+        },
+        {
+          "segment": "Berlin",
+          "value": 551.76,
+          "rows": 6346,
+          "global": 551.18
+        },
+        {
+          "segment": "Tokyo",
+          "value": 550.96,
+          "rows": 6299,
+          "global": 551.18
+        },
+        {
+          "segment": "Mumbai",
+          "value": 550.04,
+          "rows": 6248,
+          "global": 551.18
+        },
+        {
+          "segment": "Chennai",
+          "value": 549.4,
+          "rows": 6236,
+          "global": 551.18
+        },
+        {
+          "segment": "New York",
+          "value": 548.91,
+          "rows": 6218,
+          "global": 551.18
+        },
+        {
+          "segment": "Delhi",
+          "value": 548.34,
+          "rows": 6213,
+          "global": 551.18
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_throughput",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "location"
+        ],
+        "formula": "moyenne(throughput_mbps)",
+        "aggregation": "Débit moyen par location",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_throughput_network_type",
+      "type": "bar",
+      "title": "Débit moyen par network_type",
+      "subtitle": "Référence globale : 551.18 Mbps",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "5G NSA",
+          "value": 552.88,
+          "rows": 16793,
+          "global": 551.18
+        },
+        {
+          "segment": "4G",
+          "value": 551.36,
+          "rows": 16549,
+          "global": 551.18
+        },
+        {
+          "segment": "5G SA",
+          "value": 549.29,
+          "rows": 16658,
+          "global": 551.18
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_throughput",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "network_type"
+        ],
+        "formula": "moyenne(throughput_mbps)",
+        "aggregation": "Débit moyen par network_type",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_upload_speed_location",
+      "type": "bar",
+      "title": "Débit montant moyen par location",
+      "subtitle": "Référence globale : 84.8 Mbps",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Chennai",
+          "value": 85.18,
+          "rows": 6236,
+          "global": 84.8
+        },
+        {
+          "segment": "Tokyo",
+          "value": 85.09,
+          "rows": 6299,
+          "global": 84.8
+        },
+        {
+          "segment": "San Francisco",
+          "value": 84.95,
+          "rows": 6221,
+          "global": 84.8
+        },
+        {
+          "segment": "Berlin",
+          "value": 84.83,
+          "rows": 6346,
+          "global": 84.8
+        },
+        {
+          "segment": "Mumbai",
+          "value": 84.74,
+          "rows": 6248,
+          "global": 84.8
+        },
+        {
+          "segment": "New York",
+          "value": 84.7,
+          "rows": 6218,
+          "global": 84.8
+        },
+        {
+          "segment": "Delhi",
+          "value": 84.46,
+          "rows": 6213,
+          "global": 84.8
+        },
+        {
+          "segment": "Kolkata",
+          "value": 84.45,
+          "rows": 6219,
+          "global": 84.8
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_upload_speed",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "location"
+        ],
+        "formula": "moyenne(upload_speed_mbps)",
+        "aggregation": "Débit montant moyen par location",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_upload_speed_network_type",
+      "type": "bar",
+      "title": "Débit montant moyen par network_type",
+      "subtitle": "Référence globale : 84.8 Mbps",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "5G SA",
+          "value": 84.95,
+          "rows": 16658,
+          "global": 84.8
+        },
+        {
+          "segment": "4G",
+          "value": 84.9,
+          "rows": 16549,
+          "global": 84.8
+        },
+        {
+          "segment": "5G NSA",
+          "value": 84.56,
+          "rows": 16793,
+          "global": 84.8
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_upload_speed",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "network_type"
+        ],
+        "formula": "moyenne(upload_speed_mbps)",
+        "aggregation": "Débit montant moyen par network_type",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_signal_strength_location",
+      "type": "bar",
+      "title": "Force du signal moyen par location",
+      "subtitle": "Référence globale : -84.84 dBm",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Tokyo",
+          "value": -84.66,
+          "rows": 6299,
+          "global": -84.84
+        },
+        {
+          "segment": "Berlin",
+          "value": -84.69,
+          "rows": 6346,
+          "global": -84.84
+        },
+        {
+          "segment": "Delhi",
+          "value": -84.74,
+          "rows": 6213,
+          "global": -84.84
+        },
+        {
+          "segment": "Mumbai",
+          "value": -84.75,
+          "rows": 6248,
+          "global": -84.84
+        },
+        {
+          "segment": "San Francisco",
+          "value": -84.81,
+          "rows": 6221,
+          "global": -84.84
+        },
+        {
+          "segment": "New York",
+          "value": -84.95,
+          "rows": 6218,
+          "global": -84.84
+        },
+        {
+          "segment": "Chennai",
+          "value": -84.99,
+          "rows": 6236,
+          "global": -84.84
+        },
+        {
+          "segment": "Kolkata",
+          "value": -85.1,
+          "rows": 6219,
+          "global": -84.84
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_signal_strength",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "location"
+        ],
+        "formula": "moyenne(signal_strength_dbm)",
+        "aggregation": "Force du signal moyen par location",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_signal_strength_network_type",
+      "type": "bar",
+      "title": "Force du signal moyen par network_type",
+      "subtitle": "Référence globale : -84.84 dBm",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "5G NSA",
+          "value": -84.78,
+          "rows": 16793,
+          "global": -84.84
+        },
+        {
+          "segment": "5G SA",
+          "value": -84.78,
+          "rows": 16658,
+          "global": -84.84
+        },
+        {
+          "segment": "4G",
+          "value": -84.96,
+          "rows": 16549,
+          "global": -84.84
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_signal_strength",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "network_type"
+        ],
+        "formula": "moyenne(signal_strength_dbm)",
+        "aggregation": "Force du signal moyen par network_type",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "text_caveats",
+      "type": "text",
+      "title": "Réserves et limites",
+      "subtitle": "",
+      "section": "quality",
+      "span": 12,
+      "kpi": null,
+      "data": [
+        {
+          "text": "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité."
+        },
+        {
+          "text": "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+        }
+      ],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": null,
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [],
+        "formula": null,
+        "aggregation": null,
+        "origin": "analyst_report"
+      }
+    }
+  ],
+  "filters": [],
+  "report": {
+    "title": "Dashboard BI : Analyse décisionnelle télécom",
+    "executive_summary": "Aucun segment ne passe les filtres statistiques de l'analyse.",
+    "blocks": [
+      {
+        "heading": "Indicateurs clés",
+        "text": "",
+        "visual_ids": [
+          "kpi_avg_data_usage",
+          "kpi_avg_throughput",
+          "kpi_avg_upload_speed",
+          "kpi_avg_signal_strength",
+          "kpi_cdr_incident_rate",
+          "kpi_avg_latency"
+        ]
+      }
+    ],
+    "recommendations_table": [],
+    "caveats": [
+      "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+      "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30).",
+      "Troncature : 4 visuel(s) non affiché(s) (max_visuals=20)."
+    ]
+  },
+  "excluded_visuals": [
+    {
+      "candidate": "churn_rate",
+      "reason": "non calculable (flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+    },
+    {
+      "candidate": "churned_customers",
+      "reason": "non calculable (flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+    },
+    {
+      "candidate": "avg_churn_score",
+      "reason": "fuite de cible : dérivé du churn, exclu des cartes de pilotage"
+    },
+    {
+      "candidate": "monthly_revenue_lost",
+      "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue'], flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+    },
+    {
+      "candidate": "customer_count",
+      "reason": "non calculable (id: ['customer_id', 'customerid', 'subscriber_id'])"
+    },
+    {
+      "candidate": "avg_tenure",
+      "reason": "non calculable (value: ['tenure_months', 'tenure', 'months_active'])"
+    },
+    {
+      "candidate": "arpu",
+      "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue'])"
+    },
+    {
+      "candidate": "total_revenue",
+      "reason": "non calculable (value: ['total_charges', 'total_revenue', 'total_billed'])"
+    },
+    {
+      "candidate": "avg_cltv",
+      "reason": "non calculable (value: ['cltv', 'clv', 'customer_lifetime_value'])"
+    },
+    {
+      "candidate": "unpaid_rate",
+      "reason": "non calculable (num: ['unpaid_amount', 'overdue_amount'], den: ['billed_amount', 'invoice_amount'])"
+    },
+    {
+      "candidate": "avg_call_minutes",
+      "reason": "non calculable (value: ['call_minutes', 'minutes', 'call_duration', 'voice_minutes'])"
+    },
+    {
+      "candidate": "avg_mos_voice",
+      "reason": "non calculable (value: ['mos_voice', 'mos', 'streaming_mos'])"
+    },
+    {
+      "candidate": "avg_packet_loss",
+      "reason": "non calculable (value: ['plr', 'packet_loss'])"
+    },
+    {
+      "candidate": "network_availability",
+      "reason": "non calculable (value: ['availability'])"
+    },
+    {
+      "candidate": "dropped_call_rate",
+      "reason": "non calculable (num: ['dropped_calls'], den: ['total_calls', 'calls'])"
+    },
+    {
+      "candidate": "ticket_count",
+      "reason": "non calculable (id: ['ticket_id', 'ticket', 'case_id', 'complaint_id', 'issue_id', 'ticket_number'])"
+    },
+    {
+      "candidate": "ticket_resolution_rate",
+      "reason": "non calculable (flag: ['ticket_status', 'status', 'case_status'])"
+    },
+    {
+      "candidate": "avg_csat",
+      "reason": "non calculable (value: ['customer_satisfaction_rating', 'csat', 'satisfaction_rating', 'rating'])"
+    },
+    {
+      "candidate": "dispute_rate",
+      "reason": "non calculable (flag: ['consumer_disputed?', 'consumer_disputed', 'is_disputed', 'disputed'])"
+    },
+    {
+      "candidate": "timely_response_rate",
+      "reason": "non calculable (flag: ['timely_response', 'timely_response?', 'in_time'])"
+    },
+    {
+      "candidate": "avg_resolution_time",
+      "reason": "non calculable (value: ['resolution_time_hours', 'resolution_time', 'resolution_hours'])"
+    },
+    {
+      "candidate": "temporal",
+      "reason": "colonne de churn introuvable"
+    },
+    {
+      "candidate": "geo_map",
+      "reason": "colonne géographique (state/city) ou churn introuvable"
+    },
+    {
+      "candidate": "bar_cdr_incident_rate_location",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_cdr_incident_rate_network_type",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_avg_latency_location",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_avg_latency_network_type",
+      "reason": "limite max_visuals=20"
+    }
+  ],
+  "caveats": [
+    "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+    "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30).",
+    "Troncature : 4 visuel(s) non affiché(s) (max_visuals=20)."
+  ],
+  "null_result": true,
+  "llm_narrative": "Aucun segment ne passe les filtres statistiques de l'analyse.",
+  "output_files": {
+    "report": "output_test\\5g_network_data\\dashboard\\dashboard_report.json"
+  },
+  "trace": [
+    {
+      "timestamp": "2026-10-26T20:51:47.436235",
+      "tool": "load",
+      "parameters": {
+        "has_frame": true,
+        "has_kpi": true,
+        "n_insights": 0
+      },
+      "duration_ms": 0.43740000000980217
+    },
+    {
+      "timestamp": "2026-10-26T20:51:47.438233",
+      "tool": "build",
+      "parameters": {
+        "n_candidates": 25
+      },
+      "duration_ms": 1.3229999985924223
+    },
+    {
+      "timestamp": "2026-10-26T20:51:47.438233",
+      "tool": "assemble",
+      "parameters": {
+        "n_visuals": 21,
+        "n_excluded": 27
+      },
+      "duration_ms": 0.16109999887703452
+    },
+    {
+      "timestamp": "2026-10-26T20:51:47.439233",
+      "tool": "report",
+      "parameters": {
+        "n_blocks": 1
+      },
+      "duration_ms": 0.02429999949526973
+    },
+    {
+      "timestamp": "2026-10-26T20:51:47.439233",
+      "tool": "narrate",
+      "parameters": {
+        "llm": false
+      },
+      "duration_ms": 0.003200000719516538
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-26T20:51:47.436235"
+}

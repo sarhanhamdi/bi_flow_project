@@ -1,0 +1,44 @@
+erDiagram
+    fact_churn-bigml-80 {
+        int fact_row_key
+        int churn-bigml-80_key FK
+        int churn_key FK
+        int contract_key FK
+        int location_key FK
+        int account_length
+        int number_vmail_messages
+        float total_day_minutes
+        int total_day_calls
+        float total_day_charge
+        float total_eve_minutes
+        int total_eve_calls
+        float total_eve_charge
+        float total_night_minutes
+        int total_night_calls
+        float total_night_charge
+        float total_intl_minutes
+        int total_intl_calls
+        float total_intl_charge
+        int customer_service_calls
+    }
+    dim_churn-bigml-80 {
+        int churn-bigml-80_key PK
+        string area_code
+    }
+    dim_churn {
+        int churn_key PK
+        string churn
+    }
+    dim_contract {
+        int contract_key PK
+        string international_plan
+        string voice_mail_plan
+    }
+    dim_location {
+        int location_key PK
+        string state
+    }
+    dim_churn-bigml-80 ||--o{ fact_churn-bigml-80 : churn-bigml-80_key
+    dim_churn ||--o{ fact_churn-bigml-80 : churn_key
+    dim_contract ||--o{ fact_churn-bigml-80 : contract_key
+    dim_location ||--o{ fact_churn-bigml-80 : location_key

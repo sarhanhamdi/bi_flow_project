@@ -1,0 +1,99 @@
+{
+  "business_goal": "Test multi-usage autonome",
+  "status": "warning",
+  "kpi_status": "warning",
+  "insights": [],
+  "recommendations": [],
+  "profile_comparisons": [],
+  "caveats": [
+    "ETL — telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}.",
+    "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+    "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+  ],
+  "null_result": true,
+  "n_tests": 22,
+  "n_significant_segments": 0,
+  "overlap_warning": false,
+  "excluded_kpis": [
+    {
+      "kpi_id": "avg_churn_score",
+      "reason": "fuite de cible (corrélé directement à churn_label)"
+    }
+  ],
+  "llm_narrative": "Analyse terminée. Aucun segment ne présente à la fois une significativité statistique (p ajustée <= 0,05), un écart suffisant et un effectif fiable. ",
+  "output_files": {},
+  "trace": [
+    {
+      "timestamp": "2026-10-27T18:46:59.642772",
+      "tool": "load",
+      "parameters": {
+        "kpis_computed": 3,
+        "table_loaded": true,
+        "excluded_cols": [
+          "count",
+          "country",
+          "state",
+          "zipcode"
+        ]
+      },
+      "duration_ms": 3.6773000001630862
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.666771",
+      "tool": "segment",
+      "parameters": {
+        "n_segments_kpi": 0,
+        "n_segments_analyst": 22,
+        "n_mw": 0
+      },
+      "duration_ms": 23.707199999989825
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.667771",
+      "tool": "test",
+      "parameters": {
+        "n_tests": 22,
+        "n_ztests": 22,
+        "n_mw": 0,
+        "min_p_raw": 1.0,
+        "max_p_adj": 1.0
+      },
+      "duration_ms": 1.0582999998405285
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.671770",
+      "tool": "impact",
+      "parameters": {
+        "n_segs": 22
+      },
+      "duration_ms": 0.05509999982677982
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.671770",
+      "tool": "rank",
+      "parameters": {
+        "n_passing": 0,
+        "n_mw": 0
+      },
+      "duration_ms": 0.01720000000204891
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.672770",
+      "tool": "recommend",
+      "parameters": {
+        "n_rec": 0
+      },
+      "duration_ms": 0.0022999997781880666
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.672770",
+      "tool": "narrate",
+      "parameters": {
+        "llm": false
+      },
+      "duration_ms": 0.005500000042957254
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-27T18:46:59.642772"
+}

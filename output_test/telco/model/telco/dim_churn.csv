@@ -1,0 +1,22 @@
+churn_key,churn_label,churn_reason
+1,No,Not applicable
+2,Yes,Attitude of service provider
+3,Yes,Attitude of support person
+4,Yes,Competitor had better devices
+5,Yes,Competitor made better offer
+6,Yes,Competitor offered higher download speeds
+7,Yes,Competitor offered more data
+8,Yes,Deceased
+9,Yes,Don't know
+10,Yes,Extra data charges
+11,Yes,Lack of affordable download/upload speed
+12,Yes,Lack of self-service on Website
+13,Yes,Limited range of services
+14,Yes,Long distance charges
+15,Yes,Moved
+16,Yes,Network reliability
+17,Yes,Poor expertise of online support
+18,Yes,Poor expertise of phone support
+19,Yes,Price too high
+20,Yes,Product dissatisfaction
+21,Yes,Service dissatisfaction

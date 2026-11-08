@@ -1,0 +1,2095 @@
+{
+  "business_goal": "Test multi-usage autonome",
+  "domain": "customer_support",
+  "semantic_map": {
+    "domain": "customer_support",
+    "confidence_scores": {
+      "customer_churn": 0.0,
+      "network_performance": 0.0,
+      "customer_support": 20.0
+    },
+    "primary_target": "consumer_disputed?",
+    "concepts": {
+      "target_churn": null,
+      "tenure": null,
+      "monthly_charge": null,
+      "total_revenue": null,
+      "contract": null,
+      "mos_score": null,
+      "latency": null,
+      "throughput": null,
+      "upload_speed": null,
+      "packet_loss": null,
+      "signal_strength": null,
+      "target_network_incident": null,
+      "availability": null,
+      "ticket_id": "complaint_id",
+      "ticket_status": null,
+      "dispute_flag": "consumer_disputed?",
+      "timely_response": "timely_response",
+      "csat_score": null,
+      "resolution_time": null
+    }
+  },
+  "tables": [
+    {
+      "name": "telecom_complaints_sample",
+      "source_name": "telecom_complaints_sample",
+      "row_count": 5000,
+      "column_count": 18,
+      "memory_bytes": 1485629,
+      "sampled": false,
+      "sample_rows": null,
+      "columns": [
+        {
+          "name": "date_received",
+          "declared_type": "str",
+          "inferred_type": "datetime",
+          "semantic_role": "date",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 44,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "09/10/2013",
+                  "count": 442
+                },
+                {
+                  "value": "09/25/2013",
+                  "count": 409
+                },
+                {
+                  "value": "09/18/2013",
+                  "count": 371
+                },
+                {
+                  "value": "09/24/2013",
+                  "count": 343
+                },
+                {
+                  "value": "09/03/2013",
+                  "count": 319
+                },
+                {
+                  "value": "10/23/2013",
+                  "count": 296
+                },
+                {
+                  "value": "10/30/2013",
+                  "count": 253
+                },
+                {
+                  "value": "09/23/2013",
+                  "count": 233
+                },
+                {
+                  "value": "09/30/2013",
+                  "count": 221
+                },
+                {
+                  "value": "10/01/2013",
+                  "count": 219
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "10/13/2013",
+              "count": 46
+            },
+            {
+              "value": "11/25/2013",
+              "count": 2
+            },
+            {
+              "value": "11/01/2013",
+              "count": 1
+            },
+            {
+              "value": "10/17/2013",
+              "count": 1
+            },
+            {
+              "value": "11/10/2013",
+              "count": 1
+            },
+            {
+              "value": "11/20/2013",
+              "count": 1
+            },
+            {
+              "value": "12/07/2013",
+              "count": 1
+            },
+            {
+              "value": "11/29/2013",
+              "count": 1
+            },
+            {
+              "value": "11/15/2013",
+              "count": 1
+            },
+            {
+              "value": "12/18/2013",
+              "count": 1
+            },
+            {
+              "value": "01/22/2014",
+              "count": 1
+            },
+            {
+              "value": "11/14/2013",
+              "count": 1
+            },
+            {
+              "value": "01/11/2014",
+              "count": 1
+            },
+            {
+              "value": "02/07/2014",
+              "count": 1
+            },
+            {
+              "value": "01/17/2014",
+              "count": 1
+            },
+            {
+              "value": "01/26/2014",
+              "count": 1
+            },
+            {
+              "value": "03/06/2014",
+              "count": 1
+            },
+            {
+              "value": "03/13/2014",
+              "count": 1
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "product",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 9,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Mortgage",
+                  "count": 1846
+                },
+                {
+                  "value": "Debt collection",
+                  "count": 931
+                },
+                {
+                  "value": "Credit reporting",
+                  "count": 683
+                },
+                {
+                  "value": "Bank account or service",
+                  "count": 646
+                },
+                {
+                  "value": "Credit card",
+                  "count": 548
+                },
+                {
+                  "value": "Student loan",
+                  "count": 163
+                },
+                {
+                  "value": "Consumer Loan",
+                  "count": 145
+                },
+                {
+                  "value": "Money transfers",
+                  "count": 35
+                },
+                {
+                  "value": "Payday loan",
+                  "count": 3
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "Money transfers",
+              "count": 35
+            },
+            {
+              "value": "Payday loan",
+              "count": 3
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "sub_product",
+          "declared_type": "str",
+          "inferred_type": "string",
+          "semantic_role": "dimension",
+          "missing_count": 1231,
+          "missing_pct": 24.62,
+          "cardinality": 28,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Other mortgage",
+                  "count": 702
+                },
+                {
+                  "value": "Conventional fixed mortgage",
+                  "count": 585
+                },
+                {
+                  "value": "Checking account",
+                  "count": 501
+                },
+                {
+                  "value": "Other (i.e. phone, health club, etc.)",
+                  "count": 305
+                },
+                {
+                  "value": "Conventional adjustable mortgage (ARM)",
+                  "count": 216
+                },
+                {
+                  "value": "Credit card",
+                  "count": 214
+                },
+                {
+                  "value": "Non-federal student loan",
+                  "count": 205
+                },
+                {
+                  "value": "FHA mortgage",
+                  "count": 201
+                },
+                {
+                  "value": "I do not know",
+                  "count": 197
+                },
+                {
+                  "value": "Vehicle loan",
+                  "count": 102
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "(CD) Certificate of deposit",
+              "count": 26
+            },
+            {
+              "value": "Auto",
+              "count": 23
+            },
+            {
+              "value": "International money transfer",
+              "count": 21
+            },
+            {
+              "value": "Installment loan",
+              "count": 20
+            },
+            {
+              "value": "Personal line of credit",
+              "count": 18
+            },
+            {
+              "value": "Federal student loan",
+              "count": 15
+            },
+            {
+              "value": "Domestic (US) money transfer",
+              "count": 14
+            },
+            {
+              "value": "Payday loan",
+              "count": 11
+            },
+            {
+              "value": "Second mortgage",
+              "count": 8
+            },
+            {
+              "value": "Reverse mortgage",
+              "count": 8
+            },
+            {
+              "value": "Vehicle lease",
+              "count": 5
+            },
+            {
+              "value": "Cashing a check without an account",
+              "count": 1
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "issue",
+          "declared_type": "str",
+          "inferred_type": "string",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 66,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Loan modification,collection,foreclosure",
+                  "count": 963
+                },
+                {
+                  "value": "Loan servicing, payments, escrow account",
+                  "count": 592
+                },
+                {
+                  "value": "Incorrect information on credit report",
+                  "count": 450
+                },
+                {
+                  "value": "Cont'd attempts collect debt not owed",
+                  "count": 374
+                },
+                {
+                  "value": "Account opening, closing, or management",
+                  "count": 269
+                },
+                {
+                  "value": "Deposits and withdrawals",
+                  "count": 210
+                },
+                {
+                  "value": "Communication tactics",
+                  "count": 210
+                },
+                {
+                  "value": "Application, originator, mortgage broker",
+                  "count": 147
+                },
+                {
+                  "value": "Disclosure verification of debt",
+                  "count": 145
+                },
+                {
+                  "value": "Credit reporting company's investigation",
+                  "count": 121
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "APR or interest rate",
+              "count": 47
+            },
+            {
+              "value": "Credit decision / Underwriting",
+              "count": 46
+            },
+            {
+              "value": "Using a debit or ATM card",
+              "count": 39
+            },
+            {
+              "value": "Credit monitoring or identity protection",
+              "count": 34
+            },
+            {
+              "value": "Late fee",
+              "count": 33
+            },
+            {
+              "value": "Closing/Cancelling account",
+              "count": 30
+            },
+            {
+              "value": "Improper use of my credit report",
+              "count": 26
+            },
+            {
+              "value": "Taking out the loan or lease",
+              "count": 22
+            },
+            {
+              "value": "Delinquent account",
+              "count": 22
+            },
+            {
+              "value": "Rewards",
+              "count": 21
+            },
+            {
+              "value": "Customer service / Customer relations",
+              "count": 21
+            },
+            {
+              "value": "Billing statement",
+              "count": 21
+            },
+            {
+              "value": "Credit line increase/decrease",
+              "count": 18
+            },
+            {
+              "value": "Credit determination",
+              "count": 15
+            },
+            {
+              "value": "Payoff process",
+              "count": 14
+            },
+            {
+              "value": "Credit card protection / Debt protection",
+              "count": 13
+            },
+            {
+              "value": "Transaction issue",
+              "count": 13
+            },
+            {
+              "value": "Advertising and marketing",
+              "count": 13
+            },
+            {
+              "value": "Fraud or scam",
+              "count": 12
+            },
+            {
+              "value": "Other transaction issues",
+              "count": 10
+            },
+            {
+              "value": "Other fee",
+              "count": 9
+            },
+            {
+              "value": "Shopping for a loan or lease",
+              "count": 9
+            },
+            {
+              "value": "Managing the line of credit",
+              "count": 9
+            },
+            {
+              "value": "Account terms and changes",
+              "count": 7
+            },
+            {
+              "value": "Bankruptcy",
+              "count": 7
+            },
+            {
+              "value": "Forbearance / Workout plans",
+              "count": 6
+            },
+            {
+              "value": "Balance transfer",
+              "count": 6
+            },
+            {
+              "value": "Sale of account",
+              "count": 6
+            },
+            {
+              "value": "Money was not available when promised",
+              "count": 5
+            },
+            {
+              "value": "Unsolicited issuance of credit card",
+              "count": 5
+            },
+            {
+              "value": "Incorrect/missing disclosures or info",
+              "count": 4
+            },
+            {
+              "value": "Getting a loan",
+              "count": 4
+            },
+            {
+              "value": "Privacy",
+              "count": 3
+            },
+            {
+              "value": "Overlimit fee",
+              "count": 3
+            },
+            {
+              "value": "Application processing delay",
+              "count": 2
+            },
+            {
+              "value": "Wrong amount charged or received",
+              "count": 2
+            },
+            {
+              "value": "Other service issues",
+              "count": 2
+            },
+            {
+              "value": "Charged fees or interest I didn't expect",
+              "count": 2
+            },
+            {
+              "value": "Convenience checks",
+              "count": 1
+            },
+            {
+              "value": "Cash advance",
+              "count": 1
+            },
+            {
+              "value": "Cash advance fee",
+              "count": 1
+            },
+            {
+              "value": "Arbitration",
+              "count": 1
+            },
+            {
+              "value": "Charged bank acct wrong day or amt",
+              "count": 1
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "sub_issue",
+          "declared_type": "str",
+          "inferred_type": "string",
+          "semantic_role": "dimension",
+          "missing_count": 3220,
+          "missing_pct": 64.4,
+          "cardinality": 49,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Debt is not mine",
+                  "count": 229
+                },
+                {
+                  "value": "Account status",
+                  "count": 199
+                },
+                {
+                  "value": "Frequent or repeated calls",
+                  "count": 147
+                },
+                {
+                  "value": "Information is not mine",
+                  "count": 122
+                },
+                {
+                  "value": "Repaying your loan",
+                  "count": 115
+                },
+                {
+                  "value": "Debt was paid",
+                  "count": 103
+                },
+                {
+                  "value": "Not given enough info to verify debt",
+                  "count": 100
+                },
+                {
+                  "value": "Problem with statement of dispute",
+                  "count": 61
+                },
+                {
+                  "value": "Attempted to collect wrong amount",
+                  "count": 58
+                },
+                {
+                  "value": "Account terms",
+                  "count": 46
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "Problem getting report or credit score",
+              "count": 16
+            },
+            {
+              "value": "Contacted employer after asked not to",
+              "count": 15
+            },
+            {
+              "value": "Used obscene/profane/abusive language",
+              "count": 14
+            },
+            {
+              "value": "Debt was discharged in bankruptcy",
+              "count": 14
+            },
+            {
+              "value": "Called after sent written cease of comm",
+              "count": 13
+            },
+            {
+              "value": "Problem with fraud alerts",
+              "count": 12
+            },
+            {
+              "value": "Called outside of 8am-9pm",
+              "count": 10
+            },
+            {
+              "value": "Investigation took too long",
+              "count": 10
+            },
+            {
+              "value": "Billing dispute",
+              "count": 10
+            },
+            {
+              "value": "Seized/Attempted to seize property",
+              "count": 9
+            },
+            {
+              "value": "Attempted to/Collected exempt funds",
+              "count": 9
+            },
+            {
+              "value": "Not disclosed as an attempt to collect",
+              "count": 7
+            },
+            {
+              "value": "Problem cancelling or closing account",
+              "count": 7
+            },
+            {
+              "value": "Inadequate help over the phone",
+              "count": 6
+            },
+            {
+              "value": "Impersonated an attorney or official",
+              "count": 6
+            },
+            {
+              "value": "Sued w/o proper notification of suit",
+              "count": 5
+            },
+            {
+              "value": "Account terms and changes",
+              "count": 5
+            },
+            {
+              "value": "Getting a loan",
+              "count": 4
+            },
+            {
+              "value": "Indicated committed crime not paying",
+              "count": 3
+            },
+            {
+              "value": "Report shared with employer w/o consent",
+              "count": 2
+            },
+            {
+              "value": "Charged fees or interest I didn't expect",
+              "count": 2
+            },
+            {
+              "value": "Received marketing offer after opted out",
+              "count": 1
+            },
+            {
+              "value": "Contacted me instead of my attorney",
+              "count": 1
+            },
+            {
+              "value": "Charged bank acct wrong day or amt",
+              "count": 1
+            },
+            {
+              "value": "Sued where didn't live/sign for debt",
+              "count": 1
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "consumer_complaint_narrative",
+          "declared_type": "float64",
+          "inferred_type": "unknown",
+          "semantic_role": "unknown",
+          "missing_count": 5000,
+          "missing_pct": 100.0,
+          "cardinality": 0,
+          "stats": {
+            "count": 5000
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "company_public_response",
+          "declared_type": "float64",
+          "inferred_type": "unknown",
+          "semantic_role": "unknown",
+          "missing_count": 5000,
+          "missing_pct": 100.0,
+          "cardinality": 0,
+          "stats": {
+            "count": 5000
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "company",
+          "declared_type": "str",
+          "inferred_type": "string",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 483,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Bank of America",
+                  "count": 520
+                },
+                {
+                  "value": "Wells Fargo & Company",
+                  "count": 447
+                },
+                {
+                  "value": "JPMorgan Chase & Co.",
+                  "count": 315
+                },
+                {
+                  "value": "Experian",
+                  "count": 249
+                },
+                {
+                  "value": "Citibank",
+                  "count": 242
+                },
+                {
+                  "value": "Equifax",
+                  "count": 223
+                },
+                {
+                  "value": "Nationstar Mortgage",
+                  "count": 184
+                },
+                {
+                  "value": "Ocwen",
+                  "count": 176
+                },
+                {
+                  "value": "TransUnion Intermediate Holdings, Inc.",
+                  "count": 164
+                },
+                {
+                  "value": "Capital One",
+                  "count": 129
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "Amex",
+              "count": 48
+            },
+            {
+              "value": "SunTrust Banks, Inc.",
+              "count": 47
+            },
+            {
+              "value": "Select Portfolio Servicing, Inc",
+              "count": 46
+            },
+            {
+              "value": "Expert Global Solutions, Inc.",
+              "count": 43
+            },
+            {
+              "value": "Discover",
+              "count": 35
+            },
+            {
+              "value": "Fifth Third Financial Corporation",
+              "count": 35
+            },
+            {
+              "value": "Portfolio Recovery Associates, Inc.",
+              "count": 31
+            },
+            {
+              "value": "Citizens Financial Group, Inc.",
+              "count": 29
+            },
+            {
+              "value": "Resurgent Capital Services L.P.",
+              "count": 26
+            },
+            {
+              "value": "BB&T Financial",
+              "count": 26
+            },
+            {
+              "value": "PayPal Holdings, Inc.",
+              "count": 24
+            },
+            {
+              "value": "Barclays PLC",
+              "count": 24
+            },
+            {
+              "value": "Regions Financial Corporation",
+              "count": 23
+            },
+            {
+              "value": "Santander Bank US",
+              "count": 21
+            },
+            {
+              "value": "M&T Bank Corporation",
+              "count": 20
+            },
+            {
+              "value": "Santander Consumer USA Holdings Inc",
+              "count": 19
+            },
+            {
+              "value": "Allied Interstate LLC",
+              "count": 18
+            },
+            {
+              "value": "TCF National Bank",
+              "count": 18
+            },
+            {
+              "value": "AES/PHEAA",
+              "count": 18
+            },
+            {
+              "value": "Flagstar Bank",
+              "count": 17
+            },
+            {
+              "value": "USAA Savings",
+              "count": 17
+            },
+            {
+              "value": "Seterus, Inc.",
+              "count": 16
+            },
+            {
+              "value": "Convergent Resources, Inc.",
+              "count": 15
+            },
+            {
+              "value": "KeyBank NA",
+              "count": 15
+            },
+            {
+              "value": "PHH Mortgage",
+              "count": 15
+            },
+            {
+              "value": "Specialized Loan Servicing LLC",
+              "count": 15
+            },
+            {
+              "value": "Quicken Loans",
+              "count": 14
+            },
+            {
+              "value": "Diversified Consultants, Inc.",
+              "count": 14
+            },
+            {
+              "value": "Fidelity National Information Services, Inc. (FNIS)",
+              "count": 13
+            },
+            {
+              "value": "OneMain Financial Holdings, LLC",
+              "count": 13
+            },
+            {
+              "value": "Cavalry Investments, LLC",
+              "count": 13
+            },
+            {
+              "value": "Ally Financial Inc.",
+              "count": 13
+            },
+            {
+              "value": "Navy FCU",
+              "count": 13
+            },
+            {
+              "value": "Afni, Inc.",
+              "count": 11
+            },
+            {
+              "value": "Residential Credit Solutions",
+              "count": 11
+            },
+            {
+              "value": "Bayview Loan Servicing, LLC",
+              "count": 11
+            },
+            {
+              "value": "The Western Union Company",
+              "count": 10
+            },
+            {
+              "value": "CashCall, Inc.",
+              "count": 10
+            },
+            {
+              "value": "I.C. System, Inc.",
+              "count": 10
+            },
+            {
+              "value": "CIT Bank National Association",
+              "count": 10
+            },
+            {
+              "value": "BBVA Compass",
+              "count": 9
+            },
+            {
+              "value": "EverBank",
+              "count": 9
+            },
+            {
+              "value": "Sallie Mae",
+              "count": 9
+            },
+            {
+              "value": "EOS Holdings, Inc.",
+              "count": 9
+            },
+            {
+              "value": "The Huntington National Bank",
+              "count": 9
+            },
+            {
+              "value": "Carrington Mortgage Holdings, LLC.",
+              "count": 8
+            },
+            {
+              "value": "New York Community Bank",
+              "count": 8
+            },
+            {
+              "value": "Toyota Motor Credit Corporation",
+              "count": 8
+            },
+            {
+              "value": "CNG Financial Corporation",
+              "count": 8
+            },
+            {
+              "value": "Real Time Resolutions",
+              "count": 8
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "state",
+          "declared_type": "str",
+          "inferred_type": "string",
+          "semantic_role": "dimension",
+          "missing_count": 12,
+          "missing_pct": 0.24,
+          "cardinality": 57,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "CA",
+                  "count": 796
+                },
+                {
+                  "value": "FL",
+                  "count": 444
+                },
+                {
+                  "value": "TX",
+                  "count": 378
+                },
+                {
+                  "value": "NY",
+                  "count": 305
+                },
+                {
+                  "value": "GA",
+                  "count": 213
+                },
+                {
+                  "value": "NJ",
+                  "count": 209
+                },
+                {
+                  "value": "PA",
+                  "count": 194
+                },
+                {
+                  "value": "OH",
+                  "count": 175
+                },
+                {
+                  "value": "VA",
+                  "count": 163
+                },
+                {
+                  "value": "MD",
+                  "count": 155
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "AL",
+              "count": 40
+            },
+            {
+              "value": "WI",
+              "count": 35
+            },
+            {
+              "value": "DC",
+              "count": 33
+            },
+            {
+              "value": "KY",
+              "count": 31
+            },
+            {
+              "value": "UT",
+              "count": 30
+            },
+            {
+              "value": "AR",
+              "count": 29
+            },
+            {
+              "value": "OK",
+              "count": 28
+            },
+            {
+              "value": "DE",
+              "count": 26
+            },
+            {
+              "value": "NM",
+              "count": 26
+            },
+            {
+              "value": "IA",
+              "count": 24
+            },
+            {
+              "value": "KS",
+              "count": 23
+            },
+            {
+              "value": "HI",
+              "count": 21
+            },
+            {
+              "value": "RI",
+              "count": 20
+            },
+            {
+              "value": "NH",
+              "count": 20
+            },
+            {
+              "value": "MS",
+              "count": 19
+            },
+            {
+              "value": "ME",
+              "count": 15
+            },
+            {
+              "value": "NE",
+              "count": 15
+            },
+            {
+              "value": "WV",
+              "count": 13
+            },
+            {
+              "value": "PR",
+              "count": 12
+            },
+            {
+              "value": "ID",
+              "count": 11
+            },
+            {
+              "value": "MT",
+              "count": 9
+            },
+            {
+              "value": "AK",
+              "count": 8
+            },
+            {
+              "value": "VT",
+              "count": 7
+            },
+            {
+              "value": "WY",
+              "count": 6
+            },
+            {
+              "value": "AE",
+              "count": 2
+            },
+            {
+              "value": "FM",
+              "count": 2
+            },
+            {
+              "value": "MH",
+              "count": 1
+            },
+            {
+              "value": "SD",
+              "count": 1
+            },
+            {
+              "value": "VI",
+              "count": 1
+            },
+            {
+              "value": "ND",
+              "count": 1
+            },
+            {
+              "value": "GU",
+              "count": 1
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "zipcode",
+          "declared_type": "str",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 12,
+          "missing_pct": 0.24,
+          "cardinality": 3513,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "76116",
+                  "count": 25
+                },
+                {
+                  "value": "24382",
+                  "count": 21
+                },
+                {
+                  "value": "48382",
+                  "count": 15
+                },
+                {
+                  "value": "11106",
+                  "count": 13
+                },
+                {
+                  "value": "93675",
+                  "count": 13
+                },
+                {
+                  "value": "28269",
+                  "count": 9
+                },
+                {
+                  "value": "90005",
+                  "count": 9
+                },
+                {
+                  "value": "91915",
+                  "count": 8
+                },
+                {
+                  "value": "33173",
+                  "count": 8
+                },
+                {
+                  "value": "76126",
+                  "count": 8
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "76116",
+              "count": 25
+            },
+            {
+              "value": "24382",
+              "count": 21
+            },
+            {
+              "value": "48382",
+              "count": 15
+            },
+            {
+              "value": "11106",
+              "count": 13
+            },
+            {
+              "value": "93675",
+              "count": 13
+            },
+            {
+              "value": "28269",
+              "count": 9
+            },
+            {
+              "value": "90005",
+              "count": 9
+            },
+            {
+              "value": "91915",
+              "count": 8
+            },
+            {
+              "value": "33173",
+              "count": 8
+            },
+            {
+              "value": "76126",
+              "count": 8
+            },
+            {
+              "value": "29928",
+              "count": 7
+            },
+            {
+              "value": "34711",
+              "count": 7
+            },
+            {
+              "value": "11103",
+              "count": 7
+            },
+            {
+              "value": "11223",
+              "count": 7
+            },
+            {
+              "value": "76135",
+              "count": 6
+            },
+            {
+              "value": "75070",
+              "count": 6
+            },
+            {
+              "value": "78747",
+              "count": 6
+            },
+            {
+              "value": "33025",
+              "count": 6
+            },
+            {
+              "value": "28560",
+              "count": 6
+            },
+            {
+              "value": "11230",
+              "count": 6
+            },
+            {
+              "value": "20774",
+              "count": 6
+            },
+            {
+              "value": "20735",
+              "count": 6
+            },
+            {
+              "value": "11357",
+              "count": 6
+            },
+            {
+              "value": "80013",
+              "count": 5
+            },
+            {
+              "value": "20748",
+              "count": 5
+            },
+            {
+              "value": "46312",
+              "count": 5
+            },
+            {
+              "value": "30097",
+              "count": 5
+            },
+            {
+              "value": "10024",
+              "count": 5
+            },
+            {
+              "value": "30350",
+              "count": 5
+            },
+            {
+              "value": "90028",
+              "count": 5
+            },
+            {
+              "value": "37615",
+              "count": 5
+            },
+            {
+              "value": "70124",
+              "count": 5
+            },
+            {
+              "value": "30093",
+              "count": 5
+            },
+            {
+              "value": "75115",
+              "count": 5
+            },
+            {
+              "value": "46409",
+              "count": 5
+            },
+            {
+              "value": "30331",
+              "count": 5
+            },
+            {
+              "value": "48220",
+              "count": 5
+            },
+            {
+              "value": "33029",
+              "count": 5
+            },
+            {
+              "value": "21044",
+              "count": 5
+            },
+            {
+              "value": "94115",
+              "count": 5
+            },
+            {
+              "value": "93536",
+              "count": 5
+            },
+            {
+              "value": "27615",
+              "count": 5
+            },
+            {
+              "value": "76085",
+              "count": 5
+            },
+            {
+              "value": "77074",
+              "count": 5
+            },
+            {
+              "value": "07064",
+              "count": 5
+            },
+            {
+              "value": "92619",
+              "count": 5
+            },
+            {
+              "value": "23112",
+              "count": 5
+            },
+            {
+              "value": "30106",
+              "count": 4
+            },
+            {
+              "value": "30039",
+              "count": 4
+            },
+            {
+              "value": "92656",
+              "count": 4
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "tags",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 4320,
+          "missing_pct": 86.4,
+          "cardinality": 3,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Older American",
+                  "count": 389
+                },
+                {
+                  "value": "Servicemember",
+                  "count": 233
+                },
+                {
+                  "value": "Older American, Servicemember",
+                  "count": 58
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "consumer_consent_provided",
+          "declared_type": "float64",
+          "inferred_type": "unknown",
+          "semantic_role": "unknown",
+          "missing_count": 5000,
+          "missing_pct": 100.0,
+          "cardinality": 0,
+          "stats": {
+            "count": 5000
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "submitted_via",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 6,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Web",
+                  "count": 3087
+                },
+                {
+                  "value": "Referral",
+                  "count": 981
+                },
+                {
+                  "value": "Phone",
+                  "count": 440
+                },
+                {
+                  "value": "Postal mail",
+                  "count": 403
+                },
+                {
+                  "value": "Fax",
+                  "count": 87
+                },
+                {
+                  "value": "Email",
+                  "count": 2
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "Email",
+              "count": 2
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "date_sent_to_company",
+          "declared_type": "str",
+          "inferred_type": "datetime",
+          "semantic_role": "date",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 109,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "09/25/2013",
+                  "count": 352
+                },
+                {
+                  "value": "09/24/2013",
+                  "count": 282
+                },
+                {
+                  "value": "09/18/2013",
+                  "count": 260
+                },
+                {
+                  "value": "09/11/2013",
+                  "count": 255
+                },
+                {
+                  "value": "09/03/2013",
+                  "count": 249
+                },
+                {
+                  "value": "10/15/2013",
+                  "count": 228
+                },
+                {
+                  "value": "09/19/2013",
+                  "count": 227
+                },
+                {
+                  "value": "10/01/2013",
+                  "count": 219
+                },
+                {
+                  "value": "09/04/2013",
+                  "count": 210
+                },
+                {
+                  "value": "10/16/2013",
+                  "count": 171
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "09/17/2013",
+              "count": 47
+            },
+            {
+              "value": "10/03/2013",
+              "count": 41
+            },
+            {
+              "value": "08/31/2013",
+              "count": 40
+            },
+            {
+              "value": "10/17/2013",
+              "count": 40
+            },
+            {
+              "value": "09/06/2013",
+              "count": 37
+            },
+            {
+              "value": "10/14/2013",
+              "count": 36
+            },
+            {
+              "value": "09/27/2013",
+              "count": 33
+            },
+            {
+              "value": "10/25/2013",
+              "count": 33
+            },
+            {
+              "value": "09/02/2013",
+              "count": 26
+            },
+            {
+              "value": "11/15/2013",
+              "count": 26
+            },
+            {
+              "value": "09/13/2013",
+              "count": 24
+            },
+            {
+              "value": "10/13/2013",
+              "count": 23
+            },
+            {
+              "value": "08/30/2013",
+              "count": 20
+            },
+            {
+              "value": "11/14/2013",
+              "count": 20
+            },
+            {
+              "value": "10/28/2013",
+              "count": 19
+            },
+            {
+              "value": "10/21/2013",
+              "count": 19
+            },
+            {
+              "value": "09/01/2013",
+              "count": 19
+            },
+            {
+              "value": "11/12/2013",
+              "count": 19
+            },
+            {
+              "value": "10/11/2013",
+              "count": 18
+            },
+            {
+              "value": "10/08/2013",
+              "count": 17
+            },
+            {
+              "value": "10/18/2013",
+              "count": 17
+            },
+            {
+              "value": "11/13/2013",
+              "count": 17
+            },
+            {
+              "value": "11/05/2013",
+              "count": 16
+            },
+            {
+              "value": "10/07/2013",
+              "count": 15
+            },
+            {
+              "value": "10/09/2013",
+              "count": 15
+            },
+            {
+              "value": "10/29/2013",
+              "count": 14
+            },
+            {
+              "value": "10/12/2013",
+              "count": 14
+            },
+            {
+              "value": "09/20/2013",
+              "count": 13
+            },
+            {
+              "value": "10/22/2013",
+              "count": 13
+            },
+            {
+              "value": "10/04/2013",
+              "count": 12
+            },
+            {
+              "value": "11/19/2013",
+              "count": 9
+            },
+            {
+              "value": "11/21/2013",
+              "count": 9
+            },
+            {
+              "value": "10/10/2013",
+              "count": 8
+            },
+            {
+              "value": "09/09/2013",
+              "count": 7
+            },
+            {
+              "value": "11/25/2013",
+              "count": 7
+            },
+            {
+              "value": "11/18/2013",
+              "count": 7
+            },
+            {
+              "value": "11/22/2013",
+              "count": 6
+            },
+            {
+              "value": "12/16/2013",
+              "count": 6
+            },
+            {
+              "value": "11/20/2013",
+              "count": 5
+            },
+            {
+              "value": "09/16/2013",
+              "count": 4
+            },
+            {
+              "value": "12/06/2013",
+              "count": 4
+            },
+            {
+              "value": "11/26/2013",
+              "count": 4
+            },
+            {
+              "value": "12/24/2013",
+              "count": 4
+            },
+            {
+              "value": "01/03/2014",
+              "count": 4
+            },
+            {
+              "value": "12/04/2013",
+              "count": 3
+            },
+            {
+              "value": "12/02/2013",
+              "count": 3
+            },
+            {
+              "value": "12/11/2013",
+              "count": 3
+            },
+            {
+              "value": "12/17/2013",
+              "count": 3
+            },
+            {
+              "value": "05/15/2014",
+              "count": 2
+            },
+            {
+              "value": "11/03/2013",
+              "count": 2
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "company_response_to_consumer",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 5,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Closed with explanation",
+                  "count": 3753
+                },
+                {
+                  "value": "Closed with non-monetary relief",
+                  "count": 705
+                },
+                {
+                  "value": "Closed with monetary relief",
+                  "count": 426
+                },
+                {
+                  "value": "Closed",
+                  "count": 111
+                },
+                {
+                  "value": "Untimely response",
+                  "count": 5
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "Untimely response",
+              "count": 5
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "timely_response",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "date",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Yes",
+                  "count": 4922
+                },
+                {
+                  "value": "No",
+                  "count": 78
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "consumer_disputed?",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2,
+          "stats": {
+            "count": 5000,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "No",
+                  "count": 3997
+                },
+                {
+                  "value": "Yes",
+                  "count": 1003
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "complaint_id",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "id",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 5000,
+          "stats": {
+            "count": 5000,
+            "numeric": {
+              "min": 509944.0,
+              "max": 767557.0,
+              "mean": 544328.9808,
+              "median": 541309.5,
+              "std": 23601.390237514825,
+              "q1": 523273.75,
+              "q3": 558852.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        }
+      ],
+      "duplicates": {
+        "exact_count": 0,
+        "exact_pct": 0.0,
+        "business_key": [],
+        "business_key_duplicate_count": 0,
+        "business_key_duplicate_pct": 0.0
+      }
+    }
+  ],
+  "relationships": [],
+  "issues": [
+    {
+      "id": "telecom_complaints_sample.sub_product.missing",
+      "severity": "high",
+      "table": "telecom_complaints_sample",
+      "column": "sub_product",
+      "rule": "missing_values",
+      "evidence": "1231 valeur(s) manquante(s), soit 24.62% des lignes profilées.",
+      "affected_rows": 1231,
+      "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+    },
+    {
+      "id": "telecom_complaints_sample.sub_issue.missing",
+      "severity": "high",
+      "table": "telecom_complaints_sample",
+      "column": "sub_issue",
+      "rule": "missing_values",
+      "evidence": "3220 valeur(s) manquante(s), soit 64.40% des lignes profilées.",
+      "affected_rows": 3220,
+      "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+    },
+    {
+      "id": "telecom_complaints_sample.consumer_complaint_narrative.missing",
+      "severity": "high",
+      "table": "telecom_complaints_sample",
+      "column": "consumer_complaint_narrative",
+      "rule": "missing_values",
+      "evidence": "5000 valeur(s) manquante(s), soit 100.00% des lignes profilées.",
+      "affected_rows": 5000,
+      "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+    },
+    {
+      "id": "telecom_complaints_sample.company_public_response.missing",
+      "severity": "high",
+      "table": "telecom_complaints_sample",
+      "column": "company_public_response",
+      "rule": "missing_values",
+      "evidence": "5000 valeur(s) manquante(s), soit 100.00% des lignes profilées.",
+      "affected_rows": 5000,
+      "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+    },
+    {
+      "id": "telecom_complaints_sample.state.missing",
+      "severity": "low",
+      "table": "telecom_complaints_sample",
+      "column": "state",
+      "rule": "missing_values",
+      "evidence": "12 valeur(s) manquante(s), soit 0.24% des lignes profilées.",
+      "affected_rows": 12,
+      "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+    },
+    {
+      "id": "telecom_complaints_sample.zipcode.missing",
+      "severity": "low",
+      "table": "telecom_complaints_sample",
+      "column": "zipcode",
+      "rule": "missing_values",
+      "evidence": "12 valeur(s) manquante(s), soit 0.24% des lignes profilées.",
+      "affected_rows": 12,
+      "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+    },
+    {
+      "id": "telecom_complaints_sample.tags.missing",
+      "severity": "high",
+      "table": "telecom_complaints_sample",
+      "column": "tags",
+      "rule": "missing_values",
+      "evidence": "4320 valeur(s) manquante(s), soit 86.40% des lignes profilées.",
+      "affected_rows": 4320,
+      "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+    },
+    {
+      "id": "telecom_complaints_sample.consumer_consent_provided.missing",
+      "severity": "high",
+      "table": "telecom_complaints_sample",
+      "column": "consumer_consent_provided",
+      "rule": "missing_values",
+      "evidence": "5000 valeur(s) manquante(s), soit 100.00% des lignes profilées.",
+      "affected_rows": 5000,
+      "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+    }
+  ],
+  "llm_summary": "Tables profilées : telecom_complaints_sample : 5000 ligne(s), 18 colonne(s)\nProblèmes prioritaires : high — telecom_complaints_sample.sub_product : missing_values. 1231 valeur(s) manquante(s), soit 24.62% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. high — telecom_complaints_sample.sub_issue : missing_values. 3220 valeur(s) manquante(s), soit 64.40% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. high — telecom_complaints_sample.consumer_complaint_narrative : missing_values. 5000 valeur(s) manquante(s), soit 100.00% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. high — telecom_complaints_sample.company_public_response : missing_values. 5000 valeur(s) manquante(s), soit 100.00% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. low — telecom_complaints_sample.state : missing_values. 12 valeur(s) manquante(s), soit 0.24% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. low — telecom_complaints_sample.zipcode : missing_values. 12 valeur(s) manquante(s), soit 0.24% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. high — telecom_complaints_sample.tags : missing_values. 4320 valeur(s) manquante(s), soit 86.40% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. high — telecom_complaints_sample.consumer_consent_provided : missing_values. 5000 valeur(s) manquante(s), soit 100.00% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL.",
+  "status": "warning",
+  "trace": [
+    {
+      "timestamp": "2026-10-27T18:46:58.364339",
+      "tool": "load_source",
+      "parameters": {
+        "source_name": "telecom_complaints_sample",
+        "source_type": "csv",
+        "sampled": false,
+        "sample_rows": 5000
+      },
+      "duration_ms": 16.589299999850482
+    }
+  ],
+  "errors": []
+}

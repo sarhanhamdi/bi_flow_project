@@ -1,0 +1,3 @@
+metric,kpi_id,n_churned,n_retained,median_churned,median_retained,mean_churned,mean_retained,cliffs_delta,effect_size_label,p_value_raw,p_value_adjusted,test_used
+tenure_months,avg_tenure,1869,5174,10.0,38.0,17.979133226324237,37.56996521066873,-0.4797343510572577,fort,2.419635517951866e-208,3.4871217758718068e-208,mann-whitney
+monthly_charges,arpu,1869,5174,79.65,64.42500000000001,74.44133226324237,61.26512369540008,0.24157137914125104,moyen,3.311627651988584e-54,4.636278712784018e-54,mann-whitney

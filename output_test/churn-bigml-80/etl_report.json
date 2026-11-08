@@ -1,0 +1,1115 @@
+{
+  "business_goal": "Test multi-usage autonome",
+  "status": "success",
+  "tables": [
+    {
+      "name": "churn-bigml-80",
+      "rows_in": 2666,
+      "rows_out": 2666,
+      "columns_in": 20,
+      "columns_out": 20,
+      "output_path": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv",
+      "quality_before": {
+        "completeness": 100.0,
+        "uniqueness": 100.0,
+        "validity": 100.0,
+        "consistency": 100.0,
+        "overall": 100.0,
+        "rows": 2666,
+        "null_cells": 0,
+        "text_numeric_columns": []
+      },
+      "quality_after": {
+        "completeness": 100.0,
+        "uniqueness": 100.0,
+        "validity": 100.0,
+        "consistency": 100.0,
+        "overall": 100.0,
+        "rows": 2666,
+        "null_cells": 0,
+        "text_numeric_columns": []
+      },
+      "columns": [
+        {
+          "original_name": "State",
+          "name": "state",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Account length",
+          "name": "account_length",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Area code",
+          "name": "area_code",
+          "dtype": "int64",
+          "semantic_role": "id",
+          "role_corrected_from": "measure",
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "International plan",
+          "name": "international_plan",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Voice mail plan",
+          "name": "voice_mail_plan",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Number vmail messages",
+          "name": "number_vmail_messages",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Total day minutes",
+          "name": "total_day_minutes",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Total day calls",
+          "name": "total_day_calls",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Total day charge",
+          "name": "total_day_charge",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Total eve minutes",
+          "name": "total_eve_minutes",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Total eve calls",
+          "name": "total_eve_calls",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Total eve charge",
+          "name": "total_eve_charge",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Total night minutes",
+          "name": "total_night_minutes",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Total night calls",
+          "name": "total_night_calls",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Total night charge",
+          "name": "total_night_charge",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Total intl minutes",
+          "name": "total_intl_minutes",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Total intl calls",
+          "name": "total_intl_calls",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Total intl charge",
+          "name": "total_intl_charge",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Customer service calls",
+          "name": "customer_service_calls",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Churn",
+          "name": "churn",
+          "dtype": "bool",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        }
+      ]
+    }
+  ],
+  "star_schemas": [
+    {
+      "table": "churn-bigml-80",
+      "source": "auto",
+      "fact_name": "fact_churn-bigml-80",
+      "grain": "1 ligne = 1 ligne de la table source",
+      "grain_reason": "aucun identifiant unique trouvé : clé de ligne créée",
+      "fact_rows": 2666,
+      "measures": [
+        {
+          "column": "account_length",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "number_vmail_messages",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "total_day_minutes",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "total_day_calls",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "total_day_charge",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "total_eve_minutes",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "total_eve_calls",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "total_eve_charge",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "total_night_minutes",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "total_night_calls",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "total_night_charge",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "total_intl_minutes",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "total_intl_calls",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "total_intl_charge",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "customer_service_calls",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "dim_churn-bigml-80",
+          "key": "churn-bigml-80_key",
+          "role": "entity",
+          "columns": [
+            "area_code"
+          ],
+          "rows": 3,
+          "rationale": "identifiant / attribut propre à l'entité"
+        },
+        {
+          "name": "dim_churn",
+          "key": "churn_key",
+          "role": "churn",
+          "columns": [
+            "churn"
+          ],
+          "rows": 2,
+          "rationale": "résultat / motif de départ"
+        },
+        {
+          "name": "dim_contract",
+          "key": "contract_key",
+          "role": "contract",
+          "columns": [
+            "international_plan",
+            "voice_mail_plan"
+          ],
+          "rows": 4,
+          "rationale": "contrat et facturation"
+        },
+        {
+          "name": "dim_location",
+          "key": "location_key",
+          "role": "geography",
+          "columns": [
+            "state"
+          ],
+          "rows": 51,
+          "rationale": "attributs géographiques"
+        }
+      ],
+      "date_columns": [],
+      "excluded_columns": [],
+      "files": {
+        "fact_churn-bigml-80": "output_test\\churn-bigml-80\\model\\churn-bigml-80\\fact_churn-bigml-80.csv",
+        "dim_churn-bigml-80": "output_test\\churn-bigml-80\\model\\churn-bigml-80\\dim_churn-bigml-80.csv",
+        "dim_churn": "output_test\\churn-bigml-80\\model\\churn-bigml-80\\dim_churn.csv",
+        "dim_contract": "output_test\\churn-bigml-80\\model\\churn-bigml-80\\dim_contract.csv",
+        "dim_location": "output_test\\churn-bigml-80\\model\\churn-bigml-80\\dim_location.csv",
+        "star_schema.mmd": "output_test\\churn-bigml-80\\model\\churn-bigml-80\\star_schema.mmd"
+      },
+      "check_ids": [
+        "churn-bigml-80.star_fact_row_count",
+        "churn-bigml-80.star_no_null_foreign_key",
+        "churn-bigml-80.star_no_orphan_foreign_key",
+        "churn-bigml-80.star_dimension_keys_unique",
+        "churn-bigml-80.star_column_coverage",
+        "churn-bigml-80.star_measure_reconciliation",
+        "churn-bigml-80.star_lossless_rejoin"
+      ],
+      "mermaid": "erDiagram\n    fact_churn-bigml-80 {\n        int fact_row_key\n        int churn-bigml-80_key FK\n        int churn_key FK\n        int contract_key FK\n        int location_key FK\n        int account_length\n        int number_vmail_messages\n        float total_day_minutes\n        int total_day_calls\n        float total_day_charge\n        float total_eve_minutes\n        int total_eve_calls\n        float total_eve_charge\n        float total_night_minutes\n        int total_night_calls\n        float total_night_charge\n        float total_intl_minutes\n        int total_intl_calls\n        float total_intl_charge\n        int customer_service_calls\n    }\n    dim_churn-bigml-80 {\n        int churn-bigml-80_key PK\n        string area_code\n    }\n    dim_churn {\n        int churn_key PK\n        string churn\n    }\n    dim_contract {\n        int contract_key PK\n        string international_plan\n        string voice_mail_plan\n    }\n    dim_location {\n        int location_key PK\n        string state\n    }\n    dim_churn-bigml-80 ||--o{ fact_churn-bigml-80 : churn-bigml-80_key\n    dim_churn ||--o{ fact_churn-bigml-80 : churn_key\n    dim_contract ||--o{ fact_churn-bigml-80 : contract_key\n    dim_location ||--o{ fact_churn-bigml-80 : location_key\n"
+    }
+  ],
+  "actions": [
+    {
+      "id": "churn-bigml-80.00.report_outliers.Account length",
+      "step": 0,
+      "table": "churn-bigml-80",
+      "column": "Account length",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "12 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": null
+    },
+    {
+      "id": "churn-bigml-80.01.report_outliers.Number vmail messages",
+      "step": 1,
+      "table": "churn-bigml-80",
+      "column": "Number vmail messages",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "2 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": null
+    },
+    {
+      "id": "churn-bigml-80.02.report_outliers.Total day minutes",
+      "step": 2,
+      "table": "churn-bigml-80",
+      "column": "Total day minutes",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "21 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "churn-bigml-80.Total day minutes.iqr_zscore_outliers"
+    },
+    {
+      "id": "churn-bigml-80.03.report_outliers.Total day calls",
+      "step": 3,
+      "table": "churn-bigml-80",
+      "column": "Total day calls",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "18 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": null
+    },
+    {
+      "id": "churn-bigml-80.04.report_outliers.Total day charge",
+      "step": 4,
+      "table": "churn-bigml-80",
+      "column": "Total day charge",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "21 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "churn-bigml-80.Total day charge.iqr_zscore_outliers"
+    },
+    {
+      "id": "churn-bigml-80.05.report_outliers.Total eve minutes",
+      "step": 5,
+      "table": "churn-bigml-80",
+      "column": "Total eve minutes",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "17 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "churn-bigml-80.Total eve minutes.iqr_zscore_outliers"
+    },
+    {
+      "id": "churn-bigml-80.06.report_outliers.Total eve calls",
+      "step": 6,
+      "table": "churn-bigml-80",
+      "column": "Total eve calls",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "15 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": null
+    },
+    {
+      "id": "churn-bigml-80.07.report_outliers.Total eve charge",
+      "step": 7,
+      "table": "churn-bigml-80",
+      "column": "Total eve charge",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "17 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "churn-bigml-80.Total eve charge.iqr_zscore_outliers"
+    },
+    {
+      "id": "churn-bigml-80.08.report_outliers.Total night minutes",
+      "step": 8,
+      "table": "churn-bigml-80",
+      "column": "Total night minutes",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "22 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "churn-bigml-80.Total night minutes.iqr_zscore_outliers"
+    },
+    {
+      "id": "churn-bigml-80.09.report_outliers.Total night calls",
+      "step": 9,
+      "table": "churn-bigml-80",
+      "column": "Total night calls",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "19 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": null
+    },
+    {
+      "id": "churn-bigml-80.10.report_outliers.Total night charge",
+      "step": 10,
+      "table": "churn-bigml-80",
+      "column": "Total night charge",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "22 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "churn-bigml-80.Total night charge.iqr_zscore_outliers"
+    },
+    {
+      "id": "churn-bigml-80.11.report_outliers.Total intl minutes",
+      "step": 11,
+      "table": "churn-bigml-80",
+      "column": "Total intl minutes",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "37 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "churn-bigml-80.Total intl minutes.iqr_zscore_outliers"
+    },
+    {
+      "id": "churn-bigml-80.12.report_outliers.Total intl calls",
+      "step": 12,
+      "table": "churn-bigml-80",
+      "column": "Total intl calls",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "66 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": null
+    },
+    {
+      "id": "churn-bigml-80.13.report_outliers.Total intl charge",
+      "step": 13,
+      "table": "churn-bigml-80",
+      "column": "Total intl charge",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "40 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": "churn-bigml-80.Total intl charge.iqr_zscore_outliers"
+    },
+    {
+      "id": "churn-bigml-80.14.report_outliers.Customer service calls",
+      "step": 14,
+      "table": "churn-bigml-80",
+      "column": "Customer service calls",
+      "rule": "report_outliers",
+      "rows_affected": 0,
+      "before": "210 valeur(s) extrême(s) (IQR ou z-score).",
+      "after": "Aucune modification.",
+      "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+      "source_issue_id": null
+    }
+  ],
+  "validation_checks": [
+    {
+      "id": "churn-bigml-80.row_reconciliation",
+      "table": "churn-bigml-80",
+      "check": "row_reconciliation",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "2666 lignes en entrée − 0 supprimées tracées = 2666 attendues ; 2666 en sortie."
+    },
+    {
+      "id": "churn-bigml-80.no_exact_duplicates",
+      "table": "churn-bigml-80",
+      "check": "no_exact_duplicates",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 doublon(s) exact(s) restant(s)."
+    },
+    {
+      "id": "churn-bigml-80.no_unexpected_nulls",
+      "table": "churn-bigml-80",
+      "check": "no_unexpected_nulls",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Nulls restants hors cas structurels : aucun."
+    },
+    {
+      "id": "churn-bigml-80.range.Total day minutes",
+      "table": "churn-bigml-80",
+      "check": "range",
+      "column": "Total day minutes",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "churn-bigml-80.range.Total day calls",
+      "table": "churn-bigml-80",
+      "check": "range",
+      "column": "Total day calls",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "churn-bigml-80.range.Total day charge",
+      "table": "churn-bigml-80",
+      "check": "range",
+      "column": "Total day charge",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "churn-bigml-80.range.Total eve minutes",
+      "table": "churn-bigml-80",
+      "check": "range",
+      "column": "Total eve minutes",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "churn-bigml-80.range.Total eve calls",
+      "table": "churn-bigml-80",
+      "check": "range",
+      "column": "Total eve calls",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "churn-bigml-80.range.Total eve charge",
+      "table": "churn-bigml-80",
+      "check": "range",
+      "column": "Total eve charge",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "churn-bigml-80.range.Total night minutes",
+      "table": "churn-bigml-80",
+      "check": "range",
+      "column": "Total night minutes",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "churn-bigml-80.range.Total night calls",
+      "table": "churn-bigml-80",
+      "check": "range",
+      "column": "Total night calls",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "churn-bigml-80.range.Total night charge",
+      "table": "churn-bigml-80",
+      "check": "range",
+      "column": "Total night charge",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "churn-bigml-80.range.Total intl minutes",
+      "table": "churn-bigml-80",
+      "check": "range",
+      "column": "Total intl minutes",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "churn-bigml-80.range.Total intl calls",
+      "table": "churn-bigml-80",
+      "check": "range",
+      "column": "Total intl calls",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "churn-bigml-80.range.Total intl charge",
+      "table": "churn-bigml-80",
+      "check": "range",
+      "column": "Total intl charge",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "churn-bigml-80.range.Customer service calls",
+      "table": "churn-bigml-80",
+      "check": "range",
+      "column": "Customer service calls",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "churn-bigml-80.no_constant_columns",
+      "table": "churn-bigml-80",
+      "check": "no_constant_columns",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Colonnes constantes (peu utiles pour l'analyse) : aucune."
+    },
+    {
+      "id": "churn-bigml-80.star_fact_row_count",
+      "table": "churn-bigml-80",
+      "check": "star_fact_row_count",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "2666 lignes dans la table nettoyée, 2666 dans fact_churn-bigml-80."
+    },
+    {
+      "id": "churn-bigml-80.star_no_null_foreign_key",
+      "table": "churn-bigml-80",
+      "check": "star_no_null_foreign_key",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 clé(s) étrangère(s) nulle(s)."
+    },
+    {
+      "id": "churn-bigml-80.star_no_orphan_foreign_key",
+      "table": "churn-bigml-80",
+      "check": "star_no_orphan_foreign_key",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 ligne(s) du fait pointent vers une dimension inexistante."
+    },
+    {
+      "id": "churn-bigml-80.star_dimension_keys_unique",
+      "table": "churn-bigml-80",
+      "check": "star_dimension_keys_unique",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 clé(s) de dimension en double."
+    },
+    {
+      "id": "churn-bigml-80.star_column_coverage",
+      "table": "churn-bigml-80",
+      "check": "star_column_coverage",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Colonnes non placées : aucune ; placées deux fois : aucune."
+    },
+    {
+      "id": "churn-bigml-80.star_measure_reconciliation",
+      "table": "churn-bigml-80",
+      "check": "star_measure_reconciliation",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 mesure(s) dont la somme diffère entre table nettoyée et fait."
+    },
+    {
+      "id": "churn-bigml-80.star_lossless_rejoin",
+      "table": "churn-bigml-80",
+      "check": "star_lossless_rejoin",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "En re-joignant le fait et les dimensions, 0 cellule(s) diffèrent de la table nettoyée (0 = l'étoile ne perd et ne déforme aucune donnée)."
+    }
+  ],
+  "issue_resolutions": [
+    {
+      "issue_id": "churn-bigml-80.Total day minutes.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "churn-bigml-80.02.report_outliers.Total day minutes"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "churn-bigml-80.Total day charge.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "churn-bigml-80.04.report_outliers.Total day charge"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "churn-bigml-80.Total eve minutes.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "churn-bigml-80.05.report_outliers.Total eve minutes"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "churn-bigml-80.Total eve charge.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "churn-bigml-80.07.report_outliers.Total eve charge"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "churn-bigml-80.Total night minutes.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "churn-bigml-80.08.report_outliers.Total night minutes"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "churn-bigml-80.Total night charge.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "churn-bigml-80.10.report_outliers.Total night charge"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "churn-bigml-80.Total intl minutes.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "churn-bigml-80.11.report_outliers.Total intl minutes"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    },
+    {
+      "issue_id": "churn-bigml-80.Total intl charge.iqr_zscore_outliers",
+      "status": "reported_only",
+      "action_ids": [
+        "churn-bigml-80.13.report_outliers.Total intl charge"
+      ],
+      "note": "Signalé sans modification : décision métier requise."
+    }
+  ],
+  "remaining_issues": [
+    {
+      "id": "churn-bigml-80.remaining.outliers.Account length",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Account length",
+      "rule": "outliers_reported",
+      "evidence": "12 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 12,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Number vmail messages",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Number vmail messages",
+      "rule": "outliers_reported",
+      "evidence": "2 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 2,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Total day minutes",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Total day minutes",
+      "rule": "outliers_reported",
+      "evidence": "21 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 21,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Total day calls",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Total day calls",
+      "rule": "outliers_reported",
+      "evidence": "18 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 18,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Total day charge",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Total day charge",
+      "rule": "outliers_reported",
+      "evidence": "21 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 21,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Total eve minutes",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Total eve minutes",
+      "rule": "outliers_reported",
+      "evidence": "17 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 17,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Total eve calls",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Total eve calls",
+      "rule": "outliers_reported",
+      "evidence": "15 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 15,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Total eve charge",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Total eve charge",
+      "rule": "outliers_reported",
+      "evidence": "17 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 17,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Total night minutes",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Total night minutes",
+      "rule": "outliers_reported",
+      "evidence": "22 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 22,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Total night calls",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Total night calls",
+      "rule": "outliers_reported",
+      "evidence": "19 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 19,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Total night charge",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Total night charge",
+      "rule": "outliers_reported",
+      "evidence": "22 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 22,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Total intl minutes",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Total intl minutes",
+      "rule": "outliers_reported",
+      "evidence": "37 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 37,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Total intl calls",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Total intl calls",
+      "rule": "outliers_reported",
+      "evidence": "66 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 66,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Total intl charge",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Total intl charge",
+      "rule": "outliers_reported",
+      "evidence": "40 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 40,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    },
+    {
+      "id": "churn-bigml-80.remaining.outliers.Customer service calls",
+      "severity": "low",
+      "table": "churn-bigml-80",
+      "column": "Customer service calls",
+      "rule": "outliers_reported",
+      "evidence": "210 valeur(s) extrême(s) conservée(s) telles quelles.",
+      "affected_rows": 210,
+      "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+    }
+  ],
+  "llm_summary": "Table churn-bigml-80 : 2666 → 2666 ligne(s), score qualité 100.0 → 100.0/100.\nCorrections appliquées :\nÀ surveiller :\n- low churn-bigml-80.Account length : 12 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Number vmail messages : 2 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Total day minutes : 21 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Total day calls : 18 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Total day charge : 21 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Total eve minutes : 17 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Total eve calls : 15 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Total eve charge : 17 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Total night minutes : 22 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Total night calls : 19 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Total night charge : 22 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Total intl minutes : 37 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Total intl calls : 66 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Total intl charge : 40 valeur(s) extrême(s) conservée(s) telles quelles.\n- low churn-bigml-80.Customer service calls : 210 valeur(s) extrême(s) conservée(s) telles quelles.",
+  "trace": [
+    {
+      "timestamp": "2026-10-27T18:46:31.535133",
+      "tool": "load_source",
+      "parameters": {
+        "source_name": "churn-bigml-80",
+        "rows": 2666
+      },
+      "duration_ms": 14.715300000261777
+    },
+    {
+      "timestamp": "2026-10-27T18:46:31.853538",
+      "tool": "clean_table",
+      "parameters": {
+        "table": "churn-bigml-80",
+        "actions": 15
+      },
+      "duration_ms": 316.8080000000373
+    },
+    {
+      "timestamp": "2026-10-27T18:46:31.854539",
+      "tool": "validate",
+      "parameters": {
+        "checks": 17
+      },
+      "duration_ms": 0.45570000020234147
+    },
+    {
+      "timestamp": "2026-10-27T18:46:31.968711",
+      "tool": "build_star_schema",
+      "parameters": {
+        "table": "churn-bigml-80",
+        "dimensions": 4
+      },
+      "duration_ms": 78.3621000000494
+    },
+    {
+      "timestamp": "2026-10-27T18:46:31.968711",
+      "tool": "export",
+      "parameters": {
+        "table": "churn-bigml-80",
+        "path": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv"
+      },
+      "duration_ms": 113.87190000004921
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-27T18:46:31.520321"
+}

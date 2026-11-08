@@ -1,0 +1,1975 @@
+{
+  "business_goal": "Analyse décisionnelle télécom",
+  "status": "success",
+  "analyst_status": "success",
+  "title": "Dashboard BI : Analyse décisionnelle télécom",
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Vue d'ensemble",
+      "order": 0,
+      "visual_ids": [
+        "kpi_churn_rate",
+        "kpi_churned_customers",
+        "kpi_monthly_revenue_lost",
+        "kpi_customer_count",
+        "kpi_avg_tenure",
+        "kpi_arpu",
+        "kpi_total_revenue",
+        "kpi_avg_cltv"
+      ]
+    },
+    {
+      "id": "segments",
+      "title": "Segments à risque",
+      "order": 1,
+      "visual_ids": [
+        "table_insights",
+        "heatmap_contract_online_security",
+        "bar_churn_rate_contract",
+        "bar_churn_rate_internet_service",
+        "bar_churn_rate_payment_method",
+        "bar_customer_count_contract",
+        "bar_avg_tenure_contract",
+        "bar_arpu_contract",
+        "bar_total_revenue_contract"
+      ]
+    },
+    {
+      "id": "temporal",
+      "title": "Évolution et ancienneté",
+      "order": 2,
+      "visual_ids": [
+        "line_churn_by_tenure"
+      ]
+    },
+    {
+      "id": "geo",
+      "title": "Répartition géographique",
+      "order": 3,
+      "visual_ids": [
+        "geo_churn_by_city"
+      ]
+    },
+    {
+      "id": "profiles",
+      "title": "Profils churnés vs retenus",
+      "order": 4,
+      "visual_ids": [
+        "profile_tenure_months",
+        "profile_monthly_charges"
+      ]
+    },
+    {
+      "id": "actions",
+      "title": "Recommandations",
+      "order": 5,
+      "visual_ids": [
+        "table_recommendations"
+      ]
+    },
+    {
+      "id": "quality",
+      "title": "Qualité et réserves",
+      "order": 6,
+      "visual_ids": [
+        "text_caveats"
+      ]
+    }
+  ],
+  "visuals": [
+    {
+      "id": "kpi_churn_rate",
+      "type": "kpi_card",
+      "title": "Taux de churn",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "churn_rate",
+        "name": "Taux de churn",
+        "value": 26.54,
+        "unit": "%",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": false
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Part des clients ayant quitté l'opérateur.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "churn_value"
+        ],
+        "formula": "clients_churnés / clients_total × 100",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_churned_customers",
+      "type": "kpi_card",
+      "title": "Clients churnés",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "churned_customers",
+        "name": "Clients churnés",
+        "value": 1869.0,
+        "unit": "clients",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": false
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Nombre de clients ayant quitté l'opérateur.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churned_customers",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "churn_value"
+        ],
+        "formula": "somme(indicateur_churn)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_monthly_revenue_lost",
+      "type": "kpi_card",
+      "title": "Revenu mensuel perdu par churn",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "monthly_revenue_lost",
+        "name": "Revenu mensuel perdu par churn",
+        "value": 139130.85,
+        "unit": "devise/mois",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": false
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Revenu mensuel récurrent des clients qui sont partis.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "monthly_revenue_lost",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "churn_value",
+          "monthly_charges"
+        ],
+        "formula": "somme(frais_mensuels) pour les clients churnés",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_customer_count",
+      "type": "kpi_card",
+      "title": "Nombre de clients",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "customer_count",
+        "name": "Nombre de clients",
+        "value": 7043.0,
+        "unit": "clients",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Nombre de clients distincts dans la table.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "customer_count",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "customer_id"
+        ],
+        "formula": "nombre_distinct(identifiant_client)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_avg_tenure",
+      "type": "kpi_card",
+      "title": "Ancienneté moyenne",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "avg_tenure",
+        "name": "Ancienneté moyenne",
+        "value": 32.37,
+        "unit": "mois",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Durée moyenne depuis la souscription.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_tenure",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "tenure_months"
+        ],
+        "formula": "moyenne(ancienneté_en_mois)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_arpu",
+      "type": "kpi_card",
+      "title": "ARPU mensuel",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "arpu",
+        "name": "ARPU mensuel",
+        "value": 64.76,
+        "unit": "devise/client/mois",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Revenu mensuel moyen par client.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "arpu",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "monthly_charges"
+        ],
+        "formula": "moyenne(frais_mensuels)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_total_revenue",
+      "type": "kpi_card",
+      "title": "Revenu cumulé",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "total_revenue",
+        "name": "Revenu cumulé",
+        "value": 16071540.93,
+        "unit": "devise",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Somme des montants facturés depuis la souscription.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "total_revenue",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "total_charges"
+        ],
+        "formula": "somme(total_facturé)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_avg_cltv",
+      "type": "kpi_card",
+      "title": "CLTV moyen",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "avg_cltv",
+        "name": "CLTV moyen",
+        "value": 4400.3,
+        "unit": "devise",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Valeur vie client moyenne estimée.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_cltv",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "cltv"
+        ],
+        "formula": "moyenne(cltv)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "table_insights",
+      "type": "table",
+      "title": "Insights classés par impact",
+      "subtitle": "",
+      "section": "segments",
+      "span": 12,
+      "kpi": null,
+      "data": [
+        {
+          "rank": 1,
+          "title": "contract = Month-to-month : churn 42.71 % (+16.2 pts)",
+          "finding": "Le segment « Month-to-month » (dimension : contract) est associé à un taux de churn de 42.71 %, contre 26.54 % sur l'ensemble du portefeuille (+16.17 points d'écart).",
+          "direction": "risque",
+          "impact_churners": 626.6,
+          "revenue_monthly_lost_excess": 45753.04,
+          "confidence": "élevée"
+        },
+        {
+          "rank": 2,
+          "title": "online_security = No : churn 41.77 % (+15.2 pts)",
+          "finding": "Le segment « No » (dimension : online_security) est associé à un taux de churn de 41.77 %, contre 26.54 % sur l'ensemble du portefeuille (+15.23 points d'écart).",
+          "direction": "risque",
+          "impact_churners": 532.7,
+          "revenue_monthly_lost_excess": 41118.3,
+          "confidence": "élevée"
+        },
+        {
+          "rank": 3,
+          "title": "tech_support = No : churn 41.64 % (+15.1 pts)",
+          "finding": "Le segment « No » (dimension : tech_support) est associé à un taux de churn de 41.64 %, contre 26.54 % sur l'ensemble du portefeuille (+15.10 points d'écart).",
+          "direction": "risque",
+          "impact_churners": 524.4,
+          "revenue_monthly_lost_excess": 40151.29,
+          "confidence": "élevée"
+        },
+        {
+          "rank": 4,
+          "title": "internet_service = Fiber optic : churn 41.89 % (+15.3 pts)",
+          "finding": "Le segment « Fiber optic » (dimension : internet_service) est associé à un taux de churn de 41.89 %, contre 26.54 % sur l'ensemble du portefeuille (+15.35 points d'écart).",
+          "direction": "risque",
+          "impact_churners": 475.2,
+          "revenue_monthly_lost_excess": 41880.88,
+          "confidence": "élevée"
+        },
+        {
+          "rank": 5,
+          "title": "tenure_bin = 0-12 mois : churn 48.28 % (+21.7 pts)",
+          "finding": "Le segment « 0-12 mois » (dimension : tenure_bin) est associé à un taux de churn de 48.28 %, contre 26.54 % sur l'ensemble du portefeuille (+21.74 points d'écart).",
+          "direction": "risque",
+          "impact_churners": 449.8,
+          "revenue_monthly_lost_excess": 29726.6,
+          "confidence": "élevée"
+        },
+        {
+          "rank": 6,
+          "title": "payment_method = Electronic check : churn 45.29 % (+18.8 pts)",
+          "finding": "Le segment « Electronic check » (dimension : payment_method) est associé à un taux de churn de 45.29 %, contre 26.54 % sur l'ensemble du portefeuille (+18.75 points d'écart).",
+          "direction": "risque",
+          "impact_churners": 443.4,
+          "revenue_monthly_lost_excess": 34898.97,
+          "confidence": "élevée"
+        },
+        {
+          "rank": 7,
+          "title": "online_backup = No : churn 39.93 % (+13.4 pts)",
+          "finding": "Le segment « No » (dimension : online_backup) est associé à un taux de churn de 39.93 %, contre 26.54 % sur l'ensemble du portefeuille (+13.39 points d'écart).",
+          "direction": "risque",
+          "impact_churners": 413.5,
+          "revenue_monthly_lost_excess": 30809.65,
+          "confidence": "élevée"
+        },
+        {
+          "rank": 8,
+          "title": "device_protection = No : churn 39.13 % (+12.6 pts)",
+          "finding": "Le segment « No » (dimension : device_protection) est associé à un taux de churn de 39.13 %, contre 26.54 % sur l'ensemble du portefeuille (+12.59 points d'écart).",
+          "direction": "risque",
+          "impact_churners": 389.7,
+          "revenue_monthly_lost_excess": 28557.59,
+          "confidence": "élevée"
+        },
+        {
+          "rank": 9,
+          "title": "dependents = No : churn 32.55 % (+6.0 pts)",
+          "finding": "Le segment « No » (dimension : dependents) est associé à un taux de churn de 32.55 %, contre 26.54 % sur l'ensemble du portefeuille (+6.01 points d'écart).",
+          "direction": "risque",
+          "impact_churners": 325.5,
+          "revenue_monthly_lost_excess": 24528.91,
+          "confidence": "moyenne"
+        },
+        {
+          "rank": 10,
+          "title": "paperless_billing = Yes : churn 33.57 % (+7.0 pts)",
+          "finding": "Le segment « Yes » (dimension : paperless_billing) est associé à un taux de churn de 33.57 %, contre 26.54 % sur l'ensemble du portefeuille (+7.03 points d'écart).",
+          "direction": "risque",
+          "impact_churners": 293.2,
+          "revenue_monthly_lost_excess": 22936.19,
+          "confidence": "moyenne"
+        }
+      ],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Impacts non additifs : les segments peuvent se chevaucher.",
+      "reliable": true,
+      "warnings": [
+        "chevauchement possible entre segments"
+      ],
+      "references": {
+        "kpi_id": null,
+        "insight_ids": [
+          "insight_contract_month_to_month",
+          "insight_online_security_no",
+          "insight_tech_support_no",
+          "insight_internet_service_fiber_optic",
+          "insight_tenure_bin_0_12_mois",
+          "insight_payment_method_electronic_check",
+          "insight_online_backup_no",
+          "insight_device_protection_no",
+          "insight_dependents_no",
+          "insight_paperless_billing_yes"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [],
+        "formula": null,
+        "aggregation": null,
+        "origin": "analyst_report"
+      }
+    },
+    {
+      "id": "heatmap_contract_online_security",
+      "type": "heatmap",
+      "title": "Churn : contract × online_security",
+      "subtitle": "",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "contract": "Month-to-month",
+          "online_security": "No",
+          "churn_rate": 51.05,
+          "n": 2631
+        },
+        {
+          "contract": "Month-to-month",
+          "online_security": "No internet service",
+          "churn_rate": 18.89,
+          "n": 524
+        },
+        {
+          "contract": "Month-to-month",
+          "online_security": "Yes",
+          "churn_rate": 29.58,
+          "n": 720
+        },
+        {
+          "contract": "One year",
+          "online_security": "No",
+          "churn_rate": 17.41,
+          "n": 557
+        },
+        {
+          "contract": "One year",
+          "online_security": "No internet service",
+          "churn_rate": 2.47,
+          "n": 364
+        },
+        {
+          "contract": "One year",
+          "online_security": "Yes",
+          "churn_rate": 10.87,
+          "n": 552
+        },
+        {
+          "contract": "Two year",
+          "online_security": "No",
+          "churn_rate": 6.77,
+          "n": 310
+        },
+        {
+          "contract": "Two year",
+          "online_security": "No internet service",
+          "churn_rate": 0.78,
+          "n": 638
+        },
+        {
+          "contract": "Two year",
+          "online_security": "Yes",
+          "churn_rate": 2.95,
+          "n": 747
+        }
+      ],
+      "encoding": {
+        "x": "contract",
+        "y": "online_security",
+        "color": "churn_rate",
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Croisement de deux dimensions ; cellules à faible effectif masquées.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "insight_ids": [
+          "insight_contract_month_to_month",
+          "insight_online_security_no"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "contract",
+          "online_security"
+        ],
+        "formula": null,
+        "aggregation": "mean(churn) par contract × online_security",
+        "origin": "dashboard_computed"
+      }
+    },
+    {
+      "id": "bar_churn_rate_contract",
+      "type": "bar",
+      "title": "Taux de churn par contract",
+      "subtitle": "Référence globale : 26.54 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Month-to-month",
+          "value": 42.71,
+          "rows": 3875,
+          "global": 26.54
+        },
+        {
+          "segment": "One year",
+          "value": 11.27,
+          "rows": 1473,
+          "global": 26.54
+        },
+        {
+          "segment": "Two year",
+          "value": 2.83,
+          "rows": 1695,
+          "global": 26.54
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "insight_ids": [
+          "insight_contract_month_to_month"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "contract"
+        ],
+        "formula": "clients_churnés / clients_total × 100",
+        "aggregation": "Taux de churn par contract",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_churn_rate_internet_service",
+      "type": "bar",
+      "title": "Taux de churn par internet_service",
+      "subtitle": "Référence globale : 26.54 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Fiber optic",
+          "value": 41.89,
+          "rows": 3096,
+          "global": 26.54
+        },
+        {
+          "segment": "DSL",
+          "value": 18.96,
+          "rows": 2421,
+          "global": 26.54
+        },
+        {
+          "segment": "No",
+          "value": 7.4,
+          "rows": 1526,
+          "global": 26.54
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "insight_ids": [
+          "insight_internet_service_fiber_optic"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "internet_service"
+        ],
+        "formula": "clients_churnés / clients_total × 100",
+        "aggregation": "Taux de churn par internet_service",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_churn_rate_payment_method",
+      "type": "bar",
+      "title": "Taux de churn par payment_method",
+      "subtitle": "Référence globale : 26.54 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Electronic check",
+          "value": 45.29,
+          "rows": 2365,
+          "global": 26.54
+        },
+        {
+          "segment": "Mailed check",
+          "value": 19.11,
+          "rows": 1612,
+          "global": 26.54
+        },
+        {
+          "segment": "Bank transfer (automatic)",
+          "value": 16.71,
+          "rows": 1544,
+          "global": 26.54
+        },
+        {
+          "segment": "Credit card (automatic)",
+          "value": 15.24,
+          "rows": 1522,
+          "global": 26.54
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "insight_ids": [
+          "insight_payment_method_electronic_check"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "payment_method"
+        ],
+        "formula": "clients_churnés / clients_total × 100",
+        "aggregation": "Taux de churn par payment_method",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_customer_count_contract",
+      "type": "bar",
+      "title": "Nombre de clients par contract",
+      "subtitle": "Référence globale : 7043.0 clients",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Month-to-month",
+          "value": 3875.0,
+          "rows": 3875,
+          "global": 7043.0
+        },
+        {
+          "segment": "Two year",
+          "value": 1695.0,
+          "rows": 1695,
+          "global": 7043.0
+        },
+        {
+          "segment": "One year",
+          "value": 1473.0,
+          "rows": 1473,
+          "global": 7043.0
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "customer_count",
+        "insight_ids": [
+          "insight_contract_month_to_month"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "contract"
+        ],
+        "formula": "nombre_distinct(identifiant_client)",
+        "aggregation": "Nombre de clients par contract",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_tenure_contract",
+      "type": "bar",
+      "title": "Ancienneté moyenne par contract",
+      "subtitle": "Référence globale : 32.37 mois",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Two year",
+          "value": 56.74,
+          "rows": 1695,
+          "global": 32.37
+        },
+        {
+          "segment": "One year",
+          "value": 42.04,
+          "rows": 1473,
+          "global": 32.37
+        },
+        {
+          "segment": "Month-to-month",
+          "value": 18.04,
+          "rows": 3875,
+          "global": 32.37
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_tenure",
+        "insight_ids": [
+          "insight_contract_month_to_month"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "contract"
+        ],
+        "formula": "moyenne(ancienneté_en_mois)",
+        "aggregation": "Ancienneté moyenne par contract",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_arpu_contract",
+      "type": "bar",
+      "title": "ARPU mensuel par contract",
+      "subtitle": "Référence globale : 64.76 devise/client/mois",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Month-to-month",
+          "value": 66.4,
+          "rows": 3875,
+          "global": 64.76
+        },
+        {
+          "segment": "One year",
+          "value": 65.05,
+          "rows": 1473,
+          "global": 64.76
+        },
+        {
+          "segment": "Two year",
+          "value": 60.77,
+          "rows": 1695,
+          "global": 64.76
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "arpu",
+        "insight_ids": [
+          "insight_contract_month_to_month"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "contract"
+        ],
+        "formula": "moyenne(frais_mensuels)",
+        "aggregation": "ARPU mensuel par contract",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_total_revenue_contract",
+      "type": "bar",
+      "title": "Revenu cumulé par contract",
+      "subtitle": "Référence globale : 16071540.93 devise",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Two year",
+          "value": 6297228.45,
+          "rows": 1695,
+          "global": 16071540.93
+        },
+        {
+          "segment": "Month-to-month",
+          "value": 5305861.5,
+          "rows": 3875,
+          "global": 16071540.93
+        },
+        {
+          "segment": "One year",
+          "value": 4468450.97,
+          "rows": 1473,
+          "global": 16071540.93
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "total_revenue",
+        "insight_ids": [
+          "insight_contract_month_to_month"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "contract"
+        ],
+        "formula": "somme(total_facturé)",
+        "aggregation": "Revenu cumulé par contract",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "line_churn_by_tenure",
+      "type": "line",
+      "title": "Taux de churn par tranche d'ancienneté",
+      "subtitle": "Mois d'abonnement",
+      "section": "temporal",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "tenure_band": "0-6",
+          "churn_rate": 52.94,
+          "n": 1481,
+          "n_churned": 784
+        },
+        {
+          "tenure_band": "7-12",
+          "churn_rate": 35.89,
+          "n": 705,
+          "n_churned": 253
+        },
+        {
+          "tenure_band": "13-24",
+          "churn_rate": 28.71,
+          "n": 1024,
+          "n_churned": 294
+        },
+        {
+          "tenure_band": "25-36",
+          "churn_rate": 21.63,
+          "n": 832,
+          "n_churned": 180
+        },
+        {
+          "tenure_band": "37-48",
+          "churn_rate": 19.03,
+          "n": 762,
+          "n_churned": 145
+        },
+        {
+          "tenure_band": "49-60",
+          "churn_rate": 14.42,
+          "n": 832,
+          "n_churned": 120
+        },
+        {
+          "tenure_band": "61+",
+          "churn_rate": 6.61,
+          "n": 1407,
+          "n_churned": 93
+        }
+      ],
+      "encoding": {
+        "x": "tenure_band",
+        "y": "churn_rate",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Taux de churn observé par tranche d'ancienneté (association, pas causalité).",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "tenure_months",
+          "churn flag"
+        ],
+        "formula": null,
+        "aggregation": "mean(churn) par tranche de tenure",
+        "origin": "dashboard_computed"
+      }
+    },
+    {
+      "id": "geo_churn_by_city",
+      "type": "geo_map",
+      "title": "Taux de churn par ville",
+      "subtitle": "Agrégation par zone, aucun point individuel",
+      "section": "geo",
+      "span": 12,
+      "kpi": null,
+      "data": [
+        {
+          "zone": "San Diego",
+          "churn_rate": 33.33,
+          "n": 150,
+          "n_churned": 50,
+          "state": "California",
+          "city": "San Diego",
+          "excess_rate": 6.8,
+          "lat_mean": 32.8,
+          "lon_mean": -117.13
+        },
+        {
+          "zone": "Glendale",
+          "churn_rate": 32.5,
+          "n": 40,
+          "n_churned": 13,
+          "state": "California",
+          "city": "Glendale",
+          "excess_rate": 5.96,
+          "lat_mean": 34.16,
+          "lon_mean": -118.25
+        },
+        {
+          "zone": "Pasadena",
+          "churn_rate": 30.0,
+          "n": 30,
+          "n_churned": 9,
+          "state": "California",
+          "city": "Pasadena",
+          "excess_rate": 3.46,
+          "lat_mean": 34.15,
+          "lon_mean": -118.14
+        },
+        {
+          "zone": "San Francisco",
+          "churn_rate": 29.81,
+          "n": 104,
+          "n_churned": 31,
+          "state": "California",
+          "city": "San Francisco",
+          "excess_rate": 3.27,
+          "lat_mean": 37.77,
+          "lon_mean": -122.43
+        },
+        {
+          "zone": "Los Angeles",
+          "churn_rate": 29.51,
+          "n": 305,
+          "n_churned": 90,
+          "state": "California",
+          "city": "Los Angeles",
+          "excess_rate": 2.97,
+          "lat_mean": 34.04,
+          "lon_mean": -118.3
+        },
+        {
+          "zone": "Berkeley",
+          "churn_rate": 28.12,
+          "n": 32,
+          "n_churned": 9,
+          "state": "California",
+          "city": "Berkeley",
+          "excess_rate": 1.59,
+          "lat_mean": 37.88,
+          "lon_mean": -122.27
+        },
+        {
+          "zone": "Stockton",
+          "churn_rate": 27.27,
+          "n": 44,
+          "n_churned": 12,
+          "state": "California",
+          "city": "Stockton",
+          "excess_rate": 0.74,
+          "lat_mean": 37.99,
+          "lon_mean": -121.3
+        },
+        {
+          "zone": "San Jose",
+          "churn_rate": 25.89,
+          "n": 112,
+          "n_churned": 29,
+          "state": "California",
+          "city": "San Jose",
+          "excess_rate": -0.64,
+          "lat_mean": 37.31,
+          "lon_mean": -121.86
+        },
+        {
+          "zone": "Oakland",
+          "churn_rate": 25.0,
+          "n": 52,
+          "n_churned": 13,
+          "state": "California",
+          "city": "Oakland",
+          "excess_rate": -1.54,
+          "lat_mean": 37.8,
+          "lon_mean": -122.22
+        },
+        {
+          "zone": "Fresno",
+          "churn_rate": 25.0,
+          "n": 64,
+          "n_churned": 16,
+          "state": "California",
+          "city": "Fresno",
+          "excess_rate": -1.54,
+          "lat_mean": 36.77,
+          "lon_mean": -119.79
+        },
+        {
+          "zone": "Long Beach",
+          "churn_rate": 25.0,
+          "n": 60,
+          "n_churned": 15,
+          "state": "California",
+          "city": "Long Beach",
+          "excess_rate": -1.54,
+          "lat_mean": 33.8,
+          "lon_mean": -118.16
+        },
+        {
+          "zone": "Riverside",
+          "churn_rate": 25.0,
+          "n": 32,
+          "n_churned": 8,
+          "state": "California",
+          "city": "Riverside",
+          "excess_rate": -1.54,
+          "lat_mean": 33.94,
+          "lon_mean": -117.4
+        },
+        {
+          "zone": "Sacramento",
+          "churn_rate": 24.07,
+          "n": 108,
+          "n_churned": 26,
+          "state": "California",
+          "city": "Sacramento",
+          "excess_rate": -2.46,
+          "lat_mean": 38.57,
+          "lon_mean": -121.44
+        },
+        {
+          "zone": "Whittier",
+          "churn_rate": 16.67,
+          "n": 30,
+          "n_churned": 5,
+          "state": "California",
+          "city": "Whittier",
+          "excess_rate": -9.87,
+          "lat_mean": 33.97,
+          "lon_mean": -118.03
+        },
+        {
+          "zone": "Bakersfield",
+          "churn_rate": 7.5,
+          "n": 40,
+          "n_churned": 3,
+          "state": "California",
+          "city": "Bakersfield",
+          "excess_rate": -19.04,
+          "lat_mean": 35.34,
+          "lon_mean": -119.03
+        }
+      ],
+      "encoding": {
+        "x": "zone",
+        "y": "churn_rate",
+        "color": "churn_rate",
+        "size": "n",
+        "geo_key": "city",
+        "sort": "none"
+      },
+      "note": "Écart de churn par zone, à lire comme une association.",
+      "reliable": true,
+      "warnings": [
+        "niveau état insuffisant (moins de 2 zones fiables) : repli automatique sur la ville",
+        "1114 zone(s) masquée(s) (effectif < 30)"
+      ],
+      "references": {
+        "kpi_id": "churn_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "state",
+          "city"
+        ],
+        "formula": null,
+        "aggregation": "mean(churn) par city",
+        "origin": "dashboard_computed"
+      }
+    },
+    {
+      "id": "profile_tenure_months",
+      "type": "bar",
+      "title": "tenure_months : churnés vs retenus (médiane)",
+      "subtitle": "",
+      "section": "profiles",
+      "span": 4,
+      "kpi": null,
+      "data": [
+        {
+          "group": "churnés",
+          "median": 10.0,
+          "mean": 17.98,
+          "n": 1869
+        },
+        {
+          "group": "retenus",
+          "median": 38.0,
+          "mean": 37.57,
+          "n": 5174
+        }
+      ],
+      "encoding": {
+        "x": "group",
+        "y": "median",
+        "color": "group",
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Cliff's delta -0.48 (effet fort) ; association observée, pas causalité.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_tenure",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "tenure_months"
+        ],
+        "formula": null,
+        "aggregation": "médiane par groupe (Mann-Whitney)",
+        "origin": "analyst_report"
+      }
+    },
+    {
+      "id": "profile_monthly_charges",
+      "type": "bar",
+      "title": "monthly_charges : churnés vs retenus (médiane)",
+      "subtitle": "",
+      "section": "profiles",
+      "span": 4,
+      "kpi": null,
+      "data": [
+        {
+          "group": "churnés",
+          "median": 79.65,
+          "mean": 74.44,
+          "n": 1869
+        },
+        {
+          "group": "retenus",
+          "median": 64.43,
+          "mean": 61.27,
+          "n": 5174
+        }
+      ],
+      "encoding": {
+        "x": "group",
+        "y": "median",
+        "color": "group",
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Cliff's delta 0.24 (effet moyen) ; association observée, pas causalité.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "arpu",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "monthly_charges"
+        ],
+        "formula": null,
+        "aggregation": "médiane par groupe (Mann-Whitney)",
+        "origin": "analyst_report"
+      }
+    },
+    {
+      "id": "table_recommendations",
+      "type": "table",
+      "title": "Hypothèses d'action à tester",
+      "subtitle": "",
+      "section": "actions",
+      "span": 12,
+      "kpi": null,
+      "data": [
+        {
+          "id": "rec_monthly_to_annual",
+          "action": "Tester une offre d'engagement annuel avec remise tarifaire (ex. 10 % de réduction sur 12 mois prépayés)",
+          "target": "Clients en contrat mensuel depuis moins de 12 mois d'ancienneté",
+          "priority": "haute",
+          "test_type": "A/B test",
+          "impact_churners": 626.6,
+          "confidence": "élevée",
+          "insight_ids": "insight_contract_month_to_month"
+        },
+        {
+          "id": "rec_no_online_security",
+          "action": "Communiquer sur les bénéfices de la sécurité en ligne et proposer un essai offert de 1 mois",
+          "target": "Clients sans option de sécurité en ligne",
+          "priority": "basse",
+          "test_type": "A/B test",
+          "impact_churners": 532.7,
+          "confidence": "élevée",
+          "insight_ids": "insight_online_security_no"
+        },
+        {
+          "id": "rec_no_techsupport",
+          "action": "Proposer un essai gratuit de 3 mois d'assistance technique",
+          "target": "Clients sans support technique actif",
+          "priority": "basse",
+          "test_type": "A/B test",
+          "impact_churners": 524.4,
+          "confidence": "élevée",
+          "insight_ids": "insight_tech_support_no"
+        },
+        {
+          "id": "rec_fiber_quality",
+          "action": "Lancer une enquête qualité sur le service fibre et mettre en place un SLA de remboursement automatique en cas de coupure",
+          "target": "Clients abonnés à la fibre optique",
+          "priority": "moyenne",
+          "test_type": "enquête + test pilote",
+          "impact_churners": 475.2,
+          "confidence": "élevée",
+          "insight_ids": "insight_internet_service_fiber_optic"
+        },
+        {
+          "id": "rec_early_onboarding",
+          "action": "Déployer un parcours d'accueil 0-12 mois : appel de bienvenue J+7, coaching usage J+30, offre de fidélisation J+90",
+          "target": "Clients en première année d'ancienneté (tenure < 12 mois)",
+          "priority": "moyenne",
+          "test_type": "test pilote",
+          "impact_churners": 449.8,
+          "confidence": "élevée",
+          "insight_ids": "insight_tenure_bin_0_12_mois"
+        },
+        {
+          "id": "rec_echeck_to_autopay",
+          "action": "Proposer une incitation au prélèvement automatique (ex. remise sur la prochaine facture ou mois de service offert)",
+          "target": "Clients payant actuellement par chèque électronique",
+          "priority": "haute",
+          "test_type": "A/B test",
+          "impact_churners": 443.4,
+          "confidence": "élevée",
+          "insight_ids": "insight_payment_method_electronic_check"
+        },
+        {
+          "id": "rec_no_online_backup",
+          "action": "Proposer un essai gratuit de sauvegarde en ligne",
+          "target": "Clients sans sauvegarde en ligne active",
+          "priority": "moyenne",
+          "test_type": "A/B test",
+          "impact_churners": 413.5,
+          "confidence": "élevée",
+          "insight_ids": "insight_online_backup_no"
+        },
+        {
+          "id": "rec_no_device_protection",
+          "action": "Proposer une offre de protection d'équipement",
+          "target": "Clients sans protection d'équipement",
+          "priority": "moyenne",
+          "test_type": "A/B test",
+          "impact_churners": 389.7,
+          "confidence": "élevée",
+          "insight_ids": "insight_device_protection_no"
+        },
+        {
+          "id": "rec_no_dependents",
+          "action": "Cibler les offres famille pour les clients sans dépendants",
+          "target": "Clients sans dépendants à charge",
+          "priority": "basse",
+          "test_type": "test pilote",
+          "impact_churners": 325.5,
+          "confidence": "moyenne",
+          "insight_ids": "insight_dependents_no"
+        },
+        {
+          "id": "rec_paperless_billing",
+          "action": "Améliorer l'expérience de la facturation dématérialisée : alertes claires, accès facile aux historiques",
+          "target": "Clients en facturation dématérialisée",
+          "priority": "basse",
+          "test_type": "test pilote",
+          "impact_churners": 293.2,
+          "confidence": "moyenne",
+          "insight_ids": "insight_paperless_billing_yes"
+        }
+      ],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Chaque recommandation est une hypothèse à valider (A/B test, pilote), pas une certitude.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": null,
+        "insight_ids": [
+          "insight_contract_month_to_month",
+          "insight_dependents_no",
+          "insight_device_protection_no",
+          "insight_internet_service_fiber_optic",
+          "insight_online_backup_no",
+          "insight_online_security_no",
+          "insight_paperless_billing_yes",
+          "insight_payment_method_electronic_check",
+          "insight_tech_support_no",
+          "insight_tenure_bin_0_12_mois"
+        ],
+        "recommendation_ids": [
+          "rec_monthly_to_annual",
+          "rec_no_online_security",
+          "rec_no_techsupport",
+          "rec_fiber_quality",
+          "rec_early_onboarding",
+          "rec_echeck_to_autopay",
+          "rec_no_online_backup",
+          "rec_no_device_protection",
+          "rec_no_dependents",
+          "rec_paperless_billing"
+        ],
+        "source_columns": [],
+        "formula": null,
+        "aggregation": null,
+        "origin": "analyst_report"
+      }
+    },
+    {
+      "id": "text_caveats",
+      "type": "text",
+      "title": "Réserves et limites",
+      "subtitle": "",
+      "section": "quality",
+      "span": 12,
+      "kpi": null,
+      "data": [
+        {
+          "text": "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité."
+        },
+        {
+          "text": "Troncature : 38 segments passent les filtres ; seuls les 10 à plus fort impact sont affichés."
+        },
+        {
+          "text": "Chevauchement des segments : les insights portent sur des dimensions différentes et leurs populations peuvent se recouper. Les impacts (départs en excès) ne sont pas additifs."
+        }
+      ],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": null,
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [],
+        "formula": null,
+        "aggregation": null,
+        "origin": "analyst_report"
+      }
+    }
+  ],
+  "filters": [],
+  "report": {
+    "title": "Dashboard BI : Analyse décisionnelle télécom",
+    "executive_summary": "Taux de churn global : 26.5 % sur 7043 clients. Le segment associé au plus fort excès de départs est « contract = Month-to-month : churn 42.71 % (+16.2 pts) » (627 départs en excès, confiance élevée).",
+    "blocks": [
+      {
+        "heading": "Indicateurs clés",
+        "text": "",
+        "visual_ids": [
+          "kpi_churn_rate",
+          "kpi_churned_customers",
+          "kpi_monthly_revenue_lost",
+          "kpi_customer_count",
+          "kpi_avg_tenure",
+          "kpi_arpu",
+          "kpi_total_revenue",
+          "kpi_avg_cltv"
+        ]
+      },
+      {
+        "heading": "Segments à risque",
+        "text": "1. Le segment « Month-to-month » (dimension : contract) est associé à un taux de churn de 42.71 %, contre 26.54 % sur l'ensemble du portefeuille (+16.17 points d'écart). 2. Le segment « No » (dimension : online_security) est associé à un taux de churn de 41.77 %, contre 26.54 % sur l'ensemble du portefeuille (+15.23 points d'écart). 3. Le segment « No » (dimension : tech_support) est associé à un taux de churn de 41.64 %, contre 26.54 % sur l'ensemble du portefeuille (+15.10 points d'écart).",
+        "visual_ids": [
+          "table_insights",
+          "heatmap_contract_online_security",
+          "bar_churn_rate_contract",
+          "bar_churn_rate_internet_service",
+          "bar_churn_rate_payment_method",
+          "bar_customer_count_contract",
+          "bar_avg_tenure_contract",
+          "bar_arpu_contract",
+          "bar_total_revenue_contract"
+        ]
+      },
+      {
+        "heading": "Évolution et ancienneté",
+        "text": "",
+        "visual_ids": [
+          "line_churn_by_tenure"
+        ]
+      },
+      {
+        "heading": "Répartition géographique",
+        "text": "",
+        "visual_ids": [
+          "geo_churn_by_city"
+        ]
+      },
+      {
+        "heading": "Profils churnés vs retenus",
+        "text": "",
+        "visual_ids": [
+          "profile_tenure_months",
+          "profile_monthly_charges"
+        ]
+      },
+      {
+        "heading": "Hypothèses d'action à tester",
+        "text": "Tester une offre d'engagement annuel avec remise tarifaire (ex. 10 % de réduction sur 12 mois prépayés) (cible : Clients en contrat mensuel depuis moins de 12 mois d'ancienneté, test : A/B test). Communiquer sur les bénéfices de la sécurité en ligne et proposer un essai offert de 1 mois (cible : Clients sans option de sécurité en ligne, test : A/B test). Proposer un essai gratuit de 3 mois d'assistance technique (cible : Clients sans support technique actif, test : A/B test).",
+        "visual_ids": [
+          "table_recommendations"
+        ]
+      }
+    ],
+    "recommendations_table": [
+      {
+        "id": "rec_monthly_to_annual",
+        "action": "Tester une offre d'engagement annuel avec remise tarifaire (ex. 10 % de réduction sur 12 mois prépayés)",
+        "target": "Clients en contrat mensuel depuis moins de 12 mois d'ancienneté",
+        "insight_ids": [
+          "insight_contract_month_to_month"
+        ],
+        "impact_churners": 626.6,
+        "priority": "haute",
+        "confidence": "élevée",
+        "test_type": "A/B test"
+      },
+      {
+        "id": "rec_no_online_security",
+        "action": "Communiquer sur les bénéfices de la sécurité en ligne et proposer un essai offert de 1 mois",
+        "target": "Clients sans option de sécurité en ligne",
+        "insight_ids": [
+          "insight_online_security_no"
+        ],
+        "impact_churners": 532.7,
+        "priority": "basse",
+        "confidence": "élevée",
+        "test_type": "A/B test"
+      },
+      {
+        "id": "rec_no_techsupport",
+        "action": "Proposer un essai gratuit de 3 mois d'assistance technique",
+        "target": "Clients sans support technique actif",
+        "insight_ids": [
+          "insight_tech_support_no"
+        ],
+        "impact_churners": 524.4,
+        "priority": "basse",
+        "confidence": "élevée",
+        "test_type": "A/B test"
+      },
+      {
+        "id": "rec_fiber_quality",
+        "action": "Lancer une enquête qualité sur le service fibre et mettre en place un SLA de remboursement automatique en cas de coupure",
+        "target": "Clients abonnés à la fibre optique",
+        "insight_ids": [
+          "insight_internet_service_fiber_optic"
+        ],
+        "impact_churners": 475.2,
+        "priority": "moyenne",
+        "confidence": "élevée",
+        "test_type": "enquête + test pilote"
+      },
+      {
+        "id": "rec_early_onboarding",
+        "action": "Déployer un parcours d'accueil 0-12 mois : appel de bienvenue J+7, coaching usage J+30, offre de fidélisation J+90",
+        "target": "Clients en première année d'ancienneté (tenure < 12 mois)",
+        "insight_ids": [
+          "insight_tenure_bin_0_12_mois"
+        ],
+        "impact_churners": 449.8,
+        "priority": "moyenne",
+        "confidence": "élevée",
+        "test_type": "test pilote"
+      },
+      {
+        "id": "rec_echeck_to_autopay",
+        "action": "Proposer une incitation au prélèvement automatique (ex. remise sur la prochaine facture ou mois de service offert)",
+        "target": "Clients payant actuellement par chèque électronique",
+        "insight_ids": [
+          "insight_payment_method_electronic_check"
+        ],
+        "impact_churners": 443.4,
+        "priority": "haute",
+        "confidence": "élevée",
+        "test_type": "A/B test"
+      },
+      {
+        "id": "rec_no_online_backup",
+        "action": "Proposer un essai gratuit de sauvegarde en ligne",
+        "target": "Clients sans sauvegarde en ligne active",
+        "insight_ids": [
+          "insight_online_backup_no"
+        ],
+        "impact_churners": 413.5,
+        "priority": "moyenne",
+        "confidence": "élevée",
+        "test_type": "A/B test"
+      },
+      {
+        "id": "rec_no_device_protection",
+        "action": "Proposer une offre de protection d'équipement",
+        "target": "Clients sans protection d'équipement",
+        "insight_ids": [
+          "insight_device_protection_no"
+        ],
+        "impact_churners": 389.7,
+        "priority": "moyenne",
+        "confidence": "élevée",
+        "test_type": "A/B test"
+      },
+      {
+        "id": "rec_no_dependents",
+        "action": "Cibler les offres famille pour les clients sans dépendants",
+        "target": "Clients sans dépendants à charge",
+        "insight_ids": [
+          "insight_dependents_no"
+        ],
+        "impact_churners": 325.5,
+        "priority": "basse",
+        "confidence": "moyenne",
+        "test_type": "test pilote"
+      },
+      {
+        "id": "rec_paperless_billing",
+        "action": "Améliorer l'expérience de la facturation dématérialisée : alertes claires, accès facile aux historiques",
+        "target": "Clients en facturation dématérialisée",
+        "insight_ids": [
+          "insight_paperless_billing_yes"
+        ],
+        "impact_churners": 293.2,
+        "priority": "basse",
+        "confidence": "moyenne",
+        "test_type": "test pilote"
+      }
+    ],
+    "caveats": [
+      "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+      "Troncature : 38 segments passent les filtres ; seuls les 10 à plus fort impact sont affichés.",
+      "Chevauchement des segments : les insights portent sur des dimensions différentes et leurs populations peuvent se recouper. Les impacts (départs en excès) ne sont pas additifs.",
+      "Troncature : 17 visuel(s) non affiché(s) (max_visuals=20)."
+    ]
+  },
+  "excluded_visuals": [
+    {
+      "candidate": "avg_churn_score",
+      "reason": "fuite de cible : dérivé du churn, exclu des cartes de pilotage"
+    },
+    {
+      "candidate": "unpaid_rate",
+      "reason": "non calculable (num: ['unpaid_amount', 'overdue_amount'], den: ['billed_amount', 'invoice_amount'])"
+    },
+    {
+      "candidate": "avg_data_usage",
+      "reason": "non calculable (value: ['data_usage_mb', 'data_mb', 'data_usage', 'internet_mb'])"
+    },
+    {
+      "candidate": "avg_call_minutes",
+      "reason": "non calculable (value: ['call_minutes', 'minutes', 'call_duration', 'voice_minutes'])"
+    },
+    {
+      "candidate": "avg_mos_voice",
+      "reason": "non calculable (value: ['mos_voice', 'mos', 'streaming_mos'])"
+    },
+    {
+      "candidate": "avg_throughput",
+      "reason": "non calculable (value: ['throughput_mbps', 'effective_bitrate_mbps', 'throughput', 'download_speed_mbps', 'download_speed'])"
+    },
+    {
+      "candidate": "avg_upload_speed",
+      "reason": "non calculable (value: ['upload_speed_mbps', 'upload_speed'])"
+    },
+    {
+      "candidate": "avg_signal_strength",
+      "reason": "non calculable (value: ['signal_strength_dbm', 'signal_strength', 'rssi', 'rsrp'])"
+    },
+    {
+      "candidate": "avg_packet_loss",
+      "reason": "non calculable (value: ['plr', 'packet_loss'])"
+    },
+    {
+      "candidate": "network_availability",
+      "reason": "non calculable (value: ['availability'])"
+    },
+    {
+      "candidate": "cdr_incident_rate",
+      "reason": "non calculable (flag: ['cdr_flag', 'incident_flag', 'call_drop', 'dropped_connection'])"
+    },
+    {
+      "candidate": "dropped_call_rate",
+      "reason": "non calculable (num: ['dropped_calls'], den: ['total_calls', 'calls'])"
+    },
+    {
+      "candidate": "avg_latency",
+      "reason": "non calculable (value: ['latency_ms', 'latency'])"
+    },
+    {
+      "candidate": "ticket_count",
+      "reason": "non calculable (id: ['ticket_id', 'ticket', 'case_id', 'complaint_id', 'issue_id', 'ticket_number'])"
+    },
+    {
+      "candidate": "ticket_resolution_rate",
+      "reason": "non calculable (flag: ['ticket_status', 'status', 'case_status'])"
+    },
+    {
+      "candidate": "avg_csat",
+      "reason": "non calculable (value: ['customer_satisfaction_rating', 'csat', 'satisfaction_rating', 'rating'])"
+    },
+    {
+      "candidate": "dispute_rate",
+      "reason": "non calculable (flag: ['consumer_disputed?', 'consumer_disputed', 'is_disputed', 'disputed'])"
+    },
+    {
+      "candidate": "timely_response_rate",
+      "reason": "non calculable (flag: ['timely_response', 'timely_response?', 'in_time'])"
+    },
+    {
+      "candidate": "avg_resolution_time",
+      "reason": "non calculable (value: ['resolution_time_hours', 'resolution_time', 'resolution_hours'])"
+    },
+    {
+      "candidate": "série calendaire",
+      "reason": "aucune colonne de date : la dimension temporelle repose sur l'ancienneté"
+    },
+    {
+      "candidate": "bar_avg_cltv_contract",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_churned_customers_contract",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_churned_customers_internet_service",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_churned_customers_payment_method",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_monthly_revenue_lost_contract",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_monthly_revenue_lost_internet_service",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_monthly_revenue_lost_payment_method",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_customer_count_internet_service",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_customer_count_payment_method",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_avg_tenure_internet_service",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_avg_tenure_payment_method",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_arpu_internet_service",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_arpu_payment_method",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_total_revenue_internet_service",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_total_revenue_payment_method",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_avg_cltv_internet_service",
+      "reason": "limite max_visuals=20"
+    },
+    {
+      "candidate": "bar_avg_cltv_payment_method",
+      "reason": "limite max_visuals=20"
+    }
+  ],
+  "caveats": [
+    "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+    "Troncature : 38 segments passent les filtres ; seuls les 10 à plus fort impact sont affichés.",
+    "Chevauchement des segments : les insights portent sur des dimensions différentes et leurs populations peuvent se recouper. Les impacts (départs en excès) ne sont pas additifs.",
+    "Troncature : 17 visuel(s) non affiché(s) (max_visuals=20)."
+  ],
+  "null_result": false,
+  "llm_narrative": "Taux de churn global : 26.5 % sur 7043 clients. Le segment associé au plus fort excès de départs est « contract = Month-to-month : churn 42.71 % (+16.2 pts) » (627 départs en excès, confiance élevée).",
+  "output_files": {
+    "report": "output_test\\telco\\dashboard\\dashboard_report.json"
+  },
+  "trace": [
+    {
+      "timestamp": "2026-10-26T20:02:19.967244",
+      "tool": "load",
+      "parameters": {
+        "has_frame": true,
+        "has_kpi": true,
+        "n_insights": 10
+      },
+      "duration_ms": 1.2856000003012014
+    },
+    {
+      "timestamp": "2026-10-26T20:02:19.993775",
+      "tool": "build",
+      "parameters": {
+        "n_candidates": 40
+      },
+      "duration_ms": 25.942100000065693
+    },
+    {
+      "timestamp": "2026-10-26T20:02:19.994759",
+      "tool": "assemble",
+      "parameters": {
+        "n_visuals": 23,
+        "n_excluded": 37
+      },
+      "duration_ms": 0.30839999999443535
+    },
+    {
+      "timestamp": "2026-10-26T20:02:19.994759",
+      "tool": "report",
+      "parameters": {
+        "n_blocks": 6
+      },
+      "duration_ms": 0.08139999954437371
+    },
+    {
+      "timestamp": "2026-10-26T20:02:19.994759",
+      "tool": "narrate",
+      "parameters": {
+        "llm": false
+      },
+      "duration_ms": 0.0035000002753804438
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-26T20:02:19.967244"
+}

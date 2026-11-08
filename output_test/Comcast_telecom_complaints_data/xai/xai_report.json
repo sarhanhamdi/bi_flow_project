@@ -1,0 +1,214 @@
+{
+  "status": "success",
+  "business_goal": "Analyse décisionnelle télécom",
+  "n_features_used": 7,
+  "features_used": [
+    "ticket",
+    "customer_complaint",
+    "date",
+    "date_month_year",
+    "time",
+    "status",
+    "filing_on_behalf_of_someone"
+  ],
+  "features_excluded": [
+    "received_via",
+    "city",
+    "state",
+    "zip_code"
+  ],
+  "model_metrics": {
+    "accuracy": 0.5079,
+    "precision": 0.5043,
+    "recall": 0.5249,
+    "f1": 0.5144,
+    "auc_roc": 0.5201,
+    "n_train": 1779,
+    "n_test": 445,
+    "positive_rate_train": 0.4969,
+    "positive_rate_test": 0.4966
+  },
+  "shap_summary": {
+    "top_features": [
+      {
+        "feature": "customer_complaint",
+        "mean_abs_shap": 0.0421,
+        "rank": 1
+      },
+      {
+        "feature": "ticket",
+        "mean_abs_shap": 0.037,
+        "rank": 2
+      },
+      {
+        "feature": "time",
+        "mean_abs_shap": 0.0361,
+        "rank": 3
+      },
+      {
+        "feature": "date_month_year",
+        "mean_abs_shap": 0.0297,
+        "rank": 4
+      },
+      {
+        "feature": "date",
+        "mean_abs_shap": 0.0264,
+        "rank": 5
+      },
+      {
+        "feature": "status",
+        "mean_abs_shap": 0.0203,
+        "rank": 6
+      },
+      {
+        "feature": "filing_on_behalf_of_someone",
+        "mean_abs_shap": 0.0078,
+        "rank": 7
+      }
+    ],
+    "examples": [
+      {
+        "client_index": 0,
+        "true_label": 1,
+        "predicted_label": 0,
+        "predicted_proba": 0.45,
+        "top_features": [
+          {
+            "feature": "date",
+            "shap_value": -0.0297,
+            "feature_value": 78.0
+          },
+          {
+            "feature": "date_month_year",
+            "shap_value": -0.0294,
+            "feature_value": 60.0
+          },
+          {
+            "feature": "customer_complaint",
+            "shap_value": 0.0284,
+            "feature_value": 509.0
+          },
+          {
+            "feature": "ticket",
+            "shap_value": -0.0244,
+            "feature_value": 349716.0
+          },
+          {
+            "feature": "time",
+            "shap_value": 0.0019,
+            "feature_value": 1224.0
+          }
+        ]
+      },
+      {
+        "client_index": 1,
+        "true_label": 1,
+        "predicted_label": 1,
+        "predicted_proba": 0.65,
+        "top_features": [
+          {
+            "feature": "customer_complaint",
+            "shap_value": 0.0966,
+            "feature_value": 322.0
+          },
+          {
+            "feature": "time",
+            "shap_value": 0.0348,
+            "feature_value": 2126.0
+          },
+          {
+            "feature": "ticket",
+            "shap_value": 0.0258,
+            "feature_value": 265612.0
+          },
+          {
+            "feature": "date_month_year",
+            "shap_value": -0.0145,
+            "feature_value": 28.0
+          },
+          {
+            "feature": "date",
+            "shap_value": 0.0075,
+            "feature_value": 28.0
+          }
+        ]
+      },
+      {
+        "client_index": 2,
+        "true_label": 1,
+        "predicted_label": 0,
+        "predicted_proba": 0.48,
+        "top_features": [
+          {
+            "feature": "ticket",
+            "shap_value": -0.0276,
+            "feature_value": 362663.0
+          },
+          {
+            "feature": "status",
+            "shap_value": 0.0197,
+            "feature_value": 3.0
+          },
+          {
+            "feature": "date",
+            "shap_value": -0.0122,
+            "feature_value": 84.0
+          },
+          {
+            "feature": "customer_complaint",
+            "shap_value": 0.0107,
+            "feature_value": 369.0
+          },
+          {
+            "feature": "date_month_year",
+            "shap_value": -0.005,
+            "feature_value": 66.0
+          }
+        ]
+      }
+    ]
+  },
+  "baseline_comparison": {
+    "baseline_accuracy": 0.5034,
+    "baseline_f1": 0.0,
+    "delta_accuracy": 0.0045,
+    "delta_f1": 0.5144,
+    "verdict": "marginal_gain"
+  },
+  "audit_findings": [
+    {
+      "id": "AUDIT-DATA-001",
+      "severity": "info",
+      "category": "data_preparation",
+      "title": "Exclusion de fuite de cible",
+      "detail": "4 colonnes exclues pour éviter fuite d'information ou biais (ex: churn_score, churn_reason, identifiants).",
+      "recommendation": "Conserver l'exclusion stricte de churn_score en production."
+    },
+    {
+      "id": "AUDIT-MODEL-001",
+      "severity": "medium",
+      "category": "performance",
+      "title": "Recall modéré sur le Churn",
+      "detail": "Le Recall est de 52.5%. Certains clients résilients ne sont pas détectés.",
+      "recommendation": "Ajuster le seuil de décision probabilité ou tester un modèle de boosting (XGBoost/LightGBM)."
+    },
+    {
+      "id": "AUDIT-BASELINE-001",
+      "severity": "info",
+      "category": "baseline",
+      "title": "Validation par rapport au modèle naïf",
+      "detail": "Gain de F1-Score de +51.4% par rapport à la classe majoritaire.",
+      "recommendation": "Le modèle ML apporte une valeur réelle par rapport à une règle naïve."
+    },
+    {
+      "id": "AUDIT-XAI-001",
+      "severity": "info",
+      "category": "explainability",
+      "title": "Déterminants majeurs identifiés",
+      "detail": "Les 3 facteurs les plus influents au niveau global sont : customer_complaint, ticket, time.",
+      "recommendation": "Cibler en priorité les offres commerciales sur ces leviers (ex: durée d'engagement, tarification)."
+    }
+  ],
+  "llm_summary": "L'audit du modèle RandomForest indique une Accuracy de 50.8%, un Recall de 52.5% et un F1-Score de 51.4% (AUC-ROC: 0.520). Par rapport à la baseline naïve (DummyClassifier), le gain en F1-Score est de +51.4%, validant l'apport prédictif du modèle (marginal_gain). Les principaux facteurs expliquant le risque de churn selon SHAP sont : customer_complaint, ticket, time. 4 constats d'audit ont été relevés.",
+  "errors": []
+}

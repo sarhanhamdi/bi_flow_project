@@ -82,10 +82,11 @@ class SHAPSummary(BaseModel):
 
 
 class BaselineComparison(BaseModel):
-    """Comparaison RandomForest vs DummyClassifier."""
+    """Comparaison RandomForest vs Régression Logistique (baseline linéaire)."""
 
     model_config = ConfigDict(extra="forbid")
 
+    baseline_model: str = Field(default="LogisticRegression", description="Nom du modèle baseline")
     baseline_accuracy: float
     baseline_f1: float
     baseline_recall: float = 0.0
@@ -100,7 +101,7 @@ class BaselineComparison(BaseModel):
     verdict: Literal["significant_gain", "marginal_gain", "no_gain"]
     pedagogical_explanation: str = Field(
         default="",
-        description="Explication vulgarisée de la supériorité face à la règle naïve"
+        description="Explication vulgarisée de la supériorité face au modèle de référence linéaire"
     )
 
 
@@ -163,6 +164,10 @@ class FinancialAudit(BaseModel):
     waste_reduction_pct: float = Field(description="Réduction du gaspillage d'offres promo vs ciblage aveugle (%)")
     optimal_decision_threshold: float = Field(description="Seuil de probabilité optimal maximisant le gain financier")
     cost_inaction_ratio: float = Field(description="Ratio coût d'un départ / coût d'une offre")
+    decision_rule: str = Field(
+        default="",
+        description="Règle d'arbitrage coût/risque contextualisée par domaine et métriques"
+    )
     marketing_levers: list[MarketingLever] = Field(default_factory=list)
 
 

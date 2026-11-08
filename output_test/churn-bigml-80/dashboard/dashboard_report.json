@@ -1,0 +1,1823 @@
+{
+  "business_goal": "Test multi-usage autonome",
+  "status": "success",
+  "analyst_status": "success",
+  "title": "Dashboard BI : Test multi-usage autonome",
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Vue d'ensemble",
+      "order": 0,
+      "visual_ids": [
+        "kpi_churn_rate",
+        "kpi_churned_customers",
+        "kpi_monthly_revenue_lost",
+        "kpi_avg_tenure",
+        "kpi_arpu"
+      ]
+    },
+    {
+      "id": "segments",
+      "title": "Segments à risque",
+      "order": 1,
+      "visual_ids": [
+        "table_insights",
+        "heatmap_international_plan_voice_mail_plan",
+        "bar_churn_rate_international_plan",
+        "bar_churn_rate_voice_mail_plan",
+        "bar_avg_tenure_international_plan",
+        "bar_arpu_international_plan",
+        "bar_churned_customers_international_plan",
+        "bar_churned_customers_voice_mail_plan",
+        "bar_monthly_revenue_lost_international_plan",
+        "bar_monthly_revenue_lost_voice_mail_plan",
+        "bar_avg_tenure_voice_mail_plan",
+        "bar_avg_tenure_churn",
+        "bar_arpu_voice_mail_plan"
+      ]
+    },
+    {
+      "id": "geo",
+      "title": "Répartition géographique",
+      "order": 3,
+      "visual_ids": [
+        "geo_churn_by_state"
+      ]
+    },
+    {
+      "id": "profiles",
+      "title": "Profils churnés vs retenus",
+      "order": 4,
+      "visual_ids": [
+        "profile_account_length",
+        "profile_total_day_charge"
+      ]
+    },
+    {
+      "id": "actions",
+      "title": "Recommandations",
+      "order": 5,
+      "visual_ids": [
+        "table_recommendations"
+      ]
+    },
+    {
+      "id": "quality",
+      "title": "Qualité et réserves",
+      "order": 6,
+      "visual_ids": [
+        "text_caveats"
+      ]
+    }
+  ],
+  "visuals": [
+    {
+      "id": "kpi_churn_rate",
+      "type": "kpi_card",
+      "title": "Taux de churn",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "churn_rate",
+        "name": "Taux de churn",
+        "value": 14.55,
+        "unit": "%",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": false
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Part des clients ayant quitté l'opérateur.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "churn"
+        ],
+        "formula": "clients_churnés / clients_total × 100",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_churned_customers",
+      "type": "kpi_card",
+      "title": "Clients churnés",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "churned_customers",
+        "name": "Clients churnés",
+        "value": 388.0,
+        "unit": "clients",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": false
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Nombre de clients ayant quitté l'opérateur.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churned_customers",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "churn"
+        ],
+        "formula": "somme(indicateur_churn)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_monthly_revenue_lost",
+      "type": "kpi_card",
+      "title": "Revenu mensuel perdu par churn",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "monthly_revenue_lost",
+        "name": "Revenu mensuel perdu par churn",
+        "value": 13533.96,
+        "unit": "devise/mois",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": false
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Revenu mensuel récurrent des clients qui sont partis.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "monthly_revenue_lost",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "churn",
+          "total_day_charge"
+        ],
+        "formula": "somme(frais_mensuels) pour les clients churnés",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_avg_tenure",
+      "type": "kpi_card",
+      "title": "Ancienneté moyenne",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "avg_tenure",
+        "name": "Ancienneté moyenne",
+        "value": 100.62,
+        "unit": "mois",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Durée moyenne depuis la souscription.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_tenure",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "account_length"
+        ],
+        "formula": "moyenne(ancienneté_en_mois)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_arpu",
+      "type": "kpi_card",
+      "title": "ARPU mensuel",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "arpu",
+        "name": "ARPU mensuel",
+        "value": 30.51,
+        "unit": "devise/client/mois",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Revenu mensuel moyen par client.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "arpu",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "total_day_charge"
+        ],
+        "formula": "moyenne(frais_mensuels)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "table_insights",
+      "type": "table",
+      "title": "Insights classés par impact",
+      "subtitle": "",
+      "section": "segments",
+      "span": 12,
+      "kpi": null,
+      "data": [
+        {
+          "rank": 1,
+          "title": "international_plan = Yes : churn 43.70 % (+29.1 pts)",
+          "finding": "Le segment « Yes » (dimension : international_plan) est associé à un taux de churn de 43.70 %, contre 14.55 % sur l'ensemble du portefeuille (+29.15 points d'écart).",
+          "direction": "risque",
+          "impact_churners": 78.7,
+          "revenue_monthly_lost_excess": 2606.72,
+          "confidence": "élevée"
+        },
+        {
+          "rank": 2,
+          "title": "customer_service_calls = 4 : churn 48.12 % (+33.6 pts)",
+          "finding": "Le segment « 4 » (dimension : customer_service_calls) est associé à un taux de churn de 48.12 %, contre 14.55 % sur l'ensemble du portefeuille (+33.57 points d'écart).",
+          "direction": "risque",
+          "impact_churners": 44.6,
+          "revenue_monthly_lost_excess": 1176.35,
+          "confidence": "élevée"
+        },
+        {
+          "rank": 3,
+          "title": "customer_service_calls = 5 : churn 59.18 % (+44.6 pts)",
+          "finding": "Le segment « 5 » (dimension : customer_service_calls) est associé à un taux de churn de 59.18 %, contre 14.55 % sur l'ensemble du portefeuille (+44.63 points d'écart).",
+          "direction": "risque",
+          "impact_churners": 21.9,
+          "revenue_monthly_lost_excess": 563.64,
+          "confidence": "moyenne"
+        },
+        {
+          "rank": 4,
+          "title": "customer_service_calls = 3 : churn 10.63 % (-3.9 pts)",
+          "finding": "Le segment « 3 » (dimension : customer_service_calls) est associé à un taux de churn de 10.63 %, contre 14.55 % sur l'ensemble du portefeuille (-3.92 points d'écart).",
+          "direction": "protecteur",
+          "impact_churners": -13.6,
+          "revenue_monthly_lost_excess": -514.52,
+          "confidence": "faible"
+        },
+        {
+          "rank": 5,
+          "title": "customer_service_calls = 2 : churn 10.20 % (-4.3 pts)",
+          "finding": "Le segment « 2 » (dimension : customer_service_calls) est associé à un taux de churn de 10.20 %, contre 14.55 % sur l'ensemble du portefeuille (-4.35 points d'écart).",
+          "direction": "protecteur",
+          "impact_churners": -26.4,
+          "revenue_monthly_lost_excess": -991.42,
+          "confidence": "faible"
+        },
+        {
+          "rank": 6,
+          "title": "customer_service_calls = 1 : churn 10.48 % (-4.1 pts)",
+          "finding": "Le segment « 1 » (dimension : customer_service_calls) est associé à un taux de churn de 10.48 %, contre 14.55 % sur l'ensemble du portefeuille (-4.07 points d'écart).",
+          "direction": "protecteur",
+          "impact_churners": -38.5,
+          "revenue_monthly_lost_excess": -1527.62,
+          "confidence": "faible"
+        },
+        {
+          "rank": 7,
+          "title": "voice_mail_plan = Yes : churn 8.87 % (-5.7 pts)",
+          "finding": "Le segment « Yes » (dimension : voice_mail_plan) est associé à un taux de churn de 8.87 %, contre 14.55 % sur l'ensemble du portefeuille (-5.68 points d'écart).",
+          "direction": "protecteur",
+          "impact_churners": -41.6,
+          "revenue_monthly_lost_excess": -1269.72,
+          "confidence": "moyenne"
+        },
+        {
+          "rank": 8,
+          "title": "international_plan = No : churn 11.27 % (-3.3 pts)",
+          "finding": "Le segment « No » (dimension : international_plan) est associé à un taux de churn de 11.27 %, contre 14.55 % sur l'ensemble du portefeuille (-3.28 points d'écart).",
+          "direction": "protecteur",
+          "impact_churners": -78.6,
+          "revenue_monthly_lost_excess": -2801.77,
+          "confidence": "faible"
+        }
+      ],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Impacts non additifs : les segments peuvent se chevaucher.",
+      "reliable": true,
+      "warnings": [
+        "chevauchement possible entre segments"
+      ],
+      "references": {
+        "kpi_id": null,
+        "insight_ids": [
+          "insight_international_plan_yes",
+          "insight_customer_service_calls_4",
+          "insight_customer_service_calls_5",
+          "insight_customer_service_calls_3",
+          "insight_customer_service_calls_2",
+          "insight_customer_service_calls_1",
+          "insight_voice_mail_plan_yes",
+          "insight_international_plan_no"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [],
+        "formula": null,
+        "aggregation": null,
+        "origin": "analyst_report"
+      }
+    },
+    {
+      "id": "heatmap_international_plan_voice_mail_plan",
+      "type": "heatmap",
+      "title": "Churn : international_plan × voice_mail_plan",
+      "subtitle": "",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "international_plan": "No",
+          "voice_mail_plan": "No",
+          "churn_rate": 13.46,
+          "n": 1738
+        },
+        {
+          "international_plan": "No",
+          "voice_mail_plan": "Yes",
+          "churn_rate": 5.47,
+          "n": 658
+        },
+        {
+          "international_plan": "Yes",
+          "voice_mail_plan": "No",
+          "churn_rate": 45.64,
+          "n": 195
+        },
+        {
+          "international_plan": "Yes",
+          "voice_mail_plan": "Yes",
+          "churn_rate": 38.67,
+          "n": 75
+        }
+      ],
+      "encoding": {
+        "x": "international_plan",
+        "y": "voice_mail_plan",
+        "color": "churn_rate",
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Croisement de deux dimensions ; cellules à faible effectif masquées.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "insight_ids": [
+          "insight_international_plan_no",
+          "insight_international_plan_yes",
+          "insight_voice_mail_plan_yes"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "international_plan",
+          "voice_mail_plan"
+        ],
+        "formula": null,
+        "aggregation": "mean(churn) par international_plan × voice_mail_plan",
+        "origin": "dashboard_computed"
+      }
+    },
+    {
+      "id": "bar_churn_rate_international_plan",
+      "type": "bar",
+      "title": "Taux de churn par international_plan",
+      "subtitle": "Référence globale : 14.55 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Yes",
+          "value": 43.7,
+          "rows": 270,
+          "global": 14.55
+        },
+        {
+          "segment": "No",
+          "value": 11.27,
+          "rows": 2396,
+          "global": 14.55
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "insight_ids": [
+          "insight_international_plan_no",
+          "insight_international_plan_yes"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "international_plan"
+        ],
+        "formula": "clients_churnés / clients_total × 100",
+        "aggregation": "Taux de churn par international_plan",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_churn_rate_voice_mail_plan",
+      "type": "bar",
+      "title": "Taux de churn par voice_mail_plan",
+      "subtitle": "Référence globale : 14.55 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "No",
+          "value": 16.71,
+          "rows": 1933,
+          "global": 14.55
+        },
+        {
+          "segment": "Yes",
+          "value": 8.87,
+          "rows": 733,
+          "global": 14.55
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "insight_ids": [
+          "insight_voice_mail_plan_yes"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "voice_mail_plan"
+        ],
+        "formula": "clients_churnés / clients_total × 100",
+        "aggregation": "Taux de churn par voice_mail_plan",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_tenure_international_plan",
+      "type": "bar",
+      "title": "Ancienneté moyenne par international_plan",
+      "subtitle": "Référence globale : 100.62 mois",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Yes",
+          "value": 103.51,
+          "rows": 270,
+          "global": 100.62
+        },
+        {
+          "segment": "No",
+          "value": 100.3,
+          "rows": 2396,
+          "global": 100.62
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_tenure",
+        "insight_ids": [
+          "insight_international_plan_no",
+          "insight_international_plan_yes"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "international_plan"
+        ],
+        "formula": "moyenne(ancienneté_en_mois)",
+        "aggregation": "Ancienneté moyenne par international_plan",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_arpu_international_plan",
+      "type": "bar",
+      "title": "ARPU mensuel par international_plan",
+      "subtitle": "Référence globale : 30.51 devise/client/mois",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Yes",
+          "value": 31.87,
+          "rows": 270,
+          "global": 30.51
+        },
+        {
+          "segment": "No",
+          "value": 30.36,
+          "rows": 2396,
+          "global": 30.51
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "arpu",
+        "insight_ids": [
+          "insight_international_plan_no",
+          "insight_international_plan_yes"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "international_plan"
+        ],
+        "formula": "moyenne(frais_mensuels)",
+        "aggregation": "ARPU mensuel par international_plan",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_churned_customers_international_plan",
+      "type": "bar",
+      "title": "Clients churnés par international_plan",
+      "subtitle": "Référence globale : 388.0 clients",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "No",
+          "value": 270.0,
+          "rows": 2396,
+          "global": 388.0
+        },
+        {
+          "segment": "Yes",
+          "value": 118.0,
+          "rows": 270,
+          "global": 388.0
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churned_customers",
+        "insight_ids": [
+          "insight_international_plan_no",
+          "insight_international_plan_yes"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "international_plan"
+        ],
+        "formula": "somme(indicateur_churn)",
+        "aggregation": "Clients churnés par international_plan",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_churned_customers_voice_mail_plan",
+      "type": "bar",
+      "title": "Clients churnés par voice_mail_plan",
+      "subtitle": "Référence globale : 388.0 clients",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "No",
+          "value": 323.0,
+          "rows": 1933,
+          "global": 388.0
+        },
+        {
+          "segment": "Yes",
+          "value": 65.0,
+          "rows": 733,
+          "global": 388.0
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churned_customers",
+        "insight_ids": [
+          "insight_voice_mail_plan_yes"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "voice_mail_plan"
+        ],
+        "formula": "somme(indicateur_churn)",
+        "aggregation": "Clients churnés par voice_mail_plan",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_monthly_revenue_lost_international_plan",
+      "type": "bar",
+      "title": "Revenu mensuel perdu par churn par international_plan",
+      "subtitle": "Référence globale : 13533.96 devise/mois",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "No",
+          "value": 9625.78,
+          "rows": 2396,
+          "global": 13533.96
+        },
+        {
+          "segment": "Yes",
+          "value": 3908.18,
+          "rows": 270,
+          "global": 13533.96
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "monthly_revenue_lost",
+        "insight_ids": [
+          "insight_international_plan_no",
+          "insight_international_plan_yes"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "international_plan"
+        ],
+        "formula": "somme(frais_mensuels) pour les clients churnés",
+        "aggregation": "Revenu mensuel perdu par churn par international_plan",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_monthly_revenue_lost_voice_mail_plan",
+      "type": "bar",
+      "title": "Revenu mensuel perdu par churn par voice_mail_plan",
+      "subtitle": "Référence globale : 13533.96 devise/mois",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "No",
+          "value": 11551.66,
+          "rows": 1933,
+          "global": 13533.96
+        },
+        {
+          "segment": "Yes",
+          "value": 1982.3,
+          "rows": 733,
+          "global": 13533.96
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "monthly_revenue_lost",
+        "insight_ids": [
+          "insight_voice_mail_plan_yes"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "voice_mail_plan"
+        ],
+        "formula": "somme(frais_mensuels) pour les clients churnés",
+        "aggregation": "Revenu mensuel perdu par churn par voice_mail_plan",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_tenure_voice_mail_plan",
+      "type": "bar",
+      "title": "Ancienneté moyenne par voice_mail_plan",
+      "subtitle": "Référence globale : 100.62 mois",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Yes",
+          "value": 100.78,
+          "rows": 733,
+          "global": 100.62
+        },
+        {
+          "segment": "No",
+          "value": 100.56,
+          "rows": 1933,
+          "global": 100.62
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_tenure",
+        "insight_ids": [
+          "insight_voice_mail_plan_yes"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "voice_mail_plan"
+        ],
+        "formula": "moyenne(ancienneté_en_mois)",
+        "aggregation": "Ancienneté moyenne par voice_mail_plan",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_avg_tenure_churn",
+      "type": "bar",
+      "title": "Ancienneté moyenne par churn",
+      "subtitle": "Référence globale : 100.62 mois",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "True",
+          "value": 102.32,
+          "rows": 388,
+          "global": 100.62
+        },
+        {
+          "segment": "False",
+          "value": 100.33,
+          "rows": 2278,
+          "global": 100.62
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "avg_tenure",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "churn"
+        ],
+        "formula": "moyenne(ancienneté_en_mois)",
+        "aggregation": "Ancienneté moyenne par churn",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_arpu_voice_mail_plan",
+      "type": "bar",
+      "title": "ARPU mensuel par voice_mail_plan",
+      "subtitle": "Référence globale : 30.51 devise/client/mois",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Yes",
+          "value": 30.71,
+          "rows": 733,
+          "global": 30.51
+        },
+        {
+          "segment": "No",
+          "value": 30.44,
+          "rows": 1933,
+          "global": 30.51
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "arpu",
+        "insight_ids": [
+          "insight_voice_mail_plan_yes"
+        ],
+        "recommendation_ids": [],
+        "source_columns": [
+          "voice_mail_plan"
+        ],
+        "formula": "moyenne(frais_mensuels)",
+        "aggregation": "ARPU mensuel par voice_mail_plan",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "geo_churn_by_state",
+      "type": "geo_map",
+      "title": "Taux de churn par état",
+      "subtitle": "Agrégation par zone, aucun point individuel",
+      "section": "geo",
+      "span": 12,
+      "kpi": null,
+      "data": [
+        {
+          "zone": "TX",
+          "churn_rate": 29.09,
+          "n": 55,
+          "n_churned": 16,
+          "state": "TX",
+          "excess_rate": 14.54
+        },
+        {
+          "zone": "NJ",
+          "churn_rate": 28.0,
+          "n": 50,
+          "n_churned": 14,
+          "state": "NJ",
+          "excess_rate": 13.45
+        },
+        {
+          "zone": "AR",
+          "churn_rate": 23.4,
+          "n": 47,
+          "n_churned": 11,
+          "state": "AR",
+          "excess_rate": 8.85
+        },
+        {
+          "zone": "MD",
+          "churn_rate": 23.33,
+          "n": 60,
+          "n_churned": 14,
+          "state": "MD",
+          "excess_rate": 8.78
+        },
+        {
+          "zone": "MS",
+          "churn_rate": 22.92,
+          "n": 48,
+          "n_churned": 11,
+          "state": "MS",
+          "excess_rate": 8.36
+        },
+        {
+          "zone": "SC",
+          "churn_rate": 22.45,
+          "n": 49,
+          "n_churned": 11,
+          "state": "SC",
+          "excess_rate": 7.9
+        },
+        {
+          "zone": "ME",
+          "churn_rate": 22.45,
+          "n": 49,
+          "n_churned": 11,
+          "state": "ME",
+          "excess_rate": 7.9
+        },
+        {
+          "zone": "MI",
+          "churn_rate": 22.41,
+          "n": 58,
+          "n_churned": 13,
+          "state": "MI",
+          "excess_rate": 7.86
+        },
+        {
+          "zone": "PA",
+          "churn_rate": 22.22,
+          "n": 36,
+          "n_churned": 8,
+          "state": "PA",
+          "excess_rate": 7.67
+        },
+        {
+          "zone": "NV",
+          "churn_rate": 21.31,
+          "n": 61,
+          "n_churned": 13,
+          "state": "NV",
+          "excess_rate": 6.76
+        },
+        {
+          "zone": "NH",
+          "churn_rate": 20.93,
+          "n": 43,
+          "n_churned": 9,
+          "state": "NH",
+          "excess_rate": 6.38
+        },
+        {
+          "zone": "WA",
+          "churn_rate": 20.83,
+          "n": 48,
+          "n_churned": 10,
+          "state": "WA",
+          "excess_rate": 6.28
+        },
+        {
+          "zone": "KS",
+          "churn_rate": 19.23,
+          "n": 52,
+          "n_churned": 10,
+          "state": "KS",
+          "excess_rate": 4.68
+        },
+        {
+          "zone": "MT",
+          "churn_rate": 18.87,
+          "n": 53,
+          "n_churned": 10,
+          "state": "MT",
+          "excess_rate": 4.31
+        },
+        {
+          "zone": "CT",
+          "churn_rate": 18.64,
+          "n": 59,
+          "n_churned": 11,
+          "state": "CT",
+          "excess_rate": 4.09
+        },
+        {
+          "zone": "MN",
+          "churn_rate": 18.57,
+          "n": 70,
+          "n_churned": 13,
+          "state": "MN",
+          "excess_rate": 4.02
+        },
+        {
+          "zone": "NY",
+          "churn_rate": 17.65,
+          "n": 68,
+          "n_churned": 12,
+          "state": "NY",
+          "excess_rate": 3.09
+        },
+        {
+          "zone": "GA",
+          "churn_rate": 16.33,
+          "n": 49,
+          "n_churned": 8,
+          "state": "GA",
+          "excess_rate": 1.77
+        },
+        {
+          "zone": "NC",
+          "churn_rate": 16.07,
+          "n": 56,
+          "n_churned": 9,
+          "state": "NC",
+          "excess_rate": 1.52
+        },
+        {
+          "zone": "DE",
+          "churn_rate": 15.69,
+          "n": 51,
+          "n_churned": 8,
+          "state": "DE",
+          "excess_rate": 1.13
+        },
+        {
+          "zone": "MA",
+          "churn_rate": 15.38,
+          "n": 52,
+          "n_churned": 8,
+          "state": "MA",
+          "excess_rate": 0.83
+        },
+        {
+          "zone": "OH",
+          "churn_rate": 15.15,
+          "n": 66,
+          "n_churned": 10,
+          "state": "OH",
+          "excess_rate": 0.6
+        },
+        {
+          "zone": "KY",
+          "churn_rate": 13.95,
+          "n": 43,
+          "n_churned": 6,
+          "state": "KY",
+          "excess_rate": -0.6
+        },
+        {
+          "zone": "OK",
+          "churn_rate": 13.46,
+          "n": 52,
+          "n_churned": 7,
+          "state": "OK",
+          "excess_rate": -1.09
+        },
+        {
+          "zone": "UT",
+          "churn_rate": 13.33,
+          "n": 60,
+          "n_churned": 8,
+          "state": "UT",
+          "excess_rate": -1.22
+        },
+        {
+          "zone": "FL",
+          "churn_rate": 12.96,
+          "n": 54,
+          "n_churned": 7,
+          "state": "FL",
+          "excess_rate": -1.59
+        },
+        {
+          "zone": "SD",
+          "churn_rate": 12.24,
+          "n": 49,
+          "n_churned": 6,
+          "state": "SD",
+          "excess_rate": -2.31
+        },
+        {
+          "zone": "TN",
+          "churn_rate": 12.2,
+          "n": 41,
+          "n_churned": 5,
+          "state": "TN",
+          "excess_rate": -2.36
+        },
+        {
+          "zone": "WY",
+          "churn_rate": 12.12,
+          "n": 66,
+          "n_churned": 8,
+          "state": "WY",
+          "excess_rate": -2.43
+        },
+        {
+          "zone": "CO",
+          "churn_rate": 11.86,
+          "n": 59,
+          "n_churned": 7,
+          "state": "CO",
+          "excess_rate": -2.69
+        },
+        {
+          "zone": "OR",
+          "churn_rate": 11.29,
+          "n": 62,
+          "n_churned": 7,
+          "state": "OR",
+          "excess_rate": -3.26
+        },
+        {
+          "zone": "IN",
+          "churn_rate": 11.11,
+          "n": 54,
+          "n_churned": 6,
+          "state": "IN",
+          "excess_rate": -3.44
+        },
+        {
+          "zone": "DC",
+          "churn_rate": 11.11,
+          "n": 45,
+          "n_churned": 5,
+          "state": "DC",
+          "excess_rate": -3.44
+        },
+        {
+          "zone": "AL",
+          "churn_rate": 10.61,
+          "n": 66,
+          "n_churned": 7,
+          "state": "AL",
+          "excess_rate": -3.95
+        },
+        {
+          "zone": "VT",
+          "churn_rate": 10.53,
+          "n": 57,
+          "n_churned": 6,
+          "state": "VT",
+          "excess_rate": -4.03
+        },
+        {
+          "zone": "MO",
+          "churn_rate": 9.8,
+          "n": 51,
+          "n_churned": 5,
+          "state": "MO",
+          "excess_rate": -4.75
+        },
+        {
+          "zone": "NM",
+          "churn_rate": 9.09,
+          "n": 44,
+          "n_churned": 4,
+          "state": "NM",
+          "excess_rate": -5.46
+        },
+        {
+          "zone": "ND",
+          "churn_rate": 9.09,
+          "n": 44,
+          "n_churned": 4,
+          "state": "ND",
+          "excess_rate": -5.46
+        },
+        {
+          "zone": "ID",
+          "churn_rate": 8.93,
+          "n": 56,
+          "n_churned": 5,
+          "state": "ID",
+          "excess_rate": -5.63
+        },
+        {
+          "zone": "IL",
+          "churn_rate": 8.89,
+          "n": 45,
+          "n_churned": 4,
+          "state": "IL",
+          "excess_rate": -5.66
+        },
+        {
+          "zone": "NE",
+          "churn_rate": 8.89,
+          "n": 45,
+          "n_churned": 4,
+          "state": "NE",
+          "excess_rate": -5.66
+        },
+        {
+          "zone": "LA",
+          "churn_rate": 8.57,
+          "n": 35,
+          "n_churned": 3,
+          "state": "LA",
+          "excess_rate": -5.98
+        },
+        {
+          "zone": "WV",
+          "churn_rate": 7.95,
+          "n": 88,
+          "n_churned": 7,
+          "state": "WV",
+          "excess_rate": -6.6
+        },
+        {
+          "zone": "IA",
+          "churn_rate": 7.89,
+          "n": 38,
+          "n_churned": 3,
+          "state": "IA",
+          "excess_rate": -6.66
+        },
+        {
+          "zone": "AK",
+          "churn_rate": 6.98,
+          "n": 43,
+          "n_churned": 3,
+          "state": "AK",
+          "excess_rate": -7.58
+        },
+        {
+          "zone": "AZ",
+          "churn_rate": 6.67,
+          "n": 45,
+          "n_churned": 3,
+          "state": "AZ",
+          "excess_rate": -7.89
+        },
+        {
+          "zone": "WI",
+          "churn_rate": 6.56,
+          "n": 61,
+          "n_churned": 4,
+          "state": "WI",
+          "excess_rate": -8.0
+        },
+        {
+          "zone": "RI",
+          "churn_rate": 6.25,
+          "n": 48,
+          "n_churned": 3,
+          "state": "RI",
+          "excess_rate": -8.3
+        },
+        {
+          "zone": "VA",
+          "churn_rate": 5.97,
+          "n": 67,
+          "n_churned": 4,
+          "state": "VA",
+          "excess_rate": -8.58
+        },
+        {
+          "zone": "HI",
+          "churn_rate": 4.55,
+          "n": 44,
+          "n_churned": 2,
+          "state": "HI",
+          "excess_rate": -10.01
+        }
+      ],
+      "encoding": {
+        "x": "zone",
+        "y": "churn_rate",
+        "color": "churn_rate",
+        "size": "n",
+        "geo_key": "state",
+        "sort": "none"
+      },
+      "note": "Écart de churn par zone, à lire comme une association.",
+      "reliable": true,
+      "warnings": [
+        "1 zone(s) masquée(s) (effectif < 30)"
+      ],
+      "references": {
+        "kpi_id": "churn_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "state"
+        ],
+        "formula": null,
+        "aggregation": "mean(churn) par state",
+        "origin": "dashboard_computed"
+      }
+    },
+    {
+      "id": "profile_account_length",
+      "type": "bar",
+      "title": "account_length : churnés vs retenus (médiane)",
+      "subtitle": "",
+      "section": "profiles",
+      "span": 4,
+      "kpi": null,
+      "data": [
+        {
+          "group": "churnés",
+          "median": 103.0,
+          "mean": 102.32,
+          "n": 388
+        },
+        {
+          "group": "retenus",
+          "median": 100.0,
+          "mean": 100.33,
+          "n": 2278
+        }
+      ],
+      "encoding": {
+        "x": "group",
+        "y": "median",
+        "color": "group",
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Cliff's delta 0.03 (effet faible) ; association observée, pas causalité.",
+      "reliable": true,
+      "warnings": [
+        "différence non significative après correction BH"
+      ],
+      "references": {
+        "kpi_id": "avg_tenure",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "account_length"
+        ],
+        "formula": null,
+        "aggregation": "médiane par groupe (Mann-Whitney)",
+        "origin": "analyst_report"
+      }
+    },
+    {
+      "id": "profile_total_day_charge",
+      "type": "bar",
+      "title": "total_day_charge : churnés vs retenus (médiane)",
+      "subtitle": "",
+      "section": "profiles",
+      "span": 4,
+      "kpi": null,
+      "data": [
+        {
+          "group": "churnés",
+          "median": 36.54,
+          "mean": 34.88,
+          "n": 388
+        },
+        {
+          "group": "retenus",
+          "median": 30.24,
+          "mean": 29.77,
+          "n": 2278
+        }
+      ],
+      "encoding": {
+        "x": "group",
+        "y": "median",
+        "color": "group",
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Cliff's delta 0.27 (effet moyen) ; association observée, pas causalité.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "arpu",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "total_day_charge"
+        ],
+        "formula": null,
+        "aggregation": "médiane par groupe (Mann-Whitney)",
+        "origin": "analyst_report"
+      }
+    },
+    {
+      "id": "table_recommendations",
+      "type": "table",
+      "title": "Hypothèses d'action à tester",
+      "subtitle": "",
+      "section": "actions",
+      "span": 12,
+      "kpi": null,
+      "data": [
+        {
+          "id": "rec_high_churn_any_segment",
+          "action": "Analyser les verbatims et données de satisfaction pour ce segment afin d'identifier les leviers d'action spécifiques",
+          "target": "Segment présentant un excès de churn significatif",
+          "priority": "moyenne",
+          "test_type": "enquête qualitative",
+          "impact_churners": 145.2,
+          "confidence": "élevée",
+          "insight_ids": "insight_international_plan_yes, insight_customer_service_calls_4, insight_customer_service_calls_5"
+        }
+      ],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Chaque recommandation est une hypothèse à valider (A/B test, pilote), pas une certitude.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": null,
+        "insight_ids": [
+          "insight_customer_service_calls_4",
+          "insight_customer_service_calls_5",
+          "insight_international_plan_yes"
+        ],
+        "recommendation_ids": [
+          "rec_high_churn_any_segment"
+        ],
+        "source_columns": [],
+        "formula": null,
+        "aggregation": null,
+        "origin": "analyst_report"
+      }
+    },
+    {
+      "id": "text_caveats",
+      "type": "text",
+      "title": "Réserves et limites",
+      "subtitle": "",
+      "section": "quality",
+      "span": 12,
+      "kpi": null,
+      "data": [
+        {
+          "text": "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité."
+        },
+        {
+          "text": "Chevauchement des segments : les insights portent sur des dimensions différentes et leurs populations peuvent se recouper. Les impacts (départs en excès) ne sont pas additifs."
+        }
+      ],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": null,
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [],
+        "formula": null,
+        "aggregation": null,
+        "origin": "analyst_report"
+      }
+    }
+  ],
+  "filters": [],
+  "report": {
+    "title": "Dashboard BI : Test multi-usage autonome",
+    "executive_summary": "Taux de churn global : 14.6 % sur 2666 clients. Le segment associé au plus fort excès de départs est « international_plan = Yes : churn 43.70 % (+29.1 pts) » (79 départs en excès, confiance élevée).",
+    "blocks": [
+      {
+        "heading": "Indicateurs clés",
+        "text": "",
+        "visual_ids": [
+          "kpi_churn_rate",
+          "kpi_churned_customers",
+          "kpi_monthly_revenue_lost",
+          "kpi_avg_tenure",
+          "kpi_arpu"
+        ]
+      },
+      {
+        "heading": "Segments à risque",
+        "text": "1. Le segment « Yes » (dimension : international_plan) est associé à un taux de churn de 43.70 %, contre 14.55 % sur l'ensemble du portefeuille (+29.15 points d'écart). 2. Le segment « 4 » (dimension : customer_service_calls) est associé à un taux de churn de 48.12 %, contre 14.55 % sur l'ensemble du portefeuille (+33.57 points d'écart). 3. Le segment « 5 » (dimension : customer_service_calls) est associé à un taux de churn de 59.18 %, contre 14.55 % sur l'ensemble du portefeuille (+44.63 points d'écart).",
+        "visual_ids": [
+          "table_insights",
+          "heatmap_international_plan_voice_mail_plan",
+          "bar_churn_rate_international_plan",
+          "bar_churn_rate_voice_mail_plan",
+          "bar_avg_tenure_international_plan",
+          "bar_arpu_international_plan",
+          "bar_churned_customers_international_plan",
+          "bar_churned_customers_voice_mail_plan",
+          "bar_monthly_revenue_lost_international_plan",
+          "bar_monthly_revenue_lost_voice_mail_plan",
+          "bar_avg_tenure_voice_mail_plan",
+          "bar_avg_tenure_churn",
+          "bar_arpu_voice_mail_plan"
+        ]
+      },
+      {
+        "heading": "Répartition géographique",
+        "text": "",
+        "visual_ids": [
+          "geo_churn_by_state"
+        ]
+      },
+      {
+        "heading": "Profils churnés vs retenus",
+        "text": "",
+        "visual_ids": [
+          "profile_account_length",
+          "profile_total_day_charge"
+        ]
+      },
+      {
+        "heading": "Hypothèses d'action à tester",
+        "text": "Analyser les verbatims et données de satisfaction pour ce segment afin d'identifier les leviers d'action spécifiques (cible : Segment présentant un excès de churn significatif, test : enquête qualitative).",
+        "visual_ids": [
+          "table_recommendations"
+        ]
+      }
+    ],
+    "recommendations_table": [
+      {
+        "id": "rec_high_churn_any_segment",
+        "action": "Analyser les verbatims et données de satisfaction pour ce segment afin d'identifier les leviers d'action spécifiques",
+        "target": "Segment présentant un excès de churn significatif",
+        "insight_ids": [
+          "insight_international_plan_yes",
+          "insight_customer_service_calls_4",
+          "insight_customer_service_calls_5"
+        ],
+        "impact_churners": 145.20000000000002,
+        "priority": "moyenne",
+        "confidence": "élevée",
+        "test_type": "enquête qualitative"
+      }
+    ],
+    "caveats": [
+      "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+      "Chevauchement des segments : les insights portent sur des dimensions différentes et leurs populations peuvent se recouper. Les impacts (départs en excès) ne sont pas additifs.",
+      "Troncature : 1 visuel(s) non affiché(s) (max_visuals=20)."
+    ]
+  },
+  "excluded_visuals": [
+    {
+      "candidate": "avg_churn_score",
+      "reason": "fuite de cible : dérivé du churn, exclu des cartes de pilotage"
+    },
+    {
+      "candidate": "customer_count",
+      "reason": "non calculable (id: ['customer_id', 'customerid', 'subscriber_id', 'phone_number'])"
+    },
+    {
+      "candidate": "total_revenue",
+      "reason": "non calculable (value: ['total_charges', 'total_revenue', 'total_billed'])"
+    },
+    {
+      "candidate": "avg_cltv",
+      "reason": "non calculable (value: ['cltv', 'clv', 'customer_lifetime_value'])"
+    },
+    {
+      "candidate": "unpaid_rate",
+      "reason": "non calculable (num: ['unpaid_amount', 'overdue_amount'], den: ['billed_amount', 'invoice_amount'])"
+    },
+    {
+      "candidate": "avg_mos_voice",
+      "reason": "non calculable (value: ['mos_voice', 'mos', 'streaming_mos'])"
+    },
+    {
+      "candidate": "avg_throughput",
+      "reason": "non calculable (value: ['throughput_mbps', 'effective_bitrate_mbps', 'throughput', 'download_speed_mbps', 'download_speed'])"
+    },
+    {
+      "candidate": "avg_upload_speed",
+      "reason": "non calculable (value: ['upload_speed_mbps', 'upload_speed'])"
+    },
+    {
+      "candidate": "avg_latency",
+      "reason": "non calculable (value: ['latency_ms', 'latency', 'dns_latency_ms', 'ping_to_google_ms'])"
+    },
+    {
+      "candidate": "avg_packet_loss",
+      "reason": "non calculable (value: ['plr', 'packet_loss'])"
+    },
+    {
+      "candidate": "network_availability",
+      "reason": "non calculable (value: ['availability'])"
+    },
+    {
+      "candidate": "dropped_call_rate",
+      "reason": "non calculable (num: ['dropped_calls'], den: ['total_calls', 'calls'])"
+    },
+    {
+      "candidate": "cdr_incident_rate",
+      "reason": "non calculable (flag: ['cdr_flag', 'incident_flag', 'call_drop', 'dropped_connection'])"
+    },
+    {
+      "candidate": "avg_signal_strength",
+      "reason": "non calculable (value: ['signal_strength_dbm', 'signal_strength', 'rssi', 'rsrp'])"
+    },
+    {
+      "candidate": "avg_data_usage",
+      "reason": "non calculable (value: ['data_usage_mb', 'data_mb', 'data_usage', 'internet_mb'])"
+    },
+    {
+      "candidate": "ticket_count",
+      "reason": "non calculable (id: ['ticket_id', 'ticket', 'case_id', 'complaint_id', 'issue_id'])"
+    },
+    {
+      "candidate": "ticket_resolution_rate",
+      "reason": "non calculable (flag: ['ticket_status', 'status', 'case_status'])"
+    },
+    {
+      "candidate": "dispute_rate",
+      "reason": "non calculable (flag: ['consumer_disputed', 'consumer_disputed?', 'is_disputed', 'disputed'])"
+    },
+    {
+      "candidate": "timely_response_rate",
+      "reason": "non calculable (flag: ['timely_response', 'timely_response?', 'in_time'])"
+    },
+    {
+      "candidate": "avg_csat",
+      "reason": "non calculable (value: ['customer_satisfaction_rating', 'csat', 'satisfaction_rating', 'rating'])"
+    },
+    {
+      "candidate": "avg_resolution_time",
+      "reason": "non calculable (value: ['resolution_time_hours', 'resolution_time', 'resolution_hours'])"
+    },
+    {
+      "candidate": "churn par ancienneté",
+      "reason": "colonne d'ancienneté introuvable"
+    },
+    {
+      "candidate": "série calendaire",
+      "reason": "aucune colonne de date : la dimension temporelle repose sur l'ancienneté"
+    },
+    {
+      "candidate": "bar_arpu_churn",
+      "reason": "limite max_visuals=20"
+    }
+  ],
+  "caveats": [
+    "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+    "Chevauchement des segments : les insights portent sur des dimensions différentes et leurs populations peuvent se recouper. Les impacts (départs en excès) ne sont pas additifs.",
+    "Troncature : 1 visuel(s) non affiché(s) (max_visuals=20)."
+  ],
+  "null_result": false,
+  "llm_narrative": "Taux de churn global : 14.6 % sur 2666 clients. Le segment associé au plus fort excès de départs est « international_plan = Yes : churn 43.70 % (+29.1 pts) » (79 départs en excès, confiance élevée).",
+  "output_files": {
+    "report": "output_test\\churn-bigml-80\\dashboard\\dashboard_report.json"
+  },
+  "trace": [
+    {
+      "timestamp": "2026-10-27T18:46:32.076129",
+      "tool": "load",
+      "parameters": {
+        "has_frame": true,
+        "has_kpi": true,
+        "n_insights": 8
+      },
+      "duration_ms": 1.1334999999235151
+    },
+    {
+      "timestamp": "2026-10-27T18:46:32.107302",
+      "tool": "build",
+      "parameters": {
+        "n_candidates": 24
+      },
+      "duration_ms": 31.33930000012697
+    },
+    {
+      "timestamp": "2026-10-27T18:46:32.109921",
+      "tool": "assemble",
+      "parameters": {
+        "n_visuals": 23,
+        "n_excluded": 24
+      },
+      "duration_ms": 0.6369999996422848
+    },
+    {
+      "timestamp": "2026-10-27T18:46:32.109921",
+      "tool": "report",
+      "parameters": {
+        "n_blocks": 5
+      },
+      "duration_ms": 0.19720000000233995
+    },
+    {
+      "timestamp": "2026-10-27T18:46:32.111007",
+      "tool": "narrate",
+      "parameters": {
+        "llm": false
+      },
+      "duration_ms": 0.021099999685247894
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-27T18:46:32.076129"
+}

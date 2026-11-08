@@ -1,0 +1,547 @@
+{
+  "business_goal": "Test multi-usage autonome",
+  "status": "success",
+  "kpi_status": "success",
+  "insights": [
+    {
+      "id": "insight_international_plan_yes",
+      "kpi_id": "churn_rate",
+      "title": "international_plan = Yes : churn 43.70 % (+29.1 pts)",
+      "finding": "Le segment « Yes » (dimension : international_plan) est associé à un taux de churn de 43.70 %, contre 14.55 % sur l'ensemble du portefeuille (+29.15 points d'écart).",
+      "evidence": "n=270 clients dans le segment (118 churnés). Écart : +29.15 pts. Départs en excès : 79. Revenu mensuel perdu en excès : 2,607 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.277 (moyen, Cramér's V). Source : kpi_report.",
+      "segment_stats": [
+        {
+          "dimension": "international_plan",
+          "segment": "Yes",
+          "n": 270,
+          "n_churned": 118,
+          "rate_or_mean": 43.7,
+          "global_rate": 14.55,
+          "excess_rate": 29.15,
+          "excess_churners": 78.7,
+          "revenue_monthly_lost_excess": 2606.72,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.2774887812740148,
+          "effect_size_label": "moyen",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "kpi_report",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "international_plan",
+            "segment": "Yes",
+            "source": "kpi_report",
+            "source_file": "output_test\\churn-bigml-80\\kpi\\kpi_report.json"
+          }
+        }
+      ],
+      "impact_churners": 78.7,
+      "revenue_monthly_lost_excess": 2606.72,
+      "confidence": "élevée",
+      "direction": "risque",
+      "rank": 1,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "international_plan",
+        "segment": "Yes",
+        "source": "kpi_report",
+        "source_file": "output_test\\churn-bigml-80\\kpi\\kpi_report.json"
+      }
+    },
+    {
+      "id": "insight_customer_service_calls_4",
+      "kpi_id": "churn_rate",
+      "title": "customer_service_calls = 4 : churn 48.12 % (+33.6 pts)",
+      "finding": "Le segment « 4 » (dimension : customer_service_calls) est associé à un taux de churn de 48.12 %, contre 14.55 % sur l'ensemble du portefeuille (+33.57 points d'écart).",
+      "evidence": "n=133 clients dans le segment (64 churnés). Écart : +33.57 pts. Départs en excès : 45. Revenu mensuel perdu en excès : 1,176 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.218 (moyen, Cramér's V). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "customer_service_calls",
+          "segment": "4",
+          "n": 133,
+          "n_churned": 64,
+          "rate_or_mean": 48.12,
+          "global_rate": 14.55,
+          "excess_rate": 33.57,
+          "excess_churners": 44.6,
+          "revenue_monthly_lost_excess": 1176.35,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.21811413334805352,
+          "effect_size_label": "moyen",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "customer_service_calls",
+            "segment": "4",
+            "source": "analyst_computed",
+            "source_file": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": 44.6,
+      "revenue_monthly_lost_excess": 1176.35,
+      "confidence": "élevée",
+      "direction": "risque",
+      "rank": 2,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "customer_service_calls",
+        "segment": "4",
+        "source": "analyst_computed",
+        "source_file": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv"
+      }
+    },
+    {
+      "id": "insight_customer_service_calls_5",
+      "kpi_id": "churn_rate",
+      "title": "customer_service_calls = 5 : churn 59.18 % (+44.6 pts)",
+      "finding": "Le segment « 5 » (dimension : customer_service_calls) est associé à un taux de churn de 59.18 %, contre 14.55 % sur l'ensemble du portefeuille (+44.63 points d'écart).",
+      "evidence": "n=49 clients dans le segment (29 churnés). Écart : +44.63 pts. Départs en excès : 22. Revenu mensuel perdu en excès : 564 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.173 (moyen, Cramér's V). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "customer_service_calls",
+          "segment": "5",
+          "n": 49,
+          "n_churned": 29,
+          "rate_or_mean": 59.18,
+          "global_rate": 14.55,
+          "excess_rate": 44.63,
+          "excess_churners": 21.9,
+          "revenue_monthly_lost_excess": 563.64,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.17317724609524682,
+          "effect_size_label": "moyen",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "customer_service_calls",
+            "segment": "5",
+            "source": "analyst_computed",
+            "source_file": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": 21.9,
+      "revenue_monthly_lost_excess": 563.64,
+      "confidence": "moyenne",
+      "direction": "risque",
+      "rank": 3,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "customer_service_calls",
+        "segment": "5",
+        "source": "analyst_computed",
+        "source_file": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv"
+      }
+    },
+    {
+      "id": "insight_customer_service_calls_3",
+      "kpi_id": "churn_rate",
+      "title": "customer_service_calls = 3 : churn 10.63 % (-3.9 pts)",
+      "finding": "Le segment « 3 » (dimension : customer_service_calls) est associé à un taux de churn de 10.63 %, contre 14.55 % sur l'ensemble du portefeuille (-3.92 points d'écart).",
+      "evidence": "n=348 clients dans le segment (37 churnés). Écart : -3.92 pts. Départs en excès : -14. Revenu mensuel perdu en excès : -515 (devise/mois). p ajustée (BH, z-test proportion) = 0,043. Taille d'effet : 0.043 (faible, Cramér's V). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "customer_service_calls",
+          "segment": "3",
+          "n": 348,
+          "n_churned": 37,
+          "rate_or_mean": 10.63,
+          "global_rate": 14.55,
+          "excess_rate": -3.92,
+          "excess_churners": -13.6,
+          "revenue_monthly_lost_excess": -514.52,
+          "p_value_raw": 0.02609927602154305,
+          "p_value_adjusted": 0.04287738203539215,
+          "effect_size": 0.043087124248866154,
+          "effect_size_label": "faible",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "customer_service_calls",
+            "segment": "3",
+            "source": "analyst_computed",
+            "source_file": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": -13.6,
+      "revenue_monthly_lost_excess": -514.52,
+      "confidence": "faible",
+      "direction": "protecteur",
+      "rank": 4,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "customer_service_calls",
+        "segment": "3",
+        "source": "analyst_computed",
+        "source_file": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv"
+      }
+    },
+    {
+      "id": "insight_customer_service_calls_2",
+      "kpi_id": "churn_rate",
+      "title": "customer_service_calls = 2 : churn 10.20 % (-4.3 pts)",
+      "finding": "Le segment « 2 » (dimension : customer_service_calls) est associé à un taux de churn de 10.20 %, contre 14.55 % sur l'ensemble du portefeuille (-4.35 points d'écart).",
+      "evidence": "n=608 clients dans le segment (62 churnés). Écart : -4.35 pts. Départs en excès : -26. Revenu mensuel perdu en excès : -991 (devise/mois). p ajustée (BH, z-test proportion) = 0,001. Taille d'effet : 0.067 (faible, Cramér's V). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "customer_service_calls",
+          "segment": "2",
+          "n": 608,
+          "n_churned": 62,
+          "rate_or_mean": 10.2,
+          "global_rate": 14.55,
+          "excess_rate": -4.35,
+          "excess_churners": -26.4,
+          "revenue_monthly_lost_excess": -991.42,
+          "p_value_raw": 0.0005264965878708505,
+          "p_value_adjusted": 0.0011008565019117783,
+          "effect_size": 0.0671446346424138,
+          "effect_size_label": "faible",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "customer_service_calls",
+            "segment": "2",
+            "source": "analyst_computed",
+            "source_file": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": -26.4,
+      "revenue_monthly_lost_excess": -991.42,
+      "confidence": "faible",
+      "direction": "protecteur",
+      "rank": 5,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "customer_service_calls",
+        "segment": "2",
+        "source": "analyst_computed",
+        "source_file": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv"
+      }
+    },
+    {
+      "id": "insight_customer_service_calls_1",
+      "kpi_id": "churn_rate",
+      "title": "customer_service_calls = 1 : churn 10.48 % (-4.1 pts)",
+      "finding": "Le segment « 1 » (dimension : customer_service_calls) est associé à un taux de churn de 10.48 %, contre 14.55 % sur l'ensemble du portefeuille (-4.07 points d'écart).",
+      "evidence": "n=945 clients dans le segment (99 churnés). Écart : -4.07 pts. Départs en excès : -38. Revenu mensuel perdu en excès : -1,528 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.086 (faible, Cramér's V). Source : analyst_computed.",
+      "segment_stats": [
+        {
+          "dimension": "customer_service_calls",
+          "segment": "1",
+          "n": 945,
+          "n_churned": 99,
+          "rate_or_mean": 10.48,
+          "global_rate": 14.55,
+          "excess_rate": -4.07,
+          "excess_churners": -38.5,
+          "revenue_monthly_lost_excess": -1527.62,
+          "p_value_raw": 9.69070719070153e-6,
+          "p_value_adjusted": 0.000024765140598459464,
+          "effect_size": 0.08568036650620946,
+          "effect_size_label": "faible",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "analyst_computed",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "customer_service_calls",
+            "segment": "1",
+            "source": "analyst_computed",
+            "source_file": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv"
+          }
+        }
+      ],
+      "impact_churners": -38.5,
+      "revenue_monthly_lost_excess": -1527.62,
+      "confidence": "faible",
+      "direction": "protecteur",
+      "rank": 6,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "customer_service_calls",
+        "segment": "1",
+        "source": "analyst_computed",
+        "source_file": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv"
+      }
+    },
+    {
+      "id": "insight_voice_mail_plan_yes",
+      "kpi_id": "churn_rate",
+      "title": "voice_mail_plan = Yes : churn 8.87 % (-5.7 pts)",
+      "finding": "Le segment « Yes » (dimension : voice_mail_plan) est associé à un taux de churn de 8.87 %, contre 14.55 % sur l'ensemble du portefeuille (-5.68 points d'écart).",
+      "evidence": "n=733 clients dans le segment (65 churnés). Écart : -5.68 pts. Départs en excès : -42. Revenu mensuel perdu en excès : -1,270 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.099 (faible, Cramér's V). Source : kpi_report.",
+      "segment_stats": [
+        {
+          "dimension": "voice_mail_plan",
+          "segment": "Yes",
+          "n": 733,
+          "n_churned": 65,
+          "rate_or_mean": 8.87,
+          "global_rate": 14.55,
+          "excess_rate": -5.68,
+          "excess_churners": -41.6,
+          "revenue_monthly_lost_excess": -1269.72,
+          "p_value_raw": 2.948590138718288e-7,
+          "p_value_adjusted": 8.477196648815077e-7,
+          "effect_size": 0.09929060228146355,
+          "effect_size_label": "faible",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "kpi_report",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "voice_mail_plan",
+            "segment": "Yes",
+            "source": "kpi_report",
+            "source_file": "output_test\\churn-bigml-80\\kpi\\kpi_report.json"
+          }
+        }
+      ],
+      "impact_churners": -41.6,
+      "revenue_monthly_lost_excess": -1269.72,
+      "confidence": "moyenne",
+      "direction": "protecteur",
+      "rank": 7,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "voice_mail_plan",
+        "segment": "Yes",
+        "source": "kpi_report",
+        "source_file": "output_test\\churn-bigml-80\\kpi\\kpi_report.json"
+      }
+    },
+    {
+      "id": "insight_international_plan_no",
+      "kpi_id": "churn_rate",
+      "title": "international_plan = No : churn 11.27 % (-3.3 pts)",
+      "finding": "Le segment « No » (dimension : international_plan) est associé à un taux de churn de 11.27 %, contre 14.55 % sur l'ensemble du portefeuille (-3.28 points d'écart).",
+      "evidence": "n=2,396 clients dans le segment (270 churnés). Écart : -3.28 pts. Départs en excès : -79. Revenu mensuel perdu en excès : -2,802 (devise/mois). p ajustée (BH, z-test proportion) < 0,001. Taille d'effet : 0.277 (moyen, Cramér's V). Source : kpi_report.",
+      "segment_stats": [
+        {
+          "dimension": "international_plan",
+          "segment": "No",
+          "n": 2396,
+          "n_churned": 270,
+          "rate_or_mean": 11.27,
+          "global_rate": 14.55,
+          "excess_rate": -3.28,
+          "excess_churners": -78.6,
+          "revenue_monthly_lost_excess": -2801.77,
+          "p_value_raw": 0.0,
+          "p_value_adjusted": 0.0,
+          "effect_size": 0.2774887812740148,
+          "effect_size_label": "moyen",
+          "test_used": "proportion_z",
+          "reliable": true,
+          "source": "kpi_report",
+          "references": {
+            "kpi_id": "churn_rate",
+            "dimension": "international_plan",
+            "segment": "No",
+            "source": "kpi_report",
+            "source_file": "output_test\\churn-bigml-80\\kpi\\kpi_report.json"
+          }
+        }
+      ],
+      "impact_churners": -78.6,
+      "revenue_monthly_lost_excess": -2801.77,
+      "confidence": "faible",
+      "direction": "protecteur",
+      "rank": 8,
+      "warnings": [],
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "international_plan",
+        "segment": "No",
+        "source": "kpi_report",
+        "source_file": "output_test\\churn-bigml-80\\kpi\\kpi_report.json"
+      }
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "rec_high_churn_any_segment",
+      "action": "Analyser les verbatims et données de satisfaction pour ce segment afin d'identifier les leviers d'action spécifiques",
+      "target": "Segment présentant un excès de churn significatif",
+      "rationale": "Insight #1 : Le segment « Yes » (dimension : international_plan) est associé à un taux de churn de 43.70 %, contre 14.55 % sur l'ensemble du portefeuille (+29.15 points d'écart). (p ajustée <= 0.000, excédent 79 clients). Association statistique, pas de causalité établie.",
+      "insight_ids": [
+        "insight_international_plan_yes",
+        "insight_customer_service_calls_4",
+        "insight_customer_service_calls_5"
+      ],
+      "impact_churners": 145.20000000000002,
+      "revenue_monthly_lost_excess": 4346.71,
+      "priority": "moyenne",
+      "confidence": "élevée",
+      "test_type": "enquête qualitative",
+      "references": {
+        "kpi_id": "churn_rate",
+        "dimension": "international_plan",
+        "segment": "Yes",
+        "source": "kpi_report",
+        "source_file": "output_test\\churn-bigml-80\\kpi\\kpi_report.json",
+        "rule_id": "high_churn_any_segment",
+        "rule_description": "Règle générique pour tout segment présentant un écart de churn important sans règle spécifique disponible."
+      }
+    }
+  ],
+  "profile_comparisons": [
+    {
+      "metric": "account_length",
+      "kpi_id": "avg_tenure",
+      "n_churned": 388,
+      "n_retained": 2278,
+      "median_churned": 103.0,
+      "median_retained": 100.0,
+      "mean_churned": 102.31958762886597,
+      "mean_retained": 100.33099209833188,
+      "cliffs_delta": 0.027722590805825398,
+      "effect_size_label": "faible",
+      "p_value_raw": 0.38205222260000393,
+      "p_value_adjusted": 0.5168941835176524,
+      "test_used": "mann-whitney",
+      "source": "analyst_computed",
+      "references": {
+        "kpi_id": "avg_tenure",
+        "metric_col": "account_length",
+        "source": "analyst_computed",
+        "source_file": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv"
+      }
+    },
+    {
+      "metric": "total_day_charge",
+      "kpi_id": "arpu",
+      "n_churned": 388,
+      "n_retained": 2278,
+      "median_churned": 36.54,
+      "median_retained": 30.24,
+      "mean_churned": 34.88134020618557,
+      "mean_retained": 29.768266022827042,
+      "cliffs_delta": 0.26689739597947204,
+      "effect_size_label": "moyen",
+      "p_value_raw": 3.9092491999520097e-17,
+      "p_value_adjusted": 1.7982546319779242e-16,
+      "test_used": "mann-whitney",
+      "source": "analyst_computed",
+      "references": {
+        "kpi_id": "arpu",
+        "metric_col": "total_day_charge",
+        "source": "analyst_computed",
+        "source_file": "output_test\\churn-bigml-80\\churn-bigml-80_clean.csv"
+      }
+    }
+  ],
+  "caveats": [
+    "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+    "Chevauchement des segments : les insights portent sur des dimensions différentes et leurs populations peuvent se recouper. Les impacts (départs en excès) ne sont pas additifs."
+  ],
+  "null_result": false,
+  "n_tests": 23,
+  "n_significant_segments": 8,
+  "overlap_warning": true,
+  "excluded_kpis": [
+    {
+      "kpi_id": "avg_churn_score",
+      "reason": "fuite de cible (corrélé directement à churn_label)"
+    }
+  ],
+  "llm_narrative": "Analyse BI — 8 insight(s), 1 recommandation(s). Tests : 23 (23 tests dans la famille BH).\n[#1] international_plan = Yes : churn 43.70 % (+29.1 pts) — Le segment « Yes » (dimension : international_plan) est associé à un taux de churn de 43.70 %, contre 14.55 % sur l'ensemble du portefeuille (+29.15 points d'écart). Impact : 79 départs en excès, 2,607 (revenu/mois en excès). Confiance : élevée.\n[#2] customer_service_calls = 4 : churn 48.12 % (+33.6 pts) — Le segment « 4 » (dimension : customer_service_calls) est associé à un taux de churn de 48.12 %, contre 14.55 % sur l'ensemble du portefeuille (+33.57 points d'écart). Impact : 45 départs en excès, 1,176 (revenu/mois en excès). Confiance : élevée.\n[#3] customer_service_calls = 5 : churn 59.18 % (+44.6 pts) — Le segment « 5 » (dimension : customer_service_calls) est associé à un taux de churn de 59.18 %, contre 14.55 % sur l'ensemble du portefeuille (+44.63 points d'écart). Impact : 22 départs en excès, 564 (revenu/mois en excès). Confiance : moyenne.\n[#4] customer_service_calls = 3 : churn 10.63 % (-3.9 pts) — Le segment « 3 » (dimension : customer_service_calls) est associé à un taux de churn de 10.63 %, contre 14.55 % sur l'ensemble du portefeuille (-3.92 points d'écart). Impact : -14 départs en excès, -515 (revenu/mois en excès). Confiance : faible.\n[#5] customer_service_calls = 2 : churn 10.20 % (-4.3 pts) — Le segment « 2 » (dimension : customer_service_calls) est associé à un taux de churn de 10.20 %, contre 14.55 % sur l'ensemble du portefeuille (-4.35 points d'écart). Impact : -26 départs en excès, -991 (revenu/mois en excès). Confiance : faible.\n\nComparaisons de profils (Mann-Whitney) :\n  charges mensuelles : médiane churnés=103.0, retenus=100.0 (Cliff's Δ=0.028, faible, p ajustée=0.517).\n  charges mensuelles : médiane churnés=36.5, retenus=30.2 (Cliff's Δ=0.267, moyen, p ajustée=0.000).\n\nRecommandations (hypothèses à tester) :\n  [moyenne] Analyser les verbatims et données de satisfaction pour ce segment afin d'identifier les leviers d'action spécifiques — Cible : Segment présentant un excès de churn significatif. Test suggéré : enquête qualitative.\n\nRéserves :\n  • Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.\n  • Chevauchement des segments : les insights portent sur des dimensions différentes et leurs populations peuvent se recouper. Les impacts (départs en excès) ne sont pas additifs.",
+  "output_files": {},
+  "trace": [
+    {
+      "timestamp": "2026-10-27T18:46:32.016900",
+      "tool": "load",
+      "parameters": {
+        "kpis_computed": 5,
+        "table_loaded": true,
+        "excluded_cols": [
+          "churn",
+          "count",
+          "country",
+          "state"
+        ]
+      },
+      "duration_ms": 5.435199999737961
+    },
+    {
+      "timestamp": "2026-10-27T18:46:32.056234",
+      "tool": "segment",
+      "parameters": {
+        "n_segments_kpi": 4,
+        "n_segments_analyst": 17,
+        "n_mw": 2
+      },
+      "duration_ms": 37.95249999984662
+    },
+    {
+      "timestamp": "2026-10-27T18:46:32.062927",
+      "tool": "test",
+      "parameters": {
+        "n_tests": 23,
+        "n_ztests": 21,
+        "n_mw": 2,
+        "min_p_raw": 0.0,
+        "max_p_adj": 0.9818175235039088
+      },
+      "duration_ms": 6.667399999969348
+    },
+    {
+      "timestamp": "2026-10-27T18:46:32.063909",
+      "tool": "impact",
+      "parameters": {
+        "n_segs": 21
+      },
+      "duration_ms": 0.04040000021632295
+    },
+    {
+      "timestamp": "2026-10-27T18:46:32.063909",
+      "tool": "rank",
+      "parameters": {
+        "n_insights": 8,
+        "n_proportion": 8,
+        "n_mw": 2
+      },
+      "duration_ms": 0.24500000017724233
+    },
+    {
+      "timestamp": "2026-10-27T18:46:32.064907",
+      "tool": "recommend",
+      "parameters": {
+        "n_rec": 1
+      },
+      "duration_ms": 0.09449999970456702
+    },
+    {
+      "timestamp": "2026-10-27T18:46:32.064907",
+      "tool": "narrate",
+      "parameters": {
+        "llm": false
+      },
+      "duration_ms": 0.04399999988891068
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-27T18:46:32.016900"
+}

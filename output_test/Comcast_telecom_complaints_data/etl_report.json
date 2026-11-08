@@ -1,0 +1,476 @@
+{
+  "business_goal": "Analyse décisionnelle télécom",
+  "status": "success",
+  "tables": [
+    {
+      "name": "Comcast_telecom_complaints_data",
+      "rows_in": 2224,
+      "rows_out": 2224,
+      "columns_in": 11,
+      "columns_out": 11,
+      "output_path": "output_test\\Comcast_telecom_complaints_data\\Comcast_telecom_complaints_data_clean.csv",
+      "quality_before": {
+        "completeness": 100.0,
+        "uniqueness": 100.0,
+        "validity": 50.0,
+        "consistency": 100.0,
+        "overall": 87.5,
+        "rows": 2224,
+        "null_cells": 0,
+        "text_numeric_columns": [
+          "Ticket #"
+        ]
+      },
+      "quality_after": {
+        "completeness": 100.0,
+        "uniqueness": 100.0,
+        "validity": 100.0,
+        "consistency": 100.0,
+        "overall": 100.0,
+        "rows": 2224,
+        "null_cells": 0,
+        "text_numeric_columns": []
+      },
+      "columns": [
+        {
+          "original_name": "Ticket #",
+          "name": "ticket",
+          "dtype": "Int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Customer Complaint",
+          "name": "customer_complaint",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Date",
+          "name": "date",
+          "dtype": "datetime64[us]",
+          "semantic_role": "date",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Date_month_year",
+          "name": "date_month_year",
+          "dtype": "datetime64[us]",
+          "semantic_role": "date",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Time",
+          "name": "time",
+          "dtype": "datetime64[us]",
+          "semantic_role": "date",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Received Via",
+          "name": "received_via",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "City",
+          "name": "city",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "State",
+          "name": "state",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Zip code",
+          "name": "zip_code",
+          "dtype": "int64",
+          "semantic_role": "id",
+          "role_corrected_from": "measure",
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Status",
+          "name": "status",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Filing on Behalf of Someone",
+          "name": "filing_on_behalf_of_someone",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        }
+      ]
+    }
+  ],
+  "star_schemas": [
+    {
+      "table": "Comcast_telecom_complaints_data",
+      "source": "auto",
+      "fact_name": "fact_Comcast_telecom_complaints_data",
+      "grain": "1 ligne = 1 ligne de la table source",
+      "grain_reason": "aucun identifiant unique trouvé : clé de ligne créée",
+      "fact_rows": 2224,
+      "measures": [
+        {
+          "column": "ticket",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "dim_Comcast_telecom_complaints_data",
+          "key": "Comcast_telecom_complaints_data_key",
+          "role": "entity",
+          "columns": [
+            "customer_complaint"
+          ],
+          "rows": 1841,
+          "rationale": "identifiant / attribut propre à l'entité"
+        },
+        {
+          "name": "dim_attributes",
+          "key": "attributes_key",
+          "role": "attributes",
+          "columns": [
+            "received_via",
+            "status",
+            "filing_on_behalf_of_someone"
+          ],
+          "rows": 16,
+          "rationale": "autres attributs descriptifs"
+        },
+        {
+          "name": "dim_location",
+          "key": "location_key",
+          "role": "geography",
+          "columns": [
+            "city",
+            "state",
+            "zip_code"
+          ],
+          "rows": 1605,
+          "rationale": "attributs géographiques"
+        }
+      ],
+      "date_columns": [
+        "date",
+        "date_month_year",
+        "time"
+      ],
+      "excluded_columns": [],
+      "files": {
+        "fact_Comcast_telecom_complaints_data": "output_test\\Comcast_telecom_complaints_data\\model\\Comcast_telecom_complaints_data\\fact_Comcast_telecom_complaints_data.csv",
+        "dim_Comcast_telecom_complaints_data": "output_test\\Comcast_telecom_complaints_data\\model\\Comcast_telecom_complaints_data\\dim_Comcast_telecom_complaints_data.csv",
+        "dim_attributes": "output_test\\Comcast_telecom_complaints_data\\model\\Comcast_telecom_complaints_data\\dim_attributes.csv",
+        "dim_location": "output_test\\Comcast_telecom_complaints_data\\model\\Comcast_telecom_complaints_data\\dim_location.csv",
+        "dim_date": "output_test\\Comcast_telecom_complaints_data\\model\\Comcast_telecom_complaints_data\\dim_date.csv",
+        "star_schema.mmd": "output_test\\Comcast_telecom_complaints_data\\model\\Comcast_telecom_complaints_data\\star_schema.mmd"
+      },
+      "check_ids": [
+        "Comcast_telecom_complaints_data.star_fact_row_count",
+        "Comcast_telecom_complaints_data.star_no_null_foreign_key",
+        "Comcast_telecom_complaints_data.star_no_orphan_foreign_key",
+        "Comcast_telecom_complaints_data.star_dimension_keys_unique",
+        "Comcast_telecom_complaints_data.star_column_coverage",
+        "Comcast_telecom_complaints_data.star_measure_reconciliation",
+        "Comcast_telecom_complaints_data.star_lossless_rejoin"
+      ],
+      "mermaid": "erDiagram\n    fact_Comcast_telecom_complaints_data {\n        int fact_row_key\n        int Comcast_telecom_complaints_data_key FK\n        int attributes_key FK\n        int location_key FK\n        int date_date_key FK\n        int date_month_year_date_key FK\n        int time_date_key FK\n        int ticket\n    }\n    dim_Comcast_telecom_complaints_data {\n        int Comcast_telecom_complaints_data_key PK\n        string customer_complaint\n    }\n    dim_attributes {\n        int attributes_key PK\n        string received_via\n        string status\n        string filing_on_behalf_of_someone\n    }\n    dim_location {\n        int location_key PK\n        string city\n        string state\n        string zip_code\n    }\n    dim_date {\n        int date_key PK\n        string date\n        string year\n        string quarter\n        string month\n        string day\n        string weekday\n    }\n    dim_Comcast_telecom_complaints_data ||--o{ fact_Comcast_telecom_complaints_data : Comcast_telecom_complaints_data_key\n    dim_attributes ||--o{ fact_Comcast_telecom_complaints_data : attributes_key\n    dim_location ||--o{ fact_Comcast_telecom_complaints_data : location_key\n    dim_date ||--o{ fact_Comcast_telecom_complaints_data : date_key\n"
+    }
+  ],
+  "actions": [
+    {
+      "id": "Comcast_telecom_complaints_data.00.coerce_to_numeric.Ticket #",
+      "step": 0,
+      "table": "Comcast_telecom_complaints_data",
+      "column": "Ticket #",
+      "rule": "coerce_to_numeric",
+      "rows_affected": 2223,
+      "before": "Colonne stockée en texte (string) mais numérique à 100.0%.",
+      "after": "Convertie en Int64.",
+      "rationale": "Un montant stocké en texte ne peut être ni sommé ni moyenné par le KPI Agent.",
+      "source_issue_id": null
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.01.unparseable_to_null.Ticket #",
+      "step": 1,
+      "table": "Comcast_telecom_complaints_data",
+      "column": "Ticket #",
+      "rule": "unparseable_to_null",
+      "rows_affected": 1,
+      "before": "1 valeur(s) non numérique(s) dans une colonne numérique.",
+      "after": "Converties en valeur manquante.",
+      "rationale": "Une valeur non interprétable ne doit pas être devinée.",
+      "source_issue_id": null
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.02.coerce_to_datetime.Date",
+      "step": 2,
+      "table": "Comcast_telecom_complaints_data",
+      "column": "Date",
+      "rule": "coerce_to_datetime",
+      "rows_affected": 2224,
+      "before": "Colonne de dates stockée en texte.",
+      "after": "Convertie en datetime (0 valeur(s) illisible(s) mises à null).",
+      "rationale": "Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.",
+      "source_issue_id": null
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.03.coerce_to_datetime.Date_month_year",
+      "step": 3,
+      "table": "Comcast_telecom_complaints_data",
+      "column": "Date_month_year",
+      "rule": "coerce_to_datetime",
+      "rows_affected": 2224,
+      "before": "Colonne de dates stockée en texte.",
+      "after": "Convertie en datetime (0 valeur(s) illisible(s) mises à null).",
+      "rationale": "Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.",
+      "source_issue_id": null
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.04.coerce_to_datetime.Time",
+      "step": 4,
+      "table": "Comcast_telecom_complaints_data",
+      "column": "Time",
+      "rule": "coerce_to_datetime",
+      "rows_affected": 2224,
+      "before": "Colonne de dates stockée en texte.",
+      "after": "Convertie en datetime (0 valeur(s) illisible(s) mises à null).",
+      "rationale": "Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.",
+      "source_issue_id": null
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.05.harmonize_case.State",
+      "step": 5,
+      "table": "Comcast_telecom_complaints_data",
+      "column": "State",
+      "rule": "harmonize_case",
+      "rows_affected": 1,
+      "before": "1 variante(s) de casse d'une même modalité.",
+      "after": "Fusionnées vers la forme la plus fréquente.",
+      "rationale": "Des variantes de casse fragmentent les agrégations (ex. 'yes' ≠ 'Yes').",
+      "source_issue_id": null
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.06.impute_median.Ticket #",
+      "step": 6,
+      "table": "Comcast_telecom_complaints_data",
+      "column": "Ticket #",
+      "rule": "impute_median",
+      "rows_affected": 1,
+      "before": "1 valeur(s) manquante(s) (0.04%).",
+      "after": "Imputées par median = 3.305e+05.",
+      "rationale": "Stratégie robuste choisie pour ne pas supprimer de lignes ; la médiane est peu sensible aux valeurs extrêmes.",
+      "source_issue_id": null
+    }
+  ],
+  "validation_checks": [
+    {
+      "id": "Comcast_telecom_complaints_data.row_reconciliation",
+      "table": "Comcast_telecom_complaints_data",
+      "check": "row_reconciliation",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "2224 lignes en entrée − 0 supprimées tracées = 2224 attendues ; 2224 en sortie."
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.no_exact_duplicates",
+      "table": "Comcast_telecom_complaints_data",
+      "check": "no_exact_duplicates",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 doublon(s) exact(s) restant(s)."
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.numeric_dtype.Ticket #",
+      "table": "Comcast_telecom_complaints_data",
+      "check": "numeric_dtype",
+      "column": "Ticket #",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "dtype = Int64."
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.no_unexpected_nulls",
+      "table": "Comcast_telecom_complaints_data",
+      "check": "no_unexpected_nulls",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Nulls restants hors cas structurels : aucun."
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.no_constant_columns",
+      "table": "Comcast_telecom_complaints_data",
+      "check": "no_constant_columns",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Colonnes constantes (peu utiles pour l'analyse) : aucune."
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.star_fact_row_count",
+      "table": "Comcast_telecom_complaints_data",
+      "check": "star_fact_row_count",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "2224 lignes dans la table nettoyée, 2224 dans fact_Comcast_telecom_complaints_data."
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.star_no_null_foreign_key",
+      "table": "Comcast_telecom_complaints_data",
+      "check": "star_no_null_foreign_key",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 clé(s) étrangère(s) nulle(s)."
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.star_no_orphan_foreign_key",
+      "table": "Comcast_telecom_complaints_data",
+      "check": "star_no_orphan_foreign_key",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 ligne(s) du fait pointent vers une dimension inexistante."
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.star_dimension_keys_unique",
+      "table": "Comcast_telecom_complaints_data",
+      "check": "star_dimension_keys_unique",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 clé(s) de dimension en double."
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.star_column_coverage",
+      "table": "Comcast_telecom_complaints_data",
+      "check": "star_column_coverage",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Colonnes non placées : aucune ; placées deux fois : aucune."
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.star_measure_reconciliation",
+      "table": "Comcast_telecom_complaints_data",
+      "check": "star_measure_reconciliation",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 mesure(s) dont la somme diffère entre table nettoyée et fait."
+    },
+    {
+      "id": "Comcast_telecom_complaints_data.star_lossless_rejoin",
+      "table": "Comcast_telecom_complaints_data",
+      "check": "star_lossless_rejoin",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "En re-joignant le fait et les dimensions, 0 cellule(s) diffèrent de la table nettoyée (0 = l'étoile ne perd et ne déforme aucune donnée)."
+    }
+  ],
+  "issue_resolutions": [],
+  "remaining_issues": [],
+  "llm_summary": "Table Comcast_telecom_complaints_data : 2224 → 2224 ligne(s), score qualité 87.5 → 100.0/100.\nCorrections appliquées :\n- Comcast_telecom_complaints_data.Ticket # [coerce_to_numeric] 2223 ligne(s) : Un montant stocké en texte ne peut être ni sommé ni moyenné par le KPI Agent.\n- Comcast_telecom_complaints_data.Ticket # [unparseable_to_null] 1 ligne(s) : Une valeur non interprétable ne doit pas être devinée.\n- Comcast_telecom_complaints_data.Date [coerce_to_datetime] 2224 ligne(s) : Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.\n- Comcast_telecom_complaints_data.Date_month_year [coerce_to_datetime] 2224 ligne(s) : Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.\n- Comcast_telecom_complaints_data.Time [coerce_to_datetime] 2224 ligne(s) : Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.\n- Comcast_telecom_complaints_data.State [harmonize_case] 1 ligne(s) : Des variantes de casse fragmentent les agrégations (ex. 'yes' ≠ 'Yes').\n- Comcast_telecom_complaints_data.Ticket # [impute_median] 1 ligne(s) : Stratégie robuste choisie pour ne pas supprimer de lignes ; la médiane est peu sensible aux valeurs extrêmes.\nAucun problème restant selon les contrôles exécutés.",
+  "trace": [
+    {
+      "timestamp": "2026-10-26T20:03:36.339325",
+      "tool": "load_source",
+      "parameters": {
+        "source_name": "Comcast_telecom_complaints_data",
+        "rows": 2224
+      },
+      "duration_ms": 7.142800000110583
+    },
+    {
+      "timestamp": "2026-10-26T20:03:36.720869",
+      "tool": "clean_table",
+      "parameters": {
+        "table": "Comcast_telecom_complaints_data",
+        "actions": 7
+      },
+      "duration_ms": 381.21920000048704
+    },
+    {
+      "timestamp": "2026-10-26T20:03:36.721873",
+      "tool": "validate",
+      "parameters": {
+        "checks": 5
+      },
+      "duration_ms": 0.11989999984507449
+    },
+    {
+      "timestamp": "2026-10-26T20:03:36.815457",
+      "tool": "build_star_schema",
+      "parameters": {
+        "table": "Comcast_telecom_complaints_data",
+        "dimensions": 3
+      },
+      "duration_ms": 78.53900000009162
+    },
+    {
+      "timestamp": "2026-10-26T20:03:36.815457",
+      "tool": "export",
+      "parameters": {
+        "table": "Comcast_telecom_complaints_data",
+        "path": "output_test\\Comcast_telecom_complaints_data\\Comcast_telecom_complaints_data_clean.csv"
+      },
+      "duration_ms": 93.75079999972513
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-26T20:03:36.332326"
+}

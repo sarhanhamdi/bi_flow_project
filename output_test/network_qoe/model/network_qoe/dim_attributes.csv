@@ -1,0 +1,13 @@
+attributes_key,mos_source,label
+1,ctrl_plane_fallback,CALL_DROP
+2,ctrl_plane_fallback,CAPACITY_EXHAUSTED
+3,ctrl_plane_fallback,HIGH_LATENCY
+4,ctrl_plane_fallback,LOW_THROUGHPUT
+5,ctrl_plane_fallback,NORMAL
+6,ctrl_plane_fallback,POOR_VOICE_QUALITY
+7,ping_measured,CALL_DROP
+8,ping_measured,CAPACITY_EXHAUSTED
+9,ping_measured,HIGH_LATENCY
+10,ping_measured,LOW_THROUGHPUT
+11,ping_measured,NORMAL
+12,ping_measured,POOR_VOICE_QUALITY

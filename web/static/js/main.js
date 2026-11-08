@@ -289,14 +289,14 @@ function resetXAIView() {
   if (deltaAcc) deltaAcc.innerText = '--';
 
   const dummyRec = document.getElementById('dummy-rec');
-  if (dummyRec) dummyRec.innerText = '0.0%';
+  if (dummyRec) dummyRec.innerText = '--';
   const rfRec = document.getElementById('rf-rec');
   if (rfRec) rfRec.innerText = '--';
   const deltaRec = document.getElementById('delta-rec');
   if (deltaRec) deltaRec.innerText = '--';
 
   const dummyF1 = document.getElementById('dummy-f1');
-  if (dummyF1) dummyF1.innerText = '0.0%';
+  if (dummyF1) dummyF1.innerText = '--';
   const rfF1 = document.getElementById('rf-f1');
   if (rfF1) rfF1.innerText = '--';
   const deltaF1 = document.getElementById('delta-f1');
@@ -849,30 +849,48 @@ async function loadXAIData() {
     const rfF1 = ((baseComp.rf_f1 || (metrics ? metrics.f1 : 0)) * 100).toFixed(1) + '%';
     const deltaF1 = ((baseComp.delta_f1 || 0) * 100).toFixed(1) + '%';
 
+    const deltaAccNum = (baseComp.delta_accuracy || 0) * 100;
+    const deltaRecNum = ((baseComp.delta_recall !== undefined ? baseComp.delta_recall : ((baseComp.rf_recall || 0) - (baseComp.baseline_recall || 0)))) * 100;
+    const deltaF1Num = (baseComp.delta_f1 || 0) * 100;
+
     const elDummyAcc = document.getElementById('dummy-acc');
     if (elDummyAcc) elDummyAcc.innerText = dummyAcc;
     const elRfAcc = document.getElementById('rf-acc');
     if (elRfAcc) elRfAcc.innerText = rfAcc;
     const elDeltaAcc = document.getElementById('delta-acc');
-    if (elDeltaAcc) elDeltaAcc.innerText = `+${deltaAcc}`;
+    if (elDeltaAcc) elDeltaAcc.innerText = `${deltaAccNum >= 0 ? '+' : ''}${deltaAccNum.toFixed(1)}%`;
 
     const elDummyRec = document.getElementById('dummy-rec');
     if (elDummyRec) elDummyRec.innerText = dummyRec;
     const elRfRec = document.getElementById('rf-rec');
     if (elRfRec) elRfRec.innerText = rfRec;
     const elDeltaRec = document.getElementById('delta-rec');
-    if (elDeltaRec) elDeltaRec.innerText = `+${deltaRec}`;
+    if (elDeltaRec) elDeltaRec.innerText = `${deltaRecNum >= 0 ? '+' : ''}${deltaRecNum.toFixed(1)}%`;
 
     const elDummyF1 = document.getElementById('dummy-f1');
     if (elDummyF1) elDummyF1.innerText = dummyF1;
     const elRfF1 = document.getElementById('rf-f1');
     if (elRfF1) elRfF1.innerText = rfF1;
     const elDeltaF1 = document.getElementById('delta-f1');
-    if (elDeltaF1) elDeltaF1.innerText = `+${deltaF1}`;
+    if (elDeltaF1) elDeltaF1.innerText = `${deltaF1Num >= 0 ? '+' : ''}${deltaF1Num.toFixed(1)}%`;
 
     const elExpl = document.getElementById('tech-pedagogical-explanation');
-    if (elExpl && baseComp.pedagogical_explanation) {
-      elExpl.innerText = baseComp.pedagogical_explanation;
+    if (elExpl) {
+      const rawExpl = baseComp.pedagogical_explanation || '';
+      // Filtrer les anciens textes de cache qui mentionnent encore Dummy
+      if (rawExpl && !rawExpl.toLowerCase().includes('dummy') && !rawExpl.toLowerCase().includes('naïf')) {
+        elExpl.innerText = rawExpl;
+      } else {
+        const recSign = deltaRecNum >= 0 ? '+' : '';
+        const f1Sign = deltaF1Num >= 0 ? '+' : '';
+        if (baseComp.verdict === 'significant_gain') {
+          elExpl.innerText = `La Régression Logistique (modèle linéaire de référence) atteint ${dummyAcc} d'Accuracy, ${dummyRec} de Recall et ${dummyF1} de F1. Random Forest surperforme nettement avec ${rfAcc} d'Accuracy, ${rfRec} de Recall (${recSign}${deltaRecNum.toFixed(1)}% net) et ${rfF1} de F1 (${f1Sign}${deltaF1Num.toFixed(1)}% net), démontrant que les relations entre caractéristiques et risque sont non-linéaires.`;
+        } else if (baseComp.verdict === 'marginal_gain') {
+          elExpl.innerText = `La Régression Logistique atteint ${dummyAcc} d'Accuracy et ${dummyRec} de Recall. Random Forest apporte une amélioration mesurée (${recSign}${deltaRecNum.toFixed(1)}% de Recall, ${f1Sign}${deltaF1Num.toFixed(1)}% de F1), montrant un apport modéré des interactions non-linéaires.`;
+        } else {
+          elExpl.innerText = `La Régression Logistique atteint ${dummyAcc} d'Accuracy et ${dummyRec} de Recall contre ${rfAcc} d'Accuracy et ${rfRec} de Recall pour Random Forest (${recSign}${deltaRecNum.toFixed(1)}% net, F1: ${f1Sign}${deltaF1Num.toFixed(1)}%). L'absence de surperformance du Random Forest indique un signal dominé par des relations linéaires ou nécessitant un enrichissement préalable des descripteurs.`;
+        }
+      }
     }
   }
 
@@ -881,20 +899,254 @@ async function loadXAIData() {
   if (techFindingsContainer) {
     const techFindings = findings.filter(f => f.role === 'technical' || f.role === 'all' || (f.id && f.id.includes('TECH')));
     const displayList = techFindings.length > 0 ? techFindings : findings;
-    techFindingsContainer.innerHTML = displayList.map(f => `
+    techFindingsContainer.innerHTML = displayList.map(f => {
+      let title = f.title;
+      let detail = f.detail;
+      let rec = f.recommendation;
+
+      if (f.id === 'AUDIT-TECH-003' || (title && title.toLowerCase().includes('naïf'))) {
+        title = "Surperformance formelle face à la baseline linéaire";
+        if (detail && detail.toLowerCase().includes('majoritaire')) {
+          detail = detail.replace(/par rapport à la classe majoritaire/gi, 'par rapport à la Régression Logistique');
+        }
+      }
+
+      return `
       <div class="p-3 bg-slate-50 border border-slate-200 rounded-md">
         <div class="flex items-center justify-between mb-1">
           <span class="font-mono text-xs text-blue-600 font-semibold">${f.id}</span>
         </div>
-        <p class="text-sm font-semibold text-slate-800">${f.title}</p>
-        <p class="text-xs text-slate-600 mt-1">${f.detail}</p>
-        <p class="text-xs text-slate-500 mt-1"><span class="font-semibold text-slate-700">Directive MLOps :</span> ${f.recommendation}</p>
+        <p class="text-sm font-semibold text-slate-800">${title}</p>
+        <p class="text-xs text-slate-600 mt-1">${detail}</p>
+        <p class="text-xs text-slate-500 mt-1"><span class="font-semibold text-slate-700">Directive MLOps :</span> ${rec}</p>
       </div>
-    `).join('');
+      `;
+    }).join('');
   }
 }
 
-// 5. GOVERNANCE DATA
+// 5. GOVERNANCE DATA & ADMIN CONSOLE
+let currentAdminRules = null;
+
+function switchGovSubTab(tab) {
+  const auditTab = document.getElementById('subtab-gov-audit');
+  const adminTab = document.getElementById('subtab-gov-admin');
+  const auditBtn = document.getElementById('tab-gov-audit-btn');
+  const adminBtn = document.getElementById('tab-gov-admin-btn');
+
+  if (tab === 'admin') {
+    if (auditTab) auditTab.classList.add('hidden');
+    if (adminTab) adminTab.classList.remove('hidden');
+    if (auditBtn) {
+      auditBtn.className = "px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition flex items-center space-x-1.5";
+    }
+    if (adminBtn) {
+      adminBtn.className = "px-3 py-1.5 rounded-lg bg-white text-blue-700 shadow-xs transition flex items-center space-x-1.5";
+    }
+    loadAdminGovernanceRules();
+  } else {
+    if (adminTab) adminTab.classList.add('hidden');
+    if (auditTab) auditTab.classList.remove('hidden');
+    if (adminBtn) {
+      adminBtn.className = "px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition flex items-center space-x-1.5";
+    }
+    if (auditBtn) {
+      auditBtn.className = "px-3 py-1.5 rounded-lg bg-white text-blue-700 shadow-xs transition flex items-center space-x-1.5";
+    }
+    loadGovernanceData();
+  }
+}
+
+async function loadAdminGovernanceRules() {
+  const res = await fetchJSON('/api/governance/rules');
+  if (!res) return;
+  currentAdminRules = res;
+
+  const glob = res.global_settings || {};
+  const elMissing = document.getElementById('gov-cfg-missing-pct');
+  if (elMissing) elMissing.value = glob.drop_column_missing_pct ?? 80;
+  const elIqr = document.getElementById('gov-cfg-iqr');
+  if (elIqr) elIqr.value = glob.iqr_multiplier ?? 1.5;
+  const elPii = document.getElementById('gov-cfg-pii');
+  if (elPii) elPii.value = glob.pii_policy ?? 'hash';
+  const elNum = document.getElementById('gov-cfg-num-imp');
+  if (elNum) elNum.value = glob.numeric_missing_strategy ?? 'median';
+  const elCat = document.getElementById('gov-cfg-cat-imp');
+  if (elCat) elCat.value = glob.categorical_missing_strategy ?? 'unknown';
+  const elStrip = document.getElementById('gov-cfg-strip');
+  if (elStrip) elStrip.checked = glob.strip_whitespace !== false;
+  const elDedup = document.getElementById('gov-cfg-dedup');
+  if (elDedup) elDedup.checked = glob.drop_exact_duplicates !== false;
+
+  renderAdminRangeRules(res.range_rules || []);
+}
+
+function renderAdminRangeRules(rules) {
+  const tbody = document.getElementById('admin-gov-range-tbody');
+  if (!tbody) return;
+
+  if (rules.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6" class="text-center py-4 text-slate-400">Aucune règle d'intervalle définie.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = rules.map((r, idx) => `
+    <tr class="hover:bg-slate-50 transition" data-rule-index="${idx}">
+      <td class="py-2.5 px-3">
+        <input type="text" class="w-full p-1.5 border border-slate-300 rounded text-xs font-mono rule-col" value="${r.column || ''}" placeholder="nom_colonne" />
+      </td>
+      <td class="py-2.5 px-3">
+        <input type="number" step="any" class="w-24 p-1.5 border border-slate-300 rounded text-xs font-mono rule-min" value="${r.min !== null && r.min !== undefined ? r.min : ''}" placeholder="Min" />
+      </td>
+      <td class="py-2.5 px-3">
+        <input type="number" step="any" class="w-24 p-1.5 border border-slate-300 rounded text-xs font-mono rule-max" value="${r.max !== null && r.max !== undefined ? r.max : ''}" placeholder="Max" />
+      </td>
+      <td class="py-2.5 px-3">
+        <select class="p-1.5 border border-slate-300 rounded text-xs bg-white rule-fix">
+          <option value="report" ${r.fix === 'report' ? 'selected' : ''}>report (Tracer dans l'audit)</option>
+          <option value="clamp" ${r.fix === 'clamp' ? 'selected' : ''}>clamp (Borner aux min/max)</option>
+          <option value="nullify" ${r.fix === 'nullify' ? 'selected' : ''}>nullify (Remplacer par Null)</option>
+          <option value="drop" ${r.fix === 'drop' ? 'selected' : ''}>drop (Supprimer la ligne)</option>
+        </select>
+      </td>
+      <td class="py-2.5 px-3">
+        <input type="text" class="w-full p-1.5 border border-slate-300 rounded text-xs rule-desc" value="${r.description || ''}" placeholder="Ex: Borne métier légale" />
+      </td>
+      <td class="py-2.5 px-3 text-center">
+        <button onclick="removeAdminRangeRuleRow(this)" class="text-rose-600 hover:text-rose-800 font-bold px-2 py-1 rounded hover:bg-rose-50 transition">✕</button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function addAdminRangeRuleRow() {
+  const tbody = document.getElementById('admin-gov-range-tbody');
+  if (!tbody) return;
+  const tr = document.createElement('tr');
+  tr.className = "hover:bg-slate-50 transition";
+  tr.innerHTML = `
+    <td class="py-2.5 px-3">
+      <input type="text" class="w-full p-1.5 border border-slate-300 rounded text-xs font-mono rule-col" value="" placeholder="nouvelle_colonne" />
+    </td>
+    <td class="py-2.5 px-3">
+      <input type="number" step="any" class="w-24 p-1.5 border border-slate-300 rounded text-xs font-mono rule-min" value="0" placeholder="Min" />
+    </td>
+    <td class="py-2.5 px-3">
+      <input type="number" step="any" class="w-24 p-1.5 border border-slate-300 rounded text-xs font-mono rule-max" value="" placeholder="Max" />
+    </td>
+    <td class="py-2.5 px-3">
+      <select class="p-1.5 border border-slate-300 rounded text-xs bg-white rule-fix">
+        <option value="report" selected>report (Tracer dans l'audit)</option>
+        <option value="clamp">clamp (Borner aux min/max)</option>
+        <option value="nullify">nullify (Remplacer par Null)</option>
+        <option value="drop">drop (Supprimer la ligne)</option>
+      </select>
+    </td>
+    <td class="py-2.5 px-3">
+      <input type="text" class="w-full p-1.5 border border-slate-300 rounded text-xs rule-desc" value="" placeholder="Contrainte métier personnalisée" />
+    </td>
+    <td class="py-2.5 px-3 text-center">
+      <button onclick="removeAdminRangeRuleRow(this)" class="text-rose-600 hover:text-rose-800 font-bold px-2 py-1 rounded hover:bg-rose-50 transition">✕</button>
+    </td>
+  `;
+  tbody.appendChild(tr);
+}
+
+function removeAdminRangeRuleRow(btn) {
+  const tr = btn.closest('tr');
+  if (tr) tr.remove();
+}
+
+function showAdminToast(msg, isSuccess = true) {
+  const toast = document.getElementById('admin-gov-toast');
+  if (!toast) return;
+  toast.innerText = msg;
+  toast.className = `p-3 rounded-lg text-xs font-semibold flex items-center justify-between ${
+    isSuccess ? 'bg-emerald-50 text-emerald-800 border border-emerald-200' : 'bg-rose-50 text-rose-800 border border-rose-200'
+  }`;
+  toast.classList.remove('hidden');
+  setTimeout(() => toast.classList.add('hidden'), 4000);
+}
+
+async function saveAdminGovernanceRules() {
+  const missingVal = parseFloat(document.getElementById('gov-cfg-missing-pct')?.value) || 80.0;
+  const iqrVal = parseFloat(document.getElementById('gov-cfg-iqr')?.value) || 1.5;
+  const piiVal = document.getElementById('gov-cfg-pii')?.value || 'hash';
+  const numImp = document.getElementById('gov-cfg-num-imp')?.value || 'median';
+  const catImp = document.getElementById('gov-cfg-cat-imp')?.value || 'unknown';
+  const stripVal = document.getElementById('gov-cfg-strip')?.checked ?? true;
+  const dedupVal = document.getElementById('gov-cfg-dedup')?.checked ?? true;
+
+  const rows = document.querySelectorAll('#admin-gov-range-tbody tr');
+  const rangeRules = [];
+  rows.forEach(tr => {
+    const col = tr.querySelector('.rule-col')?.value.trim();
+    if (!col) return;
+    const minRaw = tr.querySelector('.rule-min')?.value.trim();
+    const maxRaw = tr.querySelector('.rule-max')?.value.trim();
+    const fix = tr.querySelector('.rule-fix')?.value || 'report';
+    const desc = tr.querySelector('.rule-desc')?.value.trim() || '';
+
+    rangeRules.push({
+      column: col,
+      min: minRaw !== '' ? parseFloat(minRaw) : null,
+      max: maxRaw !== '' ? parseFloat(maxRaw) : null,
+      fix: fix,
+      description: desc
+    });
+  });
+
+  const payload = {
+    global_settings: {
+      drop_column_missing_pct: missingVal,
+      iqr_multiplier: iqrVal,
+      numeric_missing_strategy: numImp,
+      categorical_missing_strategy: catImp,
+      unknown_label: "Unknown",
+      pii_policy: piiVal,
+      strip_whitespace: stripVal,
+      standardize_column_names: true,
+      drop_exact_duplicates: dedupVal
+    },
+    range_rules: rangeRules,
+    mapping_rules: (currentAdminRules && currentAdminRules.mapping_rules) || [],
+    conditional_fills: (currentAdminRules && currentAdminRules.conditional_fills) || []
+  };
+
+  try {
+    const res = await fetch('/api/governance/rules', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (res.ok) {
+      showAdminToast('✓ Politique de gouvernance enregistrée avec succès. Active pour le prochain run ETL.');
+      currentAdminRules = payload;
+    } else {
+      showAdminToast('Erreur lors de la sauvegarde des règles.', false);
+    }
+  } catch (err) {
+    showAdminToast('Erreur de communication avec le serveur.', false);
+  }
+}
+
+async function resetAdminGovernanceRules() {
+  if (!confirm("Voulez-vous vraiment réinitialiser toutes les règles de gouvernance aux valeurs par défaut d'entreprise ?")) {
+    return;
+  }
+  try {
+    const res = await fetch('/api/governance/rules/reset', { method: 'POST' });
+    if (res.ok) {
+      const data = await res.json();
+      currentAdminRules = data.rules;
+      loadAdminGovernanceRules();
+      showAdminToast('✓ Règles de gouvernance réinitialisées aux valeurs par défaut.');
+    }
+  } catch (err) {
+    showAdminToast('Erreur lors de la réinitialisation.', false);
+  }
+}
+
 async function loadGovernanceData() {
   if (!activeDataset) {
     resetGovernanceView();

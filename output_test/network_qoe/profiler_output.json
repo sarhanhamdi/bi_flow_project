@@ -1,0 +1,1435 @@
+{
+  "business_goal": "Test multi-usage autonome",
+  "domain": "network_performance",
+  "semantic_map": {
+    "domain": "network_performance",
+    "confidence_scores": {
+      "customer_churn": 0.0,
+      "network_performance": 33.0,
+      "customer_support": 0.0
+    },
+    "primary_target": "cdr_flag",
+    "concepts": {
+      "target_churn": null,
+      "tenure": null,
+      "monthly_charge": null,
+      "total_revenue": null,
+      "contract": "dataplane_latency_ms",
+      "mos_score": "mos_voice",
+      "latency": "dns_latency_ms",
+      "throughput": "throughput_mbps",
+      "upload_speed": null,
+      "packet_loss": "plr",
+      "signal_strength": null,
+      "target_network_incident": "cdr_flag",
+      "availability": "availability",
+      "ticket_id": null,
+      "ticket_status": null,
+      "dispute_flag": null,
+      "timely_response": null,
+      "csat_score": null,
+      "resolution_time": null
+    }
+  },
+  "tables": [
+    {
+      "name": "network_qoe",
+      "source_name": "network_qoe",
+      "row_count": 167431,
+      "column_count": 33,
+      "memory_bytes": 54578443,
+      "sampled": false,
+      "sample_rows": null,
+      "columns": [
+        {
+          "name": "run_id",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "id",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1,
+          "stats": {
+            "count": 167431,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "run_20260409_120415",
+                  "count": 167431
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "timestamp",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "date",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 41860,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 1774593194.635944,
+              "max": 1774700890.70332,
+              "mean": 1774647017.599599,
+              "median": 1774647009.340708,
+              "std": 31056.417826842557,
+              "q1": 1774620161.3733332,
+              "q3": 1774673879.459699
+            }
+          },
+          "rare_values": [],
+          "is_pii": true,
+          "pii_categories": [
+            "phone"
+          ],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "datetime",
+          "declared_type": "str",
+          "inferred_type": "datetime",
+          "semantic_role": "date",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 38120,
+          "stats": {
+            "count": 167431,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "07:33:14",
+                  "count": 8
+                },
+                {
+                  "value": "07:33:27",
+                  "count": 8
+                },
+                {
+                  "value": "07:33:29",
+                  "count": 8
+                },
+                {
+                  "value": "07:33:31",
+                  "count": 8
+                },
+                {
+                  "value": "07:33:33",
+                  "count": 8
+                },
+                {
+                  "value": "07:33:35",
+                  "count": 8
+                },
+                {
+                  "value": "07:33:37",
+                  "count": 8
+                },
+                {
+                  "value": "07:33:39",
+                  "count": 8
+                },
+                {
+                  "value": "07:33:41",
+                  "count": 8
+                },
+                {
+                  "value": "07:33:56",
+                  "count": 8
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "07:33:14",
+              "count": 8
+            },
+            {
+              "value": "07:33:27",
+              "count": 8
+            },
+            {
+              "value": "07:33:29",
+              "count": 8
+            },
+            {
+              "value": "07:33:31",
+              "count": 8
+            },
+            {
+              "value": "07:33:33",
+              "count": 8
+            },
+            {
+              "value": "07:33:35",
+              "count": 8
+            },
+            {
+              "value": "07:33:37",
+              "count": 8
+            },
+            {
+              "value": "07:33:39",
+              "count": 8
+            },
+            {
+              "value": "07:33:41",
+              "count": 8
+            },
+            {
+              "value": "07:33:56",
+              "count": 8
+            },
+            {
+              "value": "07:33:58",
+              "count": 8
+            },
+            {
+              "value": "07:34:00",
+              "count": 8
+            },
+            {
+              "value": "07:34:02",
+              "count": 8
+            },
+            {
+              "value": "07:34:04",
+              "count": 8
+            },
+            {
+              "value": "07:34:06",
+              "count": 8
+            },
+            {
+              "value": "07:34:08",
+              "count": 8
+            },
+            {
+              "value": "07:34:10",
+              "count": 8
+            },
+            {
+              "value": "07:34:33",
+              "count": 8
+            },
+            {
+              "value": "07:34:35",
+              "count": 8
+            },
+            {
+              "value": "07:34:37",
+              "count": 8
+            },
+            {
+              "value": "07:34:54",
+              "count": 8
+            },
+            {
+              "value": "07:34:56",
+              "count": 8
+            },
+            {
+              "value": "07:34:58",
+              "count": 8
+            },
+            {
+              "value": "07:35:00",
+              "count": 8
+            },
+            {
+              "value": "07:35:02",
+              "count": 8
+            },
+            {
+              "value": "07:35:04",
+              "count": 8
+            },
+            {
+              "value": "07:35:06",
+              "count": 8
+            },
+            {
+              "value": "07:35:23",
+              "count": 8
+            },
+            {
+              "value": "07:35:25",
+              "count": 8
+            },
+            {
+              "value": "07:35:27",
+              "count": 8
+            },
+            {
+              "value": "07:35:29",
+              "count": 8
+            },
+            {
+              "value": "07:35:31",
+              "count": 8
+            },
+            {
+              "value": "07:35:33",
+              "count": 8
+            },
+            {
+              "value": "07:35:35",
+              "count": 8
+            },
+            {
+              "value": "07:35:37",
+              "count": 8
+            },
+            {
+              "value": "07:36:21",
+              "count": 8
+            },
+            {
+              "value": "07:36:23",
+              "count": 8
+            },
+            {
+              "value": "07:36:25",
+              "count": 8
+            },
+            {
+              "value": "07:36:27",
+              "count": 8
+            },
+            {
+              "value": "07:36:29",
+              "count": 8
+            },
+            {
+              "value": "07:36:31",
+              "count": 8
+            },
+            {
+              "value": "07:36:46",
+              "count": 8
+            },
+            {
+              "value": "07:36:48",
+              "count": 8
+            },
+            {
+              "value": "07:36:50",
+              "count": 8
+            },
+            {
+              "value": "07:36:52",
+              "count": 8
+            },
+            {
+              "value": "07:36:54",
+              "count": 8
+            },
+            {
+              "value": "07:37:19",
+              "count": 8
+            },
+            {
+              "value": "07:37:21",
+              "count": 8
+            },
+            {
+              "value": "07:37:23",
+              "count": 8
+            },
+            {
+              "value": "07:37:40",
+              "count": 8
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "segment",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 4,
+          "stats": {
+            "count": 167431,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "INTERNET",
+                  "count": 41858
+                },
+                {
+                  "value": "OUTDOOR_RAN",
+                  "count": 41858
+                },
+                {
+                  "value": "INDOOR_RAN",
+                  "count": 41858
+                },
+                {
+                  "value": "IMS_CDN",
+                  "count": 41857
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "switch_id",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "id",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 1.0,
+              "max": 1.0,
+              "mean": 1.0,
+              "median": 1.0,
+              "std": 0.0,
+              "q1": 1.0,
+              "q3": 1.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "port_no",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 4,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 1.0,
+              "max": 4.0,
+              "mean": 2.499997013695194,
+              "median": 2.0,
+              "std": 1.118039998588142,
+              "q1": 1.5,
+              "q3": 3.5
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "mos_voice",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 3401,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 1.0,
+              "max": 4.4,
+              "mean": 3.4902948737091695,
+              "median": 4.114,
+              "std": 1.1726971281612313,
+              "q1": 2.693,
+              "q3": 4.39
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "e2e_delay_ms",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 30863,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 5.377,
+              "max": 235.4,
+              "mean": 33.50381267507212,
+              "median": 16.458,
+              "std": 41.68968118277849,
+              "q1": 11.445,
+              "q3": 26.534
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 25439,
+          "anomaly_examples": [
+            "50.587",
+            "50.587",
+            "50.587",
+            "153.45",
+            "192.25"
+          ]
+        },
+        {
+          "name": "plr",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 71244,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 1.0,
+              "mean": 0.09703623959123459,
+              "median": 0.011076,
+              "std": 0.21560508896464575,
+              "q1": 0.000012,
+              "q3": 0.06563949999999999
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 25737,
+          "anomaly_examples": [
+            "0.541012",
+            "0.576629",
+            "0.473659",
+            "0.471343",
+            "0.478915"
+          ]
+        },
+        {
+          "name": "jitter_ms",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 38557,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 73.0435,
+              "mean": 3.586725689388465,
+              "median": 2.8315,
+              "std": 3.7809172935926574,
+              "q1": 1.119,
+              "q3": 4.469
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 11764,
+          "anomaly_examples": [
+            "10.436",
+            "10.436",
+            "10.436",
+            "18.935",
+            "12.353"
+          ]
+        },
+        {
+          "name": "cdr_flag",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 1.0,
+              "mean": 0.17450173504309238,
+              "median": 0.0,
+              "std": 0.37954148636855106,
+              "q1": 0.0,
+              "q3": 0.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "call_setup_time_ms",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "date",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 18883,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 261.8,
+              "max": 10000.0,
+              "mean": 907.2356546876025,
+              "median": 397.3,
+              "std": 1704.320641670941,
+              "q1": 323.4,
+              "q3": 712.9
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 24004,
+          "anomaly_examples": [
+            "1310.1",
+            "1748.5",
+            "2147.3",
+            "1610.7",
+            "1676.3"
+          ]
+        },
+        {
+          "name": "buffering_ratio",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2408,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 1.0,
+              "mean": 0.9370960288118687,
+              "median": 0.9605,
+              "std": 0.12822748113944468,
+              "q1": 0.9089,
+              "q3": 0.9951
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 3069,
+          "anomaly_examples": [
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0"
+          ]
+        },
+        {
+          "name": "rebuffering_freq",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 155,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 10.0,
+              "mean": 9.840810542850488,
+              "median": 10.0,
+              "std": 1.2459871381852794,
+              "q1": 10.0,
+              "q3": 10.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 2660,
+          "anomaly_examples": [
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0"
+          ]
+        },
+        {
+          "name": "rebuffering_count",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 0.0,
+              "mean": 0.0,
+              "median": 0.0,
+              "std": 0.0,
+              "q1": 0.0,
+              "q3": 0.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "total_stall_seconds",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 0.0,
+              "mean": 0.0,
+              "median": 0.0,
+              "std": 0.0,
+              "q1": 0.0,
+              "q3": 0.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "video_start_time_ms",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "date",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 144266,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 1585430372383712.5,
+              "mean": 44456546406.46386,
+              "median": 50643.9,
+              "std": 5738440555369.608,
+              "q1": 21961.300000000003,
+              "q3": 411319.5
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 7305,
+          "anomaly_examples": [
+            "37031904.3",
+            "18491562.2",
+            "37031904.3",
+            "18491562.2",
+            "52902717.3"
+          ]
+        },
+        {
+          "name": "streaming_mos",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 10,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 4.5,
+              "mean": 1.3508215324521744,
+              "median": 1.3,
+              "std": 0.39711424333724216,
+              "q1": 1.3,
+              "q3": 1.3
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 2680,
+          "anomaly_examples": [
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0",
+            "4.5"
+          ]
+        },
+        {
+          "name": "effective_bitrate_mbps",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 5961,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 3.7047,
+              "mean": 0.14772013605604695,
+              "median": 0.079,
+              "std": 0.4235511638849764,
+              "q1": 0.0097,
+              "q3": 0.1823
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 3064,
+          "anomaly_examples": [
+            "2.5692",
+            "2.8741",
+            "3.1428",
+            "3.398",
+            "3.318"
+          ]
+        },
+        {
+          "name": "throughput_mbps",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 86082,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 4.74751,
+              "mean": 0.18194415658390622,
+              "median": 0.100345,
+              "std": 0.5531136449335765,
+              "q1": 0.010454,
+              "q3": 0.205696
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 3172,
+          "anomaly_examples": [
+            "1.951997",
+            "4.48846",
+            "4.621633",
+            "4.747388",
+            "4.386332"
+          ]
+        },
+        {
+          "name": "dns_latency_ms",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 16151,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 2092.0,
+              "mean": 313.8373825635635,
+              "median": 80.1,
+              "std": 514.6820408942127,
+              "q1": 38.0,
+              "q3": 290.7
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 25093,
+          "anomaly_examples": [
+            "1611.4",
+            "1683.0",
+            "1476.5",
+            "1479.5",
+            "1499.4"
+          ]
+        },
+        {
+          "name": "availability",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 6838,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 1.0,
+              "mean": 0.8752106891794232,
+              "median": 0.9889,
+              "std": 0.2560781640816928,
+              "q1": 0.9345,
+              "q3": 1.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 28766,
+          "anomaly_examples": [
+            "0.259",
+            "0.2234",
+            "0.3263",
+            "0.3287",
+            "0.3211"
+          ]
+        },
+        {
+          "name": "rx_bytes",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 167353,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 6520948742.0,
+              "mean": 1389874213.9671865,
+              "median": 761662774.0,
+              "std": 1642893750.7741146,
+              "q1": 111388754.0,
+              "q3": 2163241164.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "tx_bytes",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 167350,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 4043451750.0,
+              "mean": 1196963911.5555542,
+              "median": 870256566.0,
+              "std": 984552618.4402722,
+              "q1": 419115969.0,
+              "q3": 1718937185.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "rx_packets",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 165767,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 8638711.0,
+              "mean": 2717517.0082601192,
+              "median": 1923916.0,
+              "std": 2479813.9040812915,
+              "q1": 645573.5,
+              "q3": 4201576.5
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "tx_packets",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 165434,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 7332218.0,
+              "mean": 2348765.157939689,
+              "median": 2092161.0,
+              "std": 1683394.6729212545,
+              "q1": 1046761.0,
+              "q3": 3175261.5
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "rx_dropped",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 0.0,
+              "mean": 0.0,
+              "median": 0.0,
+              "std": 0.0,
+              "q1": 0.0,
+              "q3": 0.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "tx_dropped",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 0.0,
+              "mean": 0.0,
+              "median": 0.0,
+              "std": 0.0,
+              "q1": 0.0,
+              "q3": 0.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "dataplane_latency_ms",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 48082,
+          "missing_pct": 28.717501537946976,
+          "cardinality": 23135,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 5.377,
+              "max": 235.4,
+              "mean": 40.4061083377322,
+              "median": 20.957,
+              "std": 47.493784910990456,
+              "q1": 11.014,
+              "q3": 37.783
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 22998,
+          "anomaly_examples": [
+            "153.45",
+            "192.25",
+            "140.424",
+            "146.271",
+            "192.25"
+          ]
+        },
+        {
+          "name": "ctrl_plane_rtt_ms",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 14965,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 7.413,
+              "max": 85.663,
+              "mean": 16.27288676529436,
+              "median": 14.757,
+              "std": 6.319984268818156,
+              "q1": 12.774,
+              "q3": 17.471
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 11367,
+          "anomaly_examples": [
+            "24.801",
+            "24.801",
+            "24.801",
+            "24.801",
+            "34.947"
+          ]
+        },
+        {
+          "name": "flow_count",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 21,
+          "stats": {
+            "count": 167431,
+            "numeric": {
+              "min": 0.0,
+              "max": 48.0,
+              "mean": 5.156607796644588,
+              "median": 6.0,
+              "std": 2.3184076341010664,
+              "q1": 4.0,
+              "q3": 6.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "mos_source",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2,
+          "stats": {
+            "count": 167431,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "ping_measured",
+                  "count": 119349
+                },
+                {
+                  "value": "ctrl_plane_fallback",
+                  "count": 48082
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "label",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 6,
+          "stats": {
+            "count": 167431,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "NORMAL",
+                  "count": 56753
+                },
+                {
+                  "value": "HIGH_LATENCY",
+                  "count": 29872
+                },
+                {
+                  "value": "LOW_THROUGHPUT",
+                  "count": 27956
+                },
+                {
+                  "value": "POOR_VOICE_QUALITY",
+                  "count": 23553
+                },
+                {
+                  "value": "CALL_DROP",
+                  "count": 17528
+                },
+                {
+                  "value": "CAPACITY_EXHAUSTED",
+                  "count": 11769
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        }
+      ],
+      "duplicates": {
+        "exact_count": 0,
+        "exact_pct": 0.0,
+        "business_key": [],
+        "business_key_duplicate_count": 0,
+        "business_key_duplicate_pct": 0.0
+      }
+    }
+  ],
+  "relationships": [],
+  "issues": [
+    {
+      "id": "network_qoe.e2e_delay_ms.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "e2e_delay_ms",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "25439 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 25439,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "network_qoe.plr.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "plr",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "25737 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 25737,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "network_qoe.jitter_ms.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "jitter_ms",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "11764 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 11764,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "network_qoe.call_setup_time_ms.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "call_setup_time_ms",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "24004 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 24004,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "network_qoe.buffering_ratio.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "buffering_ratio",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "3069 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 3069,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "network_qoe.rebuffering_freq.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "rebuffering_freq",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "2660 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 2660,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "network_qoe.video_start_time_ms.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "video_start_time_ms",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "7305 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 7305,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "network_qoe.streaming_mos.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "streaming_mos",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "2680 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 2680,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "network_qoe.effective_bitrate_mbps.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "effective_bitrate_mbps",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "3064 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 3064,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "network_qoe.throughput_mbps.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "throughput_mbps",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "3172 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 3172,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "network_qoe.dns_latency_ms.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "dns_latency_ms",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "25093 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 25093,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "network_qoe.availability.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "availability",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "28766 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 28766,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "network_qoe.dataplane_latency_ms.missing",
+      "severity": "high",
+      "table": "network_qoe",
+      "column": "dataplane_latency_ms",
+      "rule": "missing_values",
+      "evidence": "48082 valeur(s) manquante(s), soit 28.72% des lignes profilées.",
+      "affected_rows": 48082,
+      "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+    },
+    {
+      "id": "network_qoe.dataplane_latency_ms.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "dataplane_latency_ms",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "22998 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 22998,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "network_qoe.ctrl_plane_rtt_ms.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "network_qoe",
+      "column": "ctrl_plane_rtt_ms",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "11367 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+      "affected_rows": 11367,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    }
+  ],
+  "llm_summary": "Tables profilées : network_qoe : 167431 ligne(s), 33 colonne(s)\nProblèmes prioritaires : medium — network_qoe.e2e_delay_ms : iqr_or_zscore_outlier. 25439 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.plr : iqr_or_zscore_outlier. 25737 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.jitter_ms : iqr_or_zscore_outlier. 11764 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.call_setup_time_ms : iqr_or_zscore_outlier. 24004 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.buffering_ratio : iqr_or_zscore_outlier. 3069 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.rebuffering_freq : iqr_or_zscore_outlier. 2660 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.video_start_time_ms : iqr_or_zscore_outlier. 7305 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.streaming_mos : iqr_or_zscore_outlier. 2680 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.effective_bitrate_mbps : iqr_or_zscore_outlier. 3064 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.throughput_mbps : iqr_or_zscore_outlier. 3172 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.dns_latency_ms : iqr_or_zscore_outlier. 25093 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.availability : iqr_or_zscore_outlier. 28766 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. high — network_qoe.dataplane_latency_ms : missing_values. 48082 valeur(s) manquante(s), soit 28.72% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. medium — network_qoe.dataplane_latency_ms : iqr_or_zscore_outlier. 22998 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.ctrl_plane_rtt_ms : iqr_or_zscore_outlier. 11367 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction.",
+  "status": "warning",
+  "trace": [
+    {
+      "timestamp": "2026-10-27T18:46:34.914620",
+      "tool": "load_source",
+      "parameters": {
+        "source_name": "network_qoe",
+        "source_type": "csv",
+        "sampled": false,
+        "sample_rows": 167431
+      },
+      "duration_ms": 776.6077999999652
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,221 @@
+{
+  "status": "success",
+  "business_goal": "Test multi-usage autonome",
+  "n_features_used": 28,
+  "features_used": [
+    "segment",
+    "port_no",
+    "mos_voice",
+    "e2e_delay_ms",
+    "plr",
+    "jitter_ms",
+    "call_setup_time_ms",
+    "buffering_ratio",
+    "rebuffering_freq",
+    "rebuffering_count",
+    "total_stall_seconds",
+    "video_start_time_ms",
+    "streaming_mos",
+    "effective_bitrate_mbps",
+    "throughput_mbps",
+    "dns_latency_ms",
+    "availability",
+    "rx_bytes",
+    "tx_bytes",
+    "rx_packets",
+    "tx_packets",
+    "rx_dropped",
+    "tx_dropped",
+    "dataplane_latency_ms",
+    "ctrl_plane_rtt_ms",
+    "flow_count",
+    "mos_source",
+    "label"
+  ],
+  "features_excluded": [
+    "run_id",
+    "timestamp",
+    "datetime",
+    "switch_id",
+    "cdr_flag"
+  ],
+  "model_metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "auc_roc": 1.0,
+    "n_train": 133944,
+    "n_test": 33487,
+    "positive_rate_train": 0.1745,
+    "positive_rate_test": 0.1745
+  },
+  "shap_summary": {
+    "top_features": [
+      {
+        "feature": "mos_voice",
+        "mean_abs_shap": 0.1998,
+        "rank": 1
+      },
+      {
+        "feature": "plr",
+        "mean_abs_shap": 0.0995,
+        "rank": 2
+      },
+      {
+        "feature": "availability",
+        "mean_abs_shap": 0.0819,
+        "rank": 3
+      },
+      {
+        "feature": "dns_latency_ms",
+        "mean_abs_shap": 0.0625,
+        "rank": 4
+      },
+      {
+        "feature": "call_setup_time_ms",
+        "mean_abs_shap": 0.0337,
+        "rank": 5
+      },
+      {
+        "feature": "throughput_mbps",
+        "mean_abs_shap": 0.0117,
+        "rank": 6
+      },
+      {
+        "feature": "label",
+        "mean_abs_shap": 0.0099,
+        "rank": 7
+      },
+      {
+        "feature": "video_start_time_ms",
+        "mean_abs_shap": 0.0039,
+        "rank": 8
+      },
+      {
+        "feature": "flow_count",
+        "mean_abs_shap": 0.0039,
+        "rank": 9
+      },
+      {
+        "feature": "dataplane_latency_ms",
+        "mean_abs_shap": 0.0028,
+        "rank": 10
+      }
+    ],
+    "examples": [
+      {
+        "client_index": 0,
+        "true_label": 0,
+        "predicted_label": 0,
+        "predicted_proba": 0.0,
+        "top_features": [
+          {
+            "feature": "mos_voice",
+            "shap_value": -0.182,
+            "feature_value": 4.393
+          },
+          {
+            "feature": "plr",
+            "shap_value": -0.0898,
+            "feature_value": 0.0
+          },
+          {
+            "feature": "availability",
+            "shap_value": -0.0794,
+            "feature_value": 1.0
+          }
+        ]
+      },
+      {
+        "client_index": 1,
+        "true_label": 0,
+        "predicted_label": 0,
+        "predicted_proba": 0.0,
+        "top_features": [
+          {
+            "feature": "mos_voice",
+            "shap_value": -0.182,
+            "feature_value": 4.391
+          },
+          {
+            "feature": "plr",
+            "shap_value": -0.0932,
+            "feature_value": 0.000024
+          },
+          {
+            "feature": "availability",
+            "shap_value": -0.0821,
+            "feature_value": 1.0
+          }
+        ]
+      },
+      {
+        "client_index": 2,
+        "true_label": 1,
+        "predicted_label": 1,
+        "predicted_proba": 1.0,
+        "top_features": [
+          {
+            "feature": "mos_voice",
+            "shap_value": 0.2048,
+            "feature_value": 1.675
+          },
+          {
+            "feature": "plr",
+            "shap_value": 0.1126,
+            "feature_value": 0.172582
+          },
+          {
+            "feature": "availability",
+            "shap_value": 0.0772,
+            "feature_value": 0.6274
+          }
+        ]
+      }
+    ]
+  },
+  "baseline_comparison": {
+    "baseline_accuracy": 0.8255,
+    "baseline_f1": 0.0,
+    "delta_accuracy": 0.1745,
+    "delta_f1": 1.0,
+    "verdict": "significant_gain"
+  },
+  "audit_findings": [
+    {
+      "id": "AUDIT-DATA-001",
+      "severity": "info",
+      "category": "data_preparation",
+      "title": "Exclusion de fuite de cible",
+      "detail": "5 colonnes exclues pour éviter fuite d'information ou biais (ex: churn_score, churn_reason, identifiants).",
+      "recommendation": "Conserver l'exclusion stricte de churn_score en production."
+    },
+    {
+      "id": "AUDIT-MODEL-001",
+      "severity": "low",
+      "category": "performance",
+      "title": "Bon équilibre Détection/Précision",
+      "detail": "Le modèle capture 100.0% des churners réels avec une précision de 100.0%.",
+      "recommendation": "Maintenir le monitoring périodique du F1-Score."
+    },
+    {
+      "id": "AUDIT-BASELINE-001",
+      "severity": "info",
+      "category": "baseline",
+      "title": "Validation par rapport au modèle naïf",
+      "detail": "Gain de F1-Score de +100.0% par rapport à la classe majoritaire.",
+      "recommendation": "Le modèle ML apporte une valeur réelle par rapport à une règle naïve."
+    },
+    {
+      "id": "AUDIT-XAI-001",
+      "severity": "info",
+      "category": "explainability",
+      "title": "Déterminants majeurs identifiés",
+      "detail": "Les 3 facteurs les plus influents au niveau global sont : mos_voice, plr, availability.",
+      "recommendation": "Cibler en priorité les offres commerciales sur ces leviers (ex: durée d'engagement, tarification)."
+    }
+  ],
+  "llm_summary": "L'audit du modèle RandomForest indique une Accuracy de 100.0%, un Recall de 100.0% et un F1-Score de 100.0% (AUC-ROC: 1.000). Par rapport à la baseline naïve (DummyClassifier), le gain en F1-Score est de +100.0%, validant l'apport prédictif du modèle (significant_gain). Les principaux facteurs expliquant le risque de churn selon SHAP sont : mos_voice, plr, availability. 4 constats d'audit ont été relevés.",
+  "errors": []
+}

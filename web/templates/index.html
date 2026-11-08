@@ -349,9 +349,6 @@
                   </tbody>
                 </table>
               </div>
-              <p class="text-[11px] text-slate-500 leading-relaxed">
-                <span class="font-semibold text-slate-700">Règle de décision :</span> Le coût d'un départ manqué étant très supérieur au coût d'une offre commerciale, le modèle recommande de cibler tout client présentant une probabilité supérieure à 35% pour maximiser le gain net monétaire.
-              </p>
             </div>
 
             <!-- Marketing Actionable Levers derived from SHAP -->
@@ -474,26 +471,26 @@
             </div>
           </div>
 
-          <!-- Benchmark & Explication Pédagogique : Dummy vs Random Forest -->
+          <!-- Benchmark & Explication Pédagogique : Régression Logistique vs Random Forest -->
           <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
             <div class="flex items-center justify-between">
               <div>
-                <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Benchmark & Justification Scientifique : Dummy vs Random Forest</h4>
-                <p class="text-[11px] text-slate-500">Démonstration de la surperformance du modèle ML par rapport au modèle naïf (classe majoritaire)</p>
+                <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Benchmark & Justification Scientifique : Régression Logistique vs Random Forest</h4>
+                <p class="text-[11px] text-slate-500">Validation de la supériorité de l'approche ensembliste non-linéaire face au modèle linéaire standard</p>
               </div>
               <span id="tech-baseline-verdict" class="text-xs px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 font-bold uppercase tracking-wider">
                 Gain Significatif
               </span>
             </div>
 
-            <!-- Tableau comparatif Dummy vs Random Forest -->
+            <!-- Tableau comparatif Régression Logistique vs Random Forest -->
             <div class="overflow-x-auto border border-slate-100 rounded-lg">
               <table class="w-full text-xs text-left">
                 <thead class="bg-slate-50 text-slate-500 uppercase text-[10px] border-b border-slate-200">
                   <tr>
                     <th class="px-4 py-2.5 font-bold">Métrique Évaluée</th>
-                    <th class="px-4 py-2.5 font-bold">Modèle Naïf (Dummy)</th>
-                    <th class="px-4 py-2.5 font-bold">Random Forest (ML)</th>
+                    <th class="px-4 py-2.5 font-bold">Baseline Linéaire (Régression Logistique)</th>
+                    <th class="px-4 py-2.5 font-bold">Random Forest (Ensemble ML)</th>
                     <th class="px-4 py-2.5 font-bold">Gain Net Réalisé</th>
                     <th class="px-4 py-2.5 font-bold">Interprétation Décisionnelle</th>
                   </tr>
@@ -504,21 +501,21 @@
                     <td id="dummy-acc" class="px-4 py-2.5 font-mono text-slate-600">--</td>
                     <td id="rf-acc" class="px-4 py-2.5 font-mono font-bold text-blue-700">--</td>
                     <td id="delta-acc" class="px-4 py-2.5 font-mono font-semibold text-emerald-600">--</td>
-                    <td class="px-4 py-2.5 text-slate-500">L'accuracy du Dummy est trompeuse car il prédit toujours la majorité</td>
+                    <td class="px-4 py-2.5 text-slate-500">Précision globale sur le jeu de test indépendant</td>
                   </tr>
                   <tr>
                     <td class="px-4 py-2.5 font-semibold text-slate-700">Recall (Détection du Risque / Churn)</td>
-                    <td id="dummy-rec" class="px-4 py-2.5 font-mono text-slate-600">0.0%</td>
+                    <td id="dummy-rec" class="px-4 py-2.5 font-mono text-slate-600">--</td>
                     <td id="rf-rec" class="px-4 py-2.5 font-mono font-bold text-blue-700">--</td>
                     <td id="delta-rec" class="px-4 py-2.5 font-mono font-semibold text-emerald-600">--</td>
-                    <td class="px-4 py-2.5 text-slate-500">Le Dummy ne détecte AUCUN cas à risque (0 client intercepté)</td>
+                    <td class="px-4 py-2.5 text-slate-500">Capacité à intercepter les vrais départs / incidents</td>
                   </tr>
                   <tr>
                     <td class="px-4 py-2.5 font-semibold text-slate-700">F1-Score (Équilibre global)</td>
-                    <td id="dummy-f1" class="px-4 py-2.5 font-mono text-slate-600">0.0%</td>
+                    <td id="dummy-f1" class="px-4 py-2.5 font-mono text-slate-600">--</td>
                     <td id="rf-f1" class="px-4 py-2.5 font-mono font-bold text-blue-700">--</td>
                     <td id="delta-f1" class="px-4 py-2.5 font-mono font-semibold text-emerald-600">--</td>
-                    <td class="px-4 py-2.5 text-slate-500">Valide la réelle supériorité prédictive du Random Forest</td>
+                    <td class="px-4 py-2.5 text-slate-500">Prouve la supériorité du Random Forest sur les relations complexes</td>
                   </tr>
                 </tbody>
               </table>
@@ -528,7 +525,7 @@
             <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg flex items-start space-x-3">
               <span class="text-lg">💡</span>
               <p id="tech-pedagogical-explanation" class="text-xs text-slate-700 leading-relaxed">
-                Le modèle naïf (Dummy) prédit systématiquement la classe majoritaire, obtenant une Accuracy en trompe-l'œil mais un Recall et F1 nuls (0% des incidents détectés). Random Forest prouve sa vraie valeur métier en interceptant les risques réels.
+                La Régression Logistique (modèle linéaire de référence) sert de baseline standard. Random Forest la surperforme en captant les interactions non-linéaires complexes entre les variables télécoms.
               </p>
             </div>
           </div>
@@ -545,26 +542,165 @@
 
       <!-- 5. VIEW: DATA GOVERNANCE (Figma: Data Governance.png) -->
       <section id="view-governance" class="view-section hidden space-y-6">
-        <div>
-          <h1 class="text-2xl font-bold text-slate-900">Data Governance & Remediation</h1>
-          <p class="text-sm text-slate-500 mt-1">Traçabilité des règles de nettoyage déterministes appliquées par l'agent ETL.</p>
+        <div class="flex items-center justify-between">
+          <div>
+            <h1 class="text-2xl font-bold text-slate-900">Data Governance & Remediation</h1>
+            <p class="text-sm text-slate-500 mt-1">Traçabilité des règles ETL et console d'administration des politiques de données.</p>
+          </div>
+          <!-- Onglets de Gouvernance -->
+          <div class="flex items-center space-x-1.5 bg-slate-200/80 p-1 rounded-xl text-xs font-semibold">
+            <button id="tab-gov-audit-btn" onclick="switchGovSubTab('audit')" class="px-3 py-1.5 rounded-lg bg-white text-blue-700 shadow-xs transition flex items-center space-x-1.5">
+              <span>📋</span>
+              <span>Audit & Traçabilité</span>
+            </button>
+            <button id="tab-gov-admin-btn" onclick="switchGovSubTab('admin')" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition flex items-center space-x-1.5">
+              <span>⚙️</span>
+              <span>Console Admin — Règles</span>
+            </button>
+          </div>
         </div>
 
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden p-4">
-          <table class="w-full text-left border-collapse">
-            <thead>
-              <tr class="border-b border-slate-200 text-xs font-bold text-slate-500 uppercase">
-                <th class="py-2">Identifiant</th>
-                <th class="py-2">Règle de Transformation</th>
-                <th class="py-2">Colonne Cible</th>
-                <th class="py-2">Volume Impacté</th>
-                <th class="py-2">Résultat</th>
-              </tr>
-            </thead>
-            <tbody id="governance-rules-container">
-              <!-- Injecté par JS -->
-            </tbody>
-          </table>
+        <!-- SOUS-ONGLET 1 : Audit & Traçabilité (Exécution Pipeline) -->
+        <div id="subtab-gov-audit" class="space-y-4">
+          <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden p-4">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-slate-200 text-xs font-bold text-slate-500 uppercase">
+                  <th class="py-2">Identifiant</th>
+                  <th class="py-2">Règle de Transformation</th>
+                  <th class="py-2">Colonne Cible</th>
+                  <th class="py-2">Volume Impacté</th>
+                  <th class="py-2">Résultat</th>
+                </tr>
+              </thead>
+              <tbody id="governance-rules-container">
+                <!-- Injecté par JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SOUS-ONGLET 2 : Console Admin (Édition dynamique des règles) -->
+        <div id="subtab-gov-admin" class="hidden space-y-6">
+          <!-- Notification statut -->
+          <div id="admin-gov-toast" class="hidden p-3 rounded-lg text-xs font-semibold flex items-center justify-between"></div>
+
+          <!-- Carte 1 : Paramètres Globaux de Nettoyage & Qualité -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wider">Politique Globale de Qualité & Conformité</h3>
+                <p class="text-xs text-slate-500">Seuils automatiques appliqués lors du cycle de vie ETL</p>
+              </div>
+              <span class="px-2.5 py-1 bg-blue-50 text-blue-700 text-[10px] font-bold rounded-md uppercase">Gouvernance Active</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Seuil suppression colonnes (% valeurs manquantes)</label>
+                <div class="relative">
+                  <input type="number" id="gov-cfg-missing-pct" min="10" max="100" step="5" class="w-full p-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 font-mono text-slate-800" />
+                  <span class="absolute right-3 top-2 text-slate-400 font-bold">%</span>
+                </div>
+                <p class="text-[10px] text-slate-400 mt-1">Colonnes au-delà de ce taux sont purgées automatiquement.</p>
+              </div>
+
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Multiplicateur d'Outliers IQR</label>
+                <input type="number" id="gov-cfg-iqr" min="1.0" max="4.0" step="0.1" class="w-full p-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 font-mono text-slate-800" />
+                <p class="text-[10px] text-slate-400 mt-1">Écart interquartile standard (1.5 = modéré, 3.0 = sévère).</p>
+              </div>
+
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Politique PII (Données Personnelles RGPD)</label>
+                <select id="gov-cfg-pii" class="w-full p-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 font-semibold text-slate-800 bg-white">
+                  <option value="hash">hash (Anonymisation cryptographique HMAC-SHA256)</option>
+                  <option value="drop">drop (Suppression totale des colonnes sensibles)</option>
+                  <option value="keep">keep (Conservation brute - audit uniquement)</option>
+                </select>
+                <p class="text-[10px] text-slate-400 mt-1">Traitement appliqué aux emails, noms et téléphones.</p>
+              </div>
+
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Imputation Numérique</label>
+                <select id="gov-cfg-num-imp" class="w-full p-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-slate-800 bg-white">
+                  <option value="median">median (Médiane robuste aux extrêmes)</option>
+                  <option value="mean">mean (Moyenne arithmétique)</option>
+                  <option value="zero">zero (Remplissage par 0)</option>
+                  <option value="none">none (Aucune imputation)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block font-semibold text-slate-700 mb-1">Imputation Catégorielle</label>
+                <select id="gov-cfg-cat-imp" class="w-full p-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-slate-800 bg-white">
+                  <option value="unknown">unknown (Catégorie explicite 'Unknown')</option>
+                  <option value="mode">mode (Valeur modale la plus fréquente)</option>
+                  <option value="none">none (Conserver valeurs nulles)</option>
+                </select>
+              </div>
+
+              <div class="flex items-center space-x-4 pt-4">
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="gov-cfg-strip" class="rounded text-blue-600 focus:ring-blue-500" />
+                  <span class="text-xs font-semibold text-slate-700">Strip Whitespace</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="checkbox" id="gov-cfg-dedup" class="rounded text-blue-600 focus:ring-blue-500" />
+                  <span class="text-xs font-semibold text-slate-700">Déduplication exacte</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carte 2 : Règles d'Intervalle Métier (Range Rules) -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wider">Règles d'Intervalles & Bornes Métier (Range Rules)</h3>
+                <p class="text-xs text-slate-500">Contraintes de domaine vérifiées à chaque chargement de données</p>
+              </div>
+              <button onclick="addAdminRangeRuleRow()" class="px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-lg text-xs font-bold transition flex items-center space-x-1">
+                <span>+</span>
+                <span>Ajouter une Règle</span>
+              </button>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr class="border-b border-slate-200 text-[10px] font-bold text-slate-500 uppercase bg-slate-50">
+                    <th class="py-2.5 px-3">Colonne Cible</th>
+                    <th class="py-2.5 px-3">Valeur Min</th>
+                    <th class="py-2.5 px-3">Valeur Max</th>
+                    <th class="py-2.5 px-3">Action Correctrice</th>
+                    <th class="py-2.5 px-3">Description / Justification Métier</th>
+                    <th class="py-2.5 px-3 text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-gov-range-tbody" class="divide-y divide-slate-100">
+                  <!-- Rempli dynamiquement -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Boutons de Sauvegarde et Reset -->
+          <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="flex items-center space-x-2 text-xs text-slate-600">
+              <span class="text-base">🛡️</span>
+              <span>Les modifications seront automatiquement appliquées lors de chaque prochaine exécution du pipeline.</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <button onclick="resetAdminGovernanceRules()" class="px-4 py-2 border border-slate-300 hover:bg-slate-100 text-slate-700 rounded-lg text-xs font-bold transition">
+                ↺ Rétablir Défauts
+              </button>
+              <button onclick="saveAdminGovernanceRules()" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold shadow-sm transition flex items-center space-x-1.5">
+                <span>💾</span>
+                <span>Enregistrer la Politique</span>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 

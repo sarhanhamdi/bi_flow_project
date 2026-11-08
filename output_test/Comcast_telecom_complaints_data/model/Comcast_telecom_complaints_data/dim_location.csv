@@ -1,0 +1,1606 @@
+location_key,city,state,zip_code
+1,Abingdon,Maryland,21009
+2,Acworth,Georgia,30101
+3,Acworth,Georgia,30102
+4,Adrian,Michigan,49221
+5,Alameda,California,94501
+6,Alameda,California,94502
+7,Albuquerque,New Mexico,87105
+8,Albuquerque,New Mexico,87106
+9,Albuquerque,New Mexico,87109
+10,Albuquerque,New Mexico,87113
+11,Albuquerque,New Mexico,87116
+12,Albuquerqur,New Mexico,87102
+13,Alexandria,Indiana,46001
+14,Alexandria,Virginia,22304
+15,Alexandria,Virginia,22305
+16,Alexandria,Virginia,22312
+17,Alexandria,Virginia,22314
+18,Algonquin,Illinois,60102
+19,Aliquippa,Pennsylvania,15001
+20,Allston,Massachusetts,2134
+21,Aloha,Oregon,97006
+22,Alpharetta,Georgia,30005
+23,Alpharetta,Georgia,30022
+24,Alvin,Texas,77511
+25,Ambridge,Pennsylvania,15003
+26,Amesbury,Massachusetts,1913
+27,Amherst,New Hampshire,3031
+28,Andover,Minnesota,55304
+29,Angels Camp,California,95222
+30,Ann Arbor,Michigan,48103
+31,Ann Arbor,Michigan,48104
+32,Ann Arbor,Michigan,48105
+33,Annapolis,Maryland,21401
+34,Annville,Pennsylvania,17003
+35,Anoka,Minnesota,55303
+36,Antioch,California,94509
+37,Antioch,Tennessee,37013
+38,Aptos,California,95003
+39,Arlington,Virginia,22202
+40,Arlington,Virginia,22204
+41,Arlington,Virginia,22206
+42,Arlington,Virginia,22207
+43,Arlington Heights,Illinois,60004
+44,Arvada,Colorado,80004
+45,Ashland,Virginia,23005
+46,Athens,Tennessee,37303
+47,Atlanta,Georgia,30097
+48,Atlanta,Georgia,30305
+49,Atlanta,Georgia,30306
+50,Atlanta,Georgia,30307
+51,Atlanta,Georgia,30308
+52,Atlanta,Georgia,30309
+53,Atlanta,Georgia,30310
+54,Atlanta,Georgia,30311
+55,Atlanta,Georgia,30312
+56,Atlanta,Georgia,30314
+57,Atlanta,Georgia,30315
+58,Atlanta,Georgia,30316
+59,Atlanta,Georgia,30317
+60,Atlanta,Georgia,30318
+61,Atlanta,Georgia,30319
+62,Atlanta,Georgia,30324
+63,Atlanta,Georgia,30327
+64,Atlanta,Georgia,30328
+65,Atlanta,Georgia,30329
+66,Atlanta,Georgia,30331
+67,Atlanta,Georgia,30339
+68,Atlanta,Georgia,30341
+69,Atlanta,Georgia,30342
+70,Atlanta,Georgia,30345
+71,Atlanta,Georgia,30363
+72,Atlantic Beach,Florida,32233
+73,Attalla,Alabama,35954
+74,Attica,Indiana,47918
+75,Attica,Michigan,48412
+76,Auburn,Georgia,30011
+77,Auburn,Pennsylvania,17922
+78,Auburn,Washington,98092
+79,Augusta,Georgia,30904
+80,Augusta,Georgia,30907
+81,Aurora,Colorado,80011
+82,Aurora,Colorado,80012
+83,Aurora,Colorado,80014
+84,Aurora,Illinois,60502
+85,Aurora,Illinois,60503
+86,Austell,Georgia,30106
+87,Austell,Georgia,30168
+88,Austin,Texas,78731
+89,Avon,Colorado,81620
+90,Ayer,Massachusetts,1432
+91,Baden,Pennsylvania,15005
+92,Bainbridge Island,Washington,98110
+93,Bala Cynwyd,Pennsylvania,19004
+94,Ballston Lake,New York,12019
+95,Baltimore,Maryland,21202
+96,Baltimore,Maryland,21206
+97,Baltimore,Maryland,21207
+98,Baltimore,Maryland,21209
+99,Baltimore,Maryland,21212
+100,Baltimore,Maryland,21217
+101,Baltimore,Maryland,21218
+102,Baltimore,Maryland,21222
+103,Baltimore,Maryland,21224
+104,Baltimore,Maryland,21225
+105,Baltimore,Maryland,21237
+106,Baltimore,Maryland,21239
+107,Bargersville,Indiana,46106
+108,Barnegat,New Jersey,8005
+109,Barrington,Illinois,60010
+110,Bartlett,Tennessee,38133
+111,Bartlett,Tennessee,38135
+112,Bartonville,Illinois,61607
+113,Bath,Maine,4530
+114,Battle Ground,Washington,98604
+115,Beach Haven,New Jersey,8008
+116,Beachwood,New Jersey,8722
+117,Beale Afb,California,95903
+118,Beaver Falls,Pennsylvania,15010
+119,Beaverton,Oregon,97005
+120,Beaverton,Oregon,97006
+121,Bedford,Indiana,47421
+122,Bedford,Pennsylvania,15522
+123,Bel Air,Maryland,21014
+124,Belleville,Michigan,48111
+125,Bellevue,Washington,98004
+126,Bellevue,Washington,98006
+127,Bellingham,Washington,98225
+128,Bellingham,Washington,98229
+129,Belmont,California,94002
+130,Belmont,Michigan,49306
+131,Belton,Missouri,64012
+132,Beltsville,Maryland,20705
+133,Belvidere,Illinois,61008
+134,Bensalem,Pennsylvania,19020
+135,Berkeley,California,94704
+136,Berkeley,California,94705
+137,Berkeley Lake,Georgia,30096
+138,Berkeley Spring,West Virginia,25411
+139,Berwyn,Pennsylvania,19312
+140,Bethesda,Maryland,20817
+141,Blacksburg,Virginia,24060
+142,Blackwood,New Jersey,8012
+143,Blaine,Washington,98230
+144,Blairstown,New Jersey,7825
+145,Bloomfield,Michigan,48302
+146,Bloomingdale,Georgia,31302
+147,Bloomington,Illinois,61701
+148,Bloomington,Illinois,61704
+149,Bloomington,Indiana,47401
+150,Bloomington,Indiana,47408
+151,Bloomington,Minnesota,55420
+152,Bloomington,Minnesota,55431
+153,Bloominton,Illinois,61701
+154,Boca Raton,Florida,33432
+155,Boca Raton,Florida,33434
+156,Boca Raton,Florida,33486
+157,Boca Raton,Florida,33487
+158,Boca Raton,Florida,33496
+159,Boca Raton,Florida,33498
+160,Bolton,Massachusetts,1740
+161,Bordentown,New Jersey,8505
+162,Boston,Massachusetts,2114
+163,Boston,Massachusetts,2115
+164,Boston,Massachusetts,2116
+165,Boston,Massachusetts,2125
+166,Boston,Massachusetts,2136
+167,Boston,Massachusetts,2215
+168,Bothell,Washington,98012
+169,Bothell,Washington,98021
+170,Boulder,Colorado,80303
+171,Boulder,Colorado,80304
+172,Boulder,Colorado,80305
+173,Bourbonnais,Illinois,60914
+174,Boynton Beach,Florida,33426
+175,Bozeman,Montana,59715
+176,Braintree,Massachusetts,2184
+177,Brandon,Mississippi,39047
+178,Branford,Connecticut,6405
+179,Braselton,Georgia,30517
+180,Brentwood,California,94513
+181,Brentwood,Tennessee,37027
+182,Brick,New Jersey,8723
+183,Brick,New Jersey,8724
+184,Brier,Washington,98036
+185,Brigantine,New Jersey,8203
+186,Brighton,Colorado,80601
+187,Brighton,Colorado,80602
+188,Brighton,Michigan,48114
+189,Brighton,Michigan,48116
+190,Bristol,Connecticut,6010
+191,Bristol,Pennsylvania,19007
+192,Broadlands,Virginia,20148
+193,Broadway,Virginia,22815
+194,Brockton,Massachusetts,2302
+195,Brookhaven,Georgia,30319
+196,Brookhaven,Pennsylvania,19015
+197,Brookline,Massachusetts,2446
+198,Broomfield,Colorado,80020
+199,Broomfield,Colorado,80021
+200,Broomfield,Colorado,80023
+201,Brunswick,Georgia,31523
+202,Brunswick,Georgia,31525
+203,Brunswick,Maine,4011
+204,Buford,Georgia,30519
+205,Burien,Washington,98146
+206,Burlington,Vermont,5401
+207,Burlington,West Virginia,26710
+208,Burnsville,Minnesota,55306
+209,Burnsville,Minnesota,55337
+210,Burr Ridge,Illinois,60527
+211,Buzzards Bay,Massachusetts,2532
+212,Camas,Washington,98682
+213,Cambridge,Maryland,21613
+214,Cambridge,Massachusetts,2138
+215,Cambridge,Massachusetts,2139
+216,Cambridge,Massachusetts,2141
+217,Camino,California,95709
+218,Camp Hill,Pennsylvania,17011
+219,Cane Ridge,Tennessee,37013
+220,Canonsburg,Pennsylvania,15317
+221,Canton,Georgia,30114
+222,Canton,Georgia,30115
+223,Canton,Michigan,48187
+224,Canton,Michigan,48188
+225,Canton,Mississippi,39046
+226,Carbondale,Colorado,81623
+227,Carlisle,Pennsylvania,17013
+228,Carlsbad,California,92009
+229,Carlton,Oregon,97111
+230,Carmel,California,93923
+231,Carmichael,California,95609
+232,Carpentersville,Illinois,60110
+233,Carteret,New Jersey,7008
+234,Cartersville,Georgia,30120
+235,Cartersville,Georgia,30121
+236,Castro Valley,California,94546
+237,Castro Valley,California,94552
+238,Cazadero,California,95421
+239,Centennial,Colorado,80112
+240,Central City,Kentucky,42330
+241,Ceresco,Michigan,49033
+242,Chamblee,Georgia,30341
+243,Champaign,Illinois,61821
+244,Charleston,South Carolina,29403
+245,Charleston,South Carolina,29405
+246,Charleston,South Carolina,29414
+247,Charleston,South Carolina,29422
+248,Charleston,South Carolina,48230
+249,Charlottesville,Virginia,22901
+250,Chaska,Minnesota,55318
+251,Chatham,New Jersey,7928
+252,Chelsea,Massachusetts,2150
+253,Cherry Hill,New Jersey,8003
+254,Chesapeake Beach,Maryland,20732
+255,Chester,Virginia,23831
+256,Chesterfield,Virginia,23832
+257,Chicago,Illinois,60457
+258,Chicago,Illinois,60607
+259,Chicago,Illinois,60608
+260,Chicago,Illinois,60609
+261,Chicago,Illinois,60610
+262,Chicago,Illinois,60611
+263,Chicago,Illinois,60612
+264,Chicago,Illinois,60613
+265,Chicago,Illinois,60614
+266,Chicago,Illinois,60616
+267,Chicago,Illinois,60618
+268,Chicago,Illinois,60620
+269,Chicago,Illinois,60622
+270,Chicago,Illinois,60625
+271,Chicago,Illinois,60626
+272,Chicago,Illinois,60630
+273,Chicago,Illinois,60637
+274,Chicago,Illinois,60638
+275,Chicago,Illinois,60639
+276,Chicago,Illinois,60641
+277,Chicago,Illinois,60645
+278,Chicago,Illinois,60646
+279,Chicago,Illinois,60647
+280,Chicago,Illinois,60657
+281,Chicago,Illinois,60660
+282,Chickamauga,Georgia,30707
+283,Citrus Heights,California,95610
+284,Citrus Heights,California,95611
+285,Citrus Heights,California,95621
+286,City Of Orange,New Jersey,7050
+287,Clairton,Pennsylvania,15025
+288,Clarkston,Michigan,48346
+289,Clarkston,Michigan,48348
+290,Clawson,Michigan,48017
+291,Claxton,Georgia,30417
+292,Clermont,Georgia,30527
+293,Clinton,Maryland,20735
+294,Clio,Michigan,48420
+295,Closter,New Jersey,7624
+296,Clovis,California,93612
+297,Coconut Creek,Florida,33066
+298,Coconut Creek,Florida,33073
+299,Coeburn,Virginia,24230
+300,College Park,Georgia,30349
+301,Collierville,Tennessee,38017
+302,Collinsville,Virginia,24078
+303,Colonia,New Jersey,7067
+304,Colorado Spring,Colorado,80911
+305,Colorado Springs,Colorado,80903
+306,Colorado Springs,Colorado,80906
+307,Colorado Springs,Colorado,80907
+308,Colorado Springs,Colorado,80908
+309,Colorado Springs,Colorado,80909
+310,Colorado Springs,Colorado,80910
+311,Colorado Springs,Colorado,80918
+312,Columbia,Maryland,21044
+313,Columbiana,Ohio,44408
+314,Columbus,Indiana,47201
+315,Columbus,Indiana,47203
+316,Commerce City,Colorado,80022
+317,Concord,California,94520
+318,Concord,California,94521
+319,Concord,New Hampshire,3301
+320,Conshohocken,Pennsylvania,19428
+321,Conyers,Georgia,30013
+322,Coral Gables,Florida,33134
+323,Cordova,Tennessee,38016
+324,Cordova,Tennessee,38018
+325,Corryton,Tennessee,37721
+326,Corvallis,Oregon,97330
+327,Corvallis,Oregon,97333
+328,Cottage Grove,Minnesota,55016
+329,Cottonwood,Alabama,36320
+330,Cottonwood Heights,Utah,84121
+331,Cottrellville,Michigan,48039
+332,Covington,Georgia,30016
+333,Crest Hill,Illinois,60403
+334,Crofton,Maryland,21114
+335,Crown Point,Indiana,46307
+336,Crystal Lake,Illinois,60014
+337,Culpeper,Virginia,22701
+338,Cumming,Georgia,30028
+339,Cumming,Georgia,30040
+340,Cumming,Georgia,30041
+341,Cupertino,California,95014
+342,Cutler Bay,Florida,33189
+343,Cutler Bay,Florida,33190
+344,Cypress,Texas,77429
+345,Dacula,Georgia,30019
+346,Dallas,Georgia,30132
+347,Dallas,Georgia,30157
+348,Daly City,California,94015
+349,Dania Beach,Florida,33004
+350,Danville,California,94526
+351,Danville,Illinois,61832
+352,Dartmouth,Massachusetts,2748
+353,Davidsonville,Maryland,21035
+354,Davie,Florida,33314
+355,Davis,California,95616
+356,Davis,California,95618
+357,Dayton,Texas,77535
+358,Dearborn,Michigan,48124
+359,Decatur,Georgia,30030
+360,Decatur,Georgia,30032
+361,Decatur,Georgia,30033
+362,Decatur,Georgia,30034
+363,Decherd,Tennessee,37324
+364,Deerfield,Illinois,60015
+365,Deerfield Beach,Florida,33064
+366,Deerfield Beach,Florida,33442
+367,Dekalb,Illinois,60115
+368,Delmont,Pennsylvania,15626
+369,Delray Beach,Florida,33446
+370,Delray Beach,Florida,33483
+371,Delray Beach,Florida,33484
+372,Denver,Colorado,80203
+373,Denver,Colorado,80206
+374,Denver,Colorado,80207
+375,Denver,Colorado,80209
+376,Denver,Colorado,80210
+377,Denver,Colorado,80218
+378,Denver,Colorado,80219
+379,Denver,Colorado,80220
+380,Denver,Colorado,80221
+381,Denver,Colorado,80223
+382,Denver,Colorado,80227
+383,Denver,Colorado,80231
+384,Denver,Colorado,80238
+385,Denver,Colorado,80246
+386,Denver,Colorado,80249
+387,Denver,Colorado,80250
+388,Deptford,New Jersey,8096
+389,Des Moines,Washington,98148
+390,Des Plaines,Illinois,60016
+391,Detroit,Michigan,48202
+392,Detroit,Michigan,48205
+393,Detroit,Michigan,48207
+394,Detroit,Michigan,48214
+395,Detroit,Michigan,48216
+396,Detroit,Michigan,48226
+397,Detroit,Michigan,48227
+398,Dickson,Tennessee,37055
+399,Doraville,Georgia,30340
+400,Dorchester,Massachusetts,2121
+401,Dos Palos,California,93620
+402,Dothan,Alabama,36301
+403,Douglasville,Georgia,30134
+404,Douglasville,Georgia,30135
+405,Dover,Delaware,19901
+406,Dover,New Hampshire,3820
+407,Dover,Pennsylvania,17315
+408,Dowagiac,Michigan,49047
+409,Downers Grove,Illinois,60515
+410,Doylestown,Pennsylvania,18901
+411,Dublin,California,94568
+412,Dubois,Pennsylvania,15801
+413,Duluth,Georgia,30096
+414,Duluth,Georgia,30097
+415,Dunwoody,Georgia,30338
+416,Dupont,Washington,97238
+417,Dupont,Washington,98327
+418,Dyer,Indiana,46311
+419,Eads,Tennessee,38028
+420,East Brunswick,New Jersey,8816
+421,East Chicago,Indiana,46312
+422,East Liverpool,Ohio,43920
+423,East Palo Alto,California,94303
+424,East Windsor,New Jersey,8520
+425,Eden Prairie,Minnesota,55347
+426,Edgewood,Washington,98372
+427,Edina,Minnesota,55424
+428,Edmonds,Washington,98020
+429,Egg Harbor City,New Jersey,8215
+430,El Cerrito,California,94530
+431,El Dorado Hills,California,95762
+432,Eldersburg,Maryland,21784
+433,Elgin,Illinois,60123
+434,Elgin,Illinois,60124
+435,Elizabethtown,Kentucky,42701
+436,Elkhart,Indiana,46516
+437,Elkins Park,Pennsylvania,19027
+438,Ellicott City,Maryland,21043
+439,Elmhurst,Illinois,60126
+440,Emeryville,California,94608
+441,Emeryville,California,94662
+442,Encino,California,95051
+443,Enfield,New Hampshire,3748
+444,Englewood,Colorado,80113
+445,Englewood,Florida,34224
+446,Enola,Pennsylvania,17025
+447,Eugene,Oregon,97401
+448,Eugene,Oregon,97402
+449,Eugene,Oregon,97404
+450,Eugene,Oregon,97405
+451,Eustis,Florida,32726
+452,Evans,Colorado,80620
+453,Evans,Georgia,30809
+454,Evanston,Illinois,60202
+455,Everett,Massachusetts,2149
+456,Everett,Washington,98201
+457,Export,Pennsylvania,15632
+458,Fairburn,Georgia,30213
+459,Fairfield,California,94533
+460,Fall City,Washington,98024
+461,Fall River,Massachusetts,2723
+462,Falling Waters,West Virginia,25419
+463,Falmouth,Massachusetts,2536
+464,Fayettevile,Georgia,39214
+465,Fayetteville,Georgia,30214
+466,Feasterville,Pennsylvania,19053
+467,Federal Way,Washington,98003
+468,Federal Way,Washington,98023
+469,Federal Way,Washington,98093
+470,Ferndale,Michigan,48220
+471,Flemington,New Jersey,8822
+472,Flint,Michigan,48502
+473,Flint,Michigan,48503
+474,Flint,Michigan,48505
+475,Florence,Alabama,35630
+476,Forest Grove,Oregon,97116
+477,Forked River,New Jersey,8731
+478,Fort Belvoir,Virginia,22060
+479,Fort Campbell,Kentucky,42223
+480,Fort Collins,Colorado,80521
+481,Fort Collins,Colorado,80524
+482,Fort Collins,Colorado,80525
+483,Fort Lauderdale,Florida,33308
+484,Fort Lauderdale,Florida,33312
+485,Fort Lauderdale,Florida,33319
+486,Fort Lee,Virginia,23801
+487,Fort Myers,Florida,33907
+488,Fort Myers,Florida,33908
+489,Fort Myers,Florida,33916
+490,Fort Myers,Florida,33919
+491,Fort Myers Beach,Florida,33931
+492,Fort Pierce,Florida,34982
+493,Fort Washington,Maryland,20744
+494,Fountain,Colorado,80817
+495,Franklin,Indiana,46131
+496,Franklin,Tennessee,37064
+497,Franklin,Tennessee,37067
+498,Franklin,Tennessee,37069
+499,Fraser,Michigan,48026
+500,Frederick,Colorado,80516
+501,Frederick,Maryland,21701
+502,Frederick,Maryland,21702
+503,Fredericksburg,Virginia,22407
+504,Freeport,Illinois,61032
+505,Fremont,California,94536
+506,Fremont,California,94538
+507,Fremont,California,94555
+508,Fresh Meadows,New York,11366
+509,Fresno,California,93703
+510,Fresno,California,93704
+511,Fresno,California,93722
+512,Fresno,California,93730
+513,Front Royal,Virginia,22630
+514,Fruitland Park,Florida,34731
+515,Ft Pierce,Florida,34982
+516,Ft. Lauderdale,Florida,33304
+517,Ftlauderdale,Florida,33308
+518,Fulton,Maryland,20759
+519,Gadsden,Alabama,35901
+520,Gadsden,Alabama,35904
+521,Gainesville,Georgia,30506
+522,Gaithersburg,Maryland,20878
+523,Gaithersburg,Maryland,20882
+524,Galesburg,Michigan,49053
+525,Gallatin,Tennessee,37066
+526,Galveston,Texas,77550
+527,Gary,Indiana,46404
+528,Gathersburg,Maryland,20877
+529,Germantown,Maryland,20876
+530,Germantown,Tennessee,38138
+531,Germantown,Tennessee,38139
+532,Gettysburg,Pennsylvania,17325
+533,Glencoe,Alabama,35905
+534,Glendale Heights,Illinois,60139
+535,Glenview,Illinois,60025
+536,Gold Bar,Washington,98251
+537,Gold River,California,95670
+538,Golden,Colorado,80401
+539,Goodlettsville,Tennessee,37072
+540,Goose Creek,South Carolina,29445
+541,Grand Blanc,Michigan,48439
+542,Grand Rapids,Michigan,49504
+543,Grand Rapids,Michigan,49506
+544,Grand Rapids,Michigan,49507
+545,Grand Rapids,Michigan,49534
+546,Grand Rapids,Michigan,49546
+547,Grayson,Georgia,30017
+548,Green Cove Springs,Florida,32043
+549,Greenacres,Florida,33463
+550,Greenfield,Indiana,46140
+551,Greensburg,Pennsylvania,15601
+552,Greentown,Indiana,46936
+553,Greenwood Village,Colorado,80111
+554,Gresham,Oregon,97030
+555,Griffin,Georgia,30223
+556,Griffith,Indiana,46319
+557,Grosse Ile,Michigan,48138
+558,Grosse Pointe,Michigan,48230
+559,Grosse Pointe Farms,Michigan,48236
+560,Grosse Pointe Park,Michigan,48230
+561,Grovetown,Georgia,30813
+562,Gurnee,Illinois,60031
+563,Half Moon Bay,California,94019
+564,Hallandale Beach,Florida,33009
+565,Hammonton,New Jersey,8037
+566,Hampton,Georgia,30228
+567,Hampton Cove,Alabama,35763
+568,Hampton Falls,New Hampshire,3844
+569,Hamtramck,Michigan,48212
+570,Hanover,Pennsylvania,17331
+571,Hanover Park,Illinois,60133
+572,Happy Valley,Oregon,97086
+573,Harleysville,Pennsylvania,19438
+574,Harrisburg,Pennsylvania,17101
+575,Hartford,Michigan,49057
+576,Hatboro,Pennsylvania,19040
+577,Hatfield,Pennsylvania,19440
+578,Hattiesburg,Mississippi,39402
+579,Haverhill,Florida,33417
+580,Havre De Grace,Maryland,21078
+581,Hayward,California,94542
+582,Hayward,California,94544
+583,Hendersonville,Tennessee,37075
+584,Henrico,Virginia,23231
+585,Hermitage,Tennessee,37076
+586,Hernando,Mississippi,38632
+587,Hialeah,Florida,33012
+588,Hialeah,Florida,33013
+589,Hialeah Gardens,Florida,33018
+590,Highlands Ranch,Colorado,80130
+591,Hillsboro,Oregon,97124
+592,Hillsborough,California,94010
+593,Hillsborough,New Jersey,8844
+594,Hiram,Georgia,30141
+595,Hixson,Tennessee,37343
+596,Hobart,Indiana,46342
+597,Hoffman Estates,Illinois,60192
+598,Hoirn Lake,Mississippi,38637
+599,Holladay,Utah,84117
+600,Holland,Michigan,49423
+601,Holly,Michigan,48442
+602,Hollywood,Florida,33009
+603,Hollywood,Florida,33019
+604,Hollywood,Florida,33021
+605,Hollywood,Florida,33024
+606,Hollywood Beach,Florida,33019
+607,Homeland,Florida,33847
+608,Homestead,Florida,33030
+609,Homestead,Florida,33033
+610,Homestead,Florida,33092
+611,Hopkins,Minnesota,55343
+612,Horn Lake,Mississippi,38637
+613,Houston,Texas,77008
+614,Houston,Texas,77019
+615,Houston,Texas,77021
+616,Houston,Texas,77024
+617,Houston,Texas,77025
+618,Houston,Texas,77033
+619,Houston,Texas,77035
+620,Houston,Texas,77039
+621,Houston,Texas,77042
+622,Houston,Texas,77045
+623,Houston,Texas,77049
+624,Houston,Texas,77054
+625,Houston,Texas,77057
+626,Houston,Texas,77058
+627,Houston,Texas,77061
+628,Houston,Texas,77064
+629,Houston,Texas,77076
+630,Houston,Texas,77077
+631,Houston,Texas,77079
+632,Houston,Texas,77083
+633,Houston,Texas,77084
+634,Houston,Texas,77090
+635,Houston,Texas,77096
+636,Houston,Texas,77227
+637,Howell,Michigan,48843
+638,Hudsonville,Michigan,49426
+639,Hughesville,Maryland,20637
+640,Humble,Texas,77338
+641,Humble,Texas,77346
+642,Humble,Texas,77396
+643,Huntington,West Virginia,25703
+644,Huntington,West Virginia,25705
+645,Huntsville,Alabama,35801
+646,Huntsville,Alabama,35802
+647,Huntsville,Alabama,35803
+648,Huntsville,Alabama,35806
+649,Huntsville,Alabama,35811
+650,Huston,Texas,77024
+651,Hydes,Maryland,21082
+652,Independence,Missouri,64056
+653,Indianapolis,Indiana,46217
+654,Indianapolis,Indiana,46220
+655,Indianapolis,Indiana,46228
+656,Indianapolis,Indiana,46229
+657,Indianapolis,Indiana,46234
+658,Indianapolis,Indiana,46236
+659,Indianapolis,Indiana,46237
+660,Indianapolis,Indiana,46250
+661,Indianapolis,Indiana,46254
+662,Indianapolis,Indiana,46256
+663,Indianapolis,Indiana,46260
+664,Indianapolis,Indiana,46268
+665,Indianapolis,Indiana,46278
+666,Ingleside,Illinois,60041
+667,Inver Grove Heights,Minnesota,55076
+668,Inver Grove Heights,Minnesota,55077
+669,Irvington,New Jersey,7111
+670,Irwin,Pennsylvania,15642
+671,Islamorada,Florida,33036
+672,Jackson,Mississippi,39209
+673,Jackson,Mississippi,39211
+674,Jackson,Mississippi,39216
+675,Jacksonville,Arkansas,72076
+676,Jacksonville,Florida,32204
+677,Jacksonville,Florida,32205
+678,Jacksonville,Florida,32206
+679,Jacksonville,Florida,32207
+680,Jacksonville,Florida,32209
+681,Jacksonville,Florida,32210
+682,Jacksonville,Florida,32216
+683,Jacksonville,Florida,32217
+684,Jacksonville,Florida,32218
+685,Jacksonville,Florida,32221
+686,Jacksonville,Florida,32224
+687,Jacksonville,Florida,32225
+688,Jacksonville,Florida,32227
+689,Jacksonville,Florida,32234
+690,Jacksonville,Florida,32244
+691,Jacksonville,Florida,32246
+692,Jacksonville,Florida,32254
+693,Jacksonville,Florida,32256
+694,Jacksonville,Florida,32257
+695,Jacksonville,Florida,32258
+696,Jamaica Plain,Massachusetts,2130
+697,Jeanette,Pennsylvania,15644
+698,Jensen Beach,Florida,34957
+699,Jersey City,New Jersey,7302
+700,Jersey City,New Jersey,7305
+701,Jersey City,New Jersey,7307
+702,Jesup,Georgia,31545
+703,Joelton,Tennessee,37080
+704,Johns Creek,Georgia,30022
+705,Johns Creek,Georgia,30097
+706,Johns Island,South Carolina,29455
+707,Johnson City,Tennessee,37615
+708,Joliet,Illinois,60435
+709,Jonesboro,Georgia,30236
+710,Jonesboro,Georgia,30238
+711,Jonesborough,Tennessee,37659
+712,Juno Beach,Florida,33134
+713,Jupiter,Florida,33458
+714,Jupiter,Florida,33477
+715,Jupiter,Florida,33478
+716,Katy,Texas,77449
+717,Katy,Texas,77493
+718,Katy,Texas,77494
+719,Keizer,Oregon,97303
+720,Kemah,Texas,77565
+721,Kenmore,Washington,98028
+722,Kennesaw,Georgia,30144
+723,Kennesaw,Georgia,30152
+724,Kensington,Maryland,20895
+725,Kent,Washington,98030
+726,Kent,Washington,98031
+727,Kent,Washington,98032
+728,Key West,Florida,33040
+729,Kimball,Michigan,48074
+730,King Of Prussia,Pennsylvania,19406
+731,Kingston Springs,Tennessee,37082
+732,Kirkland,Washington,98033
+733,Kissimmee,Florida,34746
+734,Kittery,Maine,3904
+735,Knoxville,Tennessee,37909
+736,Knoxville,Tennessee,37912
+737,Knoxville,Tennessee,37914
+738,Knoxville,Tennessee,37916
+739,Knoxville,Tennessee,37917
+740,Knoxville,Tennessee,37918
+741,Knoxville,Tennessee,37919
+742,Knoxville,Tennessee,37920
+743,Knoxville,Tennessee,37921
+744,Knoxville,Tennessee,37922
+745,Knoxville,Tennessee,37923
+746,Knoxville,Tennessee,37931
+747,Knoxville,Tennessee,37932
+748,Knoxville,Tennessee,37938
+749,Kunkletown,Pennsylvania,10858
+750,La Follette,Tennessee,37766
+751,Lafayette,California,94549
+752,Lafayette,Indiana,47904
+753,Lafayette,Indiana,47909
+754,Lake City,Florida,32025
+755,Lake Lotwawana,Missouri,64086
+756,Lake Oswego,Oregon,97035
+757,Lake Station,Indiana,46405
+758,Lake Tapps,Washington,98391
+759,Lake Worth,Florida,33461
+760,Lake Worth,Florida,33467
+761,Lakewood,Colorado,80214
+762,Lakewood,Colorado,80215
+763,Lakewood,Colorado,80227
+764,Lakewood,Colorado,80228
+765,Lakewood,Washington,98498
+766,Lancaster,Pennsylvania,17601
+767,Lancaster,Pennsylvania,17602
+768,Lancaster,Pennsylvania,17603
+769,Lansing,Michigan,48910
+770,Lansing,Michigan,48911
+771,Lansing,Michigan,48912
+772,Lansing,Michigan,48917
+773,Lantana,Florida,33462
+774,Larkspur,California,94939
+775,Las Cruces,New Mexico,88011
+776,Las Vegas,Nevada,89104
+777,Lauderhill,Florida,33313
+778,Laurel,Maryland,20708
+779,Laurel,Mississippi,39440
+780,Lawranceville,Georgia,30045
+781,Lawrenceville,Georgia,30044
+782,Lawrenceville,Georgia,30045
+783,League City,Texas,77539
+784,League City,Texas,77573
+785,Lebanon,New Hampshire,3766
+786,Lebanon,New Jersey,8833
+787,Lebanon,Oregon,97355
+788,Lebanon,Pennsylvania,17046
+789,Lehigh Acres,Florida,33936
+790,Lehigh Acres,Florida,33974
+791,Lemont,Illinois,60439
+792,Levittown,Pennsylvania,19055
+793,Lilburn,Georgia,30047
+794,Lincolnwood,Illinois,60712
+795,Lindenwold,New Jersey,8021
+796,Linwood,New Jersey,8221
+797,Lisle,Illinois,60532
+798,Lithia Springs,Georgia,30122
+799,Lithonia,Georgia,30058
+800,Little Rock,Arkansas,72203
+801,Little Rock,Arkansas,72205
+802,Little Rock,Arkansas,72223
+803,Littleton,Colorado,80123
+804,Littleton,Massachusetts,1460
+805,Live Oak,California,95953
+806,Lndianapolis,Indiana,46228
+807,Lockport,Illinois,60441
+808,Locust Grove,Virginia,22508
+809,Lodi,California,95242
+810,Logan,Utah,84321
+811,Loganville,Georgia,30052
+812,Lonaconing,Maryland,21539
+813,Long Grove,Illinois,60047
+814,Longmont,Colorado,80504
+815,Los Alamos,New Mexico,87544
+816,Los Angeles,California,90034
+817,Los Gatos,California,95032
+818,Los Gatos,California,95033
+819,Louisville,Colorado,80027
+820,Louisville,Tennessee,37777
+821,Lowell,Massachusetts,1854
+822,Lutherville,Maryland,21093
+823,Lynchburg,Virginia,24502
+824,Lynnfield,Massachusetts,1940
+825,Lynnwood,Washington,98036
+826,Mabelton,Georgia,30126
+827,Mableton,Georgia,30126
+828,Macomb,Illinois,61455
+829,Madison,Alabama,35756
+830,Madison,Alabama,35758
+831,Madison,Connecticut,6443
+832,Madison,Mississippi,39110
+833,Madison,Tennessee,37115
+834,Magalia,California,95954
+835,Manahawkin,New Jersey,8050
+836,Manahawkin,New Jersey,8059
+837,Manassas,Virginia,20110
+838,Manchester,New Hampshire,3101
+839,Manchester,New Hampshire,3102
+840,Manchester,New Jersey,8759
+841,Manchester,Pennsylvania,17345
+842,Manvel,Texas,77578
+843,Mapleton,Utah,84664
+844,Margate,Florida,33063
+845,Margate,New Jersey,8402
+846,Marietta,Georgia,30062
+847,Marietta,Georgia,30064
+848,Marietta,Georgia,30066
+849,Marietta,Georgia,30067
+850,Marietta,Georgia,30068
+851,Markham,Illinois,60428
+852,Marlborough,Connecticut,6447
+853,Marlton,New Jersey,5053
+854,Martinez,California,94553
+855,Martinez,Georgia,30907
+856,Martinsburg,West Virginia,25403
+857,Martinsburg,West Virginia,25405
+858,Maryland Heights,Missouri,10701
+859,Marysville,California,95901
+860,Marysville,Washington,98271
+861,Maynardville,Tennessee,37807
+862,Maywood,New Jersey,7607
+863,Mccordsville,Indiana,46055
+864,Mcdonough,Georgia,30253
+865,Mckeesport,Pennsylvania,15132
+866,Mechanicsburg,Pennsylvania,17050
+867,Medley,Florida,33178
+868,Melvindale,Michigan,48122
+869,Memphis,Tennessee,38016
+870,Memphis,Tennessee,38104
+871,Memphis,Tennessee,38105
+872,Memphis,Tennessee,38111
+873,Memphis,Tennessee,38115
+874,Memphis,Tennessee,38117
+875,Memphis,Tennessee,38119
+876,Menlo Park,California,94025
+877,Meriden,New Hampshire,3770
+878,Meridian,Mississippi,39307
+879,Metairie,Louisiana,70003
+880,Mexico,New York,13114
+881,Miami,Florida,33111
+882,Miami,Florida,33125
+883,Miami,Florida,33128
+884,Miami,Florida,33131
+885,Miami,Florida,33132
+886,Miami,Florida,33133
+887,Miami,Florida,33145
+888,Miami,Florida,33147
+889,Miami,Florida,33150
+890,Miami,Florida,33157
+891,Miami,Florida,33169
+892,Miami,Florida,33172
+893,Miami,Florida,33176
+894,Miami,Florida,33177
+895,Miami,Florida,33186
+896,Miami,Florida,33194
+897,Miami Gardens,Florida,33056
+898,Middleboro,Massachusetts,2346
+899,Middleburg,Florida,32068
+900,Middletown,Connecticut,6457
+901,Middletown,Maryland,21769
+902,Milford,Delaware,19963
+903,Milford,Michigan,48380
+904,Mill Creek,Washington,98012
+905,Mill Valley,California,94941
+906,Milpitas,California,95035
+907,Milton,Delaware,19968
+908,Milton,Vermont,5468
+909,Milwaukie,Oregon,97222
+910,Minneapolis,Minnesota,55404
+911,Minneapolis,Minnesota,55419
+912,Minnetonka,Minnesota,55435
+913,Miramar,Florida,33025
+914,Miramar,Florida,33027
+915,Mobile,Alabama,36608
+916,Mobile,Alabama,36609
+917,Modesto,California,95350
+918,Modesto,California,95355
+919,Mokelumne Hill,California,95245
+920,Mokena,Illinois,60448
+921,Monmouth Junction,New Jersey,8852
+922,Monroe,Georgia,30655
+923,Monroe,Louisiana,71201
+924,Monroe,Louisiana,71203
+925,Monroe,New Jersey,8831
+926,Montclair,New Jersey,7043
+927,Monterey,California,93940
+928,Montgomery,Illinois,60538
+929,Montverde,Florida,34756
+930,Monument,Colorado,80132
+931,Morgantown,West Virginia,26508
+932,Morrisville,Pennsylvania,19067
+933,Morrow,Georgia,30260
+934,Morton Grove,Illinois,60053
+935,Mounds View,Minnesota,55112
+936,Mount Airy,Maryland,21771
+937,Mount Joy,Pennsylvania,17552
+938,Mount Juliet,Tennessee,37122
+939,Mount Laurel,New Jersey,8054
+940,Mount Pleasant,South Carolina,29464
+941,Mount Pleasant,South Carolina,29466
+942,Mount Prospect,Illinois,60056
+943,Mountain View,California,94040
+944,Mt. Airy,Maryland,21771
+945,Mt. Juliet,Tennessee,37122
+946,Mt. Pleasant,South Carolina,29464
+947,Mt. Plymouth,Florida,32776
+948,Murfreesboro,Tennessee,37127
+949,Murfreesboro,Tennessee,37128
+950,Murfreesboro,Tennessee,37129
+951,Murfreesboro,Tennessee,37130
+952,Murfressboro,Tennessee,37129
+953,Murphys,California,95247
+954,Murray,Utah,84123
+955,Muscle Shoals,Alabama,35661
+956,Muskegon,Michigan,49441
+957,Muskegon,Michigan,49442
+958,Muskegon,Michigan,49445
+959,My. Juliet,Tennessee,37122
+960,Nanticoke,Pennsylvania,18634
+961,Napa,California,94558
+962,Naperville,Illinois,60540
+963,Naperville,Illinois,60564
+964,Naples,Florida,34102
+965,Naples,Florida,34104
+966,Naples,Florida,34113
+967,Naples,Florida,34117
+968,Naples,Florida,34119
+969,Nashville,Tennessee,37203
+970,Nashville,Tennessee,37204
+971,Nashville,Tennessee,37206
+972,Nashville,Tennessee,37207
+973,Nashville,Tennessee,37208
+974,Nashville,Tennessee,37209
+975,Nashville,Tennessee,37210
+976,Nashville,Tennessee,37211
+977,Nashville,Tennessee,37212
+978,Nashville,Tennessee,37214
+979,Nashville,Tennessee,37217
+980,Nashville,Tennessee,37220
+981,Nashville,Tennessee,37221
+982,Naugatuck,Connecticut,6770
+983,New Bedford,Massachusetts,2741
+984,New Bedford,Massachusetts,2745
+985,New Buffalo,Michigan,49117
+986,New Haven,Connecticut,6511
+987,New Haven,Connecticut,6512
+988,New Hudson,Michigan,48165
+989,New Palestine,Indiana,46163
+990,Newark,California,94560
+991,Newark,Delaware,19713
+992,Newburyport,Massachusetts,1950
+993,Newcastle,Washington,98059
+994,Newman,California,95360
+995,Newnan,Georgia,30265
+996,Newtown,Pennsylvania,18940
+997,Nicholls,Georgia,31554
+998,Noblesville,Indiana,46062
+999,Norcross,Georgia,30092
+1000,Norcross,Georgia,30093
+1001,Norristown,Pennsylvania,19401
+1002,North Augusta,South Carolina,29841
+1003,North Charleston,South Carolina,29406
+1004,North Dartmouth,Massachusetts,2747
+1005,North Dinwiddie,Virginia,23803
+1006,North Fort Myers,Florida,33917
+1007,North Huntingdon,Pennsylvania,15642
+1008,North Little Rock,Arkansas,72114
+1009,North Miami,Florida,33181
+1010,North Miami Beach,Florida,33162
+1011,North Miami Beach Fl,Florida,33162
+1012,North Port,Florida,34286
+1013,North Wales,Pennsylvania,19454
+1014,Northport,Alabama,35473
+1015,Northville,Michigan,48168
+1016,Norton,Massachusetts,2766
+1017,Nottingham,Maryland,21236
+1018,Novato,California,94944
+1019,Oak Park,Illinois,60302
+1020,Oak Park,Illinois,60303
+1021,Oak Park,Michigan,48237
+1022,Oak Ridge,Tennessee,37830
+1023,Oakland,California,94602
+1024,Oakland,California,94606
+1025,Oakland,California,94607
+1026,Oakland,California,94608
+1027,Oakland,California,94611
+1028,Oakland,California,94612
+1029,Oakland,California,94621
+1030,Oakland Park,Florida,33309
+1031,Oakland Park,Florida,33334
+1032,Ocala,Florida,34472
+1033,Ocean City,New Jersey,8226
+1034,Olathe,Kansas,66062
+1035,Old Hickory,Tennessee,37138
+1036,Olive Branch,Mississippi,38654
+1037,Olympia,Washington,98501
+1038,Olympia,Washington,98502
+1039,Olympia,Washington,98512
+1040,Orange,Virginia,22960
+1041,Orange Park,Florida,32065
+1042,Orange Park,Florida,32273
+1043,Orangevale,California,95662
+1044,Orcutt,California,93455
+1045,Oreland,Pennsylvania,19075
+1046,Orland Park,Illinois,60642
+1047,Orlando,Florida,32828
+1048,Oro Valley,Arizona,85737
+1049,Oroville,California,95966
+1050,Osceola,Indiana,46561
+1051,Owens Cross Roads,Alabama,35763
+1052,Owings Mills,Maryland,21117
+1053,Owins Mills,Maryland,21117
+1054,Oxon Hill,Maryland,20745
+1055,Pacheco,California,94553
+1056,Pacific,Washington,98047
+1057,Paducah,Kentucky,42001
+1058,Paducah,Kentucky,42003
+1059,Pahokee,Florida,33476
+1060,Palatine,Illinois,60074
+1061,Palm Beach,Florida,33480
+1062,Palm Beach Gardens,Florida,33418
+1063,Palm City,Florida,34990
+1064,Palmetto Bay,Florida,33157
+1065,Palo Alto,California,94301
+1066,Palo Alto,California,94306
+1067,Panama City Beach,Florida,32413
+1068,Parkland,Florida,33067
+1069,Pasadena,Maryland,21122
+1070,Patterson,California,95363
+1071,Paw Paw,Michigan,49079
+1072,Peabody,Massachusetts,1960
+1073,Peachtree City,Georgia,30269
+1074,Pearl,Mississippi,39208
+1075,Pearland,Texas,77584
+1076,Pearland,Texas,77585
+1077,Pembroke Pines,Florida,33024
+1078,Pembroke Pines,Florida,33029
+1079,Peoria,Illinois,61604
+1080,Peoria,Illinois,61606
+1081,Peoria,Illinois,61614
+1082,Petal,Mississippi,39465
+1083,Phila,Pennsylvania,19136
+1084,Philadelphia,Pennsylvania,19103
+1085,Philadelphia,Pennsylvania,19104
+1086,Philadelphia,Pennsylvania,19106
+1087,Philadelphia,Pennsylvania,19114
+1088,Philadelphia,Pennsylvania,19116
+1089,Philadelphia,Pennsylvania,19118
+1090,Philadelphia,Pennsylvania,19119
+1091,Philadelphia,Pennsylvania,19121
+1092,Philadelphia,Pennsylvania,19123
+1093,Philadelphia,Pennsylvania,19128
+1094,Philadelphia,Pennsylvania,19129
+1095,Philadelphia,Pennsylvania,19130
+1096,Philadelphia,Pennsylvania,19134
+1097,Philadelphia,Pennsylvania,19139
+1098,Philadelphia,Pennsylvania,19142
+1099,Philadelphia,Pennsylvania,19143
+1100,Philadelphia,Pennsylvania,19145
+1101,Philadelphia,Pennsylvania,19151
+1102,Philadelphia,Pennsylvania,19154
+1103,Phoenixville,Pennsylvania,19460
+1104,Pigeon Forge,Tennessee,37863
+1105,Pikesville,Maryland,21208
+1106,Pittsburgh,Pennsylvania,15205
+1107,Pittsburgh,Pennsylvania,15212
+1108,Pittsburgh,Pennsylvania,15213
+1109,Pittsburgh,Pennsylvania,15216
+1110,Pittsburgh,Pennsylvania,15217
+1111,Pittsburgh,Pennsylvania,15218
+1112,Pittsburgh,Pennsylvania,15222
+1113,Pittsburgh,Pennsylvania,15224
+1114,Pittsburgh,Pennsylvania,15232
+1115,Pittsburgh,Pennsylvania,15238
+1116,Placida,Florida,33946
+1117,Plainfield,Illinois,60544
+1118,Plainfield,Illinois,60586
+1119,Plainsboro,New Jersey,8536
+1120,Plantation,Florida,33317
+1121,Plantation,Florida,33322
+1122,Plantation,Florida,33324
+1123,Pleasanton,California,94566
+1124,Pleasanton,California,94588
+1125,Plymouth,Massachusetts,2360
+1126,Plymouth,Michigan,48170
+1127,Plymouth,Minnesota,55441
+1128,Plymouth,Minnesota,55446
+1129,Plymouth,Minnesota,55447
+1130,Pompano Beach,Florida,33060
+1131,Pompano Beach,Florida,33062
+1132,Pompano Beach,Florida,33064
+1133,Pompano Beach,Florida,33069
+1134,Pompano Beach,New York,11735
+1135,Pontiac,Michigan,48342
+1136,Pooler,Georgia,31322
+1137,Port At Lucie,Florida,34953
+1138,Port Barrington,Illinois,60010
+1139,Port Hope,Michigan,48468
+1140,Port Saint Lucie,Florida,34952
+1141,Port Saint Lucie,Florida,34983
+1142,Port St Lucie,Florida,34984
+1143,Port St. Lucie,Florida,34986
+1144,Portland,Oregon,97201
+1145,Portland,Oregon,97202
+1146,Portland,Oregon,97203
+1147,Portland,Oregon,97205
+1148,Portland,Oregon,97209
+1149,Portland,Oregon,97214
+1150,Portland,Oregon,97216
+1151,Portland,Oregon,97217
+1152,Portland,Oregon,97220
+1153,Portland,Oregon,97224
+1154,Portland,Oregon,97225
+1155,Portland,Oregon,97229
+1156,Portland,Oregon,97230
+1157,Portland,Oregon,97232
+1158,Portland,Oregon,97266
+1159,Potomac,Maryland,20854
+1160,Pottstown,Pennsylvania,19464
+1161,Pottsville,Pennsylvania,17901
+1162,Poulsbo,Washington,98370
+1163,Powder Springs,Georgia,30127
+1164,Powell,Tennessee,37849
+1165,Prince Frederick,Maryland,20678
+1166,Prince George,Virginia,23875
+1167,Provincetown,Massachusetts,2657
+1168,Pueblo,Colorado,81001
+1169,Pueblo,Colorado,81004
+1170,Putnam Valley,New York,10579
+1171,Puyallup,Washington,98371
+1172,Puyallup,Washington,98374
+1173,Quincy,Massachusetts,2170
+1174,Radcliff,Kentucky,40160
+1175,Raeford,North Carolina,28376
+1176,Rahway,New Jersey,7065
+1177,Ramsey,New Jersey,7446
+1178,Rancho Cordova,California,95742
+1179,Ranson,West Virginia,25438
+1180,Red Lion,Pennsylvania,17356
+1181,Redmond,Washington,98052
+1182,Redmond,Washington,98053
+1183,Redwood City,California,94062
+1184,Remington,Virginia,22734
+1185,Renton,Washington,98055
+1186,Reston,Virginia,20190
+1187,Rex,Georgia,30273
+1188,Richaland,Michigan,49083
+1189,Richfield,Minnesota,55423
+1190,Richmond,Indiana,47374
+1191,Richmond,Michigan,48062
+1192,Richmond,Virginia,23219
+1193,Richmond,Virginia,23220
+1194,Richmond,Virginia,23222
+1195,Richmond,Virginia,23224
+1196,Richmond,Virginia,23233
+1197,Richmond Hill,Georgia,31324
+1198,Richton Park,Illinois,60471
+1199,Ridgeland,Mississippi,39157
+1200,Ridley Park,Pennsylvania,19078
+1201,Rincon,Georgia,31326
+1202,Rio Grande,New Jersey,8242
+1203,Riverdale,Georgia,30296
+1204,Rochester,Illinois,62563
+1205,Rochester,Pennsylvania,15074
+1206,Rochester Hills,Michigan,48309
+1207,Rock Falls,Illinois,61071
+1208,Rockford,Illinois,61101
+1209,Rockford,Illinois,61108
+1210,Rockford,Illinois,61114
+1211,Rockvale,Tennessee,37153
+1212,Rockville,Maryland,20852
+1213,Rockville,Maryland,20853
+1214,Rohnert Park,California,94928
+1215,Rolling Meadows,Illinois,60008
+1216,Rome,Georgia,30161
+1217,Roseville,California,95661
+1218,Roseville,Michigan,48066
+1219,Roswell,Georgia,30075
+1220,Roswell,Georgia,30076
+1221,Round Lake Beach,Illinois,60073
+1222,Roxbury,Massachusetts,2119
+1223,Royal Oak,Michigan,48067
+1224,Royal Oak,Michigan,48073
+1225,Royal Palm Beach,Florida,33411
+1226,Rumford,Rhode Island,2916
+1227,Rural Valley,Pennsylvania,16249
+1228,Rydal,Georgia,30171
+1229,Sacramento,California,95823
+1230,Sacramento,California,95825
+1231,Sacramento,California,95826
+1232,Sacramento,California,95828
+1233,Sacramento,California,95829
+1234,Sacramento,California,95838
+1235,Sacramento,California,95841
+1236,Sacremento,California,95841
+1237,Saint Albans,Vermont,5478
+1238,Saint Anthony,Minnesota,55418
+1239,Saint Cloud,Florida,34771
+1240,Saint Paul,Minnesota,55108
+1241,Salem,Massachusetts,1970
+1242,Salem,New Hampshire,3079
+1243,Salem,Oregon,97301
+1244,Salinas,California,93906
+1245,Saline,Michigan,48176
+1246,Salisbury,Maryland,21801
+1247,Salisbury,Maryland,21804
+1248,Salt Lake City,Utah,84102
+1249,Salt Lake City,Utah,84105
+1250,Salt Lake City,Utah,84106
+1251,Salt Lake City,Utah,84108
+1252,Salt Lake City,Utah,84110
+1253,Salt Lake City,Utah,84115
+1254,Salt Lake City,Utah,84116
+1255,Sammamish,Washington,98075
+1256,San Francisco,California,94107
+1257,San Francisco,California,94109
+1258,San Francisco,California,94110
+1259,San Francisco,California,94111
+1260,San Francisco,California,94112
+1261,San Francisco,California,94114
+1262,San Francisco,California,94116
+1263,San Francisco,California,94117
+1264,San Francisco,California,94118
+1265,San Francisco,California,94121
+1266,San Francisco,California,94122
+1267,San Francisco,California,94123
+1268,San Francisco,California,94127
+1269,San Francisco,California,94158
+1270,San Jose,California,95112
+1271,San Jose,California,95113
+1272,San Jose,California,95120
+1273,San Jose,California,95121
+1274,San Jose,California,95123
+1275,San Jose,California,95125
+1276,San Jose,California,95126
+1277,San Jose,California,95129
+1278,San Jose,California,95131
+1279,San Jose,California,95132
+1280,San Jose,California,95134
+1281,San Jose,California,95135
+1282,San Jose,California,95136
+1283,San Jose,California,95148
+1284,San Leandro,California,94578
+1285,San Leandro,California,94579
+1286,San Mateo,California,94401
+1287,San Mateo,California,94402
+1288,San Mateo,California,94403
+1289,San Mateo,California,94404
+1290,San Rafael,California,94901
+1291,San Rafael,California,94903
+1292,San Ramon,California,94582
+1293,San Ramon,California,94583
+1294,Sandy,Utah,84094
+1295,Sandy Springs,Georgia,30328
+1296,Sandy Springs,Georgia,30342
+1297,Sandy Springs,Georgia,30350
+1298,Sandy Springs,Georgia,31150
+1299,Sanger,California,93657
+1300,Santa Clara,California,95051
+1301,Santa Clara,California,95054
+1302,Santa Cruz,California,95060
+1303,Santa Cruz,California,95062
+1304,Santa Cruz,California,95065
+1305,Santa Fe,New Mexico,87501
+1306,Santa Fe,New Mexico,87505
+1307,Santa Fe,New Mexico,87507
+1308,Santa Fe,Texas,77510
+1309,Santa Maria,California,93458
+1310,Santa Rosa,California,95403
+1311,Santa Rosa,California,95407
+1312,Sarasota,Florida,34232
+1313,Sarasota,Florida,34237
+1314,Savannah,Georgia,31401
+1315,Savannah,Georgia,31405
+1316,Savannah,Georgia,31406
+1317,Savannah,Georgia,31410
+1318,Savannah,Georgia,31419
+1319,Scappoose,Oregon,97056
+1320,Schaumburg,Illinois,60173
+1321,Schaumburg,Illinois,60193
+1322,Scituate,Massachusetts,2066
+1323,Scotts Valley,California,95066
+1324,Scranton,Pennsylvania,18509
+1325,Scranton,Pennsylvania,18510
+1326,Seabrook,Texas,77586
+1327,Seaford,Delaware,19973
+1328,Seatac,Washington,98168
+1329,Seatac,Washington,98188
+1330,Seattle,North Carolina,98144
+1331,Seattle,Washington,98012
+1332,Seattle,Washington,98103
+1333,Seattle,Washington,98106
+1334,Seattle,Washington,98107
+1335,Seattle,Washington,98109
+1336,Seattle,Washington,98112
+1337,Seattle,Washington,98117
+1338,Seattle,Washington,98125
+1339,Seattle,Washington,98136
+1340,Seattle,Washington,98178
+1341,Sebring,Florida,33870
+1342,Secaucus,New Jersey,7094
+1343,Senatobia,Mississippi,38668
+1344,Senoia,Georgia,30276
+1345,Sharon,Connecticut,6069
+1346,Sharpsburg,Georgia,30277
+1347,Shelby Township,Michigan,48317
+1348,Shelbyville,Indiana,46176
+1349,Sheridan,Colorado,80110
+1350,Shoreview,Minnesota,55126
+1351,Shreveport,Louisiana,71105
+1352,Shreveport,Louisiana,71106
+1353,Shreveport,Louisiana,71115
+1354,Shreveport,Louisiana,71118
+1355,Silver City,New Mexico,88061
+1356,Silver Spring,Maryland,20903
+1357,Silver Spring,Maryland,20910
+1358,Sinking Spring,Pennsylvania,10608
+1359,Skokie,Illinois,60203
+1360,Slc,Utah,84105
+1361,Slc,Utah,84109
+1362,Slc,Utah,84124
+1363,Smyrna,Delaware,19977
+1364,Smyrna,Georgia,30080
+1365,Smyrna,Tennessee,37167
+1366,Snellville,Georgia,30039
+1367,Snellville,Georgia,30078
+1368,Snoqualmie,Washington,98065
+1369,Somers,New York,10589
+1370,Somerset,New Jersey,8873
+1371,Somerset,Pennsylvania,15501
+1372,Somerville,Massachusetts,2143
+1373,Somonauk,Illinois,60552
+1374,South Bend,Indiana,46601
+1375,South Bend,Indiana,46615
+1376,South Bend,Indiana,46637
+1377,South Berwick,Maine,3908
+1378,South Hadley,Massachusetts,1075
+1379,South Haven,Michigan,49090
+1380,South Lyon,Michigan,48178
+1381,South River,New Jersey,8882
+1382,Southampton,Pennsylvania,18966
+1383,Southaven,Mississippi,38671
+1384,Southaven,Mississippi,38672
+1385,Southfield,Michigan,48034
+1386,Southfield,Michigan,48076
+1387,Spokane,Washington,99201
+1388,Spokane,Washington,99205
+1389,Spokane,Washington,99208
+1390,Spokane,Washington,99223
+1391,Spokane Valley,Washington,99212
+1392,Spokane Valley,Washington,99216
+1393,Spring,Texas,77373
+1394,Spring,Texas,77382
+1395,Spring,Texas,77388
+1396,Spring,Texas,77389
+1397,Spring City,Pennsylvania,19475
+1398,Spring Lake,Michigan,49456
+1399,Spring Lake,North Carolina,28390
+1400,Springfield,Illinois,62701
+1401,Springfield,Illinois,62703
+1402,Springfield,Illinois,62704
+1403,Springfield,Illinois,62711
+1404,Springfield,Illinois,62712
+1405,Springfield,Massachusetts,1128
+1406,Springfield,Oregon,97477
+1407,Springfield,Oregon,97478
+1408,St Augustine,Florida,32080
+1409,St Augustine,Florida,32084
+1410,St Augustine,Florida,32086
+1411,St Cloud,Florida,34772
+1412,St Johns,Florida,32259
+1413,St Paul,Minnesota,55104
+1414,St. Augustine,Florida,32080
+1415,St. Paul,Minnesota,55108
+1416,St. Paul,Minnesota,55116
+1417,Steamboat Springs,Colorado,80477
+1418,Stephens City,Virginia,22655
+1419,Sterling,Illinois,61081
+1420,Sterling,Virginia,20166
+1421,Sterling Heights,Michigan,48310
+1422,Sterling Heights,Michigan,48312
+1423,Sterling Hts,Michigan,48310
+1424,Stevensville,Michigan,49127
+1425,Stillwater,Minnesota,55082
+1426,Stockbridge,Georgia,30281
+1427,Stockton,California,95062
+1428,Stockton,California,95202
+1429,Stockton,California,95219
+1430,Stone Mountain,Georgia,30083
+1431,Stone Mountain,Georgia,30087
+1432,Stone Mountain,Georgia,30088
+1433,Stone Mountain Ga,Georgia,30087
+1434,Stoughton,Massachusetts,2072
+1435,Streamwood,Illinois,60107
+1436,Stuart,Florida,24996
+1437,Sugar Land,Texas,77479
+1438,Sugarland,Texas,77479
+1439,Suisun City,California,94585
+1440,Suitland,Maryland,20746
+1441,Sullivan's Island,South Carolina,29482
+1442,Summerfield,Florida,34491
+1443,Sunnyvale,California,94086
+1444,Sunnyvale,California,94087
+1445,Sunnyvale,California,94089
+1446,Sunrise,Florida,33351
+1447,Suquamish,Washington,98392
+1448,Surf City,New Jersey,8008
+1449,Suwanee,Georgia,30024
+1450,Suwanee,Georgia,30038
+1451,Swedesboro,New Jersey,8085
+1452,Swoyersville,Pennsylvania,18704
+1453,Sykesville,Maryland,21784
+1454,Tabernacle,New Jersey,8088
+1455,Tacoma,Washington,98405
+1456,Tacoma,Washington,98422
+1457,Tacoma,Washington,98445
+1458,Tallahassee,Florida,32303
+1459,Tallahassee,Florida,32304
+1460,Tallahassee,Florida,32308
+1461,Tallahassee,Florida,32311
+1462,Tallahassee,Florida,32312
+1463,Tallahassee,Florida,32317
+1464,Tamarac,Florida,33321
+1465,Taylorsville,Utah,84123
+1466,Taylorsville,Utah,84129
+1467,Tenino,Washington,98589
+1468,Tewksbury,Alabama,1876
+1469,Texas City,Texas,77590
+1470,The Woodlands,Texas,77380
+1471,Thornton,Colorado,80229
+1472,Three Rivers,Michigan,49093
+1473,Tiburon,California,94920
+1474,Tigard,Oregon,97223
+1475,Tomball,Texas,77375
+1476,Toney,Alabama,35773
+1477,Topsham,Maine,4086
+1478,Tracy,California,95376
+1479,Trenton,New Jersey,8608
+1480,Triangle,Virginia,22172
+1481,Troy,Michigan,48083
+1482,Tualatin,Oregon,97062
+1483,Tucker,Georgia,30084
+1484,Tucson,Arizona,85704
+1485,Tucson,Arizona,85718
+1486,Tucson,Arizona,85737
+1487,Tucson,Arizona,85741
+1488,Tucson,Arizona,85742
+1489,Tucson,Arizona,85743
+1490,Tucson,Arizona,85745
+1491,Tucson,Arizona,85749
+1492,Tucson,Arizona,85750
+1493,Tukwila,Washington,98188
+1494,Tupelo,Mississippi,38804
+1495,Turnersville,New Jersey,8012
+1496,Tuscaloosa,Alabama,35401
+1497,Tuscumbia,Alabama,35674
+1498,Union City,California,94587
+1499,Union City,Georgia,30291
+1500,Urbana,Illinois,61801
+1501,Vacaville,California,95687
+1502,Vallejo,California,94589
+1503,Valley Springs,California,95252
+1504,Valparaiso,Indiana,46383
+1505,Valrico,Florida,33594
+1506,Vancouver,Washington,98660
+1507,Vancouver,Washington,98661
+1508,Vancouver,Washington,98664
+1509,Vancouver,Washington,98684
+1510,Vancouver,Washington,98685
+1511,Vashon,Washington,98070
+1512,Vernon Hills,Illinois,60061
+1513,Vero Beach,Florida,32963
+1514,Vero Beach,Florida,32966
+1515,Vero Beach,Florida,32967
+1516,Villa Rica,Georgia,30180
+1517,Vincentown,New Jersey,8088
+1518,Vineland,New Jersey,8361
+1519,Voorhees,New Jersey,8043
+1520,Walnut Creek,California,94595
+1521,Walnut Creek,California,94596
+1522,Walterboro,South Carolina,29488
+1523,Ware,Massachusetts,1082
+1524,Warren,Ohio,44481
+1525,Warrenville,Illinois,60555
+1526,Warsaw,Indiana,46580
+1527,Washington,District Of Columbia,20001
+1528,Washington,District Of Columbia,20002
+1529,Washington,District Of Columbia,20003
+1530,Washington,District Of Columbia,20005
+1531,Washington,District Of Columbia,20009
+1532,Washington,District Of Columbia,20010
+1533,Washington,District Of Columbia,20013
+1534,Washington,District Of Columbia,20018
+1535,Washington,District Of Columbia,20024
+1536,Washington,District Of Columbia,20026
+1537,Washington,District Of Columbia,20036
+1538,Washington,District Of Columbia,20037
+1539,Washington,Michigan,48095
+1540,Washington,Pennsylvania,15301
+1541,Washington Dc,District Of Columbia,20020
+1542,Washington Terrace,Utah,84405
+1543,Waterbury,Connecticut,6704
+1544,Waterbury,Connecticut,6708
+1545,Waterford,Michigan,48328
+1546,Watertown,Massachusetts,2472
+1547,Wauconda,Illinois,60084
+1548,Waukee,Iowa,50263
+1549,Waukegan,Illinois,60085
+1550,Wayne,Pennsylvania,19087
+1551,Weirton,West Virginia,26062
+1552,Wellington,Florida,33414
+1553,Wenonah,New Jersey,8090
+1554,West Chester,Pennsylvania,19382
+1555,West Deptford,New Jersey,8086
+1556,West Hartford,Connecticut,6110
+1557,West Lafayette,Indiana,47906
+1558,West Monroe,Louisiana,71291
+1559,West Monroe,Louisiana,71292
+1560,West Palm Beach,Florida,33401
+1561,West Palm Beach,Florida,33407
+1562,West Palm Beach,Florida,33411
+1563,West St Paul,Minnesota,55118
+1564,West Valley City,Utah,84119
+1565,Westfield,Massachusetts,1085
+1566,Westminster,Colorado,80021
+1567,Westminster,Maryland,21158
+1568,Westmont,Illinois,60559
+1569,Weston,Florida,33327
+1570,Wexford,Pennsylvania,15090
+1571,Wheaton,Illinois,26104
+1572,Wheaton,Illinois,60189
+1573,Wheeling,Illinois,60090
+1574,White House,Tennessee,37188
+1575,Willingboro,New Jersey,8046
+1576,Willis,Michigan,48191
+1577,Wilmington,Delaware,19802
+1578,Wilmington,Delaware,19803
+1579,Wilmington,Delaware,19805
+1580,Wilmington,Delaware,19808
+1581,Wilmington,Massachusetts,1887
+1582,Winder,Georgia,30680
+1583,Windham,New Hampshire,3087
+1584,Windsor,California,95492
+1585,Windsor,Colorado,80550
+1586,Winnetka,Illinois,60093
+1587,Wise,Virginia,24293
+1588,Woburn,Massachusetts,1801
+1589,Woodbine,Maryland,21797
+1590,Woodbridge,Virginia,22191
+1591,Woodinville,Washington,98077
+1592,Woodridge,Illinois,60517
+1593,Woodstock,Georgia,30188
+1594,Woodstock,Georgia,30189
+1595,Worth,Illinois,60482
+1596,Wrightstown,New Jersey,8562
+1597,Wyoming,Michigan,49509
+1598,York,Pennsylvania,17401
+1599,York,Pennsylvania,17403
+1600,York,Pennsylvania,17404
+1601,York Haven,Pennsylvania,17370
+1602,Yorkville,Illinois,60560
+1603,Youngstown,Florida,32466
+1604,Ypsilanti,Michigan,48197
+1605,Ypsilanti,Michigan,48198

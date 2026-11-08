@@ -1,0 +1,899 @@
+{
+  "business_goal": "Analyse décisionnelle télécom",
+  "tables": [
+    {
+      "name": "Call Details-Data",
+      "source_name": "Call Details-Data",
+      "row_count": 101174,
+      "column_count": 17,
+      "memory_bytes": 13860970,
+      "sampled": false,
+      "sample_rows": null,
+      "columns": [
+        {
+          "name": "Phone Number",
+          "declared_type": "str",
+          "inferred_type": "string",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 7467,
+          "stats": {
+            "count": 101174,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "985-9789",
+                  "count": 124
+                },
+                {
+                  "value": "755-9997",
+                  "count": 108
+                },
+                {
+                  "value": "798-5978",
+                  "count": 108
+                },
+                {
+                  "value": "798-7989",
+                  "count": 108
+                },
+                {
+                  "value": "759-9995",
+                  "count": 95
+                },
+                {
+                  "value": "779-9985",
+                  "count": 92
+                },
+                {
+                  "value": "799-9997",
+                  "count": 92
+                },
+                {
+                  "value": "778-9975",
+                  "count": 87
+                },
+                {
+                  "value": "776-5988",
+                  "count": 87
+                },
+                {
+                  "value": "757-5557",
+                  "count": 87
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 124
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 108
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 108
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 108
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 95
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 92
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 92
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 87
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 87
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 87
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 84
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 84
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 84
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 79
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 79
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 79
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 79
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 79
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 79
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 79
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 79
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 79
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 79
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 74
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 74
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 74
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 74
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 74
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 71
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 71
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 71
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 71
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 71
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 71
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            },
+            {
+              "value": "<PHONE_MASKED>",
+              "count": 66
+            }
+          ],
+          "is_pii": true,
+          "pii_categories": [
+            "phone"
+          ],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Account Length",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 322,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 1.0,
+              "max": 21111.0,
+              "mean": 323.59714946527765,
+              "median": 202.0,
+              "std": 1418.07365085617,
+              "q1": 69.0,
+              "q3": 240.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "VMail Message",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 72,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 0.0,
+              "max": 1111.0,
+              "mean": 18.142645343665368,
+              "median": 0.0,
+              "std": 75.82693173193111,
+              "q1": 0.0,
+              "q3": 22.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Day Mins",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2548,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 0.0,
+              "max": 111111.11,
+              "mean": 587.080798228794,
+              "median": 262.2,
+              "std": 2193.094318778433,
+              "q1": 222.3,
+              "q3": 326.275
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 15219,
+          "anomaly_examples": [
+            "62.4",
+            "61.6",
+            "58.9",
+            "58.2",
+            "65.4"
+          ]
+        },
+        {
+          "name": "Day Calls",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 221,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 0.0,
+              "max": 21111.0,
+              "mean": 267.2076126277502,
+              "median": 202.0,
+              "std": 947.9633697380842,
+              "q1": 88.0,
+              "q3": 224.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Day Charge",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2873,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 0.0,
+              "max": 1111.99,
+              "mean": 64.958811058177,
+              "median": 32.6,
+              "std": 133.5158082883754,
+              "q1": 23.92,
+              "q3": 82.2
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 3844,
+          "anomaly_examples": [
+            "211.02",
+            "211.112",
+            "211.96",
+            "1111.119",
+            "1111.211"
+          ]
+        },
+        {
+          "name": "Eve Mins",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2523,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 0.0,
+              "max": 111111.2,
+              "mean": 655.5125263407596,
+              "median": 268.2,
+              "std": 2473.4454364651515,
+              "q1": 223.3,
+              "q3": 329.2
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 12435,
+          "anomaly_examples": [
+            "61.9",
+            "31.2",
+            "64.3",
+            "42.2",
+            "58.9"
+          ]
+        },
+        {
+          "name": "Eve Calls",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 224,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 0.0,
+              "max": 21111.0,
+              "mean": 267.1669302389942,
+              "median": 202.0,
+              "std": 932.914436881653,
+              "q1": 88.0,
+              "q3": 224.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Eve Charge",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2221,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 0.0,
+              "max": 211.99,
+              "mean": 34.358124569553446,
+              "median": 24.44,
+              "std": 36.248576532669475,
+              "q1": 22.22,
+              "q3": 32.02
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 12329,
+          "anomaly_examples": [
+            "5.26",
+            "6.2",
+            "2.65",
+            "6.4",
+            "6.55"
+          ]
+        },
+        {
+          "name": "Night Mins",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2464,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 20.3,
+              "max": 111111.11,
+              "mean": 646.7866434064088,
+              "median": 268.2,
+              "std": 2368.028490845848,
+              "q1": 223.2,
+              "q3": 329.2
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 12411,
+          "anomaly_examples": [
+            "57.5",
+            "45.0",
+            "63.3",
+            "54.5",
+            "50.1"
+          ]
+        },
+        {
+          "name": "Night Calls",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 218,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 20.0,
+              "max": 21111.0,
+              "mean": 261.6731867871192,
+              "median": 202.0,
+              "std": 884.9630212945351,
+              "q1": 88.0,
+              "q3": 224.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Night Charge",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1470,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 1.04,
+              "max": 211.92,
+              "mean": 13.900141680668945,
+              "median": 9.22,
+              "std": 16.1786852676724,
+              "q1": 6.22,
+              "q3": 20.44
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 3754,
+          "anomaly_examples": [
+            "44.04",
+            "44.45",
+            "44.69",
+            "44.48",
+            "44.47"
+          ]
+        },
+        {
+          "name": "Intl Mins",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 267,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 0.0,
+              "max": 211.9,
+              "mean": 20.291268903077864,
+              "median": 20.2,
+              "std": 25.033213708925636,
+              "q1": 8.8,
+              "q3": 22.8
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 8279,
+          "anomaly_examples": [
+            "45.7",
+            "44.4",
+            "44.4",
+            "44.7",
+            "44.4"
+          ]
+        },
+        {
+          "name": "Intl Calls",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 39,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 0.0,
+              "max": 211.0,
+              "mean": 5.737798248561884,
+              "median": 4.0,
+              "std": 8.196367280575155,
+              "q1": 2.0,
+              "q3": 8.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Intl Charge",
+          "declared_type": "float64",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 339,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 0.0,
+              "max": 11.92,
+              "mean": 4.347635016901576,
+              "median": 2.92,
+              "std": 2.761911021630933,
+              "q1": 2.28,
+              "q3": 4.94
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 4892,
+          "anomaly_examples": [
+            "11.2",
+            "11.29",
+            "11.02",
+            "11.211",
+            "11.02"
+          ]
+        },
+        {
+          "name": "CustServ Calls",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 11,
+          "stats": {
+            "count": 101174,
+            "numeric": {
+              "min": 0.0,
+              "max": 11.0,
+              "mean": 2.5596398284144146,
+              "median": 2.0,
+              "std": 2.4019043008540053,
+              "q1": 2.0,
+              "q3": 3.0
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Churn",
+          "declared_type": "bool",
+          "inferred_type": "boolean",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2,
+          "stats": {
+            "count": 101174,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "False",
+                  "count": 90642
+                },
+                {
+                  "value": "True",
+                  "count": 10532
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        }
+      ],
+      "duplicates": {
+        "exact_count": 40729,
+        "exact_pct": 40.25638998161583,
+        "business_key": [],
+        "business_key_duplicate_count": 0,
+        "business_key_duplicate_pct": 0.0
+      }
+    }
+  ],
+  "relationships": [],
+  "issues": [
+    {
+      "id": "Call Details-Data.Day Mins.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "Call Details-Data",
+      "column": "Day Mins",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "15219 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+      "affected_rows": 15219,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "Call Details-Data.Day Charge.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "Call Details-Data",
+      "column": "Day Charge",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "3844 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+      "affected_rows": 3844,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "Call Details-Data.Eve Mins.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "Call Details-Data",
+      "column": "Eve Mins",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "12435 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+      "affected_rows": 12435,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "Call Details-Data.Eve Charge.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "Call Details-Data",
+      "column": "Eve Charge",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "12329 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+      "affected_rows": 12329,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "Call Details-Data.Night Mins.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "Call Details-Data",
+      "column": "Night Mins",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "12411 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+      "affected_rows": 12411,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "Call Details-Data.Night Charge.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "Call Details-Data",
+      "column": "Night Charge",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "3754 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+      "affected_rows": 3754,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "Call Details-Data.Intl Mins.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "Call Details-Data",
+      "column": "Intl Mins",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "8279 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+      "affected_rows": 8279,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "Call Details-Data.Intl Charge.iqr_zscore_outliers",
+      "severity": "medium",
+      "table": "Call Details-Data",
+      "column": "Intl Charge",
+      "rule": "iqr_or_zscore_outlier",
+      "evidence": "4892 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées.",
+      "affected_rows": 4892,
+      "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+    },
+    {
+      "id": "Call Details-Data.exact_duplicates",
+      "severity": "medium",
+      "table": "Call Details-Data",
+      "column": null,
+      "rule": "exact_duplicate_rows",
+      "evidence": "40729 ligne(s) dupliquée(s) exactement sur 101174 lignes profilées.",
+      "affected_rows": 40729,
+      "suggested_action": "Confirmer la règle de déduplication métier avant toute suppression par l'ETL."
+    }
+  ],
+  "llm_summary": "Tables profilées : Call Details-Data : 101174 ligne(s), 17 colonne(s)\nProblèmes prioritaires : medium — Call Details-Data.Day Mins : iqr_or_zscore_outlier. 15219 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Day Charge : iqr_or_zscore_outlier. 3844 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Eve Mins : iqr_or_zscore_outlier. 12435 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Eve Charge : iqr_or_zscore_outlier. 12329 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Night Mins : iqr_or_zscore_outlier. 12411 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Night Charge : iqr_or_zscore_outlier. 3754 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Intl Mins : iqr_or_zscore_outlier. 8279 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data.Intl Charge : iqr_or_zscore_outlier. 4892 ligne(s) signalée(s) par IQR ou z-score sur 101174 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — Call Details-Data : exact_duplicate_rows. 40729 ligne(s) dupliquée(s) exactement sur 101174 lignes profilées. Action : Confirmer la règle de déduplication métier avant toute suppression par l'ETL.",
+  "status": "warning",
+  "trace": [
+    {
+      "timestamp": "2026-10-26T20:03:41.970499",
+      "tool": "load_source",
+      "parameters": {
+        "source_name": "Call Details-Data",
+        "source_type": "csv",
+        "sampled": false,
+        "sample_rows": 101174
+      },
+      "duration_ms": 135.16359999994165
+    }
+  ],
+  "semantic_map": {
+    "domain": "customer_churn",
+    "primary_target": "Churn",
+    "concepts": {
+      "target_churn": "Churn",
+      "monthly_charge": "Day Charge"
+    },
+    "candidate_targets": [
+      {
+        "column": "Churn",
+        "type": "binary_flag",
+        "positive_rate": 0.1041,
+        "is_churn_lexical": true,
+        "is_network_incident": false
+      }
+    ],
+    "all_columns": [
+      "Phone Number",
+      "Account Length",
+      "VMail Message",
+      "Day Mins",
+      "Day Calls",
+      "Day Charge",
+      "Eve Mins",
+      "Eve Calls",
+      "Eve Charge",
+      "Night Mins",
+      "Night Calls",
+      "Night Charge",
+      "Intl Mins",
+      "Intl Calls",
+      "Intl Charge",
+      "CustServ Calls",
+      "Churn"
+    ]
+  },
+  "errors": []
+}

@@ -1,0 +1,926 @@
+{
+  "business_goal": "Test multi-usage autonome",
+  "status": "warning",
+  "etl_status": "warning",
+  "kpis": [
+    {
+      "id": "ticket_count",
+      "name": "Nombre de tickets / réclamations",
+      "category": "Operations & Support",
+      "definition": "Nombre total de tickets ou réclamations distinctes.",
+      "formula": "nombre_distinct(ticket_id)",
+      "unit": "tickets",
+      "status": "computed",
+      "value": 5000.0,
+      "table": "telecom_complaints_sample",
+      "rows_used": 5000,
+      "columns_used": {
+        "id": "complaint_id"
+      },
+      "missing_inputs": {},
+      "breakdowns": {
+        "product": [
+          {
+            "segment": "Bank account or service",
+            "value": 646.0,
+            "rows": 646
+          },
+          {
+            "segment": "Consumer Loan",
+            "value": 145.0,
+            "rows": 145
+          },
+          {
+            "segment": "Credit card",
+            "value": 548.0,
+            "rows": 548
+          },
+          {
+            "segment": "Credit reporting",
+            "value": 683.0,
+            "rows": 683
+          },
+          {
+            "segment": "Debt collection",
+            "value": 931.0,
+            "rows": 931
+          },
+          {
+            "segment": "Money transfers",
+            "value": 35.0,
+            "rows": 35
+          },
+          {
+            "segment": "Mortgage",
+            "value": 1846.0,
+            "rows": 1846
+          },
+          {
+            "segment": "Student loan",
+            "value": 163.0,
+            "rows": 163
+          }
+        ],
+        "submitted_via": [
+          {
+            "segment": "Fax",
+            "value": 87.0,
+            "rows": 87
+          },
+          {
+            "segment": "Phone",
+            "value": 440.0,
+            "rows": 440
+          },
+          {
+            "segment": "Postal mail",
+            "value": 403.0,
+            "rows": 403
+          },
+          {
+            "segment": "Referral",
+            "value": 981.0,
+            "rows": 981
+          },
+          {
+            "segment": "Web",
+            "value": 3087.0,
+            "rows": 3087
+          }
+        ],
+        "company_response_to_consumer": [
+          {
+            "segment": "Closed",
+            "value": 111.0,
+            "rows": 111
+          },
+          {
+            "segment": "Closed with explanation",
+            "value": 3753.0,
+            "rows": 3753
+          },
+          {
+            "segment": "Closed with monetary relief",
+            "value": 426.0,
+            "rows": 426
+          },
+          {
+            "segment": "Closed with non-monetary relief",
+            "value": 705.0,
+            "rows": 705
+          }
+        ]
+      },
+      "justification": "Calculable : colonnes trouvées dans « telecom_complaints_sample » (id=complaint_id). Calcul déterministe : nombre_distinct(ticket_id).",
+      "warnings": []
+    },
+    {
+      "id": "dispute_rate",
+      "name": "Taux de litiges clients",
+      "category": "Operations & Support",
+      "definition": "Part des réclamations ayant entraîné un litige client.",
+      "formula": "réclamations_contestées / total_réclamations × 100",
+      "unit": "%",
+      "status": "computed",
+      "value": 20.06,
+      "table": "telecom_complaints_sample",
+      "rows_used": 5000,
+      "columns_used": {
+        "flag": "consumer_disputed"
+      },
+      "missing_inputs": {},
+      "breakdowns": {
+        "product": [
+          {
+            "segment": "Bank account or service",
+            "value": 19.2,
+            "rows": 646
+          },
+          {
+            "segment": "Consumer Loan",
+            "value": 24.83,
+            "rows": 145
+          },
+          {
+            "segment": "Credit card",
+            "value": 16.61,
+            "rows": 548
+          },
+          {
+            "segment": "Credit reporting",
+            "value": 20.35,
+            "rows": 683
+          },
+          {
+            "segment": "Debt collection",
+            "value": 16.76,
+            "rows": 931
+          },
+          {
+            "segment": "Money transfers",
+            "value": 14.29,
+            "rows": 35
+          },
+          {
+            "segment": "Mortgage",
+            "value": 22.48,
+            "rows": 1846
+          },
+          {
+            "segment": "Student loan",
+            "value": 22.7,
+            "rows": 163
+          }
+        ],
+        "submitted_via": [
+          {
+            "segment": "Fax",
+            "value": 19.54,
+            "rows": 87
+          },
+          {
+            "segment": "Phone",
+            "value": 13.86,
+            "rows": 440
+          },
+          {
+            "segment": "Postal mail",
+            "value": 13.65,
+            "rows": 403
+          },
+          {
+            "segment": "Referral",
+            "value": 18.25,
+            "rows": 981
+          },
+          {
+            "segment": "Web",
+            "value": 22.35,
+            "rows": 3087
+          }
+        ],
+        "company_response_to_consumer": [
+          {
+            "segment": "Closed",
+            "value": 20.72,
+            "rows": 111
+          },
+          {
+            "segment": "Closed with explanation",
+            "value": 22.3,
+            "rows": 3753
+          },
+          {
+            "segment": "Closed with monetary relief",
+            "value": 11.74,
+            "rows": 426
+          },
+          {
+            "segment": "Closed with non-monetary relief",
+            "value": 13.19,
+            "rows": 705
+          }
+        ]
+      },
+      "justification": "Calculable : colonnes trouvées dans « telecom_complaints_sample » (flag=consumer_disputed). Calcul déterministe : réclamations_contestées / total_réclamations × 100.",
+      "warnings": []
+    },
+    {
+      "id": "timely_response_rate",
+      "name": "Taux de réponse dans les délais",
+      "category": "Operations & Support",
+      "definition": "Part des réclamations traitées dans le délai imparti.",
+      "formula": "réponses_dans_les_délais / total × 100",
+      "unit": "%",
+      "status": "computed",
+      "value": 98.44,
+      "table": "telecom_complaints_sample",
+      "rows_used": 5000,
+      "columns_used": {
+        "flag": "timely_response"
+      },
+      "missing_inputs": {},
+      "breakdowns": {
+        "product": [
+          {
+            "segment": "Bank account or service",
+            "value": 98.92,
+            "rows": 646
+          },
+          {
+            "segment": "Consumer Loan",
+            "value": 100.0,
+            "rows": 145
+          },
+          {
+            "segment": "Credit card",
+            "value": 100.0,
+            "rows": 548
+          },
+          {
+            "segment": "Credit reporting",
+            "value": 99.71,
+            "rows": 683
+          },
+          {
+            "segment": "Debt collection",
+            "value": 94.74,
+            "rows": 931
+          },
+          {
+            "segment": "Money transfers",
+            "value": 97.14,
+            "rows": 35
+          },
+          {
+            "segment": "Mortgage",
+            "value": 99.13,
+            "rows": 1846
+          },
+          {
+            "segment": "Student loan",
+            "value": 99.39,
+            "rows": 163
+          }
+        ],
+        "submitted_via": [
+          {
+            "segment": "Fax",
+            "value": 97.7,
+            "rows": 87
+          },
+          {
+            "segment": "Phone",
+            "value": 98.18,
+            "rows": 440
+          },
+          {
+            "segment": "Postal mail",
+            "value": 98.51,
+            "rows": 403
+          },
+          {
+            "segment": "Referral",
+            "value": 99.08,
+            "rows": 981
+          },
+          {
+            "segment": "Web",
+            "value": 98.28,
+            "rows": 3087
+          }
+        ],
+        "company_response_to_consumer": [
+          {
+            "segment": "Closed",
+            "value": 93.69,
+            "rows": 111
+          },
+          {
+            "segment": "Closed with explanation",
+            "value": 98.48,
+            "rows": 3753
+          },
+          {
+            "segment": "Closed with monetary relief",
+            "value": 99.53,
+            "rows": 426
+          },
+          {
+            "segment": "Closed with non-monetary relief",
+            "value": 99.01,
+            "rows": 705
+          }
+        ]
+      },
+      "justification": "Calculable : colonnes trouvées dans « telecom_complaints_sample » (flag=timely_response). Calcul déterministe : réponses_dans_les_délais / total × 100.",
+      "warnings": []
+    },
+    {
+      "id": "churn_rate",
+      "name": "Taux de churn",
+      "category": "Churn",
+      "definition": "Part des clients ayant quitté l'opérateur.",
+      "formula": "clients_churnés / clients_total × 100",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "flag": [
+          "churn_value",
+          "churn_flag",
+          "churn",
+          "is_churn",
+          "churned",
+          "churn_label"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← churn_value/churn_flag/churn/is_churn/churned/churn_label).",
+      "warnings": []
+    },
+    {
+      "id": "churned_customers",
+      "name": "Clients churnés",
+      "category": "Churn",
+      "definition": "Nombre de clients ayant quitté l'opérateur.",
+      "formula": "somme(indicateur_churn)",
+      "unit": "clients",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "flag": [
+          "churn_value",
+          "churn_flag",
+          "churn",
+          "is_churn",
+          "churned",
+          "churn_label"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← churn_value/churn_flag/churn/is_churn/churned/churn_label).",
+      "warnings": []
+    },
+    {
+      "id": "avg_churn_score",
+      "name": "Score de churn moyen",
+      "category": "Churn",
+      "definition": "Score moyen de risque de départ (0 à 100) du portefeuille.",
+      "formula": "moyenne(churn_score)",
+      "unit": "points",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "churn_score"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← churn_score).",
+      "warnings": []
+    },
+    {
+      "id": "monthly_revenue_lost",
+      "name": "Revenu mensuel perdu par churn",
+      "category": "Churn",
+      "definition": "Revenu mensuel récurrent des clients qui sont partis.",
+      "formula": "somme(frais_mensuels) pour les clients churnés",
+      "unit": "devise/mois",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "monthly_charges",
+          "monthly_charge",
+          "monthly_fee",
+          "monthly_revenue",
+          "total_day_charge",
+          "day_charge"
+        ],
+        "flag": [
+          "churn_value",
+          "churn_flag",
+          "churn",
+          "is_churn",
+          "churned",
+          "churn_label"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← monthly_charges/monthly_charge/monthly_fee/monthly_revenue/total_day_charge/day_charge; flag ← churn_value/churn_flag/churn/is_churn/churned/churn_label).",
+      "warnings": []
+    },
+    {
+      "id": "customer_count",
+      "name": "Nombre de clients",
+      "category": "Customer Base",
+      "definition": "Nombre de clients distincts dans la table.",
+      "formula": "nombre_distinct(identifiant_client)",
+      "unit": "clients",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "id": [
+          "customer_id",
+          "customerid",
+          "subscriber_id",
+          "phone_number"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (id ← customer_id/customerid/subscriber_id/phone_number).",
+      "warnings": []
+    },
+    {
+      "id": "avg_tenure",
+      "name": "Ancienneté moyenne",
+      "category": "Customer Base",
+      "definition": "Durée moyenne depuis la souscription.",
+      "formula": "moyenne(ancienneté_en_mois)",
+      "unit": "mois",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "tenure_months",
+          "tenure",
+          "months_active",
+          "account_length"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← tenure_months/tenure/months_active/account_length).",
+      "warnings": []
+    },
+    {
+      "id": "arpu",
+      "name": "ARPU mensuel",
+      "category": "Billing & Revenue",
+      "definition": "Revenu mensuel moyen par client.",
+      "formula": "moyenne(frais_mensuels)",
+      "unit": "devise/client/mois",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "monthly_charges",
+          "monthly_charge",
+          "monthly_fee",
+          "monthly_revenue",
+          "total_day_charge",
+          "day_charge"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← monthly_charges/monthly_charge/monthly_fee/monthly_revenue/total_day_charge/day_charge).",
+      "warnings": []
+    },
+    {
+      "id": "total_revenue",
+      "name": "Revenu cumulé",
+      "category": "Billing & Revenue",
+      "definition": "Somme des montants facturés depuis la souscription.",
+      "formula": "somme(total_facturé)",
+      "unit": "devise",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "total_charges",
+          "total_revenue",
+          "total_billed"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← total_charges/total_revenue/total_billed).",
+      "warnings": []
+    },
+    {
+      "id": "avg_cltv",
+      "name": "CLTV moyen",
+      "category": "Billing & Revenue",
+      "definition": "Valeur vie client moyenne estimée.",
+      "formula": "moyenne(cltv)",
+      "unit": "devise",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "cltv",
+          "clv",
+          "customer_lifetime_value"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← cltv/clv/customer_lifetime_value).",
+      "warnings": []
+    },
+    {
+      "id": "unpaid_rate",
+      "name": "Taux d'impayés",
+      "category": "Billing & Revenue",
+      "definition": "Part du montant facturé restée impayée.",
+      "formula": "somme(montant_impayé) / somme(montant_facturé) × 100",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "num": [
+          "unpaid_amount",
+          "overdue_amount"
+        ],
+        "den": [
+          "billed_amount",
+          "invoice_amount"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (num ← unpaid_amount/overdue_amount; den ← billed_amount/invoice_amount).",
+      "warnings": []
+    },
+    {
+      "id": "avg_mos_voice",
+      "name": "Score MOS Voix moyen",
+      "category": "Network Performance",
+      "definition": "Score moyen d'opinion (MOS) de la qualité vocale (1 à 5).",
+      "formula": "moyenne(mos_voice)",
+      "unit": "score",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "mos_voice",
+          "mos",
+          "streaming_mos"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← mos_voice/mos/streaming_mos).",
+      "warnings": []
+    },
+    {
+      "id": "avg_throughput",
+      "name": "Débit moyen",
+      "category": "Network Performance",
+      "definition": "Débit réseau moyen observé.",
+      "formula": "moyenne(throughput)",
+      "unit": "Mbps",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "throughput_mbps",
+          "effective_bitrate_mbps",
+          "throughput",
+          "download_speed_mbps",
+          "download_speed"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← throughput_mbps/effective_bitrate_mbps/throughput/download_speed_mbps/download_speed).",
+      "warnings": []
+    },
+    {
+      "id": "avg_upload_speed",
+      "name": "Débit montant moyen",
+      "category": "Network Performance",
+      "definition": "Débit montant (upload) moyen observé.",
+      "formula": "moyenne(upload_speed)",
+      "unit": "Mbps",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "upload_speed_mbps",
+          "upload_speed"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← upload_speed_mbps/upload_speed).",
+      "warnings": []
+    },
+    {
+      "id": "avg_latency",
+      "name": "Latence moyenne",
+      "category": "Network Performance",
+      "definition": "Latence réseau moyenne observée.",
+      "formula": "moyenne(latence)",
+      "unit": "ms",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "latency_ms",
+          "latency",
+          "dns_latency_ms",
+          "ping_to_google_ms"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← latency_ms/latency/dns_latency_ms/ping_to_google_ms).",
+      "warnings": []
+    },
+    {
+      "id": "avg_packet_loss",
+      "name": "Taux de perte de paquets",
+      "category": "Network Performance",
+      "definition": "Pourcentage moyen de paquets perdus.",
+      "formula": "moyenne(plr)",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "plr",
+          "packet_loss"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← plr/packet_loss).",
+      "warnings": []
+    },
+    {
+      "id": "network_availability",
+      "name": "Disponibilité réseau",
+      "category": "Network Performance",
+      "definition": "Taux moyen de disponibilité des équipements.",
+      "formula": "moyenne(availability)",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "availability"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← availability).",
+      "warnings": []
+    },
+    {
+      "id": "dropped_call_rate",
+      "name": "Taux d'appels coupés",
+      "category": "Network Performance",
+      "definition": "Part des appels interrompus avant la fin normale.",
+      "formula": "somme(appels_coupés) / somme(appels_total) × 100",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "num": [
+          "dropped_calls"
+        ],
+        "den": [
+          "total_calls",
+          "calls"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (num ← dropped_calls; den ← total_calls/calls).",
+      "warnings": []
+    },
+    {
+      "id": "cdr_incident_rate",
+      "name": "Taux d'incidents réseau / CDR",
+      "category": "Network Performance",
+      "definition": "Part des sessions réseau ayant subi un incident ou coupure.",
+      "formula": "sessions_en_incident / sessions_total × 100",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "flag": [
+          "cdr_flag",
+          "incident_flag",
+          "call_drop",
+          "dropped_connection"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← cdr_flag/incident_flag/call_drop/dropped_connection).",
+      "warnings": []
+    },
+    {
+      "id": "avg_signal_strength",
+      "name": "Force du signal moyen",
+      "category": "Network Performance",
+      "definition": "Puissance moyenne du signal radio.",
+      "formula": "moyenne(signal_strength_dbm)",
+      "unit": "dBm",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "signal_strength_dbm",
+          "signal_strength",
+          "rssi",
+          "rsrp"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← signal_strength_dbm/signal_strength/rssi/rsrp).",
+      "warnings": []
+    },
+    {
+      "id": "avg_data_usage",
+      "name": "Consommation data moyenne",
+      "category": "Usage & Consumption",
+      "definition": "Volume de données moyen consommé par session/ligne.",
+      "formula": "moyenne(volume_data)",
+      "unit": "Mo",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "data_usage_mb",
+          "data_mb",
+          "data_usage",
+          "internet_mb"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← data_usage_mb/data_mb/data_usage/internet_mb).",
+      "warnings": []
+    },
+    {
+      "id": "ticket_resolution_rate",
+      "name": "Taux de résolution des tickets",
+      "category": "Operations & Support",
+      "definition": "Part des tickets ou réclamations résolus / clos.",
+      "formula": "tickets_clos / total_tickets × 100",
+      "unit": "%",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "flag": [
+          "ticket_status",
+          "status",
+          "case_status"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← ticket_status/status/case_status).",
+      "warnings": []
+    },
+    {
+      "id": "avg_csat",
+      "name": "Score de satisfaction moyen (CSAT)",
+      "category": "Operations & Support",
+      "definition": "Score moyen de satisfaction client.",
+      "formula": "moyenne(satisfaction_client)",
+      "unit": "score",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "customer_satisfaction_rating",
+          "csat",
+          "satisfaction_rating",
+          "rating"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← customer_satisfaction_rating/csat/satisfaction_rating/rating).",
+      "warnings": []
+    },
+    {
+      "id": "avg_resolution_time",
+      "name": "Temps de résolution moyen",
+      "category": "Operations & Support",
+      "definition": "Délai moyen de résolution d'un ticket.",
+      "formula": "moyenne(temps_de_résolution)",
+      "unit": "h",
+      "status": "not_computable",
+      "value": null,
+      "table": null,
+      "rows_used": 0,
+      "columns_used": {},
+      "missing_inputs": {
+        "value": [
+          "resolution_time_hours",
+          "resolution_time",
+          "resolution_hours"
+        ]
+      },
+      "breakdowns": {},
+      "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← resolution_time_hours/resolution_time/resolution_hours).",
+      "warnings": []
+    }
+  ],
+  "caveats": [
+    "ETL — telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}."
+  ],
+  "output_files": {
+    "report": "output_test\\telecom_complaints_sample\\kpi\\kpi_report.json",
+    "values": "output_test\\telecom_complaints_sample\\kpi\\kpi_values.csv"
+  },
+  "llm_summary": "3 KPI calculé(s) sur 26 du catalogue.\n- Nombre de tickets / réclamations (Operations & Support) : 5000.0 tickets — Nombre total de tickets ou réclamations distinctes.\n- Taux de litiges clients (Operations & Support) : 20.06 % — Part des réclamations ayant entraîné un litige client.\n- Taux de réponse dans les délais (Operations & Support) : 98.44 % — Part des réclamations traitées dans le délai imparti.\nNon calculables avec ces données : Taux de churn, Clients churnés, Score de churn moyen, Revenu mensuel perdu par churn, Nombre de clients, Ancienneté moyenne, ARPU mensuel, Revenu cumulé, CLTV moyen, Taux d'impayés, Score MOS Voix moyen, Débit moyen, Débit montant moyen, Latence moyenne, Taux de perte de paquets, Disponibilité réseau, Taux d'appels coupés, Taux d'incidents réseau / CDR, Force du signal moyen, Consommation data moyenne, Taux de résolution des tickets, Score de satisfaction moyen (CSAT), Temps de résolution moyen.\nRéserves :\n- ETL — telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}.",
+  "trace": [
+    {
+      "timestamp": "2026-10-27T18:46:59.633771",
+      "tool": "compute_table",
+      "parameters": {
+        "table": "telecom_complaints_sample",
+        "kpis": 3
+      },
+      "duration_ms": 127.5141999999505
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.633771",
+      "tool": "validate",
+      "parameters": {
+        "kpis": 26
+      },
+      "duration_ms": 0.019099999917671084
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-27T18:46:59.506176"
+}

@@ -1,0 +1,96 @@
+{
+  "business_goal": "Analyse décisionnelle télécom",
+  "status": "warning",
+  "kpi_status": "warning",
+  "insights": [],
+  "recommendations": [],
+  "profile_comparisons": [],
+  "caveats": [
+    "ETL — Call Details-Data : Variable d'environnement BIFLOW_PII_SALT absente : sel par défaut utilisé pour le hachage.",
+    "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+    "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+  ],
+  "null_result": true,
+  "n_tests": 0,
+  "n_significant_segments": 0,
+  "overlap_warning": false,
+  "excluded_kpis": [
+    {
+      "kpi_id": "avg_churn_score",
+      "reason": "fuite de cible (corrélé directement à churn_label)"
+    }
+  ],
+  "llm_narrative": "Analyse terminée. Aucun segment ne présente à la fois une significativité statistique (p ajustée <= 0,05), un écart suffisant et un effectif fiable. ",
+  "output_files": {},
+  "trace": [
+    {
+      "timestamp": "2026-10-26T20:03:50.331184",
+      "tool": "load",
+      "parameters": {
+        "kpis_computed": 2,
+        "table_loaded": true,
+        "excluded_cols": [
+          "churn",
+          "count",
+          "country",
+          "phone_number",
+          "state"
+        ]
+      },
+      "duration_ms": 10.255700000016077
+    },
+    {
+      "timestamp": "2026-10-26T20:03:50.340695",
+      "tool": "segment",
+      "parameters": {
+        "n_segments_kpi": 0,
+        "n_segments_analyst": 0,
+        "n_mw": 0
+      },
+      "duration_ms": 9.63659999979427
+    },
+    {
+      "timestamp": "2026-10-26T20:03:50.340695",
+      "tool": "test",
+      "parameters": {
+        "n_tests": 0
+      },
+      "duration_ms": 0.0038999996831989847
+    },
+    {
+      "timestamp": "2026-10-26T20:03:50.341697",
+      "tool": "impact",
+      "parameters": {
+        "n_segs": 0
+      },
+      "duration_ms": 0.002200000380980782
+    },
+    {
+      "timestamp": "2026-10-26T20:03:50.341697",
+      "tool": "rank",
+      "parameters": {
+        "n_passing": 0,
+        "n_mw": 0
+      },
+      "duration_ms": 0.014899999769113492
+    },
+    {
+      "timestamp": "2026-10-26T20:03:50.341697",
+      "tool": "recommend",
+      "parameters": {
+        "n_rec": 0
+      },
+      "duration_ms": 0.002200000380980782
+    },
+    {
+      "timestamp": "2026-10-26T20:03:50.341697",
+      "tool": "narrate",
+      "parameters": {
+        "llm": false
+      },
+      "duration_ms": 0.006000000212225132
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-26T20:03:50.330183"
+}

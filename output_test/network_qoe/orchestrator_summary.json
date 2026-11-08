@@ -1,0 +1,5585 @@
+{
+  "status": "success",
+  "dataset_name": "network_qoe",
+  "business_goal": "Test multi-usage autonome",
+  "execution_start": "2026-10-27T17:46:34.136421",
+  "execution_end": "2026-10-27T17:46:58.341230",
+  "total_duration_seconds": 24.2,
+  "steps": [
+    {
+      "agent_name": "profiler",
+      "status": "success",
+      "duration_seconds": 8.07,
+      "message": "15 anomalies détectées"
+    },
+    {
+      "agent_name": "etl",
+      "status": "success",
+      "duration_seconds": 11.08,
+      "message": "21 actions appliquées, étoile validée"
+    },
+    {
+      "agent_name": "kpi",
+      "status": "success",
+      "duration_seconds": 0.49,
+      "message": "6 KPIs calculés"
+    },
+    {
+      "agent_name": "bi_analyst",
+      "status": "success",
+      "duration_seconds": 0.53,
+      "message": "0 insights, 0 recommandations"
+    },
+    {
+      "agent_name": "dashboard",
+      "status": "success",
+      "duration_seconds": 0.01,
+      "message": "21 visuels générés dans 4 sections"
+    },
+    {
+      "agent_name": "xai",
+      "status": "success",
+      "duration_seconds": 4.03,
+      "message": "AUC: 1.000, Top: mos_voice, plr, availability"
+    }
+  ],
+  "profiler_report": {
+    "business_goal": "Test multi-usage autonome",
+    "domain": "network_performance",
+    "semantic_map": {
+      "domain": "network_performance",
+      "confidence_scores": {
+        "customer_churn": 0.0,
+        "network_performance": 33.0,
+        "customer_support": 0.0
+      },
+      "primary_target": "cdr_flag",
+      "concepts": {
+        "target_churn": null,
+        "tenure": null,
+        "monthly_charge": null,
+        "total_revenue": null,
+        "contract": "dataplane_latency_ms",
+        "mos_score": "mos_voice",
+        "latency": "dns_latency_ms",
+        "throughput": "throughput_mbps",
+        "upload_speed": null,
+        "packet_loss": "plr",
+        "signal_strength": null,
+        "target_network_incident": "cdr_flag",
+        "availability": "availability",
+        "ticket_id": null,
+        "ticket_status": null,
+        "dispute_flag": null,
+        "timely_response": null,
+        "csat_score": null,
+        "resolution_time": null
+      }
+    },
+    "tables": [
+      {
+        "name": "network_qoe",
+        "source_name": "network_qoe",
+        "row_count": 167431,
+        "column_count": 33,
+        "memory_bytes": 54578443,
+        "sampled": false,
+        "sample_rows": null,
+        "columns": [
+          {
+            "name": "run_id",
+            "declared_type": "str",
+            "inferred_type": "categorical",
+            "semantic_role": "id",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 1,
+            "stats": {
+              "count": 167431,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "run_20260409_120415",
+                    "count": 167431
+                  }
+                ]
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "timestamp",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "date",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 41860,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 1774593194.635944,
+                "max": 1774700890.70332,
+                "mean": 1774647017.599599,
+                "median": 1774647009.340708,
+                "std": 31056.417826842557,
+                "q1": 1774620161.3733332,
+                "q3": 1774673879.459699
+              }
+            },
+            "rare_values": [],
+            "is_pii": true,
+            "pii_categories": [
+              "phone"
+            ],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "datetime",
+            "declared_type": "str",
+            "inferred_type": "datetime",
+            "semantic_role": "date",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 38120,
+            "stats": {
+              "count": 167431,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "07:33:14",
+                    "count": 8
+                  },
+                  {
+                    "value": "07:33:27",
+                    "count": 8
+                  },
+                  {
+                    "value": "07:33:29",
+                    "count": 8
+                  },
+                  {
+                    "value": "07:33:31",
+                    "count": 8
+                  },
+                  {
+                    "value": "07:33:33",
+                    "count": 8
+                  },
+                  {
+                    "value": "07:33:35",
+                    "count": 8
+                  },
+                  {
+                    "value": "07:33:37",
+                    "count": 8
+                  },
+                  {
+                    "value": "07:33:39",
+                    "count": 8
+                  },
+                  {
+                    "value": "07:33:41",
+                    "count": 8
+                  },
+                  {
+                    "value": "07:33:56",
+                    "count": 8
+                  }
+                ]
+              }
+            },
+            "rare_values": [
+              {
+                "value": "07:33:14",
+                "count": 8
+              },
+              {
+                "value": "07:33:27",
+                "count": 8
+              },
+              {
+                "value": "07:33:29",
+                "count": 8
+              },
+              {
+                "value": "07:33:31",
+                "count": 8
+              },
+              {
+                "value": "07:33:33",
+                "count": 8
+              },
+              {
+                "value": "07:33:35",
+                "count": 8
+              },
+              {
+                "value": "07:33:37",
+                "count": 8
+              },
+              {
+                "value": "07:33:39",
+                "count": 8
+              },
+              {
+                "value": "07:33:41",
+                "count": 8
+              },
+              {
+                "value": "07:33:56",
+                "count": 8
+              },
+              {
+                "value": "07:33:58",
+                "count": 8
+              },
+              {
+                "value": "07:34:00",
+                "count": 8
+              },
+              {
+                "value": "07:34:02",
+                "count": 8
+              },
+              {
+                "value": "07:34:04",
+                "count": 8
+              },
+              {
+                "value": "07:34:06",
+                "count": 8
+              },
+              {
+                "value": "07:34:08",
+                "count": 8
+              },
+              {
+                "value": "07:34:10",
+                "count": 8
+              },
+              {
+                "value": "07:34:33",
+                "count": 8
+              },
+              {
+                "value": "07:34:35",
+                "count": 8
+              },
+              {
+                "value": "07:34:37",
+                "count": 8
+              },
+              {
+                "value": "07:34:54",
+                "count": 8
+              },
+              {
+                "value": "07:34:56",
+                "count": 8
+              },
+              {
+                "value": "07:34:58",
+                "count": 8
+              },
+              {
+                "value": "07:35:00",
+                "count": 8
+              },
+              {
+                "value": "07:35:02",
+                "count": 8
+              },
+              {
+                "value": "07:35:04",
+                "count": 8
+              },
+              {
+                "value": "07:35:06",
+                "count": 8
+              },
+              {
+                "value": "07:35:23",
+                "count": 8
+              },
+              {
+                "value": "07:35:25",
+                "count": 8
+              },
+              {
+                "value": "07:35:27",
+                "count": 8
+              },
+              {
+                "value": "07:35:29",
+                "count": 8
+              },
+              {
+                "value": "07:35:31",
+                "count": 8
+              },
+              {
+                "value": "07:35:33",
+                "count": 8
+              },
+              {
+                "value": "07:35:35",
+                "count": 8
+              },
+              {
+                "value": "07:35:37",
+                "count": 8
+              },
+              {
+                "value": "07:36:21",
+                "count": 8
+              },
+              {
+                "value": "07:36:23",
+                "count": 8
+              },
+              {
+                "value": "07:36:25",
+                "count": 8
+              },
+              {
+                "value": "07:36:27",
+                "count": 8
+              },
+              {
+                "value": "07:36:29",
+                "count": 8
+              },
+              {
+                "value": "07:36:31",
+                "count": 8
+              },
+              {
+                "value": "07:36:46",
+                "count": 8
+              },
+              {
+                "value": "07:36:48",
+                "count": 8
+              },
+              {
+                "value": "07:36:50",
+                "count": 8
+              },
+              {
+                "value": "07:36:52",
+                "count": 8
+              },
+              {
+                "value": "07:36:54",
+                "count": 8
+              },
+              {
+                "value": "07:37:19",
+                "count": 8
+              },
+              {
+                "value": "07:37:21",
+                "count": 8
+              },
+              {
+                "value": "07:37:23",
+                "count": 8
+              },
+              {
+                "value": "07:37:40",
+                "count": 8
+              }
+            ],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "segment",
+            "declared_type": "str",
+            "inferred_type": "categorical",
+            "semantic_role": "dimension",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 4,
+            "stats": {
+              "count": 167431,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "INTERNET",
+                    "count": 41858
+                  },
+                  {
+                    "value": "OUTDOOR_RAN",
+                    "count": 41858
+                  },
+                  {
+                    "value": "INDOOR_RAN",
+                    "count": 41858
+                  },
+                  {
+                    "value": "IMS_CDN",
+                    "count": 41857
+                  }
+                ]
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "switch_id",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "id",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 1,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 1.0,
+                "max": 1.0,
+                "mean": 1.0,
+                "median": 1.0,
+                "std": 0.0,
+                "q1": 1.0,
+                "q3": 1.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "port_no",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 4,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 1.0,
+                "max": 4.0,
+                "mean": 2.499997013695194,
+                "median": 2.0,
+                "std": 1.118039998588142,
+                "q1": 1.5,
+                "q3": 3.5
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "mos_voice",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 3401,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 1.0,
+                "max": 4.4,
+                "mean": 3.4902948737091695,
+                "median": 4.114,
+                "std": 1.1726971281612313,
+                "q1": 2.693,
+                "q3": 4.39
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "e2e_delay_ms",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 30863,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 5.377,
+                "max": 235.4,
+                "mean": 33.50381267507212,
+                "median": 16.458,
+                "std": 41.68968118277849,
+                "q1": 11.445,
+                "q3": 26.534
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 25439,
+            "anomaly_examples": [
+              "50.587",
+              "50.587",
+              "50.587",
+              "153.45",
+              "192.25"
+            ]
+          },
+          {
+            "name": "plr",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 71244,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 1.0,
+                "mean": 0.09703623959123459,
+                "median": 0.011076,
+                "std": 0.21560508896464575,
+                "q1": 0.000012,
+                "q3": 0.06563949999999999
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 25737,
+            "anomaly_examples": [
+              "0.541012",
+              "0.576629",
+              "0.473659",
+              "0.471343",
+              "0.478915"
+            ]
+          },
+          {
+            "name": "jitter_ms",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 38557,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 73.0435,
+                "mean": 3.586725689388465,
+                "median": 2.8315,
+                "std": 3.7809172935926574,
+                "q1": 1.119,
+                "q3": 4.469
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 11764,
+            "anomaly_examples": [
+              "10.436",
+              "10.436",
+              "10.436",
+              "18.935",
+              "12.353"
+            ]
+          },
+          {
+            "name": "cdr_flag",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 2,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 1.0,
+                "mean": 0.17450173504309238,
+                "median": 0.0,
+                "std": 0.37954148636855106,
+                "q1": 0.0,
+                "q3": 0.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "call_setup_time_ms",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "date",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 18883,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 261.8,
+                "max": 10000.0,
+                "mean": 907.2356546876025,
+                "median": 397.3,
+                "std": 1704.320641670941,
+                "q1": 323.4,
+                "q3": 712.9
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 24004,
+            "anomaly_examples": [
+              "1310.1",
+              "1748.5",
+              "2147.3",
+              "1610.7",
+              "1676.3"
+            ]
+          },
+          {
+            "name": "buffering_ratio",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 2408,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 1.0,
+                "mean": 0.9370960288118687,
+                "median": 0.9605,
+                "std": 0.12822748113944468,
+                "q1": 0.9089,
+                "q3": 0.9951
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 3069,
+            "anomaly_examples": [
+              "0.0",
+              "0.0",
+              "0.0",
+              "0.0",
+              "0.0"
+            ]
+          },
+          {
+            "name": "rebuffering_freq",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 155,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 10.0,
+                "mean": 9.840810542850488,
+                "median": 10.0,
+                "std": 1.2459871381852794,
+                "q1": 10.0,
+                "q3": 10.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 2660,
+            "anomaly_examples": [
+              "0.0",
+              "0.0",
+              "0.0",
+              "0.0",
+              "0.0"
+            ]
+          },
+          {
+            "name": "rebuffering_count",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 1,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 0.0,
+                "mean": 0.0,
+                "median": 0.0,
+                "std": 0.0,
+                "q1": 0.0,
+                "q3": 0.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "total_stall_seconds",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 1,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 0.0,
+                "mean": 0.0,
+                "median": 0.0,
+                "std": 0.0,
+                "q1": 0.0,
+                "q3": 0.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "video_start_time_ms",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "date",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 144266,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 1585430372383712.5,
+                "mean": 44456546406.46386,
+                "median": 50643.9,
+                "std": 5738440555369.608,
+                "q1": 21961.300000000003,
+                "q3": 411319.5
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 7305,
+            "anomaly_examples": [
+              "37031904.3",
+              "18491562.2",
+              "37031904.3",
+              "18491562.2",
+              "52902717.3"
+            ]
+          },
+          {
+            "name": "streaming_mos",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 10,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 4.5,
+                "mean": 1.3508215324521744,
+                "median": 1.3,
+                "std": 0.39711424333724216,
+                "q1": 1.3,
+                "q3": 1.3
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 2680,
+            "anomaly_examples": [
+              "0.0",
+              "0.0",
+              "0.0",
+              "0.0",
+              "4.5"
+            ]
+          },
+          {
+            "name": "effective_bitrate_mbps",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 5961,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 3.7047,
+                "mean": 0.14772013605604695,
+                "median": 0.079,
+                "std": 0.4235511638849764,
+                "q1": 0.0097,
+                "q3": 0.1823
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 3064,
+            "anomaly_examples": [
+              "2.5692",
+              "2.8741",
+              "3.1428",
+              "3.398",
+              "3.318"
+            ]
+          },
+          {
+            "name": "throughput_mbps",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 86082,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 4.74751,
+                "mean": 0.18194415658390622,
+                "median": 0.100345,
+                "std": 0.5531136449335765,
+                "q1": 0.010454,
+                "q3": 0.205696
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 3172,
+            "anomaly_examples": [
+              "1.951997",
+              "4.48846",
+              "4.621633",
+              "4.747388",
+              "4.386332"
+            ]
+          },
+          {
+            "name": "dns_latency_ms",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 16151,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 2092.0,
+                "mean": 313.8373825635635,
+                "median": 80.1,
+                "std": 514.6820408942127,
+                "q1": 38.0,
+                "q3": 290.7
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 25093,
+            "anomaly_examples": [
+              "1611.4",
+              "1683.0",
+              "1476.5",
+              "1479.5",
+              "1499.4"
+            ]
+          },
+          {
+            "name": "availability",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 6838,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 1.0,
+                "mean": 0.8752106891794232,
+                "median": 0.9889,
+                "std": 0.2560781640816928,
+                "q1": 0.9345,
+                "q3": 1.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 28766,
+            "anomaly_examples": [
+              "0.259",
+              "0.2234",
+              "0.3263",
+              "0.3287",
+              "0.3211"
+            ]
+          },
+          {
+            "name": "rx_bytes",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 167353,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 6520948742.0,
+                "mean": 1389874213.9671865,
+                "median": 761662774.0,
+                "std": 1642893750.7741146,
+                "q1": 111388754.0,
+                "q3": 2163241164.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "tx_bytes",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 167350,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 4043451750.0,
+                "mean": 1196963911.5555542,
+                "median": 870256566.0,
+                "std": 984552618.4402722,
+                "q1": 419115969.0,
+                "q3": 1718937185.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "rx_packets",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 165767,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 8638711.0,
+                "mean": 2717517.0082601192,
+                "median": 1923916.0,
+                "std": 2479813.9040812915,
+                "q1": 645573.5,
+                "q3": 4201576.5
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "tx_packets",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 165434,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 7332218.0,
+                "mean": 2348765.157939689,
+                "median": 2092161.0,
+                "std": 1683394.6729212545,
+                "q1": 1046761.0,
+                "q3": 3175261.5
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "rx_dropped",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 1,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 0.0,
+                "mean": 0.0,
+                "median": 0.0,
+                "std": 0.0,
+                "q1": 0.0,
+                "q3": 0.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "tx_dropped",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 1,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 0.0,
+                "mean": 0.0,
+                "median": 0.0,
+                "std": 0.0,
+                "q1": 0.0,
+                "q3": 0.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "dataplane_latency_ms",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 48082,
+            "missing_pct": 28.717501537946976,
+            "cardinality": 23135,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 5.377,
+                "max": 235.4,
+                "mean": 40.4061083377322,
+                "median": 20.957,
+                "std": 47.493784910990456,
+                "q1": 11.014,
+                "q3": 37.783
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 22998,
+            "anomaly_examples": [
+              "153.45",
+              "192.25",
+              "140.424",
+              "146.271",
+              "192.25"
+            ]
+          },
+          {
+            "name": "ctrl_plane_rtt_ms",
+            "declared_type": "float64",
+            "inferred_type": "numeric",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 14965,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 7.413,
+                "max": 85.663,
+                "mean": 16.27288676529436,
+                "median": 14.757,
+                "std": 6.319984268818156,
+                "q1": 12.774,
+                "q3": 17.471
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 11367,
+            "anomaly_examples": [
+              "24.801",
+              "24.801",
+              "24.801",
+              "24.801",
+              "34.947"
+            ]
+          },
+          {
+            "name": "flow_count",
+            "declared_type": "int64",
+            "inferred_type": "integer",
+            "semantic_role": "measure",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 21,
+            "stats": {
+              "count": 167431,
+              "numeric": {
+                "min": 0.0,
+                "max": 48.0,
+                "mean": 5.156607796644588,
+                "median": 6.0,
+                "std": 2.3184076341010664,
+                "q1": 4.0,
+                "q3": 6.0
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "mos_source",
+            "declared_type": "str",
+            "inferred_type": "categorical",
+            "semantic_role": "dimension",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 2,
+            "stats": {
+              "count": 167431,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "ping_measured",
+                    "count": 119349
+                  },
+                  {
+                    "value": "ctrl_plane_fallback",
+                    "count": 48082
+                  }
+                ]
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          },
+          {
+            "name": "label",
+            "declared_type": "str",
+            "inferred_type": "categorical",
+            "semantic_role": "dimension",
+            "missing_count": 0,
+            "missing_pct": 0.0,
+            "cardinality": 6,
+            "stats": {
+              "count": 167431,
+              "categorical": {
+                "top_values": [
+                  {
+                    "value": "NORMAL",
+                    "count": 56753
+                  },
+                  {
+                    "value": "HIGH_LATENCY",
+                    "count": 29872
+                  },
+                  {
+                    "value": "LOW_THROUGHPUT",
+                    "count": 27956
+                  },
+                  {
+                    "value": "POOR_VOICE_QUALITY",
+                    "count": 23553
+                  },
+                  {
+                    "value": "CALL_DROP",
+                    "count": 17528
+                  },
+                  {
+                    "value": "CAPACITY_EXHAUSTED",
+                    "count": 11769
+                  }
+                ]
+              }
+            },
+            "rare_values": [],
+            "is_pii": false,
+            "pii_categories": [],
+            "anomaly_count": 0,
+            "anomaly_examples": []
+          }
+        ],
+        "duplicates": {
+          "exact_count": 0,
+          "exact_pct": 0.0,
+          "business_key": [],
+          "business_key_duplicate_count": 0,
+          "business_key_duplicate_pct": 0.0
+        }
+      }
+    ],
+    "relationships": [],
+    "issues": [
+      {
+        "id": "network_qoe.e2e_delay_ms.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "e2e_delay_ms",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "25439 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 25439,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "network_qoe.plr.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "plr",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "25737 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 25737,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "network_qoe.jitter_ms.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "jitter_ms",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "11764 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 11764,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "network_qoe.call_setup_time_ms.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "call_setup_time_ms",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "24004 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 24004,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "network_qoe.buffering_ratio.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "buffering_ratio",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "3069 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 3069,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "network_qoe.rebuffering_freq.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "rebuffering_freq",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "2660 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 2660,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "network_qoe.video_start_time_ms.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "video_start_time_ms",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "7305 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 7305,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "network_qoe.streaming_mos.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "streaming_mos",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "2680 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 2680,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "network_qoe.effective_bitrate_mbps.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "effective_bitrate_mbps",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "3064 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 3064,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "network_qoe.throughput_mbps.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "throughput_mbps",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "3172 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 3172,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "network_qoe.dns_latency_ms.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "dns_latency_ms",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "25093 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 25093,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "network_qoe.availability.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "availability",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "28766 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 28766,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "network_qoe.dataplane_latency_ms.missing",
+        "severity": "high",
+        "table": "network_qoe",
+        "column": "dataplane_latency_ms",
+        "rule": "missing_values",
+        "evidence": "48082 valeur(s) manquante(s), soit 28.72% des lignes profilées.",
+        "affected_rows": 48082,
+        "suggested_action": "Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL."
+      },
+      {
+        "id": "network_qoe.dataplane_latency_ms.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "dataplane_latency_ms",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "22998 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 22998,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      },
+      {
+        "id": "network_qoe.ctrl_plane_rtt_ms.iqr_zscore_outliers",
+        "severity": "medium",
+        "table": "network_qoe",
+        "column": "ctrl_plane_rtt_ms",
+        "rule": "iqr_or_zscore_outlier",
+        "evidence": "11367 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées.",
+        "affected_rows": 11367,
+        "suggested_action": "Vérifier les valeurs signalées avec les règles métier avant toute correction."
+      }
+    ],
+    "llm_summary": "Tables profilées : network_qoe : 167431 ligne(s), 33 colonne(s)\nProblèmes prioritaires : medium — network_qoe.e2e_delay_ms : iqr_or_zscore_outlier. 25439 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.plr : iqr_or_zscore_outlier. 25737 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.jitter_ms : iqr_or_zscore_outlier. 11764 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.call_setup_time_ms : iqr_or_zscore_outlier. 24004 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.buffering_ratio : iqr_or_zscore_outlier. 3069 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.rebuffering_freq : iqr_or_zscore_outlier. 2660 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.video_start_time_ms : iqr_or_zscore_outlier. 7305 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.streaming_mos : iqr_or_zscore_outlier. 2680 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.effective_bitrate_mbps : iqr_or_zscore_outlier. 3064 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.throughput_mbps : iqr_or_zscore_outlier. 3172 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.dns_latency_ms : iqr_or_zscore_outlier. 25093 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.availability : iqr_or_zscore_outlier. 28766 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. high — network_qoe.dataplane_latency_ms : missing_values. 48082 valeur(s) manquante(s), soit 28.72% des lignes profilées. Action : Évaluer une règle métier de traitement des valeurs manquantes avant l'ETL. medium — network_qoe.dataplane_latency_ms : iqr_or_zscore_outlier. 22998 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction. medium — network_qoe.ctrl_plane_rtt_ms : iqr_or_zscore_outlier. 11367 ligne(s) signalée(s) par IQR ou z-score sur 167431 lignes profilées. Action : Vérifier les valeurs signalées avec les règles métier avant toute correction.",
+    "status": "warning",
+    "trace": [
+      {
+        "timestamp": "2026-10-27T18:46:34.914620",
+        "tool": "load_source",
+        "parameters": {
+          "source_name": "network_qoe",
+          "source_type": "csv",
+          "sampled": false,
+          "sample_rows": 167431
+        },
+        "duration_ms": 776.6077999999652
+      }
+    ],
+    "errors": []
+  },
+  "etl_report": {
+    "business_goal": "Test multi-usage autonome",
+    "status": "success",
+    "tables": [
+      {
+        "name": "network_qoe",
+        "rows_in": 167431,
+        "rows_out": 167431,
+        "columns_in": 33,
+        "columns_out": 33,
+        "output_path": "output_test\\network_qoe\\network_qoe_clean.csv",
+        "quality_before": {
+          "completeness": 100.0,
+          "uniqueness": 100.0,
+          "validity": 100.0,
+          "consistency": 100.0,
+          "overall": 100.0,
+          "rows": 167431,
+          "null_cells": 48082,
+          "text_numeric_columns": []
+        },
+        "quality_after": {
+          "completeness": 100.0,
+          "uniqueness": 100.0,
+          "validity": 100.0,
+          "consistency": 100.0,
+          "overall": 100.0,
+          "rows": 167431,
+          "null_cells": 48082,
+          "text_numeric_columns": []
+        },
+        "columns": [
+          {
+            "original_name": "run_id",
+            "name": "run_id",
+            "dtype": "string",
+            "semantic_role": "id",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "timestamp",
+            "name": "timestamp",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": "date",
+            "is_pii": false,
+            "pii_treatment": "false_positive_ignored"
+          },
+          {
+            "original_name": "datetime",
+            "name": "datetime",
+            "dtype": "datetime64[us]",
+            "semantic_role": "date",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "segment",
+            "name": "segment",
+            "dtype": "string",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "switch_id",
+            "name": "switch_id",
+            "dtype": "int64",
+            "semantic_role": "id",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "port_no",
+            "name": "port_no",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "mos_voice",
+            "name": "mos_voice",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "e2e_delay_ms",
+            "name": "e2e_delay_ms",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "plr",
+            "name": "plr",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "jitter_ms",
+            "name": "jitter_ms",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "cdr_flag",
+            "name": "cdr_flag",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "call_setup_time_ms",
+            "name": "call_setup_time_ms",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": "date",
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "buffering_ratio",
+            "name": "buffering_ratio",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "rebuffering_freq",
+            "name": "rebuffering_freq",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "rebuffering_count",
+            "name": "rebuffering_count",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "total_stall_seconds",
+            "name": "total_stall_seconds",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "video_start_time_ms",
+            "name": "video_start_time_ms",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": "date",
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "streaming_mos",
+            "name": "streaming_mos",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "effective_bitrate_mbps",
+            "name": "effective_bitrate_mbps",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "throughput_mbps",
+            "name": "throughput_mbps",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "dns_latency_ms",
+            "name": "dns_latency_ms",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "availability",
+            "name": "availability",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "rx_bytes",
+            "name": "rx_bytes",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "tx_bytes",
+            "name": "tx_bytes",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "rx_packets",
+            "name": "rx_packets",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "tx_packets",
+            "name": "tx_packets",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "rx_dropped",
+            "name": "rx_dropped",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "tx_dropped",
+            "name": "tx_dropped",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "dataplane_latency_ms",
+            "name": "dataplane_latency_ms",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "ctrl_plane_rtt_ms",
+            "name": "ctrl_plane_rtt_ms",
+            "dtype": "float64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "flow_count",
+            "name": "flow_count",
+            "dtype": "int64",
+            "semantic_role": "measure",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "mos_source",
+            "name": "mos_source",
+            "dtype": "string",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          },
+          {
+            "original_name": "label",
+            "name": "label",
+            "dtype": "string",
+            "semantic_role": "dimension",
+            "role_corrected_from": null,
+            "is_pii": false,
+            "pii_treatment": null
+          }
+        ]
+      }
+    ],
+    "star_schemas": [
+      {
+        "table": "network_qoe",
+        "source": "auto",
+        "fact_name": "fact_network_qoe",
+        "grain": "1 ligne = 1 ligne de la table source",
+        "grain_reason": "aucun identifiant unique trouvé : clé de ligne créée",
+        "fact_rows": 167431,
+        "measures": [
+          {
+            "column": "timestamp",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "port_no",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "mos_voice",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "e2e_delay_ms",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "plr",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "jitter_ms",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "cdr_flag",
+            "kind": "flag",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "indicateur 0/1 : la moyenne donne un taux (ex. taux de churn)"
+          },
+          {
+            "column": "call_setup_time_ms",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "sum",
+              "avg"
+            ],
+            "note": "montant / volume additif"
+          },
+          {
+            "column": "buffering_ratio",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "rebuffering_freq",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "video_start_time_ms",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "streaming_mos",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "effective_bitrate_mbps",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "throughput_mbps",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "dns_latency_ms",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "availability",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "rx_bytes",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "sum",
+              "avg"
+            ],
+            "note": "montant / volume additif"
+          },
+          {
+            "column": "tx_bytes",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "sum",
+              "avg"
+            ],
+            "note": "montant / volume additif"
+          },
+          {
+            "column": "rx_packets",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "tx_packets",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "dataplane_latency_ms",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "ctrl_plane_rtt_ms",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          },
+          {
+            "column": "flow_count",
+            "kind": "metric",
+            "suggested_aggregations": [
+              "avg"
+            ],
+            "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+          }
+        ],
+        "dimensions": [
+          {
+            "name": "dim_network_qoe",
+            "key": "network_qoe_key",
+            "role": "entity",
+            "columns": [
+              "segment"
+            ],
+            "rows": 4,
+            "rationale": "profil client"
+          },
+          {
+            "name": "dim_attributes",
+            "key": "attributes_key",
+            "role": "attributes",
+            "columns": [
+              "mos_source",
+              "label"
+            ],
+            "rows": 12,
+            "rationale": "autres attributs descriptifs"
+          }
+        ],
+        "date_columns": [
+          "datetime"
+        ],
+        "excluded_columns": [
+          {
+            "column": "run_id",
+            "reason": "colonne constante : aucune valeur analytique"
+          },
+          {
+            "column": "switch_id",
+            "reason": "colonne constante : aucune valeur analytique"
+          },
+          {
+            "column": "rebuffering_count",
+            "reason": "colonne constante : aucune valeur analytique"
+          },
+          {
+            "column": "total_stall_seconds",
+            "reason": "colonne constante : aucune valeur analytique"
+          },
+          {
+            "column": "rx_dropped",
+            "reason": "colonne constante : aucune valeur analytique"
+          },
+          {
+            "column": "tx_dropped",
+            "reason": "colonne constante : aucune valeur analytique"
+          }
+        ],
+        "files": {
+          "fact_network_qoe": "output_test\\network_qoe\\model\\network_qoe\\fact_network_qoe.csv",
+          "dim_network_qoe": "output_test\\network_qoe\\model\\network_qoe\\dim_network_qoe.csv",
+          "dim_attributes": "output_test\\network_qoe\\model\\network_qoe\\dim_attributes.csv",
+          "dim_date": "output_test\\network_qoe\\model\\network_qoe\\dim_date.csv",
+          "star_schema.mmd": "output_test\\network_qoe\\model\\network_qoe\\star_schema.mmd"
+        },
+        "check_ids": [
+          "network_qoe.star_fact_row_count",
+          "network_qoe.star_no_null_foreign_key",
+          "network_qoe.star_no_orphan_foreign_key",
+          "network_qoe.star_dimension_keys_unique",
+          "network_qoe.star_column_coverage",
+          "network_qoe.star_measure_reconciliation",
+          "network_qoe.star_lossless_rejoin"
+        ],
+        "mermaid": "erDiagram\n    fact_network_qoe {\n        int fact_row_key\n        int network_qoe_key FK\n        int attributes_key FK\n        int datetime_date_key FK\n        float timestamp\n        int port_no\n        float mos_voice\n        float e2e_delay_ms\n        float plr\n        float jitter_ms\n        int cdr_flag\n        float call_setup_time_ms\n        float buffering_ratio\n        float rebuffering_freq\n        float video_start_time_ms\n        float streaming_mos\n        float effective_bitrate_mbps\n        float throughput_mbps\n        float dns_latency_ms\n        float availability\n        int rx_bytes\n        int tx_bytes\n        int rx_packets\n        int tx_packets\n        float dataplane_latency_ms\n        float ctrl_plane_rtt_ms\n        int flow_count\n    }\n    dim_network_qoe {\n        int network_qoe_key PK\n        string segment\n    }\n    dim_attributes {\n        int attributes_key PK\n        string mos_source\n        string label\n    }\n    dim_date {\n        int date_key PK\n        string date\n        string year\n        string quarter\n        string month\n        string day\n        string weekday\n    }\n    dim_network_qoe ||--o{ fact_network_qoe : network_qoe_key\n    dim_attributes ||--o{ fact_network_qoe : attributes_key\n    dim_date ||--o{ fact_network_qoe : date_key\n"
+      }
+    ],
+    "actions": [
+      {
+        "id": "network_qoe.00.coerce_to_datetime.datetime",
+        "step": 0,
+        "table": "network_qoe",
+        "column": "datetime",
+        "rule": "coerce_to_datetime",
+        "rows_affected": 167431,
+        "before": "Colonne de dates stockée en texte.",
+        "after": "Convertie en datetime (0 valeur(s) illisible(s) mises à null).",
+        "rationale": "Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.",
+        "source_issue_id": null
+      },
+      {
+        "id": "network_qoe.01.structural_missing_keep.dataplane_latency_ms",
+        "step": 1,
+        "table": "network_qoe",
+        "column": "dataplane_latency_ms",
+        "rule": "structural_missing_keep",
+        "rows_affected": 0,
+        "before": "48082 null(s) liés à mos_source == 'ctrl_plane_fallback'.",
+        "after": "Nulls conservés.",
+        "rationale": "Imputer une valeur numérique fausserait les moyennes ; la valeur est non applicable.",
+        "source_issue_id": "network_qoe.dataplane_latency_ms.missing"
+      },
+      {
+        "id": "network_qoe.02.report_outliers.e2e_delay_ms",
+        "step": 2,
+        "table": "network_qoe",
+        "column": "e2e_delay_ms",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "25439 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.e2e_delay_ms.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.03.report_outliers.plr",
+        "step": 3,
+        "table": "network_qoe",
+        "column": "plr",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "25737 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.plr.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.04.report_outliers.jitter_ms",
+        "step": 4,
+        "table": "network_qoe",
+        "column": "jitter_ms",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "11764 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.jitter_ms.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.05.report_outliers.call_setup_time_ms",
+        "step": 5,
+        "table": "network_qoe",
+        "column": "call_setup_time_ms",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "24004 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.call_setup_time_ms.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.06.report_outliers.buffering_ratio",
+        "step": 6,
+        "table": "network_qoe",
+        "column": "buffering_ratio",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "3069 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.buffering_ratio.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.07.report_outliers.rebuffering_freq",
+        "step": 7,
+        "table": "network_qoe",
+        "column": "rebuffering_freq",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "2660 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.rebuffering_freq.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.08.report_outliers.video_start_time_ms",
+        "step": 8,
+        "table": "network_qoe",
+        "column": "video_start_time_ms",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "7305 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.video_start_time_ms.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.09.report_outliers.streaming_mos",
+        "step": 9,
+        "table": "network_qoe",
+        "column": "streaming_mos",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "2680 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.streaming_mos.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.10.report_outliers.effective_bitrate_mbps",
+        "step": 10,
+        "table": "network_qoe",
+        "column": "effective_bitrate_mbps",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "3064 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.effective_bitrate_mbps.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.11.report_outliers.throughput_mbps",
+        "step": 11,
+        "table": "network_qoe",
+        "column": "throughput_mbps",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "3172 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.throughput_mbps.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.12.report_outliers.dns_latency_ms",
+        "step": 12,
+        "table": "network_qoe",
+        "column": "dns_latency_ms",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "25093 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.dns_latency_ms.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.13.report_outliers.availability",
+        "step": 13,
+        "table": "network_qoe",
+        "column": "availability",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "28766 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.availability.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.14.report_outliers.rx_bytes",
+        "step": 14,
+        "table": "network_qoe",
+        "column": "rx_bytes",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "9783 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": null
+      },
+      {
+        "id": "network_qoe.15.report_outliers.tx_bytes",
+        "step": 15,
+        "table": "network_qoe",
+        "column": "tx_bytes",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "4321 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": null
+      },
+      {
+        "id": "network_qoe.16.report_outliers.tx_packets",
+        "step": 16,
+        "table": "network_qoe",
+        "column": "tx_packets",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "5977 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": null
+      },
+      {
+        "id": "network_qoe.17.report_outliers.dataplane_latency_ms",
+        "step": 17,
+        "table": "network_qoe",
+        "column": "dataplane_latency_ms",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "22998 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.dataplane_latency_ms.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.18.report_outliers.ctrl_plane_rtt_ms",
+        "step": 18,
+        "table": "network_qoe",
+        "column": "ctrl_plane_rtt_ms",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "11367 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": "network_qoe.ctrl_plane_rtt_ms.iqr_zscore_outliers"
+      },
+      {
+        "id": "network_qoe.19.report_outliers.flow_count",
+        "step": 19,
+        "table": "network_qoe",
+        "column": "flow_count",
+        "rule": "report_outliers",
+        "rows_affected": 0,
+        "before": "5295 valeur(s) extrême(s) (IQR ou z-score).",
+        "after": "Aucune modification.",
+        "rationale": "Un outlier peut être un vrai gros client : on le signale sans le supprimer.",
+        "source_issue_id": null
+      },
+      {
+        "id": "network_qoe.20.pii_false_positive.timestamp",
+        "step": 20,
+        "table": "network_qoe",
+        "column": "timestamp",
+        "rule": "pii_false_positive",
+        "rows_affected": 0,
+        "before": "Signalée PII par le Profiler (phone).",
+        "after": "Aucune modification.",
+        "rationale": "Faux positif écarté : colonne numérique (pas un identifiant personnel textuel).",
+        "source_issue_id": null
+      }
+    ],
+    "validation_checks": [
+      {
+        "id": "network_qoe.row_reconciliation",
+        "table": "network_qoe",
+        "check": "row_reconciliation",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "167431 lignes en entrée − 0 supprimées tracées = 167431 attendues ; 167431 en sortie."
+      },
+      {
+        "id": "network_qoe.no_exact_duplicates",
+        "table": "network_qoe",
+        "check": "no_exact_duplicates",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 doublon(s) exact(s) restant(s)."
+      },
+      {
+        "id": "network_qoe.no_unexpected_nulls",
+        "table": "network_qoe",
+        "check": "no_unexpected_nulls",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "Nulls restants hors cas structurels : aucun."
+      },
+      {
+        "id": "network_qoe.range.call_setup_time_ms",
+        "table": "network_qoe",
+        "check": "range",
+        "column": "call_setup_time_ms",
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+      },
+      {
+        "id": "network_qoe.range.rx_bytes",
+        "table": "network_qoe",
+        "check": "range",
+        "column": "rx_bytes",
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+      },
+      {
+        "id": "network_qoe.range.tx_bytes",
+        "table": "network_qoe",
+        "check": "range",
+        "column": "tx_bytes",
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+      },
+      {
+        "id": "network_qoe.no_constant_columns",
+        "table": "network_qoe",
+        "check": "no_constant_columns",
+        "column": null,
+        "passed": false,
+        "severity": "low",
+        "violations": 6,
+        "detail": "Colonnes constantes (peu utiles pour l'analyse) : ['run_id', 'switch_id', 'rebuffering_count', 'total_stall_seconds', 'rx_dropped', 'tx_dropped']."
+      },
+      {
+        "id": "network_qoe.star_fact_row_count",
+        "table": "network_qoe",
+        "check": "star_fact_row_count",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "167431 lignes dans la table nettoyée, 167431 dans fact_network_qoe."
+      },
+      {
+        "id": "network_qoe.star_no_null_foreign_key",
+        "table": "network_qoe",
+        "check": "star_no_null_foreign_key",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 clé(s) étrangère(s) nulle(s)."
+      },
+      {
+        "id": "network_qoe.star_no_orphan_foreign_key",
+        "table": "network_qoe",
+        "check": "star_no_orphan_foreign_key",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 ligne(s) du fait pointent vers une dimension inexistante."
+      },
+      {
+        "id": "network_qoe.star_dimension_keys_unique",
+        "table": "network_qoe",
+        "check": "star_dimension_keys_unique",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 clé(s) de dimension en double."
+      },
+      {
+        "id": "network_qoe.star_column_coverage",
+        "table": "network_qoe",
+        "check": "star_column_coverage",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "Colonnes non placées : aucune ; placées deux fois : aucune."
+      },
+      {
+        "id": "network_qoe.star_measure_reconciliation",
+        "table": "network_qoe",
+        "check": "star_measure_reconciliation",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "0 mesure(s) dont la somme diffère entre table nettoyée et fait."
+      },
+      {
+        "id": "network_qoe.star_lossless_rejoin",
+        "table": "network_qoe",
+        "check": "star_lossless_rejoin",
+        "column": null,
+        "passed": true,
+        "severity": "info",
+        "violations": 0,
+        "detail": "En re-joignant le fait et les dimensions, 0 cellule(s) diffèrent de la table nettoyée (0 = l'étoile ne perd et ne déforme aucune donnée)."
+      }
+    ],
+    "issue_resolutions": [
+      {
+        "issue_id": "network_qoe.e2e_delay_ms.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.02.report_outliers.e2e_delay_ms"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.plr.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.03.report_outliers.plr"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.jitter_ms.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.04.report_outliers.jitter_ms"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.call_setup_time_ms.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.05.report_outliers.call_setup_time_ms"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.buffering_ratio.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.06.report_outliers.buffering_ratio"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.rebuffering_freq.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.07.report_outliers.rebuffering_freq"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.video_start_time_ms.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.08.report_outliers.video_start_time_ms"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.streaming_mos.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.09.report_outliers.streaming_mos"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.effective_bitrate_mbps.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.10.report_outliers.effective_bitrate_mbps"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.throughput_mbps.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.11.report_outliers.throughput_mbps"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.dns_latency_ms.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.12.report_outliers.dns_latency_ms"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.availability.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.13.report_outliers.availability"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.dataplane_latency_ms.missing",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.01.structural_missing_keep.dataplane_latency_ms"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.dataplane_latency_ms.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.17.report_outliers.dataplane_latency_ms"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      },
+      {
+        "issue_id": "network_qoe.ctrl_plane_rtt_ms.iqr_zscore_outliers",
+        "status": "reported_only",
+        "action_ids": [
+          "network_qoe.18.report_outliers.ctrl_plane_rtt_ms"
+        ],
+        "note": "Signalé sans modification : décision métier requise."
+      }
+    ],
+    "remaining_issues": [
+      {
+        "id": "network_qoe.remaining.no_constant_columns",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": null,
+        "rule": "no_constant_columns",
+        "evidence": "Colonnes constantes (peu utiles pour l'analyse) : ['run_id', 'switch_id', 'rebuffering_count', 'total_stall_seconds', 'rx_dropped', 'tx_dropped'].",
+        "affected_rows": 6,
+        "suggested_action": "Valider la règle métier avec le responsable de la donnée avant de la corriger."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.e2e_delay_ms",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "e2e_delay_ms",
+        "rule": "outliers_reported",
+        "evidence": "25439 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 25439,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.plr",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "plr",
+        "rule": "outliers_reported",
+        "evidence": "25737 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 25737,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.jitter_ms",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "jitter_ms",
+        "rule": "outliers_reported",
+        "evidence": "11764 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 11764,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.call_setup_time_ms",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "call_setup_time_ms",
+        "rule": "outliers_reported",
+        "evidence": "24004 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 24004,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.buffering_ratio",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "buffering_ratio",
+        "rule": "outliers_reported",
+        "evidence": "3069 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 3069,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.rebuffering_freq",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "rebuffering_freq",
+        "rule": "outliers_reported",
+        "evidence": "2660 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 2660,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.video_start_time_ms",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "video_start_time_ms",
+        "rule": "outliers_reported",
+        "evidence": "7305 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 7305,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.streaming_mos",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "streaming_mos",
+        "rule": "outliers_reported",
+        "evidence": "2680 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 2680,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.effective_bitrate_mbps",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "effective_bitrate_mbps",
+        "rule": "outliers_reported",
+        "evidence": "3064 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 3064,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.throughput_mbps",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "throughput_mbps",
+        "rule": "outliers_reported",
+        "evidence": "3172 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 3172,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.dns_latency_ms",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "dns_latency_ms",
+        "rule": "outliers_reported",
+        "evidence": "25093 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 25093,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.availability",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "availability",
+        "rule": "outliers_reported",
+        "evidence": "28766 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 28766,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.rx_bytes",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "rx_bytes",
+        "rule": "outliers_reported",
+        "evidence": "9783 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 9783,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.tx_bytes",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "tx_bytes",
+        "rule": "outliers_reported",
+        "evidence": "4321 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 4321,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.tx_packets",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "tx_packets",
+        "rule": "outliers_reported",
+        "evidence": "5977 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 5977,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.dataplane_latency_ms",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "dataplane_latency_ms",
+        "rule": "outliers_reported",
+        "evidence": "22998 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 22998,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.ctrl_plane_rtt_ms",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "ctrl_plane_rtt_ms",
+        "rule": "outliers_reported",
+        "evidence": "11367 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 11367,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      },
+      {
+        "id": "network_qoe.remaining.outliers.flow_count",
+        "severity": "low",
+        "table": "network_qoe",
+        "column": "flow_count",
+        "rule": "outliers_reported",
+        "evidence": "5295 valeur(s) extrême(s) conservée(s) telles quelles.",
+        "affected_rows": 5295,
+        "suggested_action": "Confirmer avec le métier qu'il s'agit de valeurs réelles."
+      }
+    ],
+    "llm_summary": "Table network_qoe : 167431 → 167431 ligne(s), score qualité 100.0 → 100.0/100.\nCorrections appliquées :\n- network_qoe.datetime [coerce_to_datetime] 167431 ligne(s) : Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.\nÀ surveiller :\n- low network_qoe : Colonnes constantes (peu utiles pour l'analyse) : ['run_id', 'switch_id', 'rebuffering_count', 'total_stall_seconds', 'rx_dropped', 'tx_dropped'].\n- low network_qoe.e2e_delay_ms : 25439 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.plr : 25737 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.jitter_ms : 11764 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.call_setup_time_ms : 24004 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.buffering_ratio : 3069 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.rebuffering_freq : 2660 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.video_start_time_ms : 7305 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.streaming_mos : 2680 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.effective_bitrate_mbps : 3064 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.throughput_mbps : 3172 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.dns_latency_ms : 25093 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.availability : 28766 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.rx_bytes : 9783 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.tx_bytes : 4321 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.tx_packets : 5977 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.dataplane_latency_ms : 22998 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.ctrl_plane_rtt_ms : 11367 valeur(s) extrême(s) conservée(s) telles quelles.\n- low network_qoe.flow_count : 5295 valeur(s) extrême(s) conservée(s) telles quelles.",
+    "trace": [
+      {
+        "timestamp": "2026-10-27T18:46:43.132941",
+        "tool": "load_source",
+        "parameters": {
+          "source_name": "network_qoe",
+          "rows": 167431
+        },
+        "duration_ms": 926.904999999806
+      },
+      {
+        "timestamp": "2026-10-27T18:46:48.531299",
+        "tool": "clean_table",
+        "parameters": {
+          "table": "network_qoe",
+          "actions": 21
+        },
+        "duration_ms": 5397.317099999782
+      },
+      {
+        "timestamp": "2026-10-27T18:46:48.532212",
+        "tool": "validate",
+        "parameters": {
+          "checks": 7
+        },
+        "duration_ms": 0.26190000016868
+      },
+      {
+        "timestamp": "2026-10-27T18:46:53.278480",
+        "tool": "build_star_schema",
+        "parameters": {
+          "table": "network_qoe",
+          "dimensions": 2
+        },
+        "duration_ms": 2742.4909000001207
+      },
+      {
+        "timestamp": "2026-10-27T18:46:53.278480",
+        "tool": "export",
+        "parameters": {
+          "table": "network_qoe",
+          "path": "output_test\\network_qoe\\network_qoe_clean.csv"
+        },
+        "duration_ms": 4746.111599999949
+      }
+    ],
+    "errors": [],
+    "generated_at": "2026-10-27T18:46:42.205793"
+  },
+  "kpi_report": {
+    "business_goal": "Test multi-usage autonome",
+    "status": "success",
+    "etl_status": "success",
+    "kpis": [
+      {
+        "id": "avg_mos_voice",
+        "name": "Score MOS Voix moyen",
+        "category": "Network Performance",
+        "definition": "Score moyen d'opinion (MOS) de la qualité vocale (1 à 5).",
+        "formula": "moyenne(mos_voice)",
+        "unit": "score",
+        "status": "computed",
+        "value": 3.49,
+        "table": "network_qoe",
+        "rows_used": 167431,
+        "columns_used": {
+          "value": "mos_voice"
+        },
+        "missing_inputs": {},
+        "breakdowns": {
+          "segment": [
+            {
+              "segment": "IMS_CDN",
+              "value": 3.29,
+              "rows": 41857
+            },
+            {
+              "segment": "INDOOR_RAN",
+              "value": 3.14,
+              "rows": 41858
+            },
+            {
+              "segment": "INTERNET",
+              "value": 4.18,
+              "rows": 41858
+            },
+            {
+              "segment": "OUTDOOR_RAN",
+              "value": 3.34,
+              "rows": 41858
+            }
+          ],
+          "mos_source": [
+            {
+              "segment": "ctrl_plane_fallback",
+              "value": 3.96,
+              "rows": 48082
+            },
+            {
+              "segment": "ping_measured",
+              "value": 3.3,
+              "rows": 119349
+            }
+          ],
+          "label": [
+            {
+              "segment": "CALL_DROP",
+              "value": 2.92,
+              "rows": 17528
+            },
+            {
+              "segment": "CAPACITY_EXHAUSTED",
+              "value": 1.68,
+              "rows": 11769
+            },
+            {
+              "segment": "HIGH_LATENCY",
+              "value": 3.61,
+              "rows": 29872
+            },
+            {
+              "segment": "LOW_THROUGHPUT",
+              "value": 3.45,
+              "rows": 27956
+            },
+            {
+              "segment": "NORMAL",
+              "value": 3.94,
+              "rows": 56753
+            },
+            {
+              "segment": "POOR_VOICE_QUALITY",
+              "value": 3.63,
+              "rows": 23553
+            }
+          ]
+        },
+        "justification": "Calculable : colonnes trouvées dans « network_qoe » (value=mos_voice). Calcul déterministe : moyenne(mos_voice).",
+        "warnings": []
+      },
+      {
+        "id": "avg_throughput",
+        "name": "Débit moyen",
+        "category": "Network Performance",
+        "definition": "Débit réseau moyen observé.",
+        "formula": "moyenne(throughput)",
+        "unit": "Mbps",
+        "status": "computed",
+        "value": 0.18,
+        "table": "network_qoe",
+        "rows_used": 167431,
+        "columns_used": {
+          "value": "throughput_mbps"
+        },
+        "missing_inputs": {},
+        "breakdowns": {
+          "segment": [
+            {
+              "segment": "IMS_CDN",
+              "value": 0.21,
+              "rows": 41857
+            },
+            {
+              "segment": "INDOOR_RAN",
+              "value": 0.07,
+              "rows": 41858
+            },
+            {
+              "segment": "INTERNET",
+              "value": 0.31,
+              "rows": 41858
+            },
+            {
+              "segment": "OUTDOOR_RAN",
+              "value": 0.14,
+              "rows": 41858
+            }
+          ],
+          "mos_source": [
+            {
+              "segment": "ctrl_plane_fallback",
+              "value": 0.28,
+              "rows": 48082
+            },
+            {
+              "segment": "ping_measured",
+              "value": 0.14,
+              "rows": 119349
+            }
+          ],
+          "label": [
+            {
+              "segment": "CALL_DROP",
+              "value": 0.07,
+              "rows": 17528
+            },
+            {
+              "segment": "CAPACITY_EXHAUSTED",
+              "value": 1.14,
+              "rows": 11769
+            },
+            {
+              "segment": "HIGH_LATENCY",
+              "value": 0.14,
+              "rows": 29872
+            },
+            {
+              "segment": "LOW_THROUGHPUT",
+              "value": 0.09,
+              "rows": 27956
+            },
+            {
+              "segment": "NORMAL",
+              "value": 0.11,
+              "rows": 56753
+            },
+            {
+              "segment": "POOR_VOICE_QUALITY",
+              "value": 0.1,
+              "rows": 23553
+            }
+          ]
+        },
+        "justification": "Calculable : colonnes trouvées dans « network_qoe » (value=throughput_mbps). Calcul déterministe : moyenne(throughput).",
+        "warnings": []
+      },
+      {
+        "id": "avg_latency",
+        "name": "Latence moyenne",
+        "category": "Network Performance",
+        "definition": "Latence réseau moyenne observée.",
+        "formula": "moyenne(latence)",
+        "unit": "ms",
+        "status": "computed",
+        "value": 313.84,
+        "table": "network_qoe",
+        "rows_used": 167431,
+        "columns_used": {
+          "value": "dns_latency_ms"
+        },
+        "missing_inputs": {},
+        "breakdowns": {
+          "segment": [
+            {
+              "segment": "IMS_CDN",
+              "value": 466.05,
+              "rows": 41857
+            },
+            {
+              "segment": "INDOOR_RAN",
+              "value": 321.76,
+              "rows": 41858
+            },
+            {
+              "segment": "INTERNET",
+              "value": 84.88,
+              "rows": 41858
+            },
+            {
+              "segment": "OUTDOOR_RAN",
+              "value": 382.66,
+              "rows": 41858
+            }
+          ],
+          "mos_source": [
+            {
+              "segment": "ctrl_plane_fallback",
+              "value": 215.98,
+              "rows": 48082
+            },
+            {
+              "segment": "ping_measured",
+              "value": 353.26,
+              "rows": 119349
+            }
+          ],
+          "label": [
+            {
+              "segment": "CALL_DROP",
+              "value": 852.32,
+              "rows": 17528
+            },
+            {
+              "segment": "CAPACITY_EXHAUSTED",
+              "value": 881.67,
+              "rows": 11769
+            },
+            {
+              "segment": "HIGH_LATENCY",
+              "value": 145.49,
+              "rows": 29872
+            },
+            {
+              "segment": "LOW_THROUGHPUT",
+              "value": 404.91,
+              "rows": 27956
+            },
+            {
+              "segment": "NORMAL",
+              "value": 114.54,
+              "rows": 56753
+            },
+            {
+              "segment": "POOR_VOICE_QUALITY",
+              "value": 215.01,
+              "rows": 23553
+            }
+          ]
+        },
+        "justification": "Calculable : colonnes trouvées dans « network_qoe » (value=dns_latency_ms). Calcul déterministe : moyenne(latence).",
+        "warnings": []
+      },
+      {
+        "id": "avg_packet_loss",
+        "name": "Taux de perte de paquets",
+        "category": "Network Performance",
+        "definition": "Pourcentage moyen de paquets perdus.",
+        "formula": "moyenne(plr)",
+        "unit": "%",
+        "status": "computed",
+        "value": 0.1,
+        "table": "network_qoe",
+        "rows_used": 167431,
+        "columns_used": {
+          "value": "plr"
+        },
+        "missing_inputs": {},
+        "breakdowns": {
+          "segment": [
+            {
+              "segment": "IMS_CDN",
+              "value": 0.16,
+              "rows": 41857
+            },
+            {
+              "segment": "INDOOR_RAN",
+              "value": 0.08,
+              "rows": 41858
+            },
+            {
+              "segment": "INTERNET",
+              "value": 0.01,
+              "rows": 41858
+            },
+            {
+              "segment": "OUTDOOR_RAN",
+              "value": 0.13,
+              "rows": 41858
+            }
+          ],
+          "mos_source": [
+            {
+              "segment": "ctrl_plane_fallback",
+              "value": 0.08,
+              "rows": 48082
+            },
+            {
+              "segment": "ping_measured",
+              "value": 0.11,
+              "rows": 119349
+            }
+          ],
+          "label": [
+            {
+              "segment": "CALL_DROP",
+              "value": 0.39,
+              "rows": 17528
+            },
+            {
+              "segment": "CAPACITY_EXHAUSTED",
+              "value": 0.24,
+              "rows": 11769
+            },
+            {
+              "segment": "HIGH_LATENCY",
+              "value": 0.03,
+              "rows": 29872
+            },
+            {
+              "segment": "LOW_THROUGHPUT",
+              "value": 0.12,
+              "rows": 27956
+            },
+            {
+              "segment": "NORMAL",
+              "value": 0.02,
+              "rows": 56753
+            },
+            {
+              "segment": "POOR_VOICE_QUALITY",
+              "value": 0.05,
+              "rows": 23553
+            }
+          ]
+        },
+        "justification": "Calculable : colonnes trouvées dans « network_qoe » (value=plr). Calcul déterministe : moyenne(plr).",
+        "warnings": []
+      },
+      {
+        "id": "network_availability",
+        "name": "Disponibilité réseau",
+        "category": "Network Performance",
+        "definition": "Taux moyen de disponibilité des équipements.",
+        "formula": "moyenne(availability)",
+        "unit": "%",
+        "status": "computed",
+        "value": 0.88,
+        "table": "network_qoe",
+        "rows_used": 167431,
+        "columns_used": {
+          "value": "availability"
+        },
+        "missing_inputs": {},
+        "breakdowns": {
+          "segment": [
+            {
+              "segment": "IMS_CDN",
+              "value": 0.8,
+              "rows": 41857
+            },
+            {
+              "segment": "INDOOR_RAN",
+              "value": 0.88,
+              "rows": 41858
+            },
+            {
+              "segment": "INTERNET",
+              "value": 0.97,
+              "rows": 41858
+            },
+            {
+              "segment": "OUTDOOR_RAN",
+              "value": 0.85,
+              "rows": 41858
+            }
+          ],
+          "mos_source": [
+            {
+              "segment": "ctrl_plane_fallback",
+              "value": 0.91,
+              "rows": 48082
+            },
+            {
+              "segment": "ping_measured",
+              "value": 0.86,
+              "rows": 119349
+            }
+          ],
+          "label": [
+            {
+              "segment": "CALL_DROP",
+              "value": 0.59,
+              "rows": 17528
+            },
+            {
+              "segment": "CAPACITY_EXHAUSTED",
+              "value": 0.61,
+              "rows": 11769
+            },
+            {
+              "segment": "HIGH_LATENCY",
+              "value": 0.97,
+              "rows": 29872
+            },
+            {
+              "segment": "LOW_THROUGHPUT",
+              "value": 0.83,
+              "rows": 27956
+            },
+            {
+              "segment": "NORMAL",
+              "value": 0.98,
+              "rows": 56753
+            },
+            {
+              "segment": "POOR_VOICE_QUALITY",
+              "value": 0.91,
+              "rows": 23553
+            }
+          ]
+        },
+        "justification": "Calculable : colonnes trouvées dans « network_qoe » (value=availability). Calcul déterministe : moyenne(availability).",
+        "warnings": []
+      },
+      {
+        "id": "cdr_incident_rate",
+        "name": "Taux d'incidents réseau / CDR",
+        "category": "Network Performance",
+        "definition": "Part des sessions réseau ayant subi un incident ou coupure.",
+        "formula": "sessions_en_incident / sessions_total × 100",
+        "unit": "%",
+        "status": "computed",
+        "value": 17.45,
+        "table": "network_qoe",
+        "rows_used": 167431,
+        "columns_used": {
+          "flag": "cdr_flag"
+        },
+        "missing_inputs": {},
+        "breakdowns": {
+          "segment": [
+            {
+              "segment": "IMS_CDN",
+              "value": 23.75,
+              "rows": 41857
+            },
+            {
+              "segment": "INDOOR_RAN",
+              "value": 22.75,
+              "rows": 41858
+            },
+            {
+              "segment": "INTERNET",
+              "value": 6.21,
+              "rows": 41858
+            },
+            {
+              "segment": "OUTDOOR_RAN",
+              "value": 17.1,
+              "rows": 41858
+            }
+          ],
+          "mos_source": [
+            {
+              "segment": "ctrl_plane_fallback",
+              "value": 12.41,
+              "rows": 48082
+            },
+            {
+              "segment": "ping_measured",
+              "value": 19.48,
+              "rows": 119349
+            }
+          ],
+          "label": [
+            {
+              "segment": "CALL_DROP",
+              "value": 41.94,
+              "rows": 17528
+            },
+            {
+              "segment": "CAPACITY_EXHAUSTED",
+              "value": 71.02,
+              "rows": 11769
+            },
+            {
+              "segment": "HIGH_LATENCY",
+              "value": 1.9,
+              "rows": 29872
+            },
+            {
+              "segment": "LOW_THROUGHPUT",
+              "value": 24.1,
+              "rows": 27956
+            },
+            {
+              "segment": "NORMAL",
+              "value": 1.78,
+              "rows": 56753
+            },
+            {
+              "segment": "POOR_VOICE_QUALITY",
+              "value": 22.04,
+              "rows": 23553
+            }
+          ]
+        },
+        "justification": "Calculable : colonnes trouvées dans « network_qoe » (flag=cdr_flag). Calcul déterministe : sessions_en_incident / sessions_total × 100.",
+        "warnings": []
+      },
+      {
+        "id": "churn_rate",
+        "name": "Taux de churn",
+        "category": "Churn",
+        "definition": "Part des clients ayant quitté l'opérateur.",
+        "formula": "clients_churnés / clients_total × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "flag": [
+            "churn_value",
+            "churn_flag",
+            "churn",
+            "is_churn",
+            "churned",
+            "churn_label"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← churn_value/churn_flag/churn/is_churn/churned/churn_label).",
+        "warnings": []
+      },
+      {
+        "id": "churned_customers",
+        "name": "Clients churnés",
+        "category": "Churn",
+        "definition": "Nombre de clients ayant quitté l'opérateur.",
+        "formula": "somme(indicateur_churn)",
+        "unit": "clients",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "flag": [
+            "churn_value",
+            "churn_flag",
+            "churn",
+            "is_churn",
+            "churned",
+            "churn_label"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← churn_value/churn_flag/churn/is_churn/churned/churn_label).",
+        "warnings": []
+      },
+      {
+        "id": "avg_churn_score",
+        "name": "Score de churn moyen",
+        "category": "Churn",
+        "definition": "Score moyen de risque de départ (0 à 100) du portefeuille.",
+        "formula": "moyenne(churn_score)",
+        "unit": "points",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "churn_score"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← churn_score).",
+        "warnings": []
+      },
+      {
+        "id": "monthly_revenue_lost",
+        "name": "Revenu mensuel perdu par churn",
+        "category": "Churn",
+        "definition": "Revenu mensuel récurrent des clients qui sont partis.",
+        "formula": "somme(frais_mensuels) pour les clients churnés",
+        "unit": "devise/mois",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "monthly_charges",
+            "monthly_charge",
+            "monthly_fee",
+            "monthly_revenue",
+            "total_day_charge",
+            "day_charge"
+          ],
+          "flag": [
+            "churn_value",
+            "churn_flag",
+            "churn",
+            "is_churn",
+            "churned",
+            "churn_label"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← monthly_charges/monthly_charge/monthly_fee/monthly_revenue/total_day_charge/day_charge; flag ← churn_value/churn_flag/churn/is_churn/churned/churn_label).",
+        "warnings": []
+      },
+      {
+        "id": "customer_count",
+        "name": "Nombre de clients",
+        "category": "Customer Base",
+        "definition": "Nombre de clients distincts dans la table.",
+        "formula": "nombre_distinct(identifiant_client)",
+        "unit": "clients",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "id": [
+            "customer_id",
+            "customerid",
+            "subscriber_id",
+            "phone_number"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (id ← customer_id/customerid/subscriber_id/phone_number).",
+        "warnings": []
+      },
+      {
+        "id": "avg_tenure",
+        "name": "Ancienneté moyenne",
+        "category": "Customer Base",
+        "definition": "Durée moyenne depuis la souscription.",
+        "formula": "moyenne(ancienneté_en_mois)",
+        "unit": "mois",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "tenure_months",
+            "tenure",
+            "months_active",
+            "account_length"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← tenure_months/tenure/months_active/account_length).",
+        "warnings": []
+      },
+      {
+        "id": "arpu",
+        "name": "ARPU mensuel",
+        "category": "Billing & Revenue",
+        "definition": "Revenu mensuel moyen par client.",
+        "formula": "moyenne(frais_mensuels)",
+        "unit": "devise/client/mois",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "monthly_charges",
+            "monthly_charge",
+            "monthly_fee",
+            "monthly_revenue",
+            "total_day_charge",
+            "day_charge"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← monthly_charges/monthly_charge/monthly_fee/monthly_revenue/total_day_charge/day_charge).",
+        "warnings": []
+      },
+      {
+        "id": "total_revenue",
+        "name": "Revenu cumulé",
+        "category": "Billing & Revenue",
+        "definition": "Somme des montants facturés depuis la souscription.",
+        "formula": "somme(total_facturé)",
+        "unit": "devise",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "total_charges",
+            "total_revenue",
+            "total_billed"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← total_charges/total_revenue/total_billed).",
+        "warnings": []
+      },
+      {
+        "id": "avg_cltv",
+        "name": "CLTV moyen",
+        "category": "Billing & Revenue",
+        "definition": "Valeur vie client moyenne estimée.",
+        "formula": "moyenne(cltv)",
+        "unit": "devise",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "cltv",
+            "clv",
+            "customer_lifetime_value"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← cltv/clv/customer_lifetime_value).",
+        "warnings": []
+      },
+      {
+        "id": "unpaid_rate",
+        "name": "Taux d'impayés",
+        "category": "Billing & Revenue",
+        "definition": "Part du montant facturé restée impayée.",
+        "formula": "somme(montant_impayé) / somme(montant_facturé) × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "num": [
+            "unpaid_amount",
+            "overdue_amount"
+          ],
+          "den": [
+            "billed_amount",
+            "invoice_amount"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (num ← unpaid_amount/overdue_amount; den ← billed_amount/invoice_amount).",
+        "warnings": []
+      },
+      {
+        "id": "avg_upload_speed",
+        "name": "Débit montant moyen",
+        "category": "Network Performance",
+        "definition": "Débit montant (upload) moyen observé.",
+        "formula": "moyenne(upload_speed)",
+        "unit": "Mbps",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "upload_speed_mbps",
+            "upload_speed"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← upload_speed_mbps/upload_speed).",
+        "warnings": []
+      },
+      {
+        "id": "dropped_call_rate",
+        "name": "Taux d'appels coupés",
+        "category": "Network Performance",
+        "definition": "Part des appels interrompus avant la fin normale.",
+        "formula": "somme(appels_coupés) / somme(appels_total) × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "num": [
+            "dropped_calls"
+          ],
+          "den": [
+            "total_calls",
+            "calls"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (num ← dropped_calls; den ← total_calls/calls).",
+        "warnings": []
+      },
+      {
+        "id": "avg_signal_strength",
+        "name": "Force du signal moyen",
+        "category": "Network Performance",
+        "definition": "Puissance moyenne du signal radio.",
+        "formula": "moyenne(signal_strength_dbm)",
+        "unit": "dBm",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "signal_strength_dbm",
+            "signal_strength",
+            "rssi",
+            "rsrp"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← signal_strength_dbm/signal_strength/rssi/rsrp).",
+        "warnings": []
+      },
+      {
+        "id": "avg_data_usage",
+        "name": "Consommation data moyenne",
+        "category": "Usage & Consumption",
+        "definition": "Volume de données moyen consommé par session/ligne.",
+        "formula": "moyenne(volume_data)",
+        "unit": "Mo",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "data_usage_mb",
+            "data_mb",
+            "data_usage",
+            "internet_mb"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← data_usage_mb/data_mb/data_usage/internet_mb).",
+        "warnings": []
+      },
+      {
+        "id": "ticket_count",
+        "name": "Nombre de tickets / réclamations",
+        "category": "Operations & Support",
+        "definition": "Nombre total de tickets ou réclamations distinctes.",
+        "formula": "nombre_distinct(ticket_id)",
+        "unit": "tickets",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "id": [
+            "ticket_id",
+            "ticket",
+            "case_id",
+            "complaint_id",
+            "issue_id"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (id ← ticket_id/ticket/case_id/complaint_id/issue_id).",
+        "warnings": []
+      },
+      {
+        "id": "ticket_resolution_rate",
+        "name": "Taux de résolution des tickets",
+        "category": "Operations & Support",
+        "definition": "Part des tickets ou réclamations résolus / clos.",
+        "formula": "tickets_clos / total_tickets × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "flag": [
+            "ticket_status",
+            "status",
+            "case_status"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← ticket_status/status/case_status).",
+        "warnings": []
+      },
+      {
+        "id": "dispute_rate",
+        "name": "Taux de litiges clients",
+        "category": "Operations & Support",
+        "definition": "Part des réclamations ayant entraîné un litige client.",
+        "formula": "réclamations_contestées / total_réclamations × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "flag": [
+            "consumer_disputed",
+            "consumer_disputed?",
+            "is_disputed",
+            "disputed"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← consumer_disputed/consumer_disputed?/is_disputed/disputed).",
+        "warnings": []
+      },
+      {
+        "id": "timely_response_rate",
+        "name": "Taux de réponse dans les délais",
+        "category": "Operations & Support",
+        "definition": "Part des réclamations traitées dans le délai imparti.",
+        "formula": "réponses_dans_les_délais / total × 100",
+        "unit": "%",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "flag": [
+            "timely_response",
+            "timely_response?",
+            "in_time"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (flag ← timely_response/timely_response?/in_time).",
+        "warnings": []
+      },
+      {
+        "id": "avg_csat",
+        "name": "Score de satisfaction moyen (CSAT)",
+        "category": "Operations & Support",
+        "definition": "Score moyen de satisfaction client.",
+        "formula": "moyenne(satisfaction_client)",
+        "unit": "score",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "customer_satisfaction_rating",
+            "csat",
+            "satisfaction_rating",
+            "rating"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← customer_satisfaction_rating/csat/satisfaction_rating/rating).",
+        "warnings": []
+      },
+      {
+        "id": "avg_resolution_time",
+        "name": "Temps de résolution moyen",
+        "category": "Operations & Support",
+        "definition": "Délai moyen de résolution d'un ticket.",
+        "formula": "moyenne(temps_de_résolution)",
+        "unit": "h",
+        "status": "not_computable",
+        "value": null,
+        "table": null,
+        "rows_used": 0,
+        "columns_used": {},
+        "missing_inputs": {
+          "value": [
+            "resolution_time_hours",
+            "resolution_time",
+            "resolution_hours"
+          ]
+        },
+        "breakdowns": {},
+        "justification": "Non calculable : colonnes requises introuvables ou de mauvais type (value ← resolution_time_hours/resolution_time/resolution_hours).",
+        "warnings": []
+      }
+    ],
+    "caveats": [],
+    "output_files": {
+      "report": "output_test\\network_qoe\\kpi\\kpi_report.json",
+      "values": "output_test\\network_qoe\\kpi\\kpi_values.csv"
+    },
+    "llm_summary": "6 KPI calculé(s) sur 26 du catalogue.\n- Score MOS Voix moyen (Network Performance) : 3.49 score — Score moyen d'opinion (MOS) de la qualité vocale (1 à 5).\n- Débit moyen (Network Performance) : 0.18 Mbps — Débit réseau moyen observé.\n- Latence moyenne (Network Performance) : 313.84 ms — Latence réseau moyenne observée.\n- Taux de perte de paquets (Network Performance) : 0.1 % — Pourcentage moyen de paquets perdus.\n- Disponibilité réseau (Network Performance) : 0.88 % — Taux moyen de disponibilité des équipements.\n- Taux d'incidents réseau / CDR (Network Performance) : 17.45 % — Part des sessions réseau ayant subi un incident ou coupure.\nNon calculables avec ces données : Taux de churn, Clients churnés, Score de churn moyen, Revenu mensuel perdu par churn, Nombre de clients, Ancienneté moyenne, ARPU mensuel, Revenu cumulé, CLTV moyen, Taux d'impayés, Débit montant moyen, Taux d'appels coupés, Force du signal moyen, Consommation data moyenne, Nombre de tickets / réclamations, Taux de résolution des tickets, Taux de litiges clients, Taux de réponse dans les délais, Score de satisfaction moyen (CSAT), Temps de résolution moyen.",
+    "trace": [
+      {
+        "timestamp": "2026-10-27T18:46:53.771553",
+        "tool": "compute_table",
+        "parameters": {
+          "table": "network_qoe",
+          "kpis": 6
+        },
+        "duration_ms": 487.5000000001819
+      },
+      {
+        "timestamp": "2026-10-27T18:46:53.771553",
+        "tool": "validate",
+        "parameters": {
+          "kpis": 26
+        },
+        "duration_ms": 0.01939999992828234
+      }
+    ],
+    "errors": [],
+    "generated_at": "2026-10-27T18:46:53.283475"
+  },
+  "analyst_report": {
+    "business_goal": "Test multi-usage autonome",
+    "status": "warning",
+    "kpi_status": "success",
+    "insights": [],
+    "recommendations": [],
+    "profile_comparisons": [
+      {
+        "metric": "throughput_mbps",
+        "kpi_id": "arpu",
+        "n_churned": 29217,
+        "n_retained": 138214,
+        "median_churned": 0.150181,
+        "median_retained": 0.0919815,
+        "mean_churned": 0.5194424295444433,
+        "mean_retained": 0.11060053697165265,
+        "cliffs_delta": 0.3245102171474814,
+        "effect_size_label": "fort",
+        "p_value_raw": 0.0,
+        "p_value_adjusted": 0.0,
+        "test_used": "mann-whitney",
+        "source": "analyst_computed",
+        "references": {
+          "kpi_id": "arpu",
+          "metric_col": "throughput_mbps",
+          "source": "analyst_computed",
+          "source_file": "output_test\\network_qoe\\network_qoe_clean.csv"
+        }
+      }
+    ],
+    "caveats": [
+      "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+      "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+    ],
+    "null_result": true,
+    "n_tests": 27,
+    "n_significant_segments": 0,
+    "overlap_warning": false,
+    "excluded_kpis": [
+      {
+        "kpi_id": "avg_churn_score",
+        "reason": "fuite de cible (corrélé directement à churn_label)"
+      }
+    ],
+    "llm_narrative": "Analyse terminée. Aucun segment ne présente à la fois une significativité statistique (p ajustée <= 0,05), un écart suffisant et un effectif fiable. ",
+    "output_files": {
+      "report": "output_test\\network_qoe\\analyst\\analyst_report.json",
+      "insights": "output_test\\network_qoe\\analyst\\insights.csv",
+      "profile_comparisons": "output_test\\network_qoe\\analyst\\profile_comparisons.csv",
+      "recommendations": "output_test\\network_qoe\\analyst\\recommendations.csv"
+    },
+    "trace": [
+      {
+        "timestamp": "2026-10-27T18:46:53.845064",
+        "tool": "load",
+        "parameters": {
+          "kpis_computed": 6,
+          "table_loaded": true,
+          "excluded_cols": [
+            "count",
+            "country",
+            "rebuffering_count",
+            "run_id",
+            "rx_dropped",
+            "state",
+            "switch_id",
+            "total_stall_seconds",
+            "tx_dropped"
+          ]
+        },
+        "duration_ms": 68.07849999995597
+      },
+      {
+        "timestamp": "2026-10-27T18:46:54.115781",
+        "tool": "segment",
+        "parameters": {
+          "n_segments_kpi": 0,
+          "n_segments_analyst": 26,
+          "n_mw": 1
+        },
+        "duration_ms": 270.93120000017734
+      },
+      {
+        "timestamp": "2026-10-27T18:46:54.194190",
+        "tool": "test",
+        "parameters": {
+          "n_tests": 27,
+          "n_ztests": 26,
+          "n_mw": 1,
+          "min_p_raw": 0.0,
+          "max_p_adj": 1.0
+        },
+        "duration_ms": 6.187400000271737
+      },
+      {
+        "timestamp": "2026-10-27T18:46:54.194190",
+        "tool": "impact",
+        "parameters": {
+          "n_segs": 26
+        },
+        "duration_ms": 0.06590000020878506
+      },
+      {
+        "timestamp": "2026-10-27T18:46:54.194190",
+        "tool": "rank",
+        "parameters": {
+          "n_passing": 0,
+          "n_mw": 1
+        },
+        "duration_ms": 0.039600000036443816
+      },
+      {
+        "timestamp": "2026-10-27T18:46:54.195191",
+        "tool": "recommend",
+        "parameters": {
+          "n_rec": 0
+        },
+        "duration_ms": 0.0027000000955013093
+      },
+      {
+        "timestamp": "2026-10-27T18:46:54.195191",
+        "tool": "narrate",
+        "parameters": {
+          "llm": false
+        },
+        "duration_ms": 0.0069000002440589014
+      }
+    ],
+    "errors": [],
+    "generated_at": "2026-10-27T18:46:53.844062"
+  },
+  "dashboard_report": {
+    "business_goal": "Test multi-usage autonome",
+    "status": "warning",
+    "analyst_status": "warning",
+    "title": "Dashboard BI : Test multi-usage autonome",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "Vue d'ensemble",
+        "order": 0,
+        "visual_ids": [
+          "kpi_avg_mos_voice",
+          "kpi_avg_throughput",
+          "kpi_avg_latency",
+          "kpi_avg_packet_loss",
+          "kpi_network_availability",
+          "kpi_cdr_incident_rate"
+        ]
+      },
+      {
+        "id": "segments",
+        "title": "Segments à risque",
+        "order": 1,
+        "visual_ids": [
+          "bar_avg_mos_voice_label",
+          "bar_avg_throughput_label",
+          "bar_avg_latency_label",
+          "bar_avg_packet_loss_label",
+          "bar_network_availability_label",
+          "bar_cdr_incident_rate_label",
+          "bar_avg_mos_voice_mos_source",
+          "bar_avg_mos_voice_segment",
+          "bar_avg_throughput_mos_source",
+          "bar_avg_throughput_segment",
+          "bar_avg_latency_mos_source",
+          "bar_avg_latency_segment",
+          "bar_avg_packet_loss_mos_source"
+        ]
+      },
+      {
+        "id": "profiles",
+        "title": "Profils churnés vs retenus",
+        "order": 4,
+        "visual_ids": [
+          "profile_throughput_mbps"
+        ]
+      },
+      {
+        "id": "quality",
+        "title": "Qualité et réserves",
+        "order": 6,
+        "visual_ids": [
+          "text_caveats"
+        ]
+      }
+    ],
+    "visuals": [
+      {
+        "id": "kpi_avg_mos_voice",
+        "type": "kpi_card",
+        "title": "Score MOS Voix moyen",
+        "subtitle": "",
+        "section": "overview",
+        "span": 3,
+        "kpi": {
+          "kpi_id": "avg_mos_voice",
+          "name": "Score MOS Voix moyen",
+          "value": 3.49,
+          "unit": "score",
+          "status": "ok",
+          "target": null,
+          "delta": null,
+          "higher_is_better": null
+        },
+        "data": [],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "Score moyen d'opinion (MOS) de la qualité vocale (1 à 5).",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_mos_voice",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "mos_voice"
+          ],
+          "formula": "moyenne(mos_voice)",
+          "aggregation": null,
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "kpi_avg_throughput",
+        "type": "kpi_card",
+        "title": "Débit moyen",
+        "subtitle": "",
+        "section": "overview",
+        "span": 3,
+        "kpi": {
+          "kpi_id": "avg_throughput",
+          "name": "Débit moyen",
+          "value": 0.18,
+          "unit": "Mbps",
+          "status": "ok",
+          "target": null,
+          "delta": null,
+          "higher_is_better": null
+        },
+        "data": [],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "Débit réseau moyen observé.",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_throughput",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "throughput_mbps"
+          ],
+          "formula": "moyenne(throughput)",
+          "aggregation": null,
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "kpi_avg_latency",
+        "type": "kpi_card",
+        "title": "Latence moyenne",
+        "subtitle": "",
+        "section": "overview",
+        "span": 3,
+        "kpi": {
+          "kpi_id": "avg_latency",
+          "name": "Latence moyenne",
+          "value": 313.84,
+          "unit": "ms",
+          "status": "ok",
+          "target": null,
+          "delta": null,
+          "higher_is_better": null
+        },
+        "data": [],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "Latence réseau moyenne observée.",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_latency",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "dns_latency_ms"
+          ],
+          "formula": "moyenne(latence)",
+          "aggregation": null,
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "kpi_avg_packet_loss",
+        "type": "kpi_card",
+        "title": "Taux de perte de paquets",
+        "subtitle": "",
+        "section": "overview",
+        "span": 3,
+        "kpi": {
+          "kpi_id": "avg_packet_loss",
+          "name": "Taux de perte de paquets",
+          "value": 0.1,
+          "unit": "%",
+          "status": "ok",
+          "target": null,
+          "delta": null,
+          "higher_is_better": null
+        },
+        "data": [],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "Pourcentage moyen de paquets perdus.",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_packet_loss",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "plr"
+          ],
+          "formula": "moyenne(plr)",
+          "aggregation": null,
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "kpi_network_availability",
+        "type": "kpi_card",
+        "title": "Disponibilité réseau",
+        "subtitle": "",
+        "section": "overview",
+        "span": 3,
+        "kpi": {
+          "kpi_id": "network_availability",
+          "name": "Disponibilité réseau",
+          "value": 0.88,
+          "unit": "%",
+          "status": "ok",
+          "target": null,
+          "delta": null,
+          "higher_is_better": null
+        },
+        "data": [],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "Taux moyen de disponibilité des équipements.",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "network_availability",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "availability"
+          ],
+          "formula": "moyenne(availability)",
+          "aggregation": null,
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "kpi_cdr_incident_rate",
+        "type": "kpi_card",
+        "title": "Taux d'incidents réseau / CDR",
+        "subtitle": "",
+        "section": "overview",
+        "span": 3,
+        "kpi": {
+          "kpi_id": "cdr_incident_rate",
+          "name": "Taux d'incidents réseau / CDR",
+          "value": 17.45,
+          "unit": "%",
+          "status": "ok",
+          "target": null,
+          "delta": null,
+          "higher_is_better": null
+        },
+        "data": [],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "Part des sessions réseau ayant subi un incident ou coupure.",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "cdr_incident_rate",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "cdr_flag"
+          ],
+          "formula": "sessions_en_incident / sessions_total × 100",
+          "aggregation": null,
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_avg_mos_voice_label",
+        "type": "bar",
+        "title": "Score MOS Voix moyen par label",
+        "subtitle": "Référence globale : 3.49 score",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "NORMAL",
+            "value": 3.94,
+            "rows": 56753,
+            "global": 3.49
+          },
+          {
+            "segment": "POOR_VOICE_QUALITY",
+            "value": 3.63,
+            "rows": 23553,
+            "global": 3.49
+          },
+          {
+            "segment": "HIGH_LATENCY",
+            "value": 3.61,
+            "rows": 29872,
+            "global": 3.49
+          },
+          {
+            "segment": "LOW_THROUGHPUT",
+            "value": 3.45,
+            "rows": 27956,
+            "global": 3.49
+          },
+          {
+            "segment": "CALL_DROP",
+            "value": 2.92,
+            "rows": 17528,
+            "global": 3.49
+          },
+          {
+            "segment": "CAPACITY_EXHAUSTED",
+            "value": 1.68,
+            "rows": 11769,
+            "global": 3.49
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_mos_voice",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "label"
+          ],
+          "formula": "moyenne(mos_voice)",
+          "aggregation": "Score MOS Voix moyen par label",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_avg_throughput_label",
+        "type": "bar",
+        "title": "Débit moyen par label",
+        "subtitle": "Référence globale : 0.18 Mbps",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "CAPACITY_EXHAUSTED",
+            "value": 1.14,
+            "rows": 11769,
+            "global": 0.18
+          },
+          {
+            "segment": "HIGH_LATENCY",
+            "value": 0.14,
+            "rows": 29872,
+            "global": 0.18
+          },
+          {
+            "segment": "NORMAL",
+            "value": 0.11,
+            "rows": 56753,
+            "global": 0.18
+          },
+          {
+            "segment": "POOR_VOICE_QUALITY",
+            "value": 0.1,
+            "rows": 23553,
+            "global": 0.18
+          },
+          {
+            "segment": "LOW_THROUGHPUT",
+            "value": 0.09,
+            "rows": 27956,
+            "global": 0.18
+          },
+          {
+            "segment": "CALL_DROP",
+            "value": 0.07,
+            "rows": 17528,
+            "global": 0.18
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_throughput",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "label"
+          ],
+          "formula": "moyenne(throughput)",
+          "aggregation": "Débit moyen par label",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_avg_latency_label",
+        "type": "bar",
+        "title": "Latence moyenne par label",
+        "subtitle": "Référence globale : 313.84 ms",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "CAPACITY_EXHAUSTED",
+            "value": 881.67,
+            "rows": 11769,
+            "global": 313.84
+          },
+          {
+            "segment": "CALL_DROP",
+            "value": 852.32,
+            "rows": 17528,
+            "global": 313.84
+          },
+          {
+            "segment": "LOW_THROUGHPUT",
+            "value": 404.91,
+            "rows": 27956,
+            "global": 313.84
+          },
+          {
+            "segment": "POOR_VOICE_QUALITY",
+            "value": 215.01,
+            "rows": 23553,
+            "global": 313.84
+          },
+          {
+            "segment": "HIGH_LATENCY",
+            "value": 145.49,
+            "rows": 29872,
+            "global": 313.84
+          },
+          {
+            "segment": "NORMAL",
+            "value": 114.54,
+            "rows": 56753,
+            "global": 313.84
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_latency",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "label"
+          ],
+          "formula": "moyenne(latence)",
+          "aggregation": "Latence moyenne par label",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_avg_packet_loss_label",
+        "type": "bar",
+        "title": "Taux de perte de paquets par label",
+        "subtitle": "Référence globale : 0.1 %",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "CALL_DROP",
+            "value": 0.39,
+            "rows": 17528,
+            "global": 0.1
+          },
+          {
+            "segment": "CAPACITY_EXHAUSTED",
+            "value": 0.24,
+            "rows": 11769,
+            "global": 0.1
+          },
+          {
+            "segment": "LOW_THROUGHPUT",
+            "value": 0.12,
+            "rows": 27956,
+            "global": 0.1
+          },
+          {
+            "segment": "POOR_VOICE_QUALITY",
+            "value": 0.05,
+            "rows": 23553,
+            "global": 0.1
+          },
+          {
+            "segment": "HIGH_LATENCY",
+            "value": 0.03,
+            "rows": 29872,
+            "global": 0.1
+          },
+          {
+            "segment": "NORMAL",
+            "value": 0.02,
+            "rows": 56753,
+            "global": 0.1
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_packet_loss",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "label"
+          ],
+          "formula": "moyenne(plr)",
+          "aggregation": "Taux de perte de paquets par label",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_network_availability_label",
+        "type": "bar",
+        "title": "Disponibilité réseau par label",
+        "subtitle": "Référence globale : 0.88 %",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "NORMAL",
+            "value": 0.98,
+            "rows": 56753,
+            "global": 0.88
+          },
+          {
+            "segment": "HIGH_LATENCY",
+            "value": 0.97,
+            "rows": 29872,
+            "global": 0.88
+          },
+          {
+            "segment": "POOR_VOICE_QUALITY",
+            "value": 0.91,
+            "rows": 23553,
+            "global": 0.88
+          },
+          {
+            "segment": "LOW_THROUGHPUT",
+            "value": 0.83,
+            "rows": 27956,
+            "global": 0.88
+          },
+          {
+            "segment": "CAPACITY_EXHAUSTED",
+            "value": 0.61,
+            "rows": 11769,
+            "global": 0.88
+          },
+          {
+            "segment": "CALL_DROP",
+            "value": 0.59,
+            "rows": 17528,
+            "global": 0.88
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "network_availability",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "label"
+          ],
+          "formula": "moyenne(availability)",
+          "aggregation": "Disponibilité réseau par label",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_cdr_incident_rate_label",
+        "type": "bar",
+        "title": "Taux d'incidents réseau / CDR par label",
+        "subtitle": "Référence globale : 17.45 %",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "CAPACITY_EXHAUSTED",
+            "value": 71.02,
+            "rows": 11769,
+            "global": 17.45
+          },
+          {
+            "segment": "CALL_DROP",
+            "value": 41.94,
+            "rows": 17528,
+            "global": 17.45
+          },
+          {
+            "segment": "LOW_THROUGHPUT",
+            "value": 24.1,
+            "rows": 27956,
+            "global": 17.45
+          },
+          {
+            "segment": "POOR_VOICE_QUALITY",
+            "value": 22.04,
+            "rows": 23553,
+            "global": 17.45
+          },
+          {
+            "segment": "HIGH_LATENCY",
+            "value": 1.9,
+            "rows": 29872,
+            "global": 17.45
+          },
+          {
+            "segment": "NORMAL",
+            "value": 1.78,
+            "rows": 56753,
+            "global": 17.45
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "cdr_incident_rate",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "label"
+          ],
+          "formula": "sessions_en_incident / sessions_total × 100",
+          "aggregation": "Taux d'incidents réseau / CDR par label",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_avg_mos_voice_mos_source",
+        "type": "bar",
+        "title": "Score MOS Voix moyen par mos_source",
+        "subtitle": "Référence globale : 3.49 score",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "ctrl_plane_fallback",
+            "value": 3.96,
+            "rows": 48082,
+            "global": 3.49
+          },
+          {
+            "segment": "ping_measured",
+            "value": 3.3,
+            "rows": 119349,
+            "global": 3.49
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_mos_voice",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "mos_source"
+          ],
+          "formula": "moyenne(mos_voice)",
+          "aggregation": "Score MOS Voix moyen par mos_source",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_avg_mos_voice_segment",
+        "type": "bar",
+        "title": "Score MOS Voix moyen par segment",
+        "subtitle": "Référence globale : 3.49 score",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "INTERNET",
+            "value": 4.18,
+            "rows": 41858,
+            "global": 3.49
+          },
+          {
+            "segment": "OUTDOOR_RAN",
+            "value": 3.34,
+            "rows": 41858,
+            "global": 3.49
+          },
+          {
+            "segment": "IMS_CDN",
+            "value": 3.29,
+            "rows": 41857,
+            "global": 3.49
+          },
+          {
+            "segment": "INDOOR_RAN",
+            "value": 3.14,
+            "rows": 41858,
+            "global": 3.49
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_mos_voice",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "segment"
+          ],
+          "formula": "moyenne(mos_voice)",
+          "aggregation": "Score MOS Voix moyen par segment",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_avg_throughput_mos_source",
+        "type": "bar",
+        "title": "Débit moyen par mos_source",
+        "subtitle": "Référence globale : 0.18 Mbps",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "ctrl_plane_fallback",
+            "value": 0.28,
+            "rows": 48082,
+            "global": 0.18
+          },
+          {
+            "segment": "ping_measured",
+            "value": 0.14,
+            "rows": 119349,
+            "global": 0.18
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_throughput",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "mos_source"
+          ],
+          "formula": "moyenne(throughput)",
+          "aggregation": "Débit moyen par mos_source",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_avg_throughput_segment",
+        "type": "bar",
+        "title": "Débit moyen par segment",
+        "subtitle": "Référence globale : 0.18 Mbps",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "INTERNET",
+            "value": 0.31,
+            "rows": 41858,
+            "global": 0.18
+          },
+          {
+            "segment": "IMS_CDN",
+            "value": 0.21,
+            "rows": 41857,
+            "global": 0.18
+          },
+          {
+            "segment": "OUTDOOR_RAN",
+            "value": 0.14,
+            "rows": 41858,
+            "global": 0.18
+          },
+          {
+            "segment": "INDOOR_RAN",
+            "value": 0.07,
+            "rows": 41858,
+            "global": 0.18
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_throughput",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "segment"
+          ],
+          "formula": "moyenne(throughput)",
+          "aggregation": "Débit moyen par segment",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_avg_latency_mos_source",
+        "type": "bar",
+        "title": "Latence moyenne par mos_source",
+        "subtitle": "Référence globale : 313.84 ms",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "ping_measured",
+            "value": 353.26,
+            "rows": 119349,
+            "global": 313.84
+          },
+          {
+            "segment": "ctrl_plane_fallback",
+            "value": 215.98,
+            "rows": 48082,
+            "global": 313.84
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_latency",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "mos_source"
+          ],
+          "formula": "moyenne(latence)",
+          "aggregation": "Latence moyenne par mos_source",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_avg_latency_segment",
+        "type": "bar",
+        "title": "Latence moyenne par segment",
+        "subtitle": "Référence globale : 313.84 ms",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "IMS_CDN",
+            "value": 466.05,
+            "rows": 41857,
+            "global": 313.84
+          },
+          {
+            "segment": "OUTDOOR_RAN",
+            "value": 382.66,
+            "rows": 41858,
+            "global": 313.84
+          },
+          {
+            "segment": "INDOOR_RAN",
+            "value": 321.76,
+            "rows": 41858,
+            "global": 313.84
+          },
+          {
+            "segment": "INTERNET",
+            "value": 84.88,
+            "rows": 41858,
+            "global": 313.84
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_latency",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "segment"
+          ],
+          "formula": "moyenne(latence)",
+          "aggregation": "Latence moyenne par segment",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "bar_avg_packet_loss_mos_source",
+        "type": "bar",
+        "title": "Taux de perte de paquets par mos_source",
+        "subtitle": "Référence globale : 0.1 %",
+        "section": "segments",
+        "span": 6,
+        "kpi": null,
+        "data": [
+          {
+            "segment": "ping_measured",
+            "value": 0.11,
+            "rows": 119349,
+            "global": 0.1
+          },
+          {
+            "segment": "ctrl_plane_fallback",
+            "value": 0.08,
+            "rows": 48082,
+            "global": 0.1
+          }
+        ],
+        "encoding": {
+          "x": "segment",
+          "y": "value",
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "desc"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "avg_packet_loss",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "mos_source"
+          ],
+          "formula": "moyenne(plr)",
+          "aggregation": "Taux de perte de paquets par mos_source",
+          "origin": "kpi_report"
+        }
+      },
+      {
+        "id": "profile_throughput_mbps",
+        "type": "bar",
+        "title": "throughput_mbps : churnés vs retenus (médiane)",
+        "subtitle": "",
+        "section": "profiles",
+        "span": 4,
+        "kpi": null,
+        "data": [
+          {
+            "group": "churnés",
+            "median": 0.15,
+            "mean": 0.52,
+            "n": 29217
+          },
+          {
+            "group": "retenus",
+            "median": 0.09,
+            "mean": 0.11,
+            "n": 138214
+          }
+        ],
+        "encoding": {
+          "x": "group",
+          "y": "median",
+          "color": "group",
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "Cliff's delta 0.32 (effet fort) ; association observée, pas causalité.",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": "arpu",
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [
+            "throughput_mbps"
+          ],
+          "formula": null,
+          "aggregation": "médiane par groupe (Mann-Whitney)",
+          "origin": "analyst_report"
+        }
+      },
+      {
+        "id": "text_caveats",
+        "type": "text",
+        "title": "Réserves et limites",
+        "subtitle": "",
+        "section": "quality",
+        "span": 12,
+        "kpi": null,
+        "data": [
+          {
+            "text": "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité."
+          },
+          {
+            "text": "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+          }
+        ],
+        "encoding": {
+          "x": null,
+          "y": null,
+          "color": null,
+          "size": null,
+          "geo_key": null,
+          "sort": "none"
+        },
+        "note": "",
+        "reliable": true,
+        "warnings": [],
+        "references": {
+          "kpi_id": null,
+          "insight_ids": [],
+          "recommendation_ids": [],
+          "source_columns": [],
+          "formula": null,
+          "aggregation": null,
+          "origin": "analyst_report"
+        }
+      }
+    ],
+    "filters": [],
+    "report": {
+      "title": "Dashboard BI : Test multi-usage autonome",
+      "executive_summary": "Aucun segment ne passe les filtres statistiques de l'analyse.",
+      "blocks": [
+        {
+          "heading": "Indicateurs clés",
+          "text": "",
+          "visual_ids": [
+            "kpi_avg_mos_voice",
+            "kpi_avg_throughput",
+            "kpi_avg_latency",
+            "kpi_avg_packet_loss",
+            "kpi_network_availability",
+            "kpi_cdr_incident_rate"
+          ]
+        },
+        {
+          "heading": "Profils churnés vs retenus",
+          "text": "",
+          "visual_ids": [
+            "profile_throughput_mbps"
+          ]
+        }
+      ],
+      "recommendations_table": [],
+      "caveats": [
+        "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+        "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30).",
+        "Troncature : 5 visuel(s) non affiché(s) (max_visuals=20)."
+      ]
+    },
+    "excluded_visuals": [
+      {
+        "candidate": "churn_rate",
+        "reason": "non calculable (flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+      },
+      {
+        "candidate": "churned_customers",
+        "reason": "non calculable (flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+      },
+      {
+        "candidate": "avg_churn_score",
+        "reason": "fuite de cible : dérivé du churn, exclu des cartes de pilotage"
+      },
+      {
+        "candidate": "monthly_revenue_lost",
+        "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue', 'total_day_charge', 'day_charge'], flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+      },
+      {
+        "candidate": "customer_count",
+        "reason": "non calculable (id: ['customer_id', 'customerid', 'subscriber_id', 'phone_number'])"
+      },
+      {
+        "candidate": "avg_tenure",
+        "reason": "non calculable (value: ['tenure_months', 'tenure', 'months_active', 'account_length'])"
+      },
+      {
+        "candidate": "arpu",
+        "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue', 'total_day_charge', 'day_charge'])"
+      },
+      {
+        "candidate": "total_revenue",
+        "reason": "non calculable (value: ['total_charges', 'total_revenue', 'total_billed'])"
+      },
+      {
+        "candidate": "avg_cltv",
+        "reason": "non calculable (value: ['cltv', 'clv', 'customer_lifetime_value'])"
+      },
+      {
+        "candidate": "unpaid_rate",
+        "reason": "non calculable (num: ['unpaid_amount', 'overdue_amount'], den: ['billed_amount', 'invoice_amount'])"
+      },
+      {
+        "candidate": "avg_upload_speed",
+        "reason": "non calculable (value: ['upload_speed_mbps', 'upload_speed'])"
+      },
+      {
+        "candidate": "dropped_call_rate",
+        "reason": "non calculable (num: ['dropped_calls'], den: ['total_calls', 'calls'])"
+      },
+      {
+        "candidate": "avg_signal_strength",
+        "reason": "non calculable (value: ['signal_strength_dbm', 'signal_strength', 'rssi', 'rsrp'])"
+      },
+      {
+        "candidate": "avg_data_usage",
+        "reason": "non calculable (value: ['data_usage_mb', 'data_mb', 'data_usage', 'internet_mb'])"
+      },
+      {
+        "candidate": "ticket_count",
+        "reason": "non calculable (id: ['ticket_id', 'ticket', 'case_id', 'complaint_id', 'issue_id'])"
+      },
+      {
+        "candidate": "ticket_resolution_rate",
+        "reason": "non calculable (flag: ['ticket_status', 'status', 'case_status'])"
+      },
+      {
+        "candidate": "dispute_rate",
+        "reason": "non calculable (flag: ['consumer_disputed', 'consumer_disputed?', 'is_disputed', 'disputed'])"
+      },
+      {
+        "candidate": "timely_response_rate",
+        "reason": "non calculable (flag: ['timely_response', 'timely_response?', 'in_time'])"
+      },
+      {
+        "candidate": "avg_csat",
+        "reason": "non calculable (value: ['customer_satisfaction_rating', 'csat', 'satisfaction_rating', 'rating'])"
+      },
+      {
+        "candidate": "avg_resolution_time",
+        "reason": "non calculable (value: ['resolution_time_hours', 'resolution_time', 'resolution_hours'])"
+      },
+      {
+        "candidate": "temporal",
+        "reason": "colonne de churn introuvable"
+      },
+      {
+        "candidate": "geo_map",
+        "reason": "colonne géographique (state/city) ou churn introuvable"
+      },
+      {
+        "candidate": "bar_avg_packet_loss_segment",
+        "reason": "limite max_visuals=20"
+      },
+      {
+        "candidate": "bar_network_availability_mos_source",
+        "reason": "limite max_visuals=20"
+      },
+      {
+        "candidate": "bar_network_availability_segment",
+        "reason": "limite max_visuals=20"
+      },
+      {
+        "candidate": "bar_cdr_incident_rate_mos_source",
+        "reason": "limite max_visuals=20"
+      },
+      {
+        "candidate": "bar_cdr_incident_rate_segment",
+        "reason": "limite max_visuals=20"
+      }
+    ],
+    "caveats": [
+      "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+      "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30).",
+      "Troncature : 5 visuel(s) non affiché(s) (max_visuals=20)."
+    ],
+    "null_result": true,
+    "llm_narrative": "Aucun segment ne passe les filtres statistiques de l'analyse.",
+    "output_files": {
+      "report": "output_test\\network_qoe\\dashboard\\dashboard_report.json"
+    },
+    "trace": [
+      {
+        "timestamp": "2026-10-27T18:46:54.302792",
+        "tool": "load",
+        "parameters": {
+          "has_frame": true,
+          "has_kpi": true,
+          "n_insights": 0
+        },
+        "duration_ms": 1.2425999998413317
+      },
+      {
+        "timestamp": "2026-10-27T18:46:54.304814",
+        "tool": "build",
+        "parameters": {
+          "n_candidates": 26
+        },
+        "duration_ms": 1.3203999997131177
+      },
+      {
+        "timestamp": "2026-10-27T18:46:54.304814",
+        "tool": "assemble",
+        "parameters": {
+          "n_visuals": 21,
+          "n_excluded": 27
+        },
+        "duration_ms": 0.1810000003388268
+      },
+      {
+        "timestamp": "2026-10-27T18:46:54.305815",
+        "tool": "report",
+        "parameters": {
+          "n_blocks": 2
+        },
+        "duration_ms": 0.025400000140507473
+      },
+      {
+        "timestamp": "2026-10-27T18:46:54.305815",
+        "tool": "narrate",
+        "parameters": {
+          "llm": false
+        },
+        "duration_ms": 0.003099999958067201
+      }
+    ],
+    "errors": [],
+    "generated_at": "2026-10-27T18:46:54.302792"
+  },
+  "xai_report": {
+    "status": "success",
+    "business_goal": "Test multi-usage autonome",
+    "n_features_used": 28,
+    "features_used": [
+      "segment",
+      "port_no",
+      "mos_voice",
+      "e2e_delay_ms",
+      "plr",
+      "jitter_ms",
+      "call_setup_time_ms",
+      "buffering_ratio",
+      "rebuffering_freq",
+      "rebuffering_count",
+      "total_stall_seconds",
+      "video_start_time_ms",
+      "streaming_mos",
+      "effective_bitrate_mbps",
+      "throughput_mbps",
+      "dns_latency_ms",
+      "availability",
+      "rx_bytes",
+      "tx_bytes",
+      "rx_packets",
+      "tx_packets",
+      "rx_dropped",
+      "tx_dropped",
+      "dataplane_latency_ms",
+      "ctrl_plane_rtt_ms",
+      "flow_count",
+      "mos_source",
+      "label"
+    ],
+    "features_excluded": [
+      "run_id",
+      "timestamp",
+      "datetime",
+      "switch_id",
+      "cdr_flag"
+    ],
+    "model_metrics": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "auc_roc": 1.0,
+      "n_train": 133944,
+      "n_test": 33487,
+      "positive_rate_train": 0.1745,
+      "positive_rate_test": 0.1745
+    },
+    "shap_summary": {
+      "top_features": [
+        {
+          "feature": "mos_voice",
+          "mean_abs_shap": 0.1998,
+          "rank": 1
+        },
+        {
+          "feature": "plr",
+          "mean_abs_shap": 0.0995,
+          "rank": 2
+        },
+        {
+          "feature": "availability",
+          "mean_abs_shap": 0.0819,
+          "rank": 3
+        },
+        {
+          "feature": "dns_latency_ms",
+          "mean_abs_shap": 0.0625,
+          "rank": 4
+        },
+        {
+          "feature": "call_setup_time_ms",
+          "mean_abs_shap": 0.0337,
+          "rank": 5
+        },
+        {
+          "feature": "throughput_mbps",
+          "mean_abs_shap": 0.0117,
+          "rank": 6
+        },
+        {
+          "feature": "label",
+          "mean_abs_shap": 0.0099,
+          "rank": 7
+        },
+        {
+          "feature": "video_start_time_ms",
+          "mean_abs_shap": 0.0039,
+          "rank": 8
+        },
+        {
+          "feature": "flow_count",
+          "mean_abs_shap": 0.0039,
+          "rank": 9
+        },
+        {
+          "feature": "dataplane_latency_ms",
+          "mean_abs_shap": 0.0028,
+          "rank": 10
+        }
+      ],
+      "examples": [
+        {
+          "client_index": 0,
+          "true_label": 0,
+          "predicted_label": 0,
+          "predicted_proba": 0.0,
+          "top_features": [
+            {
+              "feature": "mos_voice",
+              "shap_value": -0.182,
+              "feature_value": 4.393
+            },
+            {
+              "feature": "plr",
+              "shap_value": -0.0898,
+              "feature_value": 0.0
+            },
+            {
+              "feature": "availability",
+              "shap_value": -0.0794,
+              "feature_value": 1.0
+            }
+          ]
+        },
+        {
+          "client_index": 1,
+          "true_label": 0,
+          "predicted_label": 0,
+          "predicted_proba": 0.0,
+          "top_features": [
+            {
+              "feature": "mos_voice",
+              "shap_value": -0.182,
+              "feature_value": 4.391
+            },
+            {
+              "feature": "plr",
+              "shap_value": -0.0932,
+              "feature_value": 0.000024
+            },
+            {
+              "feature": "availability",
+              "shap_value": -0.0821,
+              "feature_value": 1.0
+            }
+          ]
+        },
+        {
+          "client_index": 2,
+          "true_label": 1,
+          "predicted_label": 1,
+          "predicted_proba": 1.0,
+          "top_features": [
+            {
+              "feature": "mos_voice",
+              "shap_value": 0.2048,
+              "feature_value": 1.675
+            },
+            {
+              "feature": "plr",
+              "shap_value": 0.1126,
+              "feature_value": 0.172582
+            },
+            {
+              "feature": "availability",
+              "shap_value": 0.0772,
+              "feature_value": 0.6274
+            }
+          ]
+        }
+      ]
+    },
+    "baseline_comparison": {
+      "baseline_accuracy": 0.8255,
+      "baseline_f1": 0.0,
+      "delta_accuracy": 0.1745,
+      "delta_f1": 1.0,
+      "verdict": "significant_gain"
+    },
+    "audit_findings": [
+      {
+        "id": "AUDIT-DATA-001",
+        "severity": "info",
+        "category": "data_preparation",
+        "title": "Exclusion de fuite de cible",
+        "detail": "5 colonnes exclues pour éviter fuite d'information ou biais (ex: churn_score, churn_reason, identifiants).",
+        "recommendation": "Conserver l'exclusion stricte de churn_score en production."
+      },
+      {
+        "id": "AUDIT-MODEL-001",
+        "severity": "low",
+        "category": "performance",
+        "title": "Bon équilibre Détection/Précision",
+        "detail": "Le modèle capture 100.0% des churners réels avec une précision de 100.0%.",
+        "recommendation": "Maintenir le monitoring périodique du F1-Score."
+      },
+      {
+        "id": "AUDIT-BASELINE-001",
+        "severity": "info",
+        "category": "baseline",
+        "title": "Validation par rapport au modèle naïf",
+        "detail": "Gain de F1-Score de +100.0% par rapport à la classe majoritaire.",
+        "recommendation": "Le modèle ML apporte une valeur réelle par rapport à une règle naïve."
+      },
+      {
+        "id": "AUDIT-XAI-001",
+        "severity": "info",
+        "category": "explainability",
+        "title": "Déterminants majeurs identifiés",
+        "detail": "Les 3 facteurs les plus influents au niveau global sont : mos_voice, plr, availability.",
+        "recommendation": "Cibler en priorité les offres commerciales sur ces leviers (ex: durée d'engagement, tarification)."
+      }
+    ],
+    "llm_summary": "L'audit du modèle RandomForest indique une Accuracy de 100.0%, un Recall de 100.0% et un F1-Score de 100.0% (AUC-ROC: 1.000). Par rapport à la baseline naïve (DummyClassifier), le gain en F1-Score est de +100.0%, validant l'apport prédictif du modèle (significant_gain). Les principaux facteurs expliquant le risque de churn selon SHAP sont : mos_voice, plr, availability. 4 constats d'audit ont été relevés.",
+    "errors": []
+  },
+  "errors": []
+}

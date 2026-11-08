@@ -1,0 +1,602 @@
+{
+  "business_goal": "Analyse décisionnelle télécom",
+  "status": "success",
+  "tables": [
+    {
+      "name": "5g_network_data",
+      "rows_in": 50000,
+      "rows_out": 50000,
+      "columns_in": 21,
+      "columns_out": 21,
+      "output_path": "output_test\\5g_network_data\\5g_network_data_clean.csv",
+      "quality_before": {
+        "completeness": 100.0,
+        "uniqueness": 100.0,
+        "validity": 100.0,
+        "consistency": 100.0,
+        "overall": 100.0,
+        "rows": 50000,
+        "null_cells": 0,
+        "text_numeric_columns": []
+      },
+      "quality_after": {
+        "completeness": 100.0,
+        "uniqueness": 100.0,
+        "validity": 100.0,
+        "consistency": 100.0,
+        "overall": 100.0,
+        "rows": 50000,
+        "null_cells": 0,
+        "text_numeric_columns": []
+      },
+      "columns": [
+        {
+          "original_name": "Timestamp",
+          "name": "timestamp",
+          "dtype": "datetime64[us]",
+          "semantic_role": "date",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": "false_positive_ignored"
+        },
+        {
+          "original_name": "Location",
+          "name": "location",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Signal Strength (dBm)",
+          "name": "signal_strength_d_bm",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Download Speed (Mbps)",
+          "name": "download_speed_mbps",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Upload Speed (Mbps)",
+          "name": "upload_speed_mbps",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Latency (ms)",
+          "name": "latency_ms",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Jitter (ms)",
+          "name": "jitter_ms",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Network Type",
+          "name": "network_type",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Device Model",
+          "name": "device_model",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Carrier",
+          "name": "carrier",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Band",
+          "name": "band",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Battery Level (%)",
+          "name": "battery_level",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Temperature (°C)",
+          "name": "temperature_c",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Connected Duration (min)",
+          "name": "connected_duration_min",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Handover Count",
+          "name": "handover_count",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Data Usage (MB)",
+          "name": "data_usage_mb",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Video Streaming Quality",
+          "name": "video_streaming_quality",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "VoNR Enabled",
+          "name": "vo_nr_enabled",
+          "dtype": "bool",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Network Congestion Level",
+          "name": "network_congestion_level",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Ping to Google (ms)",
+          "name": "ping_to_google_ms",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Dropped Connection",
+          "name": "dropped_connection",
+          "dtype": "bool",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        }
+      ]
+    }
+  ],
+  "star_schemas": [
+    {
+      "table": "5g_network_data",
+      "source": "auto",
+      "fact_name": "fact_5g_network_data",
+      "grain": "1 ligne = 1 ligne de la table source",
+      "grain_reason": "aucun identifiant unique trouvé : clé de ligne créée",
+      "fact_rows": 50000,
+      "measures": [
+        {
+          "column": "signal_strength_d_bm",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "download_speed_mbps",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "upload_speed_mbps",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "latency_ms",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "jitter_ms",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "battery_level",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "temperature_c",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "connected_duration_min",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "handover_count",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "data_usage_mb",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "video_streaming_quality",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "ping_to_google_ms",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "dim_attributes",
+          "key": "attributes_key",
+          "role": "attributes",
+          "columns": [
+            "network_type",
+            "carrier",
+            "band",
+            "vo_nr_enabled",
+            "network_congestion_level",
+            "dropped_connection"
+          ],
+          "rows": 756,
+          "rationale": "autres attributs descriptifs"
+        },
+        {
+          "name": "dim_location",
+          "key": "location_key",
+          "role": "geography",
+          "columns": [
+            "location"
+          ],
+          "rows": 8,
+          "rationale": "attributs géographiques"
+        },
+        {
+          "name": "dim_service",
+          "key": "service_key",
+          "role": "service",
+          "columns": [
+            "device_model"
+          ],
+          "rows": 5,
+          "rationale": "services souscrits"
+        }
+      ],
+      "date_columns": [
+        "timestamp"
+      ],
+      "excluded_columns": [],
+      "files": {
+        "fact_5g_network_data": "output_test\\5g_network_data\\model\\5g_network_data\\fact_5g_network_data.csv",
+        "dim_attributes": "output_test\\5g_network_data\\model\\5g_network_data\\dim_attributes.csv",
+        "dim_location": "output_test\\5g_network_data\\model\\5g_network_data\\dim_location.csv",
+        "dim_service": "output_test\\5g_network_data\\model\\5g_network_data\\dim_service.csv",
+        "dim_date": "output_test\\5g_network_data\\model\\5g_network_data\\dim_date.csv",
+        "star_schema.mmd": "output_test\\5g_network_data\\model\\5g_network_data\\star_schema.mmd"
+      },
+      "check_ids": [
+        "5g_network_data.star_fact_row_count",
+        "5g_network_data.star_no_null_foreign_key",
+        "5g_network_data.star_no_orphan_foreign_key",
+        "5g_network_data.star_dimension_keys_unique",
+        "5g_network_data.star_column_coverage",
+        "5g_network_data.star_measure_reconciliation",
+        "5g_network_data.star_lossless_rejoin"
+      ],
+      "mermaid": "erDiagram\n    fact_5g_network_data {\n        int fact_row_key\n        int attributes_key FK\n        int location_key FK\n        int service_key FK\n        int timestamp_date_key FK\n        float signal_strength_d_bm\n        float download_speed_mbps\n        float upload_speed_mbps\n        float latency_ms\n        float jitter_ms\n        int battery_level\n        float temperature_c\n        int connected_duration_min\n        int handover_count\n        float data_usage_mb\n        int video_streaming_quality\n        float ping_to_google_ms\n    }\n    dim_attributes {\n        int attributes_key PK\n        string network_type\n        string carrier\n        string band\n        string vo_nr_enabled\n        string network_congestion_level\n        string dropped_connection\n    }\n    dim_location {\n        int location_key PK\n        string location\n    }\n    dim_service {\n        int service_key PK\n        string device_model\n    }\n    dim_date {\n        int date_key PK\n        string date\n        string year\n        string quarter\n        string month\n        string day\n        string weekday\n    }\n    dim_attributes ||--o{ fact_5g_network_data : attributes_key\n    dim_location ||--o{ fact_5g_network_data : location_key\n    dim_service ||--o{ fact_5g_network_data : service_key\n    dim_date ||--o{ fact_5g_network_data : date_key\n"
+    }
+  ],
+  "actions": [
+    {
+      "id": "5g_network_data.00.coerce_to_datetime.Timestamp",
+      "step": 0,
+      "table": "5g_network_data",
+      "column": "Timestamp",
+      "rule": "coerce_to_datetime",
+      "rows_affected": 50000,
+      "before": "Colonne de dates stockée en texte.",
+      "after": "Convertie en datetime (0 valeur(s) illisible(s) mises à null).",
+      "rationale": "Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.",
+      "source_issue_id": null
+    },
+    {
+      "id": "5g_network_data.01.pii_false_positive.Timestamp",
+      "step": 1,
+      "table": "5g_network_data",
+      "column": "Timestamp",
+      "rule": "pii_false_positive",
+      "rows_affected": 0,
+      "before": "Signalée PII par le Profiler (phone).",
+      "after": "Aucune modification.",
+      "rationale": "Faux positif écarté : colonne de dates (pas un numéro de téléphone).",
+      "source_issue_id": null
+    }
+  ],
+  "validation_checks": [
+    {
+      "id": "5g_network_data.row_reconciliation",
+      "table": "5g_network_data",
+      "check": "row_reconciliation",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "50000 lignes en entrée − 0 supprimées tracées = 50000 attendues ; 50000 en sortie."
+    },
+    {
+      "id": "5g_network_data.no_exact_duplicates",
+      "table": "5g_network_data",
+      "check": "no_exact_duplicates",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 doublon(s) exact(s) restant(s)."
+    },
+    {
+      "id": "5g_network_data.no_unexpected_nulls",
+      "table": "5g_network_data",
+      "check": "no_unexpected_nulls",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Nulls restants hors cas structurels : aucun."
+    },
+    {
+      "id": "5g_network_data.range.Connected Duration (min)",
+      "table": "5g_network_data",
+      "check": "range",
+      "column": "Connected Duration (min)",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "5g_network_data.range.Data Usage (MB)",
+      "table": "5g_network_data",
+      "check": "range",
+      "column": "Data Usage (MB)",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "5g_network_data.no_constant_columns",
+      "table": "5g_network_data",
+      "check": "no_constant_columns",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Colonnes constantes (peu utiles pour l'analyse) : aucune."
+    },
+    {
+      "id": "5g_network_data.star_fact_row_count",
+      "table": "5g_network_data",
+      "check": "star_fact_row_count",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "50000 lignes dans la table nettoyée, 50000 dans fact_5g_network_data."
+    },
+    {
+      "id": "5g_network_data.star_no_null_foreign_key",
+      "table": "5g_network_data",
+      "check": "star_no_null_foreign_key",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 clé(s) étrangère(s) nulle(s)."
+    },
+    {
+      "id": "5g_network_data.star_no_orphan_foreign_key",
+      "table": "5g_network_data",
+      "check": "star_no_orphan_foreign_key",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 ligne(s) du fait pointent vers une dimension inexistante."
+    },
+    {
+      "id": "5g_network_data.star_dimension_keys_unique",
+      "table": "5g_network_data",
+      "check": "star_dimension_keys_unique",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 clé(s) de dimension en double."
+    },
+    {
+      "id": "5g_network_data.star_column_coverage",
+      "table": "5g_network_data",
+      "check": "star_column_coverage",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Colonnes non placées : aucune ; placées deux fois : aucune."
+    },
+    {
+      "id": "5g_network_data.star_measure_reconciliation",
+      "table": "5g_network_data",
+      "check": "star_measure_reconciliation",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 mesure(s) dont la somme diffère entre table nettoyée et fait."
+    },
+    {
+      "id": "5g_network_data.star_lossless_rejoin",
+      "table": "5g_network_data",
+      "check": "star_lossless_rejoin",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "En re-joignant le fait et les dimensions, 0 cellule(s) diffèrent de la table nettoyée (0 = l'étoile ne perd et ne déforme aucune donnée)."
+    }
+  ],
+  "issue_resolutions": [],
+  "remaining_issues": [],
+  "llm_summary": "Table 5g_network_data : 50000 → 50000 ligne(s), score qualité 100.0 → 100.0/100.\nCorrections appliquées :\n- 5g_network_data.Timestamp [coerce_to_datetime] 50000 ligne(s) : Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.\nAucun problème restant selon les contrôles exécutés.",
+  "trace": [
+    {
+      "timestamp": "2026-10-26T20:51:43.504475",
+      "tool": "load_source",
+      "parameters": {
+        "source_name": "5g_network_data",
+        "rows": 50000
+      },
+      "duration_ms": 135.52479999998468
+    },
+    {
+      "timestamp": "2026-10-26T20:51:45.798977",
+      "tool": "clean_table",
+      "parameters": {
+        "table": "5g_network_data",
+        "actions": 2
+      },
+      "duration_ms": 2293.9353000001574
+    },
+    {
+      "timestamp": "2026-10-26T20:51:45.799977",
+      "tool": "validate",
+      "parameters": {
+        "checks": 6
+      },
+      "duration_ms": 0.09090000094147399
+    },
+    {
+      "timestamp": "2026-10-26T20:51:47.197746",
+      "tool": "build_star_schema",
+      "parameters": {
+        "table": "5g_network_data",
+        "dimensions": 3
+      },
+      "duration_ms": 913.6022000002413
+    },
+    {
+      "timestamp": "2026-10-26T20:51:47.197746",
+      "tool": "export",
+      "parameters": {
+        "table": "5g_network_data",
+        "path": "output_test\\5g_network_data\\5g_network_data_clean.csv"
+      },
+      "duration_ms": 1397.6325999992696
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-26T20:51:43.368947"
+}

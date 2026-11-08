@@ -1,0 +1,1913 @@
+{
+  "business_goal": "Analyse décisionnelle télécom",
+  "tables": [
+    {
+      "name": "Comcast_telecom_complaints_data",
+      "source_name": "Comcast_telecom_complaints_data",
+      "row_count": 2224,
+      "column_count": 11,
+      "memory_bytes": 424524,
+      "sampled": false,
+      "sample_rows": null,
+      "columns": [
+        {
+          "name": "Ticket #",
+          "declared_type": "str",
+          "inferred_type": "numeric",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2224,
+          "stats": {
+            "count": 2224,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "250635",
+                  "count": 1
+                },
+                {
+                  "value": "223441",
+                  "count": 1
+                },
+                {
+                  "value": "242732",
+                  "count": 1
+                },
+                {
+                  "value": "277946",
+                  "count": 1
+                },
+                {
+                  "value": "307175",
+                  "count": 1
+                },
+                {
+                  "value": "338519",
+                  "count": 1
+                },
+                {
+                  "value": "361148",
+                  "count": 1
+                },
+                {
+                  "value": "359792",
+                  "count": 1
+                },
+                {
+                  "value": "318072",
+                  "count": 1
+                },
+                {
+                  "value": "371214",
+                  "count": 1
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "250635",
+              "count": 1
+            },
+            {
+              "value": "223441",
+              "count": 1
+            },
+            {
+              "value": "242732",
+              "count": 1
+            },
+            {
+              "value": "277946",
+              "count": 1
+            },
+            {
+              "value": "307175",
+              "count": 1
+            },
+            {
+              "value": "338519",
+              "count": 1
+            },
+            {
+              "value": "361148",
+              "count": 1
+            },
+            {
+              "value": "359792",
+              "count": 1
+            },
+            {
+              "value": "318072",
+              "count": 1
+            },
+            {
+              "value": "371214",
+              "count": 1
+            },
+            {
+              "value": "255938",
+              "count": 1
+            },
+            {
+              "value": "276409",
+              "count": 1
+            },
+            {
+              "value": "339282",
+              "count": 1
+            },
+            {
+              "value": "360178",
+              "count": 1
+            },
+            {
+              "value": "376268",
+              "count": 1
+            },
+            {
+              "value": "370137",
+              "count": 1
+            },
+            {
+              "value": "363695",
+              "count": 1
+            },
+            {
+              "value": "238694",
+              "count": 1
+            },
+            {
+              "value": "230876",
+              "count": 1
+            },
+            {
+              "value": "318725",
+              "count": 1
+            },
+            {
+              "value": "327657",
+              "count": 1
+            },
+            {
+              "value": "328742",
+              "count": 1
+            },
+            {
+              "value": "328165",
+              "count": 1
+            },
+            {
+              "value": "370538",
+              "count": 1
+            },
+            {
+              "value": "370363",
+              "count": 1
+            },
+            {
+              "value": "270163",
+              "count": 1
+            },
+            {
+              "value": "355976",
+              "count": 1
+            },
+            {
+              "value": "260651",
+              "count": 1
+            },
+            {
+              "value": "305340",
+              "count": 1
+            },
+            {
+              "value": "360759",
+              "count": 1
+            },
+            {
+              "value": "265487",
+              "count": 1
+            },
+            {
+              "value": "296608",
+              "count": 1
+            },
+            {
+              "value": "310990",
+              "count": 1
+            },
+            {
+              "value": "325342",
+              "count": 1
+            },
+            {
+              "value": "337489",
+              "count": 1
+            },
+            {
+              "value": "354116",
+              "count": 1
+            },
+            {
+              "value": "371829",
+              "count": 1
+            },
+            {
+              "value": "373874",
+              "count": 1
+            },
+            {
+              "value": "300824",
+              "count": 1
+            },
+            {
+              "value": "348923",
+              "count": 1
+            },
+            {
+              "value": "302574",
+              "count": 1
+            },
+            {
+              "value": "343346",
+              "count": 1
+            },
+            {
+              "value": "286768",
+              "count": 1
+            },
+            {
+              "value": "223179",
+              "count": 1
+            },
+            {
+              "value": "235980",
+              "count": 1
+            },
+            {
+              "value": "236469",
+              "count": 1
+            },
+            {
+              "value": "288602",
+              "count": 1
+            },
+            {
+              "value": "309379",
+              "count": 1
+            },
+            {
+              "value": "351079",
+              "count": 1
+            },
+            {
+              "value": "366705",
+              "count": 1
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Customer Complaint",
+          "declared_type": "str",
+          "inferred_type": "string",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1841,
+          "stats": {
+            "count": 2224,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Comcast",
+                  "count": 83
+                },
+                {
+                  "value": "Comcast Internet",
+                  "count": 18
+                },
+                {
+                  "value": "Comcast Data Cap",
+                  "count": 17
+                },
+                {
+                  "value": "comcast",
+                  "count": 13
+                },
+                {
+                  "value": "Data Caps",
+                  "count": 11
+                },
+                {
+                  "value": "Comcast Data Caps",
+                  "count": 11
+                },
+                {
+                  "value": "Comcast Billing",
+                  "count": 11
+                },
+                {
+                  "value": "Unfair Billing Practices",
+                  "count": 9
+                },
+                {
+                  "value": "Internet speed",
+                  "count": 8
+                },
+                {
+                  "value": "Comcast data caps",
+                  "count": 8
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "Comcast Internet",
+              "count": 18
+            },
+            {
+              "value": "Comcast Data Cap",
+              "count": 17
+            },
+            {
+              "value": "comcast",
+              "count": 13
+            },
+            {
+              "value": "Data Caps",
+              "count": 11
+            },
+            {
+              "value": "Comcast Data Caps",
+              "count": 11
+            },
+            {
+              "value": "Comcast Billing",
+              "count": 11
+            },
+            {
+              "value": "Unfair Billing Practices",
+              "count": 9
+            },
+            {
+              "value": "Internet speed",
+              "count": 8
+            },
+            {
+              "value": "Comcast data caps",
+              "count": 8
+            },
+            {
+              "value": "Comcast/Xfinity",
+              "count": 8
+            },
+            {
+              "value": "Comcast data cap",
+              "count": 8
+            },
+            {
+              "value": "Data Cap",
+              "count": 8
+            },
+            {
+              "value": "Comcast internet",
+              "count": 8
+            },
+            {
+              "value": "Billing",
+              "count": 6
+            },
+            {
+              "value": "Comcast service",
+              "count": 6
+            },
+            {
+              "value": "COMCAST",
+              "count": 6
+            },
+            {
+              "value": "Comcast Service",
+              "count": 6
+            },
+            {
+              "value": "Comcast billing",
+              "count": 6
+            },
+            {
+              "value": "Comcast Complaint",
+              "count": 5
+            },
+            {
+              "value": "Comcast complaint",
+              "count": 5
+            },
+            {
+              "value": "Comcast Internet Service",
+              "count": 5
+            },
+            {
+              "value": "Internet Speed",
+              "count": 5
+            },
+            {
+              "value": "Comcast Billing and Service Issues",
+              "count": 4
+            },
+            {
+              "value": "comcast data cap",
+              "count": 4
+            },
+            {
+              "value": "Data cap",
+              "count": 4
+            },
+            {
+              "value": "Comcast Issues",
+              "count": 4
+            },
+            {
+              "value": "Comcast Unfair Billing Practices",
+              "count": 4
+            },
+            {
+              "value": "Slow Internet",
+              "count": 4
+            },
+            {
+              "value": "Billing Dispute",
+              "count": 4
+            },
+            {
+              "value": "Comcast Billing Complaint",
+              "count": 4
+            },
+            {
+              "value": "Comcast Internet Complaint",
+              "count": 4
+            },
+            {
+              "value": "Comcast internet service",
+              "count": 4
+            },
+            {
+              "value": "availabilty",
+              "count": 4
+            },
+            {
+              "value": "Internet service",
+              "count": 4
+            },
+            {
+              "value": "Comcast Customer Service",
+              "count": 3
+            },
+            {
+              "value": "service issues",
+              "count": 3
+            },
+            {
+              "value": "Internet Availability",
+              "count": 3
+            },
+            {
+              "value": "Complaint against Comcast",
+              "count": 3
+            },
+            {
+              "value": "Internet Throttling",
+              "count": 3
+            },
+            {
+              "value": "Comcast billing practices",
+              "count": 3
+            },
+            {
+              "value": "billing/service issues",
+              "count": 3
+            },
+            {
+              "value": "billing",
+              "count": 3
+            },
+            {
+              "value": "Unfair billing practices",
+              "count": 3
+            },
+            {
+              "value": "Comcast bait and switch",
+              "count": 3
+            },
+            {
+              "value": "Billing Complaint",
+              "count": 3
+            },
+            {
+              "value": "Billing Issues",
+              "count": 3
+            },
+            {
+              "value": "Comcast Internet Billing",
+              "count": 3
+            },
+            {
+              "value": "Comcast Throttling",
+              "count": 3
+            },
+            {
+              "value": "Comcast Billing Issues",
+              "count": 3
+            },
+            {
+              "value": "billing issues",
+              "count": 3
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Date",
+          "declared_type": "str",
+          "inferred_type": "datetime",
+          "semantic_role": "date",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 91,
+          "stats": {
+            "count": 2224,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "24-06-15",
+                  "count": 218
+                },
+                {
+                  "value": "23-06-15",
+                  "count": 190
+                },
+                {
+                  "value": "25-06-15",
+                  "count": 98
+                },
+                {
+                  "value": "26-06-15",
+                  "count": 55
+                },
+                {
+                  "value": "30-06-15",
+                  "count": 53
+                },
+                {
+                  "value": "29-06-15",
+                  "count": 51
+                },
+                {
+                  "value": "18-06-15",
+                  "count": 47
+                },
+                {
+                  "value": "06-12-15",
+                  "count": 43
+                },
+                {
+                  "value": "27-06-15",
+                  "count": 39
+                },
+                {
+                  "value": "15-06-15",
+                  "count": 34
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "22-04-15",
+              "count": 22
+            },
+            {
+              "value": "29-04-15",
+              "count": 22
+            },
+            {
+              "value": "04-09-15",
+              "count": 21
+            },
+            {
+              "value": "17-04-15",
+              "count": 21
+            },
+            {
+              "value": "06-11-15",
+              "count": 21
+            },
+            {
+              "value": "04-10-15",
+              "count": 21
+            },
+            {
+              "value": "16-04-15",
+              "count": 20
+            },
+            {
+              "value": "20-04-15",
+              "count": 20
+            },
+            {
+              "value": "04-01-15",
+              "count": 18
+            },
+            {
+              "value": "21-05-15",
+              "count": 17
+            },
+            {
+              "value": "27-05-15",
+              "count": 17
+            },
+            {
+              "value": "20-06-15",
+              "count": 16
+            },
+            {
+              "value": "16-05-15",
+              "count": 16
+            },
+            {
+              "value": "25-04-15",
+              "count": 16
+            },
+            {
+              "value": "14-06-15",
+              "count": 16
+            },
+            {
+              "value": "05-07-15",
+              "count": 15
+            },
+            {
+              "value": "04-12-15",
+              "count": 15
+            },
+            {
+              "value": "05-08-15",
+              "count": 15
+            },
+            {
+              "value": "04-03-15",
+              "count": 15
+            },
+            {
+              "value": "20-05-15",
+              "count": 15
+            },
+            {
+              "value": "14-05-15",
+              "count": 15
+            },
+            {
+              "value": "05-06-15",
+              "count": 14
+            },
+            {
+              "value": "05-05-15",
+              "count": 14
+            },
+            {
+              "value": "22-05-15",
+              "count": 14
+            },
+            {
+              "value": "29-05-15",
+              "count": 14
+            },
+            {
+              "value": "18-05-15",
+              "count": 14
+            },
+            {
+              "value": "04-06-15",
+              "count": 13
+            },
+            {
+              "value": "19-05-15",
+              "count": 12
+            },
+            {
+              "value": "15-04-15",
+              "count": 12
+            },
+            {
+              "value": "13-05-15",
+              "count": 12
+            },
+            {
+              "value": "15-05-15",
+              "count": 12
+            },
+            {
+              "value": "05-01-15",
+              "count": 12
+            },
+            {
+              "value": "23-05-15",
+              "count": 12
+            },
+            {
+              "value": "25-05-15",
+              "count": 12
+            },
+            {
+              "value": "06-04-15",
+              "count": 12
+            },
+            {
+              "value": "21-04-15",
+              "count": 12
+            },
+            {
+              "value": "05-04-15",
+              "count": 12
+            },
+            {
+              "value": "05-11-15",
+              "count": 12
+            },
+            {
+              "value": "21-06-15",
+              "count": 12
+            },
+            {
+              "value": "04-04-15",
+              "count": 12
+            },
+            {
+              "value": "06-06-15",
+              "count": 11
+            },
+            {
+              "value": "05-09-15",
+              "count": 11
+            },
+            {
+              "value": "31-05-15",
+              "count": 10
+            },
+            {
+              "value": "06-07-15",
+              "count": 9
+            },
+            {
+              "value": "19-04-15",
+              "count": 9
+            },
+            {
+              "value": "30-05-15",
+              "count": 9
+            },
+            {
+              "value": "18-04-15",
+              "count": 8
+            },
+            {
+              "value": "26-04-15",
+              "count": 8
+            },
+            {
+              "value": "05-02-15",
+              "count": 7
+            },
+            {
+              "value": "24-05-15",
+              "count": 7
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Date_month_year",
+          "declared_type": "str",
+          "inferred_type": "datetime",
+          "semantic_role": "date",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 91,
+          "stats": {
+            "count": 2224,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "24-Jun-15",
+                  "count": 218
+                },
+                {
+                  "value": "23-Jun-15",
+                  "count": 190
+                },
+                {
+                  "value": "25-Jun-15",
+                  "count": 98
+                },
+                {
+                  "value": "26-Jun-15",
+                  "count": 55
+                },
+                {
+                  "value": "30-Jun-15",
+                  "count": 53
+                },
+                {
+                  "value": "29-Jun-15",
+                  "count": 51
+                },
+                {
+                  "value": "18-Jun-15",
+                  "count": 47
+                },
+                {
+                  "value": "06-Dec-15",
+                  "count": 43
+                },
+                {
+                  "value": "27-Jun-15",
+                  "count": 39
+                },
+                {
+                  "value": "15-Jun-15",
+                  "count": 34
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "22-Apr-15",
+              "count": 22
+            },
+            {
+              "value": "29-Apr-15",
+              "count": 22
+            },
+            {
+              "value": "04-Sep-15",
+              "count": 21
+            },
+            {
+              "value": "17-Apr-15",
+              "count": 21
+            },
+            {
+              "value": "06-Nov-15",
+              "count": 21
+            },
+            {
+              "value": "04-Oct-15",
+              "count": 21
+            },
+            {
+              "value": "16-Apr-15",
+              "count": 20
+            },
+            {
+              "value": "20-Apr-15",
+              "count": 20
+            },
+            {
+              "value": "04-Jan-15",
+              "count": 18
+            },
+            {
+              "value": "21-May-15",
+              "count": 17
+            },
+            {
+              "value": "27-May-15",
+              "count": 17
+            },
+            {
+              "value": "20-Jun-15",
+              "count": 16
+            },
+            {
+              "value": "16-May-15",
+              "count": 16
+            },
+            {
+              "value": "25-Apr-15",
+              "count": 16
+            },
+            {
+              "value": "14-Jun-15",
+              "count": 16
+            },
+            {
+              "value": "05-Jul-15",
+              "count": 15
+            },
+            {
+              "value": "04-Dec-15",
+              "count": 15
+            },
+            {
+              "value": "05-Aug-15",
+              "count": 15
+            },
+            {
+              "value": "04-Mar-15",
+              "count": 15
+            },
+            {
+              "value": "20-May-15",
+              "count": 15
+            },
+            {
+              "value": "14-May-15",
+              "count": 15
+            },
+            {
+              "value": "05-Jun-15",
+              "count": 14
+            },
+            {
+              "value": "05-May-15",
+              "count": 14
+            },
+            {
+              "value": "22-May-15",
+              "count": 14
+            },
+            {
+              "value": "29-May-15",
+              "count": 14
+            },
+            {
+              "value": "18-May-15",
+              "count": 14
+            },
+            {
+              "value": "04-Jun-15",
+              "count": 13
+            },
+            {
+              "value": "19-May-15",
+              "count": 12
+            },
+            {
+              "value": "15-Apr-15",
+              "count": 12
+            },
+            {
+              "value": "13-May-15",
+              "count": 12
+            },
+            {
+              "value": "15-May-15",
+              "count": 12
+            },
+            {
+              "value": "05-Jan-15",
+              "count": 12
+            },
+            {
+              "value": "23-May-15",
+              "count": 12
+            },
+            {
+              "value": "25-May-15",
+              "count": 12
+            },
+            {
+              "value": "06-Apr-15",
+              "count": 12
+            },
+            {
+              "value": "21-Apr-15",
+              "count": 12
+            },
+            {
+              "value": "05-Apr-15",
+              "count": 12
+            },
+            {
+              "value": "05-Nov-15",
+              "count": 12
+            },
+            {
+              "value": "21-Jun-15",
+              "count": 12
+            },
+            {
+              "value": "04-Apr-15",
+              "count": 12
+            },
+            {
+              "value": "06-Jun-15",
+              "count": 11
+            },
+            {
+              "value": "05-Sep-15",
+              "count": 11
+            },
+            {
+              "value": "31-May-15",
+              "count": 10
+            },
+            {
+              "value": "06-Jul-15",
+              "count": 9
+            },
+            {
+              "value": "19-Apr-15",
+              "count": 9
+            },
+            {
+              "value": "30-May-15",
+              "count": 9
+            },
+            {
+              "value": "18-Apr-15",
+              "count": 8
+            },
+            {
+              "value": "26-Apr-15",
+              "count": 8
+            },
+            {
+              "value": "05-Feb-15",
+              "count": 7
+            },
+            {
+              "value": "24-May-15",
+              "count": 7
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Time",
+          "declared_type": "str",
+          "inferred_type": "datetime",
+          "semantic_role": "date",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2190,
+          "stats": {
+            "count": 2224,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "2:13:31 PM",
+                  "count": 2
+                },
+                {
+                  "value": "9:50:41 PM",
+                  "count": 2
+                },
+                {
+                  "value": "2:31:19 PM",
+                  "count": 2
+                },
+                {
+                  "value": "9:56:13 PM",
+                  "count": 2
+                },
+                {
+                  "value": "2:45:47 PM",
+                  "count": 2
+                },
+                {
+                  "value": "5:32:37 PM",
+                  "count": 2
+                },
+                {
+                  "value": "12:22:34 AM",
+                  "count": 2
+                },
+                {
+                  "value": "8:24:30 AM",
+                  "count": 2
+                },
+                {
+                  "value": "10:23:39 PM",
+                  "count": 2
+                },
+                {
+                  "value": "1:30:10 PM",
+                  "count": 2
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "2:13:31 PM",
+              "count": 2
+            },
+            {
+              "value": "9:50:41 PM",
+              "count": 2
+            },
+            {
+              "value": "2:31:19 PM",
+              "count": 2
+            },
+            {
+              "value": "9:56:13 PM",
+              "count": 2
+            },
+            {
+              "value": "2:45:47 PM",
+              "count": 2
+            },
+            {
+              "value": "5:32:37 PM",
+              "count": 2
+            },
+            {
+              "value": "12:22:34 AM",
+              "count": 2
+            },
+            {
+              "value": "8:24:30 AM",
+              "count": 2
+            },
+            {
+              "value": "10:23:39 PM",
+              "count": 2
+            },
+            {
+              "value": "1:30:10 PM",
+              "count": 2
+            },
+            {
+              "value": "9:55:33 PM",
+              "count": 2
+            },
+            {
+              "value": "10:18:11 PM",
+              "count": 2
+            },
+            {
+              "value": "4:19:26 PM",
+              "count": 2
+            },
+            {
+              "value": "1:07:49 PM",
+              "count": 2
+            },
+            {
+              "value": "3:25:33 PM",
+              "count": 2
+            },
+            {
+              "value": "12:43:14 PM",
+              "count": 2
+            },
+            {
+              "value": "3:07:00 PM",
+              "count": 2
+            },
+            {
+              "value": "9:22:46 AM",
+              "count": 2
+            },
+            {
+              "value": "10:02:10 AM",
+              "count": 2
+            },
+            {
+              "value": "11:43:14 AM",
+              "count": 2
+            },
+            {
+              "value": "7:39:25 PM",
+              "count": 2
+            },
+            {
+              "value": "11:20:13 AM",
+              "count": 2
+            },
+            {
+              "value": "5:28:32 PM",
+              "count": 2
+            },
+            {
+              "value": "1:29:58 PM",
+              "count": 2
+            },
+            {
+              "value": "11:40:30 PM",
+              "count": 2
+            },
+            {
+              "value": "3:49:24 PM",
+              "count": 2
+            },
+            {
+              "value": "11:59:36 AM",
+              "count": 2
+            },
+            {
+              "value": "1:12:13 PM",
+              "count": 2
+            },
+            {
+              "value": "2:06:03 PM",
+              "count": 2
+            },
+            {
+              "value": "1:26:23 PM",
+              "count": 2
+            },
+            {
+              "value": "12:41:14 PM",
+              "count": 2
+            },
+            {
+              "value": "4:38:27 PM",
+              "count": 2
+            },
+            {
+              "value": "8:39:30 PM",
+              "count": 2
+            },
+            {
+              "value": "2:45:12 PM",
+              "count": 2
+            },
+            {
+              "value": "3:53:50 PM",
+              "count": 1
+            },
+            {
+              "value": "10:22:56 AM",
+              "count": 1
+            },
+            {
+              "value": "9:55:47 AM",
+              "count": 1
+            },
+            {
+              "value": "11:59:35 AM",
+              "count": 1
+            },
+            {
+              "value": "1:25:26 PM",
+              "count": 1
+            },
+            {
+              "value": "9:59:40 PM",
+              "count": 1
+            },
+            {
+              "value": "10:13:55 AM",
+              "count": 1
+            },
+            {
+              "value": "6:56:14 PM",
+              "count": 1
+            },
+            {
+              "value": "11:46:30 PM",
+              "count": 1
+            },
+            {
+              "value": "6:46:31 PM",
+              "count": 1
+            },
+            {
+              "value": "4:40:36 PM",
+              "count": 1
+            },
+            {
+              "value": "3:09:49 PM",
+              "count": 1
+            },
+            {
+              "value": "4:03:18 PM",
+              "count": 1
+            },
+            {
+              "value": "9:23:23 PM",
+              "count": 1
+            },
+            {
+              "value": "10:30:02 PM",
+              "count": 1
+            },
+            {
+              "value": "3:25:03 PM",
+              "count": 1
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Received Via",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2,
+          "stats": {
+            "count": 2224,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Customer Care Call",
+                  "count": 1119
+                },
+                {
+                  "value": "Internet",
+                  "count": 1105
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "City",
+          "declared_type": "str",
+          "inferred_type": "string",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 928,
+          "stats": {
+            "count": 2224,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Atlanta",
+                  "count": 63
+                },
+                {
+                  "value": "Chicago",
+                  "count": 47
+                },
+                {
+                  "value": "Knoxville",
+                  "count": 36
+                },
+                {
+                  "value": "Houston",
+                  "count": 33
+                },
+                {
+                  "value": "Jacksonville",
+                  "count": 31
+                },
+                {
+                  "value": "Philadelphia",
+                  "count": 25
+                },
+                {
+                  "value": "Denver",
+                  "count": 22
+                },
+                {
+                  "value": "Miami",
+                  "count": 22
+                },
+                {
+                  "value": "Nashville",
+                  "count": 22
+                },
+                {
+                  "value": "Indianapolis",
+                  "count": 21
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "Denver",
+              "count": 22
+            },
+            {
+              "value": "Miami",
+              "count": 22
+            },
+            {
+              "value": "Nashville",
+              "count": 22
+            },
+            {
+              "value": "Indianapolis",
+              "count": 21
+            },
+            {
+              "value": "San Francisco",
+              "count": 20
+            },
+            {
+              "value": "San Jose",
+              "count": 20
+            },
+            {
+              "value": "Baltimore",
+              "count": 19
+            },
+            {
+              "value": "Tucson",
+              "count": 19
+            },
+            {
+              "value": "Washington",
+              "count": 19
+            },
+            {
+              "value": "Marietta",
+              "count": 16
+            },
+            {
+              "value": "Portland",
+              "count": 16
+            },
+            {
+              "value": "Seattle",
+              "count": 14
+            },
+            {
+              "value": "Memphis",
+              "count": 13
+            },
+            {
+              "value": "Canton",
+              "count": 12
+            },
+            {
+              "value": "Pittsburgh",
+              "count": 12
+            },
+            {
+              "value": "Savannah",
+              "count": 12
+            },
+            {
+              "value": "Tallahassee",
+              "count": 12
+            },
+            {
+              "value": "Boca Raton",
+              "count": 11
+            },
+            {
+              "value": "Sacramento",
+              "count": 11
+            },
+            {
+              "value": "Springfield",
+              "count": 11
+            },
+            {
+              "value": "Arlington",
+              "count": 10
+            },
+            {
+              "value": "Cumming",
+              "count": 10
+            },
+            {
+              "value": "Oakland",
+              "count": 10
+            },
+            {
+              "value": "Richmond",
+              "count": 10
+            },
+            {
+              "value": "Alexandria",
+              "count": 9
+            },
+            {
+              "value": "Bloomington",
+              "count": 9
+            },
+            {
+              "value": "Colorado Springs",
+              "count": 9
+            },
+            {
+              "value": "Franklin",
+              "count": 9
+            },
+            {
+              "value": "Katy",
+              "count": 9
+            },
+            {
+              "value": "Kennesaw",
+              "count": 9
+            },
+            {
+              "value": "Naples",
+              "count": 9
+            },
+            {
+              "value": "Salt Lake City",
+              "count": 9
+            },
+            {
+              "value": "Woodstock",
+              "count": 9
+            },
+            {
+              "value": "Cambridge",
+              "count": 8
+            },
+            {
+              "value": "Detroit",
+              "count": 8
+            },
+            {
+              "value": "Plymouth",
+              "count": 8
+            },
+            {
+              "value": "Alpharetta",
+              "count": 7
+            },
+            {
+              "value": "Charleston",
+              "count": 7
+            },
+            {
+              "value": "Decatur",
+              "count": 7
+            },
+            {
+              "value": "Eugene",
+              "count": 7
+            },
+            {
+              "value": "Murfreesboro",
+              "count": 7
+            },
+            {
+              "value": "Pompano Beach",
+              "count": 7
+            },
+            {
+              "value": "Santa Cruz",
+              "count": 7
+            },
+            {
+              "value": "Vancouver",
+              "count": 7
+            },
+            {
+              "value": "Acworth",
+              "count": 6
+            },
+            {
+              "value": "Aurora",
+              "count": 6
+            },
+            {
+              "value": "Boston",
+              "count": 6
+            },
+            {
+              "value": "Broomfield",
+              "count": 6
+            },
+            {
+              "value": "Cartersville",
+              "count": 6
+            },
+            {
+              "value": "Dover",
+              "count": 6
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "State",
+          "declared_type": "str",
+          "inferred_type": "string",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 43,
+          "stats": {
+            "count": 2224,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Georgia",
+                  "count": 288
+                },
+                {
+                  "value": "Florida",
+                  "count": 240
+                },
+                {
+                  "value": "California",
+                  "count": 220
+                },
+                {
+                  "value": "Illinois",
+                  "count": 164
+                },
+                {
+                  "value": "Tennessee",
+                  "count": 143
+                },
+                {
+                  "value": "Pennsylvania",
+                  "count": 130
+                },
+                {
+                  "value": "Michigan",
+                  "count": 115
+                },
+                {
+                  "value": "Washington",
+                  "count": 98
+                },
+                {
+                  "value": "Colorado",
+                  "count": 80
+                },
+                {
+                  "value": "Maryland",
+                  "count": 78
+                }
+              ]
+            }
+          },
+          "rare_values": [
+            {
+              "value": "Utah",
+              "count": 22
+            },
+            {
+              "value": "Arizona",
+              "count": 20
+            },
+            {
+              "value": "South Carolina",
+              "count": 18
+            },
+            {
+              "value": "District Of Columbia",
+              "count": 16
+            },
+            {
+              "value": "New Mexico",
+              "count": 15
+            },
+            {
+              "value": "Louisiana",
+              "count": 13
+            },
+            {
+              "value": "New Hampshire",
+              "count": 12
+            },
+            {
+              "value": "Connecticut",
+              "count": 12
+            },
+            {
+              "value": "Delaware",
+              "count": 12
+            },
+            {
+              "value": "West Virginia",
+              "count": 11
+            },
+            {
+              "value": "Kentucky",
+              "count": 7
+            },
+            {
+              "value": "New York",
+              "count": 6
+            },
+            {
+              "value": "Arkansas",
+              "count": 6
+            },
+            {
+              "value": "Maine",
+              "count": 5
+            },
+            {
+              "value": "Missouri",
+              "count": 4
+            },
+            {
+              "value": "Vermont",
+              "count": 3
+            },
+            {
+              "value": "Ohio",
+              "count": 3
+            },
+            {
+              "value": "North Carolina",
+              "count": 3
+            },
+            {
+              "value": "Kansas",
+              "count": 2
+            },
+            {
+              "value": "Montana",
+              "count": 1
+            },
+            {
+              "value": "Nevada",
+              "count": 1
+            },
+            {
+              "value": "Rhode Island",
+              "count": 1
+            },
+            {
+              "value": "District of Columbia",
+              "count": 1
+            },
+            {
+              "value": "Iowa",
+              "count": 1
+            }
+          ],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Zip code",
+          "declared_type": "int64",
+          "inferred_type": "integer",
+          "semantic_role": "measure",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 1543,
+          "stats": {
+            "count": 2224,
+            "numeric": {
+              "min": 1075.0,
+              "max": 99223.0,
+              "mean": 47994.3934352518,
+              "median": 37211.0,
+              "std": 28885.279426841043,
+              "q1": 30056.5,
+              "q3": 77058.75
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Status",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 4,
+          "stats": {
+            "count": 2224,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "Solved",
+                  "count": 973
+                },
+                {
+                  "value": "Closed",
+                  "count": 734
+                },
+                {
+                  "value": "Open",
+                  "count": 363
+                },
+                {
+                  "value": "Pending",
+                  "count": 154
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        },
+        {
+          "name": "Filing on Behalf of Someone",
+          "declared_type": "str",
+          "inferred_type": "categorical",
+          "semantic_role": "dimension",
+          "missing_count": 0,
+          "missing_pct": 0.0,
+          "cardinality": 2,
+          "stats": {
+            "count": 2224,
+            "categorical": {
+              "top_values": [
+                {
+                  "value": "No",
+                  "count": 2021
+                },
+                {
+                  "value": "Yes",
+                  "count": 203
+                }
+              ]
+            }
+          },
+          "rare_values": [],
+          "is_pii": false,
+          "pii_categories": [],
+          "anomaly_count": 0,
+          "anomaly_examples": []
+        }
+      ],
+      "duplicates": {
+        "exact_count": 0,
+        "exact_pct": 0.0,
+        "business_key": [],
+        "business_key_duplicate_count": 0,
+        "business_key_duplicate_pct": 0.0
+      }
+    }
+  ],
+  "relationships": [],
+  "issues": [],
+  "llm_summary": "Tables profilées : Comcast_telecom_complaints_data : 2224 ligne(s), 11 colonne(s)\nAucun problème couvert par les règles exécutées n'a été signalé.",
+  "status": "success",
+  "trace": [
+    {
+      "timestamp": "2026-10-26T20:03:35.594863",
+      "tool": "load_source",
+      "parameters": {
+        "source_name": "Comcast_telecom_complaints_data",
+        "source_type": "csv",
+        "sampled": false,
+        "sample_rows": 2224
+      },
+      "duration_ms": 26.961399999891
+    }
+  ],
+  "semantic_map": {
+    "domain": "general_telecom",
+    "primary_target": null,
+    "concepts": {
+      "datetime": "Date"
+    },
+    "candidate_targets": [],
+    "all_columns": [
+      "Ticket #",
+      "Customer Complaint",
+      "Date",
+      "Date_month_year",
+      "Time",
+      "Received Via",
+      "City",
+      "State",
+      "Zip code",
+      "Status",
+      "Filing on Behalf of Someone"
+    ]
+  },
+  "errors": []
+}

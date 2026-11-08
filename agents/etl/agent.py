@@ -35,6 +35,7 @@ from agents.etl.models import (
     StarSchema,
     ValidationCheck,
 )
+from agents.etl.governance_manager import apply_governance_to_options
 from agents.etl.presets import apply_preset
 from agents.etl.prompts import SUMMARY_PROMPT, SYSTEM_PROMPT
 from agents.profiler.models import Issue, TableProfile, TraceEntry
@@ -106,6 +107,7 @@ def _etl_role(name: str, series: pd.Series, protected: set[str]) -> str:
 def _load_node(state: ETLState) -> ETLState:
     request = state["request"]
     options = apply_preset(request.options)
+    options = apply_governance_to_options(options)
     report = ETLReport(business_goal=request.profiling_report.business_goal)
     raw: dict[str, pd.DataFrame] = {}
 

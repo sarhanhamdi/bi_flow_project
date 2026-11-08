@@ -1,0 +1,51 @@
+erDiagram
+    fact_network_qoe {
+        int fact_row_key
+        int network_qoe_key FK
+        int attributes_key FK
+        int datetime_date_key FK
+        float timestamp
+        int port_no
+        float mos_voice
+        float e2e_delay_ms
+        float plr
+        float jitter_ms
+        int cdr_flag
+        float call_setup_time_ms
+        float buffering_ratio
+        float rebuffering_freq
+        float video_start_time_ms
+        float streaming_mos
+        float effective_bitrate_mbps
+        float throughput_mbps
+        float dns_latency_ms
+        float availability
+        int rx_bytes
+        int tx_bytes
+        int rx_packets
+        int tx_packets
+        float dataplane_latency_ms
+        float ctrl_plane_rtt_ms
+        int flow_count
+    }
+    dim_network_qoe {
+        int network_qoe_key PK
+        string segment
+    }
+    dim_attributes {
+        int attributes_key PK
+        string mos_source
+        string label
+    }
+    dim_date {
+        int date_key PK
+        string date
+        string year
+        string quarter
+        string month
+        string day
+        string weekday
+    }
+    dim_network_qoe ||--o{ fact_network_qoe : network_qoe_key
+    dim_attributes ||--o{ fact_network_qoe : attributes_key
+    dim_date ||--o{ fact_network_qoe : date_key

@@ -6,11 +6,16 @@ import json
 from pathlib import Path
 from typing import Any
 
-from fastapi import BackgroundTasks, FastAPI, File, HTTPException, UploadFile
+from fastapi import BackgroundTasks, Body, FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
+from agents.etl.governance_manager import (
+    load_governance_rules,
+    reset_governance_rules,
+    save_governance_rules,
+)
 from agents.orchestrator import OrchestratorOptions, OrchestratorRequest
 from agents.orchestrator import run as run_orchestrator
 
@@ -160,3 +165,23 @@ async def upload_dataset(file: UploadFile = File(...)):
     content = await file.read()
     file_path.write_bytes(content)
     return {"filename": file.filename, "size_bytes": len(content), "status": "saved"}
+
+
+@app.get("/api/governance/rules")
+async def get_governance_rules():
+    """Récupère les règles et politiques de gouvernance actuelles."""
+    return load_governance_rules()
+
+
+@app.post("/api/governance/rules")
+async def update_governance_rules(payload: dict[str, Any] = Body(...)):
+    """Met à jour et persiste les règles de gouvernance éditées par l'administrateur."""
+    saved = save_governance_rules(payload)
+    return {"status": "success", "message": "Règles de gouvernance enregistrées avec succès.", "rules": saved}
+
+
+@app.post("/api/governance/rules/reset")
+async def reset_governance_rules_endpoint():
+    """Réinitialise les règles de gouvernance aux valeurs par défaut de l'entreprise."""
+    defaults = reset_governance_rules()
+    return {"status": "success", "message": "Règles de gouvernance réinitialisées aux valeurs par défaut.", "rules": defaults}

@@ -1,0 +1,208 @@
+{
+  "status": "success",
+  "business_goal": "Test multi-usage autonome",
+  "n_features_used": 18,
+  "features_used": [
+    "account_length",
+    "area_code",
+    "international_plan",
+    "voice_mail_plan",
+    "number_vmail_messages",
+    "total_day_minutes",
+    "total_day_calls",
+    "total_day_charge",
+    "total_eve_minutes",
+    "total_eve_calls",
+    "total_eve_charge",
+    "total_night_minutes",
+    "total_night_calls",
+    "total_night_charge",
+    "total_intl_minutes",
+    "total_intl_calls",
+    "total_intl_charge",
+    "customer_service_calls"
+  ],
+  "features_excluded": [
+    "state",
+    "churn"
+  ],
+  "model_metrics": {
+    "accuracy": 0.9476,
+    "precision": 0.8676,
+    "recall": 0.7564,
+    "f1": 0.8082,
+    "auc_roc": 0.8766,
+    "n_train": 2132,
+    "n_test": 534,
+    "positive_rate_train": 0.1454,
+    "positive_rate_test": 0.1461
+  },
+  "shap_summary": {
+    "top_features": [
+      {
+        "feature": "customer_service_calls",
+        "mean_abs_shap": 0.0974,
+        "rank": 1
+      },
+      {
+        "feature": "total_day_charge",
+        "mean_abs_shap": 0.08,
+        "rank": 2
+      },
+      {
+        "feature": "international_plan",
+        "mean_abs_shap": 0.0729,
+        "rank": 3
+      },
+      {
+        "feature": "total_day_minutes",
+        "mean_abs_shap": 0.0717,
+        "rank": 4
+      },
+      {
+        "feature": "total_eve_charge",
+        "mean_abs_shap": 0.0289,
+        "rank": 5
+      },
+      {
+        "feature": "total_intl_calls",
+        "mean_abs_shap": 0.0265,
+        "rank": 6
+      },
+      {
+        "feature": "total_eve_minutes",
+        "mean_abs_shap": 0.0226,
+        "rank": 7
+      },
+      {
+        "feature": "total_intl_minutes",
+        "mean_abs_shap": 0.0204,
+        "rank": 8
+      },
+      {
+        "feature": "total_intl_charge",
+        "mean_abs_shap": 0.0201,
+        "rank": 9
+      },
+      {
+        "feature": "voice_mail_plan",
+        "mean_abs_shap": 0.0189,
+        "rank": 10
+      }
+    ],
+    "examples": [
+      {
+        "client_index": 0,
+        "true_label": 0,
+        "predicted_label": 0,
+        "predicted_proba": 0.06,
+        "top_features": [
+          {
+            "feature": "total_day_minutes",
+            "shap_value": -0.0845,
+            "feature_value": 189.3
+          },
+          {
+            "feature": "total_day_charge",
+            "shap_value": -0.0842,
+            "feature_value": 32.18
+          },
+          {
+            "feature": "customer_service_calls",
+            "shap_value": -0.0804,
+            "feature_value": 0.0
+          }
+        ]
+      },
+      {
+        "client_index": 1,
+        "true_label": 0,
+        "predicted_label": 0,
+        "predicted_proba": 0.34,
+        "top_features": [
+          {
+            "feature": "total_day_charge",
+            "shap_value": 0.1343,
+            "feature_value": 47.18
+          },
+          {
+            "feature": "total_day_minutes",
+            "shap_value": 0.1326,
+            "feature_value": 277.5
+          },
+          {
+            "feature": "total_eve_charge",
+            "shap_value": -0.1255,
+            "feature_value": 11.2
+          }
+        ]
+      },
+      {
+        "client_index": 2,
+        "true_label": 0,
+        "predicted_label": 0,
+        "predicted_proba": 0.08,
+        "top_features": [
+          {
+            "feature": "international_plan",
+            "shap_value": -0.107,
+            "feature_value": 0.0
+          },
+          {
+            "feature": "customer_service_calls",
+            "shap_value": -0.0976,
+            "feature_value": 2.0
+          },
+          {
+            "feature": "total_day_charge",
+            "shap_value": -0.0722,
+            "feature_value": 21.81
+          }
+        ]
+      }
+    ]
+  },
+  "baseline_comparison": {
+    "baseline_accuracy": 0.8539,
+    "baseline_f1": 0.0,
+    "delta_accuracy": 0.0937,
+    "delta_f1": 0.8082,
+    "verdict": "marginal_gain"
+  },
+  "audit_findings": [
+    {
+      "id": "AUDIT-DATA-001",
+      "severity": "info",
+      "category": "data_preparation",
+      "title": "Exclusion de fuite de cible",
+      "detail": "2 colonnes exclues pour éviter fuite d'information ou biais (ex: churn_score, churn_reason, identifiants).",
+      "recommendation": "Conserver l'exclusion stricte de churn_score en production."
+    },
+    {
+      "id": "AUDIT-MODEL-001",
+      "severity": "low",
+      "category": "performance",
+      "title": "Bon équilibre Détection/Précision",
+      "detail": "Le modèle capture 75.6% des churners réels avec une précision de 86.8%.",
+      "recommendation": "Maintenir le monitoring périodique du F1-Score."
+    },
+    {
+      "id": "AUDIT-BASELINE-001",
+      "severity": "info",
+      "category": "baseline",
+      "title": "Validation par rapport au modèle naïf",
+      "detail": "Gain de F1-Score de +80.8% par rapport à la classe majoritaire.",
+      "recommendation": "Le modèle ML apporte une valeur réelle par rapport à une règle naïve."
+    },
+    {
+      "id": "AUDIT-XAI-001",
+      "severity": "info",
+      "category": "explainability",
+      "title": "Déterminants majeurs identifiés",
+      "detail": "Les 3 facteurs les plus influents au niveau global sont : customer_service_calls, total_day_charge, international_plan.",
+      "recommendation": "Cibler en priorité les offres commerciales sur ces leviers (ex: durée d'engagement, tarification)."
+    }
+  ],
+  "llm_summary": "L'audit du modèle RandomForest indique une Accuracy de 94.8%, un Recall de 75.6% et un F1-Score de 80.8% (AUC-ROC: 0.877). Par rapport à la baseline naïve (DummyClassifier), le gain en F1-Score est de +80.8%, validant l'apport prédictif du modèle (marginal_gain). Les principaux facteurs expliquant le risque de churn selon SHAP sont : customer_service_calls, total_day_charge, international_plan. 4 constats d'audit ont été relevés.",
+  "errors": []
+}

@@ -1,0 +1,991 @@
+{
+  "business_goal": "Test multi-usage autonome",
+  "status": "warning",
+  "analyst_status": "warning",
+  "title": "Dashboard BI : Test multi-usage autonome",
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Vue d'ensemble",
+      "order": 0,
+      "visual_ids": [
+        "kpi_ticket_count",
+        "kpi_dispute_rate",
+        "kpi_timely_response_rate"
+      ]
+    },
+    {
+      "id": "segments",
+      "title": "Segments à risque",
+      "order": 1,
+      "visual_ids": [
+        "bar_ticket_count_company_response_to_consumer",
+        "bar_dispute_rate_company_response_to_consumer",
+        "bar_timely_response_rate_company_response_to_consumer",
+        "bar_ticket_count_product",
+        "bar_ticket_count_submitted_via",
+        "bar_dispute_rate_product",
+        "bar_dispute_rate_submitted_via",
+        "bar_timely_response_rate_product",
+        "bar_timely_response_rate_submitted_via"
+      ]
+    },
+    {
+      "id": "quality",
+      "title": "Qualité et réserves",
+      "order": 6,
+      "visual_ids": [
+        "text_caveats"
+      ]
+    }
+  ],
+  "visuals": [
+    {
+      "id": "kpi_ticket_count",
+      "type": "kpi_card",
+      "title": "Nombre de tickets / réclamations",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "ticket_count",
+        "name": "Nombre de tickets / réclamations",
+        "value": 5000.0,
+        "unit": "tickets",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Nombre total de tickets ou réclamations distinctes.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "ticket_count",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "complaint_id"
+        ],
+        "formula": "nombre_distinct(ticket_id)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_dispute_rate",
+      "type": "kpi_card",
+      "title": "Taux de litiges clients",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "dispute_rate",
+        "name": "Taux de litiges clients",
+        "value": 20.06,
+        "unit": "%",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Part des réclamations ayant entraîné un litige client.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "dispute_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "consumer_disputed"
+        ],
+        "formula": "réclamations_contestées / total_réclamations × 100",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_timely_response_rate",
+      "type": "kpi_card",
+      "title": "Taux de réponse dans les délais",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "timely_response_rate",
+        "name": "Taux de réponse dans les délais",
+        "value": 98.44,
+        "unit": "%",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Part des réclamations traitées dans le délai imparti.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "timely_response_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "timely_response"
+        ],
+        "formula": "réponses_dans_les_délais / total × 100",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_ticket_count_company_response_to_consumer",
+      "type": "bar",
+      "title": "Nombre de tickets / réclamations par company_response_to_consumer",
+      "subtitle": "Référence globale : 5000.0 tickets",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Closed with explanation",
+          "value": 3753.0,
+          "rows": 3753,
+          "global": 5000.0
+        },
+        {
+          "segment": "Closed with non-monetary relief",
+          "value": 705.0,
+          "rows": 705,
+          "global": 5000.0
+        },
+        {
+          "segment": "Closed with monetary relief",
+          "value": 426.0,
+          "rows": 426,
+          "global": 5000.0
+        },
+        {
+          "segment": "Closed",
+          "value": 111.0,
+          "rows": 111,
+          "global": 5000.0
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "ticket_count",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "company_response_to_consumer"
+        ],
+        "formula": "nombre_distinct(ticket_id)",
+        "aggregation": "Nombre de tickets / réclamations par company_response_to_consumer",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_dispute_rate_company_response_to_consumer",
+      "type": "bar",
+      "title": "Taux de litiges clients par company_response_to_consumer",
+      "subtitle": "Référence globale : 20.06 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Closed with explanation",
+          "value": 22.3,
+          "rows": 3753,
+          "global": 20.06
+        },
+        {
+          "segment": "Closed",
+          "value": 20.72,
+          "rows": 111,
+          "global": 20.06
+        },
+        {
+          "segment": "Closed with non-monetary relief",
+          "value": 13.19,
+          "rows": 705,
+          "global": 20.06
+        },
+        {
+          "segment": "Closed with monetary relief",
+          "value": 11.74,
+          "rows": 426,
+          "global": 20.06
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "dispute_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "company_response_to_consumer"
+        ],
+        "formula": "réclamations_contestées / total_réclamations × 100",
+        "aggregation": "Taux de litiges clients par company_response_to_consumer",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_timely_response_rate_company_response_to_consumer",
+      "type": "bar",
+      "title": "Taux de réponse dans les délais par company_response_to_consumer",
+      "subtitle": "Référence globale : 98.44 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Closed with monetary relief",
+          "value": 99.53,
+          "rows": 426,
+          "global": 98.44
+        },
+        {
+          "segment": "Closed with non-monetary relief",
+          "value": 99.01,
+          "rows": 705,
+          "global": 98.44
+        },
+        {
+          "segment": "Closed with explanation",
+          "value": 98.48,
+          "rows": 3753,
+          "global": 98.44
+        },
+        {
+          "segment": "Closed",
+          "value": 93.69,
+          "rows": 111,
+          "global": 98.44
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "timely_response_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "company_response_to_consumer"
+        ],
+        "formula": "réponses_dans_les_délais / total × 100",
+        "aggregation": "Taux de réponse dans les délais par company_response_to_consumer",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_ticket_count_product",
+      "type": "bar",
+      "title": "Nombre de tickets / réclamations par product",
+      "subtitle": "Référence globale : 5000.0 tickets",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Mortgage",
+          "value": 1846.0,
+          "rows": 1846,
+          "global": 5000.0
+        },
+        {
+          "segment": "Debt collection",
+          "value": 931.0,
+          "rows": 931,
+          "global": 5000.0
+        },
+        {
+          "segment": "Credit reporting",
+          "value": 683.0,
+          "rows": 683,
+          "global": 5000.0
+        },
+        {
+          "segment": "Bank account or service",
+          "value": 646.0,
+          "rows": 646,
+          "global": 5000.0
+        },
+        {
+          "segment": "Credit card",
+          "value": 548.0,
+          "rows": 548,
+          "global": 5000.0
+        },
+        {
+          "segment": "Student loan",
+          "value": 163.0,
+          "rows": 163,
+          "global": 5000.0
+        },
+        {
+          "segment": "Consumer Loan",
+          "value": 145.0,
+          "rows": 145,
+          "global": 5000.0
+        },
+        {
+          "segment": "Money transfers",
+          "value": 35.0,
+          "rows": 35,
+          "global": 5000.0
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "ticket_count",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "product"
+        ],
+        "formula": "nombre_distinct(ticket_id)",
+        "aggregation": "Nombre de tickets / réclamations par product",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_ticket_count_submitted_via",
+      "type": "bar",
+      "title": "Nombre de tickets / réclamations par submitted_via",
+      "subtitle": "Référence globale : 5000.0 tickets",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Web",
+          "value": 3087.0,
+          "rows": 3087,
+          "global": 5000.0
+        },
+        {
+          "segment": "Referral",
+          "value": 981.0,
+          "rows": 981,
+          "global": 5000.0
+        },
+        {
+          "segment": "Phone",
+          "value": 440.0,
+          "rows": 440,
+          "global": 5000.0
+        },
+        {
+          "segment": "Postal mail",
+          "value": 403.0,
+          "rows": 403,
+          "global": 5000.0
+        },
+        {
+          "segment": "Fax",
+          "value": 87.0,
+          "rows": 87,
+          "global": 5000.0
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "ticket_count",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "submitted_via"
+        ],
+        "formula": "nombre_distinct(ticket_id)",
+        "aggregation": "Nombre de tickets / réclamations par submitted_via",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_dispute_rate_product",
+      "type": "bar",
+      "title": "Taux de litiges clients par product",
+      "subtitle": "Référence globale : 20.06 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Consumer Loan",
+          "value": 24.83,
+          "rows": 145,
+          "global": 20.06
+        },
+        {
+          "segment": "Student loan",
+          "value": 22.7,
+          "rows": 163,
+          "global": 20.06
+        },
+        {
+          "segment": "Mortgage",
+          "value": 22.48,
+          "rows": 1846,
+          "global": 20.06
+        },
+        {
+          "segment": "Credit reporting",
+          "value": 20.35,
+          "rows": 683,
+          "global": 20.06
+        },
+        {
+          "segment": "Bank account or service",
+          "value": 19.2,
+          "rows": 646,
+          "global": 20.06
+        },
+        {
+          "segment": "Debt collection",
+          "value": 16.76,
+          "rows": 931,
+          "global": 20.06
+        },
+        {
+          "segment": "Credit card",
+          "value": 16.61,
+          "rows": 548,
+          "global": 20.06
+        },
+        {
+          "segment": "Money transfers",
+          "value": 14.29,
+          "rows": 35,
+          "global": 20.06
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "dispute_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "product"
+        ],
+        "formula": "réclamations_contestées / total_réclamations × 100",
+        "aggregation": "Taux de litiges clients par product",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_dispute_rate_submitted_via",
+      "type": "bar",
+      "title": "Taux de litiges clients par submitted_via",
+      "subtitle": "Référence globale : 20.06 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Web",
+          "value": 22.35,
+          "rows": 3087,
+          "global": 20.06
+        },
+        {
+          "segment": "Fax",
+          "value": 19.54,
+          "rows": 87,
+          "global": 20.06
+        },
+        {
+          "segment": "Referral",
+          "value": 18.25,
+          "rows": 981,
+          "global": 20.06
+        },
+        {
+          "segment": "Phone",
+          "value": 13.86,
+          "rows": 440,
+          "global": 20.06
+        },
+        {
+          "segment": "Postal mail",
+          "value": 13.65,
+          "rows": 403,
+          "global": 20.06
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "dispute_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "submitted_via"
+        ],
+        "formula": "réclamations_contestées / total_réclamations × 100",
+        "aggregation": "Taux de litiges clients par submitted_via",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_timely_response_rate_product",
+      "type": "bar",
+      "title": "Taux de réponse dans les délais par product",
+      "subtitle": "Référence globale : 98.44 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Consumer Loan",
+          "value": 100.0,
+          "rows": 145,
+          "global": 98.44
+        },
+        {
+          "segment": "Credit card",
+          "value": 100.0,
+          "rows": 548,
+          "global": 98.44
+        },
+        {
+          "segment": "Credit reporting",
+          "value": 99.71,
+          "rows": 683,
+          "global": 98.44
+        },
+        {
+          "segment": "Student loan",
+          "value": 99.39,
+          "rows": 163,
+          "global": 98.44
+        },
+        {
+          "segment": "Mortgage",
+          "value": 99.13,
+          "rows": 1846,
+          "global": 98.44
+        },
+        {
+          "segment": "Bank account or service",
+          "value": 98.92,
+          "rows": 646,
+          "global": 98.44
+        },
+        {
+          "segment": "Money transfers",
+          "value": 97.14,
+          "rows": 35,
+          "global": 98.44
+        },
+        {
+          "segment": "Debt collection",
+          "value": 94.74,
+          "rows": 931,
+          "global": 98.44
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "timely_response_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "product"
+        ],
+        "formula": "réponses_dans_les_délais / total × 100",
+        "aggregation": "Taux de réponse dans les délais par product",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_timely_response_rate_submitted_via",
+      "type": "bar",
+      "title": "Taux de réponse dans les délais par submitted_via",
+      "subtitle": "Référence globale : 98.44 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Referral",
+          "value": 99.08,
+          "rows": 981,
+          "global": 98.44
+        },
+        {
+          "segment": "Postal mail",
+          "value": 98.51,
+          "rows": 403,
+          "global": 98.44
+        },
+        {
+          "segment": "Web",
+          "value": 98.28,
+          "rows": 3087,
+          "global": 98.44
+        },
+        {
+          "segment": "Phone",
+          "value": 98.18,
+          "rows": 440,
+          "global": 98.44
+        },
+        {
+          "segment": "Fax",
+          "value": 97.7,
+          "rows": 87,
+          "global": 98.44
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "timely_response_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "submitted_via"
+        ],
+        "formula": "réponses_dans_les_délais / total × 100",
+        "aggregation": "Taux de réponse dans les délais par submitted_via",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "text_caveats",
+      "type": "text",
+      "title": "Réserves et limites",
+      "subtitle": "",
+      "section": "quality",
+      "span": 12,
+      "kpi": null,
+      "data": [
+        {
+          "text": "ETL — telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}."
+        },
+        {
+          "text": "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité."
+        },
+        {
+          "text": "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+        }
+      ],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": null,
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [],
+        "formula": null,
+        "aggregation": null,
+        "origin": "analyst_report"
+      }
+    }
+  ],
+  "filters": [],
+  "report": {
+    "title": "Dashboard BI : Test multi-usage autonome",
+    "executive_summary": "Aucun segment ne passe les filtres statistiques de l'analyse.",
+    "blocks": [
+      {
+        "heading": "Indicateurs clés",
+        "text": "",
+        "visual_ids": [
+          "kpi_ticket_count",
+          "kpi_dispute_rate",
+          "kpi_timely_response_rate"
+        ]
+      }
+    ],
+    "recommendations_table": [],
+    "caveats": [
+      "ETL — telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}.",
+      "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+      "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+    ]
+  },
+  "excluded_visuals": [
+    {
+      "candidate": "churn_rate",
+      "reason": "non calculable (flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+    },
+    {
+      "candidate": "churned_customers",
+      "reason": "non calculable (flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+    },
+    {
+      "candidate": "avg_churn_score",
+      "reason": "fuite de cible : dérivé du churn, exclu des cartes de pilotage"
+    },
+    {
+      "candidate": "monthly_revenue_lost",
+      "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue', 'total_day_charge', 'day_charge'], flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+    },
+    {
+      "candidate": "customer_count",
+      "reason": "non calculable (id: ['customer_id', 'customerid', 'subscriber_id', 'phone_number'])"
+    },
+    {
+      "candidate": "avg_tenure",
+      "reason": "non calculable (value: ['tenure_months', 'tenure', 'months_active', 'account_length'])"
+    },
+    {
+      "candidate": "arpu",
+      "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue', 'total_day_charge', 'day_charge'])"
+    },
+    {
+      "candidate": "total_revenue",
+      "reason": "non calculable (value: ['total_charges', 'total_revenue', 'total_billed'])"
+    },
+    {
+      "candidate": "avg_cltv",
+      "reason": "non calculable (value: ['cltv', 'clv', 'customer_lifetime_value'])"
+    },
+    {
+      "candidate": "unpaid_rate",
+      "reason": "non calculable (num: ['unpaid_amount', 'overdue_amount'], den: ['billed_amount', 'invoice_amount'])"
+    },
+    {
+      "candidate": "avg_mos_voice",
+      "reason": "non calculable (value: ['mos_voice', 'mos', 'streaming_mos'])"
+    },
+    {
+      "candidate": "avg_throughput",
+      "reason": "non calculable (value: ['throughput_mbps', 'effective_bitrate_mbps', 'throughput', 'download_speed_mbps', 'download_speed'])"
+    },
+    {
+      "candidate": "avg_upload_speed",
+      "reason": "non calculable (value: ['upload_speed_mbps', 'upload_speed'])"
+    },
+    {
+      "candidate": "avg_latency",
+      "reason": "non calculable (value: ['latency_ms', 'latency', 'dns_latency_ms', 'ping_to_google_ms'])"
+    },
+    {
+      "candidate": "avg_packet_loss",
+      "reason": "non calculable (value: ['plr', 'packet_loss'])"
+    },
+    {
+      "candidate": "network_availability",
+      "reason": "non calculable (value: ['availability'])"
+    },
+    {
+      "candidate": "dropped_call_rate",
+      "reason": "non calculable (num: ['dropped_calls'], den: ['total_calls', 'calls'])"
+    },
+    {
+      "candidate": "cdr_incident_rate",
+      "reason": "non calculable (flag: ['cdr_flag', 'incident_flag', 'call_drop', 'dropped_connection'])"
+    },
+    {
+      "candidate": "avg_signal_strength",
+      "reason": "non calculable (value: ['signal_strength_dbm', 'signal_strength', 'rssi', 'rsrp'])"
+    },
+    {
+      "candidate": "avg_data_usage",
+      "reason": "non calculable (value: ['data_usage_mb', 'data_mb', 'data_usage', 'internet_mb'])"
+    },
+    {
+      "candidate": "ticket_resolution_rate",
+      "reason": "non calculable (flag: ['ticket_status', 'status', 'case_status'])"
+    },
+    {
+      "candidate": "avg_csat",
+      "reason": "non calculable (value: ['customer_satisfaction_rating', 'csat', 'satisfaction_rating', 'rating'])"
+    },
+    {
+      "candidate": "avg_resolution_time",
+      "reason": "non calculable (value: ['resolution_time_hours', 'resolution_time', 'resolution_hours'])"
+    },
+    {
+      "candidate": "temporal",
+      "reason": "colonne de churn introuvable"
+    },
+    {
+      "candidate": "geo_map",
+      "reason": "colonne géographique (state/city) ou churn introuvable"
+    }
+  ],
+  "caveats": [
+    "ETL — telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}.",
+    "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+    "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+  ],
+  "null_result": true,
+  "llm_narrative": "Aucun segment ne passe les filtres statistiques de l'analyse.",
+  "output_files": {
+    "report": "output_test\\telecom_complaints_sample\\dashboard\\dashboard_report.json"
+  },
+  "trace": [
+    {
+      "timestamp": "2026-10-27T18:46:59.679905",
+      "tool": "load",
+      "parameters": {
+        "has_frame": true,
+        "has_kpi": true,
+        "n_insights": 0
+      },
+      "duration_ms": 0.6877000000713451
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.681904",
+      "tool": "build",
+      "parameters": {
+        "n_candidates": 13
+      },
+      "duration_ms": 1.1724000000867818
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.681904",
+      "tool": "assemble",
+      "parameters": {
+        "n_visuals": 13,
+        "n_excluded": 25
+      },
+      "duration_ms": 0.1173999999082298
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.681904",
+      "tool": "report",
+      "parameters": {
+        "n_blocks": 1
+      },
+      "duration_ms": 0.02300000005561742
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.682904",
+      "tool": "narrate",
+      "parameters": {
+        "llm": false
+      },
+      "duration_ms": 0.0033000001167238224
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-27T18:46:59.679905"
+}

@@ -1,0 +1,581 @@
+{
+  "business_goal": "Analyse décisionnelle télécom",
+  "status": "warning",
+  "analyst_status": "warning",
+  "title": "Dashboard BI : Analyse décisionnelle télécom",
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Vue d'ensemble",
+      "order": 0,
+      "visual_ids": [
+        "kpi_ticket_count",
+        "kpi_ticket_resolution_rate"
+      ]
+    },
+    {
+      "id": "segments",
+      "title": "Segments à risque",
+      "order": 1,
+      "visual_ids": [
+        "bar_ticket_count_filing_on_behalf_of_someone",
+        "bar_ticket_resolution_rate_filing_on_behalf_of_someone",
+        "bar_ticket_count_received_via",
+        "bar_ticket_count_status",
+        "bar_ticket_resolution_rate_received_via"
+      ]
+    },
+    {
+      "id": "quality",
+      "title": "Qualité et réserves",
+      "order": 6,
+      "visual_ids": [
+        "text_caveats"
+      ]
+    }
+  ],
+  "visuals": [
+    {
+      "id": "kpi_ticket_count",
+      "type": "kpi_card",
+      "title": "Nombre de tickets / réclamations",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "ticket_count",
+        "name": "Nombre de tickets / réclamations",
+        "value": 2223.0,
+        "unit": "tickets",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Nombre total de tickets ou réclamations distinctes.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "ticket_count",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "ticket"
+        ],
+        "formula": "nombre_distinct(ticket_id / complaint_id)",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "kpi_ticket_resolution_rate",
+      "type": "kpi_card",
+      "title": "Taux de résolution des tickets",
+      "subtitle": "",
+      "section": "overview",
+      "span": 3,
+      "kpi": {
+        "kpi_id": "ticket_resolution_rate",
+        "name": "Taux de résolution des tickets",
+        "value": 76.75,
+        "unit": "%",
+        "status": "ok",
+        "target": null,
+        "delta": null,
+        "higher_is_better": null
+      },
+      "data": [],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "Part des tickets ou réclamations résolus / clos.",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "ticket_resolution_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "status"
+        ],
+        "formula": "tickets_clos / total_tickets × 100",
+        "aggregation": null,
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_ticket_count_filing_on_behalf_of_someone",
+      "type": "bar",
+      "title": "Nombre de tickets / réclamations par filing_on_behalf_of_someone",
+      "subtitle": "Référence globale : 2223.0 tickets",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "No",
+          "value": 2020.0,
+          "rows": 2021,
+          "global": 2223.0
+        },
+        {
+          "segment": "Yes",
+          "value": 203.0,
+          "rows": 203,
+          "global": 2223.0
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "ticket_count",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "filing_on_behalf_of_someone"
+        ],
+        "formula": "nombre_distinct(ticket_id / complaint_id)",
+        "aggregation": "Nombre de tickets / réclamations par filing_on_behalf_of_someone",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_ticket_resolution_rate_filing_on_behalf_of_someone",
+      "type": "bar",
+      "title": "Taux de résolution des tickets par filing_on_behalf_of_someone",
+      "subtitle": "Référence globale : 76.75 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "No",
+          "value": 77.09,
+          "rows": 2021,
+          "global": 76.75
+        },
+        {
+          "segment": "Yes",
+          "value": 73.4,
+          "rows": 203,
+          "global": 76.75
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "ticket_resolution_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "filing_on_behalf_of_someone"
+        ],
+        "formula": "tickets_clos / total_tickets × 100",
+        "aggregation": "Taux de résolution des tickets par filing_on_behalf_of_someone",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_ticket_count_received_via",
+      "type": "bar",
+      "title": "Nombre de tickets / réclamations par received_via",
+      "subtitle": "Référence globale : 2223.0 tickets",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Customer Care Call",
+          "value": 1119.0,
+          "rows": 1119,
+          "global": 2223.0
+        },
+        {
+          "segment": "Internet",
+          "value": 1105.0,
+          "rows": 1105,
+          "global": 2223.0
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "ticket_count",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "received_via"
+        ],
+        "formula": "nombre_distinct(ticket_id / complaint_id)",
+        "aggregation": "Nombre de tickets / réclamations par received_via",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_ticket_count_status",
+      "type": "bar",
+      "title": "Nombre de tickets / réclamations par status",
+      "subtitle": "Référence globale : 2223.0 tickets",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Solved",
+          "value": 973.0,
+          "rows": 973,
+          "global": 2223.0
+        },
+        {
+          "segment": "Closed",
+          "value": 734.0,
+          "rows": 734,
+          "global": 2223.0
+        },
+        {
+          "segment": "Open",
+          "value": 363.0,
+          "rows": 363,
+          "global": 2223.0
+        },
+        {
+          "segment": "Pending",
+          "value": 154.0,
+          "rows": 154,
+          "global": 2223.0
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "ticket_count",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "status"
+        ],
+        "formula": "nombre_distinct(ticket_id / complaint_id)",
+        "aggregation": "Nombre de tickets / réclamations par status",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "bar_ticket_resolution_rate_received_via",
+      "type": "bar",
+      "title": "Taux de résolution des tickets par received_via",
+      "subtitle": "Référence globale : 76.75 %",
+      "section": "segments",
+      "span": 6,
+      "kpi": null,
+      "data": [
+        {
+          "segment": "Customer Care Call",
+          "value": 77.21,
+          "rows": 1119,
+          "global": 76.75
+        },
+        {
+          "segment": "Internet",
+          "value": 76.29,
+          "rows": 1105,
+          "global": 76.75
+        }
+      ],
+      "encoding": {
+        "x": "segment",
+        "y": "value",
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "desc"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": "ticket_resolution_rate",
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [
+          "received_via"
+        ],
+        "formula": "tickets_clos / total_tickets × 100",
+        "aggregation": "Taux de résolution des tickets par received_via",
+        "origin": "kpi_report"
+      }
+    },
+    {
+      "id": "text_caveats",
+      "type": "text",
+      "title": "Réserves et limites",
+      "subtitle": "",
+      "section": "quality",
+      "span": 12,
+      "kpi": null,
+      "data": [
+        {
+          "text": "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité."
+        },
+        {
+          "text": "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+        }
+      ],
+      "encoding": {
+        "x": null,
+        "y": null,
+        "color": null,
+        "size": null,
+        "geo_key": null,
+        "sort": "none"
+      },
+      "note": "",
+      "reliable": true,
+      "warnings": [],
+      "references": {
+        "kpi_id": null,
+        "insight_ids": [],
+        "recommendation_ids": [],
+        "source_columns": [],
+        "formula": null,
+        "aggregation": null,
+        "origin": "analyst_report"
+      }
+    }
+  ],
+  "filters": [],
+  "report": {
+    "title": "Dashboard BI : Analyse décisionnelle télécom",
+    "executive_summary": "Aucun segment ne passe les filtres statistiques de l'analyse.",
+    "blocks": [
+      {
+        "heading": "Indicateurs clés",
+        "text": "",
+        "visual_ids": [
+          "kpi_ticket_count",
+          "kpi_ticket_resolution_rate"
+        ]
+      }
+    ],
+    "recommendations_table": [],
+    "caveats": [
+      "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+      "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+    ]
+  },
+  "excluded_visuals": [
+    {
+      "candidate": "churn_rate",
+      "reason": "non calculable (flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+    },
+    {
+      "candidate": "churned_customers",
+      "reason": "non calculable (flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+    },
+    {
+      "candidate": "avg_churn_score",
+      "reason": "fuite de cible : dérivé du churn, exclu des cartes de pilotage"
+    },
+    {
+      "candidate": "monthly_revenue_lost",
+      "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue'], flag: ['churn_value', 'churn_flag', 'churn', 'is_churn', 'churned', 'churn_label'])"
+    },
+    {
+      "candidate": "customer_count",
+      "reason": "non calculable (id: ['customer_id', 'customerid', 'subscriber_id'])"
+    },
+    {
+      "candidate": "avg_tenure",
+      "reason": "non calculable (value: ['tenure_months', 'tenure', 'months_active'])"
+    },
+    {
+      "candidate": "arpu",
+      "reason": "non calculable (value: ['monthly_charges', 'monthly_charge', 'monthly_fee', 'monthly_revenue'])"
+    },
+    {
+      "candidate": "total_revenue",
+      "reason": "non calculable (value: ['total_charges', 'total_revenue', 'total_billed'])"
+    },
+    {
+      "candidate": "avg_cltv",
+      "reason": "non calculable (value: ['cltv', 'clv', 'customer_lifetime_value'])"
+    },
+    {
+      "candidate": "unpaid_rate",
+      "reason": "non calculable (num: ['unpaid_amount', 'overdue_amount'], den: ['billed_amount', 'invoice_amount'])"
+    },
+    {
+      "candidate": "avg_data_usage",
+      "reason": "non calculable (value: ['data_usage_mb', 'data_mb', 'data_usage', 'internet_mb'])"
+    },
+    {
+      "candidate": "avg_call_minutes",
+      "reason": "non calculable (value: ['call_minutes', 'minutes', 'call_duration', 'voice_minutes'])"
+    },
+    {
+      "candidate": "avg_mos_voice",
+      "reason": "non calculable (value: ['mos_voice', 'mos', 'streaming_mos'])"
+    },
+    {
+      "candidate": "avg_throughput",
+      "reason": "non calculable (value: ['throughput_mbps', 'effective_bitrate_mbps', 'throughput', 'download_speed_mbps', 'download_speed'])"
+    },
+    {
+      "candidate": "avg_upload_speed",
+      "reason": "non calculable (value: ['upload_speed_mbps', 'upload_speed'])"
+    },
+    {
+      "candidate": "avg_signal_strength",
+      "reason": "non calculable (value: ['signal_strength_dbm', 'signal_strength', 'rssi', 'rsrp'])"
+    },
+    {
+      "candidate": "avg_packet_loss",
+      "reason": "non calculable (value: ['plr', 'packet_loss'])"
+    },
+    {
+      "candidate": "network_availability",
+      "reason": "non calculable (value: ['availability'])"
+    },
+    {
+      "candidate": "cdr_incident_rate",
+      "reason": "non calculable (flag: ['cdr_flag', 'incident_flag', 'call_drop', 'dropped_connection'])"
+    },
+    {
+      "candidate": "dropped_call_rate",
+      "reason": "non calculable (num: ['dropped_calls'], den: ['total_calls', 'calls'])"
+    },
+    {
+      "candidate": "avg_latency",
+      "reason": "non calculable (value: ['latency_ms', 'latency'])"
+    },
+    {
+      "candidate": "avg_csat",
+      "reason": "non calculable (value: ['customer_satisfaction_rating', 'csat', 'satisfaction_rating', 'rating'])"
+    },
+    {
+      "candidate": "dispute_rate",
+      "reason": "non calculable (flag: ['consumer_disputed?', 'consumer_disputed', 'is_disputed', 'disputed'])"
+    },
+    {
+      "candidate": "timely_response_rate",
+      "reason": "non calculable (flag: ['timely_response', 'timely_response?', 'in_time'])"
+    },
+    {
+      "candidate": "avg_resolution_time",
+      "reason": "non calculable (value: ['resolution_time_hours', 'resolution_time', 'resolution_hours'])"
+    },
+    {
+      "candidate": "temporal",
+      "reason": "colonne de churn introuvable"
+    },
+    {
+      "candidate": "geo_map",
+      "reason": "colonne géographique (state/city) ou churn introuvable"
+    }
+  ],
+  "caveats": [
+    "Analyse univariée non ajustée : chaque dimension est analysée indépendamment. Les associations observées peuvent être confondues par d'autres variables. Toutes les formulations sont en termes d'association (« associé à »), jamais de causalité.",
+    "Aucun segment ne passe les filtres combinés (p ajustée <= 0.05, écart >= 3.0 pts, n >= 30)."
+  ],
+  "null_result": true,
+  "llm_narrative": "Aucun segment ne passe les filtres statistiques de l'analyse.",
+  "output_files": {
+    "report": "output_test\\Comcast_telecom_complaints_data\\dashboard\\dashboard_report.json"
+  },
+  "trace": [
+    {
+      "timestamp": "2026-10-26T20:03:36.849967",
+      "tool": "load",
+      "parameters": {
+        "has_frame": true,
+        "has_kpi": true,
+        "n_insights": 0
+      },
+      "duration_ms": 0.44239999988349155
+    },
+    {
+      "timestamp": "2026-10-26T20:03:36.850967",
+      "tool": "build",
+      "parameters": {
+        "n_candidates": 8
+      },
+      "duration_ms": 0.5120000005263137
+    },
+    {
+      "timestamp": "2026-10-26T20:03:36.850967",
+      "tool": "assemble",
+      "parameters": {
+        "n_visuals": 8,
+        "n_excluded": 27
+      },
+      "duration_ms": 0.08729999990464421
+    },
+    {
+      "timestamp": "2026-10-26T20:03:36.850967",
+      "tool": "report",
+      "parameters": {
+        "n_blocks": 1
+      },
+      "duration_ms": 0.020600000425474718
+    },
+    {
+      "timestamp": "2026-10-26T20:03:36.851967",
+      "tool": "narrate",
+      "parameters": {
+        "llm": false
+      },
+      "duration_ms": 0.0031999998100218363
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-26T20:03:36.849967"
+}

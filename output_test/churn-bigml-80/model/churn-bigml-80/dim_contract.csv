@@ -1,0 +1,5 @@
+contract_key,international_plan,voice_mail_plan
+1,No,No
+2,No,Yes
+3,Yes,No
+4,Yes,Yes

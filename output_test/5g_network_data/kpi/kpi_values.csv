@@ -1,0 +1,103 @@
+kpi_id,kpi_name,category,unit,status,table,dimension,segment,value,rows
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,all,all,254.38,50000
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,location,Berlin,255.24,6346
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,location,Chennai,254.54,6236
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,location,Delhi,256.04,6213
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,location,Kolkata,253.03,6219
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,location,Mumbai,256.17,6248
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,location,New York,255.2,6218
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,location,San Francisco,253.11,6221
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,location,Tokyo,251.73,6299
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,network_type,4G,255.59,16549
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,network_type,5G NSA,254.29,16793
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,network_type,5G SA,253.27,16658
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,device_model,GT 7,253.16,10051
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,device_model,Galaxy S23,256.09,9924
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,device_model,Nord 4,254.16,10076
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,device_model,Pixel 7,253.27,9973
+avg_data_usage,Consommation data moyenne,Usage & Consumption,Mo,computed,5g_network_data,device_model,iPhone 14,255.25,9976
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,all,all,551.18,50000
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,location,Berlin,551.76,6346
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,location,Chennai,549.4,6236
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,location,Delhi,548.34,6213
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,location,Kolkata,557.03,6219
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,location,Mumbai,550.04,6248
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,location,New York,548.91,6218
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,location,San Francisco,553.01,6221
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,location,Tokyo,550.96,6299
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,network_type,4G,551.36,16549
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,network_type,5G NSA,552.88,16793
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,network_type,5G SA,549.29,16658
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,device_model,GT 7,549.25,10051
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,device_model,Galaxy S23,554.94,9924
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,device_model,Nord 4,553.01,10076
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,device_model,Pixel 7,547.64,9973
+avg_throughput,Débit moyen,Network Performance,Mbps,computed,5g_network_data,device_model,iPhone 14,551.09,9976
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,all,all,84.8,50000
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,location,Berlin,84.83,6346
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,location,Chennai,85.18,6236
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,location,Delhi,84.46,6213
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,location,Kolkata,84.45,6219
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,location,Mumbai,84.74,6248
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,location,New York,84.7,6218
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,location,San Francisco,84.95,6221
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,location,Tokyo,85.09,6299
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,network_type,4G,84.9,16549
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,network_type,5G NSA,84.56,16793
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,network_type,5G SA,84.95,16658
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,device_model,GT 7,85.06,10051
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,device_model,Galaxy S23,85.16,9924
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,device_model,Nord 4,84.44,10076
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,device_model,Pixel 7,84.67,9973
+avg_upload_speed,Débit montant moyen,Network Performance,Mbps,computed,5g_network_data,device_model,iPhone 14,84.69,9976
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,all,all,-84.84,50000
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,location,Berlin,-84.69,6346
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,location,Chennai,-84.99,6236
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,location,Delhi,-84.74,6213
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,location,Kolkata,-85.1,6219
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,location,Mumbai,-84.75,6248
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,location,New York,-84.95,6218
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,location,San Francisco,-84.81,6221
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,location,Tokyo,-84.66,6299
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,network_type,4G,-84.96,16549
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,network_type,5G NSA,-84.78,16793
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,network_type,5G SA,-84.78,16658
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,device_model,GT 7,-85.01,10051
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,device_model,Galaxy S23,-84.96,9924
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,device_model,Nord 4,-84.73,10076
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,device_model,Pixel 7,-84.62,9973
+avg_signal_strength,Force du signal moyen,Network Performance,dBm,suspect,5g_network_data,device_model,iPhone 14,-84.87,9976
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,all,all,50.06,50000
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,location,Berlin,49.91,6346
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,location,Chennai,48.97,6236
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,location,Delhi,50.68,6213
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,location,Kolkata,50.23,6219
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,location,Mumbai,50.7,6248
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,location,New York,50.1,6218
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,location,San Francisco,50.75,6221
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,location,Tokyo,49.17,6299
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,network_type,4G,49.47,16549
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,network_type,5G NSA,50.04,16793
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,network_type,5G SA,50.67,16658
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,device_model,GT 7,50.72,10051
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,device_model,Galaxy S23,50.06,9924
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,device_model,Nord 4,50.03,10076
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,device_model,Pixel 7,49.63,9973
+cdr_incident_rate,Taux d'incidents CDR,Network Performance,%,computed,5g_network_data,device_model,iPhone 14,49.86,9976
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,all,all,10.5,50000
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,location,Berlin,10.32,6346
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,location,Chennai,10.52,6236
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,location,Delhi,10.59,6213
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,location,Kolkata,10.48,6219
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,location,Mumbai,10.5,6248
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,location,New York,10.42,6218
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,location,San Francisco,10.61,6221
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,location,Tokyo,10.56,6299
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,network_type,4G,10.49,16549
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,network_type,5G NSA,10.47,16793
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,network_type,5G SA,10.53,16658
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,device_model,GT 7,10.45,10051
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,device_model,Galaxy S23,10.46,9924
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,device_model,Nord 4,10.49,10076
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,device_model,Pixel 7,10.56,9973
+avg_latency,Latence moyenne,Network Performance,ms,computed,5g_network_data,device_model,iPhone 14,10.53,9976

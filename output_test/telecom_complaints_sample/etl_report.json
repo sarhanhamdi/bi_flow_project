@@ -1,0 +1,441 @@
+{
+  "business_goal": "Test multi-usage autonome",
+  "status": "warning",
+  "tables": [
+    {
+      "name": "telecom_complaints_sample",
+      "rows_in": 5000,
+      "rows_out": 5000,
+      "columns_in": 18,
+      "columns_out": 14,
+      "output_path": "output_test\\telecom_complaints_sample\\telecom_complaints_sample_clean.csv",
+      "quality_before": {
+        "completeness": 73.561,
+        "uniqueness": 100.0,
+        "validity": 100.0,
+        "consistency": 100.0,
+        "overall": 93.39,
+        "rows": 5000,
+        "null_cells": 23795,
+        "text_numeric_columns": []
+      },
+      "quality_after": {
+        "completeness": 99.983,
+        "uniqueness": 100.0,
+        "validity": 100.0,
+        "consistency": 100.0,
+        "overall": 99.996,
+        "rows": 5000,
+        "null_cells": 12,
+        "text_numeric_columns": []
+      },
+      "columns": [
+        {
+          "original_name": "date_received",
+          "name": "date_received",
+          "dtype": "datetime64[us]",
+          "semantic_role": "date",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "product",
+          "name": "product",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "sub_product",
+          "name": "sub_product",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "issue",
+          "name": "issue",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "sub_issue",
+          "name": "sub_issue",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "company",
+          "name": "company",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "state",
+          "name": "state",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "zipcode",
+          "name": "zipcode",
+          "dtype": "string",
+          "semantic_role": "id",
+          "role_corrected_from": "measure",
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "submitted_via",
+          "name": "submitted_via",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "date_sent_to_company",
+          "name": "date_sent_to_company",
+          "dtype": "datetime64[us]",
+          "semantic_role": "date",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "company_response_to_consumer",
+          "name": "company_response_to_consumer",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "timely_response",
+          "name": "timely_response",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": "date",
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "consumer_disputed?",
+          "name": "consumer_disputed",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "complaint_id",
+          "name": "complaint_id",
+          "dtype": "int64",
+          "semantic_role": "id",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        }
+      ]
+    }
+  ],
+  "star_schemas": [],
+  "actions": [
+    {
+      "id": "telecom_complaints_sample.00.coerce_to_datetime.date_received",
+      "step": 0,
+      "table": "telecom_complaints_sample",
+      "column": "date_received",
+      "rule": "coerce_to_datetime",
+      "rows_affected": 5000,
+      "before": "Colonne de dates stockée en texte.",
+      "after": "Convertie en datetime (0 valeur(s) illisible(s) mises à null).",
+      "rationale": "Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.",
+      "source_issue_id": null
+    },
+    {
+      "id": "telecom_complaints_sample.01.coerce_to_datetime.date_sent_to_company",
+      "step": 1,
+      "table": "telecom_complaints_sample",
+      "column": "date_sent_to_company",
+      "rule": "coerce_to_datetime",
+      "rows_affected": 5000,
+      "before": "Colonne de dates stockée en texte.",
+      "after": "Convertie en datetime (0 valeur(s) illisible(s) mises à null).",
+      "rationale": "Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.",
+      "source_issue_id": null
+    },
+    {
+      "id": "telecom_complaints_sample.02.impute_unknown.sub_product",
+      "step": 2,
+      "table": "telecom_complaints_sample",
+      "column": "sub_product",
+      "rule": "impute_unknown",
+      "rows_affected": 1231,
+      "before": "1231 valeur(s) manquante(s) (24.62%).",
+      "after": "Remplies par 'Unknown'.",
+      "rationale": "Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue.",
+      "source_issue_id": "telecom_complaints_sample.sub_product.missing"
+    },
+    {
+      "id": "telecom_complaints_sample.03.impute_unknown.sub_issue",
+      "step": 3,
+      "table": "telecom_complaints_sample",
+      "column": "sub_issue",
+      "rule": "impute_unknown",
+      "rows_affected": 3220,
+      "before": "3220 valeur(s) manquante(s) (64.40%).",
+      "after": "Remplies par 'Unknown'.",
+      "rationale": "Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue.",
+      "source_issue_id": "telecom_complaints_sample.sub_issue.missing"
+    },
+    {
+      "id": "telecom_complaints_sample.04.drop_sparse_column.consumer_complaint_narrative",
+      "step": 4,
+      "table": "telecom_complaints_sample",
+      "column": "consumer_complaint_narrative",
+      "rule": "drop_sparse_column",
+      "rows_affected": 5000,
+      "before": "100.0% de valeurs manquantes (seuil 80%).",
+      "after": "Colonne supprimée.",
+      "rationale": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.",
+      "source_issue_id": "telecom_complaints_sample.consumer_complaint_narrative.missing"
+    },
+    {
+      "id": "telecom_complaints_sample.05.drop_sparse_column.company_public_response",
+      "step": 5,
+      "table": "telecom_complaints_sample",
+      "column": "company_public_response",
+      "rule": "drop_sparse_column",
+      "rows_affected": 5000,
+      "before": "100.0% de valeurs manquantes (seuil 80%).",
+      "after": "Colonne supprimée.",
+      "rationale": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.",
+      "source_issue_id": "telecom_complaints_sample.company_public_response.missing"
+    },
+    {
+      "id": "telecom_complaints_sample.06.impute_unknown.state",
+      "step": 6,
+      "table": "telecom_complaints_sample",
+      "column": "state",
+      "rule": "impute_unknown",
+      "rows_affected": 12,
+      "before": "12 valeur(s) manquante(s) (0.24%).",
+      "after": "Remplies par 'Unknown'.",
+      "rationale": "Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue.",
+      "source_issue_id": "telecom_complaints_sample.state.missing"
+    },
+    {
+      "id": "telecom_complaints_sample.07.drop_sparse_column.tags",
+      "step": 7,
+      "table": "telecom_complaints_sample",
+      "column": "tags",
+      "rule": "drop_sparse_column",
+      "rows_affected": 4320,
+      "before": "86.4% de valeurs manquantes (seuil 80%).",
+      "after": "Colonne supprimée.",
+      "rationale": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.",
+      "source_issue_id": "telecom_complaints_sample.tags.missing"
+    },
+    {
+      "id": "telecom_complaints_sample.08.drop_sparse_column.consumer_consent_provided",
+      "step": 8,
+      "table": "telecom_complaints_sample",
+      "column": "consumer_consent_provided",
+      "rule": "drop_sparse_column",
+      "rows_affected": 5000,
+      "before": "100.0% de valeurs manquantes (seuil 80%).",
+      "after": "Colonne supprimée.",
+      "rationale": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.",
+      "source_issue_id": "telecom_complaints_sample.consumer_consent_provided.missing"
+    }
+  ],
+  "validation_checks": [
+    {
+      "id": "telecom_complaints_sample.row_reconciliation",
+      "table": "telecom_complaints_sample",
+      "check": "row_reconciliation",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "5000 lignes en entrée − 0 supprimées tracées = 5000 attendues ; 5000 en sortie."
+    },
+    {
+      "id": "telecom_complaints_sample.no_exact_duplicates",
+      "table": "telecom_complaints_sample",
+      "check": "no_exact_duplicates",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 doublon(s) exact(s) restant(s)."
+    },
+    {
+      "id": "telecom_complaints_sample.no_unexpected_nulls",
+      "table": "telecom_complaints_sample",
+      "check": "no_unexpected_nulls",
+      "column": null,
+      "passed": false,
+      "severity": "medium",
+      "violations": 12,
+      "detail": "Nulls restants hors cas structurels : {'zipcode': 12}."
+    },
+    {
+      "id": "telecom_complaints_sample.no_constant_columns",
+      "table": "telecom_complaints_sample",
+      "check": "no_constant_columns",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Colonnes constantes (peu utiles pour l'analyse) : aucune."
+    }
+  ],
+  "issue_resolutions": [
+    {
+      "issue_id": "telecom_complaints_sample.sub_product.missing",
+      "status": "resolved",
+      "action_ids": [
+        "telecom_complaints_sample.02.impute_unknown.sub_product"
+      ],
+      "note": "Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue."
+    },
+    {
+      "issue_id": "telecom_complaints_sample.sub_issue.missing",
+      "status": "resolved",
+      "action_ids": [
+        "telecom_complaints_sample.03.impute_unknown.sub_issue"
+      ],
+      "note": "Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue."
+    },
+    {
+      "issue_id": "telecom_complaints_sample.consumer_complaint_narrative.missing",
+      "status": "resolved",
+      "action_ids": [
+        "telecom_complaints_sample.04.drop_sparse_column.consumer_complaint_narrative"
+      ],
+      "note": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée."
+    },
+    {
+      "issue_id": "telecom_complaints_sample.company_public_response.missing",
+      "status": "resolved",
+      "action_ids": [
+        "telecom_complaints_sample.05.drop_sparse_column.company_public_response"
+      ],
+      "note": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée."
+    },
+    {
+      "issue_id": "telecom_complaints_sample.state.missing",
+      "status": "resolved",
+      "action_ids": [
+        "telecom_complaints_sample.06.impute_unknown.state"
+      ],
+      "note": "Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue."
+    },
+    {
+      "issue_id": "telecom_complaints_sample.zipcode.missing",
+      "status": "not_addressed",
+      "action_ids": [],
+      "note": "Aucune règle de l'ETL ne couvre ce problème."
+    },
+    {
+      "issue_id": "telecom_complaints_sample.tags.missing",
+      "status": "resolved",
+      "action_ids": [
+        "telecom_complaints_sample.07.drop_sparse_column.tags"
+      ],
+      "note": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée."
+    },
+    {
+      "issue_id": "telecom_complaints_sample.consumer_consent_provided.missing",
+      "status": "resolved",
+      "action_ids": [
+        "telecom_complaints_sample.08.drop_sparse_column.consumer_consent_provided"
+      ],
+      "note": "Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée."
+    }
+  ],
+  "remaining_issues": [
+    {
+      "id": "telecom_complaints_sample.remaining.no_unexpected_nulls",
+      "severity": "medium",
+      "table": "telecom_complaints_sample",
+      "column": null,
+      "rule": "no_unexpected_nulls",
+      "evidence": "Nulls restants hors cas structurels : {'zipcode': 12}.",
+      "affected_rows": 12,
+      "suggested_action": "Valider la règle métier avec le responsable de la donnée avant de la corriger."
+    },
+    {
+      "id": "telecom_complaints_sample.star_schema_skipped",
+      "severity": "low",
+      "table": "telecom_complaints_sample",
+      "column": null,
+      "rule": "star_schema_skipped",
+      "evidence": "Aucune mesure numérique détectée : un fait sans mesure n'a pas d'intérêt BI.",
+      "affected_rows": 0,
+      "suggested_action": "Définir les mesures via ETLOptions.star_schemas si besoin."
+    }
+  ],
+  "llm_summary": "Table telecom_complaints_sample : 5000 → 5000 ligne(s), score qualité 93.39 → 99.996/100.\nCorrections appliquées :\n- telecom_complaints_sample.date_received [coerce_to_datetime] 5000 ligne(s) : Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.\n- telecom_complaints_sample.date_sent_to_company [coerce_to_datetime] 5000 ligne(s) : Les dates textuelles empêchent tri, filtres temporels et séries chronologiques.\n- telecom_complaints_sample.sub_product [impute_unknown] 1231 ligne(s) : Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue.\n- telecom_complaints_sample.sub_issue [impute_unknown] 3220 ligne(s) : Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue.\n- telecom_complaints_sample.consumer_complaint_narrative [drop_sparse_column] 5000 ligne(s) : Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.\n- telecom_complaints_sample.company_public_response [drop_sparse_column] 5000 ligne(s) : Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.\n- telecom_complaints_sample.state [impute_unknown] 12 ligne(s) : Une modalité explicite évite de perdre les lignes tout en gardant l'information qu'elle était inconnue.\n- telecom_complaints_sample.tags [drop_sparse_column] 4320 ligne(s) : Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.\n- telecom_complaints_sample.consumer_consent_provided [drop_sparse_column] 5000 ligne(s) : Trop vide pour être exploitable ; l'imputer reviendrait à inventer la donnée.\nÀ surveiller :\n- medium telecom_complaints_sample : Nulls restants hors cas structurels : {'zipcode': 12}.\n- low telecom_complaints_sample : Aucune mesure numérique détectée : un fait sans mesure n'a pas d'intérêt BI.",
+  "trace": [
+    {
+      "timestamp": "2026-10-27T18:46:58.899798",
+      "tool": "load_source",
+      "parameters": {
+        "source_name": "telecom_complaints_sample",
+        "rows": 5000
+      },
+      "duration_ms": 14.682399999855988
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.469053",
+      "tool": "clean_table",
+      "parameters": {
+        "table": "telecom_complaints_sample",
+        "actions": 9
+      },
+      "duration_ms": 569.0008000001399
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.469053",
+      "tool": "validate",
+      "parameters": {
+        "checks": 4
+      },
+      "duration_ms": 0.11580000000321888
+    },
+    {
+      "timestamp": "2026-10-27T18:46:59.503175",
+      "tool": "export",
+      "parameters": {
+        "table": "telecom_complaints_sample",
+        "path": "output_test\\telecom_complaints_sample\\telecom_complaints_sample_clean.csv"
+      },
+      "duration_ms": 33.72140000010404
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-27T18:46:58.884904"
+}

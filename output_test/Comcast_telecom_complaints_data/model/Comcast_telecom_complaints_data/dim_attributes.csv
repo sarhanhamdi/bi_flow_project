@@ -1,0 +1,17 @@
+attributes_key,received_via,status,filing_on_behalf_of_someone
+1,Customer Care Call,Closed,No
+2,Customer Care Call,Closed,Yes
+3,Customer Care Call,Open,No
+4,Customer Care Call,Open,Yes
+5,Customer Care Call,Pending,No
+6,Customer Care Call,Pending,Yes
+7,Customer Care Call,Solved,No
+8,Customer Care Call,Solved,Yes
+9,Internet,Closed,No
+10,Internet,Closed,Yes
+11,Internet,Open,No
+12,Internet,Open,Yes
+13,Internet,Pending,No
+14,Internet,Pending,Yes
+15,Internet,Solved,No
+16,Internet,Solved,Yes

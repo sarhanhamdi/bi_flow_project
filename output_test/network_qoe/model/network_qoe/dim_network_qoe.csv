@@ -1,0 +1,5 @@
+network_qoe_key,segment
+1,IMS_CDN
+2,INDOOR_RAN
+3,INTERNET
+4,OUTDOOR_RAN

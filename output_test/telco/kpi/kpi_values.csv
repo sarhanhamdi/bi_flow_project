@@ -1,0 +1,100 @@
+kpi_id,kpi_name,category,unit,status,table,dimension,segment,value,rows
+churn_rate,Taux de churn,Churn,%,computed,telco,all,all,26.54,7043
+churn_rate,Taux de churn,Churn,%,computed,telco,contract,Month-to-month,42.71,3875
+churn_rate,Taux de churn,Churn,%,computed,telco,contract,One year,11.27,1473
+churn_rate,Taux de churn,Churn,%,computed,telco,contract,Two year,2.83,1695
+churn_rate,Taux de churn,Churn,%,computed,telco,internet_service,DSL,18.96,2421
+churn_rate,Taux de churn,Churn,%,computed,telco,internet_service,Fiber optic,41.89,3096
+churn_rate,Taux de churn,Churn,%,computed,telco,internet_service,No,7.4,1526
+churn_rate,Taux de churn,Churn,%,computed,telco,payment_method,Bank transfer (automatic),16.71,1544
+churn_rate,Taux de churn,Churn,%,computed,telco,payment_method,Credit card (automatic),15.24,1522
+churn_rate,Taux de churn,Churn,%,computed,telco,payment_method,Electronic check,45.29,2365
+churn_rate,Taux de churn,Churn,%,computed,telco,payment_method,Mailed check,19.11,1612
+churned_customers,Clients churnés,Churn,clients,computed,telco,all,all,1869.0,7043
+churned_customers,Clients churnés,Churn,clients,computed,telco,contract,Month-to-month,1655.0,3875
+churned_customers,Clients churnés,Churn,clients,computed,telco,contract,One year,166.0,1473
+churned_customers,Clients churnés,Churn,clients,computed,telco,contract,Two year,48.0,1695
+churned_customers,Clients churnés,Churn,clients,computed,telco,internet_service,DSL,459.0,2421
+churned_customers,Clients churnés,Churn,clients,computed,telco,internet_service,Fiber optic,1297.0,3096
+churned_customers,Clients churnés,Churn,clients,computed,telco,internet_service,No,113.0,1526
+churned_customers,Clients churnés,Churn,clients,computed,telco,payment_method,Bank transfer (automatic),258.0,1544
+churned_customers,Clients churnés,Churn,clients,computed,telco,payment_method,Credit card (automatic),232.0,1522
+churned_customers,Clients churnés,Churn,clients,computed,telco,payment_method,Electronic check,1071.0,2365
+churned_customers,Clients churnés,Churn,clients,computed,telco,payment_method,Mailed check,308.0,1612
+avg_churn_score,Score de churn moyen,Churn,points,computed,telco,all,all,58.7,7043
+avg_churn_score,Score de churn moyen,Churn,points,computed,telco,contract,Month-to-month,63.91,3875
+avg_churn_score,Score de churn moyen,Churn,points,computed,telco,contract,One year,53.81,1473
+avg_churn_score,Score de churn moyen,Churn,points,computed,telco,contract,Two year,51.03,1695
+avg_churn_score,Score de churn moyen,Churn,points,computed,telco,internet_service,DSL,55.97,2421
+avg_churn_score,Score de churn moyen,Churn,points,computed,telco,internet_service,Fiber optic,63.77,3096
+avg_churn_score,Score de churn moyen,Churn,points,computed,telco,internet_service,No,52.74,1526
+avg_churn_score,Score de churn moyen,Churn,points,computed,telco,payment_method,Bank transfer (automatic),55.74,1544
+avg_churn_score,Score de churn moyen,Churn,points,computed,telco,payment_method,Credit card (automatic),55.18,1522
+avg_churn_score,Score de churn moyen,Churn,points,computed,telco,payment_method,Electronic check,64.59,2365
+avg_churn_score,Score de churn moyen,Churn,points,computed,telco,payment_method,Mailed check,56.21,1612
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,telco,all,all,139130.85,7043
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,telco,contract,Month-to-month,120847.1,3875
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,telco,contract,One year,14118.45,1473
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,telco,contract,Two year,4165.3,1695
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,telco,internet_service,DSL,22529.2,2421
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,telco,internet_service,Fiber optic,114300.05,3096
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,telco,internet_service,No,2301.6,1526
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,telco,payment_method,Bank transfer (automatic),20091.9,1544
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,telco,payment_method,Credit card (automatic),17946.6,1522
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,telco,payment_method,Electronic check,84288.75,2365
+monthly_revenue_lost,Revenu mensuel perdu par churn,Churn,devise/mois,computed,telco,payment_method,Mailed check,16803.6,1612
+customer_count,Nombre de clients,Customer Base,clients,computed,telco,all,all,7043.0,7043
+customer_count,Nombre de clients,Customer Base,clients,computed,telco,contract,Month-to-month,3875.0,3875
+customer_count,Nombre de clients,Customer Base,clients,computed,telco,contract,One year,1473.0,1473
+customer_count,Nombre de clients,Customer Base,clients,computed,telco,contract,Two year,1695.0,1695
+customer_count,Nombre de clients,Customer Base,clients,computed,telco,internet_service,DSL,2421.0,2421
+customer_count,Nombre de clients,Customer Base,clients,computed,telco,internet_service,Fiber optic,3096.0,3096
+customer_count,Nombre de clients,Customer Base,clients,computed,telco,internet_service,No,1526.0,1526
+customer_count,Nombre de clients,Customer Base,clients,computed,telco,payment_method,Bank transfer (automatic),1544.0,1544
+customer_count,Nombre de clients,Customer Base,clients,computed,telco,payment_method,Credit card (automatic),1522.0,1522
+customer_count,Nombre de clients,Customer Base,clients,computed,telco,payment_method,Electronic check,2365.0,2365
+customer_count,Nombre de clients,Customer Base,clients,computed,telco,payment_method,Mailed check,1612.0,1612
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,telco,all,all,32.37,7043
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,telco,contract,Month-to-month,18.04,3875
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,telco,contract,One year,42.04,1473
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,telco,contract,Two year,56.74,1695
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,telco,internet_service,DSL,32.82,2421
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,telco,internet_service,Fiber optic,32.92,3096
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,telco,internet_service,No,30.55,1526
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,telco,payment_method,Bank transfer (automatic),43.66,1544
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,telco,payment_method,Credit card (automatic),43.27,1522
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,telco,payment_method,Electronic check,25.17,2365
+avg_tenure,Ancienneté moyenne,Customer Base,mois,computed,telco,payment_method,Mailed check,21.83,1612
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,telco,all,all,64.76,7043
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,telco,contract,Month-to-month,66.4,3875
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,telco,contract,One year,65.05,1473
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,telco,contract,Two year,60.77,1695
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,telco,internet_service,DSL,58.1,2421
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,telco,internet_service,Fiber optic,91.5,3096
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,telco,internet_service,No,21.08,1526
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,telco,payment_method,Bank transfer (automatic),67.19,1544
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,telco,payment_method,Credit card (automatic),66.51,1522
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,telco,payment_method,Electronic check,76.26,2365
+arpu,ARPU mensuel,Billing & Revenue,devise/client/mois,computed,telco,payment_method,Mailed check,43.92,1612
+total_revenue,Revenu cumulé,Billing & Revenue,devise,computed,telco,all,all,16071540.93,7043
+total_revenue,Revenu cumulé,Billing & Revenue,devise,computed,telco,contract,Month-to-month,5305861.5,3875
+total_revenue,Revenu cumulé,Billing & Revenue,devise,computed,telco,contract,One year,4468450.97,1473
+total_revenue,Revenu cumulé,Billing & Revenue,devise,computed,telco,contract,Two year,6297228.45,1695
+total_revenue,Revenu cumulé,Billing & Revenue,devise,computed,telco,internet_service,DSL,5128398.22,2421
+total_revenue,Revenu cumulé,Billing & Revenue,devise,computed,telco,internet_service,Fiber optic,9923622.95,3096
+total_revenue,Revenu cumulé,Billing & Revenue,devise,computed,telco,internet_service,No,1019519.75,1526
+total_revenue,Revenu cumulé,Billing & Revenue,devise,computed,telco,payment_method,Bank transfer (automatic),4751074.85,1544
+total_revenue,Revenu cumulé,Billing & Revenue,devise,computed,telco,payment_method,Credit card (automatic),4672990.82,1522
+total_revenue,Revenu cumulé,Billing & Revenue,devise,computed,telco,payment_method,Electronic check,4944903.25,2365
+total_revenue,Revenu cumulé,Billing & Revenue,devise,computed,telco,payment_method,Mailed check,1702572.0,1612
+avg_cltv,CLTV moyen,Billing & Revenue,devise,computed,telco,all,all,4400.3,7043
+avg_cltv,CLTV moyen,Billing & Revenue,devise,computed,telco,contract,Month-to-month,4136.71,3875
+avg_cltv,CLTV moyen,Billing & Revenue,devise,computed,telco,contract,One year,4529.96,1473
+avg_cltv,CLTV moyen,Billing & Revenue,devise,computed,telco,contract,Two year,4890.21,1695
+avg_cltv,CLTV moyen,Billing & Revenue,devise,computed,telco,internet_service,DSL,4397.57,2421
+avg_cltv,CLTV moyen,Billing & Revenue,devise,computed,telco,internet_service,Fiber optic,4415.2,3096
+avg_cltv,CLTV moyen,Billing & Revenue,devise,computed,telco,internet_service,No,4374.38,1526
+avg_cltv,CLTV moyen,Billing & Revenue,devise,computed,telco,payment_method,Bank transfer (automatic),4615.78,1544
+avg_cltv,CLTV moyen,Billing & Revenue,devise,computed,telco,payment_method,Credit card (automatic),4578.28,1522
+avg_cltv,CLTV moyen,Billing & Revenue,devise,computed,telco,payment_method,Electronic check,4282.67,2365
+avg_cltv,CLTV moyen,Billing & Revenue,devise,computed,telco,payment_method,Mailed check,4198.43,1612

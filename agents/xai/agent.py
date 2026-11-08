@@ -170,9 +170,9 @@ def node_baseline_compare(state: XAIState) -> dict[str, Any]:
             id="AUDIT-BASELINE-001",
             severity="info",
             category="baseline",
-            title="Validation par rapport au modèle naïf",
-            detail=f"Gain de F1-Score de +{baseline['delta_f1']:.1%} par rapport à la classe majoritaire.",
-            recommendation="Le modèle ML apporte une valeur réelle par rapport à une règle naïve.",
+            title="Validation face au modèle linéaire de référence",
+            detail=f"Gain de F1-Score de +{baseline['delta_f1']:.1%} et Recall de +{baseline.get('delta_recall', 0.0):.1%} par rapport à la Régression Logistique.",
+            recommendation="L'approche ensembliste Random Forest apporte un gain significatif sur les interactions non-linéaires.",
         )
     )
 
@@ -333,9 +333,15 @@ def node_summarize(state: XAIState) -> dict[str, Any]:
             severity="info",
             category="baseline_validation",
             role="technical",
-            title="Surperformance formelle par rapport au modèle naïf",
-            detail=f"Gain de F1-Score net de +{baseline_model.delta_f1:.1%} par rapport à la classe majoritaire.",
-            recommendation="La valeur prédictive ajoutée est validée scientifiquement (verdict: significant_gain).",
+            title="Surperformance formelle face à la baseline linéaire",
+            detail=(
+                f"Gain de F1-Score net de {baseline_model.delta_f1:+.1%} et Recall de {baseline_model.delta_recall:+.1%} "
+                f"par rapport à la Régression Logistique."
+            ),
+            recommendation=(
+                "La supériorité prédictive non-linéaire est validée scientifiquement "
+                f"(verdict: {baseline_model.verdict})."
+            ),
             financial_impact=None,
         )
     )

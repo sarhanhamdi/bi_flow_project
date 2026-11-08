@@ -1,0 +1,2 @@
+metric,kpi_id,n_churned,n_retained,median_churned,median_retained,mean_churned,mean_retained,cliffs_delta,effect_size_label,p_value_raw,p_value_adjusted,test_used
+throughput_mbps,arpu,29217,138214,0.150181,0.0919815,0.5194424295444433,0.11060053697165265,0.3245102171474814,fort,0.0,0.0,mann-whitney

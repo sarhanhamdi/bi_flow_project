@@ -1,0 +1,31 @@
+erDiagram
+    fact_Call Details-Data {
+        int fact_row_key
+        int Call Details-Data_key FK
+        int churn_key FK
+        int account_length
+        int vmail_message
+        float day_mins
+        int day_calls
+        float day_charge
+        float eve_mins
+        int eve_calls
+        float eve_charge
+        float night_mins
+        int night_calls
+        float night_charge
+        float intl_mins
+        int intl_calls
+        float intl_charge
+        int cust_serv_calls
+    }
+    dim_Call Details-Data {
+        int Call Details-Data_key PK
+        string phone_number
+    }
+    dim_churn {
+        int churn_key PK
+        string churn
+    }
+    dim_Call Details-Data ||--o{ fact_Call Details-Data : Call Details-Data_key
+    dim_churn ||--o{ fact_Call Details-Data : churn_key

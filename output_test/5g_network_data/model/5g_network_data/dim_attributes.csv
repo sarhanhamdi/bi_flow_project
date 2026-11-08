@@ -1,0 +1,757 @@
+attributes_key,network_type,carrier,band,vo_nr_enabled,network_congestion_level,dropped_connection
+1,4G,AT&T,n260,False,High,False
+2,4G,AT&T,n260,False,High,True
+3,4G,AT&T,n260,False,Low,False
+4,4G,AT&T,n260,False,Low,True
+5,4G,AT&T,n260,False,Medium,False
+6,4G,AT&T,n260,False,Medium,True
+7,4G,AT&T,n260,True,High,False
+8,4G,AT&T,n260,True,High,True
+9,4G,AT&T,n260,True,Low,False
+10,4G,AT&T,n260,True,Low,True
+11,4G,AT&T,n260,True,Medium,False
+12,4G,AT&T,n260,True,Medium,True
+13,4G,AT&T,n41,False,High,False
+14,4G,AT&T,n41,False,High,True
+15,4G,AT&T,n41,False,Low,False
+16,4G,AT&T,n41,False,Low,True
+17,4G,AT&T,n41,False,Medium,False
+18,4G,AT&T,n41,False,Medium,True
+19,4G,AT&T,n41,True,High,False
+20,4G,AT&T,n41,True,High,True
+21,4G,AT&T,n41,True,Low,False
+22,4G,AT&T,n41,True,Low,True
+23,4G,AT&T,n41,True,Medium,False
+24,4G,AT&T,n41,True,Medium,True
+25,4G,AT&T,n78,False,High,False
+26,4G,AT&T,n78,False,High,True
+27,4G,AT&T,n78,False,Low,False
+28,4G,AT&T,n78,False,Low,True
+29,4G,AT&T,n78,False,Medium,False
+30,4G,AT&T,n78,False,Medium,True
+31,4G,AT&T,n78,True,High,False
+32,4G,AT&T,n78,True,High,True
+33,4G,AT&T,n78,True,Low,False
+34,4G,AT&T,n78,True,Low,True
+35,4G,AT&T,n78,True,Medium,False
+36,4G,AT&T,n78,True,Medium,True
+37,4G,Airtel,n258,False,High,False
+38,4G,Airtel,n258,False,High,True
+39,4G,Airtel,n258,False,Low,False
+40,4G,Airtel,n258,False,Low,True
+41,4G,Airtel,n258,False,Medium,False
+42,4G,Airtel,n258,False,Medium,True
+43,4G,Airtel,n258,True,High,False
+44,4G,Airtel,n258,True,High,True
+45,4G,Airtel,n258,True,Low,False
+46,4G,Airtel,n258,True,Low,True
+47,4G,Airtel,n258,True,Medium,False
+48,4G,Airtel,n258,True,Medium,True
+49,4G,Airtel,n28,False,High,False
+50,4G,Airtel,n28,False,High,True
+51,4G,Airtel,n28,False,Low,False
+52,4G,Airtel,n28,False,Low,True
+53,4G,Airtel,n28,False,Medium,False
+54,4G,Airtel,n28,False,Medium,True
+55,4G,Airtel,n28,True,High,False
+56,4G,Airtel,n28,True,High,True
+57,4G,Airtel,n28,True,Low,False
+58,4G,Airtel,n28,True,Low,True
+59,4G,Airtel,n28,True,Medium,False
+60,4G,Airtel,n28,True,Medium,True
+61,4G,Airtel,n78,False,High,False
+62,4G,Airtel,n78,False,High,True
+63,4G,Airtel,n78,False,Low,False
+64,4G,Airtel,n78,False,Low,True
+65,4G,Airtel,n78,False,Medium,False
+66,4G,Airtel,n78,False,Medium,True
+67,4G,Airtel,n78,True,High,False
+68,4G,Airtel,n78,True,High,True
+69,4G,Airtel,n78,True,Low,False
+70,4G,Airtel,n78,True,Low,True
+71,4G,Airtel,n78,True,Medium,False
+72,4G,Airtel,n78,True,Medium,True
+73,4G,BSNL,n258,False,High,False
+74,4G,BSNL,n258,False,High,True
+75,4G,BSNL,n258,False,Low,False
+76,4G,BSNL,n258,False,Low,True
+77,4G,BSNL,n258,False,Medium,False
+78,4G,BSNL,n258,False,Medium,True
+79,4G,BSNL,n258,True,High,False
+80,4G,BSNL,n258,True,High,True
+81,4G,BSNL,n258,True,Low,False
+82,4G,BSNL,n258,True,Low,True
+83,4G,BSNL,n258,True,Medium,False
+84,4G,BSNL,n258,True,Medium,True
+85,4G,BSNL,n28,False,High,False
+86,4G,BSNL,n28,False,High,True
+87,4G,BSNL,n28,False,Low,False
+88,4G,BSNL,n28,False,Low,True
+89,4G,BSNL,n28,False,Medium,False
+90,4G,BSNL,n28,False,Medium,True
+91,4G,BSNL,n28,True,High,False
+92,4G,BSNL,n28,True,High,True
+93,4G,BSNL,n28,True,Low,False
+94,4G,BSNL,n28,True,Low,True
+95,4G,BSNL,n28,True,Medium,False
+96,4G,BSNL,n28,True,Medium,True
+97,4G,BSNL,n78,False,High,False
+98,4G,BSNL,n78,False,High,True
+99,4G,BSNL,n78,False,Low,False
+100,4G,BSNL,n78,False,Low,True
+101,4G,BSNL,n78,False,Medium,False
+102,4G,BSNL,n78,False,Medium,True
+103,4G,BSNL,n78,True,High,False
+104,4G,BSNL,n78,True,High,True
+105,4G,BSNL,n78,True,Low,False
+106,4G,BSNL,n78,True,Low,True
+107,4G,BSNL,n78,True,Medium,False
+108,4G,BSNL,n78,True,Medium,True
+109,4G,Jio,n258,False,High,False
+110,4G,Jio,n258,False,High,True
+111,4G,Jio,n258,False,Low,False
+112,4G,Jio,n258,False,Low,True
+113,4G,Jio,n258,False,Medium,False
+114,4G,Jio,n258,False,Medium,True
+115,4G,Jio,n258,True,High,False
+116,4G,Jio,n258,True,High,True
+117,4G,Jio,n258,True,Low,False
+118,4G,Jio,n258,True,Low,True
+119,4G,Jio,n258,True,Medium,False
+120,4G,Jio,n258,True,Medium,True
+121,4G,Jio,n28,False,High,False
+122,4G,Jio,n28,False,High,True
+123,4G,Jio,n28,False,Low,False
+124,4G,Jio,n28,False,Low,True
+125,4G,Jio,n28,False,Medium,False
+126,4G,Jio,n28,False,Medium,True
+127,4G,Jio,n28,True,High,False
+128,4G,Jio,n28,True,High,True
+129,4G,Jio,n28,True,Low,False
+130,4G,Jio,n28,True,Low,True
+131,4G,Jio,n28,True,Medium,False
+132,4G,Jio,n28,True,Medium,True
+133,4G,Jio,n78,False,High,False
+134,4G,Jio,n78,False,High,True
+135,4G,Jio,n78,False,Low,False
+136,4G,Jio,n78,False,Low,True
+137,4G,Jio,n78,False,Medium,False
+138,4G,Jio,n78,False,Medium,True
+139,4G,Jio,n78,True,High,False
+140,4G,Jio,n78,True,High,True
+141,4G,Jio,n78,True,Low,False
+142,4G,Jio,n78,True,Low,True
+143,4G,Jio,n78,True,Medium,False
+144,4G,Jio,n78,True,Medium,True
+145,4G,T-Mobile,n260,False,High,False
+146,4G,T-Mobile,n260,False,High,True
+147,4G,T-Mobile,n260,False,Low,False
+148,4G,T-Mobile,n260,False,Low,True
+149,4G,T-Mobile,n260,False,Medium,False
+150,4G,T-Mobile,n260,False,Medium,True
+151,4G,T-Mobile,n260,True,High,False
+152,4G,T-Mobile,n260,True,High,True
+153,4G,T-Mobile,n260,True,Low,False
+154,4G,T-Mobile,n260,True,Low,True
+155,4G,T-Mobile,n260,True,Medium,False
+156,4G,T-Mobile,n260,True,Medium,True
+157,4G,T-Mobile,n41,False,High,False
+158,4G,T-Mobile,n41,False,High,True
+159,4G,T-Mobile,n41,False,Low,False
+160,4G,T-Mobile,n41,False,Low,True
+161,4G,T-Mobile,n41,False,Medium,False
+162,4G,T-Mobile,n41,False,Medium,True
+163,4G,T-Mobile,n41,True,High,False
+164,4G,T-Mobile,n41,True,High,True
+165,4G,T-Mobile,n41,True,Low,False
+166,4G,T-Mobile,n41,True,Low,True
+167,4G,T-Mobile,n41,True,Medium,False
+168,4G,T-Mobile,n41,True,Medium,True
+169,4G,T-Mobile,n78,False,High,False
+170,4G,T-Mobile,n78,False,High,True
+171,4G,T-Mobile,n78,False,Low,False
+172,4G,T-Mobile,n78,False,Low,True
+173,4G,T-Mobile,n78,False,Medium,False
+174,4G,T-Mobile,n78,False,Medium,True
+175,4G,T-Mobile,n78,True,High,False
+176,4G,T-Mobile,n78,True,High,True
+177,4G,T-Mobile,n78,True,Low,False
+178,4G,T-Mobile,n78,True,Low,True
+179,4G,T-Mobile,n78,True,Medium,False
+180,4G,T-Mobile,n78,True,Medium,True
+181,4G,Verizon,n260,False,High,False
+182,4G,Verizon,n260,False,High,True
+183,4G,Verizon,n260,False,Low,False
+184,4G,Verizon,n260,False,Low,True
+185,4G,Verizon,n260,False,Medium,False
+186,4G,Verizon,n260,False,Medium,True
+187,4G,Verizon,n260,True,High,False
+188,4G,Verizon,n260,True,High,True
+189,4G,Verizon,n260,True,Low,False
+190,4G,Verizon,n260,True,Low,True
+191,4G,Verizon,n260,True,Medium,False
+192,4G,Verizon,n260,True,Medium,True
+193,4G,Verizon,n41,False,High,False
+194,4G,Verizon,n41,False,High,True
+195,4G,Verizon,n41,False,Low,False
+196,4G,Verizon,n41,False,Low,True
+197,4G,Verizon,n41,False,Medium,False
+198,4G,Verizon,n41,False,Medium,True
+199,4G,Verizon,n41,True,High,False
+200,4G,Verizon,n41,True,High,True
+201,4G,Verizon,n41,True,Low,False
+202,4G,Verizon,n41,True,Low,True
+203,4G,Verizon,n41,True,Medium,False
+204,4G,Verizon,n41,True,Medium,True
+205,4G,Verizon,n78,False,High,False
+206,4G,Verizon,n78,False,High,True
+207,4G,Verizon,n78,False,Low,False
+208,4G,Verizon,n78,False,Low,True
+209,4G,Verizon,n78,False,Medium,False
+210,4G,Verizon,n78,False,Medium,True
+211,4G,Verizon,n78,True,High,False
+212,4G,Verizon,n78,True,High,True
+213,4G,Verizon,n78,True,Low,False
+214,4G,Verizon,n78,True,Low,True
+215,4G,Verizon,n78,True,Medium,False
+216,4G,Verizon,n78,True,Medium,True
+217,4G,Vi,n258,False,High,False
+218,4G,Vi,n258,False,High,True
+219,4G,Vi,n258,False,Low,False
+220,4G,Vi,n258,False,Low,True
+221,4G,Vi,n258,False,Medium,False
+222,4G,Vi,n258,False,Medium,True
+223,4G,Vi,n258,True,High,False
+224,4G,Vi,n258,True,High,True
+225,4G,Vi,n258,True,Low,False
+226,4G,Vi,n258,True,Low,True
+227,4G,Vi,n258,True,Medium,False
+228,4G,Vi,n258,True,Medium,True
+229,4G,Vi,n28,False,High,False
+230,4G,Vi,n28,False,High,True
+231,4G,Vi,n28,False,Low,False
+232,4G,Vi,n28,False,Low,True
+233,4G,Vi,n28,False,Medium,False
+234,4G,Vi,n28,False,Medium,True
+235,4G,Vi,n28,True,High,False
+236,4G,Vi,n28,True,High,True
+237,4G,Vi,n28,True,Low,False
+238,4G,Vi,n28,True,Low,True
+239,4G,Vi,n28,True,Medium,False
+240,4G,Vi,n28,True,Medium,True
+241,4G,Vi,n78,False,High,False
+242,4G,Vi,n78,False,High,True
+243,4G,Vi,n78,False,Low,False
+244,4G,Vi,n78,False,Low,True
+245,4G,Vi,n78,False,Medium,False
+246,4G,Vi,n78,False,Medium,True
+247,4G,Vi,n78,True,High,False
+248,4G,Vi,n78,True,High,True
+249,4G,Vi,n78,True,Low,False
+250,4G,Vi,n78,True,Low,True
+251,4G,Vi,n78,True,Medium,False
+252,4G,Vi,n78,True,Medium,True
+253,5G NSA,AT&T,n260,False,High,False
+254,5G NSA,AT&T,n260,False,High,True
+255,5G NSA,AT&T,n260,False,Low,False
+256,5G NSA,AT&T,n260,False,Low,True
+257,5G NSA,AT&T,n260,False,Medium,False
+258,5G NSA,AT&T,n260,False,Medium,True
+259,5G NSA,AT&T,n260,True,High,False
+260,5G NSA,AT&T,n260,True,High,True
+261,5G NSA,AT&T,n260,True,Low,False
+262,5G NSA,AT&T,n260,True,Low,True
+263,5G NSA,AT&T,n260,True,Medium,False
+264,5G NSA,AT&T,n260,True,Medium,True
+265,5G NSA,AT&T,n41,False,High,False
+266,5G NSA,AT&T,n41,False,High,True
+267,5G NSA,AT&T,n41,False,Low,False
+268,5G NSA,AT&T,n41,False,Low,True
+269,5G NSA,AT&T,n41,False,Medium,False
+270,5G NSA,AT&T,n41,False,Medium,True
+271,5G NSA,AT&T,n41,True,High,False
+272,5G NSA,AT&T,n41,True,High,True
+273,5G NSA,AT&T,n41,True,Low,False
+274,5G NSA,AT&T,n41,True,Low,True
+275,5G NSA,AT&T,n41,True,Medium,False
+276,5G NSA,AT&T,n41,True,Medium,True
+277,5G NSA,AT&T,n78,False,High,False
+278,5G NSA,AT&T,n78,False,High,True
+279,5G NSA,AT&T,n78,False,Low,False
+280,5G NSA,AT&T,n78,False,Low,True
+281,5G NSA,AT&T,n78,False,Medium,False
+282,5G NSA,AT&T,n78,False,Medium,True
+283,5G NSA,AT&T,n78,True,High,False
+284,5G NSA,AT&T,n78,True,High,True
+285,5G NSA,AT&T,n78,True,Low,False
+286,5G NSA,AT&T,n78,True,Low,True
+287,5G NSA,AT&T,n78,True,Medium,False
+288,5G NSA,AT&T,n78,True,Medium,True
+289,5G NSA,Airtel,n258,False,High,False
+290,5G NSA,Airtel,n258,False,High,True
+291,5G NSA,Airtel,n258,False,Low,False
+292,5G NSA,Airtel,n258,False,Low,True
+293,5G NSA,Airtel,n258,False,Medium,False
+294,5G NSA,Airtel,n258,False,Medium,True
+295,5G NSA,Airtel,n258,True,High,False
+296,5G NSA,Airtel,n258,True,High,True
+297,5G NSA,Airtel,n258,True,Low,False
+298,5G NSA,Airtel,n258,True,Low,True
+299,5G NSA,Airtel,n258,True,Medium,False
+300,5G NSA,Airtel,n258,True,Medium,True
+301,5G NSA,Airtel,n28,False,High,False
+302,5G NSA,Airtel,n28,False,High,True
+303,5G NSA,Airtel,n28,False,Low,False
+304,5G NSA,Airtel,n28,False,Low,True
+305,5G NSA,Airtel,n28,False,Medium,False
+306,5G NSA,Airtel,n28,False,Medium,True
+307,5G NSA,Airtel,n28,True,High,False
+308,5G NSA,Airtel,n28,True,High,True
+309,5G NSA,Airtel,n28,True,Low,False
+310,5G NSA,Airtel,n28,True,Low,True
+311,5G NSA,Airtel,n28,True,Medium,False
+312,5G NSA,Airtel,n28,True,Medium,True
+313,5G NSA,Airtel,n78,False,High,False
+314,5G NSA,Airtel,n78,False,High,True
+315,5G NSA,Airtel,n78,False,Low,False
+316,5G NSA,Airtel,n78,False,Low,True
+317,5G NSA,Airtel,n78,False,Medium,False
+318,5G NSA,Airtel,n78,False,Medium,True
+319,5G NSA,Airtel,n78,True,High,False
+320,5G NSA,Airtel,n78,True,High,True
+321,5G NSA,Airtel,n78,True,Low,False
+322,5G NSA,Airtel,n78,True,Low,True
+323,5G NSA,Airtel,n78,True,Medium,False
+324,5G NSA,Airtel,n78,True,Medium,True
+325,5G NSA,BSNL,n258,False,High,False
+326,5G NSA,BSNL,n258,False,High,True
+327,5G NSA,BSNL,n258,False,Low,False
+328,5G NSA,BSNL,n258,False,Low,True
+329,5G NSA,BSNL,n258,False,Medium,False
+330,5G NSA,BSNL,n258,False,Medium,True
+331,5G NSA,BSNL,n258,True,High,False
+332,5G NSA,BSNL,n258,True,High,True
+333,5G NSA,BSNL,n258,True,Low,False
+334,5G NSA,BSNL,n258,True,Low,True
+335,5G NSA,BSNL,n258,True,Medium,False
+336,5G NSA,BSNL,n258,True,Medium,True
+337,5G NSA,BSNL,n28,False,High,False
+338,5G NSA,BSNL,n28,False,High,True
+339,5G NSA,BSNL,n28,False,Low,False
+340,5G NSA,BSNL,n28,False,Low,True
+341,5G NSA,BSNL,n28,False,Medium,False
+342,5G NSA,BSNL,n28,False,Medium,True
+343,5G NSA,BSNL,n28,True,High,False
+344,5G NSA,BSNL,n28,True,High,True
+345,5G NSA,BSNL,n28,True,Low,False
+346,5G NSA,BSNL,n28,True,Low,True
+347,5G NSA,BSNL,n28,True,Medium,False
+348,5G NSA,BSNL,n28,True,Medium,True
+349,5G NSA,BSNL,n78,False,High,False
+350,5G NSA,BSNL,n78,False,High,True
+351,5G NSA,BSNL,n78,False,Low,False
+352,5G NSA,BSNL,n78,False,Low,True
+353,5G NSA,BSNL,n78,False,Medium,False
+354,5G NSA,BSNL,n78,False,Medium,True
+355,5G NSA,BSNL,n78,True,High,False
+356,5G NSA,BSNL,n78,True,High,True
+357,5G NSA,BSNL,n78,True,Low,False
+358,5G NSA,BSNL,n78,True,Low,True
+359,5G NSA,BSNL,n78,True,Medium,False
+360,5G NSA,BSNL,n78,True,Medium,True
+361,5G NSA,Jio,n258,False,High,False
+362,5G NSA,Jio,n258,False,High,True
+363,5G NSA,Jio,n258,False,Low,False
+364,5G NSA,Jio,n258,False,Low,True
+365,5G NSA,Jio,n258,False,Medium,False
+366,5G NSA,Jio,n258,False,Medium,True
+367,5G NSA,Jio,n258,True,High,False
+368,5G NSA,Jio,n258,True,High,True
+369,5G NSA,Jio,n258,True,Low,False
+370,5G NSA,Jio,n258,True,Low,True
+371,5G NSA,Jio,n258,True,Medium,False
+372,5G NSA,Jio,n258,True,Medium,True
+373,5G NSA,Jio,n28,False,High,False
+374,5G NSA,Jio,n28,False,High,True
+375,5G NSA,Jio,n28,False,Low,False
+376,5G NSA,Jio,n28,False,Low,True
+377,5G NSA,Jio,n28,False,Medium,False
+378,5G NSA,Jio,n28,False,Medium,True
+379,5G NSA,Jio,n28,True,High,False
+380,5G NSA,Jio,n28,True,High,True
+381,5G NSA,Jio,n28,True,Low,False
+382,5G NSA,Jio,n28,True,Low,True
+383,5G NSA,Jio,n28,True,Medium,False
+384,5G NSA,Jio,n28,True,Medium,True
+385,5G NSA,Jio,n78,False,High,False
+386,5G NSA,Jio,n78,False,High,True
+387,5G NSA,Jio,n78,False,Low,False
+388,5G NSA,Jio,n78,False,Low,True
+389,5G NSA,Jio,n78,False,Medium,False
+390,5G NSA,Jio,n78,False,Medium,True
+391,5G NSA,Jio,n78,True,High,False
+392,5G NSA,Jio,n78,True,High,True
+393,5G NSA,Jio,n78,True,Low,False
+394,5G NSA,Jio,n78,True,Low,True
+395,5G NSA,Jio,n78,True,Medium,False
+396,5G NSA,Jio,n78,True,Medium,True
+397,5G NSA,T-Mobile,n260,False,High,False
+398,5G NSA,T-Mobile,n260,False,High,True
+399,5G NSA,T-Mobile,n260,False,Low,False
+400,5G NSA,T-Mobile,n260,False,Low,True
+401,5G NSA,T-Mobile,n260,False,Medium,False
+402,5G NSA,T-Mobile,n260,False,Medium,True
+403,5G NSA,T-Mobile,n260,True,High,False
+404,5G NSA,T-Mobile,n260,True,High,True
+405,5G NSA,T-Mobile,n260,True,Low,False
+406,5G NSA,T-Mobile,n260,True,Low,True
+407,5G NSA,T-Mobile,n260,True,Medium,False
+408,5G NSA,T-Mobile,n260,True,Medium,True
+409,5G NSA,T-Mobile,n41,False,High,False
+410,5G NSA,T-Mobile,n41,False,High,True
+411,5G NSA,T-Mobile,n41,False,Low,False
+412,5G NSA,T-Mobile,n41,False,Low,True
+413,5G NSA,T-Mobile,n41,False,Medium,False
+414,5G NSA,T-Mobile,n41,False,Medium,True
+415,5G NSA,T-Mobile,n41,True,High,False
+416,5G NSA,T-Mobile,n41,True,High,True
+417,5G NSA,T-Mobile,n41,True,Low,False
+418,5G NSA,T-Mobile,n41,True,Low,True
+419,5G NSA,T-Mobile,n41,True,Medium,False
+420,5G NSA,T-Mobile,n41,True,Medium,True
+421,5G NSA,T-Mobile,n78,False,High,False
+422,5G NSA,T-Mobile,n78,False,High,True
+423,5G NSA,T-Mobile,n78,False,Low,False
+424,5G NSA,T-Mobile,n78,False,Low,True
+425,5G NSA,T-Mobile,n78,False,Medium,False
+426,5G NSA,T-Mobile,n78,False,Medium,True
+427,5G NSA,T-Mobile,n78,True,High,False
+428,5G NSA,T-Mobile,n78,True,High,True
+429,5G NSA,T-Mobile,n78,True,Low,False
+430,5G NSA,T-Mobile,n78,True,Low,True
+431,5G NSA,T-Mobile,n78,True,Medium,False
+432,5G NSA,T-Mobile,n78,True,Medium,True
+433,5G NSA,Verizon,n260,False,High,False
+434,5G NSA,Verizon,n260,False,High,True
+435,5G NSA,Verizon,n260,False,Low,False
+436,5G NSA,Verizon,n260,False,Low,True
+437,5G NSA,Verizon,n260,False,Medium,False
+438,5G NSA,Verizon,n260,False,Medium,True
+439,5G NSA,Verizon,n260,True,High,False
+440,5G NSA,Verizon,n260,True,High,True
+441,5G NSA,Verizon,n260,True,Low,False
+442,5G NSA,Verizon,n260,True,Low,True
+443,5G NSA,Verizon,n260,True,Medium,False
+444,5G NSA,Verizon,n260,True,Medium,True
+445,5G NSA,Verizon,n41,False,High,False
+446,5G NSA,Verizon,n41,False,High,True
+447,5G NSA,Verizon,n41,False,Low,False
+448,5G NSA,Verizon,n41,False,Low,True
+449,5G NSA,Verizon,n41,False,Medium,False
+450,5G NSA,Verizon,n41,False,Medium,True
+451,5G NSA,Verizon,n41,True,High,False
+452,5G NSA,Verizon,n41,True,High,True
+453,5G NSA,Verizon,n41,True,Low,False
+454,5G NSA,Verizon,n41,True,Low,True
+455,5G NSA,Verizon,n41,True,Medium,False
+456,5G NSA,Verizon,n41,True,Medium,True
+457,5G NSA,Verizon,n78,False,High,False
+458,5G NSA,Verizon,n78,False,High,True
+459,5G NSA,Verizon,n78,False,Low,False
+460,5G NSA,Verizon,n78,False,Low,True
+461,5G NSA,Verizon,n78,False,Medium,False
+462,5G NSA,Verizon,n78,False,Medium,True
+463,5G NSA,Verizon,n78,True,High,False
+464,5G NSA,Verizon,n78,True,High,True
+465,5G NSA,Verizon,n78,True,Low,False
+466,5G NSA,Verizon,n78,True,Low,True
+467,5G NSA,Verizon,n78,True,Medium,False
+468,5G NSA,Verizon,n78,True,Medium,True
+469,5G NSA,Vi,n258,False,High,False
+470,5G NSA,Vi,n258,False,High,True
+471,5G NSA,Vi,n258,False,Low,False
+472,5G NSA,Vi,n258,False,Low,True
+473,5G NSA,Vi,n258,False,Medium,False
+474,5G NSA,Vi,n258,False,Medium,True
+475,5G NSA,Vi,n258,True,High,False
+476,5G NSA,Vi,n258,True,High,True
+477,5G NSA,Vi,n258,True,Low,False
+478,5G NSA,Vi,n258,True,Low,True
+479,5G NSA,Vi,n258,True,Medium,False
+480,5G NSA,Vi,n258,True,Medium,True
+481,5G NSA,Vi,n28,False,High,False
+482,5G NSA,Vi,n28,False,High,True
+483,5G NSA,Vi,n28,False,Low,False
+484,5G NSA,Vi,n28,False,Low,True
+485,5G NSA,Vi,n28,False,Medium,False
+486,5G NSA,Vi,n28,False,Medium,True
+487,5G NSA,Vi,n28,True,High,False
+488,5G NSA,Vi,n28,True,High,True
+489,5G NSA,Vi,n28,True,Low,False
+490,5G NSA,Vi,n28,True,Low,True
+491,5G NSA,Vi,n28,True,Medium,False
+492,5G NSA,Vi,n28,True,Medium,True
+493,5G NSA,Vi,n78,False,High,False
+494,5G NSA,Vi,n78,False,High,True
+495,5G NSA,Vi,n78,False,Low,False
+496,5G NSA,Vi,n78,False,Low,True
+497,5G NSA,Vi,n78,False,Medium,False
+498,5G NSA,Vi,n78,False,Medium,True
+499,5G NSA,Vi,n78,True,High,False
+500,5G NSA,Vi,n78,True,High,True
+501,5G NSA,Vi,n78,True,Low,False
+502,5G NSA,Vi,n78,True,Low,True
+503,5G NSA,Vi,n78,True,Medium,False
+504,5G NSA,Vi,n78,True,Medium,True
+505,5G SA,AT&T,n260,False,High,False
+506,5G SA,AT&T,n260,False,High,True
+507,5G SA,AT&T,n260,False,Low,False
+508,5G SA,AT&T,n260,False,Low,True
+509,5G SA,AT&T,n260,False,Medium,False
+510,5G SA,AT&T,n260,False,Medium,True
+511,5G SA,AT&T,n260,True,High,False
+512,5G SA,AT&T,n260,True,High,True
+513,5G SA,AT&T,n260,True,Low,False
+514,5G SA,AT&T,n260,True,Low,True
+515,5G SA,AT&T,n260,True,Medium,False
+516,5G SA,AT&T,n260,True,Medium,True
+517,5G SA,AT&T,n41,False,High,False
+518,5G SA,AT&T,n41,False,High,True
+519,5G SA,AT&T,n41,False,Low,False
+520,5G SA,AT&T,n41,False,Low,True
+521,5G SA,AT&T,n41,False,Medium,False
+522,5G SA,AT&T,n41,False,Medium,True
+523,5G SA,AT&T,n41,True,High,False
+524,5G SA,AT&T,n41,True,High,True
+525,5G SA,AT&T,n41,True,Low,False
+526,5G SA,AT&T,n41,True,Low,True
+527,5G SA,AT&T,n41,True,Medium,False
+528,5G SA,AT&T,n41,True,Medium,True
+529,5G SA,AT&T,n78,False,High,False
+530,5G SA,AT&T,n78,False,High,True
+531,5G SA,AT&T,n78,False,Low,False
+532,5G SA,AT&T,n78,False,Low,True
+533,5G SA,AT&T,n78,False,Medium,False
+534,5G SA,AT&T,n78,False,Medium,True
+535,5G SA,AT&T,n78,True,High,False
+536,5G SA,AT&T,n78,True,High,True
+537,5G SA,AT&T,n78,True,Low,False
+538,5G SA,AT&T,n78,True,Low,True
+539,5G SA,AT&T,n78,True,Medium,False
+540,5G SA,AT&T,n78,True,Medium,True
+541,5G SA,Airtel,n258,False,High,False
+542,5G SA,Airtel,n258,False,High,True
+543,5G SA,Airtel,n258,False,Low,False
+544,5G SA,Airtel,n258,False,Low,True
+545,5G SA,Airtel,n258,False,Medium,False
+546,5G SA,Airtel,n258,False,Medium,True
+547,5G SA,Airtel,n258,True,High,False
+548,5G SA,Airtel,n258,True,High,True
+549,5G SA,Airtel,n258,True,Low,False
+550,5G SA,Airtel,n258,True,Low,True
+551,5G SA,Airtel,n258,True,Medium,False
+552,5G SA,Airtel,n258,True,Medium,True
+553,5G SA,Airtel,n28,False,High,False
+554,5G SA,Airtel,n28,False,High,True
+555,5G SA,Airtel,n28,False,Low,False
+556,5G SA,Airtel,n28,False,Low,True
+557,5G SA,Airtel,n28,False,Medium,False
+558,5G SA,Airtel,n28,False,Medium,True
+559,5G SA,Airtel,n28,True,High,False
+560,5G SA,Airtel,n28,True,High,True
+561,5G SA,Airtel,n28,True,Low,False
+562,5G SA,Airtel,n28,True,Low,True
+563,5G SA,Airtel,n28,True,Medium,False
+564,5G SA,Airtel,n28,True,Medium,True
+565,5G SA,Airtel,n78,False,High,False
+566,5G SA,Airtel,n78,False,High,True
+567,5G SA,Airtel,n78,False,Low,False
+568,5G SA,Airtel,n78,False,Low,True
+569,5G SA,Airtel,n78,False,Medium,False
+570,5G SA,Airtel,n78,False,Medium,True
+571,5G SA,Airtel,n78,True,High,False
+572,5G SA,Airtel,n78,True,High,True
+573,5G SA,Airtel,n78,True,Low,False
+574,5G SA,Airtel,n78,True,Low,True
+575,5G SA,Airtel,n78,True,Medium,False
+576,5G SA,Airtel,n78,True,Medium,True
+577,5G SA,BSNL,n258,False,High,False
+578,5G SA,BSNL,n258,False,High,True
+579,5G SA,BSNL,n258,False,Low,False
+580,5G SA,BSNL,n258,False,Low,True
+581,5G SA,BSNL,n258,False,Medium,False
+582,5G SA,BSNL,n258,False,Medium,True
+583,5G SA,BSNL,n258,True,High,False
+584,5G SA,BSNL,n258,True,High,True
+585,5G SA,BSNL,n258,True,Low,False
+586,5G SA,BSNL,n258,True,Low,True
+587,5G SA,BSNL,n258,True,Medium,False
+588,5G SA,BSNL,n258,True,Medium,True
+589,5G SA,BSNL,n28,False,High,False
+590,5G SA,BSNL,n28,False,High,True
+591,5G SA,BSNL,n28,False,Low,False
+592,5G SA,BSNL,n28,False,Low,True
+593,5G SA,BSNL,n28,False,Medium,False
+594,5G SA,BSNL,n28,False,Medium,True
+595,5G SA,BSNL,n28,True,High,False
+596,5G SA,BSNL,n28,True,High,True
+597,5G SA,BSNL,n28,True,Low,False
+598,5G SA,BSNL,n28,True,Low,True
+599,5G SA,BSNL,n28,True,Medium,False
+600,5G SA,BSNL,n28,True,Medium,True
+601,5G SA,BSNL,n78,False,High,False
+602,5G SA,BSNL,n78,False,High,True
+603,5G SA,BSNL,n78,False,Low,False
+604,5G SA,BSNL,n78,False,Low,True
+605,5G SA,BSNL,n78,False,Medium,False
+606,5G SA,BSNL,n78,False,Medium,True
+607,5G SA,BSNL,n78,True,High,False
+608,5G SA,BSNL,n78,True,High,True
+609,5G SA,BSNL,n78,True,Low,False
+610,5G SA,BSNL,n78,True,Low,True
+611,5G SA,BSNL,n78,True,Medium,False
+612,5G SA,BSNL,n78,True,Medium,True
+613,5G SA,Jio,n258,False,High,False
+614,5G SA,Jio,n258,False,High,True
+615,5G SA,Jio,n258,False,Low,False
+616,5G SA,Jio,n258,False,Low,True
+617,5G SA,Jio,n258,False,Medium,False
+618,5G SA,Jio,n258,False,Medium,True
+619,5G SA,Jio,n258,True,High,False
+620,5G SA,Jio,n258,True,High,True
+621,5G SA,Jio,n258,True,Low,False
+622,5G SA,Jio,n258,True,Low,True
+623,5G SA,Jio,n258,True,Medium,False
+624,5G SA,Jio,n258,True,Medium,True
+625,5G SA,Jio,n28,False,High,False
+626,5G SA,Jio,n28,False,High,True
+627,5G SA,Jio,n28,False,Low,False
+628,5G SA,Jio,n28,False,Low,True
+629,5G SA,Jio,n28,False,Medium,False
+630,5G SA,Jio,n28,False,Medium,True
+631,5G SA,Jio,n28,True,High,False
+632,5G SA,Jio,n28,True,High,True
+633,5G SA,Jio,n28,True,Low,False
+634,5G SA,Jio,n28,True,Low,True
+635,5G SA,Jio,n28,True,Medium,False
+636,5G SA,Jio,n28,True,Medium,True
+637,5G SA,Jio,n78,False,High,False
+638,5G SA,Jio,n78,False,High,True
+639,5G SA,Jio,n78,False,Low,False
+640,5G SA,Jio,n78,False,Low,True
+641,5G SA,Jio,n78,False,Medium,False
+642,5G SA,Jio,n78,False,Medium,True
+643,5G SA,Jio,n78,True,High,False
+644,5G SA,Jio,n78,True,High,True
+645,5G SA,Jio,n78,True,Low,False
+646,5G SA,Jio,n78,True,Low,True
+647,5G SA,Jio,n78,True,Medium,False
+648,5G SA,Jio,n78,True,Medium,True
+649,5G SA,T-Mobile,n260,False,High,False
+650,5G SA,T-Mobile,n260,False,High,True
+651,5G SA,T-Mobile,n260,False,Low,False
+652,5G SA,T-Mobile,n260,False,Low,True
+653,5G SA,T-Mobile,n260,False,Medium,False
+654,5G SA,T-Mobile,n260,False,Medium,True
+655,5G SA,T-Mobile,n260,True,High,False
+656,5G SA,T-Mobile,n260,True,High,True
+657,5G SA,T-Mobile,n260,True,Low,False
+658,5G SA,T-Mobile,n260,True,Low,True
+659,5G SA,T-Mobile,n260,True,Medium,False
+660,5G SA,T-Mobile,n260,True,Medium,True
+661,5G SA,T-Mobile,n41,False,High,False
+662,5G SA,T-Mobile,n41,False,High,True
+663,5G SA,T-Mobile,n41,False,Low,False
+664,5G SA,T-Mobile,n41,False,Low,True
+665,5G SA,T-Mobile,n41,False,Medium,False
+666,5G SA,T-Mobile,n41,False,Medium,True
+667,5G SA,T-Mobile,n41,True,High,False
+668,5G SA,T-Mobile,n41,True,High,True
+669,5G SA,T-Mobile,n41,True,Low,False
+670,5G SA,T-Mobile,n41,True,Low,True
+671,5G SA,T-Mobile,n41,True,Medium,False
+672,5G SA,T-Mobile,n41,True,Medium,True
+673,5G SA,T-Mobile,n78,False,High,False
+674,5G SA,T-Mobile,n78,False,High,True
+675,5G SA,T-Mobile,n78,False,Low,False
+676,5G SA,T-Mobile,n78,False,Low,True
+677,5G SA,T-Mobile,n78,False,Medium,False
+678,5G SA,T-Mobile,n78,False,Medium,True
+679,5G SA,T-Mobile,n78,True,High,False
+680,5G SA,T-Mobile,n78,True,High,True
+681,5G SA,T-Mobile,n78,True,Low,False
+682,5G SA,T-Mobile,n78,True,Low,True
+683,5G SA,T-Mobile,n78,True,Medium,False
+684,5G SA,T-Mobile,n78,True,Medium,True
+685,5G SA,Verizon,n260,False,High,False
+686,5G SA,Verizon,n260,False,High,True
+687,5G SA,Verizon,n260,False,Low,False
+688,5G SA,Verizon,n260,False,Low,True
+689,5G SA,Verizon,n260,False,Medium,False
+690,5G SA,Verizon,n260,False,Medium,True
+691,5G SA,Verizon,n260,True,High,False
+692,5G SA,Verizon,n260,True,High,True
+693,5G SA,Verizon,n260,True,Low,False
+694,5G SA,Verizon,n260,True,Low,True
+695,5G SA,Verizon,n260,True,Medium,False
+696,5G SA,Verizon,n260,True,Medium,True
+697,5G SA,Verizon,n41,False,High,False
+698,5G SA,Verizon,n41,False,High,True
+699,5G SA,Verizon,n41,False,Low,False
+700,5G SA,Verizon,n41,False,Low,True
+701,5G SA,Verizon,n41,False,Medium,False
+702,5G SA,Verizon,n41,False,Medium,True
+703,5G SA,Verizon,n41,True,High,False
+704,5G SA,Verizon,n41,True,High,True
+705,5G SA,Verizon,n41,True,Low,False
+706,5G SA,Verizon,n41,True,Low,True
+707,5G SA,Verizon,n41,True,Medium,False
+708,5G SA,Verizon,n41,True,Medium,True
+709,5G SA,Verizon,n78,False,High,False
+710,5G SA,Verizon,n78,False,High,True
+711,5G SA,Verizon,n78,False,Low,False
+712,5G SA,Verizon,n78,False,Low,True
+713,5G SA,Verizon,n78,False,Medium,False
+714,5G SA,Verizon,n78,False,Medium,True
+715,5G SA,Verizon,n78,True,High,False
+716,5G SA,Verizon,n78,True,High,True
+717,5G SA,Verizon,n78,True,Low,False
+718,5G SA,Verizon,n78,True,Low,True
+719,5G SA,Verizon,n78,True,Medium,False
+720,5G SA,Verizon,n78,True,Medium,True
+721,5G SA,Vi,n258,False,High,False
+722,5G SA,Vi,n258,False,High,True
+723,5G SA,Vi,n258,False,Low,False
+724,5G SA,Vi,n258,False,Low,True
+725,5G SA,Vi,n258,False,Medium,False
+726,5G SA,Vi,n258,False,Medium,True
+727,5G SA,Vi,n258,True,High,False
+728,5G SA,Vi,n258,True,High,True
+729,5G SA,Vi,n258,True,Low,False
+730,5G SA,Vi,n258,True,Low,True
+731,5G SA,Vi,n258,True,Medium,False
+732,5G SA,Vi,n258,True,Medium,True
+733,5G SA,Vi,n28,False,High,False
+734,5G SA,Vi,n28,False,High,True
+735,5G SA,Vi,n28,False,Low,False
+736,5G SA,Vi,n28,False,Low,True
+737,5G SA,Vi,n28,False,Medium,False
+738,5G SA,Vi,n28,False,Medium,True
+739,5G SA,Vi,n28,True,High,False
+740,5G SA,Vi,n28,True,High,True
+741,5G SA,Vi,n28,True,Low,False
+742,5G SA,Vi,n28,True,Low,True
+743,5G SA,Vi,n28,True,Medium,False
+744,5G SA,Vi,n28,True,Medium,True
+745,5G SA,Vi,n78,False,High,False
+746,5G SA,Vi,n78,False,High,True
+747,5G SA,Vi,n78,False,Low,False
+748,5G SA,Vi,n78,False,Low,True
+749,5G SA,Vi,n78,False,Medium,False
+750,5G SA,Vi,n78,False,Medium,True
+751,5G SA,Vi,n78,True,High,False
+752,5G SA,Vi,n78,True,High,True
+753,5G SA,Vi,n78,True,Low,False
+754,5G SA,Vi,n78,True,Low,True
+755,5G SA,Vi,n78,True,Medium,False
+756,5G SA,Vi,n78,True,Medium,True

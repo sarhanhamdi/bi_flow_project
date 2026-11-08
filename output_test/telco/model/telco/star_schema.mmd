@@ -1,0 +1,58 @@
+erDiagram
+    fact_customer {
+        int customer_key FK
+        int churn_key FK
+        int contract_key FK
+        int location_key FK
+        int service_key FK
+        int tenure_months
+        float monthly_charges
+        float total_charges
+        int churn_value
+        int churn_score
+        int cltv
+    }
+    dim_customer {
+        int customer_key PK
+        string customer_id
+        string gender
+        string senior_citizen
+        string partner
+        string dependents
+    }
+    dim_churn {
+        int churn_key PK
+        string churn_label
+        string churn_reason
+    }
+    dim_contract {
+        int contract_key PK
+        string contract
+        string paperless_billing
+        string payment_method
+    }
+    dim_location {
+        int location_key PK
+        string city
+        string zip_code
+        string lat_long
+        string latitude
+        string longitude
+    }
+    dim_service {
+        int service_key PK
+        string phone_service
+        string multiple_lines
+        string internet_service
+        string online_security
+        string online_backup
+        string device_protection
+        string tech_support
+        string streaming_tv
+        string streaming_movies
+    }
+    dim_customer ||--o{ fact_customer : customer_key
+    dim_churn ||--o{ fact_customer : churn_key
+    dim_contract ||--o{ fact_customer : contract_key
+    dim_location ||--o{ fact_customer : location_key
+    dim_service ||--o{ fact_customer : service_key

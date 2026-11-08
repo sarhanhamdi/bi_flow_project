@@ -1,0 +1,3 @@
+kpi_id,kpi_name,category,unit,status,table,dimension,segment,value,rows
+churn_rate,Taux de churn,Churn,%,computed,Call Details-Data,all,all,11.05,60445
+churned_customers,Clients churnés,Churn,clients,computed,Call Details-Data,all,all,6677.0,60445

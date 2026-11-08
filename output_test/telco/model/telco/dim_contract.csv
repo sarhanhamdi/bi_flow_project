@@ -1,0 +1,25 @@
+contract_key,contract,paperless_billing,payment_method
+1,Month-to-month,No,Bank transfer (automatic)
+2,Month-to-month,No,Credit card (automatic)
+3,Month-to-month,No,Electronic check
+4,Month-to-month,No,Mailed check
+5,Month-to-month,Yes,Bank transfer (automatic)
+6,Month-to-month,Yes,Credit card (automatic)
+7,Month-to-month,Yes,Electronic check
+8,Month-to-month,Yes,Mailed check
+9,One year,No,Bank transfer (automatic)
+10,One year,No,Credit card (automatic)
+11,One year,No,Electronic check
+12,One year,No,Mailed check
+13,One year,Yes,Bank transfer (automatic)
+14,One year,Yes,Credit card (automatic)
+15,One year,Yes,Electronic check
+16,One year,Yes,Mailed check
+17,Two year,No,Bank transfer (automatic)
+18,Two year,No,Credit card (automatic)
+19,Two year,No,Electronic check
+20,Two year,No,Mailed check
+21,Two year,Yes,Bank transfer (automatic)
+22,Two year,Yes,Credit card (automatic)
+23,Two year,Yes,Electronic check
+24,Two year,Yes,Mailed check

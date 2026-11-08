@@ -1,0 +1,11 @@
+rec_id,action,target,priority,test_type,impact_churners,revenue_monthly_lost_excess,confidence,insight_ids
+rec_monthly_to_annual,Tester une offre d'engagement annuel avec remise tarifaire (ex. 10 % de réduction sur 12 mois prépayés),Clients en contrat mensuel depuis moins de 12 mois d'ancienneté,haute,A/B test,626.6,45753.04,élevée,insight_contract_month_to_month
+rec_no_online_security,Communiquer sur les bénéfices de la sécurité en ligne et proposer un essai offert de 1 mois,Clients sans option de sécurité en ligne,basse,A/B test,532.7,41118.3,élevée,insight_online_security_no
+rec_no_techsupport,Proposer un essai gratuit de 3 mois d'assistance technique,Clients sans support technique actif,basse,A/B test,524.4,40151.29,élevée,insight_tech_support_no
+rec_fiber_quality,Lancer une enquête qualité sur le service fibre et mettre en place un SLA de remboursement automatique en cas de coupure,Clients abonnés à la fibre optique,moyenne,enquête + test pilote,475.2,41880.88,élevée,insight_internet_service_fiber_optic
+rec_early_onboarding,"Déployer un parcours d'accueil 0-12 mois : appel de bienvenue J+7, coaching usage J+30, offre de fidélisation J+90",Clients en première année d'ancienneté (tenure < 12 mois),moyenne,test pilote,449.8,29726.6,élevée,insight_tenure_bin_0_12_mois
+rec_echeck_to_autopay,Proposer une incitation au prélèvement automatique (ex. remise sur la prochaine facture ou mois de service offert),Clients payant actuellement par chèque électronique,haute,A/B test,443.4,34898.97,élevée,insight_payment_method_electronic_check
+rec_no_online_backup,Proposer un essai gratuit de sauvegarde en ligne,Clients sans sauvegarde en ligne active,moyenne,A/B test,413.5,30809.65,élevée,insight_online_backup_no
+rec_no_device_protection,Proposer une offre de protection d'équipement,Clients sans protection d'équipement,moyenne,A/B test,389.7,28557.59,élevée,insight_device_protection_no
+rec_no_dependents,Cibler les offres famille pour les clients sans dépendants,Clients sans dépendants à charge,basse,test pilote,325.5,24528.91,moyenne,insight_dependents_no
+rec_paperless_billing,"Améliorer l'expérience de la facturation dématérialisée : alertes claires, accès facile aux historiques",Clients en facturation dématérialisée,basse,test pilote,293.2,22936.19,moyenne,insight_paperless_billing_yes

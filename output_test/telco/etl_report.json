@@ -1,0 +1,835 @@
+{
+  "business_goal": "Analyse décisionnelle télécom",
+  "status": "success",
+  "tables": [
+    {
+      "name": "telco",
+      "rows_in": 7043,
+      "rows_out": 7043,
+      "columns_in": 33,
+      "columns_out": 33,
+      "output_path": "output_test\\telco\\telco_clean.csv",
+      "quality_before": {
+        "completeness": 99.995,
+        "uniqueness": 100.0,
+        "validity": 90.0,
+        "consistency": 100.0,
+        "overall": 97.499,
+        "rows": 7043,
+        "null_cells": 5185,
+        "text_numeric_columns": [
+          "Total Charges"
+        ]
+      },
+      "quality_after": {
+        "completeness": 100.0,
+        "uniqueness": 100.0,
+        "validity": 100.0,
+        "consistency": 100.0,
+        "overall": 100.0,
+        "rows": 7043,
+        "null_cells": 0,
+        "text_numeric_columns": []
+      },
+      "columns": [
+        {
+          "original_name": "CustomerID",
+          "name": "customer_id",
+          "dtype": "string",
+          "semantic_role": "id",
+          "role_corrected_from": "dimension",
+          "is_pii": true,
+          "pii_treatment": "kept"
+        },
+        {
+          "original_name": "Count",
+          "name": "count",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Country",
+          "name": "country",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "State",
+          "name": "state",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "City",
+          "name": "city",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Zip Code",
+          "name": "zip_code",
+          "dtype": "int64",
+          "semantic_role": "id",
+          "role_corrected_from": "measure",
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Lat Long",
+          "name": "lat_long",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": "false_positive_ignored"
+        },
+        {
+          "original_name": "Latitude",
+          "name": "latitude",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": "false_positive_ignored"
+        },
+        {
+          "original_name": "Longitude",
+          "name": "longitude",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": "false_positive_ignored"
+        },
+        {
+          "original_name": "Gender",
+          "name": "gender",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Senior Citizen",
+          "name": "senior_citizen",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Partner",
+          "name": "partner",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Dependents",
+          "name": "dependents",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Tenure Months",
+          "name": "tenure_months",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": "date",
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Phone Service",
+          "name": "phone_service",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": "false_positive_ignored"
+        },
+        {
+          "original_name": "Multiple Lines",
+          "name": "multiple_lines",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Internet Service",
+          "name": "internet_service",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Online Security",
+          "name": "online_security",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Online Backup",
+          "name": "online_backup",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Device Protection",
+          "name": "device_protection",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Tech Support",
+          "name": "tech_support",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Streaming TV",
+          "name": "streaming_tv",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Streaming Movies",
+          "name": "streaming_movies",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Contract",
+          "name": "contract",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Paperless Billing",
+          "name": "paperless_billing",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Payment Method",
+          "name": "payment_method",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Monthly Charges",
+          "name": "monthly_charges",
+          "dtype": "float64",
+          "semantic_role": "measure",
+          "role_corrected_from": "date",
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Total Charges",
+          "name": "total_charges",
+          "dtype": "Float64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Churn Label",
+          "name": "churn_label",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Churn Value",
+          "name": "churn_value",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Churn Score",
+          "name": "churn_score",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "CLTV",
+          "name": "cltv",
+          "dtype": "int64",
+          "semantic_role": "measure",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        },
+        {
+          "original_name": "Churn Reason",
+          "name": "churn_reason",
+          "dtype": "string",
+          "semantic_role": "dimension",
+          "role_corrected_from": null,
+          "is_pii": false,
+          "pii_treatment": null
+        }
+      ]
+    }
+  ],
+  "star_schemas": [
+    {
+      "table": "telco",
+      "source": "auto",
+      "fact_name": "fact_customer",
+      "grain": "1 ligne = 1 customer (customer_id)",
+      "grain_reason": "premier identifiant unique et non nul",
+      "fact_rows": 7043,
+      "measures": [
+        {
+          "column": "tenure_months",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "monthly_charges",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "total_charges",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "sum",
+            "avg"
+          ],
+          "note": "montant / volume additif"
+        },
+        {
+          "column": "churn_value",
+          "kind": "flag",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "indicateur 0/1 : la moyenne donne un taux (ex. taux de churn)"
+        },
+        {
+          "column": "churn_score",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        },
+        {
+          "column": "cltv",
+          "kind": "metric",
+          "suggested_aggregations": [
+            "avg"
+          ],
+          "note": "valeur non additive (score, durée, ancienneté) : on moyenne"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "dim_customer",
+          "key": "customer_key",
+          "role": "entity",
+          "columns": [
+            "customer_id",
+            "gender",
+            "senior_citizen",
+            "partner",
+            "dependents"
+          ],
+          "rows": 7043,
+          "rationale": "profil client"
+        },
+        {
+          "name": "dim_churn",
+          "key": "churn_key",
+          "role": "churn",
+          "columns": [
+            "churn_label",
+            "churn_reason"
+          ],
+          "rows": 21,
+          "rationale": "résultat / motif de départ"
+        },
+        {
+          "name": "dim_contract",
+          "key": "contract_key",
+          "role": "contract",
+          "columns": [
+            "contract",
+            "paperless_billing",
+            "payment_method"
+          ],
+          "rows": 24,
+          "rationale": "contrat et facturation"
+        },
+        {
+          "name": "dim_location",
+          "key": "location_key",
+          "role": "geography",
+          "columns": [
+            "city",
+            "zip_code",
+            "lat_long",
+            "latitude",
+            "longitude"
+          ],
+          "rows": 1652,
+          "rationale": "attributs géographiques"
+        },
+        {
+          "name": "dim_service",
+          "key": "service_key",
+          "role": "service",
+          "columns": [
+            "phone_service",
+            "multiple_lines",
+            "internet_service",
+            "online_security",
+            "online_backup",
+            "device_protection",
+            "tech_support",
+            "streaming_tv",
+            "streaming_movies"
+          ],
+          "rows": 322,
+          "rationale": "services souscrits"
+        }
+      ],
+      "date_columns": [],
+      "excluded_columns": [
+        {
+          "column": "count",
+          "reason": "colonne constante : aucune valeur analytique"
+        },
+        {
+          "column": "country",
+          "reason": "colonne constante : aucune valeur analytique"
+        },
+        {
+          "column": "state",
+          "reason": "colonne constante : aucune valeur analytique"
+        }
+      ],
+      "files": {
+        "fact_customer": "output_test\\telco\\model\\telco\\fact_customer.csv",
+        "dim_customer": "output_test\\telco\\model\\telco\\dim_customer.csv",
+        "dim_churn": "output_test\\telco\\model\\telco\\dim_churn.csv",
+        "dim_contract": "output_test\\telco\\model\\telco\\dim_contract.csv",
+        "dim_location": "output_test\\telco\\model\\telco\\dim_location.csv",
+        "dim_service": "output_test\\telco\\model\\telco\\dim_service.csv",
+        "star_schema.mmd": "output_test\\telco\\model\\telco\\star_schema.mmd"
+      },
+      "check_ids": [
+        "telco.star_fact_row_count",
+        "telco.star_no_null_foreign_key",
+        "telco.star_no_orphan_foreign_key",
+        "telco.star_dimension_keys_unique",
+        "telco.star_column_coverage",
+        "telco.star_measure_reconciliation",
+        "telco.star_lossless_rejoin"
+      ],
+      "mermaid": "erDiagram\n    fact_customer {\n        int customer_key FK\n        int churn_key FK\n        int contract_key FK\n        int location_key FK\n        int service_key FK\n        int tenure_months\n        float monthly_charges\n        float total_charges\n        int churn_value\n        int churn_score\n        int cltv\n    }\n    dim_customer {\n        int customer_key PK\n        string customer_id\n        string gender\n        string senior_citizen\n        string partner\n        string dependents\n    }\n    dim_churn {\n        int churn_key PK\n        string churn_label\n        string churn_reason\n    }\n    dim_contract {\n        int contract_key PK\n        string contract\n        string paperless_billing\n        string payment_method\n    }\n    dim_location {\n        int location_key PK\n        string city\n        string zip_code\n        string lat_long\n        string latitude\n        string longitude\n    }\n    dim_service {\n        int service_key PK\n        string phone_service\n        string multiple_lines\n        string internet_service\n        string online_security\n        string online_backup\n        string device_protection\n        string tech_support\n        string streaming_tv\n        string streaming_movies\n    }\n    dim_customer ||--o{ fact_customer : customer_key\n    dim_churn ||--o{ fact_customer : churn_key\n    dim_contract ||--o{ fact_customer : contract_key\n    dim_location ||--o{ fact_customer : location_key\n    dim_service ||--o{ fact_customer : service_key\n"
+    }
+  ],
+  "actions": [
+    {
+      "id": "telco.00.blank_to_null.Total Charges",
+      "step": 0,
+      "table": "telco",
+      "column": "Total Charges",
+      "rule": "blank_to_null",
+      "rows_affected": 11,
+      "before": "11 cellule(s) vide(s) ou égale(s) à un jeton nul (ex. ' ', 'N/A') non vues comme manquantes.",
+      "after": "Converties en valeur manquante réelle.",
+      "rationale": "Un blanc est une valeur manquante déguisée : il empêche la détection des nulls et la conversion en numérique.",
+      "source_issue_id": null
+    },
+    {
+      "id": "telco.01.coerce_to_numeric.Total Charges",
+      "step": 1,
+      "table": "telco",
+      "column": "Total Charges",
+      "rule": "coerce_to_numeric",
+      "rows_affected": 7032,
+      "before": "Colonne stockée en texte (string) mais numérique à 100.0%.",
+      "after": "Convertie en Float64.",
+      "rationale": "Un montant stocké en texte ne peut être ni sommé ni moyenné par le KPI Agent.",
+      "source_issue_id": null
+    },
+    {
+      "id": "telco.02.impute_median.Total Charges",
+      "step": 2,
+      "table": "telco",
+      "column": "Total Charges",
+      "rule": "impute_median",
+      "rows_affected": 11,
+      "before": "11 valeur(s) manquante(s) (0.16%).",
+      "after": "Imputées par median = 1397.",
+      "rationale": "Stratégie robuste choisie pour ne pas supprimer de lignes ; la médiane est peu sensible aux valeurs extrêmes.",
+      "source_issue_id": null
+    },
+    {
+      "id": "telco.03.structural_missing_fill.Churn Reason",
+      "step": 3,
+      "table": "telco",
+      "column": "Churn Reason",
+      "rule": "structural_missing_fill",
+      "rows_affected": 5174,
+      "before": "5174 null(s), présents exactement quand Churn Label == 'No'.",
+      "after": "Remplis par 'Not applicable'.",
+      "rationale": "Valeur absente par construction (ex. pas de motif de départ pour un client resté) : ce n'est pas une erreur, on l'étiquette explicitement.",
+      "source_issue_id": "telco.Churn Reason.missing"
+    },
+    {
+      "id": "telco.04.pii_kept.CustomerID",
+      "step": 4,
+      "table": "telco",
+      "column": "CustomerID",
+      "rule": "pii_kept",
+      "rows_affected": 0,
+      "before": "Colonne PII (customer_identifier).",
+      "after": "Conservée en clair.",
+      "rationale": "Identifiant technique nécessaire aux jointures ; à pseudonymiser avant tout partage externe.",
+      "source_issue_id": null
+    },
+    {
+      "id": "telco.05.pii_false_positive.Lat Long",
+      "step": 5,
+      "table": "telco",
+      "column": "Lat Long",
+      "rule": "pii_false_positive",
+      "rows_affected": 0,
+      "before": "Signalée PII par le Profiler (phone).",
+      "after": "Aucune modification.",
+      "rationale": "Faux positif écarté : valeurs de type coordonnées GPS.",
+      "source_issue_id": null
+    },
+    {
+      "id": "telco.06.pii_false_positive.Latitude",
+      "step": 6,
+      "table": "telco",
+      "column": "Latitude",
+      "rule": "pii_false_positive",
+      "rows_affected": 0,
+      "before": "Signalée PII par le Profiler (phone).",
+      "after": "Aucune modification.",
+      "rationale": "Faux positif écarté : colonne numérique (pas un identifiant personnel textuel).",
+      "source_issue_id": null
+    },
+    {
+      "id": "telco.07.pii_false_positive.Longitude",
+      "step": 7,
+      "table": "telco",
+      "column": "Longitude",
+      "rule": "pii_false_positive",
+      "rows_affected": 0,
+      "before": "Signalée PII par le Profiler (phone).",
+      "after": "Aucune modification.",
+      "rationale": "Faux positif écarté : colonne numérique (pas un identifiant personnel textuel).",
+      "source_issue_id": null
+    },
+    {
+      "id": "telco.08.pii_false_positive.Phone Service",
+      "step": 8,
+      "table": "telco",
+      "column": "Phone Service",
+      "rule": "pii_false_positive",
+      "rows_affected": 0,
+      "before": "Signalée PII par le Profiler (phone).",
+      "after": "Aucune modification.",
+      "rationale": "Faux positif écarté : faible cardinalité (modalités, pas des personnes).",
+      "source_issue_id": null
+    }
+  ],
+  "validation_checks": [
+    {
+      "id": "telco.row_reconciliation",
+      "table": "telco",
+      "check": "row_reconciliation",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "7043 lignes en entrée − 0 supprimées tracées = 7043 attendues ; 7043 en sortie."
+    },
+    {
+      "id": "telco.no_exact_duplicates",
+      "table": "telco",
+      "check": "no_exact_duplicates",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 doublon(s) exact(s) restant(s)."
+    },
+    {
+      "id": "telco.numeric_dtype.Total Charges",
+      "table": "telco",
+      "check": "numeric_dtype",
+      "column": "Total Charges",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "dtype = Float64."
+    },
+    {
+      "id": "telco.no_unexpected_nulls",
+      "table": "telco",
+      "check": "no_unexpected_nulls",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Nulls restants hors cas structurels : aucun."
+    },
+    {
+      "id": "telco.range.Tenure Months",
+      "table": "telco",
+      "check": "range",
+      "column": "Tenure Months",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "telco.range.Monthly Charges",
+      "table": "telco",
+      "check": "range",
+      "column": "Monthly Charges",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "telco.range.Total Charges",
+      "table": "telco",
+      "check": "range",
+      "column": "Total Charges",
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 valeur(s) hors de [0.0, None]. (règle automatique déduite du nom de la colonne)"
+    },
+    {
+      "id": "telco.no_constant_columns",
+      "table": "telco",
+      "check": "no_constant_columns",
+      "column": null,
+      "passed": false,
+      "severity": "low",
+      "violations": 3,
+      "detail": "Colonnes constantes (peu utiles pour l'analyse) : ['Count', 'Country', 'State']."
+    },
+    {
+      "id": "telco.star_fact_row_count",
+      "table": "telco",
+      "check": "star_fact_row_count",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "7043 lignes dans la table nettoyée, 7043 dans fact_customer."
+    },
+    {
+      "id": "telco.star_no_null_foreign_key",
+      "table": "telco",
+      "check": "star_no_null_foreign_key",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 clé(s) étrangère(s) nulle(s)."
+    },
+    {
+      "id": "telco.star_no_orphan_foreign_key",
+      "table": "telco",
+      "check": "star_no_orphan_foreign_key",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 ligne(s) du fait pointent vers une dimension inexistante."
+    },
+    {
+      "id": "telco.star_dimension_keys_unique",
+      "table": "telco",
+      "check": "star_dimension_keys_unique",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 clé(s) de dimension en double."
+    },
+    {
+      "id": "telco.star_column_coverage",
+      "table": "telco",
+      "check": "star_column_coverage",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "Colonnes non placées : aucune ; placées deux fois : aucune."
+    },
+    {
+      "id": "telco.star_measure_reconciliation",
+      "table": "telco",
+      "check": "star_measure_reconciliation",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "0 mesure(s) dont la somme diffère entre table nettoyée et fait."
+    },
+    {
+      "id": "telco.star_lossless_rejoin",
+      "table": "telco",
+      "check": "star_lossless_rejoin",
+      "column": null,
+      "passed": true,
+      "severity": "info",
+      "violations": 0,
+      "detail": "En re-joignant le fait et les dimensions, 0 cellule(s) diffèrent de la table nettoyée (0 = l'étoile ne perd et ne déforme aucune donnée)."
+    }
+  ],
+  "issue_resolutions": [
+    {
+      "issue_id": "telco.Churn Reason.missing",
+      "status": "resolved",
+      "action_ids": [
+        "telco.03.structural_missing_fill.Churn Reason"
+      ],
+      "note": "Valeur absente par construction (ex. pas de motif de départ pour un client resté) : ce n'est pas une erreur, on l'étiquette explicitement."
+    }
+  ],
+  "remaining_issues": [
+    {
+      "id": "telco.remaining.no_constant_columns",
+      "severity": "low",
+      "table": "telco",
+      "column": null,
+      "rule": "no_constant_columns",
+      "evidence": "Colonnes constantes (peu utiles pour l'analyse) : ['Count', 'Country', 'State'].",
+      "affected_rows": 3,
+      "suggested_action": "Valider la règle métier avec le responsable de la donnée avant de la corriger."
+    }
+  ],
+  "llm_summary": "Table telco : 7043 → 7043 ligne(s), score qualité 97.499 → 100.0/100.\nCorrections appliquées :\n- telco.Total Charges [blank_to_null] 11 ligne(s) : Un blanc est une valeur manquante déguisée : il empêche la détection des nulls et la conversion en numérique.\n- telco.Total Charges [coerce_to_numeric] 7032 ligne(s) : Un montant stocké en texte ne peut être ni sommé ni moyenné par le KPI Agent.\n- telco.Total Charges [impute_median] 11 ligne(s) : Stratégie robuste choisie pour ne pas supprimer de lignes ; la médiane est peu sensible aux valeurs extrêmes.\n- telco.Churn Reason [structural_missing_fill] 5174 ligne(s) : Valeur absente par construction (ex. pas de motif de départ pour un client resté) : ce n'est pas une erreur, on l'étiquette explicitement.\nÀ surveiller :\n- low telco : Colonnes constantes (peu utiles pour l'analyse) : ['Count', 'Country', 'State'].",
+  "trace": [
+    {
+      "timestamp": "2026-10-26T20:02:17.943618",
+      "tool": "load_source",
+      "parameters": {
+        "source_name": "telco",
+        "rows": 7043
+      },
+      "duration_ms": 33.449300000029325
+    },
+    {
+      "timestamp": "2026-10-26T20:02:19.313967",
+      "tool": "clean_table",
+      "parameters": {
+        "table": "telco",
+        "actions": 9
+      },
+      "duration_ms": 1370.2112999999372
+    },
+    {
+      "timestamp": "2026-10-26T20:02:19.314967",
+      "tool": "validate",
+      "parameters": {
+        "checks": 8
+      },
+      "duration_ms": 0.1157000006060116
+    },
+    {
+      "timestamp": "2026-10-26T20:02:19.649255",
+      "tool": "build_star_schema",
+      "parameters": {
+        "table": "telco",
+        "dimensions": 5
+      },
+      "duration_ms": 226.69760000007955
+    },
+    {
+      "timestamp": "2026-10-26T20:02:19.649255",
+      "tool": "export",
+      "parameters": {
+        "table": "telco",
+        "path": "output_test\\telco\\telco_clean.csv"
+      },
+      "duration_ms": 334.7548000001552
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-10-26T20:02:17.909618"
+}
