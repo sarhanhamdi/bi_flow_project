@@ -74,8 +74,12 @@ Ouvrez ensuite votre navigateur à l'adresse : **`http://127.0.0.1:8000`**
 * **📁 Dataset Upload :** Téléversement dynamique par glisser-déposer de n'importe quel fichier `.csv`.
 * **⚡ Pipeline Execution :** Suivi live de l'orchestration des 6 agents avec statut, chronomètre et logs.
 * **📊 Executive Dashboard :** Cockpit décisionnel interactif (KPIs, tendance du churn, graphiques par contrat).
-* **🛡️ Data Governance :** Traçabilité des règles de transformation et de conformité appliquées par l'ETL.
-* **🔍 Audit and XAI :** Métriques d'évaluation (Accuracy 78.8%, Recall 67.1%, F1 62.7%, AUC 0.841), benchmark baseline (+62.7% gain net), graphique SHAP global et fiches explicatives par client.
+* **🛡️ Data Governance & Admin Console :** 
+  - *Audit & Traçabilité* : Journal des transformations déterministes appliquées par l'agent ETL.
+  - *Console Admin* : Édition dynamique et persistance des règles métier (bornes d'intervalles, seuil de suppression de colonnes manquantes, multiplicateur IQR, politique PII / RGPD, stratégies d'imputation).
+* **🔍 Audit and XAI (Double Vue Rôles) :**
+  - *Vue Financière / Marketing* : Matrice d'arbitrage économique des coûts d'intervention, ROI net et leviers d'action issus de SHAP.
+  - *Vue Technique / MLOps* : Matrice de confusion 2x2, certification anti-leakage, comparateur SHAP vs Gini, et benchmark scientifique **Régression Logistique vs Random Forest**.
 
 ---
 
